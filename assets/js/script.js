@@ -25,9 +25,18 @@
 // }
 
 function submitOne() {
-    document.getElementById("step1").style.display = "none";
-    document.getElementById("foodForm").style.display = "block";
+    var addSecond = document.getElementById("addSecond")
+
+    if(addSecond.checked==true) {
+        document.getElementById("foodForm").style.display = "block"
+    ;}
+
+    else{
+        document.getElementById("foodForm").style.display = "none";
+   ;}
+    // document.getElementById("step1").style.display = "none";
+    // document.getElementById("foodForm").style.display = "block";
     // Set items for page
     // alert("Form submitted");
     //  console.log(submitOne);
-}
+;}
