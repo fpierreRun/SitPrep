@@ -20,7 +20,7 @@
   
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="./Index.html">  
-                <img src="./assets/images/FAMILY.png"  width="75" alt="" />
+                <img src="./assets/images/SitPrep Logo Blue.png"  width="250" alt="" />
             </a>
         <div>
             <ul class="nav nav-pills">
@@ -55,45 +55,78 @@
 
 
 <!--primary location-->
- <div class="container ">
-<form id=gatherInfo>
-    <div class="form-group">
-    <label for="fname" >Primary Location</label><br>
-    <input type="text" id="fname" name="fname" class="w-50 p-2 form-control" ><br>
-</div>
+ 
+        <!-- <form id="locationForm" form action="/action_page.php" target="_blank"> -->
+        <form id="locationForm" target="">
+            <main class="container" id= "step1" >
+            <div class="form-group">
+            <label for="fname" >Primary Location</label><br>
+            <input type="text" id="fname" name="fname" class="w-50 p-2 form-control" ><br>
+        </div>
 
-<div class="form-group">
-    <label for="fname">Primary Location Phone Number</label><br>
-    <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
-</div>
+            <div class="form-group">
+                <label for="fname">Primary Location Phone Number</label><br>
+                <input type="tel" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+            </div>
 
-<div class="form-group">
-    <label for="fname">Additional Information About Location (Optional)</label><br>
-    <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1" ></textarea>
-</div>
+            <div class="form-group">
+                <label for="fname">Additional Information About Location (Optional)</label><br>
+                <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1" ></textarea>
+            </div>
 
 
-<!--Secondary Location-->
-<div class="form-group">
-    <label for="fname">Secondary Location</label><br>
-    <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
-</div>
+        <!--Secondary Location-->
+            <div class="form-group">
+                <label for="fname">Secondary Location</label><br>
+                <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+            </div>
 
-<div class="form-group">
-    <label for="fname">Secondary Location Phone Number</label><br>
-    <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
-</div>
+            <div class="form-group">
+                <label for="fname">Secondary Location Phone Number</label><br>
+                <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+            </div>
 
-<div class="form-group">
-    <label for="fname">Additional Information About Location (Optional)</label><br>
-    <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
-</div>
-    
-    <input class="btn btn-primary" type="submit" value="next">
-  </form>
-</div>
+            <div class="form-group">
+                <label for="fname">Additional Information About Location (Optional)</label><br>
+                <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
+            </div>
+                
+                
+         
+        </main>
+       
 
 </section>
+
+
+<!--Other page-->
+
+<main class="container " style="display: none" id="foodForm">
+
+
+    <div class="form-group" >
+        <label for="fname">Secondary Location</label><br>
+        <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+    </div>
+    
+    <div class="form-group">
+        <label for="fname">Secondary Location Phone Number</label><br>
+        <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+    </div>
+    
+    <div class="form-group">
+        <label for="fname">Additional Information About Location (Optional)</label><br>
+        <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
+    </div>
+        
+    <input class="btn btn-primary" type="submit" value="Next" id="next1" onclick="submitOne()">
+     
+    </div>
+</main>
+
+</form>
+
+<button onclick="submitOne()" class="btn btn-primary">Next</button>
 
     
 <script src="./assets/js/script.js"></script>
