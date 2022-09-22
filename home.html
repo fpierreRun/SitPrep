@@ -37,105 +37,157 @@
     </div>
     </nav>
 
-    <section>
-            <div class=" text-center">
-            <p class="h1">Emergency Planning for Individuals and Families</p>
-                </div>
-    </section>
+    
 
 </header>
 <!--Form Entry-->
 <section class=" jumbotron">
 
-    <div class=" container">
-        <p class="h4">Where will you gather if your home is not accessible?</p>
-        <hr class="my-4">
-        <p>It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
-</div> 
+    
 
 
 <!--primary location-->
  
         <!-- <form id="locationForm" form action="/action_page.php" target="_blank"> -->
-        <form id="locationForm" target="">
+        <form id="locationForm" target="" form="main">
             <main class="container" id= "step1" >
+
+                <div>
+                    <p class="h4">Where will you gather if your home is not accessible?</p>
+                    <hr class="my-4">
+                    <p>It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
+                    </div> 
+
             <div class="form-group">
                 <label for="fname" >Primary Location</label><br>
-                <input type="text" id="fname" name="fname" class="w-50 p-2 form-control" ><br>
+                <input id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/>
+                <!-- <input type="text" id="primeLoc" name="primeLoc" class="w-50 p-2 form-control" ><br> -->
             </div>
 
             <div class="form-group">
                 <label for="fname">Primary Location Phone Number</label><br>
-                <input type="tel" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+                <input type="tel" id="primeNum" name="primeNum" class="w-50 p-2 form-control"><br>
             </div>
 
             <div class="form-group">
                 <label for="fname">Additional Information About Location (Optional)</label><br>
-                <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1" ></textarea>
+                <textarea class="w-50 p-2 form-control" id="PrimeAddInfo" ></textarea>
             </div>
-            <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="submitOne()">
+            <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
             <label for="vehicle1"> Add a Secondary Location</label><br>
         </main>
                 <!--checkbox for secondary location-->
          
         <!--Secondary Location-->
-        <Main style="display: none">
+        <Main style="display: none" id="secondLocation" class="container">
             <div class="form-group">
                 <label for="fname">Secondary Location</label><br>
-                <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+                <input type="text"  id="location-input2" class="w-50 p-2 form-control"/>
+                
+    <!-- <input type="text" id="secLoc" name="SecLoc" class="w-50 p-2 form-control"><br> -->
             </div>
 
             <div class="form-group">
                 <label for="fname">Secondary Location Phone Number</label><br>
-                <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+                <input id="ac2" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"><br>
             </div>
 
             <div class="form-group">
                 <label for="fname">Additional Information About Location (Optional)</label><br>
-                <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
+                <textarea class="w-50 p-2 form-control" id="AddInfo"  ></textarea><br>
             </div>
         </Main>
                 
-                
-        
-       
-
-</section>
 
 
-<!--Other page-->
 
-<main class="container " style="display: none" id="foodForm">
+
+<!--Evacuation page-->
+
+<main class="container" style="display: none" id="evacForm">
+
+    <div>
+        <p class="h4">What will be your evacuation Route?</p>
+        <hr class="my-4">
+        <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
+        </div> 
 
 
     <div class="form-group" >
-        <label for="fname">Secondary Location</label><br>
-        <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+        <label for="fname">Add Primary Evacuation Shelter or location</label><br>
+        <input type="text" id="needs" name="needs" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
-        <label for="fname">Secondary Location Phone Number</label><br>
-        <input type="text" id="fname" name="fname" class="w-50 p-2 form-control"><br>
+        <label for="fname">Add Primary Evacuation Shelter or location</label><br>
+        <input type="text" id="need2" name="needs" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
-        <label for="fname">Additional Information About Location (Optional)</label><br>
+        <label for="fname">Add Secondary Evacuation Shelter or location</label><br>
         <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
     </div>
         
-    <input class="btn btn-primary" type="submit" value="Next" id="next1" onclick="submitOne()">
+    <!-- <input class="btn btn-primary" type="submit" value="Next" id="next1" onclick="nextPage()"> -->
      
+    </div>
+</main>
+
+<!-- Contact Info -->
+
+<main class="container" style="display: none" id="contactForm">
+
+    <div>
+        <p class="h4">Who will those in your household call or email during an emergency situation?</p>
+        <hr class="my-4">
+        <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+        </div> 
+
+
+    <div class="form-group" >
+        <label for="fname">Primary Contact</label><br>
+        <input type="text" id="needs" name="needs" class="w-50 p-2 form-control"><br>
+    </div>
+    
+    <div class="form-group">
+        <label for="fname">Contact Phone Number</label><br>
+        <input type="text" id="need2" name="needs" class="w-50 p-2 form-control"><br>
+    </div>
+    
+    <div class="form-group">
+        <label for="fname">Contact Email Address</label><br>
+        <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
+    </div>
+    
     </div>
 </main>
 
 </form>
 
-<button onclick="submitOne()" class="btn btn-primary">Next</button>
+<!--first next button-->
+<div class="container" id="next">
+    <button onclick="evacPage()" class="btn btn-primary" >Next</button>
+</div>
+<!--Evac Buttons-->
+<div class="container" style="display: none" id="evacBtns">
+    <button onclick="locPage()" class="btn btn-primary" id="back">Previous</button>
+    <button onclick="contactPage()" class="btn btn-primary" id="next2">Next</button>
+</div>
 
+<div class="container" style="display: none" id="contactBtns">
+    <button onclick="evacPage()" class="btn btn-primary" >Previous</button> 
+    <input form="main" class="btn btn-primary" type="submit" value="Save" id="next1" onclick="nextPage()">
+</div>
+
+</section>
     
-<script src="./assets/js/script.js"></script>
+<script src="./assets/js/form.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA&libraries=places&callback=initMap">
+</script>
+
 </body>
 </html>
