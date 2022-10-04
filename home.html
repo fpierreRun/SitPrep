@@ -28,7 +28,7 @@
                   <a class="nav-link active" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
+                  <a class="nav-link"  href="./plan.html">View Plan</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Log In</a>
@@ -41,6 +41,9 @@
 
 </header>
 <!--Form Entry-->
+<div>
+
+    
 <section class=" jumbotron">
 
     
@@ -49,7 +52,7 @@
 <!--primary location-->
  
         <!-- <form id="locationForm" form action="/action_page.php" target="_blank"> -->
-        <form id="locationForm" target="" form="main">
+        <form id="locationForm" >
             <main class="container" id= "step1" >
 
                 <div>
@@ -60,8 +63,8 @@
 
             <div class="form-group">
                 <label for="fname" >Primary Location</label><br>
-                <input id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/>
-                <!-- <input type="text" id="primeLoc" name="primeLoc" class="w-50 p-2 form-control" ><br> -->
+                <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+                <input type="text"  id="location-input2" class="w-50 p-2 form-control" name="primeLoc"/>
             </div>
 
             <div class="form-group">
@@ -89,12 +92,12 @@
 
             <div class="form-group">
                 <label for="fname">Secondary Location Phone Number</label><br>
-                <input id="ac2" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"><br>
+                <input type="tel" id="secNum" name="secNum" class="w-50 p-2 form-control"><br>
             </div>
 
             <div class="form-group">
                 <label for="fname">Additional Information About Location (Optional)</label><br>
-                <textarea class="w-50 p-2 form-control" id="AddInfo"  ></textarea><br>
+                <textarea class="w-50 p-2 form-control" id="addInfo" name="addInfo" ></textarea><br>
             </div>
         </Main>
                 
@@ -120,7 +123,7 @@
     
     <div class="form-group">
         <label for="fname">Add Primary Evacuation Shelter or location</label><br>
-        <input type="text" id="need2" name="needs" class="w-50 p-2 form-control"><br>
+        <input type="tel" id="need2" name="needs" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
@@ -176,10 +179,26 @@
 
 <div class="container" style="display: none" id="contactBtns">
     <button onclick="evacPage()" class="btn btn-primary" >Previous</button> 
-    <input form="main" class="btn btn-primary" type="submit" value="Save" id="next1" onclick="nextPage()">
+    
+    
+    <input form="locationForm" class="btn btn-primary" type="submit" value="Save" id="next1">
+        
 </div>
 
 </section>
+
+<main >
+    <div class="container">
+    <h1 class="display-4">Your 72 HOUR EMERGENCY PLAN</h1>
+    <ul class="h3 p-4 col" id="viewPlan" >
+        <li>
+          <p class="p-3">Utilize a free platform for emergency planning</p>
+        </li>
+        
+      </ul>
+
+</main2>
+</div>
     
 <script src="./assets/js/form.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
