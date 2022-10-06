@@ -11,7 +11,7 @@
 
 
 <body>
-    <header>
+    <header class="sticky-top">
         <!-- Just an image -->
 
    
@@ -24,12 +24,20 @@
             </a>
         <div>
             <ul class="nav nav-pills">
+
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">About Us</a>
-                </li>
+                    <a class="nav-link active"  href="./home.html">Planning</a>
+                  </li>
+
                 <li class="nav-item">
-                  <a class="nav-link"  href="./plan.html">View Plan</a>
+                  <a class="nav-link" href="#">About Us</a>
                 </li>
+            <!--Temp for testing-->
+                <li class="nav-item">
+                    <a class="nav-link" href="./plan.html">View Plan</a>
+                  </li>
+                 <!--Remove above code once testing for code is complete-->
+
                 <li class="nav-item">
                   <a class="nav-link" href="#">Log In</a>
                 </li>
@@ -74,7 +82,7 @@
 
             <div class="form-group">
                 <label for="fname">Additional Information About Location (Optional)</label><br>
-                <textarea class="w-50 p-2 form-control" id="PrimeAddInfo" ></textarea>
+                <textarea class="w-50 p-2 form-control" id="primeAddInfo" name="primeInfo"  ></textarea>
             </div>
             <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
             <label for="vehicle1"> Add a Secondary Location</label><br>
@@ -85,7 +93,7 @@
         <Main style="display: none" id="secondLocation" class="container">
             <div class="form-group">
                 <label for="fname">Secondary Location</label><br>
-                <input type="text"  id="location-input2" class="w-50 p-2 form-control"/>
+                <input type="text"  id="location-input2" class="w-50 p-2 form-control" name="secLoc"  />
                 
     <!-- <input type="text" id="secLoc" name="SecLoc" class="w-50 p-2 form-control"><br> -->
             </div>
@@ -97,7 +105,7 @@
 
             <div class="form-group">
                 <label for="fname">Additional Information About Location (Optional)</label><br>
-                <textarea class="w-50 p-2 form-control" id="addInfo" name="addInfo" ></textarea><br>
+                <textarea class="w-50 p-2 form-control" id="addInfo" name="secInfo" ></textarea><br>
             </div>
         </Main>
                 
@@ -118,17 +126,17 @@
 
     <div class="form-group" >
         <label for="fname">Add Primary Evacuation Shelter or location</label><br>
-        <input type="text" id="needs" name="needs" class="w-50 p-2 form-control"><br>
+        <input type="text" id="needs" name="evacLoc" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
         <label for="fname">Add Primary Evacuation Shelter or location</label><br>
-        <input type="tel" id="need2" name="needs" class="w-50 p-2 form-control"><br>
+        <input type="tel" id="need2" name="evacNum" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
         <label for="fname">Add Secondary Evacuation Shelter or location</label><br>
-        <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1"  ></textarea><br>
+        <textarea class="w-50 p-2 form-control" id="exampleFormControlTextarea1" name="sec-Evac-Loc"  ></textarea><br>
     </div>
         
     <!-- <input class="btn btn-primary" type="submit" value="Next" id="next1" onclick="nextPage()"> -->
@@ -154,7 +162,7 @@
     
     <div class="form-group">
         <label for="fname">Contact Phone Number</label><br>
-        <input type="text" id="need2" name="needs" class="w-50 p-2 form-control"><br>
+        <input type="text" id="need2" name="contactNum" class="w-50 p-2 form-control"><br>
     </div>
     
     <div class="form-group">
@@ -181,7 +189,7 @@
     <button onclick="evacPage()" class="btn btn-primary" >Previous</button> 
     
     
-    <input form="locationForm" class="btn btn-primary" type="submit" value="Save" id="next1">
+    <input form="locationForm" class="btn btn-success" type="submit" value="Save" id="next1">
         
 </div>
 

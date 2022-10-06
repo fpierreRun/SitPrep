@@ -25,30 +25,160 @@
 // }
 var plan = [];
 var formEl = document.querySelector("#locationForm");
+var formIdCounter = 0;
+
+function evacPage(){
+  document.getElementById("evacBtns").style.display = "block";
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("secondLocation").style.display = "none";
+  document.getElementById("evacForm").style.display = "block";
+  document.getElementById("next").style.display = "none";
+  document.getElementById("contactForm").style.display = "none";
+  document.getElementById("contactBtns").style.display = "none";
+
+};
+
+function locPage(){
+
+  document.getElementById("step1").style.display = "block";
+  document.getElementById("evacForm").style.display = "none";
+  document.getElementById("back").style.display = "none";
+
+  if(addSecond.checked==true) {
+      document.getElementById("secondLocation").style.display = "block"
+  ;}
+
+  else{
+      document.getElementById("secondLocation").style.display = "none";
+ ;}
+
+};
+
+function contactPage(){
+  document.getElementById("contactForm").style.display = "block";
+  document.getElementById("contactBtns").style.display = "block";
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("evacForm").style.display = "none";
+  document.getElementById("evacBtns").style.display = "none";
+
+};
+
+
+//Saving the form
 
 function saveForm (event){
   event.preventDefault();
-  var location = document.querySelector("input[name='primeLoc']").value;
-  var number = document.querySelector("input[name='primeNum']").value;
+
+  
+  //Add form class and attribute
+  formEl.className = "updated-form";
+  formEl.setAttribute("data-form-id", formIdCounter );
+  var formId = formEl.getAttribute("data-form-id");
  
-  // function appendPlan () {
+    
+    //got to View Plan
+    // window.location.href="./plan.html";
+
+    function dataEntry () {
+          //Primary Gathering Location Info
+          var primaryLoc = document.querySelector("input[name='primeLoc']").value;
+          var primaryNum = document.querySelector("input[name='primeNum']").value;
+          var primaryAddInfo = document.querySelector("input[name='primeInfo']").value;
+
+          //Secondary Gathering Location Info
+          var secondaryLoc = document.querySelector("input[name='secLoc']").value;
+          var secondaryNum = document.querySelector("input[name='secNum']").value;
+          var secondaryAddInfo = document.querySelector("input[name='secInfo']").value;
+
+          //Evacuation Location Info
+          var evacuationLoc = document.querySelector("input[name='evacLoc']").value;
+          var evacuationNum = document.querySelector("input[name='evacNum']").value;
+          var secondaryEvacLoc = document.querySelector("input[name='sec-Evac-Loc']").value;
+
+          //  //Emergecny contact Info
+          var contactName = document.querySelector("input[name='contactName']").value;
+          var contactNum = document.querySelector("input[name='contactNum']").value;
+          var contactEml = document.querySelector("input[name='contactEml']").value;
+          console.log(dataEntry);
+  };
+
+    
+  
+    // // reassign tasks array to be the same as updatedTaskArr
+    // plan = updatedPlan;
+    // saveTasks();
+  
+
+
+   // //Delete current data before saving
+      // var deleteForm = function () {
+      //  
+      //   // find task list element with taskId value and remove it
+      // var inputSelected = document.querySelector("input[name='contactNum']").value;
+        
+      // inputSelected.remove();
+      // console.log(inputSelected)
+    
+  //     // create new array to hold updated list of tasks
+      // var updatedPlan = [];
+    
+  //     // loop through current tasks
+  //     for (var i = 0; i < tasks.length; i++) {
+  //       // if tasks[i].id doesn't match the value of taskId, let's keep that task and push it into the new array
+  //       if (tasks[i].id !== parseInt(taskId)) {
+  //         updatedPlan.push(plan[i]);
+  //       };
+      // };
+ 
+  function appendPlan () {
 var listEl = document.querySelector("#viewPlan");
 var planListEl = document.createElement("li");
-planListEl.textContent = location;
+planListEl.textContent = contactNum;
 // //keeping the same style
 planListEl.className ="h3 p-4 col";
 listEl.appendChild(planListEl);
+  };
 
+
+//Object for form data
+var formDataObj = {
+
+  //Primary Gathering Location Info
+  primaryLoc: primaryLoc,
+  primaryNum: primaryNum, 
+  primaryAddInfo: primaryAddInfo,
+
+//  Secondary Gathering Location Info
+  secondaryLoc: secondaryLoc,
+  secondaryNum: secondaryNum,
+  secondaryAddInfo: secondaryAddInfo,
+
+ //Evacuation Location Info
+ evacuationLoc: evacuationLoc,
+ evacuationNum: evacuationNum,
+  secondaryEvacLoc: secondaryEvacLoc,
+
+//  Emergecny contact Info
+ contactName: contactName,
+ contactNum: contactNum,  
+ contactEml: contactEml,
+ 
+};
+
+plan.push(formDataObj);
+// console.log(plan);
+
+saveData()
 // };
-console.dir(location);
 
-    alert("button clicked");
     
     // event.preventDefault();
     // var location = document.querySelector("input[name='AddInfo']");
 // console.log(event);
-
+// console.log(saveForm)
 };
+
+
 
 
 function expandSecondary() {
@@ -69,45 +199,13 @@ function expandSecondary() {
     //  console.log(submitOne);
 ;}
 
-function evacPage(){
-    document.getElementById("evacBtns").style.display = "block";
-    document.getElementById("step1").style.display = "none";
-    document.getElementById("secondLocation").style.display = "none";
-    document.getElementById("evacForm").style.display = "block";
-    document.getElementById("next").style.display = "none";
-    document.getElementById("contactForm").style.display = "none";
-    document.getElementById("contactBtns").style.display = "none";
-
-}
-
-function locPage(){
-
-    document.getElementById("step1").style.display = "block";
-    document.getElementById("evacForm").style.display = "none";
-    document.getElementById("back").style.display = "none";
-
-    if(addSecond.checked==true) {
-        document.getElementById("secondLocation").style.display = "block"
-    ;}
-
-    else{
-        document.getElementById("secondLocation").style.display = "none";
-   ;}
-
-}
-
-function contactPage(){
-    document.getElementById("contactForm").style.display = "block";
-    document.getElementById("contactBtns").style.display = "block";
-    document.getElementById("step1").style.display = "none";
-    document.getElementById("evacForm").style.display = "none";
-    document.getElementById("evacBtns").style.display = "none";
-
-}
 
 
 
-// //function for addres fields
+
+
+
+// //function for address field
 
 "use strict";
 
@@ -143,6 +241,7 @@ function initMap() {
       return;
     }
     fillInAddress(place);
+    
   });
 
   function fillInAddress(place) {  // optional parameter
@@ -174,6 +273,34 @@ function initMap() {
       }
     }
   }
+};
+//end of cuntion for address field
+
+function editPlan() {
+
+
+  window.location.href="./home.html";
+
+
+
+  // var updatedPlan = [];
+
+  // console.log("editing plan #");
+
+};
+
+
+//beggining of save data in local storage
+
+var saveData = function () {
+
+  
+
+  
+
+  
+
+  localStorage.setItem("plan", JSON.stringify(plan))
 };
 
 formEl.addEventListener("submit", saveForm);
