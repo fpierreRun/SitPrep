@@ -1,4 +1,5 @@
 var newPlan = [];
+var plan = [];
 
 function loadPlan(){
   
