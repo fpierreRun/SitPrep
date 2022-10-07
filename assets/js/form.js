@@ -24,6 +24,7 @@
 
 // }
 var plan = [];
+// var newPlan = [];
 var formEl = document.querySelector("#locationForm");
 var formIdCounter = 0;
 
@@ -35,9 +36,9 @@ function evacPage(){
   document.getElementById("next").style.display = "none";
   document.getElementById("contactForm").style.display = "none";
   document.getElementById("contactBtns").style.display = "none";
-
 };
 
+//begin
 function locPage(){
 
   document.getElementById("step1").style.display = "block";
@@ -53,7 +54,9 @@ function locPage(){
  ;}
 
 };
+//End
 
+//begin
 function contactPage(){
   document.getElementById("contactForm").style.display = "block";
   document.getElementById("contactBtns").style.display = "block";
@@ -62,6 +65,7 @@ function contactPage(){
   document.getElementById("evacBtns").style.display = "none";
 
 };
+//end
 
 
 //Saving the form
@@ -70,37 +74,37 @@ function saveForm (event){
   event.preventDefault();
 
   
-  //Add form class and attribute
-  formEl.className = "updated-form";
-  formEl.setAttribute("data-form-id", formIdCounter );
-  var formId = formEl.getAttribute("data-form-id");
+  // //Add form class and attribute
+  // formEl.className = "updated-form";
+  // formEl.setAttribute("data-form-id", formIdCounter );
+  // var formId = formEl.getAttribute("data-form-id");
  
     
     //got to View Plan
     // window.location.href="./plan.html";
 
-    function dataEntry () {
+   
           //Primary Gathering Location Info
-          var primaryLoc = document.querySelector("input[name='primeLoc']").value;
+          var primeLoc = document.querySelector("input[name='primeLoc']").value;
           var primaryNum = document.querySelector("input[name='primeNum']").value;
-          var primaryAddInfo = document.querySelector("input[name='primeInfo']").value;
+          var primaryAddInfo = document.querySelector("textarea[name='primeInfo']").value;
 
           //Secondary Gathering Location Info
           var secondaryLoc = document.querySelector("input[name='secLoc']").value;
           var secondaryNum = document.querySelector("input[name='secNum']").value;
-          var secondaryAddInfo = document.querySelector("input[name='secInfo']").value;
+          var secondaryAddInfo = document.querySelector("textarea[name='secInfo']").value;
 
           //Evacuation Location Info
           var evacuationLoc = document.querySelector("input[name='evacLoc']").value;
           var evacuationNum = document.querySelector("input[name='evacNum']").value;
-          var secondaryEvacLoc = document.querySelector("input[name='sec-Evac-Loc']").value;
+          var secondaryEvacLoc = document.querySelector("textarea[name='sec-Evac-Loc']").value;
 
           //  //Emergecny contact Info
           var contactName = document.querySelector("input[name='contactName']").value;
           var contactNum = document.querySelector("input[name='contactNum']").value;
           var contactEml = document.querySelector("input[name='contactEml']").value;
-          console.log(dataEntry);
-  };
+          
+
 
     
   
@@ -130,52 +134,53 @@ function saveForm (event){
   //       };
       // };
  
-  function appendPlan () {
-var listEl = document.querySelector("#viewPlan");
-var planListEl = document.createElement("li");
-planListEl.textContent = contactNum;
-// //keeping the same style
-planListEl.className ="h3 p-4 col";
-listEl.appendChild(planListEl);
-  };
+      //   function appendPlan () {
+      // var listEl = document.querySelector("#viewPlan");
+      // var planListEl = document.createElement("li");
+      // planListEl.textContent = contactNum;
+      // // //keeping the same style
+      // planListEl.className ="h3 p-4 col";
+      // listEl.appendChild(planListEl);
+      //   };
 
 
-//Object for form data
-var formDataObj = {
+      //Object for form data
+      var formDataObj = {
 
-  //Primary Gathering Location Info
-  primaryLoc: primaryLoc,
-  primaryNum: primaryNum, 
-  primaryAddInfo: primaryAddInfo,
+        //Primary Gathering Location Info
+        primeLoc: primeLoc,
+        primaryNum: primaryNum, 
+        primaryAddInfo: primaryAddInfo,
 
-//  Secondary Gathering Location Info
-  secondaryLoc: secondaryLoc,
-  secondaryNum: secondaryNum,
-  secondaryAddInfo: secondaryAddInfo,
+      //  Secondary Gathering Location Info
+        secondaryLoc: secondaryLoc,
+        secondaryNum: secondaryNum,
+        secondaryAddInfo: secondaryAddInfo,
 
- //Evacuation Location Info
- evacuationLoc: evacuationLoc,
- evacuationNum: evacuationNum,
-  secondaryEvacLoc: secondaryEvacLoc,
+      //Evacuation Location Info
+      evacuationLoc: evacuationLoc,
+      evacuationNum: evacuationNum,
+        secondaryEvacLoc: secondaryEvacLoc,
 
-//  Emergecny contact Info
- contactName: contactName,
- contactNum: contactNum,  
- contactEml: contactEml,
- 
-};
+      //  Emergecny contact Info
+      contactName: contactName,
+      contactNum: contactNum,  
+      contactEml: contactEml,
+      
+      };
 
-plan.push(formDataObj);
-// console.log(plan);
+      plan.push(formDataObj);
 
-saveData()
-// };
+      // console.log(saveData);
 
-    
-    // event.preventDefault();
-    // var location = document.querySelector("input[name='AddInfo']");
-// console.log(event);
-// console.log(saveForm)
+      saveData()
+      // };
+
+          
+          // event.preventDefault();
+          // var location = document.querySelector("input[name='AddInfo']");
+      // console.log(event);
+      // console.log(saveForm)
 };
 
 
@@ -266,10 +271,10 @@ function initMap() {
 
     getFormInputElement('location').value = getAddressComp('street_number') + ' '
               + getAddressComp('route');
-    for (const component of componentForm) {
-      // Location field is handled separately above as it has different logic.
-      if (component !== 'location') {
-        getFormInputElement(component).value = getAddressComp(component);
+        for (const component of componentForm) {
+          // Location field is handled separately above as it has different logic.
+          if (component !== 'location') {
+            getFormInputElement(component).value = getAddressComp(component);
       }
     }
   }
@@ -293,17 +298,46 @@ function editPlan() {
 //beggining of save data in local storage
 
 var saveData = function () {
-
-  
-
-  
-
-  
-
   localStorage.setItem("plan", JSON.stringify(plan))
 };
 
+// function loadPlan(){
+  
+  
+//   //   Gets task items from localStorage.
+  
+
+//   updatedPlan = JSON.parse(localStorage.getItem("plan"));
+//   newPlan.push(updatedPlan);
+  
+  
+//   console.log(appendPlan)
+  
+  
+//   // Converts tasks from the string format back into an array of objects.
+  
+//   // Iterates through a tasks array and creates task elements on the page from it.
+  
+//   };
+
+  // function appendPlan () {
+
+  //   alert("working");
+  //   document.getElementById("results").innerHTML=newPlan
+   
+  //   // alert("working");
+  //   // var listEl = document.querySelector("#viewPlan2");
+  //   // var planListEl = document.createElement("li");
+  //   // planListEl.textContent = newPlan;
+  //   // // //keeping the same style
+  //   // planListEl.className ="h3 p-4 col";
+  //   // listEl.appendChild(planListEl);
+  //     };
+  
+  
+
 formEl.addEventListener("submit", saveForm);
+
 
 // function initialize() {
 
@@ -319,7 +353,4 @@ formEl.addEventListener("submit", saveForm);
 //         });
 //     };
 // };
-
-
-
 
