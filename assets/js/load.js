@@ -17,13 +17,8 @@ function loadPlan(){
 
       function appendPlan () {
 
-        alert("working");
-    
-      
-        document.getElementById("results").innerHTML= element[i].contactName;
-    
-    
-        console.log(element)
+        document.getElementById("results").innerHTML= element[i].primeLoc;
+
     
        
         // alert("working");
@@ -43,6 +38,13 @@ function loadPlan(){
     // Converts tasks from the string format back into an array of objects.
     
     // Iterates through a tasks array and creates task elements on the page from it.
+    
+    };
+
+    function editPlan() {
+
+      window.location.href="./home.html";
+    
     
     };
 

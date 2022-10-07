@@ -281,18 +281,7 @@ function initMap() {
 };
 //end of cuntion for address field
 
-function editPlan() {
 
-
-  window.location.href="./home.html";
-
-
-
-  // var updatedPlan = [];
-
-  // console.log("editing plan #");
-
-};
 
 
 //beggining of save data in local storage
