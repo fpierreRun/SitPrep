@@ -6,6 +6,8 @@ body {
     background-color: #ffffff;
 }
 
+
+
 h2 {
 
     font-family: Poppins;
@@ -100,3 +102,13 @@ header {
     margin: 4px 2px;
     cursor: pointer;
   } */
+
+  #introSect{
+    background-color: thistle;
+  }
+
+  @media print {
+    .container {
+      width: auto;
+    }
+  }
