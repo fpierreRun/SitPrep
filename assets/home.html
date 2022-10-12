@@ -18,9 +18,9 @@
    
    
   
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light pb-4">
             <a class="navbar-brand" href="./index.html">  
-                <img src="./images/SitPrep Logo Green.png"  width="250" alt="" />
+                <img src="./images/SitPrep Logo Green.png"  width="150" alt="" />
             </a>
         <div>
             <ul class="nav nav-pills">
@@ -175,12 +175,16 @@
 
             </form>
 
+
+
             <!--first next button-->
+
+            <main class="d-flex justify-content-end">
             <div class="container" id="next">
                 <button onclick="evacPage()" class="btn btn-primary" >Next</button>
             </div>
             <!--Evac Buttons-->
-            <div class="container" style="display: none" id="evacBtns">
+            <div class="container " style="display: none" id="evacBtns">
                 <button onclick="locPage()" class="btn btn-primary" id="back">Previous</button>
                 <button onclick="contactPage()" class="btn btn-primary" id="next2">Next</button>
             </div>
@@ -192,6 +196,7 @@
                 <input form="locationForm" class="btn btn-success" type="submit" value="Save" id="next1">
                     
             </div>
+        </main>
 
         </section>
 
@@ -205,6 +210,10 @@
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA&libraries=places&callback=initMap">
 </script>
+
+<footer class="p-3">
+
+</footer>
 
 </body>
 </html>

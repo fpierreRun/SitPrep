@@ -81,7 +81,7 @@ function saveForm (event){
  
     
     //got to View Plan
-    // window.location.href="./plan.html";
+    window.location.href="./plan.html";
 
    
           //Primary Gathering Location Info

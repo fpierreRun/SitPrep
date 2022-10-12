@@ -18,6 +18,8 @@ function loadPlan(){
       function appendPlan () {
 
         document.getElementById("results").innerHTML= element[i].primeLoc;
+        document.getElementById("results2").innerHTML= element[i].primaryNum;
+        document.getElementById("results3").innerHTML= element[i].primaryAddInfo;
 
     
        
