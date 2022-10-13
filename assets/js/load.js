@@ -17,10 +17,30 @@ function loadPlan(){
 
       function appendPlan () {
 
-        document.getElementById("results").innerHTML= element[i].primeLoc;
-        document.getElementById("results2").innerHTML= element[i].primaryNum;
-        document.getElementById("results3").innerHTML= element[i].primaryAddInfo;
 
+        document.getElementById("primeLoca").innerHTML= element[i].primeLoc;
+        document.getElementById("primaryNum").innerHTML= element[i].primaryNum;
+        document.getElementById("primaryAddInfo").innerHTML= element[i].primaryAddInfo;
+
+ 
+       //  Secondary Gathering Location Info
+      document.getElementById("secondaryLoc").innerHTML= element[i].secondaryLoc;
+        document.getElementById("secondaryNum").innerHTML= element[i].secondaryNum;
+        document.getElementById("secondaryAddInfo").innerHTML= element[i].secondaryAddInfo;
+      
+      
+ 
+       //Evacuation Location Info
+      document.getElementById("evacuationLoc").innerHTML= element[i].evacuationLoc;
+        document.getElementById("evacuationNum").innerHTML= element[i].evacuationNum;
+        document.getElementById("secondaryEvacLoc").innerHTML= element[i].secondaryEvacLoc;
+    
+ 
+      //  //  Emergecny contact Info
+      document.getElementById("contactName").innerHTML= element[i].contactName;
+        document.getElementById("contactNum").innerHTML= element[i].contactNum;
+        document.getElementById("contactEml").innerHTML= element[i].contactEml;
+     
     
        
         // alert("working");
