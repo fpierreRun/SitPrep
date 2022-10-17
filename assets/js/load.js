@@ -1,4 +1,8 @@
+var plan = [];
 var newPlan = [];
+
+
+ 
 
 
 function loadPlan(){
@@ -11,19 +15,20 @@ function loadPlan(){
   
  
     newPlan.push(updatedPlan);
+   
     
     for (let i = 0; i < newPlan.length; i++) {
-      var element = newPlan[i];
+      var element = newPlan[newPlan.length - 1];
 
       function appendPlan () {
 
 
-        document.getElementById("primeLoca").innerHTML= element[i].primeLoc;
+        document.getElementById("primeLoc").innerHTML= element[i].primeLoc;
         document.getElementById("primaryNum").innerHTML= element[i].primaryNum;
         document.getElementById("primaryAddInfo").innerHTML= element[i].primaryAddInfo;
 
  
-       //  Secondary Gathering Location Info
+        // Secondary Gathering Location Info
       document.getElementById("secondaryLoc").innerHTML= element[i].secondaryLoc;
         document.getElementById("secondaryNum").innerHTML= element[i].secondaryNum;
         document.getElementById("secondaryAddInfo").innerHTML= element[i].secondaryAddInfo;
@@ -36,7 +41,7 @@ function loadPlan(){
         document.getElementById("secondaryEvacLoc").innerHTML= element[i].secondaryEvacLoc;
     
  
-      //  //  Emergecny contact Info
+       //  Emergecny contact Info
       document.getElementById("contactName").innerHTML= element[i].contactName;
         document.getElementById("contactNum").innerHTML= element[i].contactNum;
         document.getElementById("contactEml").innerHTML= element[i].contactEml;
@@ -53,7 +58,7 @@ function loadPlan(){
           };
     
           appendPlan();
-    }
+    };
   
     
     
@@ -63,12 +68,117 @@ function loadPlan(){
     
     };
 
-    function editPlan() {
+    loadPlan();
+   
 
-      window.location.href="./home.html";
+    // Edit Plan Data
+    $(".plan").on("click", "span", function() {
+       var text = $(this)
+    .text()
+    .trim();
+
     
+
+    var textInput = $("<textarea>")
+    .attr('id', this.id)
+    .attr('class', this.className)
+  .val(text);
+
+  
+
+  $(this).replaceWith(textInput);
+ 
+  textInput.trigger("focus");
+    });
+
+
+    // Saving edited data
+    $(".plan").on("blur", "textarea", function() {
+
+      var text = $(this)
+      
+  .val()
+  .trim();
+
+ 
+  // recreate p element
+var updatedData = $("<span>")
+  .attr('id', this.id)
+    .attr('class', this.className)
+.text(text);
+
+
+console.log(updatedData);
+
+// replace textarea with p element
+$(this).replaceWith(updatedData);
+
+
+
+updateEdited();
+
+    });
+
     
-    };
+          
+
+
+var updateEdited = function () {
+// Primary Gathering Location Info
+          var primeLoc = document.getElementById("primeLoc").innerHTML;
+          var primaryNum = document.getElementById("primaryNum").innerHTML;
+          var primaryAddInfo = document.getElementById("primaryAddInfo").innerHTML;
+          
+          // //Secondary Gathering Location Info
+          var secondaryLoc = document.getElementById("secondaryLoc").innerHTML;
+          var secondaryNum = document.getElementById("secondaryNum").innerHTML;
+          var secondaryAddInfo = document.getElementById("secondaryAddInfo").innerHTML;
+
+          // //Evacuation Location Info
+          var evacuationLoc = document.getElementById("evacuationLoc").innerHTML;
+          var evacuationNum = document.getElementById("evacuationNum").innerHTML;
+          var evacuationLoc = document.getElementById("secondaryEvacLoc").innerHTML;
+
+          // //  //Emergecny contact Info
+          var contactName = document.getElementById("contactName").innerHTML;
+          var contactNum = document.getElementById("contactNum").innerHTML;
+          var secondaryEvacLoc = document.getElementById("contactEml").innerHTML;
+
+  //Object for form data
+  var formDataObj = {
+
+  // Primary Gathering Location Info
+      primeLoc: primeLoc,
+      primaryNum: primaryNum, 
+      primaryAddInfo: primaryAddInfo,
+
+  // Secondary Gathering Location Info
+    secondaryLoc: secondaryLoc,
+    secondaryNum: secondaryNum,
+    secondaryAddInfo: secondaryAddInfo,
+
+  // Evacuation Location Info
+    evacuationLoc: evacuationLoc,
+    evacuationNum: evacuationNum,
+    secondaryEvacLoc: secondaryEvacLoc,
+
+  // Emergecny contact Info
+      contactName: contactName,
+      contactNum: contactNum,  
+      contactEml: contactEml,
+      
+  };
+
+ 
+  plan.push(formDataObj);
+  
+ 
+  
+
+  saveData()
+  
+};
+
 
     //download PDF code
 
@@ -110,5 +220,11 @@ function loadPlan(){
  
 	});
 
-      loadPlan();
+  var saveData = function () {
+    localStorage.setItem("plan", JSON.stringify(plan))
+
+    loadPlan();
+  };
+  
+     
        

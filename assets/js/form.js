@@ -86,9 +86,9 @@ function saveForm (event){
    
           //Primary Gathering Location Info
           var primeLoc = document.querySelector("input[name='primeLoc']").value;
-          var primaryNum = document.querySelector("input[name='primeNum']").value;
+          var primaryNum = document.querySelector("input[name='primeNum']".value);
           var primaryAddInfo = document.querySelector("textarea[name='primeInfo']").value;
-
+          console.log(primaryNum);
           //Secondary Gathering Location Info
           var secondaryLoc = document.querySelector("input[name='secLoc']").value;
           var secondaryNum = document.querySelector("input[name='secNum']").value;
