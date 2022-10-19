@@ -1,3 +1,5 @@
+
+
 var plan = [];
 var newPlan = [];
 
@@ -13,12 +15,101 @@ function loadPlan(){
   
     updatedPlan = JSON.parse(localStorage.getItem("plan"));
   
- 
+
+
     newPlan.push(updatedPlan);
-   
+    
     
     for (let i = 0; i < newPlan.length; i++) {
-      var element = newPlan[newPlan.length - 1];
+     
+      
+      var element = newPlan[newPlan.length-1];
+
+      console.log(newPlan[newPlan.length-1]);
+
+       
+      //If fields are blank put n/a as place holder
+      function notApplicaple (){
+   
+  if(!element[i].primeLoc) {
+
+  element[i].primeLoc ="n/a"
+ };
+
+ if(!element[i].primaryNum) {
+
+  element[i].primaryNum = "n/a";
+
+ };
+
+ if(!element[i].primaryAddInfo) {
+
+  element[i].primaryAddInfo = "n/a";
+
+ };
+
+
+ if(!element[i].secondaryLoc) {
+
+  element[i].secondaryLoc ="n/a"
+ };
+
+ if(!element[i].secondaryNum) {
+
+  element[i].secondaryNum = "n/a";
+
+ };
+
+ if(!element[i].secondaryAddInfo) {
+
+  element[i].secondaryAddInfo = "n/a";
+
+ };
+
+
+ if(!element[i].evacuationLoc) {
+
+  element[i].evacuationLoc ="n/a"
+ };
+
+ if(!element[i].evacuationNum) {
+
+  element[i].evacuationNum = "n/a";
+
+ };
+
+ if(!element[i].secondaryEvacLoc) {
+
+  element[i].secondaryEvacLoc = "n/a";
+
+ };
+
+
+
+ if(!element[i].contactName) {
+
+  element[i].contactName ="n/a"
+ };
+
+ if(!element[i].contactNum) {
+
+  element[i].contactNum = "n/a";
+
+ };
+
+ if(!element[i].contactEml) {
+
+  element[i].contactEml = "n/a";
+
+ };
+
+
+};
+
+notApplicaple()
+ 
+
+      
 
       function appendPlan () {
 
@@ -27,13 +118,14 @@ function loadPlan(){
         document.getElementById("primaryNum").innerHTML= element[i].primaryNum;
         document.getElementById("primaryAddInfo").innerHTML= element[i].primaryAddInfo;
 
+        
  
         // Secondary Gathering Location Info
       document.getElementById("secondaryLoc").innerHTML= element[i].secondaryLoc;
         document.getElementById("secondaryNum").innerHTML= element[i].secondaryNum;
         document.getElementById("secondaryAddInfo").innerHTML= element[i].secondaryAddInfo;
       
-      
+        
  
        //Evacuation Location Info
       document.getElementById("evacuationLoc").innerHTML= element[i].evacuationLoc;
@@ -108,7 +200,7 @@ var updatedData = $("<span>")
 .text(text);
 
 
-console.log(updatedData);
+
 
 // replace textarea with p element
 $(this).replaceWith(updatedData);
@@ -193,19 +285,14 @@ var updateEdited = function () {
 			
 			var element = document.getElementById('downloadPlan'); 
 
-			//easy
-			html2pdf().from(element).save();
-
-			//custom file name
-			html2pdf().set({filename: 'My_Plan_'+js.AutoCode()+'.pdf'}).from(element).save();
-
+			
 
 			//more custom settings
 			var opt = 
 			{
-			  margin:       1,
-			  filename:     'pageContent_'+js.AutoCode()+'.pdf',
-			  image:        { type: 'jpeg', quality: 0.98 },
+			  margin:     0.25,
+			  filename:     'My_Plan_.pdf',
+			  image:        { type: 'pdf', quality: 0.98 },
 			  html2canvas:  { scale: 2 },
 			  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
 			};
@@ -213,7 +300,11 @@ var updateEdited = function () {
 			// New Promise-based usage:
 			html2pdf().set(opt).from(element).save();
 
-			 
+      // Avoid page-breaks on all elements, and add one before #page2el.
+        html2pdf().set({
+          pagebreak: { mode: 'avoid-all', before: '#page2el' }
+        });
+
 		});
 
  
