@@ -2,6 +2,7 @@
 
 var plan = [];
 var newPlan = [];
+var editedPlan = [];
 
 
  
@@ -11,21 +12,32 @@ function loadPlan(){
   
   
     //   Gets task items from localStorage.
+
+    newPlan.splice(0, 2); 
+
+   
     
-  
+    updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
+
+    if(!updatedPlan){
     updatedPlan = JSON.parse(localStorage.getItem("plan"));
-  
+
+  }
+ 
+
 
 
     newPlan.push(updatedPlan);
-    
+
+    console.log(newPlan)
+  
     
     for (let i = 0; i < newPlan.length; i++) {
      
       
       var element = newPlan[newPlan.length-1];
 
-      console.log(newPlan[newPlan.length-1]);
+      
 
        
       //If fields are blank put n/a as place holder
@@ -169,14 +181,10 @@ notApplicaple()
     .text()
     .trim();
 
-    
-
     var textInput = $("<textarea>")
     .attr('id', this.id)
     .attr('class', this.className)
   .val(text);
-
-  
 
   $(this).replaceWith(textInput);
  
@@ -205,7 +213,8 @@ var updatedData = $("<span>")
 // replace textarea with p element
 $(this).replaceWith(updatedData);
 
-
+localStorage.removeItem("plan");
+localStorage.removeItem("editedPlan");
 
 updateEdited();
 
@@ -262,7 +271,7 @@ var updateEdited = function () {
   };
 
  
-  plan.push(formDataObj);
+  editedPlan.push(formDataObj);
   
  
   
@@ -270,6 +279,8 @@ var updateEdited = function () {
   saveData()
   
 };
+
+
 
 
     //download PDF code
@@ -312,10 +323,30 @@ var updateEdited = function () {
 	});
 
   var saveData = function () {
-    localStorage.setItem("plan", JSON.stringify(plan))
+    localStorage.setItem("editedPlan", JSON.stringify(editedPlan))
 
     loadPlan();
   };
   
-     
+   //update plan with edited info
+
+// var loadEditedPlan = function (){
+
+//   updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
+  
+
+
+//   newPlan.push(updatedPlan);
+  
+  
+//   for (let i = 0; i < newPlan.length; i++) {
+   
+    
+//     var element = newPlan[newPlan.length-1];
+
+//     console.log(newPlan[newPlan.length-1]);
+
+
+// } 
+// }; 
        
