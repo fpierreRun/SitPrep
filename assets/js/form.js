@@ -204,6 +204,8 @@ function initMap() {
 
 var saveData = function () {
   localStorage.setItem("plan", JSON.stringify(plan))
+
+  console.log(plan)
 };
 
   

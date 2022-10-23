@@ -24,7 +24,7 @@ function loadPlan(){
 
     newPlan.push(updatedPlan);
 
-      console.log(newPlan)
+      
     for (let i = 0; i < newPlan.length; i++) {
      
       
@@ -102,12 +102,13 @@ function loadPlan(){
  if(!element[i].contactEml) {
 
   element[i].contactEml = "n/a";
-
+  
+  
  };
- notApplicaple()
+ 
 
 };
-
+notApplicaple()
 
  
 
