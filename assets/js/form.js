@@ -1,28 +1,5 @@
-// var name = "";
-    
-//     while (name === "" || name === null) {
-//         name = prompt("What is your robot's name?");
-//       }
-
-//     console.log(Math.max(0, 25, -5));
-//     console.log(Math.floor(Math.random() * 60)+10);
 
 
-
-// next1.addEventListener("submit", submitOne);
-// locationForm.addEventListener("submit", submitOne);
-// locationForm.addEventListener("click", stepTwo);
-
-    
-// function stepTwo() {
-//     // Set items for page
-//     alert("button clicked");
-   
-        
-//         document.getElementById("foodForm").style.display = "block";
-//         console.log()
-
-// }
 var plan = [];
 // var newPlan = [];
 var formEl = document.querySelector("#locationForm");
@@ -73,13 +50,6 @@ function contactPage(){
 function saveForm (event){
   event.preventDefault();
 
-  
-  // //Add form class and attribute
-  // formEl.className = "updated-form";
-  // formEl.setAttribute("data-form-id", formIdCounter );
-  // var formId = formEl.getAttribute("data-form-id");
- 
-    
     //got to View Plan
     window.location.href="./plan.html";
 
@@ -103,75 +73,35 @@ function saveForm (event){
           var contactName = document.querySelector("input[name='contactName']").value;
           var contactNum = document.querySelector("input[name='contactNum']").value;
           var contactEml = document.querySelector("input[name='contactEml']").value;
-          
-
-
-    
-  
-    // // reassign tasks array to be the same as updatedTaskArr
-    // plan = updatedPlan;
-    // saveTasks();
-  
-
-
-   // //Delete current data before saving
-      // var deleteForm = function () {
-      //  
-      //   // find task list element with taskId value and remove it
-      // var inputSelected = document.querySelector("input[name='contactNum']").value;
         
-      // inputSelected.remove();
-      // console.log(inputSelected)
-    
-  //     // create new array to hold updated list of tasks
-      // var updatedPlan = [];
-    
-  //     // loop through current tasks
-  //     for (var i = 0; i < tasks.length; i++) {
-  //       // if tasks[i].id doesn't match the value of taskId, let's keep that task and push it into the new array
-  //       if (tasks[i].id !== parseInt(taskId)) {
-  //         updatedPlan.push(plan[i]);
-  //       };
-      // };
- 
-      //   function appendPlan () {
-      // var listEl = document.querySelector("#viewPlan");
-      // var planListEl = document.createElement("li");
-      // planListEl.textContent = contactNum;
-      // // //keeping the same style
-      // planListEl.className ="h3 p-4 col";
-      // listEl.appendChild(planListEl);
-      //   };
 
+          //Object for form data
+          var formDataObj = {
 
-      //Object for form data
-      var formDataObj = {
+            //Primary Gathering Location Info
+            primeLoc: primeLoc,
+            primaryNum: primaryNum, 
+            primaryAddInfo: primaryAddInfo,
 
-        //Primary Gathering Location Info
-        primeLoc: primeLoc,
-        primaryNum: primaryNum, 
-        primaryAddInfo: primaryAddInfo,
+          //  Secondary Gathering Location Info
+            secondaryLoc: secondaryLoc,
+            secondaryNum: secondaryNum,
+            secondaryAddInfo: secondaryAddInfo,
 
-      //  Secondary Gathering Location Info
-        secondaryLoc: secondaryLoc,
-        secondaryNum: secondaryNum,
-        secondaryAddInfo: secondaryAddInfo,
+          //Evacuation Location Info
+          evacuationLoc: evacuationLoc,
+          evacuationNum: evacuationNum,
+            secondaryEvacLoc: secondaryEvacLoc,
 
-      //Evacuation Location Info
-      evacuationLoc: evacuationLoc,
-      evacuationNum: evacuationNum,
-        secondaryEvacLoc: secondaryEvacLoc,
-
-      //  Emergecny contact Info
-      contactName: contactName,
-      contactNum: contactNum,  
-      contactEml: contactEml,
+          //  Emergecny contact Info
+          contactName: contactName,
+          contactNum: contactNum,  
+          contactEml: contactEml,
       
       };
-
+      
       plan.push(formDataObj);
-
-      // console.log(saveData);
+      
 
       saveData()
       // };
@@ -185,7 +115,6 @@ function saveForm (event){
 
 
 
-
 function expandSecondary() {
     
 
@@ -196,18 +125,7 @@ function expandSecondary() {
     else{
         document.getElementById("secondLocation").style.display = "none";
    ;}
-
-
-   
-    // Set items for page
-    // alert("Form submitted");
-    //  console.log(submitOne);
 ;}
-
-
-
-
-
 
 
 // //function for address field
@@ -282,64 +200,13 @@ function initMap() {
 //end of cuntion for address field
 
 
-
-
 //beggining of save data in local storage
 
 var saveData = function () {
   localStorage.setItem("plan", JSON.stringify(plan))
 };
 
-// function loadPlan(){
-  
-  
-//   //   Gets task items from localStorage.
-  
-
-//   updatedPlan = JSON.parse(localStorage.getItem("plan"));
-//   newPlan.push(updatedPlan);
-  
-  
-//   console.log(appendPlan)
-  
-  
-//   // Converts tasks from the string format back into an array of objects.
-  
-//   // Iterates through a tasks array and creates task elements on the page from it.
-  
-//   };
-
-  // function appendPlan () {
-
-  //   alert("working");
-  //   document.getElementById("results").innerHTML=newPlan
-   
-  //   // alert("working");
-  //   // var listEl = document.querySelector("#viewPlan2");
-  //   // var planListEl = document.createElement("li");
-  //   // planListEl.textContent = newPlan;
-  //   // // //keeping the same style
-  //   // planListEl.className ="h3 p-4 col";
-  //   // listEl.appendChild(planListEl);
-  //     };
-  
   
 
 formEl.addEventListener("submit", saveForm);
-
-
-// function initialize() {
-
-//     var acInputs = document.getElementsByClassName("autocomplete");
-
-//     for (var i = 0; i < acInputs.length; i++) {
-
-//         var autocomplete = new google.maps.places.Autocomplete(acInputs[i]);
-//         autocomplete.inputId = acInputs[i].id;
-
-//         google.maps.event.addListener(autocomplete, 'place_changed', function () {
-//             document.getElementById("log").innerHTML = 'You used input with id ' + this.inputId;
-//         });
-//     };
-// };
 

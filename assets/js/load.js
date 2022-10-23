@@ -13,10 +13,6 @@ function loadPlan(){
   
     //   Gets task items from localStorage.
 
-    newPlan.splice(0, 2); 
-
-   
-    
     updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
 
     if(!updatedPlan){
@@ -26,20 +22,14 @@ function loadPlan(){
  
 
 
-
     newPlan.push(updatedPlan);
 
-    console.log(newPlan)
-  
-    
+      console.log(newPlan)
     for (let i = 0; i < newPlan.length; i++) {
      
       
       var element = newPlan[newPlan.length-1];
 
-      
-
-       
       //If fields are blank put n/a as place holder
       function notApplicaple (){
    
@@ -114,11 +104,11 @@ function loadPlan(){
   element[i].contactEml = "n/a";
 
  };
-
+ notApplicaple()
 
 };
 
-notApplicaple()
+
  
 
       
@@ -150,15 +140,7 @@ notApplicaple()
         document.getElementById("contactNum").innerHTML= element[i].contactNum;
         document.getElementById("contactEml").innerHTML= element[i].contactEml;
      
-    
-       
-        // alert("working");
-        // var listEl = document.querySelector("#viewPlan2");
-        // var planListEl = document.createElement("li");
-        // planListEl.textContent = newPlan;
-        // // //keeping the same style
-        // planListEl.className ="h3 p-4 col";
-        // listEl.appendChild(planListEl);
+  
           };
     
           appendPlan();
@@ -176,10 +158,12 @@ notApplicaple()
    
 
     // Edit Plan Data
-    $(".plan").on("click", "span", function() {
+    $(".plan").on("click", "p", function() {
        var text = $(this)
     .text()
     .trim();
+
+
 
     var textInput = $("<textarea>")
     .attr('id', this.id)
@@ -199,19 +183,20 @@ notApplicaple()
       
   .val()
   .trim();
-
+ 
  
   // recreate p element
-var updatedData = $("<span>")
+var updatedData = $("<p>")
   .attr('id', this.id)
     .attr('class', this.className)
 .text(text);
 
 
 
-
 // replace textarea with p element
 $(this).replaceWith(updatedData);
+
+
 
 localStorage.removeItem("plan");
 localStorage.removeItem("editedPlan");
@@ -240,12 +225,15 @@ var updateEdited = function () {
           var evacuationNum = document.getElementById("evacuationNum").innerHTML;
           var evacuationLoc = document.getElementById("secondaryEvacLoc").innerHTML;
 
+         
           // //  //Emergecny contact Info
           var contactName = document.getElementById("contactName").innerHTML;
           var contactNum = document.getElementById("contactNum").innerHTML;
-          var secondaryEvacLoc = document.getElementById("contactEml").innerHTML;
+          var contactEml = document.getElementById("contactEml").innerHTML;
 
-  //Object for form data
+  
+  
+          //Object for form data
   var formDataObj = {
 
   // Primary Gathering Location Info
@@ -270,16 +258,11 @@ var updateEdited = function () {
       
   };
 
- 
   editedPlan.push(formDataObj);
   
- 
-  
-
   saveData()
   
 };
-
 
 
 
@@ -328,25 +311,4 @@ var updateEdited = function () {
     loadPlan();
   };
   
-   //update plan with edited info
-
-// var loadEditedPlan = function (){
-
-//   updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
-  
-
-
-//   newPlan.push(updatedPlan);
-  
-  
-//   for (let i = 0; i < newPlan.length; i++) {
    
-    
-//     var element = newPlan[newPlan.length-1];
-
-//     console.log(newPlan[newPlan.length-1]);
-
-
-// } 
-// }; 
-       
