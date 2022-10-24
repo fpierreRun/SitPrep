@@ -119,6 +119,14 @@ header {
 }
    */
 
+   #planimg1{
+
+    background-image: url(../images/Gathering.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+   }
+
    input[type=button]{
       background-color: var(--primary-color);
       border-color: var(--primary-color);
