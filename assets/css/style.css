@@ -119,12 +119,14 @@ header {
 }
    */
 
-   #planimg1{
+   .planimg1{
 
     background-image: url(../images/Gathering.png);
     background-repeat: no-repeat;
-    background-position:center;
-    background-size:cover;
+    background-position:right;
+    background-size:contain;
+    width: 75%;
+    max-height: 75%;
    }
 
    input[type=button]{
