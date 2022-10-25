@@ -1,33 +1,31 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-:root{
-  --primary-color:#37CB99;
-  --secondary-color: #5A69BF;
-  --Buttonblue-color:#768DFD;
-  --ButtonGrey-color: #4E4E4E;
-  --normaltext-color:#3E3E3E;
+:root {
+  --primary-color: #37cb99;
+  --secondary-color: #5a69bf;
+  --Buttonblue-color: #768dfd;
+  --ButtonGrey-color: #4e4e4e;
+  --normaltext-color: #3e3e3e;
   --lighttext-color: #898989;
-  --Tiltecolor-color:#4A5071;
-  --WhiteText-color:#ffffff;
+  --Tiltecolor-color: #4a5071;
+  --WhiteText-color: #ffffff;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
-
-
 
 body {
-
-    font-size: 100%;
-    color: rgb(31, 31, 31);
-    background-color: #ffffff;
+  font-size: 100%;
+  color: rgb(31, 31, 31);
+  background-color: #ffffff;
 }
-
-
 
 /* 
 h2 {
@@ -120,74 +118,72 @@ header {
 }
    */
 
-   .planimg1{
+section.homebkg {
+  background-image: url("../images/Home.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
-    background-image: url(../images/Gathering.png);
-    background-repeat: no-repeat;
-    background-position:right;
-    background-size:contain;
-    width: 75%;
-    max-height: 75%;
-   }
-
-   input[type=button]{
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-
-   }
-
-   .button1{
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-
- }
-
-   .title {
-
-    font-family: Impact;
-    /* color: var(--secondary-color) */
-    font-size: 2.5em;
-   }
-
-  #introSect{
-    background-image: url("../images/deskbkg6.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-  }
-
-  #navSect{
-    background-image: url("../images/Group\ Banner@3x.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-  }
-
-  .material-icons {
-    font-family: 'Material Icons';
-    align-self: center;
-    margin: left;
-    font-size: 35px !important;
-    
+.planimg1 {
+  background-image: url("../images/Gathering.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
   
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-  
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-  
-    /* Support for IE. */
-    font-feature-settings: 'liga';
+ 
+}
+
+input[type="button"] {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.button1 {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.title {
+  font-family: Impact;
+  /* color: var(--secondary-color) */
+  font-size: 2.5em;
+}
+
+#introSect {
+  background-image: url("../images/deskbkg6.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#navSect {
+  background-image: url("../images/Group\ Banner@3x.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  align-self: center;
+  margin: left;
+  font-size: 35px !important;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+@media print {
+  .container {
+    width: auto;
   }
-
-
-
-  @media print {
-    .container {
-      width: auto;
-    }
-  }
+}
