@@ -48,7 +48,7 @@
 
         <div class="container">
 
-        <main>
+        <main class="calc">
 
             <div>
                 <p class="h3">Food Storage Calculator</p>
@@ -64,12 +64,12 @@
   
       
             <div>
-                    <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+                    
                     <label class="font-weight-bold pr-5"  >How many weeks of supply do want to store?</label><br>
 
                     <div width="30" class="d-flex ">
 
-                        <p class="list-group-flush border-info w-75 bg-light form-control" id="primeLoc" value="1">1</p>
+                        <p class="list-group-flush border-info w-25 bg-light form-control" id="weeks">1</p>
                         <label class=" pl-1" >weeks</label><br>
                     </div>
                  
@@ -77,12 +77,12 @@
 
             <div>
                 <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
-                <label class="font-weight-bold pr-5"  >How many adults are you planning for (12 and older)?</label><br>
+                <label class="font-weight-bold pr-5" >How many adults are you planning for (12 and older)?</label><br>
 
                 <div width="30" class="d-flex ">
 
-                    <p class="list-group-flush border-info w-75 bg-light form-control" id="primeLoc" value="1">1</p>
-                    <label class=" pl-1" >weeks</label><br>
+                    <p id="adults" class="list-group-flush border-info w-25 bg-light form-control" id="primeLoc" >1</p>
+                   
                 </div>
              
         </div>
@@ -113,11 +113,17 @@
         <hr class="my-4">
         <p class="h5">What do you already have in storage?</p>
 
-        <div class="py-3">
-            <input  type="checkbox" id="addSecond" name="add" value="Secondary" onclick="planChild()">
-            <label class="pl-2" for="vehicle1"> Check the box if you are also planning for Children</label><br>
-        </div>
-    
+        <div class="p-3">
+            
+
+            <div width="30" class="d-flex ">
+
+                <label class=" pr-2" >WATER</label><br>
+                <input class="list-group-flush border-info w-75 bg-light form-control" id="primeLoc" value="1"></input>
+                <label class=" pl-2" >gal</label><br>
+            </div>
+         
+    </div>
     <main>
 <!--determine whats in storage inputs ends-->
        
@@ -126,13 +132,12 @@
 
     
 <!-- sCripts for html-->
-    <script src="./js/calc.js"></script>
+   
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./js/calc.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA&libraries=places&callback=initMap">
-</script>
+
 
 
 <!-- Footer begans-->
