@@ -69,7 +69,7 @@
 
                     <div width="30" class="d-flex ">
 
-                        <p class="list-group-flush border-info w-25 bg-light form-control" id="weeks">1</p>
+                        <p class=" w-25 bg-white form-control border-white text-center" id="weeks">1</p>
                         <label class=" pl-1" >weeks</label><br>
                     </div>
                  
@@ -81,7 +81,7 @@
 
                 <div width="30" class="d-flex ">
 
-                    <p id="adults" class="list-group-flush border-info w-25 bg-light form-control" id="primeLoc" >1</p>
+                    <p id="adults" class="w-25 bg-white form-control border-white text-center" >1</p>
                    
                 </div>
              
@@ -99,7 +99,7 @@
 
                     <div width="30" class="d-flex ">
 
-                        <p class="list-group-flush border-info w-75  form-control" id="primeLoc" value="1">1</p>
+                        <p class="w-25 bg-white form-control border-white text-center" id="kids" >0</p>
                         <label class=" pl-1" >weeks</label><br>
                     </div>
                 
@@ -109,26 +109,48 @@
 
 <!--determine whats in storage inputs begins-->
         
-    </main> 
-        <hr class="my-4">
-        <p class="h5">What do you already have in storage?</p>
+            <main class="calc"> 
+                <hr class="my-4">
+                <p class="h5">What do you already have in storage?</p>
 
-        <div class="p-3">
-            
+                <div class="p-3">
+                    
 
-            <div width="30" class="d-flex ">
+                    <div width="30" class="d-flex ">
 
-                <label class=" pr-2" >WATER</label><br>
-                <input class="list-group-flush border-info w-75 bg-light form-control" id="primeLoc" value="1"></input>
-                <label class=" pl-2" >gal</label><br>
+                        <label class=" pr-2" >WATER</label><br>
+                        <p class="w-25 bg-white form-control border-white text-center" id="water" >0</p>
+                        <label class=" pl-2" >gal</label><br>
+                    </div>
+                
             </div>
-         
-    </div>
-    <main>
+        </main>
 <!--determine whats in storage inputs ends-->
        
-        </div>  
-    </section>
+<!--Remmonded amounts begin-->
+
+<div  class=" text-light justify-content-start d-flex">
+    
+    <div class="recGrn">
+        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+        <h3 class="  pl-3" id="primeLoc"><span id="waterRecommend">15</span> gal</h3>
+    </div>
+
+    <div class="recBlu">
+        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+        <h3 class="  pl-3"  value="1"><span id="waterNeeded">15</span> gal</h3>
+    </div>
+
+</div>
+
+
+
+
+<!--Remmonded amounts end-->
+
+
+    </div>  
+</section>
 
     
 <!-- sCripts for html-->

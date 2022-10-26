@@ -67,11 +67,56 @@ calculate()
 
     weeks = document.getElementById("weeks").innerHTML
     adults = document.getElementById("adults").innerHTML
+    kids = document.getElementById("kids").innerHTML
 
-    var waterneeded = (~~weeks) + (~~adults);
+    water = document.getElementById("water").innerHTML
+    // grain = document.getElementById("grain").innerHTML
+    // legumes = document.getElementById("legumes").innerHTML
+    // dairy = document.getElementById("dairy").innerHTML
+    // sugars = document.getElementById("sugars").innerHTML
+    // leavening = document.getElementById("leavening").innerHTML
+    // salt = document.getElementById("salt").innerHTML
+    // fats = document.getElementById("fats").innerHTML
+
+
     
-    
-   console.log(waterneeded)
+    //equation for water
+    var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    var waterRec = waterneeded - (~~water)
+    // //equation for grain
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for Legumes
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for dairy
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for sugars
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for leavening agents
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for salt
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+    // //equation for fats
+    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    // var waterRec = waterneeded - (~~water)
+
+   console.log(waterRec)
+
+   function recAmount() {
+
+
+    document.getElementById("waterRecommend").innerHTML= waterneeded;
+    document.getElementById("waterNeeded").innerHTML= waterRec;
+
+
+
+   };
+   recAmount()
  };
 
  
