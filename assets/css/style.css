@@ -149,6 +149,14 @@ input[type="button"] {
   border-color: var(--secondary-color);
 } 
 
+.txtGrn{
+  color: var(--primary-color);
+}
+
+.txtBlu{
+  color: var(--secondary-color);
+}
+
 .button1 {
   background-color: var(--primary-color);
   border-color: var(--primary-color);

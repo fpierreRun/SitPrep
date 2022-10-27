@@ -69,7 +69,7 @@
 
                     <div width="30" class="d-flex ">
 
-                        <p class=" w-25 bg-white form-control border-white text-center" id="weeks">1</p>
+                        <input oninput="calculate()" class=" w-25 bg-white form-control border-white text-center" id="weeks" type="number" value="1"></input>
                         <label class=" pl-1" >weeks</label><br>
                     </div>
                  
@@ -81,7 +81,7 @@
 
                 <div width="30" class="d-flex ">
 
-                    <p id="adults" class="w-25 bg-white form-control border-white text-center" >1</p>
+                    <input id="adults" class="w-25 bg-white form-control border-white text-center " type="number" value="1" oninput="calculate()" ></input>
                    
                 </div>
              
@@ -99,7 +99,7 @@
 
                     <div width="30" class="d-flex ">
 
-                        <p class="w-25 bg-white form-control border-white text-center" id="kids" >0</p>
+                        <input class="w-25 bg-white form-control border-white text-center" id="kids" type="number" value="0" oninput="calculate()" ></input>
                         <label class=" pl-1" >weeks</label><br>
                     </div>
                 
@@ -119,7 +119,7 @@
                     <div width="30" class="d-flex ">
 
                         <label class=" pr-2" >WATER</label><br>
-                        <p class="w-25 bg-white form-control border-white text-center" id="water" >0</p>
+                        <input class="w-25 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
                         <label class=" pl-2" >gal</label><br>
                     </div>
                 
@@ -128,22 +128,26 @@
 <!--determine whats in storage inputs ends-->
        
 <!--Remmonded amounts begin-->
-
-<div  class=" text-light justify-content-start d-flex">
+<main class="bg-white">
+<div  class=" text-dark justify-content-start d-flex">
     
-    <div class="recGrn">
+    <div class="">
         <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-        <h3 class="  pl-3" id="primeLoc"><span id="waterRecommend">15</span> gal</h3>
+        <h3 class="  pl-3" id="primeLoc"><span class="txtGrn" id="waterRecommend">15</span> gal</h3>
     </div>
 
-    <div class="recBlu">
+    <div class="">
         <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-        <h3 class="  pl-3"  value="1"><span id="waterNeeded">15</span> gal</h3>
+        <h3 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h3>
     </div>
 
+    
 </div>
 
-
+<div class="progress bg-primary"style="width: 100%">
+    <div class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" aria-valuenow="15" aria-valuemin="5" aria-valuemax="15" style="width: 25%"></div>
+  </div>
+</main>
 
 
 <!--Remmonded amounts end-->

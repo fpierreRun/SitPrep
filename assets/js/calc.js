@@ -16,60 +16,63 @@ function planChild() {
 
 
 // Edit Plan Data
-$(".calc").on("click", "p", function() {
-    var text = $(this)
- .text()
- .trim();
+// $(".calc").on("click", "p", function() {
+//     var text = $(this)
+//  .text()
+//  .trim();
 
 
 
- var textInput = $("<textarea>")
- .attr('id', this.id)
- .attr('class', this.className)
-.val(text);
+//  var textInput = $("<input>")
+//  .attr('id', this.id)
+//  .attr('class', this.className)
+// .val(text);
 
-$(this).replaceWith(textInput);
+// $(this).replaceWith(textInput);
 
-textInput.trigger("focus");
- });
+// textInput.trigger("focus");
 
 
- // Saving edited data
- $(".calc").on("blur", "textarea", function() {
+//  });
 
-   var text = $(this)
+
+
+//  // Saving edited data
+//  $(".calc").on("blur", "input", function() {
+
+//    var text = $(this)
    
-.val()
-.trim();
+// .val()
+// .trim();
 
-
-// recreate p element
-var updatedData = $("<p>")
-.attr('id', this.id)
- .attr('class', this.className)
-.text(text);
-
-
-
-// replace textarea with p element
-$(this).replaceWith(updatedData);
-
-console.log(updatedData)
+// calculate()
+// // recreate p element
+// var updatedData = $("<p>")
+// .attr('id', this.id)
+//  .attr('class', this.className)
+// .text(text);
 
 
 
-calculate()
+// // replace textarea with p element
+// $(this).replaceWith(updatedData);
 
- });
+// console.log(updatedData)
+
+
+
+
+
+//  });
 
 
  var calculate = function () {
 
-    weeks = document.getElementById("weeks").innerHTML
-    adults = document.getElementById("adults").innerHTML
-    kids = document.getElementById("kids").innerHTML
-
-    water = document.getElementById("water").innerHTML
+    weeks = document.getElementById("weeks").value
+    adults = document.getElementById("adults").value
+    kids = document.getElementById("kids").value
+console.log(weeks)
+    water = document.getElementById("water").value
     // grain = document.getElementById("grain").innerHTML
     // legumes = document.getElementById("legumes").innerHTML
     // dairy = document.getElementById("dairy").innerHTML
