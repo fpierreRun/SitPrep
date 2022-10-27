@@ -71,51 +71,93 @@ function planChild() {
     weeks = document.getElementById("weeks").value
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
-console.log(weeks)
+
     water = document.getElementById("water").value
-    // grain = document.getElementById("grain").innerHTML
-    // legumes = document.getElementById("legumes").innerHTML
-    // dairy = document.getElementById("dairy").innerHTML
-    // sugars = document.getElementById("sugars").innerHTML
-    // leavening = document.getElementById("leavening").innerHTML
-    // salt = document.getElementById("salt").innerHTML
-    // fats = document.getElementById("fats").innerHTML
+    grain = document.getElementById("grain").value
+    legumes = document.getElementById("legumes").value
+    dairy = document.getElementById("dairy").value
+    sugars = document.getElementById("sugars").value
+    leavening = document.getElementById("leavening").value
+    // salt = document.getElementById("salt").value
+    // fats = document.getElementById("fats").value
 
 
     
     //equation for water
     var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
     var waterRec = waterneeded - (~~water)
-    // //equation for grain
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
-    // //equation for Legumes
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
-    // //equation for dairy
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
+    var waterProgress = ((water/waterneeded)*100) 
+   
+    //equation for grain
+    var grainNeeded =  Math.ceil(((~~adults*1.14) + (~~kids*0.71)) * (~~weeks*7));
+    var grainRec = grainNeeded - (~~grain)
+    var grainProgress = ((grain/grainNeeded)*100)
+
+    //equation for Legumes
+    var legumesNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var legumesRec = legumesNeeded - (~~legumes)
+    var legumesProgress = ((legumes/legumesNeeded)*100) 
+
+    //equation for dairy
+    var dairyNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var dairyRec = dairyNeeded - (~~dairy)
+    var dairyProgress = ((dairy/dairyNeeded)*100)
+
     // //equation for sugars
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
-    // //equation for leavening agents
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
+    var sugarsNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var sugarsRec = sugarsNeeded - (~~water)
+    var sugarsProgress = ((sugars/sugarsNeeded)*100) 
+
+    //equation for leavening agents
+    var leaveningNeeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    var leaveningRec = leaveningNeeded - (~~leavening)
+    var leaveningProgress = ((leavening/leaveningNeeded)*100) 
+
     // //equation for salt
     // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
     // var waterRec = waterneeded - (~~water)
+    // var waterProgress = ((water/waterneeded)*100) 
     // //equation for fats
     // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
     // var waterRec = waterneeded - (~~water)
+    // var waterProgress = ((water/waterneeded)*100) 
 
-   console.log(waterRec)
+   
 
    function recAmount() {
 
-
-    document.getElementById("waterRecommend").innerHTML= waterneeded;
+    
+    document.getElementById("waterRecommend").innerHTML= waterneeded ;
     document.getElementById("waterNeeded").innerHTML= waterRec;
+    document.getElementById("waterProgress").style.width= waterProgress += "%";
 
+    document.getElementById("grainRecommend").innerHTML= grainNeeded ;
+    document.getElementById("grainNeeded").innerHTML= grainRec;
+    document.getElementById("grainProgress").style.width= grainProgress += "%";
+    
+    document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
+    document.getElementById("legumesNeeded").innerHTML= legumesRec;
+    document.getElementById("legumesProgress").style.width= legumesProgress += "%";
+    
+    document.getElementById("dairyRecommend").innerHTML= dairyNeeded ;
+    document.getElementById("dairyNeeded").innerHTML= dairyRec;
+    document.getElementById("dairyProgress").style.width= dairyProgress += "%";
+
+    document.getElementById("sugarsRecommend").innerHTML= sugarsNeeded ;
+    document.getElementById("sugarsNeeded").innerHTML= sugarsRec;
+    document.getElementById("sugarsProgress").style.width= sugarsProgress += "%";
+
+    document.getElementById("leaveningRecommend").innerHTML= leaveningNeeded ;
+    document.getElementById("leaveningNeeded").innerHTML= leaveningRec;
+    document.getElementById("leaveningProgress").style.width= leaveningProgress += "%";
+
+    // document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
+    // document.getElementById("legumesNeeded").innerHTML= legumesRec;
+    // document.getElementById("legumesProgress").style.width= legumesProgress += "%";
+
+    // document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
+    // document.getElementById("legumesNeeded").innerHTML= legumesRec;
+    // document.getElementById("legumesProgress").style.width= legumesProgress += "%";
 
 
    };

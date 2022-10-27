@@ -88,7 +88,7 @@
         </div>
 
            
-                    <div class="py-3">
+                    <div class="py-3 d-flex">
                     <input  type="checkbox" id="addSecond" name="add" value="Secondary" onclick="planChild()">
                     <label class="pl-2" for="vehicle1"> Check the box if you are also planning for Children</label><br>
                 </div>
@@ -111,46 +111,279 @@
         
             <main class="calc"> 
                 <hr class="my-4">
-                <p class="h5">What do you already have in storage?</p>
-
-                <div class="p-3">
+                
+                    <p class="h4 ">What do you already have in storage?</p>
+             
+                <!--First row of storgae needed-->
+                <div class="p-3 d-flex row justify-content-end">
                     
 
-                    <div width="30" class="d-flex ">
+                    <div width="30" class="col-4">
 
                         <label class=" pr-2" >WATER</label><br>
-                        <input class="w-25 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
                         <label class=" pl-2" >gal</label><br>
+                        </div>
+                    </div>
+
+                    <div width="30"class="col-4" >
+
+                        <label class=" pr-2" >GRAIN (includes wheat, white rice, oats, corn, barley, pasta, etc.)</label><br>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control border-white text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2" >lb</label><br>
+                        </div>
+                    </div>
+
+                    <div width="30" class="col-4" >
+
+                        <label class=" pr-2" >Legumes (dried beans, split peas, lentils, nuts, etc.)</label><br>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control border-white text-center" id="legumes" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2" >gal</label><br>
+                        </div>
                     </div>
                 
             </div>
+
+        <!--secomd row of storgae needed-->
+        <div class="p-3 d-flex row justify-content-end">
+                    
+
+            <div width="30" class="col-4">
+
+                <label class=" pr-2" >DAIRY PRODUCTS (powdered milk, cheese powder, canned cheese, etc.)</label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="dairy" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >gal</label><br>
+                </div>
+            </div>
+
+            <div width="30"class="col-4" >
+
+                <label class=" pr-2" >SUGARS (white sugar, brown sugar, syrup, molasses, honey, etc.)</label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="sugars" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >lb</label><br>
+                </div>
+            </div>
+
+            <div width="30" class="col-4" >
+
+                <label class=" pr-2" >LEAVENING AGENTS (yeast, baking powder, powdered eggs, etc.): </label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="leavening" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >gal</label><br>
+                </div>
+            </div>
+        
+    </div>
+        <!--third row of storgae needed-->
+        <div class="p-3 d-flex row justify-content-end">
+                    
+
+            <div width="30" class="col-4">
+
+                <label class=" pr-2" >WATER</label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >gal</label><br>
+                </div>
+            </div>
+
+            <div width="30"class="col-4" >
+
+                <label class=" pr-2" >WATER</label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >gal</label><br>
+                </div>
+            </div>
+
+            <div width="30" class="col-4" >
+
+                <label class=" pr-2" >WATER</label><br>
+                <div class="d-flex ">
+                <input class="w-50 bg-white form-control border-white text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2" >gal</label><br>
+                </div>
+            </div>
+        
+    </div>
+
+
         </main>
 <!--determine whats in storage inputs ends-->
-       
+<hr class="my-4">
+<p class="h4 pb-1">Recommended Food Storage Amount Based upon above inputs</p>
+<p class="pb-2">Each category below gives you a variety of choices and a total weight. You 
+    should store the items you like to eat and know how to use. Weights 
+    (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>
 <!--Remmonded amounts begin-->
-<main class="bg-white">
-<div  class=" text-dark justify-content-start d-flex">
-    
-    <div class="">
-        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-        <h3 class="  pl-3" id="primeLoc"><span class="txtGrn" id="waterRecommend">15</span> gal</h3>
+<main class="bg-white rounded shadow">
+
+    <!--Water Dashboard-->
+    <div class="container py-2" >
+        
+        <div  class=" text-dark justify-content-start d-flex row">
+            
+            <div class="col-2">
+            <p class="p-1 h4 pl-3">WATER</p>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" id="primeLoc"><span class="text-primary" id="waterRecommend">15</span> gal</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="waterNeeded">15</span> gal</h3>
+            </div>
+
+            
+        </div>
+
+        <div class="progress bg-warning"style="width: 100%">
+            <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
+        </div>
     </div>
 
-    <div class="">
-        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-        <h3 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h3>
+     <!--Grain Dashboard-->
+     <div class="container py-2">
+
+        <div  class=" text-dark justify-content-start d-flex row">
+             <div class="col-2">
+                 <p class="p-1 h4 pl-3">GRAIN</p>
+             </div>
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span class="text-primary" id="grainRecommend">8</span> lb</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="grainNeeded">8</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-warning "style="width: 100%">
+            <div id="grainProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
     </div>
 
-    
-</div>
+    <!--Legumes Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-2">
+                <p class="p-1 h4 pl-3">LEGUMES</p>
+            </div>
 
-<div class="progress bg-primary"style="width: 100%">
-    <div class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" aria-valuenow="15" aria-valuemin="5" aria-valuemax="15" style="width: 25%"></div>
-  </div>
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span class="text-primary" id="legumesRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="legumesNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-warning "style="width: 100%">
+            <div id="legumesProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Dairy Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-2">
+                <p class="p-1 h4 pl-3">DAIRY</p>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span class="text-primary" id="dairyRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="dairyNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-warning "style="width: 100%">
+            <div id="dairyProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+
+    <!--Sugars Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-2">
+                <p class="p-1 h4 pl-3">SUGARS</p>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span class="text-primary" id="sugarsRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="sugarsNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-warning "style="width: 100%">
+            <div id="sugarsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Leavening Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-2">
+                <p class="p-1 h4 pl-3">LEAVENING AGENTS</p>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span class="text-primary" id="leaveningRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-warning" id="leaveningNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-warning "style="width: 100%">
+            <div id="leaveningProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
 </main>
 
 
-<!--Remmonded amounts end-->
+<!--Recommended amounts end-->
 
 
     </div>  
