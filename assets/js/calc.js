@@ -78,8 +78,8 @@ function planChild() {
     dairy = document.getElementById("dairy").value
     sugars = document.getElementById("sugars").value
     leavening = document.getElementById("leavening").value
-    // salt = document.getElementById("salt").value
-    // fats = document.getElementById("fats").value
+    salt = document.getElementById("salt").value
+    fats = document.getElementById("fats").value
 
 
     
@@ -109,18 +109,19 @@ function planChild() {
     var sugarsProgress = ((sugars/sugarsNeeded)*100) 
 
     //equation for leavening agents
-    var leaveningNeeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    var leaveningNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
     var leaveningRec = leaveningNeeded - (~~leavening)
     var leaveningProgress = ((leavening/leaveningNeeded)*100) 
 
     // //equation for salt
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
-    // var waterProgress = ((water/waterneeded)*100) 
+    var saltNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var saltRec = saltNeeded - (~~salt)
+    var saltProgress = ((salt/saltNeeded)*100) 
+
     // //equation for fats
-    // var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
-    // var waterRec = waterneeded - (~~water)
-    // var waterProgress = ((water/waterneeded)*100) 
+    var fatsneeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var fatsRec = fatsneeded - (~~fats)
+    var fatsProgress = ((fats/fatsneeded)*100) 
 
    
 
@@ -151,13 +152,13 @@ function planChild() {
     document.getElementById("leaveningNeeded").innerHTML= leaveningRec;
     document.getElementById("leaveningProgress").style.width= leaveningProgress += "%";
 
-    // document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
-    // document.getElementById("legumesNeeded").innerHTML= legumesRec;
-    // document.getElementById("legumesProgress").style.width= legumesProgress += "%";
+    document.getElementById("saltRecommend").innerHTML= saltNeeded;
+    document.getElementById("saltNeeded").innerHTML= saltRec;
+    document.getElementById("saltProgress").style.width= saltProgress += "%";
 
-    // document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
-    // document.getElementById("legumesNeeded").innerHTML= legumesRec;
-    // document.getElementById("legumesProgress").style.width= legumesProgress += "%";
+    document.getElementById("fatsRecommend").innerHTML= fatsneeded ;
+    document.getElementById("fatsNeeded").innerHTML= fatsRec;
+    document.getElementById("fatsProgress").style.width= fatsProgress += "%";
 
 
    };
