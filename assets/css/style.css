@@ -144,6 +144,11 @@ input[type=number] {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.inputBtm {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
 .alignbtm{
   display: flex;
   align-items: baseline;
