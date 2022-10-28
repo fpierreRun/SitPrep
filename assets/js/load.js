@@ -117,29 +117,29 @@ notApplicaple()
       function appendPlan () {
 
 
-        document.getElementById("primeLoc").innerHTML= element[i].primeLoc;
-        document.getElementById("primaryNum").innerHTML= element[i].primaryNum;
-        document.getElementById("primaryAddInfo").innerHTML= element[i].primaryAddInfo;
+        document.getElementById("primeLoc").value= element[i].primeLoc;
+        document.getElementById("primaryNum").value= element[i].primaryNum;
+        document.getElementById("primaryAddInfo").value= element[i].primaryAddInfo;
 
         
  
         // Secondary Gathering Location Info
-      document.getElementById("secondaryLoc").innerHTML= element[i].secondaryLoc;
-        document.getElementById("secondaryNum").innerHTML= element[i].secondaryNum;
-        document.getElementById("secondaryAddInfo").innerHTML= element[i].secondaryAddInfo;
+      document.getElementById("secondaryLoc").value= element[i].secondaryLoc;
+        document.getElementById("secondaryNum").value= element[i].secondaryNum;
+        document.getElementById("secondaryAddInfo").value= element[i].secondaryAddInfo;
       
         
  
        //Evacuation Location Info
-      document.getElementById("evacuationLoc").innerHTML= element[i].evacuationLoc;
-        document.getElementById("evacuationNum").innerHTML= element[i].evacuationNum;
-        document.getElementById("secondaryEvacLoc").innerHTML= element[i].secondaryEvacLoc;
+      document.getElementById("evacuationLoc").value= element[i].evacuationLoc;
+        document.getElementById("evacuationNum").value= element[i].evacuationNum;
+        document.getElementById("secondaryEvacLoc").value= element[i].secondaryEvacLoc;
     
  
        //  Emergecny contact Info
-      document.getElementById("contactName").innerHTML= element[i].contactName;
-        document.getElementById("contactNum").innerHTML= element[i].contactNum;
-        document.getElementById("contactEml").innerHTML= element[i].contactEml;
+      document.getElementById("contactName").value= element[i].contactName;
+        document.getElementById("contactNum").value= element[i].contactNum;
+        document.getElementById("contactEml").value= element[i].contactEml;
      
   
           };
@@ -158,79 +158,81 @@ notApplicaple()
     loadPlan();
    
 
-    // Edit Plan Data
-    $(".plan").on("click", "p", function() {
-       var text = $(this)
-    .text()
-    .trim();
+//     // Edit Plan Data
+//     $(".plan").on("click", "p", function() {
+//        var text = $(this)
+//     .text()
+//     .trim();
 
 
 
-    var textInput = $("<textarea>")
-    .attr('id', this.id)
-    .attr('class', this.className)
-  .val(text);
+//     var textInput = $("<textarea>")
+//     .attr('id', this.id)
+//     .attr('class', this.className)
+//   .val(text);
 
-  $(this).replaceWith(textInput);
+//   $(this).replaceWith(textInput);
  
-  textInput.trigger("focus");
-    });
+//   textInput.trigger("focus");
+//     });
 
 
-    // Saving edited data
-    $(".plan").on("blur", "textarea", function() {
+//     // Saving edited data
+//     $(".plan").on("blur", "textarea", function() {
 
-      var text = $(this)
+//       var text = $(this)
       
-  .val()
-  .trim();
+//   .val()
+//   .trim();
  
  
-  // recreate p element
-var updatedData = $("<p>")
-  .attr('id', this.id)
-    .attr('class', this.className)
-.text(text);
+//   // recreate p element
+// var updatedData = $("<p>")
+//   .attr('id', this.id)
+//     .attr('class', this.className)
+// .text(text);
 
 
 
-// replace textarea with p element
-$(this).replaceWith(updatedData);
+// // replace textarea with p element
+// $(this).replaceWith(updatedData);
 
 
 
-localStorage.removeItem("plan");
-localStorage.removeItem("editedPlan");
+// localStorage.removeItem("plan");
+// localStorage.removeItem("editedPlan");
 
-updateEdited();
+// updateEdited();
 
-    });
+//     });
 
     
           
 
 
 var updateEdited = function () {
+  
 // Primary Gathering Location Info
-          var primeLoc = document.getElementById("primeLoc").innerHTML;
-          var primaryNum = document.getElementById("primaryNum").innerHTML;
-          var primaryAddInfo = document.getElementById("primaryAddInfo").innerHTML;
+          var primeLoc = document.getElementById("primeLoc").value;
+          var primaryNum = document.getElementById("primaryNum").value;
+          var primaryAddInfo = document.getElementById("primaryAddInfo").value;
           
+
           // //Secondary Gathering Location Info
-          var secondaryLoc = document.getElementById("secondaryLoc").innerHTML;
-          var secondaryNum = document.getElementById("secondaryNum").innerHTML;
-          var secondaryAddInfo = document.getElementById("secondaryAddInfo").innerHTML;
+          var secondaryLoc = document.getElementById("secondaryLoc").value;
+          var secondaryNum = document.getElementById("secondaryNum").value;
+          var secondaryAddInfo = document.getElementById("secondaryAddInfo").value;
 
           // //Evacuation Location Info
-          var evacuationLoc = document.getElementById("evacuationLoc").innerHTML;
-          var evacuationNum = document.getElementById("evacuationNum").innerHTML;
-          var evacuationLoc = document.getElementById("secondaryEvacLoc").innerHTML;
+          var evacuationLoc = document.getElementById("evacuationLoc").value;
+          var evacuationNum = document.getElementById("evacuationNum").value;
+          var secondaryEvacLoc = document.getElementById("secondaryEvacLoc").value;
 
          
           // //  //Emergecny contact Info
-          var contactName = document.getElementById("contactName").innerHTML;
-          var contactNum = document.getElementById("contactNum").innerHTML;
-          var contactEml = document.getElementById("contactEml").innerHTML;
+          var contactName = document.getElementById("contactName").value;
+          var contactNum = document.getElementById("contactNum").value;
+          var contactEml = document.getElementById("contactEml").value;
 
   
   
@@ -260,6 +262,7 @@ var updateEdited = function () {
   };
 
   editedPlan.push(formDataObj);
+  console.log(formDataObj)
   
   saveData()
   
@@ -307,6 +310,10 @@ var updateEdited = function () {
 
 
   var saveData = function () {
+
+    localStorage.removeItem("editedPlan");
+    localStorage.removeItem("plan");
+
     localStorage.setItem("editedPlan", JSON.stringify(editedPlan))
 
     loadPlan();

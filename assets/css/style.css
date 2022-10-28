@@ -139,6 +139,39 @@ input[type="button"] {
   border-color: var(--primary-color);
 }
 
+input[type=number] {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.inputBtm {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.alignbtm{
+  display: flex;
+  align-items: baseline;
+
+}
+.recGrn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.recBlu{
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+} 
+
+.txtGrn{
+  color: var(--primary-color);
+}
+
+.txtBlu{
+  color: var(--secondary-color);
+}
+
 .button1 {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
@@ -168,7 +201,7 @@ input[type="button"] {
   font-family: "Material Icons";
   align-self: center;
   margin: left;
-  font-size: 35px !important;
+  font-size: 40px !important;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -181,6 +214,10 @@ input[type="button"] {
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+
+
+
+
 
 @media print {
   .container {

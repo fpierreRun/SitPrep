@@ -22,16 +22,17 @@
 
 <div>
     <ul class="nav nav-pills">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link  " href="#">About Us</a>
-        </li>
+        </li> -->
+
         <li class="nav-item">
           <a class="nav-link text-white" href="./plan.html">View Plan</a>
         </li>
 
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="./foodstoragecalc.html">Calculators</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link " href="./storageCalc.html">Food Storage</a>
+        </li>
 
         <!-- <li class="nav-item">
           <a class="nav-link " href="#">Log In</a>
@@ -80,81 +81,78 @@
 
         
         
-        <main class="container"  >
+    <main class="container">
 
-        <div>
-            <p class="h3">Gathering Place</p>
-            <hr class="my-4">
-            <p class="text-muted">It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
-            </div> 
+          <div>
+              <p class="h3">Gathering Place</p>
+              <hr class="my-4">
+              <p class="text-muted">It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
+              </div> 
+
+    
+          <div>
+                  <label class="font-weight-bold "  >Primary Location</label><br>
+                  <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+                
+                  <div width="30">
+                  <input class="inputBtm border-bottom w-75" id="primeLoc" onblur="updateEdited()"></p>
+                </div>
+                </ul>
+              
+                </div>
+
+              <div>
+                  <label class="font-weight-bold">Primary Location Phone Number</label><br>
+                  
+                  <div width="30">
+                    <input class="inputBtm border-bottom w-75" id="primaryNum" onblur="updateEdited()"></p>
+                  </div>
+                  
+              </div>
+
+      <div>
+          <label class="font-weight-bold">Additional Information About Location (Optional)</label><br>
+          
+          <div width="30">
+            <input class="inputBtm border-bottom  w-75" id="primaryAddInfo" onblur="updateEdited()"></p>
+          </div>
+          
+      </div>
+    
 
   
-    <div>
-        <label class="font-weight-bold "  >Primary Location</label><br>
-        <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
-       
-        <div width="30">
-        <p class="list-group-flush border-bottom border-info w-75" id="primeLoc"></p>
-      </div>
-      </ul>
-    
-      </div>
-
-    <div>
-        <label class="font-weight-bold">Primary Location Phone Number</label><br>
-        
-        <div width="30">
-          <p class="list-group-flush border-bottom border-info w-75" id="primaryNum"></p>
-        </div>
-        
-    </div>
-
-    <div>
-        <label class="font-weight-bold">Additional Information About Location (Optional)</label><br>
-        
-        <div width="30">
-          <p class="list-group-flush border-bottom border-info w-75" id="primaryAddInfo"></p>
-        </div>
-        
-    </div>
-    
-
-  
-</div>  
+    </div>  
         
                     <!--Secondary Location-->
                     
-                      <div >
-                          <label class="font-weight-bold" >Secondary Location</label><br>
-                          
-                          <div width="30">
-                            <p class="list-group-flush border-bottom border-info w-75" id="secondaryLoc"> </p>
-                          </div>
-                          
-                        
-                      </div>
+        <div >
+            <label class="font-weight-bold" >Secondary Location</label><br>
+            
+            <div width="30">
+              <input class="inputBtm border-bottom w-75" id="secondaryLoc" onblur="updateEdited()"> </p>
+            </div>
+            
+          
+        </div>
 
-                      <div>
-                          <label class="font-weight-bold" >Secondary Location Phone Number</label><br>
-                          
-                          <div width="30">
-                            <p class="list-group-flush border-bottom border-info w-75" id="secondaryNum"> </p>
-                          </div>
-                          
-                      </div>
+        <div>
+            <label class="font-weight-bold" >Secondary Location Phone Number</label><br>
+            
+            <div width="30">
+              <input class="inputBtm border-bottom w-75" id="secondaryNum" onblur="updateEdited()"> </p>
+            </div>
+            
+        </div>
 
                       <div >
                           <label class="font-weight-bold" >Additional Information About Location (Optional)</label><br>
                           
                           <div width="30">
-                            <p class=" w-75" id="secondaryAddInfo"></p>
+                            <input class=" w-75" id="secondaryAddInfo" onblur="updateEdited()"></p>
                           </div>
                       </div>
-                  </Main>
+        </Main>
                           
-
-
-
 
           <!--Evacuation page-->
 
@@ -172,7 +170,7 @@
                   <label class="font-weight-bold">Primary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="evacuationLoc"></p>
+                    <input class="bg-light inputBtm border-bottom w-75" id="evacuationLoc" onblur="updateEdited()"></p>
                   </div>
               </div>
               
@@ -180,7 +178,7 @@
                   <label class="font-weight-bold">Primary Evacuation Number</label><br>
                   
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="evacuationNum"></p>
+                    <input class="bg-light inputBtm border-bottom w-75" id="evacuationNum" onblur="updateEdited()"></p>
                   </div>
               </div>
               
@@ -188,7 +186,7 @@
                   <label class="font-weight-bold" >Secondary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="secondaryEvacLoc"></p>
+                    <input class="bg-light inputBtm border-bottom w-75" id="secondaryEvacLoc" onblur="updateEdited()"></p>
                   </div>
               </div>
                   
@@ -214,7 +212,7 @@
               <div >
                   <label class="font-weight-bold">Primary Contact</label><br>
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="contactName"></p>
+                    <input class="inputBtm border-bottom w-75" id="contactName" onblur="updateEdited()"></p>
                   </div>
               </div>
               
@@ -222,7 +220,7 @@
                   <label class="font-weight-bold">Contact Phone Number</label><br>
                   
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="contactNum"></p>
+                    <input class="inputBtm border-bottom w-75" id="contactNum" onblur="updateEdited()"></p>
                   </div>
               </div>
               
@@ -230,7 +228,7 @@
                   <label class="font-weight-bold">Contact Email Address</label><br>
                 
                   <div width="30">
-                    <p class="list-group-flush border-bottom border-info w-75" id="contactEml"></p>
+                    <input class="inputBtm border-bottom w-75" id="contactEml" onblur="updateEdited()"></p>
                   </div>
               </div>
               

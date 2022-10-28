@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,300,0,200" />
+
+    
+
+    
+
+<body>
+    
+    <section class="jumbotron">
+
+        <div class="container-fluid">
+
+        <main class="calc">
+
+           
+      
+            <div class="py-2">
+                    
+                    <label class="font-weight-bold pr-5"  >How many weeks of supply do want to store?</label><br>
+
+                    <div width="30" class="d-flex ">
+
+                        <input oninput="calculate()" class=" w-25 bg-white form-control border-white text-center" id="weeks" type="number" value="1"></input>
+                        <label class=" pl-2 mt-2" >week(s)</label><br>
+                    </div>
+                 
+            </div>
+
+            <div class="py-2">
+                <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+                <label class="font-weight-bold pr-5" >How many adults are you planning for (12 and older)?</label><br>
+
+                <div width="30" class="d-flex ">
+
+                    <input id="adults" class="w-25 bg-white form-control border-white text-center " type="number" value="1" oninput="calculate()" ></input>
+                    <label class=" pl-2 mt-2" >adult(s)</label><br>
+                </div>
+             
+        </div>
+
+           
+                    <div class="py-3 d-flex">
+                    <input  type="checkbox" id="addSecond" name="add" value="Secondary" onclick="planChild()">
+                    <label class="pl-2" for="vehicle1"> Check the box if you are also planning for Children</label><br>
+                </div>
+
+                <div style="display: none;"id="planChild" >
+                    <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+                    <label class="font-weight-bold pr-5"  >How many children are you planning for (Under 12)?</label><br>
+
+                    <div width="30" class="d-flex ">
+
+                        <input class="w-25 bg-white form-control border-white text-center" id="kids" type="number" value="0" oninput="calculate()" ></input>
+                        <label class=" pl-3 mt-2" >kid(s)</label><br>
+                    </div>
+                
+            </div>
+        
+    </main>
+
+<!--determine whats in storage inputs begins-->
+        
+            <main class="calc py-2 "> 
+                <hr class="my-4">
+                
+                    <p class="h4 pb-4">What do you already have in storage?</p>
+             
+                <!--First row of storgae needed-->
+                <div class="rounded shadow bg-light ">
+                        <div class="px-3 row alignbtm">
+                            
+
+                            <div width="30" class="col-lg-4 ">
+
+                                <label class=" pt-4 h6" >WATER</label><br>
+                                <div class="d-flex ">
+                                <input class="w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                                <label class=" pl-2 mt-2" >gal</label><br>
+                                </div>
+                            </div>
+
+                            <div width="30"class="col-lg-4 " >
+
+                                <label class=" pt-4 h6" >GRAIN </label><br>
+                                <span class=" font-weight-light">Includes wheat, white rice, oats, corn, barley, pasta, etc.</span>
+                                <div class="d-flex ">
+                                <input class="w-50  form-control  text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
+                                <label class=" pl-2 mt-2" >lb</label><br>
+                                </div>
+                            </div>
+
+                            <div width="30" class="col-lg-4" >
+
+                                <label class=" pt-4 h6">LEGUMES</label><br>
+                                <span class=" font-weight-light">Includes dried beans, split peas, lentils, nuts, etc.</span>
+                                
+                                <div class="d-flex ">
+                                <input class="w-50 bg-white form-control text-center" id="legumes" type="number" value="0" oninput="calculate()"></input>
+                                <label class=" pl-2 mt-2" >lb</label><br>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                <!--secomd row of storgae needed-->
+                <div class="p-3 row  alignbtm">
+                            
+
+                    <div width="30" class="col-lg-4 ">
+
+                        <label class=" h6" >DAIRY PRODUCTS</label><br>
+                        <span class=" font-weight-light">Includes powdered milk, cheese powder, canned cheese, etc.</span>
+                        <div class="d-flex align-bottom">
+                        <input class="w-50 bg-white form-control  text-center" id="dairy" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2 mt-2" >lb</label><br>
+                        </div>
+                    </div>
+
+                    <div width="30"class="col-lg-4" >
+
+                        <label class=" pt-4 h6" >SUGARS</label><br>
+                        <span class=" font-weight-light">Includes white sugar, brown sugar, syrup, molasses, honey, etc.</span>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control  text-center" id="sugars" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2 mt-2" >lb</label><br>
+                        </div>
+                    </div>
+
+                    <div width="30" class="col-lg-4" >
+
+                        <label class=" pt-4 h6" >LEAVENING AGENTS</label><br>
+                        <span class=" font-weight-light">Includes yeast, baking powder, powdered eggs, etc. </span>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control  text-center" id="leavening" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2 mt-2" >lb</label><br>
+                        </div>
+                    </div>
+                
+                </div>
+                <!--third row of storgae needed-->
+                <div class="p-3  row alignbtm">
+                            
+
+                    <div width="30" class="col-lg-4">
+
+                        <label class=" h6" >SALT</label><br>
+                        <span class=" font-weight-light">Includes table salt, sea salt, soy sauce, bouillon, etc.</span>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control  text-center" id="salt" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2 mt-2" >lb</label><br>
+                        </div>
+                    </div>
+
+                    <div width="30"class="col-lg-4" >
+
+                        <label class=" pt-4 h6" >FATS</label><br>
+                        <span class=" font-weight-light">Includes vegetable oils, shortening, canned butter, etc.</span>
+                        <div class="d-flex ">
+                        <input class="w-50 bg-white form-control  text-center" id="fats" type="number" value="0" oninput="calculate()"></input>
+                        <label class=" pl-2 mt-2" >lb</label><br>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+
+
+        </main>
+<!--determine whats in storage inputs ends-->
+<hr class="my-4">
+<p class="h4 pb-1">Recommended Food Storage Amount Based upon above inputs</p>
+<p class="pb-2">Each category below gives you a variety of choices and a total weight. You 
+    should store the items you like to eat and know how to use. Weights 
+    (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>
+<!--Remmonded amounts begin-->
+<main class="bg-white rounded shadow">
+
+    <!--Water Dashboard-->
+    <div class="container py-2" >
+        
+        <div  class=" text-dark justify-content-start d-flex row">
+            
+            <div class="col-lg-2 ">
+            <p class="p-1 h4 pl-3">WATER</p>
+            <span class="material-symbols-rounded material-icons pl-4">
+                water_drop
+                </span>
+           
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h3>
+            </div>
+
+            
+        </div>
+
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
+        </div>
+    </div>
+
+     <!--Grain Dashboard-->
+     <div class="container py-2 bg-light">
+
+        <div  class=" text-dark justify-content-start d-flex row">
+             <div class="col-lg-2">
+                 <p class="p-1 h4 pl-3">GRAIN</p>
+                 <span class="material-symbols-rounded material-icons pl-4">
+                    grain
+                    </span>
+             </div>
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="grainRecommend">8</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary"  id="grainNeeded">8</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="grainProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Legumes Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">LEGUMES</p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    eco
+                    </span>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="legumesRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary" id="legumesNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="legumesProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Dairy Dashboard-->
+    <div class="container py-2 bg-light">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">DAIRY</p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    local_drink
+                    </span>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="dairyRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary" id="dairyNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="dairyProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+
+    <!--Sugars Dashboard-->
+    <div class="container py-2">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">SUGAR</p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    cake
+                    </span>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="sugarsRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary"  id="sugarsNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="sugarsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Leavening Dashboard-->
+    <div class="container py-2 bg-light">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">LEAVENING </p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    breakfast_dining
+                    </span>
+            </div>
+
+            <div class="col-5">
+                <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="leaveningRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary"  id="leaveningNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="leaveningProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+    <!--Salt Dashboard-->
+    <div class="container py-2 bg-light">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">SALT</p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    multicooker
+                    </span>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="saltRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary"  id="saltNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="saltProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+
+     <!--Fats Dashboard-->
+     <div class="container py-2 bg-light">
+        <div  class=" text-dark justify-content-start d-flex row ">
+            <div class="col-lg-2">
+                <p class="p-1 h4 pl-3">FATS</p>
+                <span class="material-symbols-rounded material-icons pl-4">
+                    egg_alt
+                    </span>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
+                <h3 class="  pl-3" ><span  id="fatsRecommend">1</span> lb</h3>
+            </div>
+
+            <div class="col-lg-5">
+                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                <h3 class="  pl-3"  value="1"><span class="text-primary"  id="fatsNeeded">1</span> lb</h3>
+            </div>
+
+        </div>
+
+        
+        <div class="progress bg-primary"style="width: 100%">
+            <div id="fatsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+        </div>
+    
+    </div>
+</main>
+
+
+<!--Recommended amounts end-->
+
+
+    </div>  
+</section>
+
+    
+<!-- sCripts for html-->
+   
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./js/calc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+<!-- Footer begans-->
+
+<footer id="Contact-me" class="bio-flex bio-font p-3 bg-dark ">
+    <h2></h2>
+      <div>
+        <a href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
+      <div class="text-light">
+        &copy; 2022 SitPrep, Inc.
+      </div>
+      </div>
+    
+    <!-- <h1 class="bio-border">Contact me</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="">208.312.4183</a>
+            </li>
+            <li>
+                <a href="">francisd.plouis@gmail.com</a>    
+            </li>
+            <li>
+                <a href="">GitHub</a>
+            </li>
+            <li>
+                <a href="">Twitter</a>
+            </li> 
+            <li>
+                <a href="">spotify</a>
+            </li> 
+        </ul> -->
+    </nav>
+</footer>
+
+</body>

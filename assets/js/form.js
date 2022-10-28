@@ -49,16 +49,12 @@ function contactPage(){
 
 function saveForm (event){
   event.preventDefault();
-
-    //got to View Plan
-    window.location.href="./plan.html";
-
    
           //Primary Gathering Location Info
           var primeLoc = document.querySelector("input[name='primeLoc']").value;
           var primaryNum = document.querySelector("input[name='primeNum']".value);
           var primaryAddInfo = document.querySelector("textarea[name='primeInfo']").value;
-          console.log(primaryNum);
+          
           //Secondary Gathering Location Info
           var secondaryLoc = document.querySelector("input[name='secLoc']").value;
           var secondaryNum = document.querySelector("input[name='secNum']").value;
@@ -91,7 +87,7 @@ function saveForm (event){
           //Evacuation Location Info
           evacuationLoc: evacuationLoc,
           evacuationNum: evacuationNum,
-            secondaryEvacLoc: secondaryEvacLoc,
+          secondaryEvacLoc: secondaryEvacLoc,
 
           //  Emergecny contact Info
           contactName: contactName,
@@ -101,7 +97,7 @@ function saveForm (event){
       };
       
       plan.push(formDataObj);
-      
+      console.log(formDataObj)
 
       saveData()
       // };
@@ -110,7 +106,7 @@ function saveForm (event){
           // event.preventDefault();
           // var location = document.querySelector("input[name='AddInfo']");
       // console.log(event);
-      // console.log(saveForm)
+      
 };
 
 
@@ -203,9 +199,14 @@ function initMap() {
 //beggining of save data in local storage
 
 var saveData = function () {
+
+  // localStorage.removeItem("editedPlan");
+  // localStorage.removeItem("plan");
+
   localStorage.setItem("plan", JSON.stringify(plan))
 
-  console.log(plan)
+ //got to View Plan
+ window.location.href="./plan.html";
 };
 
   
