@@ -31,6 +31,7 @@ function locPage(){
  ;}
 
 };
+
 //End
 
 //begin
@@ -97,7 +98,7 @@ function saveForm (event){
       };
       
       plan.push(formDataObj);
-      console.log(formDataObj)
+      
 
       saveData()
       // };
@@ -122,7 +123,7 @@ function expandSecondary() {
         document.getElementById("secondLocation").style.display = "none";
    ;}
 ;}
-
+expandSecondary();
 
 // //function for address field
 
@@ -200,8 +201,8 @@ function initMap() {
 
 var saveData = function () {
 
-  // localStorage.removeItem("editedPlan");
-  // localStorage.removeItem("plan");
+  localStorage.removeItem("editedPlan");
+  localStorage.removeItem("plan");
 
   localStorage.setItem("plan", JSON.stringify(plan))
 
