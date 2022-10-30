@@ -68,9 +68,13 @@ function planChild() {
 
  var calculate = function () {
 
-    weeks = document.getElementById("weeks").value
+    
+    days = document.getElementById("days").value
+    weeks = document.getElementById("weeks").value*7
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
+    
+    
 
     water = document.getElementById("water").value
     grain = document.getElementById("grain").value
@@ -83,43 +87,49 @@ function planChild() {
 
 
     
-    //equation for water
-    var waterneeded =  Math.ceil(((~~adults*2.142) + (~~kids*2.142)) * (~~weeks*7));
+    
+    
+    
+    var waterneeded = ((~~adults*2.142) + (~~kids*2.142)) * ((~~days) + (~~weeks));
     var waterRec = waterneeded - (~~water)
     var waterProgress = ((water/waterneeded)*100) 
+
+    
+
+    
    
     //equation for grain
-    var grainNeeded =  Math.ceil(((~~adults*1.14) + (~~kids*0.71)) * (~~weeks*7));
+    var grainNeeded =  ((~~adults*1.14) + (~~kids*0.71))* ((~~days) + (~~weeks));
     var grainRec = grainNeeded - (~~grain)
     var grainProgress = ((grain/grainNeeded)*100)
 
     //equation for Legumes
-    var legumesNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var legumesNeeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var legumesRec = legumesNeeded - (~~legumes)
     var legumesProgress = ((legumes/legumesNeeded)*100) 
 
     //equation for dairy
-    var dairyNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var dairyNeeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var dairyRec = dairyNeeded - (~~dairy)
     var dairyProgress = ((dairy/dairyNeeded)*100)
 
     // //equation for sugars
-    var sugarsNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var sugarsNeeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var sugarsRec = sugarsNeeded - (~~water)
     var sugarsProgress = ((sugars/sugarsNeeded)*100) 
 
     //equation for leavening agents
-    var leaveningNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var leaveningNeeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var leaveningRec = leaveningNeeded - (~~leavening)
     var leaveningProgress = ((leavening/leaveningNeeded)*100) 
 
     // //equation for salt
-    var saltNeeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var saltNeeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var saltRec = saltNeeded - (~~salt)
     var saltProgress = ((salt/saltNeeded)*100) 
 
     // //equation for fats
-    var fatsneeded =  Math.ceil(((~~adults*.14) + (~~kids*.14)) * (~~weeks*7));
+    var fatsneeded =  ((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks));
     var fatsRec = fatsneeded - (~~fats)
     var fatsProgress = ((fats/fatsneeded)*100) 
 

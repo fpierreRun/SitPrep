@@ -73,7 +73,10 @@
 
                     <div width="30" class="d-flex ">
 
-                        <input oninput="calculate()" class=" w-25 bg-white form-control border-white text-center" id="weeks" type="number" value="1"></input>
+                        <input oninput="calculate()" style= width:10% class=" bg-white form-control border-white text-center" id="days" type="number" value="0"></input>
+                        <label class=" pl-2 pr-4 mt-2" >day(s)</label><br>
+
+                        <input oninput="calculate()" style= width:10% class=" bg-white form-control border-white text-center" id="weeks" type="number" value="1"></input>
                         <label class=" pl-2 mt-2" >week(s)</label><br>
                     </div>
                  
@@ -85,7 +88,7 @@
 
                 <div width="30" class="d-flex ">
 
-                    <input id="adults" class="w-25 bg-white form-control border-white text-center " type="number" value="1" oninput="calculate()" ></input>
+                    <input id="adults" style= width:10% class=" bg-white form-control border-white text-center " type="number" value="1" oninput="calculate()" ></input>
                     <label class=" pl-2 mt-2" >adult(s)</label><br>
                 </div>
              
@@ -103,7 +106,7 @@
 
                     <div width="30" class="d-flex ">
 
-                        <input class="w-25 bg-white form-control border-white text-center" id="kids" type="number" value="0" oninput="calculate()" ></input>
+                        <input style= width:10% class="bg-white form-control border-white text-center" id="kids" type="number" value="0" oninput="calculate()" ></input>
                         <label class=" pl-3 mt-2" >kid(s)</label><br>
                     </div>
                 
@@ -123,16 +126,16 @@
                         <div class="px-3 row alignbtm">
                             
 
-                            <div width="30" class="col-lg-4 ">
+                            <!-- <div width="30" class="col-lg-4 ">
 
                                 <label class=" pt-4 h6" >WATER</label><br>
                                 <div class="d-flex ">
                                 <input class="w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
                                 <label class=" pl-2 mt-2" >gal</label><br>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div width="30"class="col-lg-4 " >
+                            <!-- <div width="30"class="col-lg-4 " >
 
                                 <label class=" pt-4 h6" >GRAIN </label><br>
                                 <span class=" font-weight-light">Includes wheat, white rice, oats, corn, barley, pasta, etc.</span>
@@ -140,7 +143,7 @@
                                 <input class="w-50  form-control  text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
                                 <label class=" pl-2 mt-2" >lb</label><br>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div width="30" class="col-lg-4" >
 
@@ -229,7 +232,7 @@
 <main class="bg-white rounded shadow">
 
     <!--Water Dashboard-->
-    <div class="container py-2" >
+    <div class=" py-2" >
         
         <div  class=" text-dark justify-content-start d-flex row">
             
@@ -241,40 +244,66 @@
            
             </div>
 
-            <div class="col-lg-5">
-                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                <h3 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h3>
+            <div  class="col-lg-3 ">
+
+                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                <div class="d-flex ">
+                <input class=" h4 w-25  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                <label class="h4 pl-2 mt-1" >gal</label><br>
+                </div>
             </div>
 
-            <div class="col-lg-5">
+
+            <div class="col-lg-3">
+                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                <h4 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h4>
+            </div>
+
+            <div class="col-lg-4">
                 <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                <h3 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h3>
+                <h4 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h4>
             </div>
 
             
         </div>
 
-        <div class="progress bg-primary"style="width: 100%">
+        <div class="progress bg-primary "style="width: 100%" >
             <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
         </div>
     </div>
 
      <!--Grain Dashboard-->
-     <div class="container py-2 bg-light">
+     <div class=" bg-light px-4">
 
         <div  class=" text-dark justify-content-start d-flex row">
-             <div class="col-lg-2">
-                 <p class="p-1 h4 pl-3">GRAIN</p>
-                 <span class="material-symbols-rounded material-icons pl-4">
+             <div class="col-lg-2 ">
+                 
+                <div class="d-flex">
+                 <p class=" h4 ">GRAIN</p>
+                 <span class="material-symbols-rounded material-icons pl-1">
                     grain
                     </span>
+                </div>
+
+                    <p class=" font-weight-light " >Includes wheat, white rice, oats, corn, barley, pasta, etc.</p>
              </div>
-            <div class="col-lg-5">
+
+             <div class="col-lg-3 " >
+
+                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                <div class="d-flex ">
+                <input class="w-50  form-control  text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
+                <label class=" pl-2 mt-2" >lb</label><br>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3">
                 <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
                 <h3 class="  pl-3" ><span  id="grainRecommend">8</span> lb</h3>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
                 <h3 class="  pl-3"  value="1"><span class="text-primary"  id="grainNeeded">8</span> lb</h3>
             </div>
