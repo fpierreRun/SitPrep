@@ -36,6 +36,10 @@
           <a class="nav-link text-white" href="./storageCalc.html">Food Storage</a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="./feedback.html">Give Feedback</a>
+          </li>
+
         <!-- <li class="nav-item">
           <a class="nav-link " href="#">Log In</a>
         </li> -->
@@ -44,6 +48,8 @@
 </nav>
 
 </header>
+<!--header ends-->
+
 
 <body>
     
@@ -51,85 +57,89 @@
 
         <div class="container-fluid">
 
-        <main class="calc">
+            <!--Intro begins-->
+             <main class="calc ">
 
-            <div>
-                <p class="h1">Food Storage Calculator</p>
-                <hr class="my-4">
-                <p class="text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
-                    1 week is a 7 day supply, but you may calculate for any other number of weeks or days. Enter the number of days/weeks of storage you want, 
-                    as well as the number of adults and children in your family (Children 12 and over count as adults because they tend to eat 
-                    full portions). </p>
+                    <div>
+                        <p class="h1">Food Storage Calculator</p>
+                        <hr class="my-4">
+                        <p class="text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
+                            1 week is a 7 day supply, but you may calculate for any other number of weeks or days. Enter the number of days/weeks of storage you want, 
+                            as well as the number of adults and children in your family (Children 12 and over count as adults because they tend to eat 
+                            full portions). </p>
 
-                <p class="text-muted">The recommended and amount needed quantities will automatically update in the bottom pane based on your inputs.
-                    You will also have the option to input the amount you already have stored which will affect the amount needed field. Always rotate 
-                    your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
-               </p>
-                </div> 
+                        <p class="text-muted">The recommended and amount needed quantities will automatically update in the bottom pane based on your inputs.
+                            You will also have the option to input the amount you already have stored which will affect the amount needed field. Always rotate 
+                            your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
+                        </p>
+                    </div> 
   
-                
-      
-            <div class="py-2">
-                    
-                    <label class="font-weight-bold pr-5"  >How many weeks of supply do want to store?</label><br>
+   
 
-                    <div width="30" class="d-flex ">
 
-                        <input oninput="calculate()" style= width:25% class=" bg-white form-control border-white text-center" id="days" type="number" value="0" min="0" ></input>
-                        <label class=" pl-2 pr-4 mt-2" >day(s)</label><br>
+                    <!--dowload results-->
 
-                        <input oninput="calculate()" style= width:25% class=" bg-white form-control border-white text-center" id="weeks" type="number" value="1" min="0"></input>
-                        <label class=" pl-2 mt-2" >week(s)</label><br>
+                    <div class=" text-center justify-content-center container-fluid d-flex" style="padding:20px;" id="gatherBkg" >
+                        <input type="button"  id="rep" value="Download My Results" class="btn btn-info btn_print btn-dark " >
                     </div>
-                 
+             </main>
+            <!--Intro ends-->
+
+          
+
+ <!--Goals begins-->
+
+    <main class="bg-white rounded shadow " id="downloadPrint">
+    <div class="p-4">
+
+        <p class="h4 pt-4">Input Goals For Amount </p>  
+  <!--length of time begins-->
+        <label class=" pr-5">How many days and weeks of supply do want to store?</label><br>
+        <div class="d-flex row">
+
+            <div class=" d-flex col-lg-3">
+                <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="days" type="number" value="0" min="0" ></input>
+                <label class="h5 pl-2 pr-4 mt-2">day(s)</label><br>
             </div>
 
-            <div class="py-2">
-                <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
-                <label class="font-weight-bold pr-5" >How many adults are you planning for (12 and older)?</label><br>
-
-                <div width="30" class="d-flex ">
-
-                    <input id="adults" style= width:25% class=" bg-white form-control border-white text-center " type="number" value="1" oninput="calculate()" min="0"></input>
-                    <label class=" pl-2 mt-2" >adult(s)</label><br>
-                </div>
-             
+            <div class="d-flex col-lg-3 ">
+                <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="weeks" type="number" value="1" min="0"></input>
+                <label class="h5 pl-2 mt-2">week(s)</label><br>
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-3"></div>
         </div>
+        <!--length of time end-->
 
-           
-                    <div class="py-3 d-flex">
-                    <input  type="checkbox" id="addSecond" name="add" value="Secondary" onclick="planChild()" >
-                    <label class="pl-2" for="vehicle1"> Check the box if you are also planning for Children</label><br>
+        <!--people input begins-->
+        <label class=" pr-5 pt-4" >How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
+
+        <div class="d-flex row">
+
+                <div  class="d-flex col-lg-3">
+
+                    <input style= width:25% class="bg-white form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
+                    <label class="h5 pl-3 mt-2" >kid(s)</label><br>
                 </div>
 
-                <div style="display: none;"id="planChild" >
-                    <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
-                    <label class="font-weight-bold pr-5"  >How many children are you planning for (Under 12)?</label><br>
-
-                    <div width="30" class="d-flex ">
-
-                        <input style= width:25% class="bg-white form-control border-white text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
-                        <label class=" pl-3 mt-2" >kid(s)</label><br>
-                    </div>
-                
-            </div>
-        
-    
-
-                            
-
-                            
-                               
-                
            
-<!--determine whats in storage inputs ends-->
-<hr class="my-4">
-<p class="h4 pb-1">Recommended Food Storage Amount Based upon above inputs</p>
-<p class="pb-2">Each category below gives you a variety of choices and a total weight. You 
+                 <div class="d-flex col-lg-3">
+                    <input id="adults" style= width:25% class="  form-control border-success text-center " type="number" value="1" oninput="calculate()" min="0"></input>
+                    <label class="h5 pl-2 mt-2" >adult(s)</label><br>
+                </div> 
+
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3"></div> 
+       </div> 
+        <!--people input ends-->
+</div>
+ <!--Goal ends-->
+ <hr class="my-4">
+ <!--REcommedation begins-->
+    <p class="h4 py-2 px-4">Recommended Food Storage Amount Based upon above inputs</p>
+    <p class="pb-2 px-4">Each category below gives you a variety of choices and a total weight. You 
     should store the items you like to eat and know how to use. Weights 
-    (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>
-<!--Remmonded amounts begin-->
-<main class="bg-white rounded shadow downloadResults">
+    (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>    
 
     <!--Water Dashboard-->
     <div class=" p-4" >
@@ -139,11 +149,11 @@
             <div class="col-lg-2 ">
 
                 <div class="d-flex">
-            <p class="h4 pl-3">WATER</p>
-            <span class="material-symbols-rounded material-icons ">
-                water_drop
-                </span>
-            </div>
+                    <p class="h4 pl-3">WATER</p>
+                    <span class="material-symbols-rounded material-icons ">
+                        water_drop
+                        </span>
+                 </div>
            
             </div>
 
@@ -151,8 +161,8 @@
 
                 <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
                 <div class="d-flex pl-3">
-                <input class=" h4 w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
-                <label class="h4 pl-2 mt-1" >gal</label><br>
+                    <input class=" h4 w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                    <label class="h4 pl-2 mt-1" >gal</label><br>
                 </div>
             </div>
 
@@ -170,10 +180,10 @@
             
         </div>
 
-        <div class="progress bg-primary "style="width: 100%" >
-            <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
-        </div>
-    </div>
+            <div class="progress bg-primary "style="width: 100%" >
+                <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
+            </div>
+       
 
      <!--Grain Dashboard-->
      <div class=" bg-light p-4">
@@ -446,10 +456,10 @@
             <div class="col-lg-2">
 
                 <div class="d-flex">
-                <p class=" h4 pl-3">FATS</p>
-                <span class="material-symbols-rounded material-icons pl-1">
-                    egg_alt
-                    </span>
+                        <p class=" h4 pl-3">FATS</p>
+                        <span class="material-symbols-rounded material-icons pl-1">
+                            egg_alt
+                            </span>
                 </div>
                 <p class=" font-weight-light">Includes vegetable oils, shortening, canned butter, etc.</p>
             </div>
@@ -458,8 +468,8 @@
 
                 <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
                 <div class="d-flex pl-3">
-                <input class="bg-light h4 w-50  form-control text-center" id="fats" type="number" value="0" oninput="calculate()"></input>
-                <label class="h4 pl-2 mt-1" >lb</label><br>
+                    <input class="bg-light h4 w-50  form-control text-center" id="fats" type="number" value="0" oninput="calculate()"></input>
+                    <label class="h4 pl-2 mt-1" >lb</label><br>
                 </div>
             </div>
 
@@ -483,11 +493,11 @@
     </div>
 </main>
 
-<div class="pt-5 text-center justify-content-center container-fluid d-flex" style="padding:20px;" id="gatherBkg" >
-    <input type="button"  id="rep" value="Download My Results" class="btn btn-info btn_print btn-dark " >
-</div>
+            <div class="pt-5 text-center justify-content-center container-fluid d-flex" style="padding:20px;" id="gatherBkg" >
+                <input type="button"  id="rep" value="Download My Results" class="btn btn-info btn_print btn-dark " >
+            </div>
 
-<!--Recommended amounts end-->
+            <!--Recommended amounts end-->
 
 
     </div>  
