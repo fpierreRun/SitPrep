@@ -174,3 +174,40 @@ console.log(waterneeded)
  };
 
  
+     //download PDF code
+
+     $(document).ready(function($) 
+     { 
+   
+       $(document).on('click', '.btn_print', function(event) 
+       {
+         event.preventDefault();
+   
+         //credit : https://ekoopmans.github.io/html2pdf.js
+         
+         var element = document.getElementById('downloadResults'); 
+   
+         
+   
+         //more custom settings
+         var opt = 
+         {
+           margin:     0.25,
+           filename:     'My_Plan_.pdf',
+           image:        { type: 'pdf', quality: 0.98 },
+           html2canvas:  { scale: 2 },
+           jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+         };
+   
+         // New Promise-based usage:
+         html2pdf().set(opt).from(element).save();
+   
+         // Avoid page-breaks on all elements, and add one before #page2el.
+           html2pdf().set({
+             pagebreak: { mode: 'avoid-all', before: '#page2el' }
+           });
+   
+       });
+   
+     });
+  //download PDF code ends
