@@ -71,6 +71,7 @@ function planChild() {
     
     days = document.getElementById("days").value
     weeks = document.getElementById("weeks").value*7
+    years = document.getElementById("years").value*365
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
     
@@ -90,44 +91,44 @@ function planChild() {
     
     
     //equation for water
-    var waterneeded = (((~~adults*2.142) + (~~kids*2.142)) * ((~~days) + (~~weeks))).toFixed(2);
+    var waterneeded = (((~~adults*2.142) + (~~kids*2.142)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var waterRec = (waterneeded - (~~water)).toFixed(2)
     var waterProgress = ((water/waterneeded)*100).toFixed(2)
 
 console.log(waterneeded)
 
     //equation for grain
-    var grainNeeded =  (((~~adults*1.14) + (~~kids*0.71))* ((~~days) + (~~weeks))).toFixed(2);
+    var grainNeeded =  (((~~adults*1.14) + (~~kids*0.71))* ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var grainRec = (grainNeeded - (~~grain)).toFixed(2)
     var grainProgress = ((grain/grainNeeded)*100).toFixed(2)
 
     //equation for Legumes
-    var legumesNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var legumesNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var legumesRec = (legumesNeeded - (~~legumes)).toFixed(2)
     var legumesProgress = ((legumes/legumesNeeded)*100).toFixed(2) 
 
     //equation for dairy
-    var dairyNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var dairyNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var dairyRec = (dairyNeeded - (~~dairy)).toFixed(2)
     var dairyProgress = ((dairy/dairyNeeded)*100).toFixed(2)
 
     // //equation for sugars
-    var sugarsNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var sugarsNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var sugarsRec = (sugarsNeeded - (~~water)).toFixed(2)
     var sugarsProgress = ((sugars/sugarsNeeded)*100).toFixed(2) 
 
     //equation for leavening agents
-    var leaveningNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var leaveningNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var leaveningRec = (leaveningNeeded - (~~leavening)).toFixed(2)
     var leaveningProgress = ((leavening/leaveningNeeded)*100).toFixed(2) 
 
     // //equation for salt
-    var saltNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var saltNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var saltRec = (saltNeeded - (~~salt)).toFixed(2)
     var saltProgress = ((salt/saltNeeded)*100).toFixed(2) 
 
     // //equation for fats
-    var fatsneeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks))).toFixed(2);
+    var fatsneeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
     var fatsRec = (fatsneeded - (~~fats)).toFixed(2)
     var fatsProgress = ((fats/fatsneeded)*100).toFixed(2) 
 

@@ -210,8 +210,14 @@ notApplicaple()
           
 
 
-var updateEdited = function () {
-  
+
+
+
+
+
+
+var pushEdited = function () {
+
 // Primary Gathering Location Info
           var primeLoc = document.getElementById("primeLoc").value;
           var primaryNum = document.getElementById("primaryNum").value;
@@ -262,12 +268,19 @@ var updateEdited = function () {
   };
 
   editedPlan.push(formDataObj);
-  console.log(formDataObj)
+  
+   localStorage.removeItem("editedPlan");
+    
   
   saveData()
   
 };
 
+var updateEdited = function () {
+  localStorage.removeItem('editedPlan');
+
+  pushEdited ();
+};
 
 
      //download PDF code
@@ -310,9 +323,9 @@ var updateEdited = function () {
 
 
   var saveData = function () {
-
     localStorage.removeItem("editedPlan");
     localStorage.removeItem("plan");
+    
 
     localStorage.setItem("editedPlan", JSON.stringify(editedPlan))
 

@@ -27,6 +27,11 @@ body {
   background-color: #ffffff;
 }
 
+section.pad {
+
+  padding: 150px 0px ;
+}
+
 /* 
 h2 {
 
@@ -119,10 +124,11 @@ header {
    */
 
 section.homebkg {
-  background-image: url("../images/Home.png");
+  background-image: url("../images/Home\ Pic\ 1\ –\ 1.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: left;
+  background-size: contain;
+  height:var(--breakpoint-sm);
 }
 
 .planimg1 {
@@ -135,6 +141,11 @@ section.homebkg {
 }
 
 input[type="button"] {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+a.btnHm{
   background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
