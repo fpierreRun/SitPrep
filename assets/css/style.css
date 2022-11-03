@@ -32,6 +32,15 @@ section.pad {
   padding: 150px 0px ;
 }
 
+header nav ul li a:hover {
+  color: var(--WhiteText-color);
+  border-bottom: 2px solid var(--WhiteText-color);
+}
+header nav ul li a {
+  color: var(--primary-color);
+  
+}
+
 /* 
 h2 {
 
@@ -235,3 +244,13 @@ input[type=number] {
     width: auto;
   }
 }
+
+@media (max-width: 767.98px) { 
+  
+.cntr {
+  text-align: center;
+
+}
+
+
+ }

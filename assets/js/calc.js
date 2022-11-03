@@ -14,58 +14,6 @@ function planChild() {
 ;}
 
 
-
-// Edit Plan Data
-// $(".calc").on("click", "p", function() {
-//     var text = $(this)
-//  .text()
-//  .trim();
-
-
-
-//  var textInput = $("<input>")
-//  .attr('id', this.id)
-//  .attr('class', this.className)
-// .val(text);
-
-// $(this).replaceWith(textInput);
-
-// textInput.trigger("focus");
-
-
-//  });
-
-
-
-//  // Saving edited data
-//  $(".calc").on("blur", "input", function() {
-
-//    var text = $(this)
-   
-// .val()
-// .trim();
-
-// calculate()
-// // recreate p element
-// var updatedData = $("<p>")
-// .attr('id', this.id)
-//  .attr('class', this.className)
-// .text(text);
-
-
-
-// // replace textarea with p element
-// $(this).replaceWith(updatedData);
-
-// console.log(updatedData)
-
-
-
-
-
-//  });
-
-
  var calculate = function () {
 
     
@@ -95,7 +43,6 @@ function planChild() {
     var waterRec = (waterneeded - (~~water)).toFixed(2)
     var waterProgress = ((water/waterneeded)*100).toFixed(2)
 
-console.log(waterneeded)
 
     //equation for grain
     var grainNeeded =  (((~~adults*1.14) + (~~kids*0.71))* ((~~days) + (~~weeks) + (~~years))).toFixed(2);
@@ -114,7 +61,7 @@ console.log(waterneeded)
 
     // //equation for sugars
     var sugarsNeeded =  (((~~adults*.14) + (~~kids*.14)) * ((~~days) + (~~weeks) + (~~years))).toFixed(2);
-    var sugarsRec = (sugarsNeeded - (~~water)).toFixed(2)
+    var sugarsRec = (sugarsNeeded - (~~sugars)).toFixed(2)
     var sugarsProgress = ((sugars/sugarsNeeded)*100).toFixed(2) 
 
     //equation for leavening agents
@@ -169,24 +116,26 @@ console.log(waterneeded)
     document.getElementById("fatsNeeded").innerHTML= fatsRec;
     document.getElementById("fatsProgress").style.width= fatsProgress += "%";
 
-
    };
-   recAmount()
+   recAmount();
+ 
  };
 
+
+ 
  
      //download PDF code
 
      $(document).ready(function($) 
      { 
    
-       $(document).on('click', '.btn_print', function(event) 
+       $(document).on('click', '.btn_print ', function(event) 
        {
          event.preventDefault();
    
          //credit : https://ekoopmans.github.io/html2pdf.js
          
-         var element = document.getElementById('downloadResults'); 
+         var element = document.getElementById('downloadPrint'); 
    
          
    
@@ -207,8 +156,45 @@ console.log(waterneeded)
            html2pdf().set({
              pagebreak: { mode: 'avoid-all', before: '#page2el' }
            });
+          });
+       });
+
+   
+
+       $(document).ready(function($) 
+     { 
+       $(document).on('click', '.btn_print2 ', function(event) 
+       {
+         event.preventDefault();
+   
+         //credit : https://ekoopmans.github.io/html2pdf.js
+         
+         var element = document.getElementById('downloadPrint'); 
+   
+         
+   
+         //more custom settings
+         var opt = 
+         {
+           margin:     0.25,
+           filename:     'My_Results_.pdf',
+           image:        { type: 'pdf', quality: 0.98 },
+           html2canvas:  { scale: 2 },
+           jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+         };
+   
+         // New Promise-based usage:
+         html2pdf().set(opt).from(element).save();
+   
+         // Avoid page-breaks on all elements, and add one before #page2el.
+           html2pdf().set({
+             pagebreak: { mode: 'avoid-all', after: '#page2el' }
+           });
    
        });
-   
+console.log()
      });
-  //download PDF code ends
+
+
+
+     
