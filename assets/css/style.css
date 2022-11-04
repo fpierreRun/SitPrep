@@ -159,6 +159,11 @@ a.btnHm{
   border-color: var(--primary-color);
 }
 
+a.btnPln{
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
 input[type=number] {
   border: none;
   border-bottom: 2px solid var(--primary-color);
