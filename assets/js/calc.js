@@ -180,7 +180,7 @@ function planChild() {
            filename:     'My_Results_.pdf',
            image:        { type: 'pdf', quality: 0.98 },
            html2canvas:  { scale: 2 },
-           jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+           jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
          };
    
          // New Promise-based usage:
