@@ -49,7 +49,7 @@
 
 </header>
 <!-- Form Entry -->
-<div>
+<div class= "p2-5">
 
     
         <section class="bg-light p-5">
@@ -67,11 +67,11 @@
                                 <p class="h4"><span class="font-weight-bold">Step 1/3:</span> Where will you gather if your home is not accessible?</p>
                                 <hr class="my-4">
                                 <p>It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
-                                </div> 
+                            </div> 
 
                         <div class="form-group">
                             <label for="fname" >Primary Location</label><br>
-                            <!-- <input name="primeLoc" id="ac1" placeholder="Enter your address" type="text" class="w-50 p-2 form-control autocomplete"/> -->
+    
                             <input type="text"  id="location-input2" class="w-75 p-2 form-control" name="primeLoc"/>
                         </div>
 
@@ -84,6 +84,7 @@
                             <label for="fname">Additional Information About Location (Optional)</label><br>
                             <textarea class="w-75 p-2 form-control" id="primeAddInfo" name="primeInfo"  ></textarea>
                         </div>
+
                         <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
                         <label for="vehicle1"> Add a Secondary Location</label><br>
                     </main>
@@ -94,8 +95,6 @@
                         <div class="form-group">
                             <label for="fname">Secondary Location</label><br>
                             <input type="text"  id="location-input2" class="w-75 p-2 form-control" name="secLoc"  />
-                            
-                <!-- <input type="text" id="secLoc" name="SecLoc" class="w-50 p-2 form-control"><br> -->
                         </div>
 
                         <div class="form-group">
@@ -107,6 +106,7 @@
                             <label for="fname">Additional Information About Location (Optional)</label><br>
                             <textarea class="w-75 p-2 form-control" id="addInfo" name="secInfo" ></textarea><br>
                         </div>
+
                     </Main>
                             
 
@@ -115,63 +115,60 @@
 
             <!--Evacuation page-->
 
-            <main class="container" style="display: none" id="evacForm">
+                    <main class="container" style="display: none" id="evacForm">
 
-                <div>
-                    <p class="h4"><span class="font-weight-bold">Step 2/3:</span> What will be your evacuation Route?</p>
-                    <hr class="my-4">
-                    <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
-                    </div> 
+                            <div>
+                                <p class="h4"><span class="font-weight-bold">Step 2/3:</span> What will be your evacuation Route?</p>
+                                <hr class="my-4">
+                                <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
+                            </div> 
 
 
-                <div class="form-group" >
-                    <label for="fname">Add Primary Evacuation Shelter or location</label><br>
-                    <input type="text" id="needs" name="evacLoc" class="w-75 p-2 form-control"><br>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fname">Add Primary Evacuation Number</label><br>
-                    <input  id="need2" name="evacNum" class="w-75 p-2 form-control"><br>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fname">Add Secondary Evacuation Shelter or location</label><br>
-                    <textarea class="w-75 p-2 form-control" id="sec-Evac-Loc" name="sec-Evac-Loc"  ></textarea><br>
-                </div>
+                        <div class="form-group" >
+                            <label for="fname">Add Primary Evacuation Shelter or location</label><br>
+                            <input type="text" id="needs" name="evacLoc" class="w-75 p-2 form-control"><br>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fname">Add Primary Evacuation Number</label><br>
+                            <input  id="need2" name="evacNum" class="w-75 p-2 form-control"><br>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fname">Add Secondary Evacuation Shelter or location</label><br>
+                            <textarea class="w-75 p-2 form-control" id="sec-Evac-Loc" name="sec-Evac-Loc"  ></textarea><br>
+                        </div>
+                             
+                    </main>
+
+                <!-- Contact Info -->
+
+                <main class="container" style="display: none" id="contactForm">
+
+                        <div>
+                            <p class="h4"><span class="font-weight-bold">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
+                            <hr class="my-4">
+                            <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+                        </div> 
+
+
+                    <div class="form-group" >
+                        <label for="fname">Primary Contact</label><br>
+                        <input type="text" id="needs" name="contactName" class="w-75 p-2 form-control"><br>
+                    </div>
                     
-                <!-- <input class="btn btn-primary" type="submit" value="Next" id="next1" onclick="nextPage()"> -->
-                
-                </div>
-            </main>
-
-            <!-- Contact Info -->
-
-            <main class="container" style="display: none" id="contactForm">
-
-                <div>
-                    <p class="h4"><span class="font-weight-bold">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
-                    <hr class="my-4">
-                    <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
-                    </div> 
-
-
-                <div class="form-group" >
-                    <label for="fname">Primary Contact</label><br>
-                    <input type="text" id="needs" name="contactName" class="w-75 p-2 form-control"><br>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fname">Contact Phone Number</label><br>
-                    <input type="text" id="need2" name="contactNum" class="w-75 p-2 form-control"><br>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fname">Contact Email Address</label><br>
-                    <input id="need2" name="contactEml" class="w-75 p-2 form-control"><br>
-                </div>
-                
-                </div>
-            </main>
+                    <div class="form-group">
+                        <label for="fname">Contact Phone Number</label><br>
+                        <input type="text" id="need2" name="contactNum" class="w-75 p-2 form-control"><br>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fname">Contact Email Address</label><br>
+                        <input id="need2" name="contactEml" class="w-75 p-2 form-control"><br>
+                    </div>
+                    
+                    
+                </main>
 
             </form>
 
@@ -179,23 +176,24 @@
 
             <!--first next button-->
 
-            <main class="d-flex justify-content-end bg-light pb-3">
-            <div class="container" id="next">
-                <button onclick="evacPage()" class="btn btn-primary" >Next</button>
-            </div>
-            <!--Evac Buttons-->
-            <div class="container " style="display: none" id="evacBtns">
-                <button onclick="locPage()" class="btn btn-primary" id="back">Previous</button>
-                <button onclick="contactPage()" class="btn btn-primary" id="next2">Next</button>
-            </div>
+            <main class="d-flex justify-content-end bg-light py-5">
+                    <div class="container" id="next">
+                        <button onclick="evacPage()" class="btn btn-primary" >Next</button>
+                    </div>
 
-            <div class="container" style="display: none" id="contactBtns">
-                <button onclick="evacPage()" class="btn btn-primary" >Previous</button> 
-                
-                
-                <input form="locationForm" class="btn btn-success" type="submit" value="Save" id="next1">
-                    
-            </div>
+                    <!--Evac Buttons-->
+                    <div class="container " style="display: none" id="evacBtns">
+                        <button onclick="locPage()" class="btn btn-primary" id="back">Previous</button>
+                        <button onclick="contactPage()" class="btn btn-primary" id="next2">Next</button>
+                    </div>
+
+                    <div class="container" style="display: none" id="contactBtns">
+                        <button onclick="evacPage()" class="btn btn-primary" >Previous</button> 
+                        
+                        
+                        <input form="locationForm" class="btn btn-success" type="submit" value="Save" id="next1">
+                            
+                    </div>
         </main>
 
         </section>
@@ -214,7 +212,7 @@
 <footer id="Contact-me" class="bio-flex bio-font p-3 bg-dark ">
     <h2></h2>
       <div>
-        <a href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
+        <a class="text-white" href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
       <div class="text-light">
         &copy; 2022 SitPrep, Inc.
       </div>

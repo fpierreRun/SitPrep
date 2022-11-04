@@ -29,12 +29,12 @@ body {
 
 section.pad {
 
-  padding: 150px 0px ;
+  padding: 100px 0px ;
 }
 
 header nav ul li a:hover {
-  color: var(--WhiteText-color);
-  border-bottom: 2px solid var(--WhiteText-color);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 header nav ul li a {
   color: var(--primary-color);
@@ -216,6 +216,7 @@ input[type=number] {
   background-position: center;
   background-size: cover;
 }
+
 
 .material-icons {
   font-family: "Material Icons";
