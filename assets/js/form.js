@@ -6,41 +6,51 @@ var formEl = document.querySelector("#locationForm");
 var formIdCounter = 0;
 
 function evacPage(){
-  document.getElementById("evacBtns").style.display = "block";
   document.getElementById("step1").style.display = "none";
   document.getElementById("secondLocation").style.display = "none";
   document.getElementById("evacForm").style.display = "block";
-  document.getElementById("next").style.display = "none";
+  
   document.getElementById("contactForm").style.display = "none";
-  document.getElementById("contactBtns").style.display = "none";
+  
+  document.getElementById("previous1").style.display = "block";
+  document.getElementById("next1").style.display = "block";
+  document.getElementById("previous2").style.display = "none";
+  document.getElementById("next2").style.display = "none"; 
+  document.getElementById("next").style.display = "none";
 };
+
+console.log(evacPage)
 
 //begin
 function locPage(){
 
   document.getElementById("step1").style.display = "block";
   document.getElementById("evacForm").style.display = "none";
-  document.getElementById("back").style.display = "none";
-
-  if(addSecond.checked==true) {
-      document.getElementById("secondLocation").style.display = "block"
-  ;}
-
-  else{
-      document.getElementById("secondLocation").style.display = "none";
- ;}
+  document.getElementById("next").style.display = "block";
+  document.getElementById("previous1").style.display = "none";
+  document.getElementById("next1").style.display = "none";
 
 };
+
+if(addSecond.checked==true) {
+  document.getElementById("secondLocation").style.display = "block"
+;}
+
+else{
+  document.getElementById("secondLocation").style.display = "none";
+;}
 
 //End
 
 //begin
 function contactPage(){
   document.getElementById("contactForm").style.display = "block";
-  document.getElementById("contactBtns").style.display = "block";
   document.getElementById("step1").style.display = "none";
   document.getElementById("evacForm").style.display = "none";
-  document.getElementById("evacBtns").style.display = "none";
+  document.getElementById("previous1").style.display = "none";
+  document.getElementById("next1").style.display = "none";
+  document.getElementById("previous2").style.display = "block";
+  document.getElementById("next2").style.display = "block"; 
 
 };
 //end
