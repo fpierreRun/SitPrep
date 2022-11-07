@@ -160,8 +160,8 @@ a.btnHm{
 }
 
 a.btnPln{
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 input[type=number] {
