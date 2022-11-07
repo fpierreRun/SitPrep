@@ -136,7 +136,7 @@ function planChild() {
          //credit : https://ekoopmans.github.io/html2pdf.js
          
          var element = document.getElementById('downloadPrint'); 
-   console.log(event)
+            console.log(element)
          
    
          //more custom settings
