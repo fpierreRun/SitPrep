@@ -296,6 +296,7 @@ var updateEdited = function () {
          
          var element = document.getElementById('downloadPlan'); 
    
+         console.log(element)
          
    
          //more custom settings
