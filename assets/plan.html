@@ -10,23 +10,23 @@
 
     <title>SitPrep</title>
 </head>
-<body>
+<body class="bg-light">
 
-<header class="sticky-top">
-
-<nav class="navbar navbar-dark bg-dark pb-4">
+<header class="sticky-top bg-dark">
+<!-- 
+<nav class="navbar navbar-dark  pb-4">
     <a class="navbar-brand" href="../index.html">  
-        <img class="img-fluid" src="./images/SitPrep Logo Blue.png"  width="150" alt="" />
+        <img class="img-fluid" src="./images/SitPrep Logo White.png"  width="150" alt="" />
     </a>
     
 
 <div>
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills"> -->
         <!-- <li class="nav-item">
           <a class="nav-link  " href="#">About Us</a>
         </li> -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-white" href="./plan.html">View Plan</a>
         </li>
 
@@ -36,52 +36,55 @@
 
         <li class="nav-item">
           <a class="nav-link " href="./feedback.html">Give Feedback</a>
-        </li>
+        </li> -->
 
         <!-- <li class="nav-item">
           <a class="nav-link " href="#">Log In</a>
         </li> -->
-    </ul>
+    <!-- </ul>
 </div>
-</nav>
+</nav> -->
 
-</header>
-
-<!--Banner Begins-->
-
-<section class="plan container-fluid  pt-5 pb-2 bd-highlight justify-content-between"  >
+<section class="plan pt-3  bd-highlight justify-content-between  sticky-top"  >
 
 
-    <div class="text-center justify-content-center container-fluid row " style="padding:20px;" id="gatherBkg" >
-      <div class="  pb-3 px-2 col-lg-2  ">
-            <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" >
-      </div>
-     
-      <div class="   px-2 col-lg-2 ">
-      <p class="  pb-3 pl-2">
-        <a href="./storageCalc.html" class="btnPln btn  btn-md  btn-dark">Calculate Food Storage</a>
-      </p>
+  <div class="text-center justify-content-center container-fluid row " style="padding:20px;" id="gatherBkg" >
+    <div class="  pb-2 px-1 col-lg-2">
+          <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" >
     </div>
+   
+    <div class="   px-1 col-lg-2">
+    <p class="  pb-2 pl-2">
+      <a href="./storageCalc.html" class="btnPln btn  btn-md  btn-dark">Calculate Food Storage</a>
+    </p>
+  </div>
 
-    </div>
-
-    <div class="container h5">
-    <p class="text-info"> Select any field below to edit/update your plan</p>
   </div>
 
 
+
 </section>
+</header>
+
+
+<div class=" h4 text-center pt-4">
+  <p class="text-secondary"> You can edit/update your plan by selecting the specific field below</p>
+</div>
+
+<!--Banner Begins-->
+
+
       <!--Banner Ends-->
     
 <!--Images loop begins-->
-  <section class="plan container-fluid  pb-2 bd-highlight align-bottom" id="downloadPlan"  >
+  <section class="plan container-fluid  pb-2 bd-highlight align-bottom pt-3 " id="downloadPlan"  >
     
-    <div >
+    <div>
 
-        <div class="container align-bottom planimg1">
+        <div class="container align-bottom planimg1 bg-white px-5">
             <div class=" align-bottom  row">
               
-              <div class="col-8 align-bottom">
+              <div class="col-8 align-bottom mt-2">
               <h1 class="h1  title align-bottom" >MY EMERGENCY PLAN</h1>
                 </div>
 
@@ -90,7 +93,7 @@
 
     </div>
 
-    <div class="d-flex container pb-5" >
+    <div class="d-flex container pb-5 bg-white px-5" >
 
       <div class=" ">              
       <h4 class="font-weight-normal">Powered by SitPrep</h4>
@@ -103,7 +106,7 @@
    -->
   </div>
         
-    <main class="container pb-5">
+    <main class="container pb-5 px-5 bg-white">
 
             <div>
                 <p class="h2">Gathering Place</p>
@@ -172,8 +175,8 @@
 
           <!--Evacuation page-->
 
-          <div class="p-3 bg-light " id="#after1">
-          <main class="container py-5">
+          <div class="p-3  " id="#after1">
+          <main class="container py-5 bg-white px-5">
 
                 <div>
                     <p class="h2">Evacuation Route</p>
@@ -186,7 +189,7 @@
                   <label class="font-weight-bold">Primary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <input class="bg-light inputBtm border-bottom w-75" id="evacuationLoc" onchange="updateEdited()"></p>
+                    <input class="bg-white inputBtm border-bottom w-75" id="evacuationLoc" onchange="updateEdited()"></p>
                   </div>
               </div>
               
@@ -194,7 +197,7 @@
                   <label class="font-weight-bold">Primary Evacuation Number</label><br>
                   
                   <div width="30">
-                    <input class="bg-light inputBtm border-bottom w-75" id="evacuationNum" onchange="updateEdited()"></p>
+                    <input class="bg-white inputBtm border-bottom w-75" id="evacuationNum" onchange="updateEdited()"></p>
                   </div>
               </div>
               
@@ -202,7 +205,7 @@
                   <label class="font-weight-bold" >Secondary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <input class="bg-light inputBtm border-bottom w-75" id="secondaryEvacLoc" onchange="updateEdited()"></p>
+                    <input class="bg-white inputBtm border-bottom w-75" id="secondaryEvacLoc" onchange="updateEdited()"></p>
                   </div>
               </div>
 
@@ -213,7 +216,7 @@
 
           <div class="p-3 beforeClass">
 
-          <main class="container py-5"  >
+          <main class="container py-5 bg-white"  >
 
                 <div>
                     <p class="h2">Emergency Contact</p>

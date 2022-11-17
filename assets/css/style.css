@@ -1,14 +1,17 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 :root {
-  --primary-color: #37cb99;
-  --secondary-color: #5a69bf;
-  --Buttonblue-color: #768dfd;
+  --primary-color: #F04729;
+  --secondary-color: #00a35f;
+  --Buttongreen-color: #11F091;
+  --Highlightyellow-color: #F0DC41;
   --ButtonGrey-color: #4e4e4e;
   --normaltext-color: #3e3e3e;
   --lighttext-color: #898989;
-  --Tiltecolor-color: #4a5071;
+  --Tiltecolor-color: #451DF0;
   --WhiteText-color: #ffffff;
+  --OrangeText-color: #F03211;
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -24,7 +27,11 @@
 body {
   font-size: 100%;
   color: rgb(31, 31, 31);
-  background-color: #ffffff;
+  /* background-image: url(../images/Background\ Image_fam.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  height:var(--breakpoint-sm); */
 }
 
 section.pad {
@@ -33,13 +40,23 @@ section.pad {
 }
 
 header nav ul li a:hover {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  color: var(--Buttongreen-color);
+  border-bottom: 2px solid var(--Buttongreen-color);
 }
 header nav ul li a {
-  color: var(--primary-color);
+  color: var(--Buttongreen-color);
   
 }
+
+.homenav:hover {
+  color: var(--s);
+  border-bottom: 2px solid var(--secondary-color);
+}
+.homenav{
+  color: var(--secondary-color);
+  
+}
+
 
 /* 
 h2 {
@@ -150,28 +167,28 @@ section.homebkg {
 }
 
 input[type="button"] {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 a.btnHm{
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--secondary-color) ;
+  border-color:var(--secondary-color);
 }
 
 a.btnPln{
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 input[type=number] {
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .inputBtm {
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .alignbtm{
@@ -189,12 +206,16 @@ input[type=number] {
   border-color: var(--secondary-color);
 } 
 
-.txtGrn{
+.txtOrg{
   color: var(--primary-color);
 }
 
-.txtBlu{
+.txtGrn{
   color: var(--secondary-color);
+}
+
+.textBlu{
+  color:var(--Highlightyellow-color);
 }
 
 .button1 {
@@ -221,6 +242,7 @@ input[type=number] {
   background-position: center;
   background-size: cover;
 }
+
 
 
 .material-icons {
