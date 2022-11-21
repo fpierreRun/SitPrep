@@ -335,6 +335,6 @@ var updateEdited = function () {
   
   function giveFeedback (){
 
-    window.location.href="../assets/feedback.html";
+    window.location.href="./feedback.html";
 
   }
