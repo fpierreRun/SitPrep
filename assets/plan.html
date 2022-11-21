@@ -50,7 +50,7 @@
 
   <div class="text-center justify-content-center container-fluid row " style="padding:20px;" id="gatherBkg" >
     <div class="  pb-2 px-1 col-lg-2">
-          <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" >
+          <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
     </div>
    
     <div class="   px-1 col-lg-2">
@@ -67,7 +67,7 @@
 </header>
 
 
-<div class=" h4 text-center pt-4">
+<div class=" h5 text-center pt-4 px-3">
   <p class="text-secondary"> You can edit/update your plan by selecting the specific field below</p>
 </div>
 
@@ -255,6 +255,37 @@
       </div>
 
     </section>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" >
+  Launch demo modal
+</button>
+
+<!-- Modal for Survey begin -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalCenterTitle">Download complete. How can we better your SitPrep experience?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        At SitPrep, piece of mind is one of the benefits we want to bring to you and your household. 
+        To ensure that we do so we would greatly appreciate your thoughts on how are tools and resources could be improved.
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Survey End-->
 
    
 

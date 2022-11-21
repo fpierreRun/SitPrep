@@ -333,4 +333,8 @@ var updateEdited = function () {
     loadPlan();
   };
   
-   
+  function giveFeedback (){
+
+    window.location.href="../assets/feedback.html";
+
+  }
