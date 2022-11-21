@@ -13,57 +13,30 @@
 <body class="bg-light">
 
 <header class="sticky-top bg-dark">
-<!-- 
-<nav class="navbar navbar-dark  pb-4">
-    <a class="navbar-brand" href="../index.html">  
-        <img class="img-fluid" src="./images/SitPrep Logo White.png"  width="150" alt="" />
-    </a>
-    
 
-<div>
-    <ul class="nav nav-pills"> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link  " href="#">About Us</a>
-        </li> -->
+<nav class="navbar-dark  pb-2">
+  <main class=" text-center text-lg-left pl-5">
+    <div class="container-fluid row py-2"  id="gatherBkg" >
+        <div class="  pb-3  col-lg-8 pr-4 " >
+            <a  href="../index.html">  
+                <img class="img-fluid" src="./images/SitPrep Logo White.png"  width="150" alt="" />
+            </a>
+        </div>
+        
+        <div class="row col-lg-4">
+            <div class="  py-2  col-lg-5  px-1">
+              <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+            </div>
 
-        <!-- <li class="nav-item">
-          <a class="nav-link text-white" href="./plan.html">View Plan</a>
-        </li>
+            <div class="  px-2 col-lg-7">
+              <p class=" py-2 px-1">
+                <a href="./storageCalc.html" class="btnPln btn  btn-md  btn-dark">Calculate Food Storage</a>
+              </p>
+            </div>
+        </div>
 
-        <li class="nav-item">
-          <a class="nav-link " href="./storageCalc.html">Food Storage</a>
-        </li>
+</nav>
 
-        <li class="nav-item">
-          <a class="nav-link " href="./feedback.html">Give Feedback</a>
-        </li> -->
-
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="#">Log In</a>
-        </li> -->
-    <!-- </ul>
-</div>
-</nav> -->
-
-<section class="plan pt-3  bd-highlight justify-content-between  sticky-top"  >
-
-
-  <div class="text-center justify-content-center container-fluid row " style="padding:20px;" id="gatherBkg" >
-    <div class="  pb-2 px-1 col-lg-2">
-          <input type="button"  id="rep" value="Download My Plan" class="btn btn-info btn_print btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
-    </div>
-   
-    <div class="   px-1 col-lg-2">
-    <p class="  pb-2 pl-2">
-      <a href="./storageCalc.html" class="btnPln btn  btn-md  btn-dark">Calculate Food Storage</a>
-    </p>
-  </div>
-
-  </div>
-
-
-
-</section>
 </header>
 
 
@@ -256,24 +229,19 @@
 
     </section>
 
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" >
-  Launch demo modal
-</button>
-
 <!-- Modal for Survey begin -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalCenterTitle">Download complete. How can we better your SitPrep experience?</h4>
+      <div class="pr-3 pt-3">
+       
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        At SitPrep, piece of mind is one of the benefits we want to bring to you and your household. 
-        To ensure that we do so we would greatly appreciate your thoughts on how are tools and resources could be improved.
+        <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
+       
       </div>
 
       <div class="modal-footer">

@@ -159,7 +159,11 @@ function planChild() {
           });
        });
 
-   
+       function giveFeedback (){
+
+        window.location.href="./feedback.html";
+    console.log()
+      };
 
 
      

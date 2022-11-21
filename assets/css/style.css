@@ -1,4 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+
 
 :root {
   --primary-color: #F04729;
@@ -273,12 +273,12 @@ input[type=number] {
   }
 }
 
-@media (max-width: 767.98px) { 
-  
-.cntr {
-  text-align: center;
 
+
+ @media screen and (max-width: 768px) { 
+
+ .hidden {
+  display: none;
 }
-
 
  }
