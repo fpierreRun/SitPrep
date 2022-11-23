@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="bodBkg">
+<body class="bg-light h-100 d-flex flex-column">
     <header class="sticky-top">
         <!-- Just an image -->
 
@@ -49,7 +49,7 @@
 
 </header>
 <!-- Form Entry -->
-<div class= "pb-5">
+<div>
 
     
         <section class="bg-light p-5 container-fluid">
@@ -63,14 +63,13 @@
                     <form id="locationForm" >
                         <main id= "step1" >
 
-                            <div>
+                            <div class="pb-5">
                                 <p class="h3"><span class="font-weight-bold txtOrg">Step 1/3:</span> Where will you gather if your home is not accessible?</p>
-                            
-                                <p >It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. 
-                                    Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. 
+                                <hr class="my-4">
+                                <p class="h5 text-muted">Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. 
                                     If you have a pet, make sure the location is animal friendly.</p>
 
-                                    <hr class="my-4">
+                                    
                             </div> 
 
                         <div class="form-group">
@@ -89,13 +88,15 @@
                             <textarea class="w-75 p-2 form-control" id="primeAddInfo" name="primeInfo"  ></textarea>
                         </div>
 
-                        <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
-                        <label for="vehicle1"> Add a Secondary Location</label><br>
+                        <div class="pt-3">
+                            <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                            <label for="vehicle1"> Add a Secondary Location</label><br>
+                        </div>
                     </main>
                             <!--checkbox for secondary location-->
                     
                     <!--Secondary Location-->
-                    <Main style="display: none" id="secondLocation">
+                    <Main style="display: none" id="secondLocation" class="pt-5">
                         <div class="form-group">
                             <label for="fname">Secondary Location</label><br>
                             <input type="text"  id="location-input2" class="w-75 p-2 form-control" name="secLoc" placeholder="Enter Location"  />
@@ -121,10 +122,10 @@
 
                     <main  style="display: none" id="evacForm">
 
-                            <div>
+                            <div class="pb-5">
                                 <p class="h3"><span class="font-weight-bold txtOrg">Step 2/3:</span> What will be your evacuation Route?</p>
                                 <hr class="my-4">
-                                <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
+                                <p class="h5 text-muted">Plan how will you leave and where you and your household will go if evacuation is in place.</p>
                             </div> 
 
 
@@ -149,10 +150,10 @@
 
                 <main style="display: none" id="contactForm">
 
-                        <div>
+                        <div class="pb-5">
                             <p class="h3"><span class="font-weight-bold txtOrg">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
                             <hr class="my-4">
-                            <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+                            <p class="h5 text-muted">Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
                         </div> 
 
 
@@ -223,14 +224,15 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA&libraries=places&callback=initMap">
 </script>
 
-<footer id="Contact-me" class="bio-flex bio-font p-3 bg-dark ">
+<footer id="Contact-me" class="bg-dark p-3 mt-auto  navbar-fixed-bottom" >
     <h2></h2>
-      <div>
-        <a class="text-white" href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
-      <div class="text-light">
-        &copy; 2022 SitPrep, Inc.
-      </div>
-      </div>
+            <div>
+                <a class="text-white" href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
+            <div class="text-light">
+       
+        <div>
+             &copy; 2022 SitPrep, Inc.
+        </div>
     
     <!-- <h1 class="bio-border">Contact me</h1>
     <nav>
@@ -250,8 +252,8 @@
             <li>
                 <a href="">spotify</a>
             </li> 
-        </ul> -->
-    </nav>
+        </ul> 
+    </nav>-->
 </footer>
 
 </body>

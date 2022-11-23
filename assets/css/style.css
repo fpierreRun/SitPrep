@@ -27,15 +27,16 @@
 body {
   font-size: 100%;
   color: rgb(31, 31, 31);
+  height: 100%;
 }
 
-.bodBkg {
+/* .bodBkg {
   background-image: url(../images/Background\ Image_fam.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
   height:var(--breakpoint-sm);
-}
+} */
 
 section.pad {
 
@@ -151,6 +152,14 @@ header {
   color: #ffffff;
 }
    */
+
+.footer {
+  height: 50px;
+}
+
+.mt-auto{
+  margin-top: auto!important;
+}
 
 section.homebkg {
   background-image: url("../images/Home\ Pic\ 1\ –\ 1.png");
