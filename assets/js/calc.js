@@ -145,9 +145,8 @@ function planChild() {
            margin:     0.25,
            filename:     'My_Results_.pdf',
            image:        { type: 'pdf', quality: 0.98 },
-           html2canvas:  { scale: 2 },
-           jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' },
-           scrollY: 0
+           html2canvas:  { scale: 2, scrollY: 0 },
+           jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
          };
    
          // New Promise-based usage:
