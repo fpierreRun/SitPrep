@@ -84,36 +84,36 @@ function planChild() {
    function recAmount() {
 
     
-    document.getElementById("waterRecommend").innerHTML= waterneeded ;
-    document.getElementById("waterNeeded").innerHTML= waterRec;
+    document.getElementById("waterRecommend").innerHTML= Math.round(waterneeded) ;
+    document.getElementById("waterNeeded").innerHTML= Math.round(waterRec);
     document.getElementById("waterProgress").style.width= waterProgress += "%";
 
-    document.getElementById("grainRecommend").innerHTML= grainNeeded ;
-    document.getElementById("grainNeeded").innerHTML= grainRec;
+    document.getElementById("grainRecommend").innerHTML= Math.round(grainNeeded) ;
+    document.getElementById("grainNeeded").innerHTML= Math.round(grainRec);
     document.getElementById("grainProgress").style.width= grainProgress += "%";
     
-    document.getElementById("legumesRecommend").innerHTML= legumesNeeded ;
-    document.getElementById("legumesNeeded").innerHTML= legumesRec;
+    document.getElementById("legumesRecommend").innerHTML= Math.round(legumesNeeded) ;
+    document.getElementById("legumesNeeded").innerHTML= Math.round(legumesRec);
     document.getElementById("legumesProgress").style.width= legumesProgress += "%";
     
-    document.getElementById("dairyRecommend").innerHTML= dairyNeeded ;
-    document.getElementById("dairyNeeded").innerHTML= dairyRec;
+    document.getElementById("dairyRecommend").innerHTML= Math.round(dairyNeeded) ;
+    document.getElementById("dairyNeeded").innerHTML= Math.round(dairyRec);
     document.getElementById("dairyProgress").style.width= dairyProgress += "%";
 
-    document.getElementById("sugarsRecommend").innerHTML= sugarsNeeded ;
-    document.getElementById("sugarsNeeded").innerHTML= sugarsRec;
+    document.getElementById("sugarsRecommend").innerHTML= Math.round(sugarsNeeded) ;
+    document.getElementById("sugarsNeeded").innerHTML= Math.round(sugarsRec);
     document.getElementById("sugarsProgress").style.width= sugarsProgress += "%";
 
-    document.getElementById("leaveningRecommend").innerHTML= leaveningNeeded ;
-    document.getElementById("leaveningNeeded").innerHTML= leaveningRec;
+    document.getElementById("leaveningRecommend").innerHTML= Math.round(leaveningNeeded) ;
+    document.getElementById("leaveningNeeded").innerHTML= Math.round(leaveningRec);
     document.getElementById("leaveningProgress").style.width= leaveningProgress += "%";
 
-    document.getElementById("saltRecommend").innerHTML= saltNeeded;
-    document.getElementById("saltNeeded").innerHTML= saltRec;
+    document.getElementById("saltRecommend").innerHTML= Math.round(saltNeeded);
+    document.getElementById("saltNeeded").innerHTML= Math.round(saltRec);
     document.getElementById("saltProgress").style.width= saltProgress += "%";
 
-    document.getElementById("fatsRecommend").innerHTML= fatsneeded ;
-    document.getElementById("fatsNeeded").innerHTML= fatsRec;
+    document.getElementById("fatsRecommend").innerHTML= Math.round(fatsneeded) ;
+    document.getElementById("fatsNeeded").innerHTML= Math.round(fatsRec);
     document.getElementById("fatsProgress").style.width= fatsProgress += "%";
 
    };
