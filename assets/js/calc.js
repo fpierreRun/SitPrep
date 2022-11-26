@@ -154,7 +154,7 @@ function planChild() {
    
          // Avoid page-breaks on all elements, and add one before #page2el.
            html2pdf().set({
-             pagebreak: { mode: 'avoid-all', before: '#page2el' }
+             pagebreak: { mode: 'avoid-all', after: '#page2el' }
            });
           });
        });

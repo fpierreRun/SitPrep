@@ -313,12 +313,11 @@ var updateEdited = function () {
          html2pdf().set(opt).from(element).save();
    
          // Avoid page-breaks on all elements, and add one before #page2el.
-           // Enable all 'modes', with no explicit elements.
           html2pdf().set({
-            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            pagebreak: { mode: 'avoid-all', after: '#page2el' }
           });
    
-       });
+        });
    
      });
   //download PDF code ends
