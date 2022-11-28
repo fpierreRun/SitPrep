@@ -295,7 +295,10 @@ input[type=number] {
   font-feature-settings: "liga";
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
 
+}
 
 
 
@@ -307,10 +310,10 @@ input[type=number] {
 
 
 
- @media screen and (max-width: 768px) { 
+ @media only screen and (min-width: 768px) { 
 
- .hidden {
-  display: none;
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  
+  }
 }
-
- }
