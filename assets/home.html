@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+   
+
     <title>SitPrep</title>
 </head>
 
@@ -71,25 +75,34 @@
 
                                     
                             </div> 
+                            
+                     
 
-                        <div class="form-group">
-                            <label for="fname" >Primary Location</label><br>
+                            <h4>Primary Gathering Location</h4><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                location_on
+                                </span>
     
-                            <input type="text"  id="location-input2" class="w-75 p-2 form-control" name="primeLoc"/>
+                            <input type="text"  id="location-input2" class="w-75 p-2 bg-white shadow-sm rounded" name="primeLoc"  placeholder="Enter Gather Location"/>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fname">Primary Location Phone Number</label><br>
-                            <input  id="primeNum" name="primeNum" class="w-75 p-2 form-control"  placeholder="Enter Number"><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                call
+                                </span>
+                            <input  id="primeNum" name="primeNum" class="w-75 p-2 bg-white shadow-sm rounded"  placeholder="(If Applicable) Enter Location Number"><br>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fname">Additional Information About Location (Optional)</label><br>
-                            <textarea class="w-75 p-2 form-control" id="primeAddInfo" name="primeInfo"  ></textarea>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                info
+                                </span>
+                            <textarea class="w-75 p-2 bg-white shadow-sm rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter Location Additional Info" ></textarea>
                         </div>
 
-                        <div class="pt-3">
-                            <input type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                        <div class="pt-3 ">
+                            <input class="bg-white shadow-sm rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
                             <label for="vehicle1"> Add a Secondary Location</label><br>
                         </div>
                     </main>
@@ -97,19 +110,27 @@
                     
                     <!--Secondary Location-->
                     <Main style="display: none" id="secondLocation" class="pt-5">
-                        <div class="form-group">
-                            <label for="fname">Secondary Location</label><br>
-                            <input type="text"  id="location-input2" class="w-75 p-2 form-control" name="secLoc" placeholder="Enter Location"  />
+                      
+                            <h4>Secondary Gathering Location</h4><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                location_on
+                                </span>
+                            <input type="text"  id="location-input2" class="w-75 p-2 bg-white shadow-sm rounded" name="secLoc" placeholder="Enter Gather Location"  />
                         </div>
 
-                        <div class="form-group">
-                            <label for="fname">Secondary Location Phone Number</label><br>
-                            <input id="secNum" name="secNum" class="w-75 p-2 form-control" placeholder="Enter Number"><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                call
+                                </span>
+                            <input id="secNum" name="secNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="(If Applicable) Enter Location Number"><br>
                         </div>
 
-                        <div class="form-group">
-                            <label for="fname">Additional Information About Location (Optional)</label><br>
-                            <textarea class="w-75 p-2 form-control" id="addInfo" name="secInfo" ></textarea><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                info
+                                </span>
+                            <textarea class="w-75 p-2 bg-white shadow-sm roundedl" id="addInfo" name="secInfo" placeholder="Enter Location Additional Info"></textarea><br>
                         </div>
 
                     </Main>
@@ -129,20 +150,28 @@
                             </div> 
 
 
-                        <div class="form-group" >
-                            <label for="fname">Add Primary Evacuation Shelter or location</label><br>
-                            <input type="text" id="needs" name="evacLoc" class="w-75 p-2 form-control" placeholder="Enter Shelter Location"><br>
+                        <div class="form-group d-flex" >
+                            <span class="material-symbols-rounded pr-5">
+                                location_on
+                                </span>
+                            <input type="text" id="needs" name="evacLoc" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Shelter Location"><br>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="fname">Add Primary Evacuation Number</label><br>
-                            <input  id="need2" name="evacNum" class="w-75 p-2 form-control" placeholder="Enter Shelter Number"><br>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                call
+                                </span>
+                            <input  id="need2" name="evacNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Shelter Number"><br>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="fname">Add Secondary Evacuation Shelter or location</label><br>
-                            <textarea class="w-75 p-2 form-control" id="sec-Evac-Loc" name="sec-Evac-Loc"  ></textarea><br>
-                        </div>
+                        <div class="form-group d-flex">
+                            <span class="material-symbols-rounded pr-5">
+                                info
+                                </span>
+
+                            
+                                <textarea class="w-75 p-2 bg-white shadow-sm rounded" id="sec-Evac-Loc" name="sec-Evac-Loc" placeholder="Enter Shelter Additional Info"  ></textarea><br>
+                          
                              
                     </main>
 
@@ -157,19 +186,25 @@
                         </div> 
 
 
-                    <div class="form-group" >
-                        <label for="fname">Primary Contact</label><br>
-                        <input type="text" id="needs" name="contactName" class="w-75 p-2 form-control" placeholder="Enter Contact Name"><br>
+                    <div class="form-group d-flex" >
+                        <span class="material-symbols-rounded pr-5">
+                            person
+                            </span>
+                        <input type="text" id="needs" name="contactName" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Name"><br>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="fname">Contact Phone Number</label><br>
-                        <input type="text" id="need2" name="contactNum" class="w-75 p-2 form-control" placeholder="Enter Contact Number"><br>
+                    <div class="form-group d-flex">
+                        <span class="material-symbols-rounded pr-5">
+                            call
+                            </span>
+                        <input type="text" id="need2" name="contactNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Number"><br>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="fname">Contact Email Address</label><br>
-                        <input id="need2" name="contactEml" class="w-75 p-2 form-control" placeholder="Enter Contact Email"><br>
+                    <div class="form-group d-flex">
+                        <span class="material-symbols-rounded pr-5">
+                            mail
+                            </span>
+                        <input id="need2" name="contactEml" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Email"><br>
                     </div>
                     
                     

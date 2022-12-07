@@ -197,6 +197,10 @@ a.btnPln{
   border-color: var(--secondary-color);
 }
 
+input{
+  border: none;
+}
+
 input[type=number] {
   border: none;
   border-bottom: 2px solid var(--secondary-color);
