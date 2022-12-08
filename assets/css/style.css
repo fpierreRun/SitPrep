@@ -335,6 +335,13 @@ input[type=number] {
 
 }
 
+.bg-pic{
+  background-image: url(../images/Bk\ for\ phone.png);
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: contain;
+}
+  
 
 
 
@@ -349,6 +356,10 @@ input[type=number] {
 
 
  @media only screen and (min-width: 768px) { 
+
+  .bg-pic{
+    background-image: none;
+  }
 
   .dropdown:hover .dropdown-menu {
     display: block;
