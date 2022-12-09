@@ -38,10 +38,7 @@ body {
   height:var(--breakpoint-sm);
 } */
 
-section.pad {
 
-  padding: 40px 0px ;
-}
 
 header nav ul li a:hover {
   color: var(--Buttongreen-color);
@@ -335,13 +332,6 @@ input[type=number] {
 
 }
 
-.bg-pic{
-  background-image: url(../images/Bk\ for\ phone.png);
-  background-repeat: no-repeat;
-  background-position:initial;
-  background-size: cover;
-}
-  
 
 
 
@@ -355,14 +345,33 @@ input[type=number] {
 
 
 
- @media only screen and (min-width: 768px) { 
+ @media only screen and (min-width: 1166px) { 
 
-  .bg-pic{
-    background-image: none;
-  }
 
   .dropdown:hover .dropdown-menu {
     display: block;
   
   }
+
+  section.pad {
+
+    padding: 200px 150px ;
+  }
+
+ 
+}
+
+
+@media only screen and (max-width: 1166px) { 
+
+  .phone-block{
+
+    display:none;
+  }
+  .bg-pic{
+    background-image: url(../images/Bk\ for\ phone.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
 }
