@@ -3,6 +3,7 @@
 :root {
   --primary-color: #F04729;
   --secondary-color: #00a35f;
+  --secondary-oppate: #C1DACF;
   --Buttongreen-color: #11F091;
   --Highlightyellow-color: #F0DC41;
   --ButtonGrey-color: #4e4e4e;
@@ -154,6 +155,18 @@ header {
   height: 50px;
 }
 
+.pdfPad {
+  position: relative;
+  top: -100px;
+
+}
+
+.jumboHgt{
+  padding: 500px;
+
+}
+
+
 .mt-auto{
   margin-top: auto!important;
 }
@@ -189,14 +202,25 @@ a.btnHm{
   border-color:var(--secondary-color);
 }
 
+a.btnOppate{
+  background-color: var(--secondary-oppate) ;
+  border-color:var(--secondary-oppate);
+}
+
+
 a.btnPln{
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
+.txtBlu{
+  color:var(--Tiltecolor-color);
+}
+
 input{
   border: none;
 }
+
 
 input[type=number] {
   border: none;
@@ -208,6 +232,12 @@ input[type=number] {
   border-bottom: 2px solid var(--secondary-color);
 }
 
+.inputHgtClr{
+background-color: #f4f4f5;
+font-weight:300;
+  height:40px;
+}
+
 .alignbtm{
   display: flex;
   align-items: baseline;
@@ -215,6 +245,11 @@ input[type=number] {
 }
 .recGrn {
   background-color: var(--secondary-color);
+  border-color: var(--Buttongreen-color);
+}
+
+.bgOrg {
+  background-color: var(--primary-color);
   border-color: var(--Buttongreen-color);
 }
 
@@ -355,7 +390,7 @@ input[type=number] {
 
   section.pad {
 
-    padding: 200px 150px ;
+    padding: 100px 150px ;
   }
 
  

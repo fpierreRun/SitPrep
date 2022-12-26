@@ -63,10 +63,13 @@
 </header>
 
 
-<div class=" h4 text-center py-5 px-3">
-  <p class="text-muted container "> <input type="button"  id="rep" value="Download" class="font-weight-bold  noOutline btn_print btn-link bg-light btn-outline-light " data-toggle="modal" data-target="#exampleModalCenter">and share your plan with family, friends,
-     school staff, babysitters, and those you trust.
-   </p>
+<div class="bg-dark h4 text-center py-5 px-3 jumboHgt" >
+
+  <p>
+
+    hi
+  </p>
+  
 </div>
 
 <!--Banner Begins-->
@@ -74,8 +77,16 @@
 
       <!--Banner Ends-->
     
-<!--Images loop begins-->
-<div class="shadow-lg container bg-white rounded ">
+<!--PDF begins-->
+<div class="shadow-sm container bg-white rounded pdfPad " >
+
+  <div class=" h4 text-center py-5 px-3" id="element-to-hide">
+    <p class="text-muted container "> Share your plan with family, friends,
+       school staff, babysitters, and those you trust.
+     </p><input type="button"  id="rep" value="Download" class="font-weight-bold  noOutline btn_print btn-link bg-light btn-outline-light " data-toggle="modal" data-target="#exampleModalCenter">
+  </div>
+
+
   <section class="plan container-fluid  pb-2 bd-highlight align-bottom pt-3 " id="downloadPlan"  >
     
     <div>
@@ -84,7 +95,7 @@
             <div class=" align-bottom  row">
               
               <div class="col-8 align-bottom mt-2">
-              <h1 class="h1  title align-bottom" >MY EMERGENCY PLAN</h1>
+              <h1 class="h2  title align-bottom" >MY EMERGENCY PLAN</h1>
                 </div>
 
           </div>
@@ -92,24 +103,19 @@
 
     </div>
 
-    <div class="d-flex container pb-5 bg-white px-5" >
+    <div class="d-flex container  bg-white px-5" >
 
       <div class=" ">              
       <h4 class="font-weight-normal">Powered by SitPrep</h4>
       </div>
 
-
-      <!-- <div class="pl-3 ">  
-          <img class="img-fluid d-flex justify-content-end" src="./images/SitPrep Logo Blue.png"  width="100" alt="" />
-      </div>
-   -->
   </div >
-        
+    <hr class=" pb-3 mx-5">
     <main class="container pb-5 px-5 bg-white">
 
             <div>
                 <p class="h2">Gathering Place</p>
-                <hr class="my-4">
+                
                 <p class="text-muted">It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
               </div> 
 
@@ -117,8 +123,8 @@
             <div>
                     <label class="font-weight-bold "  >Primary Location</label><br>
   
-                    <div width="30">
-                      <input class="inputBtm border-bottom w-75" id="primeLoc" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                    <div  width="30">
+                      <input class="  w-75  pl-3 inputHgtClr rounded" id="primeLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                         edit
                         </span></input>
                     </div>
@@ -129,7 +135,7 @@
                   <label class="font-weight-bold">Primary Location Phone Number</label><br>
                   
                   <div width="30">
-                    <input class="inputBtm border-bottom w-75" id="primaryNum" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit  mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                    <input class=" pl-3 inputHgtClr rounded w-75" id="primaryNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit  mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                       edit
                       </span></p>
                   </div>
@@ -140,7 +146,7 @@
               <label class="font-weight-bold">Additional Information About Location (Optional)</label><br>
               
               <div width="30">
-                <input class="inputBtm border-bottom  w-75" id="primaryAddInfo" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                <input class="pl-3 inputHgtClr rounded  w-75" id="primaryAddInfo" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                   edit
                   </span></p>
               </div>
@@ -153,7 +159,7 @@
             <label class="font-weight-bold" >Secondary Location</label><br>
             
             <div width="30">
-              <input class="inputBtm border-bottom w-75" id="secondaryLoc" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+              <input class="pl-3 inputHgtClr rounded w-75" id="secondaryLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                 edit
                 </span> </p>
             </div>
@@ -165,7 +171,7 @@
             <label class="font-weight-bold" >Secondary Location Phone Number</label><br>
             
             <div width="30">
-              <input class="inputBtm border-bottom w-75" id="secondaryNum" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+              <input class="pl-3 inputHgtClr rounded w-75" id="secondaryNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                 edit
                 </span> </p>
             </div>
@@ -176,7 +182,7 @@
                   <label class="font-weight-bold" >Additional Information About Location (Optional)</label><br>
                   
                   <div width="30">
-                    <input class="inputBtm border-bottom w-75" id="secondaryAddInfo" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                    <input class="pl-3 inputHgtClr rounded w-75" id="secondaryAddInfo" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                       edit
                       </span></p>
                   </div>
@@ -191,7 +197,7 @@
 
                 <div>
                     <p class="h2">Evacuation Route</p>
-                    <hr class="my-4">
+                 
                     <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
                   </div> 
 
@@ -200,7 +206,7 @@
                   <label class="font-weight-bold">Primary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <input class="bg-white inputBtm border-bottom w-75" id="evacuationLoc" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                    <input class="pl-3 inputHgtClr rounded w-75" id="evacuationLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                       edit
                       </span></p>
                   </div>
@@ -210,7 +216,7 @@
                   <label class="font-weight-bold">Primary Evacuation Number</label><br>
                   
                   <div width="30">
-                    <input class="bg-white inputBtm border-bottom w-75" id="evacuationNum" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                    <input class="pl-3 inputHgtClr rounded w-75" id="evacuationNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                       edit
                       </span></p>
                   </div>
@@ -220,7 +226,7 @@
                   <label class="font-weight-bold" >Secondary Evacuation Shelter or location</label><br>
                   
                   <div width="30">
-                    <input class="bg-white inputBtm border-bottom w-75" id="secondaryEvacLoc" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
+                    <input class="pl-3 inputHgtClr rounded w-75" id="secondaryEvacLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
                       edit
                       </span></p>
                   </div>
@@ -237,7 +243,7 @@
 
                 <div>
                     <p class="h2">Emergency Contact</p>
-                    <hr class="my-4">
+                    
                     <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
                     </div> 
 
@@ -245,7 +251,7 @@
                 <div >
                     <label class="font-weight-bold">Primary Contact</label><br>
                     <div width="30">
-                      <input class="inputBtm border-bottom w-75" id="contactName" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="contactName" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                         edit
                         </span></p>
                     </div>
@@ -255,7 +261,7 @@
                     <label class="font-weight-bold">Contact Phone Number</label><br>
                     
                     <div width="30">
-                      <input class="inputBtm border-bottom w-75" id="contactNum" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="contactNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                         edit
                         </span></p>
                     </div>
@@ -265,7 +271,7 @@
                     <label class="font-weight-bold">Contact Email Address</label><br>
                   
                     <div width="30">
-                      <input class="inputBtm border-bottom w-75" id="contactEml" onchange="updateEdited()"><span class="material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="contactEml" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
                         edit
                         </span></p>
                     </div>
@@ -278,7 +284,14 @@
       </div>
 
     </section>
+
+    <div class=" h4 text-center px-3 pb-5" id="element-to-hide" >
+      <input type="button"  id="rep" value="Download PDF" class="font-weight-bold  noOutline btn_print btn-link bg-white btn-outline-light  px-3 py-2 " data-toggle="modal" data-target="#exampleModalCenter">
+    </div>
   </div>
+
+ 
+  
   <!--Printable  PDF Ends-->
 <br><br><br>
   
@@ -313,16 +326,16 @@
 
 <footer id="Contact-me" class="bio-flex bio-font p-3 bg-dark container-fluid">
 
-  <div class="row">
+  <div class="">
 
-      <div class="text-center justify-content-center col-md-10 d-flex" style="padding:20px;" id="gatherBkg" >
+      <div class="text-center justify-content-center  d-flex" style="padding:20px;" id="gatherBkg" >
         <p class=" text-white h4">
           Would you like to share what you like so far with SitPrep and recommend additional features? <a href="./feedback.html" ><span class=" text-primary">Click Here</span></a>
         </p>
         </div>
 
-      <div class="col-md-2">
-        <a class="text-white" href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
+      <div class="">
+        <a class="text-white text-center " href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
           <div class="text-light">
             &copy; 2022 SitPrep, LLC
           </div>
