@@ -5,6 +5,7 @@ var newPlan = [];
 var editedPlan = [];
 
 
+
  
 
 
@@ -336,5 +337,13 @@ var updateEdited = function () {
   function giveFeedback (){
 
     window.location.href="./feedback.html";
-console.log()
+
   };
+
+
+
+  
+
+
+  
+  

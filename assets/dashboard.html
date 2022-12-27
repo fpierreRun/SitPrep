@@ -15,11 +15,7 @@
 <header class="sticky-top bg-white   py-3 ">
     <nav class="navbar navbar-expand-lg py-3">
         <img class="navbar-brand pb-4" src="./images/SitPrep Logo Redorange Black.png"  width="150" alt="" />
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="material-symbols-outlined material-symbols-white">
-            menu
-            </span>
-        </button>
+        
       
         <div class="collapse navbar-collapse pb-3" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -44,8 +40,14 @@
           </form> -->
         </div>
     
-          <a href="../assets/plan.html" class="txtOrg btn-outline-success btn btnOppate ">View My Plan</a>
+        <a href="../assets/plan.html" class="txtOrg btn-outline-success btn btnOppate ">View My Plan</a>
     
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined ">
+            menu
+            </span>
+        </button>
+          
       </nav>
 
 
@@ -58,57 +60,73 @@
 <!--header ends-->
 
 
-<body >
+<body class="Bkgd" >
     
     <section class="container p-5">
 
       <!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      
       <div class="py-5">
+
+        <!-- <div class="d-flex">
+        <h4>Step</p>
+        <p class=" btn  rounded-circle bg-success" >
+          1</p>
+        </div> -->
+
         <div class="">
-          <div class="shadow-lg rounded">
+          <div class="shadow rounded bg-white">
             <div class="card-body">
-              <h3 class="card-title font-weight-bold text-uppercase ">72 HOUR Food Supplies</h3>
+              <h3 class="card-title font-weight-bold text-uppercase ">72 HOUR EMERGENCY PLAN</h3>
 
               <br>
 
-              <main class="d-flex pb-5">
-                <div class="col-lg-6 ">
+              <main class="d-flex pb-5 font-weight-light font-italic">
+                <div class="col-lg-7 ">
 
-                  <div class="d-flex">
-                  <span class="material-symbols-outlined ">
-                    done
-                    </span >
+                  <div class="d-flex ">
+                    <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img>
                     
                     <p class=" ">Be guided in creating an emergency plan</p>
                   </div>
 
                   <div class="d-flex">
-                    <span class="material-symbols-outlined ">
-                      done
-                      </span >
-                      <p class=" ">Be guided in creating an emergency plan</p>
+                    <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img>
+                
+                      <p class=" ">Decide on a safe place for your household to reunite</p>
                   </div>
 
                       <div class="d-flex">
-                        <span class="material-symbols-outlined ">
-                          done
-                          </span >
-                        <p class=" ">Be guided in creating an emergency plan</p>
+                        <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img>
+                        <p class=" ">Share with families and friends</p>
                       </div>
                   </div>
-                  <div class="col-lg-6">
-                    <img src="./images/Food Storage Cal 1.png" class="pl-5 img-fluid " id="exampleModalCenterTitle" width="65%"  ></img>
+                  <div class="col-lg-5">
+                    <img src="./images/Gathering Main.png" class="" id="exampleModalCenterTitle" width="65%"  ></img>
                 </div>
               </main>
 
               <div class="row">
                 <div class="col-lg-5">
-                  <p ><small class="font-weight-bold">Status:<span class="font-weight-normal"> Not Started</span></small></p>
+                  <p >
+                    <small class="font-weight-bold d-flex">Status: 
+                      <span class="font-weight-normal text-danger pl-1" id="not1"> Not Started</span>
+                      <span style="display: none"  class="pl-1 font-weight-normal text-warning" id="prog1"> In Progess</span>
+                      <span style="display: none"  class="pl-1 font-weight-normal text-success" id="comp1"> Completed</span>
+                  
+                    </small>
+                </p>
 
                 </div>
               
                     <div class="text-center">
-                     <a href="#" class="btn btn-primary rounded-pill ">Add To Plan</a>
+                     <button id="add1" type="button" class="btn btn-primary rounded-pill" onclick="updateCards ()">Add To Plan</button>
+                     <a style="display: none" class="btn btn-primary rounded-pill" href="./home.html"  id="continue1" >Continue Planning</a>
+                     <a style="display: none" class="btn btn-success rounded-pill " href="./plan.html"  id="view1" >View Plan</a>
+                     
                   </div>
                 </div>
             </div>
@@ -117,64 +135,7 @@
         </div>
     <!-- End of 72 HOUR FOOD SUPPLIES Card-->
 
-    <!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
-      <div class="py-5">
-        <div class="">
-          <div class="shadow-lg rounded">
-            <div class="card-body">
-              <h3 class="card-title font-weight-bold text-uppercase ">72 HOUR Food Supplies</h3>
 
-              <br>
-
-              <main class="d-flex pb-5">
-                <div class="col-lg-6 ">
-
-                  <div class="d-flex">
-                  <span class="material-symbols-outlined ">
-                    done
-                    </span >
-                    
-                    <p class=" ">Be guided in creating an emergency plan</p>
-                  </div>
-
-                  <div class="d-flex">
-                    <span class="material-symbols-outlined ">
-                      done
-                      </span >
-                      <p class=" ">Be guided in creating an emergency plan</p>
-                  </div>
-
-                      <div class="d-flex">
-                        <span class="material-symbols-outlined ">
-                          done
-                          </span >
-                        <p class=" ">Be guided in creating an emergency plan</p>
-                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <img src="./images/Food Storage Cal 1.png" class="pl-5 img-fluid " id="exampleModalCenterTitle" width="65%"  ></img>
-                </div>
-              </main>
-
-              <div class="row">
-                <div class="col-lg-5">
-                  <p ><small class="font-weight-bold">Status:<span class="font-weight-normal"> Not Started</span></small></p>
-
-                </div>
-              
-                    <div class="text-center">
-                     <a href="#" class="btn btn-primary rounded-pill ">Add To Plan</a>
-                  </div>
-                </div>
-            </div>
-
-          </div>
-        </div>
-<!-- End of 72 HOUR FOOD SUPPLIES Card-->
-
-       
-
-    
     </section>
 
 
@@ -233,7 +194,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <script src="./js/calc.js"></script>
+  <script src="./js/landing.js"></script>
 
 </body>
 </html>

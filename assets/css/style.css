@@ -31,13 +31,16 @@ body {
   height: 100%;
 }
 
-/* .bodBkg {
-  background-image: url(../images/Background\ Image_fam.png);
+
+
+body.Bkgd {
+  background-color: #F7F8FB;
+  /* background-image: url(../images/Background\ Image_fam.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
-  height:var(--breakpoint-sm);
-} */
+  height:var(--breakpoint-sm); */
+}
 
 
 
@@ -157,12 +160,13 @@ header {
 
 .pdfPad {
   position: relative;
-  top: -100px;
+  top: -150px;
 
 }
 
 .jumboHgt{
-  padding: 500px;
+  padding: 50px;
+  padding-bottom: 200px;
 
 }
 
@@ -207,6 +211,17 @@ a.btnOppate{
   border-color:var(--secondary-oppate);
 }
 
+.grnOppate{
+  background-color: var(--secondary-oppate) ;
+  border-color:var(--secondary-oppate);
+  
+}
+
+.orgOppate{
+  background-color:#EE9A8B;
+  border-color:#EE9A8B;
+  
+}
 
 a.btnPln{
   background-color: var(--secondary-color);
@@ -257,6 +272,12 @@ font-weight:300;
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
 } 
+
+.outlineWht {
+  border-color: var(--WhiteText-color);
+  background-color: var(--secondary-color);
+
+}
 
 .txtOrg{
   color: var(--primary-color);
