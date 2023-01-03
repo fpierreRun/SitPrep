@@ -14,7 +14,7 @@
 </head>
 
 
-<body class="bg-light h-100 d-flex flex-column">
+<body class=" h-100 d-flex flex-column">
     <header class="sticky-top">
         <!-- Just an image -->
 
@@ -22,9 +22,9 @@
    
    
   
-        <nav class="navbar navbar-dark bg-dark pb-4">
+        <nav class="navbar navbar-dark bg-white  pb-4">
             <a class="navbar-brand" href="../index.html">  
-                <img src="./images/SitPrep Logo White.png"  width="150" alt="" />
+                <img src="./images/SitPrep Logo Redorange.png"  width="150" alt="" />
             </a>
         <div>
             <!-- <ul class="nav nav-pills">
@@ -56,7 +56,7 @@
 <div>
 
     
-        <section class="bg-light p-5 container-fluid">
+        <section class=" p-5 container-fluid">
 
             
 
@@ -68,9 +68,9 @@
                         <main id= "step1" >
 
                             <div class="pb-5">
-                                <p class="h3"><span class="font-weight-bold txtOrg">Step 1/3:</span> Where will you gather if your home is not accessible?</p>
+                                <p class="h3 font-weight-normal"><span class="font-weight-bold txtGrn">Step 1/3:</span> Where will you gather if your home is not accessible?</p>
                                 <hr class="my-4">
-                                <p class="h5 text-muted">Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. 
+                                <p class="text-muted ">Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. 
                                     If you have a pet, make sure the location is animal friendly.</p>
 
                                     
@@ -78,31 +78,31 @@
                             
                      
 
-                            <h4>Primary Gathering Location</h4><br>
+                            <h5>Primary Gathering Location</h5><br>
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 location_on
                                 </span>
     
-                            <input type="text"  id="location-input2" class="w-75 p-2 bg-white shadow-sm rounded" name="primeLoc"  placeholder="Enter Gather Location"/>
+                            <input type="text"  id="location-input2" class="w-75 p-2  rounded" name="primeLoc"  placeholder="Enter Gather Location"/>
                         </div>
 
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 call
                                 </span>
-                            <input  id="primeNum" name="primeNum" class="w-75 p-2 bg-white shadow-sm rounded"  placeholder="(If Applicable) Enter Location Number"><br>
+                            <input  id="primeNum" name="primeNum" class="w-75 p-2  rounded"  placeholder="(If Applicable) Enter Location Number"><br>
                         </div>
 
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 info
                                 </span>
-                            <textarea class="w-75 p-2 bg-white shadow-sm rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter Location Additional Info" ></textarea>
+                            <textarea class=" w-75 p-2 rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter Location Additional Info" ></textarea>
                         </div>
 
                         <div class="pt-3 ">
-                            <input class="bg-white shadow-sm rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                            <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
                             <label for="vehicle1"> Add a Secondary Location</label><br>
                         </div>
                     </main>
@@ -116,21 +116,21 @@
                             <span class="material-symbols-rounded pr-5">
                                 location_on
                                 </span>
-                            <input type="text"  id="location-input2" class="w-75 p-2 bg-white shadow-sm rounded" name="secLoc" placeholder="Enter Gather Location"  />
+                            <input type="text"  id="location-input2" class="w-75 p-2  rounded" name="secLoc" placeholder="Enter Gather Location"  />
                         </div>
 
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 call
                                 </span>
-                            <input id="secNum" name="secNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="(If Applicable) Enter Location Number"><br>
+                            <input id="secNum" name="secNum" class="w-75 p-2  rounded" placeholder="(If Applicable) Enter Location Number"><br>
                         </div>
 
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 info
                                 </span>
-                            <textarea class="w-75 p-2 bg-white shadow-sm roundedl" id="addInfo" name="secInfo" placeholder="Enter Location Additional Info"></textarea><br>
+                            <textarea class="w-75 p-2 roundedl" id="addInfo" name="secInfo" placeholder="Enter Location Additional Info"></textarea><br>
                         </div>
 
                     </Main>
@@ -144,9 +144,9 @@
                     <main  style="display: none" id="evacForm">
 
                             <div class="pb-5">
-                                <p class="h3"><span class="font-weight-bold txtOrg">Step 2/3:</span> What will be your evacuation Route?</p>
+                                <p class="h3 font-weight-normal"><span class="font-weight-bold txtGrn">Step 2/3:</span> What will be your evacuation Route?</p>
                                 <hr class="my-4">
-                                <p class="h5 text-muted">Plan how will you leave and where you and your household will go if evacuation is in place.</p>
+                                <p class=" text-muted">Plan how will you leave and where you and your household will go if evacuation is in place.</p>
                             </div> 
 
 
@@ -154,14 +154,14 @@
                             <span class="material-symbols-rounded pr-5">
                                 location_on
                                 </span>
-                            <input type="text" id="needs" name="evacLoc" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Shelter Location"><br>
+                            <input type="text" id="needs" name="evacLoc" class="w-75 p-2  rounded" placeholder="Enter Shelter Location"><br>
                         </div>
                         
                         <div class="form-group d-flex">
                             <span class="material-symbols-rounded pr-5">
                                 call
                                 </span>
-                            <input  id="need2" name="evacNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Shelter Number"><br>
+                            <input  id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter Shelter Number"><br>
                         </div>
                         
                         <div class="form-group d-flex">
@@ -170,7 +170,7 @@
                                 </span>
 
                             
-                                <textarea class="w-75 p-2 bg-white shadow-sm rounded" id="sec-Evac-Loc" name="sec-Evac-Loc" placeholder="Enter Shelter Additional Info"  ></textarea><br>
+                                <textarea class="w-75 p-2 rounded" id="sec-Evac-Loc" name="sec-Evac-Loc" placeholder="Enter Shelter Additional Info"  ></textarea><br>
                           
                              
                     </main>
@@ -180,9 +180,9 @@
                 <main style="display: none" id="contactForm">
 
                         <div class="pb-5">
-                            <p class="h3"><span class="font-weight-bold txtOrg">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
+                            <p class="h3 font-weight-normal"><span class="font-weight-bold txtGrn">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
                             <hr class="my-4">
-                            <p class="h5 text-muted">Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+                            <p class="text-muted">Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
                         </div> 
 
 
@@ -190,21 +190,21 @@
                         <span class="material-symbols-rounded pr-5">
                             person
                             </span>
-                        <input type="text" id="needs" name="contactName" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Name"><br>
+                        <input type="text" id="needs" name="contactName" class="w-75 p-2  rounded" placeholder="Enter Contact Name"><br>
                     </div>
                     
                     <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                             call
                             </span>
-                        <input type="text" id="need2" name="contactNum" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Number"><br>
+                        <input type="text" id="need2" name="contactNum" class="w-75 p-2 rounded" placeholder="Enter Contact Number"><br>
                     </div>
                     
                     <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                             mail
                             </span>
-                        <input id="need2" name="contactEml" class="w-75 p-2 bg-white shadow-sm rounded" placeholder="Enter Contact Email"><br>
+                        <input id="need2" name="contactEml" class="w-75 p-2  rounded" placeholder="Enter Contact Email"><br>
                     </div>
                     
                     
@@ -216,7 +216,7 @@
 
             <!--first next button-->
 
-            <main class=" bg-light py-5 modal-footer">
+            <main class=" py-5 modal-footer">
                     <div>
                         <button id="next" onclick="evacPage()" class="btn btn-primary" >Next</button>
                     </div>

@@ -1,5 +1,6 @@
 
 var addTo72 = [];
+var prog72 = [];
 
 
 function updateCards (){
@@ -42,6 +43,8 @@ function cardUpdates() {
     
     document.getElementById("not1").style.display = "none";
     document.getElementById("prog1").style.display = "block";
+
+    
   };
 
 
@@ -64,10 +67,22 @@ if(updatedPlan){
   document.getElementById("not1").style.display = "none";
     document.getElementById("prog1").style.display = "none";
     document.getElementById("comp1").style.display = "block";
+
+    var prog72 = 25;
   
 };
-  console.log(cardUpdates)
-  
+
+function progTotal() {
+
+  var sumProgress = prog72 
+
+  document.getElementById("planProgress").style.width= sumProgress += "%";
+
+console.log(document.getElementById("planProgress").style.width);
+};
+progTotal();
+
+
 };
 cardUpdates();
 

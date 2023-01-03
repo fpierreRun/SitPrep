@@ -3,7 +3,8 @@
 :root {
   --primary-color: #F04729;
   --secondary-color: #00a35f;
-  --secondary-oppate: #C1DACF;
+  
+  --secondary-oppate: #DBE1DE;
   --Buttongreen-color: #11F091;
   --Highlightyellow-color: #F0DC41;
   --ButtonGrey-color: #4e4e4e;
@@ -165,8 +166,8 @@ header {
 }
 
 .jumboHgt{
-  padding: 50px;
-  padding-bottom: 200px;
+  padding: 25px;
+  padding-bottom: 150px;
 
 }
 
@@ -234,6 +235,9 @@ a.btnPln{
 
 input{
   border: none;
+  background-color: #f4f4f5;
+font-weight:300;
+  height:40px;
 }
 
 
@@ -265,7 +269,7 @@ font-weight:300;
 
 .bgOrg {
   background-color: var(--primary-color);
-  border-color: var(--Buttongreen-color);
+  border-color:var(--primary-color);
 }
 
 .recBlu{
@@ -337,7 +341,53 @@ font-weight:300;
 }
 
 
-.material-symbols-outlined {
+.material-nav {
+  font-family: "Material Icons";
+  align-self: center;
+  margin: left;
+  font-size: 25px !important;
+  color:dodgerblue;
+
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-symbols-outlinedd {
   font-family: "Material Icons";
   align-self: center;
   margin: left;
@@ -356,6 +406,32 @@ font-weight:300;
   /* Support for IE. */
   font-feature-settings: "liga";
 }
+
+.material-nav {
+  font-family: "Material Icons";
+  align-self: center;
+  font-weight:800;
+
+  
+  color:var(--secondary-color);
+
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+
+    
+  
+
+}
+
 
 .material-symbols-edit {
   font-family: "Material Icons";
