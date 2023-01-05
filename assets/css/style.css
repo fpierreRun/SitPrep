@@ -4,13 +4,13 @@
   --primary-color: #F04729;
   --secondary-color: #00a35f;
   
-  --secondary-oppate: #DBE1DE;
+  --secondary-oppate: #d7ffef;
   --Buttongreen-color: #11F091;
   --Highlightyellow-color: #F0DC41;
   --ButtonGrey-color: #4e4e4e;
   --normaltext-color: #3e3e3e;
   --lighttext-color: #898989;
-  --Tiltecolor-color: #451DF0;
+  --Tiltecolor-color: #4A5071;
   --WhiteText-color: #ffffff;
   --OrangeText-color: #F03211;
 
@@ -28,8 +28,9 @@
 
 body {
   font-size: 100%;
-  color: rgb(31, 31, 31);
+  color: #3e3e3e;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 
@@ -218,8 +219,23 @@ a.btnOppate{
   
 }
 
+
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circleBdr {
+  border-width: 2px;
+  border-style: solid;
+  border-color:var(--secondary-color);
+}
+
+
 .orgOppate{
-  background-color:#EE9A8B;
+  background-color:#ffedea;
   border-color:#EE9A8B;
   
 }
@@ -233,6 +249,11 @@ a.btnPln{
   color:var(--Tiltecolor-color);
 }
 
+.txtGry{
+
+  color: var(--ButtonGrey-color);
+}
+
 input{
   border: none;
   background-color: #f4f4f5;
@@ -240,6 +261,11 @@ font-weight:300;
   height:40px;
 }
 
+.txtImpact {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: var(--normaltext-color);
+
+}
 
 input[type=number] {
   border: none;
@@ -302,8 +328,12 @@ font-weight:300;
 
 .title {
   font-family: Impact;
-  /* color: var(--secondary-color) */
+  color:var(--Tiltecolor-color);
   font-size: 2.5em;
+}
+.headerClr{
+  color:var(--Tiltecolor-color);
+
 }
 
 #introSect {
@@ -320,7 +350,9 @@ font-weight:300;
   background-size: cover;
 }
 
-
+.robotoFnt {
+  font-family: sans-serif;
+}
 
 .material-icons {
   font-family: "Material Icons";
@@ -506,4 +538,12 @@ font-weight:300;
     background-position:center;
     background-size:contain;
 }
+
+.stp1-pic{
+  background-image: url(../images/Gathering.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+
 }

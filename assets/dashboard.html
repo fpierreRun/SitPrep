@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header class="sticky-top bg-light py-3 ">
+<header class="sticky-top bg-white  ">
     <nav class="navbar navbar-expand-lg py-3">
         <img class="navbar-brand pb-4" src="./images/SitPrep Logo Redorange.png"  width="150" alt="" />
         
@@ -45,9 +45,9 @@
         </div>
     
         <div class="">
-        <a href="../assets/storageCalc.html" class="btn-outline-success btn  d-flex"><span class="material-icons pr-3">
+        <a href="../assets/storageCalc.html" class="btn-success btn  d-flex justify-content-center align-items-center"><span class="material-icons pr-3">
           calculate
-          </span>Food Storage Calc</a>
+          </span>Food Storage</a>
         </div>
 
     
@@ -69,14 +69,157 @@
 <!--header ends-->
 
 
-<body class="Bkgd" >
-      <section class="container">
-          <p class="text-center display-4">My Situational Preparedness Plan</p>
-          <div class="progress bg-primary shadow-sm ">
-            <div id="planProgress" class="progress-bar-striped progress-bar-animated recBlu " role="progressbar" style="width: 0%" ></div>
+<body class="bg-light" >
+
+  <p class="text-center h1 txtImpact pb-5"></p>
+
+<div class="container shadow rounded grnOppate">
+
+  <p class="text-center font-weight-bolder h2  pt-2  robotoFnt txtGry">Let's sit down and start prepping</p>
+  <p class="text-center font-weight-light h5   robotoFnt txtGry">Feel free to start in order or at any step that you are prepared to start.</p>
+  <section class="row text-center   ">
+          
+
+    <!--step 1 begin-->
+      <main class="col-lg-4"> 
+                  <!--Step 1 muted begin-->
+                  <a class="btn" href="./home.html" id="step1M">
+                <div class="d-flex py-3" >
+
+                    <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                          <span class="material-symbols-outlined text-success ">
+                            assignment
+                            </span>
+                    </div>
+
+                  <div class=" d-flex justify-content-center align-items-center">
+                    <p class="pt-1 pl-3 font-weight-light h5 text-muted">Step 1</p>
+                  </div>
+
+              </div>
+            </a>
+              
+          <!--Step 1 muted ends-->
+
+          <!--Step 1 complete begin-->
+
+          <a style="display: none" class="btn" href="./plan.html" id="step1C">
+
+
+          <div class="d-flex py-3" >
+
+              <div class="shadow-sm bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
+                    <span class="material-symbols-rounded text-light ">
+                      done
+                      </span>
+              </div>
+
+              <div class=" d-flex justify-content-center align-items-center bg">
+                <p class="pt-1 pl-3 font-weight-light h5 text-success">Step 1</p>
+              </div>
+
           </div>
-      </section>
+        </a>
+          <!--Step 1 complete ends-->
+      </main> 
+   <!--step 1 end-->
+
+    <!--step 2 begin-->
+    <main class="col-lg-4"> 
+      <!--Step 2 muted begin-->
+      <a class="btn" href="">
+          <div class="d-flex py-3" id="step2M">
+
+              <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                    <span class="material-symbols-rounded text-success ">
+                        medical_information
+                        </span>
+              </div>
+
+            <div class=" d-flex justify-content-center align-items-center">
+              <p class="pt-1 pl-3 font-weight-light h5 text-muted">Step 2</p>
+            </div>
+
+        </div>
+      </a>
+  
+<!--Step 2 muted ends-->
+
+<!--Step 2 complete begin-->
+
+    <a style="display: none" class="btn" href="">
+      <div class="d-flex py-3" id="step2C">
+
+        <div class="shadow-sm bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
+              <span class="material-symbols-rounded text-light ">
+                done
+                </span>
+        </div>
+
+        <div class=" d-flex justify-content-center align-items-center bg">
+          <p class="pt-1 pl-3 font-weight-light h5 text-success">Step 2</p>
+        </div>
+
+      </div>
+    </a>
+  <!--Step 2 complete ends-->
+  </main>  
+  <!--step 2 end-->
+
+    <!--step 3 begin-->
+    <main class="col-lg-4"> 
+      <!--Step 3 muted begin-->
+      <a class="btn " href="">
+          <div class="d-flex py-3" id="step3M">
+
+              <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                    <span class="material-symbols-outlined text-success ">
+                      kitchen
+                      </span>
+              </div>
+
+            <div class=" d-flex justify-content-center align-items-center">
+              <p class="pt-1 pl-3 font-weight-light h5 text-muted">Step 3</p>
+            </div>
+
+        </div>
+      </a>
+  
+<!--Step 3 muted ends-->
+
+<!--Step 3 complete begin-->
+
+    <a style="display: none" class="btn" href="">
+      <div class="d-flex py-3" id="step3C">
+
+        <div class="shadow-sm  bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
+              <span class="material-symbols-rounded text-light ">
+                done
+                </span>
+        </div>
+
+        <div class=" d-flex justify-content-center align-items-center bg">
+          <p class="pt-1 pl-3 font-weight-light h5 text-success">Step 3</p>
+        </div>
+
+      </div>
+    </a>
+  <!--Step 3 complete ends-->
+  </main>  
+  <!--step 3 end-->
+
+</section>
+ <!--Progress Bar begins-->
+ <main class="">
+  <div class="progress bg-white shadow-sm " style="height: 5px;">
+    <div width="50" height="10px" id="planProgress" class="progress-bar-striped progress-bar-animated recBlu " role="progressbar" style="width: 0%" ></div>
+  </div>
+</main>
+<!--Progress Bar begins-->
+</div>
  
+
+
     
     <section class="container p-5">
       
@@ -96,14 +239,14 @@
         </div> -->
 
         <div class="">
-          <div class="shadow rounded bg-white">
+          <div class="shadow rounded bg-white stp1-pic">
             <div class="card-body">
-              <h3 class="card-title font-weight-bold text-uppercase ">72 HOUR EMERGENCY PLAN</h3>
+              <h3 class="card-title font-weight-bold robotoFnt txtGry ">72 Hour Emergency Plan</h3>
 
               <br>
 
               <main class="d-flex pb-5 font-weight-light font-italic">
-                <div class="col-lg-7 ">
+                <div class="col-lg-7 robotoFnt">
 
                   <div class="d-flex ">
                     <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img>
@@ -122,28 +265,28 @@
                         <p class=" ">Share with families and friends</p>
                       </div>
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-5 phone-block">
                     <img src="./images/Gathering Main.png" class="" id="exampleModalCenterTitle" width="65%"  ></img>
                 </div>
               </main>
 
               <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 phone-block">
                   <p >
                     <small class="font-weight-bold d-flex">Status: 
-                      <span class="font-weight-normal text-danger pl-1" id="not1"> Not Started</span>
-                      <span style="display: none"  class="pl-1 font-weight-normal text-warning" id="prog1"> In Progess</span>
-                      <span style="display: none"  class="pl-1 font-weight-normal text-success" id="comp1"> Completed</span>
+                      <span class="font-weight-bold text-danger pl-1" id="not1"> Not Started</span>
+                      <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog1"> In Progess</span>
+                      <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp1"> Completed</span>
                   
                     </small>
                 </p>
 
                 </div>
               
-                    <div class="text-center">
-                     <button id="add1" type="button" class="btn btn-primary rounded-pill" onclick="updateCards ()">Add To Plan</button>
-                     <a style="display: none" class="btn btn-primary rounded-pill" href="./home.html"  id="continue1" >Continue Planning</a>
-                     <a style="display: none" class="btn btn-success rounded-pill " href="./plan.html"  id="view1" >View Plan</a>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                     <button id="add1" type="button" class="btn btn-primary rounded-pill text-center" onclick="updateCards ()">Add To Plan</button>
+                     <a style="display: none" class="btn btn-primary rounded-pill text-center" href="./home.html"  id="continue1" >Continue Planning</a>
+                     <a style="display: none" class=" btn btn-outline-success rounded-pill text-center" href="./plan.html"  id="view1" >View Plan</a>
                      
                   </div>
                 </div>
@@ -161,48 +304,7 @@
 
 <!-- Footer begans-->
 
-<footer id="Contact-me" class="bio-flex bio-font p-3 bg-dark container-fluid">
 
-    <div class="row">
-  
-      <div class="text-center justify-content-center col-md-10 d-flex" style="padding:20px;" id="gatherBkg" >
-            <p class=" text-white h4">
-            Would you like to share what you like so far with SitPrep and recommend additional features? <a href="./feedback.html" ><span class=" text-primary">Click Here</span></a>
-            </p>
-        </div>
-  
-      <div class="col-md-2">
-            <a class="text-white" href="./privacy-policy.html">Read Our Privacy Policy</a><br/>
-            <div class="text-light">
-                &copy; 2022 SitPrep, LLC
-            </div>
-      </div>
-  
-     
-  
-      </div>
-    
-    <!-- <h1 class="bio-border">Contact me</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="">208.312.4183</a>
-            </li>
-            <li>
-                <a href="">francisd.plouis@gmail.com</a>    
-            </li>
-            <li>
-                <a href="">GitHub</a>
-            </li>
-            <li>
-                <a href="">Twitter</a>
-            </li> 
-            <li>
-                <a href="">spotify</a>
-            </li> 
-        </ul> -->
-    </nav>
-  </footer>
 
   <!-- sCripts for html-->
 

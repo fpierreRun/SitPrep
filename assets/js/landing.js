@@ -68,7 +68,12 @@ if(updatedPlan){
     document.getElementById("prog1").style.display = "none";
     document.getElementById("comp1").style.display = "block";
 
-    var prog72 = 25;
+    document.getElementById("step1M").style.display = "none";
+    document.getElementById("step1C").style.display = "block";
+
+
+
+    var prog72 = 33.333;
   
 };
 
