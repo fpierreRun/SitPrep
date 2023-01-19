@@ -14,48 +14,109 @@
     
     <title>SitPrep</title>
 </head>
-<body class="Bkgd">
+<body class="Bkgd container-fluid ">
 
-<header class="sticky-top bg-white  ">
-    <nav class="navbar navbar-expand-lg py-3">
-        <img class="navbar-brand pb-4" src="./images/SitPrep Logo Redorange.png"  width="150" alt="" />
+  <!--Webb App start-->
+  <div class="row ">
+
+  <!--Header Starts-->
+<header class="recBlu fixed-top col-lg-2 dashHgt">
+
+ 
+    
+  
+  <nav class="text-left  navbar-expand-lg ">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="material-symbols-outlined ">
+        menu
+        </span>
+    </button>
+
+     <div class="recBlu">
+    <img class="navbar-brand py-4" src="./images/SitPrep Logo White.png"  width="150" alt="" />
+  </div>
+
+  <div  class=" rounded grnOppateBtn py-2 d-flex text-white ">
+  <span class=" px-2 material-symbols-outlined ">
+    dashboard
+    </span>
+    <a  href="./dashboard copy.html" class="text-white" >
+      Dashboard
+   </a>
+  </div>
+
+  <p class="h4 text-light pt-4">72 Hour Plan</p>
+
+          <div class="navbar-collapse">
+            <div class="nav flex-column nav-pills d-flex" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              
+              <div  class="  py-2 d-flex text-white ">
+                <span class="material-icons pr-3 text-white">
+                  map
+                  </span>
+                <a class="py-2 text-white d-flex"  href="./home.html"> Evacuation Plan</a>
+                
+              </div>
+              
+              <div  class="  py-2 d-flex text-white ">
+                <span class="material-icons pr-3 text-white">
+                  kitchen
+                  </span>
+                <a class="py-2 text-white d-flex"   href="./Food table.html" role="tab" >Food Supply</a>
+                
+              </div>
+              
+            <p class="h4 text-light pt-4">Extra</p>
+
+            <div  class=" py-2 d-flex text-white ">
+              <span class="material-icons pr-3 text-white">
+                
+                tips_and_updates
+              </span>
+                <a class="py-2 text-white " id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tip & Tricks</a>
+              
+            </div>
+            
+             
+                <div  class="  py-2 d-flex text-white ">
+                  <span class="material-icons pr-3 text-white">
+                  
+                    food_bank
+                    </span>
+              <a href="../assets/storageCalc.html" class=" py-2 text-white d-flex">
+                Food Storage</a>
+                </div>
+                
+
+                <div  class="  py-2 d-flex text-white ">
+                  <span class="material-icons pr-3 text-white">
+                
+                    emoji_emotions
+                    </span>
+                  <a class="py-2 text-white d-flex" href="../assets/feedback.html">
+                    Share An Idea</a>
+                </div>
+                
+
+                <li class="nav-item dropdown pt-5 pr-3">
+                  <a class="text-white link-light nav-link dropdown-toggle py-2 " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Contact Us
+                  </a>
+                  <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item homenav text-success" href="https://www.instagram.com/sit.prep/" target="_blank">Instragram</a>
+                    <a class="dropdown-item homenav text-success" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
+                  </div>
+                </li>
+            </div>
         
-      
-        <div class="collapse navbar-collapse pb-3" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item pr-3">
-              <a class="nav-link homenav disabled" href="#">About Us</a>
-            </li>
-            <li class="nav-item dropdown pr-3">
-              <a class="text-dark link-light nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Contact Us
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item homenav" href="https://www.instagram.com/sit.prep/" target="_blank">Instragram</a>
-                <a class="dropdown-item homenav" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
-            </li>
-            <li class="nav-item pr-3">
-              <a class="text-dark link-light nav-link " href="../assets/feedback.html">Share An Idea</a>
-            </li>
-          </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
-        </div>
-    
-        <div class="">
-        <a href="../assets/storageCalc.html" class="btn-success btn  d-flex justify-content-center align-items-center"><span class="material-icons pr-3">
-          calculate
-          </span>Food Storage</a>
-        </div>
+          
+  
 
+
+      
     
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="material-symbols-outlined ">
-            menu
-            </span>
-        </button>
+        
           
       </nav>
 
@@ -70,8 +131,9 @@
 
 
 
-
-  <p class="text-center h1 txtImpact pb-5"></p>
+<div class="  ">
+  <p class="text-center display-4 txtImpact pb-5 txtOrg">My SitPrep Plan</p>
+  
 
 <div class="container shadow rcorners grnOppate">
 
@@ -295,7 +357,8 @@
 
 
     </section>
-
+  </div>
+  </div>
 
 
 
