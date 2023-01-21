@@ -216,8 +216,8 @@ var saveData = function () {
 
   localStorage.setItem("plan", JSON.stringify(plan))
 
- //got to View Plan
- window.location.href="./plan.html";
+ //got to Dashboard
+ window.location.href="./dashboard Main.html";
 };
 
   
