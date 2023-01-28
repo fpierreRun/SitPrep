@@ -16,76 +16,90 @@
 </head>
 
 
-<body class="Bkgd container-fluid ">
+<body class="bg-white container-fluid ">
 
   <div>
                         
     <div class="row" >
 
         <div class="col-8 ">
-            <p class="h1">Food Storage Calculator</p>
 
-            <div>              
-            <h4 class="font-weight-normal">Powered by SitPrep</h4>
-            </div>
+          <a class="navbar-brand" href="./dashboard Main.html">  
+            <p class="h1 txtOrg txtImpact">3 Day Food Supply</p>
+          </a>
+            
         </div>
 
     </div>
 
 
     <hr class="mb-4">
-    <p class="h6 pb-5 text-center text-muted">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
-      specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
-      as needed. The quantity calculation is based on the number of people in your household you entered</p>
-  
+
 </div> 
 
 
   
   <!--Goals begins-->
 
-  <div class="bg-white rounded shadow container " id="downloadPrint">
+  <div class=" container " id="downloadPrint">
 
-    <div class="p-4 ">
+    <div class="pb-5 ">
 
-        <p class="h3 pt-4">Input Goals For Amount </p>  
+        <p class="h3 pt-4 text-center">How many adults (12 and older), kids (Under 12), and pets are you planning for?</p>  
+        
+        <p class="h6 pb-5 text-center text-muted">Providing information about those in your household will help create an emergency list that meets the needs of everyone.</p>
+       
+        <div class="row  ">
 
-        <label class=" pr-5 pt-4">How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
-
-        <div class="d-flex row">
-
-                <div  class="d-flex col-lg-3">
-                  <input style= width:25% class="bg-white form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
+                <div  class="d-flex col-lg-4 py-2">
+                  <input style= width:25% class=" shadow-sm bg-light form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
                   <label class="h5 pl-3 mt-2" >infant(s)</label><br>
               </div>
 
 
-                <div  class="d-flex col-lg-3">
-                    <input style= width:25% class="bg-white form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
+                <div  class="d-flex col-lg-4 py-2">
+                    <input style= width:25% class="shadow-sm bg-light form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
                     <label class="h5 pl-3 mt-2" >kid(s)</label><br>
                 </div>
 
         
-                <div class="d-flex col-lg-3">
-                    <input id="adults" style= width:25% class="  form-control border-success text-center " type="number" value="1" oninput="calculate()" min="0"></input>
+                <div class="d-flex col-lg-4 py-2">
+                    <input id="adults" style= width:25% class="shadow-sm bg-light  form-control  text-center " type="number" value="1" oninput="calculate()" min="0"></input>
                     <label class="h5 pl-2 mt-2" >adult(s)</label><br>
                 </div> 
 
+            
+                <div class="row py-5">
+                      <div class="pt-3 d-flex col-lg-4 ">
+                        <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                        <label class=" h5 pl-4 mt-2" for="vehicle1"> Dogs</label><br>
+                    </div>
 
-                <div class="d-flex col-lg-3">
-                  <input id="adults" style= width:25% class="  form-control border-success text-center " type="number" value="1" oninput="calculate()" min="0"></input>
-                  <label class="h5 pl-2 mt-2" >pet(s)</label><br>
-              </div> 
+                    <div class="pt-3 d-flex col-lg-4 ">
+                      <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                      <label class=" h5 pl-4 mt-2" for="vehicle1"> Cats</label><br>
+                    </div>
+
+                    <div class="pt-3 d-flex col-lg-4 ">
+                      <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+                      <label class=" h5 pl-4 mt-2" for="vehicle1"> Birds</label><br>
+                   </div>
+              </div>
+
+            
 
         </div> 
+
+        <div class="text-center " id="next2">
+          <input form="locationForm" class="btn btn-success" type="submit" value="Save & Continue" >
+        </div> 
+
   </div>
 </div>
 
 <!--Goals Ends-->
 
-<div class="text-center py-5" id="next2">
-  <input form="locationForm" class="btn btn-success" type="submit" value="Save & Continue" >
-</div> 
+
 
 
   <div class="table-responsive bg-white rounded shadow">
