@@ -208,10 +208,10 @@ section.homebkg {
  
 }
 
-input[type="button"] {
+/* input[type="button"] {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
-}
+} */
 
 .noOutline {
   border: none;

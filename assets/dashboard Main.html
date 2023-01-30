@@ -28,7 +28,10 @@
         <link rel="stylesheet" href="./css/style.css">
         <link href="./css/dashboard.css" rel="stylesheet">
       </head>
-      <body class="Bkgd">
+
+
+
+    <body class="Bkgd">
         
     <header class="Bkgd navbar    flex-md-nowrap p-0 ">
     
@@ -55,35 +58,36 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
          
             <img class=" pl-5 text-center" src="./images/SitPrep Logo White.png"  width="200" alt="" />
-        
-           
-        
-          <div class="position-sticky pt-5 sidebar-sticky container-fluid">
-            
-            
-              <p class="h4 text-white pt-4">72 Hour Plan</p>
 
-
-            
+          <div class="position-sticky pt-3 sidebar-sticky container-fluid" >
+         
                       <div class="navbar-collapse ">
 
-                        <div  class="rounded orgOppate py-2 d-flex text-white ">
-                          <span class=" px-2 material-symbols-outlined ">
-                            dashboard
-                            </span>
-                            <a  href="./dashboard copy.html" class="py-2 text-white d-flex btn" >
-                              Dashboard
-                           </a>
-                          </div>
-
-
-                        <div class="nav flex-column nav-pills d-flex" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class=" " id="v-pills-tab" role="tablist" aria-orientation="vertical" >
                           
-                          <div  class="py-2 d-flex text-white">
+                          <p class="h4 text-white pt-4">72 Hour Plan</p>
+
+                          <div  class="py-2 d-flex text-white rounded orgOppate">
+                            <span class="material-icons pr-3 text-white">
+                              dashboard
+                              </span>
+                            <a class="py-2 text-white d-flex btn "  href="./dashboard Main.html"> Dashboard</a>
+                            
+                          </div>
+      
+                          <div  class="py-2 d-flex text-white evacForm"  >
                             <span class="material-icons pr-3 text-white">
                               map
                               </span>
-                            <a class="py-2 text-white d-flex btn "  href="./home.html"> Evacuation Plan</a>
+                            <a class="py-2 text-white d-flex btn "  href="./home.html" > Evacuation Plan</a>
+                            
+                          </div>
+
+                          <div  class="py-2 d-flex text-white d-none evacPlan"  >
+                            <span class="material-icons pr-3 text-white">
+                              map
+                              </span>
+                            <a class="py-2 text-white d-flex btn "  href="./plan.html" > Evacuation Plan</a>
                             
                           </div>
                           
@@ -95,16 +99,16 @@
                             
                           </div>
                           
-                        <p class="h4 text-white pt-4">Extra</p>
+                            <p class="h4 text-white pt-4" >Extra</p>
             
-                        <div  class=" py-2 d-flex text-white">
-                          <span class="material-icons pr-3 text-white">
-                            
-                            tips_and_updates
-                          </span>
-                            <a class="py-2 text-white btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tip & Tricks</a>
-                          
-                        </div>
+                            <div  class=" py-2 d-flex text-white">
+                              <span class="material-icons pr-3 text-white">
+                                
+                                tips_and_updates
+                              </span>
+                                <a class="py-2 text-white btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tip & Tricks</a>
+                              
+                            </div>
                         
                          
                             <div  class="  py-2 d-flex text-white">
@@ -136,8 +140,13 @@
                                 <a class="dropdown-item homenav text-success" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
                               </div>
                             </li>
+                        </div>
+                      </div>
           </div>
         </nav>
+
+      </div>
+    </div>
     
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
           <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -158,265 +167,259 @@
     
           <div class="pt-5  ">
 
-          <div class="container shadow rcorners grnOppate ">
-          
-            <p class="text-center font-weight-bolder h2  py-3 robotoFnt txtBlu">Let's sit down and start prepping</p>
-            <p class="text-center font-weight-light h5   robotoFnt txtGry">Feel free to start in order or at any step that you are prepared to start.</p>
-            <section class="row text-center   ">
-                    
-          
-              <!--step 1 begin-->
-                <main class="col-lg-4"> 
-                            <!--Step 1 muted begin-->
+            <div class="container shadow rcorners grnOppate ">
+            
+                  <p class="text-center font-weight-bolder h2  pt-3  robotoFnt txtOrg">Let's sit down and start prepping</p>
+                  <p class="text-center font-weight-light h4   robotoFnt txtGry">Feel free to start at any step.</p>
+                  <section class="row text-center   ">
+                          
+                
+                    <!--step 1 begin-->
+                      <main class="col-lg-4"> 
+                                  <!--Step 1 muted begin-->
                             <a class="btn" href="./home.html" id="step1M">
+                                  <div class="d-flex py-3" >
+                  
+                                      <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                                            <span class="material-symbols-outlined text-success ">
+                                              assignment
+                                              </span>
+                                      </div>
+                  
+                                    <div class=" d-flex justify-content-center align-items-center">
+                                      <p class="pt-1 pl-3 font-weight-light h5 text-muted">Evacuation Plan</p>
+                                    </div>
+                  
+                                </div>
+                            </a>
+                              
+                          <!--Step 1 muted ends-->
+                
+                          <!--Step 1 complete begin-->
+                
+                          <a style="display: none" class="btn" href="./plan.html" id="step1C">
                           <div class="d-flex py-3" >
-          
-                              <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
-                                    <span class="material-symbols-outlined text-success ">
-                                      assignment
+                
+                              <div class="shadow-sm bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
+                                    <span class="material-symbols-rounded text-light ">
+                                      done
                                       </span>
                               </div>
-          
+                
+                              <div class=" d-flex justify-content-center align-items-center">
+                                <p class="pt-1 pl-3 font-weight-light h5 text-success">Evacuation Plan</p>
+                              </div>
+                
+                          </div>
+                        </a>
+                          <!--Step 1 complete ends-->
+                      </main> 
+                  <!--step 1 end-->
+                
+                    <!--step 2 begin-->
+                    <main class="col-lg-4"> 
+                      <!--Step 2 muted begin-->
+                      <a class="btn" href="" id="step2M">
+                          <div class="d-flex py-3" >
+                
+                              <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                                    <span class="material-symbols-rounded text-success ">
+                                        medical_information
+                                        </span>
+                              </div>
+                
                             <div class=" d-flex justify-content-center align-items-center">
-                              <p class="pt-1 pl-3 font-weight-light h5 text-muted">Evacuation Plan</p>
+                              <p class="pt-1 pl-3 font-weight-light h5 text-muted">Aditional Supplies</p>
                             </div>
-          
+                
                         </div>
                       </a>
-                        
-                    <!--Step 1 muted ends-->
-          
-                    <!--Step 1 complete begin-->
-          
-                    <a style="display: none" class="btn" href="./plan.html" id="step1C">
-                    <div class="d-flex py-3" >
-          
+                  
+                <!--Step 2 muted ends-->
+                
+                <!--Step 2 complete begin-->
+                
+                    <a style="display: none" class="btn" href="">
+                      <div class="d-flex py-3" id="step2C">
+                
                         <div class="shadow-sm bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
                               <span class="material-symbols-rounded text-light ">
                                 done
                                 </span>
                         </div>
-          
-                        <div class=" d-flex justify-content-center align-items-center">
-                          <p class="pt-1 pl-3 font-weight-light h5 text-success">Evacuation Plan</p>
+                
+                        <div class=" d-flex justify-content-center align-items-center bg">
+                          <p class="pt-1 pl-3 font-weight-light h5 text-success">Aditional Supplies</p>
                         </div>
-          
-                    </div>
-                  </a>
-                    <!--Step 1 complete ends-->
-                </main> 
-             <!--step 1 end-->
-          
-              <!--step 2 begin-->
-              <main class="col-lg-4"> 
-                <!--Step 2 muted begin-->
-                <a class="btn" href="" id="step2M">
-                    <div class="d-flex py-3" >
-          
-                        <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
-                              <span class="material-symbols-rounded text-success ">
-                                  medical_information
-                                  </span>
-                        </div>
-          
-                      <div class=" d-flex justify-content-center align-items-center">
-                        <p class="pt-1 pl-3 font-weight-light h5 text-muted">Step 2</p>
+                
                       </div>
-          
-                  </div>
-                </a>
-            
-          <!--Step 2 muted ends-->
-          
-          <!--Step 2 complete begin-->
-          
-              <a style="display: none" class="btn" href="">
-                <div class="d-flex py-3" id="step2C">
-          
-                  <div class="shadow-sm bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
-                        <span class="material-symbols-rounded text-light ">
-                          done
-                          </span>
-                  </div>
-          
-                  <div class=" d-flex justify-content-center align-items-center bg">
-                    <p class="pt-1 pl-3 font-weight-light h5 text-success">Step 2</p>
-                  </div>
-          
-                </div>
-              </a>
-            <!--Step 2 complete ends-->
-            </main>  
-            <!--step 2 end-->
-          
-              <!--step 3 begin-->
-              <main class="col-lg-4"> 
-                <!--Step 3 muted begin-->
-                <a class="btn " href="">
-                    <div class="d-flex py-3" id="step3M">
-          
-                        <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
-                              <span class="material-symbols-outlined text-success ">
-                                kitchen
+                    </a>
+                  <!--Step 2 complete ends-->
+                  </main>  
+                  <!--step 2 end-->
+                
+                    <!--step 3 begin-->
+                    <main class="col-lg-4"> 
+                      <!--Step 3 muted begin-->
+                      <a class="btn " href="">
+                          <div class="d-flex py-3" id="step3M">
+                
+                              <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex  ">
+                                    <span class="material-symbols-outlined text-success ">
+                                      kitchen
+                                      </span>
+                              </div>
+                
+                            <div class=" d-flex justify-content-center align-items-center">
+                              <p class="pt-1 pl-3 font-weight-light h5 text-muted">Food Supply</p>
+                            </div>
+                
+                        </div>
+                      </a>
+                  
+                <!--Step 3 muted ends-->
+                
+                <!--Step 3 complete begin-->
+                
+                    <a style="display: none" class="btn" href="">
+                      <div class="d-flex py-3" id="step3C">
+                
+                        <div class="shadow-sm  bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
+                              <span class="material-symbols-rounded text-light ">
+                                done
                                 </span>
                         </div>
-          
-                      <div class=" d-flex justify-content-center align-items-center">
-                        <p class="pt-1 pl-3 font-weight-light h5 text-muted">Step 3</p>
-                      </div>
-          
-                  </div>
-                </a>
-            
-          <!--Step 3 muted ends-->
-          
-          <!--Step 3 complete begin-->
-          
-              <a style="display: none" class="btn" href="">
-                <div class="d-flex py-3" id="step3C">
-          
-                  <div class="shadow-sm  bg-success circle circleBdr justify-content-center align-items-center d-flex  ">
-                        <span class="material-symbols-rounded text-light ">
-                          done
-                          </span>
-                  </div>
-          
-                  <div class=" d-flex justify-content-center align-items-center bg">
-                    <p class="pt-1 pl-3 font-weight-light h5 text-success">Step 3</p>
-                  </div>
-          
-                </div>
-              </a>
-            <!--Step 3 complete ends-->
-            </main>  
-            <!--step 3 end-->
-          
-          </section>
-           <!--Progress Bar begins-->
-           <main class="">
-            <div class="progress bg-white shadow-sm " style="height: 5px;">
-              <div width="50" height="10px" id="planProgress" class="progress-bar-striped progress-bar-animated recBlu " role="progressbar" style="width: 0%" >
-              </div>
-            </div>
-          </main>
-          <!--Progress Bar ands-->
-          </div>
-           
-              <section class=" py-5">
                 
+                        <div class=" d-flex justify-content-center align-items-center bg">
+                          <p class="pt-1 pl-3 font-weight-light h5 text-success">Food Supply</p>
+                        </div>
                 
-          
-                <!-- Emergency Plan-->
-               
-          
-          
-                 <!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
-                <div class="py-5">
-          
-                  <!-- <div class="d-flex">
-                  <h4>Step</p>
-                  <p class=" btn  rounded-circle bg-success" >
-                    1</p>
-                  </div> -->
-          
-                  <div class="">
-                    <div class="shadow rcorners bg-white stp1-pic  p-4">
-                      <div class="card-body ">
-                        
-          
-                        <main class="d-flex ">
-
-
-                              <div class="col-lg-5 phone-block pt-5">
-                                <img src="./images/Gathering Main.png" class="" id="exampleModalCenterTitle" width="65%"  ></img>
-                            </div>
-
-                            <div class="col-lg-7 robotoFnt">
-
-                              
-                            <div class="d-flex card-title">
-                                <p class=" h3 font-weight-bold text-left txtBlu robotoFnt">Emergency Evacuation</p>
-                                
-                              
-                                  <div class=" phone-block pl-5">
-                                    <p class="font-weight-bold font-weight-light  h5">
-                                      
-                                        <span class="font-weight-bold text-danger pl-1" id="not1"> (Not Started)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog1"> (In Progess)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp1"> (Completed)</span>
-                                    
-                                    </p>
-                                </div>
-                            </div>
-            
-                            <br>
-            
-                              <div class="d-flex py-1 ">
-                                <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
-                                
-                                <p class="font-weight-normal h5  phone-block robotoFnt txtBlu ">Be guided in creating an evacuation plan</p>
-                              </div>
-            
-                              <div class="d-flex py-1">
-                                <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
-                            
-                                  <p class="font-weight-normal h5   robotoFnt txtBlu ">Decide on a safe place for your household to reunite</p>
-                              </div>
-          
-                                <div class="d-flex py-1 ">
-                                  <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
-                                  <p class="font-weight-normal h5   robotoFnt txtBlu phone-block">Share with families and friends</p>
-                                </div>
-
-                                <div class="row py-4 ">
-                          
-                        
-                                  <div class="col-lg-6  pr-5">
-                                    <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards ()">Add To Plan</button>
-                                    <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./home.html"  id="continue1" >Continue Planning</a>
-                                    <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./plan.html"  id="view1" >View Plan</a>
- 
-                                    </div>
-
-                                    
-                              </div>
-                            </div>
-                            
- 
-                        </main>
-          
-                        
                       </div>
-          
+                    </a>
+                  <!--Step 3 complete ends-->
+                  </main>  
+                  <!--step 3 end-->
+                
+                </section>
+                <!--Progress Bar begins-->
+                <main class="">
+                  <div class="progress bg-white shadow-sm " style="height: 5px;">
+                    <div width="50" height="10px" id="planProgress" class="progress-bar-striped progress-bar-animated recBlu " role="progressbar" style="width: 0%" >
                     </div>
                   </div>
-              <!-- End of 72 HOUR FOOD SUPPLIES Card-->
-          
-          
-              </section>
+                </main>
+                <!--Progress Bar ands-->
             </div>
-            </div>
-          
-            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-          
+            
+                <section class=" py-5">
+                  
+                  
+            
+                  <!-- Emergency Plan-->
+                
+            
+            
+                  <!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
+                  <div class="py-5">
+            
+                    <!-- <div class="d-flex">
+                    <h4>Step</p>
+                    <p class=" btn  rounded-circle bg-success" >
+                      1</p>
+                    </div> -->
+            
+                    <div class="">
+                      <div class=" shadow rcorners bg-white stp1-pic  p-4">
+                        <div class="card-body ">
+                          
+            
+                          <main class="d-flex ">
+
+
+                                <div class="col-lg-5 phone-block pt-5">
+                                  <img src="./images/Gathering Main.png" class="" id="exampleModalCenterTitle" width="65%"  ></img>
+                              </div>
+
+                              <div class="col-lg-7 robotoFnt">
+
+                                
+                              <div class="d-flex card-title">
+                                  <p class=" h3 font-weight-bold text-left txtBlu robotoFnt">Emergency Evacuation</p>
+                                  
+                                
+                                    <div class=" phone-block pl-5">
+                                      <p class="font-weight-bold font-weight-light  h5">
+                                        
+                                          <span class="font-weight-bold text-danger pl-1" id="not1"> (Not Started)</span>
+                                          <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog1"> (In Progess)</span>
+                                          <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp1"> (Completed)</span>
+                                      
+                                      </p>
+                                  </div>
+                              </div>
+              
+                              <br>
+              
+                                <div class="d-flex py-1 ">
+                                  <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
+                                  
+                                  <p class="font-weight-normal h5  phone-block robotoFnt txtBlu ">Be guided in creating an evacuation plan</p>
+                                </div>
+              
+                                <div class="d-flex py-1">
+                                  <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
+                              
+                                    <p class="font-weight-normal h5   robotoFnt txtBlu ">Decide on a safe place for your household to reunite</p>
+                                </div>
+            
+                                  <div class="d-flex py-1 ">
+                                    <!-- <img src="./images/Check.png" class=" " id="exampleModalCenterTitle" width="8%" height="8%"  ></img> -->
+                                    <p class="font-weight-normal h5   robotoFnt txtBlu phone-block">Share with families and friends</p>
+                                  </div>
+
+                                  <div class="row py-4 ">
+                            
+                          
+                                    <div class="col-lg-6  pr-5">
+                                      <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards ()">Add To Plan</button>
+                                      <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./home.html"  id="continue1" >Continue Planning</a>
+                                      <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./plan.html"  id="view1" >View Plan</a>
+  
+                                      </div>
+
+                                      
+                                </div>
+                              </div>
+                              
+  
+                          </main>
+            
+                          
+                        </div>
+            
+                      </div>
+                    </div>
+
+                    </div>
+                <!-- End of 72 HOUR FOOD SUPPLIES Card-->
+            
+            
+                </section>
+              </div>
+              </div>
+            
+              <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+          </div>
         </main>
-      </div>
-    </div>
-    
-    
-       
-
+     
     
 
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-      <script src="./js/landing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+ <script src="./js/landing.js"></script>
     </body>
 </html>

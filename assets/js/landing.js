@@ -45,6 +45,23 @@ function cardUpdates() {
     document.getElementById("prog1").style.display = "block";
 
     
+    const evacForm = document.getElementsByClassName("evacForm");
+    for (let i = 0; i < evacForm.length; i++) {
+      evacForm[i].classList.add("d-block");}
+
+      const evacPlan = document.getElementsByClassName("evacPlan");
+      for (let i = 0; i < evacForm.length; i++) {
+        evacPlan[i].classList.add("d-block");}
+
+
+    // var evacForm = document.getElementById("evacForm");
+    // evacForm.classList.add("d-block");
+
+    
+    // var evacPlan = document.getElementById("evacPlan");
+    // evacPlan.classList.add("d-none");
+
+    
   };
 
 
@@ -59,6 +76,19 @@ if(updatedPlan){
 
   
   localStorage.removeItem('addTo72');
+
+  const evacForm = document.getElementsByClassName("evacForm");
+    for (let i = 0; i < evacForm.length; i++) {
+      evacForm[i].classList.add("d-none");}
+
+      const remEvacPlan = document.getElementsByClassName("evacPlan");
+    for (let i = 0; i < evacForm.length; i++) {
+      remEvacPlan[i].classList.remove("d-none");}
+
+      const evacPlan = document.getElementsByClassName("evacPlan");
+      for (let i = 0; i < evacForm.length; i++) {
+        evacPlan[i].classList.add("d-block");}
+
   
   document.getElementById("continue1").style.display = "none";
   document.getElementById("view1").style.display = "block";
@@ -71,10 +101,20 @@ if(updatedPlan){
     document.getElementById("step1M").style.display = "none";
     document.getElementById("step1C").style.display = "block";
 
+  
+    
 
+    // var evacForm = document.getElementById("evacForm");
+    // evacForm.classList.add("d-none");
+
+    // var remEvacPlan = document.getElementById("evacPlan");
+    // remEvacPlan.classList.remove("d-none");
+
+    // var evacPlan = document.getElementById("evacPlan");
+    // evacPlan.classList.add("d-block");
 
     var prog72 = 33.333;
-  
+
 };
 
 function progTotal() {
@@ -83,7 +123,7 @@ function progTotal() {
 
   document.getElementById("planProgress").style.width= sumProgress += "%";
 
-console.log(document.getElementById("planProgress").style.width);
+
 };
 progTotal();
 
