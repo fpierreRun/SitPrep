@@ -50,7 +50,7 @@ function cardUpdates() {
       evacForm[i].classList.add("d-block");}
 
       const evacPlan = document.getElementsByClassName("evacPlan");
-      for (let i = 0; i < evacForm.length; i++) {
+      for (let i = 0; i < evacPlan.length; i++) {
         evacPlan[i].classList.add("d-block");}
 
 
@@ -82,12 +82,25 @@ if(updatedPlan){
       evacForm[i].classList.add("d-none");}
 
       const remEvacPlan = document.getElementsByClassName("evacPlan");
-    for (let i = 0; i < evacForm.length; i++) {
+    for (let i = 0; i < remEvacPlan.length; i++) {
       remEvacPlan[i].classList.remove("d-none");}
 
       const evacPlan = document.getElementsByClassName("evacPlan");
-      for (let i = 0; i < evacForm.length; i++) {
+      for (let i = 0; i < evacPlan.length; i++) {
         evacPlan[i].classList.add("d-block");}
+
+        // Evac Checklist begin
+        const step1M = document.getElementsByClassName("step1M");
+    for (let i = 0; i < step1M.length; i++) {
+      step1M[i].classList.add("d-none");}
+
+      const step1C = document.getElementsByClassName("step1C");
+    for (let i = 0; i < step1C.length; i++) {
+      step1C[i].classList.remove("d-none");}
+
+      // const evacPlan = document.getElementsByClassName("evacPlan");
+      // for (let i = 0; i < evacForm.length; i++) {
+      //   evacPlan[i].classList.add("d-block");}
 
   
   document.getElementById("continue1").style.display = "none";

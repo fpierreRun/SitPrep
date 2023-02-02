@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping List</title>
+    <style>
+      #list {
+        padding: 20px;
+        background-color: #f2f2f2;
+        width: 300px;
+        height: 300px;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+    <input type="text" id="item">
+    <button id="add">Add Item</button>
+    <br><br>
+    <div id="list"></div>
+    <script>
+      const addButton = document.querySelector('#add');
+      const itemInput = document.querySelector('#item');
+      const listDiv = document.querySelector('#list');
+      
+      addButton.addEventListener('click', function() {
+        let item = itemInput.value;
+        let newItem = document.createElement('div');
+        newItem.innerHTML = item;
+        listDiv.appendChild(newItem);
+        itemInput.value = "";
+      });
+    </script>
+  </body>
+</html>
