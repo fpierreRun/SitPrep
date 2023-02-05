@@ -199,6 +199,17 @@ section.homebkg {
   height:var(--breakpoint-sm);
 }
 
+section.food {
+  background-image: url("../images/Food\ Storage\ Cal\ 1.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size:contain;
+  background-attachment: fixed;
+  
+  
+  
+}
+
 .planimg1 {
   background-image: url("../images/Gathering.png");
   background-repeat: no-repeat;
@@ -328,6 +339,11 @@ font-weight:300;
 .bgOrg {
   background-color: var(--primary-color);
   border-color:var(--primary-color);
+}
+
+.bgAmazon {
+
+  background-color: #ffa41c;
 }
 
 .recBlu{
