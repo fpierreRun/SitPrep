@@ -157,563 +157,807 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
 
 
-    <section class="container-fluid pb-5  food ">
+        <section class="container-fluid pb-5  food ">
 
-        <div class="">
+            <div class="">
 
-            <!--Intro begins-->
-             <main class="calc pb-4">
+                    <!--Intro begins-->
+                    <main class="calc pb-4 pt-3">
 
-                    <div>
-                        
-                        <div class="row" >
+                            <div  >
+                                <div class="">
+                                    <div class="row" >
 
-                            <div class="col-8 ">
-                                <p class="h1">Food Storage Calculator</p>
+                                        <div class="col-8 ">
+                                            <p class="h1 text-dark">Food Storage Calculator</p>
 
-                            </div>
-                      
-                            
-                        </div>
-
-
-                        <hr class="mb-4">
-                        <p class="text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
-                             Enter the number of days/weeks/years of storage you want, 
-                            as well as the number of adults and children in your family (Children 12 and over count as adults because they tend to eat 
-                            full portions). </p>
-
-                        <p class="text-muted"> Always rotate your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
-                        </p>
-                        
-                    </div> 
-  
-   
-
-                </main>
-                    <!--dowload results-->
-                    
-                
-                </div>
-             
-
-             <div class="  pb-5   px-1 text-center">
-                <input type="button"  id="rep" value="Download My Results" class="btn   btn_print btn-primary" data-toggle="modal" data-target="#exampleModalCenter" >
-                </div>
-            <!--Intro ends-->
-
-          
-
-        <!--calculator begins-->
-            <!--Goals begins-->
- 
-            <div class="bg-white rounded shadow " id="downloadPrint">
-                 <div>
-                    <div class="px-4 ">
-                
-                    <p class="h3 pt-4">Input Goals For Amount </p>  
-            <!--length of time begins-->
-                    <label class=" pr-5">How many days and weeks of supply do want to store?</label><br>
-                    <div class="d-flex row">
-
-                        <div class=" d-flex col-lg-3">
-                            <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="days" type="number" value="0" min="0" ></input>
-                            <label class="h5 pl-2 pr-4 mt-2">day(s)</label><br>
-                        </div>
-
-                        <div class="d-flex col-lg-3 ">
-                            <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="weeks" type="number" value="1" min="0"></input>
-                            <label class="h5 pl-2 mt-2">week(s)</label><br>
-                        </div>
-                        <div class="d-flex col-lg-3 ">
-                            <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="years" type="number" value="0" min="0"></input>
-                            <label class="h5 pl-2 mt-2">year(s)</label><br>
-                        </div>
-                        <div class="col-lg-3"></div>
-                    </div>
-                    <!--length of time end-->
-
-                    <!--people input begins-->
-                    <label class=" pr-5 pt-4" >How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
-
-                    <div class="d-flex row">
-
-                            <div  class="d-flex col-lg-3">
-
-                                <input style= width:25% class="bg-white form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
-                                <label class="h5 pl-3 mt-2" >kid(s)</label><br>
-                            </div>
-
-                    
-                            <div class="d-flex col-lg-3">
-                                <input id="adults" style= width:25% class="  form-control border-success text-center " type="number" value="1" oninput="calculate()" min="0"></input>
-                                <label class="h5 pl-2 mt-2" >adult(s)</label><br>
-                            </div> 
-
-                            <div class="col-lg-3"></div>
-                            <div class="col-lg-3"></div> 
-                    </div> 
-                    <!--people input ends-->
-       </div>
-        <!--Goal ends-->
-
-
-        <hr class="my-4">
-        <!--REcommedation begins-->
-            <p class="h4 py-2 px-4">Recommended Food Storage Amount Based Upon Above Inputs</p>
-            <p class="pb-2 px-4">Each category below gives you a variety of choices and a total weight. You 
-            should store the items you like to eat and know how to use. Weights 
-            (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>    
-
-            <!--Water Dashboard-->
-            <div class=" p-4" >
-                
-                <div  class=" text-dark justify-content-start d-flex row">
-                    
-                    <div class="col-lg-3 ">
-
-                        <div class="d-flex">
-                            <p class="h4 pl-3">WATER</p>
-                            <span class="material-symbols-rounded material-icons ">
-                                water_drop
-                                </span>
-                        </div>
-                
-                    </div>
-
-                    <div  class="col-lg-2 ">
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                            <input class=" h4 w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
-                            <label class="h4 pl-2 mt-1" >gal</label><br>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                        
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c9cb087735caded0596ce030be64ee1c&camp=1789&creative=9325&index=aps&keywords=Food Storage Water" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                    </div>
-
-
-                </div>
-
-                    <div class="progress bg-primary "style="width: 100%" >
-                        <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
-                    </div>
-        </div>
-
-            <!--Grain Dashboard-->
-            <div class=" bg-light p-4">
-
-                <div  class=" text-dark justify-content-start d-flex row">
-                    <div class="col-lg-3 ">
-                        
-                        <div class="d-flex">
-                        <p class=" h4 pl-3 ">GRAIN</p>
-                        <span class="material-symbols-rounded material-icons pl-1">
-                            grain
-                            </span>
-                        </div>
-                            <p class=" font-weight-light " >Includes wheat, white rice, oats, corn, barley, pasta, etc.</p>
-                    </div>
-
-                    <div class="col-lg-2 " >
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex ">
-                            <input class="bg-light h4 w-50  form-control text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
-                            <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="grainRecommend">8</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary"  id="grainNeeded">8</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=f9aa509bf2fb5e2022d673a4d01724c2&camp=1789&creative=9325&index=aps&keywords=Dry Dehydrated Grain" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                    
-                </div>
-
-                </div>
-
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="grainProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
-            </div>
-
-            <!--Legumes Dashboard-->
-            <div class="p-4">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                    <div class="col-lg-3">
-
-                        <div class="d-flex">
-                        <p class=" h4 pl-3">LEGUMES</p>
-                        <span class="material-symbols-rounded material-icons pl-1">
-                            eco
-                            </span>
-                        </div>
-                        <p class=" font-weight-light">Includes dried beans, split peas, lentils, nuts, etc.</p>
-                        
-
-                    </div>
-
-                    <div  class="col-lg-2 ">
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                        <input class=" h4 w-50  form-control text-center" id="legumes" type="number" value="0" oninput="calculate()"></input>
-                        <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="legumesRecommend">1</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary" id="legumesNeeded">1</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-  
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=17ecb97b7483d25cd012eb542d089b8e&camp=1789&creative=9325&index=aps&keywords=Dry Legumes" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                    
-                    </div>
-
-                </div>
-
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="legumesProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
-            </div>
-
-            <!--Dairy Dashboard-->
-            <div class="p-4 bg-light">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                    <div class="col-lg-3">
-
-                        <div class="d-flex ">
-                        <p class=" h4 pl-3">DAIRY</p>
-                        <span class="material-symbols-rounded material-icons pl-1">
-                            local_drink
-                            </span>
-                        </div>
+                                        </div>
                                 
-                        <p class=" font-weight-light">Includes powdered milk, cheese powder, canned cheese, etc.</p>
-                    
-                    </div>
+                                        <div class="  pb-5   px-1 text-center col-4">
+                                            <input type="button"  id="rep" value="Download My Results" class="btn   btn_print btn-primary" data-toggle="modal" data-target="#surveyModal" >
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div  class="col-lg-2 ">
+                                <hr class="mb-4">
+                                <p class="text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
+                                    Enter the number of days/weeks/years of storage you want, 
+                                    as well as the number of adults and children in your family (Children 12 and over count as adults because they tend to eat 
+                                    full portions). </p>
 
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                        <input class="bg-light h4 w-50 form-control text-center" id="dairy" type="number" value="0" oninput="calculate()"></input>
-                        <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="dairyRecommend">1</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary" id="dairyNeeded">1</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=0efa36cda314d7c340b1817a7dda11ac&camp=1789&creative=9325&index=aps&keywords=dehydrated dairy products" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                    
-                    </div>
-
-                
-                </div>
-
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="dairyProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
-            </div>
-
-
-            <!--Sugars Dashboard-->
-            <div class="p-4">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                    <div class="col-lg-3">
-
-                        <div class="d-flex">
-                        <p class="h4 pl-3">SUGAR</p>
-                        <span class="material-symbols-rounded material-icons pl-1">
-                            cake
-                            </span>
-                        </div>
-                        
-                        <p class=" font-weight-light">Includes white sugar, brown sugar, syrup, molasses, honey, etc.</p>
-                        
-                    </div>
-
-                    <div  class="col-lg-2 ">
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                        <input class=" h4 w-50  form-control text-center" id="sugars" type="number" value="0" oninput="calculate()"></input>
-                        <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="sugarsRecommend">1</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary"  id="sugarsNeeded">1</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7d3ba506bcfa5e17fd360f26ddc2e81d&camp=1789&creative=9325&index=aps&keywords=Sugars-white sugar-brown sugar-syrup-molasses-honey-pounds" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                        <a >Sugars</a>
-                    </div>
-
-                
-                </div>
-
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="sugarsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
-            </div>
-
-            <!--Leavening Dashboard-->
-            <div class="p-4 bg-light">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                    <div class="col-lg-3">
-
-                        <div class="d-flex">
-                        <p class=" h4 pl-3">LEAVENING </p>
-                        <span class="material-symbols-rounded material-icons pl-2">
-                            breakfast_dining
-                            </span>
-                        </div>
-
-                        <p class=" font-weight-light">Includes yeast, baking powder, powdered eggs, etc. </p>
-                    </div>
-
-                    <div  class="col-lg-2 ">
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                        <input class="bg-light h4 w-50  form-control text-center" id="leavening" type="number" value="0" oninput="calculate()"></input>
-                        <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-                    <div class="col-2">
-                        <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="leaveningRecommend">1</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary"  id="leaveningNeeded">1</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                                <p class="text-muted"> Always rotate your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
+                                </p>
+                                
+                            </div> 
         
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=ba50d1674733c45f20b8f7ed65f95f1b&camp=1789&creative=9325&index=aps&keywords=leavening-yeast-baking powder-powdered eggs" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                  
-                    </div>
+                        </main>
+                    <!--Intro ends-->
 
-                
-                </div>
-
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="leaveningProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
-            </div>
-
-            <!--Salt Dashboard-->
-            <div class="p-4 ">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                    <div class="col-lg-3">
-
-                        <div class="d-flex">
-                        <p class="h4 pl-3">SALT</p>
-                        <span class="material-symbols-rounded material-icons pl-1">
-                            multicooker
-                            </span>
-                        </div>
-
-                        <p class=" font-weight-light">Includes table salt, sea salt, soy sauce, bouillon, etc.</p>
-                
-                    
-                    </div>
-
-                    <div  class="col-lg-2 ">
-
-                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
-                        <div class="d-flex pl-3">
-                        <input class=" h4 w-50  form-control text-center" id="salt" type="number" value="0" oninput="calculate()"></input>
-                        <label class="h4 pl-2 mt-1" >lb</label><br>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2">
-                        <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
-                        <h4 class="  pl-3" ><span  id="saltRecommend">1</span> lb</h4>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                        <h4 class="  pl-3"  value="1"><span class="text-primary"  id="saltNeeded">1</span> lb</h4>
-                    </div>
-
-                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                <!--calculator begins-->
+                    <!--Goals begins-->
         
-                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b900382838a0e63fb692b7b1dd4e6cf8&camp=1789&creative=9325&index=aps&keywords=table salt sea salt soy sauce bouillon pounds"class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                      
-                    </div>
+                    <div class="bg-white rounded shadow " id="downloadPrint">
+                        <div class="">
+                            <div class="px-4 rounded">
+                        
+                            <p class="h3 pt-4 txtGrn">Input Goals For Amount </p>  
+                    <!--length of time begins-->
+                            <label class=" pr-5">How many days and weeks of supply do want to store?</label><br>
+                            <div class="d-flex row">
 
-                
-                </div>
+                                <div class=" d-flex col-lg-3">
+                                    <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="days" type="number" value="0" min="0" ></input>
+                                    <label class="h5 pl-2 pr-4 mt-2">day(s)</label><br>
+                                </div>
 
-                
-                <div class="progress bg-primary"style="width: 100%">
-                    <div id="saltProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                </div>
-            
+                                <div class="d-flex col-lg-3 ">
+                                    <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="weeks" type="number" value="1" min="0"></input>
+                                    <label class="h5 pl-2 mt-2">week(s)</label><br>
+                                </div>
+                                <div class="d-flex col-lg-3 ">
+                                    <input oninput="calculate()" style= width:25% class=" bg-white form-control border-success text-center" id="years" type="number" value="0" min="0"></input>
+                                    <label class="h5 pl-2 mt-2">year(s)</label><br>
+                                </div>
+                                <div class="col-lg-3"></div>
+                            </div>
+                            <!--length of time end-->
+
+                            <!--people input begins-->
+                            <label class=" pr-5 pt-4" >How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
+
+                            <div class="d-flex row">
+
+                                    <div  class="d-flex col-lg-3">
+
+                                        <input style= width:25% class="bg-white form-control border-success text-center" id="kids" type="number" value="0" oninput="calculate()" min="0"></input>
+                                        <label class="h5 pl-3 mt-2" >kid(s)</label><br>
+                                    </div>
+
+                            
+                                    <div class="d-flex col-lg-3">
+                                        <input id="adults" style= width:25% class="  form-control border-success text-center " type="number" value="1" oninput="calculate()" min="0"></input>
+                                        <label class="h5 pl-2 mt-2" >adult(s)</label><br>
+                                    </div> 
+
+                                    <div class="col-lg-3"></div>
+                                    <div class="col-lg-3"></div> 
+                            </div> 
+                            <!--people input ends-->
             </div>
+                <!--Goal ends-->
 
-            <!--Fats Dashboard-->
-            <div class="p-4 bg-light">
-                <div  class=" text-dark justify-content-start d-flex row ">
-                            <div class="col-lg-3">
+
+                <hr class="my-4">
+                <!--REcommedation begins-->
+                    <p class="h4 py-2 px-4">Recommended Food Storage Amount Based Upon Above Inputs</p>
+                    <p class="pb-2 px-4">Each category below gives you a variety of choices and a total weight. You 
+                    should store the items you like to eat and know how to use. Weights 
+                    (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>    
+
+                    <!--Water Dashboard-->
+                    <div class=" p-4" >
+                        
+                        <div  class=" text-dark justify-content-start d-flex row">
+                            
+                            <div class="col-lg-3 ">
 
                                 <div class="d-flex">
-                                        <p class=" h4 pl-3">FATS</p>
-                                        <span class="material-symbols-rounded material-icons pl-1">
-                                            egg_alt
-                                            </span>
+                                    <p class="h4 pl-3">WATER</p>
+                                    <span class="material-symbols-rounded material-icons ">
+                                        water_drop
+                                        </span>
                                 </div>
-                                <p class=" font-weight-light">Includes vegetable oils, shortening, canned butter, etc.</p>
+                        
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn pb-3 " data-toggle="modal" data-target="#exampleModalCenter">  <img class="rounded " src="./images/Amzon Images/Water Gallon.jpg"  width="100" alt="" />
+                                        
+                                    </button>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                
+                                            
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <img class=" text-center img-fluid" src="./images/Amzon Images/Water Gallon.jpg"  width="350" alt="" />
+                                            </div>
+
+                                            <!--modal-footer-->
+                                            <div class="text-center d-flex justify-content-center">
+
+                                                    <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c9cb087735caded0596ce030be64ee1c&camp=1789&creative=9325&index=aps&keywords=Food Storage Water" class="text-center  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Shop Now</p></a>
+                        
+                                            </div>
+                                            <!--modal-end-->
+                                        </div>
+                                        </div>
+                                    </div>
+
+
                             </div>
 
                             <div  class="col-lg-2 ">
 
                                 <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
                                 <div class="d-flex pl-3">
-                                    <input class="bg-light h4 w-50  form-control text-center" id="fats" type="number" value="0" oninput="calculate()"></input>
+                                    <input class=" h4 w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
+                                    <label class="h4 pl-2 mt-1" >gal</label><br>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-2">
+                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                                
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c9cb087735caded0596ce030be64ee1c&camp=1789&creative=9325&index=aps&keywords=Food Storage Water" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                            </div>
+
+
+                        </div>
+
+                            <div class="progress bg-primary "style="width: 100%" >
+                                <div id="waterProgress"class=" progress-bar-striped progress-bar-animated recGrn" role="progressbar" style="width: 0%"></div>
+                            </div>
+                    </div>
+
+                    <!--Grain Dashboard-->
+                    <div class=" bg-light p-4">
+
+                        <div  class=" text-dark justify-content-start d-flex row">
+                            <div class="col-lg-3 ">
+                                
+                                <div class="d-flex">
+                                <p class=" h4 pl-3 ">GRAIN</p>
+                                <span class="material-symbols-rounded material-icons pl-1">
+                                    grain
+                                    </span>
+                                </div>
+                                    
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3 " data-toggle="modal" data-target="#grainModalCenter">  <img class=" rounded" src="./images/Amzon Images/Grains.webp"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade rounded" id="grainModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">GRAINS</h5>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center img-fluid rounded" src="./images/Amzon Images/Grains.webp"  width="450" alt="" />
+                                            <p class="py-4 h5 font-weight-light text-center ">Grains can be wheat, white rice, oats, corn, barley, pasta, etc.</p>
+                                    
+                                            </div>
+                                        
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=9c42ffa29ca058a251d2668e1f8770ce&camp=1789&creative=9325&index=aps&keywords=wheat-white rice-oats-corn-barley-pasta-buckets" class="  d-flex btn    bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                                    </div>
+                                    <!--modal-end-->
+
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-2 " >
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex ">
+                                    <input class="bg-light h4 w-50  form-control text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
                                     <label class="h4 pl-2 mt-1" >lb</label><br>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-2">
+                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" ><span  id="grainRecommend">8</span> lb</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary"  id="grainNeeded">8</span> lb</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=9c42ffa29ca058a251d2668e1f8770ce&camp=1789&creative=9325&index=aps&keywords=wheat-white rice-oats-corn-barley-pasta-buckets" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                        </div>
+
+                        </div>
+
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="grainProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+                    <!--Legumes Dashboard-->
+                    <div class="p-4">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                            <div class="col-lg-3">
+
+                                <div class="d-flex">
+                                <p class=" h4 pl-3">LEGUMES</p>
+                                <span class="material-symbols-rounded material-icons pl-1">
+                                    eco
+                                    </span>
+                                </div>
+                                
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3" data-toggle="modal" data-target="#legumesModalCenter">  <img class="rounded" src="./images/Amzon Images/Legumes.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="legumesModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">LEGUMES</h5>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center rounded" src="./images/Amzon Images/Legumes.jpeg"  width="450" alt="" />
+                                            <p class="h5 py-3 font-weight-light">Includes dried beans, split peas, lentils, nuts, etc.</p>
+                                            </div>
+                                        
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d383df87c2ddb44764c8efd85ed90868&camp=1789&creative=9325&index=aps&keywords=legumes-dried beans-split peas-lentils-nuts-buckets" class="  d-flex btn    bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Shop Now</p></a>
+                                
+                                    </div>
+                                    <!--modal-end-->
+                                    </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            <div  class="col-lg-2 ">
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex pl-3">
+                                <input class=" h4 w-50  form-control text-center" id="legumes" type="number" value="0" oninput="calculate()"></input>
+                                <label class="h4 pl-2 mt-1" >lb</label><br>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" ><span  id="legumesRecommend">1</span> lb</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary" id="legumesNeeded">1</span> lb</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+        
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d383df87c2ddb44764c8efd85ed90868&camp=1789&creative=9325&index=aps&keywords=legumes-dried beans-split peas-lentils-nuts-buckets" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                            </div>
+
+                        </div>
+
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="legumesProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+                    <!--Dairy Dashboard-->
+                    <div class="p-4 bg-light">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                            <div class="col-lg-3">
+
+                                <div class="d-flex ">
+                                <p class=" h4 pl-3">DAIRY</p>
+                                <span class="material-symbols-rounded material-icons pl-1">
+                                    local_drink
+                                    </span>
+                                </div>
+                                        
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3 " data-toggle="modal" data-target="#dairyModalCenter">  <img class="rounded" src="./images/Amzon Images/Dairy.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="dairyModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">DAIRY</h5> 
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center rounded" src="./images/Amzon Images/Dairy.jpeg"  width="450" alt="" />
+                                            <p class="h5 py-3 font-weight-light">Includes powdered milk, cheese powder, canned cheese, etc.</p>
+                                            </div>
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7c27b1d95e4ed36e3e6e77ab7af2a778&camp=1789&creative=9325&index=aps&keywords=dehydrated-powdered milk-cheese powder-canned cheese-buckets" class="  d-flex btn   bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                                    </div>
+                                    <!--modal-end-->
+                                    </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+
+                            <div  class="col-lg-2 ">
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex pl-3">
+                                <input class="bg-light h4 w-50 form-control text-center" id="dairy" type="number" value="0" oninput="calculate()"></input>
+                                <label class="h4 pl-2 mt-1" >lb</label><br>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" ><span  id="dairyRecommend">1</span> lb</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary" id="dairyNeeded">1</span> lb</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7c27b1d95e4ed36e3e6e77ab7af2a778&camp=1789&creative=9325&index=aps&keywords=dehydrated-powdered milk-cheese powder-canned cheese-buckets" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                            </div>
+
+                        
+                        </div>
+
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="dairyProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+
+                    <!--Sugars Dashboard-->
+                    <div class="p-4">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                            <div class="col-lg-3">
+
+                                <div class="d-flex">
+                                <p class="h4 pl-3">SUGAR</p>
+                                <span class="material-symbols-rounded material-icons pl-1">
+                                    cake
+                                    </span>
+                                </div>
+                                
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3" data-toggle="modal" data-target="#sugarModalCenter">  <img class="rounded" src="./images/Amzon Images/Sugar.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="sugarModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">SUGAR</h5>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center rounded" src="./images/Amzon Images/Sugar.jpeg"  width="450" alt="" />
+                                            <p class="h5 py-3 font-weight-light">Includes white sugar, brown sugar, syrup, molasses, honey, etc.</p>
+                                            </div>
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7d3ba506bcfa5e17fd360f26ddc2e81d&camp=1789&creative=9325&index=aps&keywords=Sugars-white sugar-brown sugar-syrup-molasses-honey-pounds" class="  d-flex btn  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                                    </div>
+                                    <!--modal-end-->
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div  class="col-lg-2 ">
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex pl-3">
+                                <input class=" h4 w-50  form-control text-center" id="sugars" type="number" value="0" oninput="calculate()"></input>
+                                <label class="h4 pl-2 mt-1" >lb</label><br>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" ><span  id="sugarsRecommend">1</span> lb</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary"  id="sugarsNeeded">1</span> lb</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7d3ba506bcfa5e17fd360f26ddc2e81d&camp=1789&creative=9325&index=aps&keywords=Sugars-white sugar-brown sugar-syrup-molasses-honey-pounds" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
+                            </div>
+
+                        
+                        </div>
+
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="sugarsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+                    <!--Leavening Dashboard-->
+                    <div class="p-4 bg-light">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                            <div class="col-lg-3">
+
+                                <div class="d-flex">
+                                <p class=" h4 pl-3">LEAVENING </p>
+                                <span class="material-symbols-rounded material-icons pl-2">
+                                    breakfast_dining
+                                    </span>
+                                </div>
+
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3" data-toggle="modal" data-target="#leaveningModalCenter">  <img class="rounded" src="./images/Amzon Images/Leavening.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="leaveningModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">LEAVENING</h5>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center rounded " src="./images/Amzon Images/Leavening.jpeg"  width="450" alt="" />
+                                            <p class="h5 py-3 font-weight-light">Includes yeast, baking powder, powdered eggs, etc. </p>
+                                            </div>
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b7fdae3e697fd5808f220ac299ded8db&camp=1789&creative=9325&index=aps&keywords=leavening-yeast-baking powder-powdered eggs-buckets" class="  d-flex btn bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                            
+                                    </div>
+                                    <!--modal-end-->
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div  class="col-lg-2 ">
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex pl-3">
+                                <input class="bg-light h4 w-50  form-control text-center" id="leavening" type="number" value="0" oninput="calculate()"></input>
+                                <label class="h4 pl-2 mt-1" >lb</label><br>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
+                                <h4 class="  pl-3" ><span  id="leaveningRecommend">1</span> lb</h4>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary"  id="leaveningNeeded">1</span> lb</h4>
+                            </div>
+
+                            <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b7fdae3e697fd5808f220ac299ded8db&camp=1789&creative=9325&index=aps&keywords=leavening-yeast-baking powder-powdered eggs-buckets" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                            
+                            </div>
+
+                        
+                        </div>
+
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="leaveningProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+                    <!--Salt Dashboard-->
+                    <div class="p-4 ">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                            <div class="col-lg-3">
+
+                                <div class="d-flex">
+                                <p class="h4 pl-3">SALT</p>
+                                <span class="material-symbols-rounded material-icons pl-1">
+                                    multicooker
+                                    </span>
+                                </div>
+
+                                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3" data-toggle="modal" data-target="#saltModalCenter">  <img class="rounded" src="./images//Amzon Images/Salt.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="saltModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">SALT</h5>
+                                        
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img class=" text-center" src="./images/Amzon Images/Salt.jpeg"  width="450" alt="" />
+                                            <p class="h5 py-3 font-weight-light">Includes table salt, sea salt, soy sauce, bouillon, etc.</p>
+                                            </div>
+                                        <!--modal-footer-->
+                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=6844691c9cb73c387cd1b8b405914c7a&camp=1789&creative=9325&index=aps&keywords=table salt-sea salt-soy sauce-bouillon-buckets-" class="  d-flex btn bgAmazon btn-sm rounded-pill shadow"  style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Shop Now</p></a>
+                                
+                                    </div>
+                                    <!--modal-end-->
+
+                                    </div>
+                                    </div>
+                                </div>
+                        
+                            
+                            </div>
+
+                            <div  class="col-lg-2 ">
+
+                                <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                <div class="d-flex pl-3">
+                                <input class=" h4 w-50  form-control text-center" id="salt" type="number" value="0" oninput="calculate()"></input>
+                                <label class="h4 pl-2 mt-1" >lb</label><br>
                                 </div>
                             </div>
 
                             <div class="col-lg-2">
                                 <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
-                                <h4 class="  pl-3" ><span  id="fatsRecommend">1</span> lb</h4>
+                                <h4 class="  pl-3" ><span  id="saltRecommend">1</span> lb</h4>
                             </div>
 
                             <div class="col-lg-3">
                                 <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                                <h4 class="  pl-3"  value="1"><span class="text-primary"  id="fatsNeeded">1</span> lb</h4>
+                                <h4 class="  pl-3"  value="1"><span class="text-primary"  id="saltNeeded">1</span> lb</h4>
                             </div>
 
                             <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
-
-                               
-                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=aa37c9a43c495bce1eb86a7ea3a5787f&camp=1789&creative=9325&index=aps&keywords=vegetable oils shortening canned butter" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                    
+                
+                                <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=6844691c9cb73c387cd1b8b405914c7a&camp=1789&creative=9325&index=aps&keywords=table salt-sea salt-soy sauce-bouillon-buckets-" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                                
                             </div>
-        
-                        
-                </div>
 
-                            <div class="progress bg-primary "style="width: 100%">
-                                <div id="fatsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
-                            </div>
-                </div>
-
-                        <div class="d-flex justify-content-end pr-2 pt-5 pb-3" >
-                        
-                            <h4 class="font-weight-bold">Powered by </p>
-                        
-                            <div class="pr-5 ">  
-                                <img class="img-fluid d-flex justify-content-end" src="./images/SitPrep Logo Dark.png"  width="150" alt="" />
-                            </div>
                         
                         </div>
 
+                        
+                        <div class="progress bg-primary"style="width: 100%">
+                            <div id="saltProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    
+                    </div>
+
+                    <!--Fats Dashboard-->
+                    <div class="p-4 bg-light">
+                        <div  class=" text-dark justify-content-start d-flex row ">
+                        <div class="col-lg-3">
+
+                                        <div class="d-flex">
+                                                <p class=" h4 pl-3">FATS</p>
+                                                <span class="material-symbols-rounded material-icons pl-1">
+                                                    egg_alt
+                                                    </span>
+                                        </div>
+
+
+                                        
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn pb-3" data-toggle="modal" data-target="#fatsModalCenter">  <img class="rounded" src="./images/Amzon Images/fats.jpeg"  width="150" alt="" />
+                                        
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="fatsModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalCenterTitle">FATS</h5>
+                                                        
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            <img class=" text-center rounded" src="./images/Amzon Images/fats.jpeg"  width="450" alt="" />
+                                                            <p class="h5 py-3 font-weight-light">Includes vegetable oils, shortening, canned butter, etc.</p>
+                                                        </div>
+                                                        <!--modal-footer-->
+                                                        <div class="d-flex justify-content-center pb-4 ">
+
+                                                            <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=aa37c9a43c495bce1eb86a7ea3a5787f&camp=1789&creative=9325&index=aps&keywords=vegetable oils shortening canned butter" class="  d-flex btn bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Shop Now</p></a>
+                                            
+                                                        </div>
+                                                    <!--modal-end-->
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                    </div>
+
+                                    <div  class="col-lg-2 ">
+
+                                        <label class=" px-3 pt-1" >AMOUNT IN STORAGE</label>
+                                        <div class="d-flex pl-3">
+                                            <input class="bg-light h4 w-50  form-control text-center" id="fats" type="number" value="0" oninput="calculate()"></input>
+                                            <label class="h4 pl-2 mt-1" >lb</label><br>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <label class=" px-3 py-1">RECOMMENDED AMOUNT</label>
+                                        <h4 class="  pl-3" ><span  id="fatsRecommend">1</span> lb</h4>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                        <h4 class="  pl-3"  value="1"><span class="text-primary"  id="fatsNeeded">1</span> lb</h4>
+                                    </div>
+
+                                    <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
+
+                                        <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=aa37c9a43c495bce1eb86a7ea3a5787f&camp=1789&creative=9325&index=aps&keywords=vegetable oils shortening canned butter" class="  d-flex btn  my-5  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                            
+                                    </div>
+                
+                                
+                        </div>
+
+                        <div class="progress bg-primary "style="width: 100%">
+                            <div id="fatsProgress"class=" progress-bar-striped progress-bar-animated recGrn " role="progressbar"  style="width: 0%"></div>
+                        </div>
+                    </div>
+                            <!--Fat ends-->
+                            <div class="d-flex justify-content-end pr-2 pt-5 pb-3" >
+                            
+                                <h4 class="font-weight-bold">Powered by </p>
+                            
+                                <div class="pr-5 ">  
+                                    <img class="img-fluid d-flex justify-content-end" src="./images/SitPrep Logo Dark.png"  width="150" alt="" />
+                                </div>
+                            
+                            </div>
+
+                    </div>
+                </div>
+                <!--calculator end-->
+
+            </div> 
+     
+        </section>
+
+            <!-- Modal for Survey begin -->
+            <div class="modal fade" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="pr-3 pt-3">
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
+                    
+                    </div>
+            
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
+                    </div>
+            
+                </div>
+                </div>
             </div>
-        </dive>
-        <!--calculator end-->
-
-    </div> 
-    
-    
-</section>
-
-<!-- Modal for Survey begin -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="pr-3 pt-3">
-         
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
-         
-        </div>
-  
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
-        </div>
-  
-      </div>
-    </div>
-  </div>
-  
-  <div class="  pb-5   px-1 text-center">
-    <input type="button"  id="rep" value="Download My Results" class="  btn btn-info btn_print btn-dark " data-toggle="modal" data-target="#exampleModalCenter" >
-    </div>
-  <!-- Modal for Survey End-->
+            
+            <div class="  pb-5   px-1 text-center">
+                <input type="button"  id="rep" value="Download My Results" class="  btn btn-info btn_print btn-dark " data-toggle="modal" data-target="#surveyModal" >
+                </div>
+            <!-- Modal for Survey End-->
 
 </main>
 
