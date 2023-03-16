@@ -339,6 +339,13 @@ font-weight:300;
 .bgOrg {
   background-color: var(--primary-color);
   border-color:var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.bgOrg:hover {
+  background-color:#ec4c2f ;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .bgAmazon {

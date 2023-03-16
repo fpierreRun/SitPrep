@@ -22,8 +22,6 @@ function updateCards (){
  
 };
 
-
-
 function cardUpdates() {
  
 
@@ -143,5 +141,4 @@ progTotal();
 
 };
 cardUpdates();
-
 

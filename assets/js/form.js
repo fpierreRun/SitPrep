@@ -19,7 +19,6 @@ function evacPage(){
   document.getElementById("next").style.display = "none";
 };
 
-console.log(evacPage)
 
 //begin
 function locPage(){
