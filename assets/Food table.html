@@ -167,16 +167,16 @@
 
         <div class="row justify-content-center  ">
 
-          <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-3 mb-3">
                 <div class="">
                 <label class="h5 mt-2 " >Infants (Up to 12 months)</label><br>
               </div>
 
                 <div class="d-flex justify-content-center py-2 text-center">
-                <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
-                  <input style= width:25% class=" infantOL text-center form-control  text-center" id="infants" type="number" value="0"  min="0"></input>
-                  <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
-              </div>
+                  <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
+                    <input style= width:25% class=" infantOL text-center form-control  text-center" id="infants" type="number" value="0"  min="0"></input>
+                    <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
+                </div>
 
             </div>
 
@@ -211,31 +211,58 @@
         <div class="row py-3 justify-content-center">
           <h4 class="text-warning text-center pt-3">PETS</h4><br>
 
-              <div class="d-flex justify-content-center pt-3 col-lg-2 rounded mr-3">
-                <label class="checkbox ">Dogs
-                  <input id="dogs" class="shadow-lg" type="checkbox" >
-                  <span class="checkmark"></span>
-                </label>
-                
+          <div class="row justify-content-center  ">
+
+            <div class=" text-center col-lg-3 mb-3">
+                <div class="">
+                <label class="h5 mt-2 " >Dogs</label><br>
+              </div>
+
+                <div class="d-flex justify-content-center py-2 text-center">
+                  <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
+                    <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="dogs" type="number" value="0"  min="0"></input>
+                    <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
+                </div>
+
             </div>
 
-            <div class="d-flex justify-content-center pt-3 col-lg-2 rounded mr-4">
-              <label class="checkbox ">Cats
-                <input id="cats" type="checkbox" >
-                <span class="checkmark"></span>
-              </label>
-              
+            <div class=" text-center col-lg-3 mb-3">
+              <div class="">
+              <label class="h5 mt-2 " >Cats</label><br>
             </div>
 
-            <div class="d-flex justify-content-center  pt-3 d-flex col-lg-2 ">
+              <div class="d-flex justify-content-center py-2 text-center">
+                <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
+                  <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="cats" type="number" value="0"  min="0"></input>
+                  <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
+              </div>
+
+          </div>
+
+            <div class=" text-center col-lg-3 mb-3">
+              <div class="">
+              <label class="h5 mt-2 " >Other Pets</label><br>
+            </div>
+
+              <div class="d-flex justify-content-center py-2 text-center">
+                <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
+                  <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="others" type="number" value="0"  min="0"></input>
+                  <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
+              </div>
+
+          </div>
+
+             
+
+            <!-- <div class="d-flex justify-content-center  pt-3 d-flex col-lg-2 ">
               
                 <label class="checkbox ">Others
-                  <input id="other" type="checkbox" >
+                  <input id="others" type="checkbox" >
                   <span class="checkmark"></span>
                 </label>
               
-           </div>
-      </div>
+           </div> -->
+          </div>
 
 
       
@@ -329,11 +356,11 @@
       <tr >
         <th scope="col"> 
           <div class="">
-          <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+          <input class=" rounded" type="checkbox" id="meatCheck" name="add" value="Secondary" onclick="expandSecondary()">
           </div>
   
         </th>
-        <td class="text-center">3</td>
+        <td class="text-center" id="meat"></td>
         <td>Cans of canned meat</td>
         <td>Tuna, Salmon, Chicken, Raviolis, Chili, beef stew, Spam
           corned beef, or tofu or can of beans.</td>
@@ -355,11 +382,11 @@
       <tr >
         <th scope="col"> 
           <div class="">
-          <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+          <input class=" rounded" type="checkbox" id="fruitCheck" name="add" value="Secondary" onclick="expandSecondary()">
           </div>
   
         </th>
-        <td class="text-center">3</td>
+        <td class="text-center" id="fruit"></td>
         <td>Cans of canned fruit and vegetables</td>
         <td>4 cups per adult, 2 cups to each child</td>
         <td>
@@ -385,7 +412,7 @@
                 </div>
         
               </th>
-              <td class="text-center">3</td>
+              <td class="text-center">1</td>
               <td>Family-Size jar of peanut butter</td>
               <td>Per Day Per person</td>
               <td>
@@ -410,7 +437,7 @@
           </div>
   
         </th>
-        <td  class="text-center">3</td>
+        <td  class="text-center">1</td>
         <td>15 oz boxes of crackers</td>
         <td>salt-free or low- sodium, whole grain crackers</td>
         <td>
@@ -431,13 +458,13 @@
        <tr >
         <th scope="col"> 
           <div class="">
-          <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+          <input class=" rounded" type="checkbox" id="juiceCheck" name="add" value="Secondary" onclick="expandSecondary()">
           </div>
   
         </th>
-        <td class="text-center">3</td>
-        <td>8 oz of canned, bottled or boxed juices</td>
-        <td></td>
+        <td class="text-center" id="juice"></td>
+        <td>ounces of canned, bottled or boxed juices</td>
+        <td>8 oz per day per kids and 24 oz per day per adults</td>
         <td>
           <img src="./images/Adults-Teenagers Circle.png" alt="">
           <img src="./images/Child-Toddler Circle.png" alt="">
@@ -456,13 +483,13 @@
       <tr >
         <th scope="col"> 
           <div class="">
-          <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+          <input class=" rounded" type="checkbox" id="milkCheck" name="add" value="Secondary" onclick="expandSecondary()">
           </div>
   
         </th>
-        <td class="text-center">3</td>
-        <td>8 oz of non-perishable pasteurized milk</td>
-        <td>Reconstituted milk works aswell</td>
+        <td class="text-center" id="milk"></td>
+        <td>ounces of non-perishable pasteurized milk</td>
+        <td>8 oz per day per kids and 24 oz per day per adults. Reconstituted milk works aswell</td>
         <td>
           <img src="./images/Adults-Teenagers Circle.png" alt="">
           <img src="./images/Child-Toddler Circle.png" alt="">
@@ -482,13 +509,13 @@
       <tr >
         <th scope="col"> 
           <div class="">
-          <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+          <input class=" rounded" type="checkbox" id="snacksCheck" name="add" value="Secondary" onclick="expandSecondary()">
           </div>
   
         </th>
-        <td class="text-center">3</td>
-        <td>3 servings of energy snacks</td>
-        <td>Granola bars, protein bars, dried fruits, or nuts</td>
+        <td class="text-center" id="snacks"></td>
+        <td> Servings of granola bars, protein bars, dried fruits, or nuts</td>
+        <td>3 oz per day per kid and 9 oz per day per adult.</td>
         <td>
           <img src="./images/Adults-Teenagers Circle.png" alt="">
           <img src="./images/Child-Toddler Circle.png" alt="">
@@ -511,7 +538,7 @@
             </div>
     
           </th>
-          <td class="text-center">3</td>
+          <td class="text-center">1</td>
           <td>Family-Size boxes of dry cereal or granola</td>
           <td></td>
           <td>
@@ -532,13 +559,13 @@
           <tr >
             <th scope="col"> 
               <div class="">
-              <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+              <input class=" rounded" type="checkbox" id="aVitaminsCheck" name="add" value="Secondary" onclick="expandSecondary()">
               </div>
       
             </th>
-            <td class="text-center">3</td>
+            <td class="text-center" id="aVitamins"></td>
             <td>Adult Vitamins</td>
-            <td>Capsul or pill</td>
+            <td>Capsul or pill per day per adult</td>
             <td>
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -557,13 +584,13 @@
           <tr >
             <th scope="col"> 
               <div class="">
-              <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+              <input class=" rounded" type="checkbox" id="kVitaminsCheck" name="add" value="Secondary" onclick="expandSecondary()">
               </div>
       
             </th>
-            <td class="text-center">3</td>
+            <td class="text-center" id="kVitamins"></td>
             <td>Children's Multivitamins</td>
-            <td>Capsul or pill</td>
+            <td>Capsul or pill per day per kid</td>
             <td>
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -582,12 +609,12 @@
          <tr >
           <th scope="col"> 
             <div class="">
-            <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+            <input class=" rounded" type="checkbox" id="babyFormulaCheck" name="add" value="Secondary" onclick="expandSecondary()">
             </div>
     
           </th>
-          <td class="text-center">3</td>
-          <td>3 days of baby formula</td>
+          <td class="text-center" id="babyFormula">3</td>
+          <td>Days of baby formula</td>
           <td>Continue breastfeeding if the infant is breastfed. Mom will need 
             sufficient water and nutritional foods to sustain milk suply </td>
           <td>
@@ -608,11 +635,11 @@
          <tr >
           <th scope="col"> 
             <div class="">
-            <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
+            <input class=" rounded" type="checkbox" id="babyFoodCheck" name="add" value="Secondary" onclick="expandSecondary()">
             </div>
     
           </th>
-          <td class="text-center">3</td>
+          <td class="text-center" id="babyFood">3</td>
           <td>3 days' worth of baby food</td>
           <td></td>
           <td>
