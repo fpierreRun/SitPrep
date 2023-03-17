@@ -151,86 +151,95 @@
           <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
   
   <!--Goals begins-->
-
-  <div class=" container " id="downloadPrint">
+  <a href="./dashboard Main.html" class="btn btn-secondary">Home</a>
+  <div class="  " id="downloadPrint">
 
     <div class="pb-5 ">
 
       <div class="pb-2">
-        <a href="./dashboard Main.html" class="btn btn-secondary">Home</a>
-        <p class="h2 font-weight-normal"><span class="font-weight-bold txtGrn">Step 1/2:</span> How many individuals and pets are you planning for?</p>
+        
+        <p class="h2 font-weight-normal text-center"><span class="font-weight-bold txtGrn">Step 1/2:</span> How many individuals and pets are you planning for?</p>
         <hr class="my-4 ">
-        <p class="text-muted h5">Providing information about those in your household will help create an emergency list that meets the needs of everyone.</p>
+        <p class="text-muted text-center">Providing information about those in your household will help create an emergency list that meets the needs of everyone.</p>
 
             
     </div> 
 
-        <div class="row  ">
+        <div class="row justify-content-center  ">
 
-          <div class="bg-success text-center col-lg-3">
+          <div class=" text-center col-lg-3 mb-3">
                 <div class="">
-                <label class="h5 pr-3 mt-2 " >Infant(s)</label><br>
+                <label class="h5 mt-2 " >Infants (Up to 12 months)</label><br>
               </div>
 
-                <div class="d-flex py-2 text-center">
-                <button type="button" class="btn bgOrg text-white rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
-                  <input style= width:25% class=" bg-light form-control border-success text-center" id="infants" type="number" value="0"  min="0"></input>
-                  <button type="button" class="btn bgOrg text-white rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
+                <div class="d-flex justify-content-center py-2 text-center">
+                <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
+                  <input style= width:25% class=" infantOL text-center form-control  text-center" id="infants" type="number" value="0"  min="0"></input>
+                  <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
               </div>
 
             </div>
 
-            <div class="bg-primary col-lg-3 ">
-                    <div class="">
-                  <label class="h5 pr-4 mt-2">Kid(s)</label><br>
-                </div>
+            <div class=" col-lg-3 mb-3">
+                    <div class="text-center">
+                    <label class="h5 mt-2">Children/Toddlers (Under 12)</label><br>
+                    </div>
 
-                <div  class="d-flex py-2">
-                 
-                  <button type="button" class="btn bgOrg text-white rounded-circle mr-3 shadow-sm" onclick="increaseKids()">+</button>
+                    <div  class="d-flex justify-content-center py-2">
                   
-                    <input style= width:25% class=" bg-light form-control border-success text-center" id="kids" type="number" value="0"  min="0"></input>
-                    <button type="button" class="btn bgOrg text-white rounded-circle ml-3 shadow-sm" onclick="decreaseKids()">-</button>
-                  </div>
-                </div>
+                    <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseKids()">+</button>
+                    
+                      <input style= width:25% class="  kidsOL form-control text-center" id="kids" type="number" value="0"  min="0"></input>
+                      <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseKids()">-</button>
+                    </div>
+              </div>
 
-                <div class="bg-success col-lg-3 ">
+                <div class=" col-lg-3 ">
                       <div class="text-center">
-                    <label class="h5 mt-2">Adult(s)</label><br>
+                    <label class="h5 mt-2">Adults/Teenagers (Age 12 and above)</label><br>
                   </div>
 
-                    <div class="d-flex py-2">
-                    <button type="button" class="btn bgOrg text-white rounded-circle mr-3 shadow-sm" onclick="increaseAdults()">+</button>
-                        <input id="adults" style= width:25% class=" bg-light  form-control  text-center " type="number" value="1"  min="0"></input>
-                        <button type="button" class="btn bgOrg text-white rounded-circle ml-3 shadow-sm" onclick="decreaseAdults()">-</button>
+                    <div class="d-flex justify-content-center py-2">
+                    <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseAdults()">+</button>
+                        <input id="adults" style= width:25% class=" adultsOL  form-control  text-center " type="number" value="1"  min="0"></input>
+                        <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseAdults()">-</button>
                     </div> 
               </div>
 
           </div> 
 
-        <div class="row py-3">
-          <h5 class="txtGrn">PETS</h5><br>
+        <div class="row py-3 justify-content-center">
+          <h4 class="text-warning text-center pt-3">PETS</h4><br>
 
-              <div class="pt-3 d-flex col-lg-2 ">
-                <label class=" h5 pr-3 mt-2" for="vehicle1"> Dogs</label><br>
-                <input class=" rounded" type="checkbox" id="dogs" name="dogs" value="dogs" >
+              <div class="d-flex justify-content-center pt-3 col-lg-2 rounded mr-3">
+                <label class="checkbox ">Dogs
+                  <input id="dogs" class="shadow-lg" type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
                 
             </div>
 
-            <div class="pt-3 d-flex col-lg-2 ">
-              <label class=" h5 pr-3 mt-2" for="vehicle1"> Cats</label><br>
-              <input class=" rounded" type="checkbox" id="cats" name="cats" value="cats" >
-             
+            <div class="d-flex justify-content-center pt-3 col-lg-2 rounded mr-4">
+              <label class="checkbox ">Cats
+                <input id="cats" type="checkbox" >
+                <span class="checkmark"></span>
+              </label>
+              
             </div>
 
-            <div class="pt-3 d-flex col-lg-2 ">
-              <label class=" h5 pr-4 mt-2" for="vehicle1"> Others</label><br>
-              <input class=" rounded" type="checkbox" id="other" name="other" value="other" >
+            <div class="d-flex justify-content-center  pt-3 d-flex col-lg-2 ">
+              
+                <label class="checkbox ">Others
+                  <input id="other" type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
               
            </div>
       </div>
 
-         <div class="text-center row" id="next2">
+
+      
+         <div class="text-center row pt-5" id="next2">
             <div>
               
               <input form="locationForm" class="btn btn-primary" type="submit" value="Save & Continue" onclick="saveFood()" >
@@ -246,19 +255,26 @@
 
 
 <div class="pb-2">
-  <p class="h3 font-weight-normal"><span class="font-weight-bold txtGrn">Step 2/2:</span> How many adults (12 and older), kids (Under 12), and pets are you planning for?</p>
+  <p class="h2 font-weight-normal text-center"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
   <hr class="my-4">
-  <p class="text-muted ">Providing information about those in your household will help create an emergency list that meets the needs of everyone.</p>
+  <p class="text-muted text-center">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
+    specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
+    as needed. The quantity calculation is based on the number of people in your household you entered</p>
   
-  <img src="./images/Adults-Teenagers Circle.png" alt="">
-  <img src="./images/Child-Toddler Circle.png" alt="">
-  <img src="./images/Infants.png" alt="">
-  <img src="./images/Pets.png" alt="">
+      <div class="d-flex justify-content-center">
+        <label><img src="./images/Infants.png" alt="">= Infants</label>
+        <label class="ml-5"><img src="./images/Child-Toddler Circle.png" alt="">= Kids</label>
+        <label class="ml-5"><img src="./images/Adults-Teenagers Circle.png" alt="">= Adults</label>
+        <label class="ml-5"><img src="./images/Pets.png" alt="">= Pets</label>
+    </div>
+  
+  
+  
 
-  <div class="text-center row" id="next2">
+  <div class="text-center row my-5" id="next2">
     <div>
-      <a href="./dashboard Main.html" class="btn btn-secondary">Close</a>
-      <input form="locationForm" class="btn btn-primary" type="submit" value="Save & Continue" onclick="saveFood()" >
+      
+      <input form="locationForm" class="btn btn-success" type="submit" value="Save & Complete" onclick="saveFood()" >
     </div>
    
   </div> 
@@ -268,7 +284,7 @@
   <div class="table-responsive  rounded shadow">
   <table class="table ">
 
-    <thead class="table-secondary">
+    <thead class="table-dark">
       <th scope="col"> 
         <div class="">
         <input class=" rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">

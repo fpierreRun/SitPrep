@@ -34,6 +34,7 @@ var saveFood = function () {
   
   var saveData = function () {
  
+    console.log(saveData)
     localStorage.removeItem("food");
   
     localStorage.setItem("food", JSON.stringify(food))
@@ -112,7 +113,6 @@ var saveFood = function () {
     
     };
   
-
     refreshpageFood()
 
 //Infants Value Change buttons Function 
