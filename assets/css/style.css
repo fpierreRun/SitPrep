@@ -9,7 +9,7 @@
   --Highlightyellow-color: #F0DC41;
   --ButtonGrey-color: #4e4e4e;
   --normaltext-color: #3e3e3e;
-  --lighttext-color: #898989;
+  --lighttext-color: #93979b;
   --Tiltecolor-color: #4A5071;
   --WhiteText-color: #ffffff;
   --OrangeText-color: #F03211;
@@ -29,11 +29,15 @@
 
 body {
   font-size: 100%;
-  color: #091e42;
+  color: var(--normaltext-color);
   height: 100%;
   font-family: Roboto;
 }
 
+label {
+  color: var(--lighttext-color);
+  font-size: 20px;;
+}
 
 
 body.Bkgd {
@@ -430,14 +434,29 @@ font-weight:300;
   border-color: #778CFE;
 }
 
+.infantTxt {
+  color: #778CFE;
+ 
+}
+
 .kidsOL {
   background-color: #39D2A1;
   border-color: #39D2A1; 
 }
 
+.kidsTxt {
+  color: #39D2A1;
+ 
+}
+
 .adultsOL {
   background-color: #FF6346;
   border-color: #FF6346; 
+}
+
+.adultsTxt {
+  color: #FF6346;
+  
 }
 
 /* The container */
