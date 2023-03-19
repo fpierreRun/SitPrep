@@ -4,38 +4,7 @@ var foodList = [];
 
 
 
-function loadSaveList (){
-  
 
-  foodListNew = JSON.parse(localStorage.getItem("foodList"));
-  
-        for (let i = 0; i < foodListNew.length; i++) {
-     
-        var element = foodListNew[foodListNew.length-1];
-        
-        // newFood.push(element);
-      
-        console.log(element)
-            document.getElementById("waterCheck").checked = element.waterCheck;
-            document.getElementById("meatCheck").checked = element.meatCheck;
-            document.getElementById("fruitCheck").checked = element.fruitCheck;
-            document.getElementById("pbCheck").checked = element.pbCheck;
-            document.getElementById("milkCheck").checked = element.milkCheck;
-            document.getElementById("snacksCheck").checked = element.snacksCheck;
-            document.getElementById("cerealCheck").checked = element.cerealCheck;
-            document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
-            document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
-            document.getElementById("babyFormulaCheck").checked = element.babyFormulaCheck;
-            document.getElementById("babyFoodCheck").checked = element.babyFoodCheck;
-            document.getElementById("dogFoodCheck").checked = element.dogFoodCheck;
-            document.getElementById("catFoodCheck").checked = element.catFoodCheck;
-            document.getElementById("otherPetCheck").checked = element.otherPetCheck;
-            document.getElementById("crackCheck").checked = element.crackCheck;
-            document.getElementById("juiceCheck").checked = element.juiceCheck;
-    }
-    
-}
-loadSaveList ()
 
 
 
@@ -67,6 +36,7 @@ var saveFood = function () {
     };
     food.push(foodDataObj);
     saveData()
+    
 
   };
  
@@ -99,21 +69,17 @@ var saveFood = function () {
             document.getElementById("cats").value= element.cats;
             document.getElementById("others").value= element.others;
             
-            var infants = document.getElementById("infants").value
-            var gallon = infants * 3
             
             
             
-            function updateTable() {
-            document.getElementById("gow").innerHTML= gallon;
-            };
-            updateTable()
+      
         };
         
         };
       
     
     loadFood()
+    location.reload();
   };
   
 
@@ -176,11 +142,12 @@ var saveFood = function () {
         document.getElementById("otherPet").innerHTML= otherPet;
         };
         updateTable()
+        
     };
     
     };
   
-    refreshpageFood()
+    
 
 //Infants Value Change buttons Function 
 function increaseInfants() {
@@ -255,8 +222,6 @@ function decreaseOthers() {
   }
 };
 
-
- 
   
   function saveCheckList() {
    
@@ -312,6 +277,44 @@ function storeFoodList (){
   localStorage.setItem("foodList", JSON.stringify(foodList))
 }
 
+// save data to local storage and update table
+function loadSaveList (){
+  
+
+  foodListNew = JSON.parse(localStorage.getItem("foodList"));
+  
+        for (let i = 0; i < foodListNew.length; i++) {
+     
+        var element = foodListNew[foodListNew.length-1];
+        
+        // newFood.push(element);
+      
+        console.log(element)
+            document.getElementById("waterCheck").checked = element.waterCheck;
+            document.getElementById("meatCheck").checked = element.meatCheck;
+            document.getElementById("fruitCheck").checked = element.fruitCheck;
+            document.getElementById("pbCheck").checked = element.pbCheck;
+            document.getElementById("milkCheck").checked = element.milkCheck;
+            document.getElementById("snacksCheck").checked = element.snacksCheck;
+            document.getElementById("cerealCheck").checked = element.cerealCheck;
+            document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
+            document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
+            document.getElementById("babyFormulaCheck").checked = element.babyFormulaCheck;
+            document.getElementById("babyFoodCheck").checked = element.babyFoodCheck;
+            document.getElementById("dogFoodCheck").checked = element.dogFoodCheck;
+            document.getElementById("catFoodCheck").checked = element.catFoodCheck;
+            document.getElementById("otherPetCheck").checked = element.otherPetCheck;
+            document.getElementById("crackCheck").checked = element.crackCheck;
+            document.getElementById("juiceCheck").checked = element.juiceCheck;
+    }
+    
+}
 
 
+
+
+// Load data on refresh
+
+refreshpageFood()
+loadSaveList () 
 
