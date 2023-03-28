@@ -10,9 +10,8 @@ var foodList = [];
 
 //Saving food supply info
 
-var saveFood = function () {
-
-    
+function saveFood() {
+  localStorage.removeItem("food");
     infants = document.getElementById("infants").value
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
@@ -35,20 +34,42 @@ var saveFood = function () {
   
     };
     food.push(foodDataObj);
+    localStorage.removeItem("food");
     saveData()
-    
-
+   
   };
  
+ 
+
+  function displayTable(){
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+    document.getElementById("demograhpic").style.display = "none";
+    document.getElementById("foodtable").style.display = "block";
+    document.getElementById("foodBackBtn").style.display = "block";
+    
+  };
+
+  function displayDemographic(){
+    document.getElementById("demograhpic").style.display = "block";
+    document.getElementById("foodtable").style.display = "none";
+    document.getElementById("foodBackBtn").style.display = "none";
+  };
   
-  var saveData = function () {
+function saveData () {
  
     localStorage.removeItem("food");
   
     localStorage.setItem("food", JSON.stringify(food))
+    loadFood()
+  };
    
 
-    var loadFood = function () {
+    function loadFood() {
 
         updatedFood = JSON.parse(localStorage.getItem("food"));
     
@@ -68,22 +89,14 @@ var saveFood = function () {
             document.getElementById("dogs").value= element.dogs;
             document.getElementById("cats").value= element.cats;
             document.getElementById("others").value= element.others;
-            
-            
-            
-            
-      
-        };
-        
-        };
-      
-    
-    loadFood()
-    location.reload();
-  };
-  
 
-  var refreshpageFood = function () {
+        };
+        refreshpageFood()
+  };
+  loadFood()
+  // location.reload();
+
+  function refreshpageFood() {
 
     updatedFood = JSON.parse(localStorage.getItem("food"));
 
@@ -153,48 +166,61 @@ var saveFood = function () {
 function increaseInfants() {
   var input = document.getElementById("infants");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
 function decreaseInfants() {
   var input = document.getElementById("infants");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
 //Kids Value Change buttons Function 
 function increaseKids() {
   var input = document.getElementById("kids");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
+
 function decreaseKids() {
   var input = document.getElementById("kids");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
 //adults Value Change buttons Function 
 function increaseAdults() {
   var input = document.getElementById("adults");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
 function decreaseAdults() {
   var input = document.getElementById("adults");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
 //dogs Value Change buttons Function 
 function increaseDogs() {
   var input = document.getElementById("dogs");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
 function decreaseDogs() {
   var input = document.getElementById("dogs");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
 
@@ -202,24 +228,30 @@ function decreaseDogs() {
 function increaseCats() {
   var input = document.getElementById("cats");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
 function decreaseCats() {
   var input = document.getElementById("cats");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
 //other pets Value Change buttons Function 
 function increaseOthers() {
   var input = document.getElementById("others");
   input.value = parseInt(input.value) + 1;
+  saveFood()
 }
+
 function decreaseOthers() {
   var input = document.getElementById("others");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
+  saveFood()
 };
 
   
@@ -286,10 +318,10 @@ function loadSaveList (){
         for (let i = 0; i < foodListNew.length; i++) {
      
         var element = foodListNew[foodListNew.length-1];
-        
+        console.log(foodListNew.length)
         // newFood.push(element);
       
-        console.log(element)
+     
             document.getElementById("waterCheck").checked = element.waterCheck;
             document.getElementById("meatCheck").checked = element.meatCheck;
             document.getElementById("fruitCheck").checked = element.fruitCheck;
@@ -314,7 +346,7 @@ function loadSaveList (){
 
 
 // Load data on refresh
-
 refreshpageFood()
 loadSaveList () 
+saveFood()
 
