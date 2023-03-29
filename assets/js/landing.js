@@ -1,6 +1,75 @@
 
 var addTo72 = [];
 var prog72 = [];
+var prfName =[];
+
+
+
+
+
+function applyName(){
+
+  updatedName = JSON.parse(localStorage.getItem("prfName"));
+  
+  for (let i = 0; i < updatedName.length; i++) {
+ 
+    var element = updatedName[updatedName[i].length-1];
+   
+    if(!element.myName){
+
+      $("#getName").modal()  
+     };
+
+  
+  };
+}
+applyName()
+
+
+
+
+function saveName(){
+  localStorage.removeItem("prfName");
+  var myName = document.getElementById("inputName").value;
+   
+    //Object for form data
+    var nameDataObj = {
+  
+      //preferred name
+      myName: myName,
+    
+    };
+    prfName.push(nameDataObj);
+    localStorage.removeItem("prfName");
+    updateName()
+  
+  };
+ 
+  function updateName() {
+ 
+    localStorage.removeItem("prfName");
+  
+    localStorage.setItem("prfName", JSON.stringify(prfName))
+    loadName();
+  };
+
+  function loadName(){
+
+    updatedName = JSON.parse(localStorage.getItem("prfName"));
+
+    for (let i = 0; i < updatedName.length; i++) {
+ 
+    var element = updatedName[updatedName.length-1];
+    
+
+        document.getElementById("displayname").innerHTML= element.myName;
+        
+
+    };
+   
+};
+loadName()
+
 
 
 function updateCards (){
@@ -109,7 +178,7 @@ if(updatedPlan){
     document.getElementById("prog1").style.display = "none";
     document.getElementById("comp1").style.display = "block";
 
-    document.getElementById("step1M").style.display = "none";
+    // document.getElementById("step1M").style.display = "none";
     document.getElementById("step1C").style.display = "block";
 
   
@@ -141,4 +210,12 @@ progTotal();
 
 };
 cardUpdates();
+
+
+function editName(){
+ 
+  $("#getName").modal() 
+  
+};
+
 

@@ -308,18 +308,34 @@ a.btnPln{
 input{
   border: none;
   background-color: #f4f4f5;
-font-weight:300;
+font-weight:500;
   height:40px;
-  
+  font-size:20px;
 }
 
+input:focus {
+  border: none;
+
+}
+
+.inputOutline{
+  border-bottom: 2px solid var(--secondary-color);
+
+};
 
 
-input[type="text"], [type="number"]
+.grnFocus:focus
 {
-    font-size:20px;
-    color: white;
+    
+    border: 2px solid var(--secondary-color);
 }
+
+.phWhite::placeholder {
+  color:var(--WhiteText-color) ;
+  font-weight:500;
+  font-size:20px;
+}
+
 .txtImpact {
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 color: var(--normaltext-color);

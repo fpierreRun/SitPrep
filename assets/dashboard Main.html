@@ -60,13 +60,13 @@
 
                           <div class=" " id="v-pills-tab" role="tablist" aria-orientation="vertical" >
                             
-                            <p class="h4 text-white pb-2">72 Hour Plan</p>
+                            <p class="h4 text-white pb-2">My 3 Day Plan</p>
 
                             <div  class="pl-2 d-flex text-white rounded orgOppate">
                               <span class="material-icons pr-3 text-white">
                                 dashboard
                                 </span>
-                              <a class="py-2 text-white d-flex btn "  href="./dashboard Main.html"> Dashboard</a>
+                              <a class="py-2 text-white d-flex btn "  href="./dashboard Main.html"> My Progress</a>
                               
                             </div>
         
@@ -74,7 +74,7 @@
                               <span class="material-icons pr-3 text-white">
                                 map
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./home.html" > Evacuation Plan</a>
+                              <a class="pl-2 text-white d-flex btn "  href="./home.html" >Plan Evacuation</a>
                               
                             </div>
 
@@ -82,7 +82,7 @@
                               <span class="material-icons pr-3 text-white">
                                 map
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./plan.html" > Evacuation Plan</a>
+                              <a class="pl-2 text-white d-flex btn "  href="./plan.html" >Evacuation Plan</a>
                               
                             </div>
                             
@@ -90,7 +90,7 @@
                               <span class="material-icons pr-3 text-white">
                                 kitchen
                                 </span>
-                              <a class="py-2 text-white d-flex btn"   href="./Food table.html" role="tab" >Food Supply</a>
+                              <a class="py-2 text-white d-flex btn"   href="./Food table.html" role="tab" >Get Food Supply</a>
                               
                             </div>
                             
@@ -165,8 +165,8 @@
 
             <div class="container shadow rcorners grnOppate ">
             
-                  <p class="text-center font-weight-bolder h2  pt-3  robotoFnt txtOrg">Let's sit down and start prepping</p>
-                  <p class="text-center font-weight-light h4   robotoFnt txtGry">Feel free to start at any step.</p>
+                  <p class="text-center font-weight-bolder h2  pt-3  robotoFnt txtBlu">Welcome <a class="txtBlu" id="displayname"></a>! Let's sit down and start prepping</p>
+                  <p class="text-center font-weight-light h4   robotoFnt ">Start at any step below that you're ready to complete.</p>
                   <section class="row text-center   ">
                           
                 
@@ -380,7 +380,7 @@
                                     <div class="col-lg-6  pr-5">
                                       <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards ()">Add To Plan</button>
                                       <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./home.html"  id="continue1" >Continue Planning</a>
-                                      <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./plan.html"  id="view1" >View Plan</a>
+                                      <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./plan.html"  id="view1" >View My Plan</a>
   
                                       </div>
 
@@ -409,6 +409,23 @@
           </div>
         </main>
      
+        <!-- Modal -->
+<div class=" modal fade getName " id="getName" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog  modal-xl" role="document">
+    <div class="modal-content">
+      <p class="mt-5 mx-4 h3 font-weight-bold text-left txtBlu robotoFnt text-center">What name would you like to go by while using SitPrep on this browser?</p>
+      <div class="d-flex mb-3 modal-body justify-content-center text-center">
+        
+        <input  class="w-50  form-control text-center" id="inputName" name="inputName" type="text" placeholder="Enter Name"></input>
+                         
+      </div>
+      <div class="mb-5 float-right text-center">
+        
+        <button type="button" class="noOutline btn-lg btn-dark " onclick="saveName()" data-dismiss="modal">Save Name</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
