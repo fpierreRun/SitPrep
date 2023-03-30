@@ -73,7 +73,7 @@ function saveName(){
         
 
     };
-    
+    $('#getName').modal('hide');
 };
 loadName()
 
