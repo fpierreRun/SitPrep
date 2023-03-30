@@ -6,24 +6,31 @@ var prfName =[];
 
 
 
+function openNameModal(){
+
+  $('#getName').modal('show');
+
+ }; 
+
+
 
 function applyName(){
 
   updatedName = JSON.parse(localStorage.getItem("prfName"));
   
-  for (let i = 0; i < updatedName.length; i++) {
- 
-    var element = updatedName[updatedName[i].length-1];
+  
    
-    if(!element.myName){
+    if(!updatedName){
 
-      $("#getName").modal()  
+      $('#getName').modal('show'); 
      };
 
   
-  };
+  
 }
 applyName()
+
+
 
 
 
@@ -66,7 +73,7 @@ function saveName(){
         
 
     };
-   
+    
 };
 loadName()
 
@@ -212,10 +219,6 @@ progTotal();
 cardUpdates();
 
 
-function editName(){
- 
-  $("#getName").modal() 
-  
-};
+
 
 

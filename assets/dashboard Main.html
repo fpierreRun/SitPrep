@@ -125,16 +125,19 @@
                                   Share An Idea</a>
                               </div>
                               
-              
-                              <li class="nav-item dropdown pt-5 pr-3">
-                                <a class="text-white  nav-link dropdown-toggle py-2 btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <div class="mt-5">
+                                <button class="nav-link btn text-white mr-5" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</button>
+                              </div>
+                              <ul class="nav-item dropdown pr-5">
+                                
+                                <a class="text-white  nav-link dropdown-toggle py-2 btn mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Contact Us
                                 </a>
                                 <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item homenav text-success" href="https://www.instagram.com/sit.prep/" target="_blank">Instragram</a>
                                   <a class="dropdown-item homenav text-success" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
                                 </div>
-                              </li>
+                              </ul>
                           </div>
 
               </div>
@@ -410,7 +413,7 @@
         </main>
      
         <!-- Modal -->
-<div class=" modal fade getName " id="getName" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class=" modal fade getName " id="getName" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
   <div class="modal-dialog  modal-xl" role="document">
     <div class="modal-content">
       <p class="mt-5 mx-4 h3 font-weight-bold text-left txtBlu robotoFnt text-center">What name would you like to go by while using SitPrep on this browser?</p>
