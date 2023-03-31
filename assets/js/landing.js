@@ -7,9 +7,9 @@ var prfName =[];
 
 
 function openNameModal(){
-
+  localStorage.removeItem("prfName");
   $('#getName').modal('show');
-
+  location.reload()
  }; 
 
 
@@ -69,10 +69,15 @@ function saveName(){
     var element = updatedName[updatedName.length-1];
     
 
-        document.getElementById("displayname").innerHTML= element.myName;
-        
+        // document.getElementById("displayname").innerHTML= element.myName;
+        let myNameElements = document.querySelectorAll('.myName');
 
-    };
+      // Append new text to the span's innerHTML
+      for (let i = 0; i < myNameElements.length; i++) {
+        myNameElements[i].innerHTML += element.myName;
+      }
+
+          };
     $('#getName').modal('hide');
 };
 loadName()
