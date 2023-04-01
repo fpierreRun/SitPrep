@@ -27,125 +27,143 @@
 
     <body class="Bkgd">
         
-    <header class="Bkgd navbar    flex-md-nowrap p-0 ">
+      <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none  ">
     
-       <div class=" navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" >
-        <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
-      </div> 
-
-
-      <button class="btn-light bg-white navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> 
-     
-    </header>
+        <div class="d-flex  ">
+              <div class="  px-3 mt-3" >
+              <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+            </div> 
     
-    <div class="container-fluid ">
-
-      <div class="row">
-        
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse shadow">
-         
-            <img class=" pl-5 text-center" src="./images/SitPrep Logo White.png"  width="200" alt="" />
-
-            
-
-          <div class="position-sticky sidebar-sticky container-fluid" >
-
-              <div class=" bg-white text-white">
-              <hr >
-              </div>
-          
-              <div class="navbar-collapse ">
-
-                          <div class=" " id="v-pills-tab" role="tablist" aria-orientation="vertical" >
-                            
-                            <p class="h4 text-white pb-2">My 3 Day Plan</p>
-
-                            <div  class="pl-2 d-flex text-white rounded orgOppate">
-                              <span class="material-icons pr-3 text-white">
-                                dashboard
-                                </span>
-                              <a class="py-2 text-white d-flex btn "  href="./dashboard Main.html"> My Progress</a>
-                              
-                            </div>
-        
-                            <div  class="pl-2 d-flex text-white evacForm"  >
-                              <span class="material-icons pr-3 text-white">
-                                map
-                                </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./home.html" >Plan Evacuation</a>
-                              
-                            </div>
-
-                            <div  class="pl-2 d-flex text-white d-none evacPlan"  >
-                              <span class="material-icons pr-3 text-white">
-                                map
-                                </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./plan.html" >Evacuation Plan</a>
-                              
-                            </div>
-                            
-                            <div  class="  pl-2 d-flex text-white ">
-                              <span class="material-icons pr-3 text-white">
-                                kitchen
-                                </span>
-                              <a class="py-2 text-white d-flex btn"   href="./Food table.html" role="tab" >Get Food Supply</a>
-                              
-                            </div>
-                            
-                              <p class="h4 text-white pt-4 pb-2" >Extra</p>
+    
+            <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "></span>
+            </button> 
+    
+          </div>
+           
+     </header>
+    
+         <div class=" ">
+    
+            <div class="row">
               
+              <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
+               
+                  <img class="phone-block pl-5 text-center" src="./images/SitPrep Logo White.png"  width="200" alt="" />
+         
+                <div class="position-sticky  sidebar-sticky container-fluid">
+    
+                  <div class=" bg-white text-white">
+                    <hr class="phone-block" >
+                    </div>
+               
+                            <div class="navbar-collapse ">
+      
+                              <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                
+                                <p class="h4 text-white pb-2">72 Hour Plan</p>
+      
+                                <div  class="pl-2 d-flex text-white rounded orgOppate">
+                                  <span class="material-icons pr-3 text-white">
+                                    dashboard
+                                    </span>
+                                  <a class="pl-2 text-white d-flex btn "  href="./dashboard Main.html"> Dashboard</a>
+                                  
+                                </div>
+                                
+      
+                                <div  class="pl-2 d-flex text-white evacForm"  >
+                                  <span class="material-icons pr-3 text-white">
+                                    map
+                                    </span>
+                                  <a class="pl-2 text-white d-flex btn "  href="./home.html" > Evacuation Plan</a>
+                                  
+                                </div>
+      
+                                <div  class="pl-2 d-flex text-white d-none evacPlan" >
+                                  <span class="material-icons pr-3 text-white">
+                                    map
+                                    </span>
+                                  <a class="pl-2 text-white d-flex btn "  href="./plan.html" > Evacuation Plan</a>
+                                  
+                                </div>
+      
+                                <div  class="  pl-2 d-flex text-white ">
+                                  <span class="material-icons pr-3 text-white">
+                                    kitchen
+                                    </span>
+                                  <a class="pl-2 text-white d-flex btn"   href="./Food table.html" role="tab" >Food Supply</a>
+                                  
+                                </div>
+                                
+                              <p class="h4 text-white pt-4">Extra</p>
+                  
                               <div  class=" pl-2 d-flex text-white">
                                 <span class="material-icons pr-3 text-white">
                                   
                                   tips_and_updates
                                 </span>
-                                  <a class="py-2 text-white btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tip & Tricks</a>
+                                  <a class="pl-2 text-white btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tip & Tricks</a>
                                 
                               </div>
-                          
-                          
-                              <div  class="  pl-2 d-flex text-white">
-                                <span class="material-icons pr-3 text-white">
-                                
-                                  food_bank
-                                  </span>
-                            <a href="../assets/storageCalc.html" class="btn py-2 text-white d-flex">
-                              Food Storage</a>
-                              </div>
                               
-              
-                              <div  class="  pl-2 d-flex text-white">
-                                <span class="material-icons pr-3 text-white">
+                               
+                                  <div  class="  pl-2 d-flex text-white">
+                                    <span class="material-icons pr-3 text-white">
+                                    
+                                      food_bank
+                                      </span>
+                                <a href="../assets/storageCalc.html" class="btn pl-2 text-white d-flex">
+                                  Food Storage</a>
+                                  </div>
+                                  
+                  
+                                  <div  class="  pl-2 d-flex text-white">
+                                    <span class="material-icons pr-3 text-white">
+                                  
+                                      emoji_emotions
+                                      </span>
+                                    <a class="pl-2 text-white d-flex btn" href="../assets/feedback.html">
+                                      Share An Idea</a>
+                                  </div>
+                                  
+    
+                                  <p class="h4 text-white pt-4 " >Info</p>
+                  
+                                  <div  class=" pl-2 d-flex text-white">
+                                    <span class="material-icons pr-3 text-white">
+                                      
+                                      tips_and_updates
+                                    </span>
+                                    
+                                      <button class=" btn text-white" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</button>
+                                   
+                                  </div>
                               
-                                  emoji_emotions
-                                  </span>
-                                <a class="py-2 text-white d-flex btn" href="../assets/feedback.html">
-                                  Share An Idea</a>
-                              </div>
                               
-                              <div class="mt-5">
-                                <button class="nav-link btn text-white mr-5" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</button>
-                              </div>
-                              <ul class="nav-item dropdown pr-5">
-                                
-                                <a class="text-white  nav-link dropdown-toggle py-2 btn mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Contact Us
-                                </a>
-                                <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item homenav text-success" href="https://www.instagram.com/sit.prep/" target="_blank">Instragram</a>
-                                  <a class="dropdown-item homenav text-success" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
-                                </div>
-                              </ul>
-                          </div>
-
-              </div>
-          </div>
-        </nav>
-
-      </div>
-    </div>
+                                  <div  class="  pl-2 d-flex text-white">
+                                    <span class="material-icons  text-white">
+                                    
+                                      food_bank
+                                      </span>
+                                      <ul class=" dropdown ">
+                                    
+                                        <a class="text-white dropdown-toggle btn mt-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Contact Us
+                                        </a>
+                                        <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+                                          <a class="dropdown-item homenav text-success" href="https://www.instagram.com/sit.prep/" target="_blank">Instragram</a>
+                                          <a class="dropdown-item homenav text-success" href="https://www.facebook.com/SitPrep" target="_blank">Facebook</a>
+                                        </div>
+                                      </ul>
+                                  </div>
+                                  
+                                  
+                </div>
+              </nav>
+    
+            </div>
+         </div>
     
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
           <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">

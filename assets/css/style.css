@@ -207,12 +207,12 @@ section.homebkg {
   height:var(--breakpoint-sm);
 }
 
-section.food {
+main.food {
   background-image: url("../images/Food\ Storage\ Cal\ 1.png");
   background-repeat: no-repeat;
-  background-position: right;
-  background-size:contain;
-  background-attachment: fixed;
+  background-position: center;
+  background-size:cover;
+  background-attachment:local;
   
   
   
