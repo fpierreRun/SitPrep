@@ -107,7 +107,7 @@
                                   <span class="material-icons pr-3 text-white">
                                     backpack
                                     </span>
-                                  <a class="pl-2 text-white d-flex btn"   href="#" role="tab" >Additional Supplies</a>
+                                  <a class="pl-2 text-white d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
                                   
                                 </div>
                                 
@@ -191,13 +191,13 @@
             </div> 
           </div>-->
     
-
+          <p class="text-center font-weight-bolder display-4  mt-5 mb-5 txtImpact txtBlu">Welcome <span class=" myName" id="displayname"></span>!</p>
     
-          <div class="pt-5  ">
+          <div class="  ">
 
             <div class=" shadow rcorners grnOppate ">
             
-                  <p class="text-center font-weight-bolder h2  pt-3  robotoFnt txtBlu">Welcome <span class="txtBlu myName" id="displayname"></span>! Let's sit down and start prepping</p>
+                  <p class="text-center font-weight-bolder h2  pt-3  robotoFnt txtOrg">Let's sit down and start prepping</p>
                   <p class="text-center font-weight-light h4   robotoFnt ">Start at any step below that you're ready to complete.</p>
                   <section class="row text-center   ">
                           
@@ -374,17 +374,7 @@
                                 
                               <div class="d-flex card-title">
                                   <p class=" h3 font-weight-bold text-left txtBlu robotoFnt">Emergency Evacuation</p>
-                                  
-                                
-                                    <div class=" phone-block pl-5">
-                                      <p class="font-weight-bold font-weight-light  h5">
-                                        
-                                          <span class="font-weight-bold text-danger pl-1" id="not1"> (Not Started)</span>
-                                          <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog1"> (In Progess)</span>
-                                          <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp1"> (Completed)</span>
-                                      
-                                      </p>
-                                  </div>
+                                 
                               </div>
               
                               <br>
@@ -410,7 +400,7 @@
                             
                           
                                     <div class="col-lg-6  pr-5">
-                                      <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards ()">Add To Plan</button>
+                                      <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards ()">Add To My Plan</button>
                                       <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./home.html"  id="continue1" >Continue Planning</a>
                                       <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./plan.html"  id="view1" >View My Plan</a>
   
@@ -418,6 +408,17 @@
 
                                       
                                 </div>
+
+                                <div class=" phone-block pl-5 float-right">
+                                  <p class="font-weight-bold font-weight-light  h5">Status:
+                                    
+                                      <span class="font-weight-bold text-danger pl-1 float-right" id="not1"> (Not Started)</span>
+                                      <span style="display: none"  class="pl-1 font-weight-bold text-warning float-right" id="prog1"> (In Progess)</span>
+                                      <span style="display: none"  class="pl-1 font-weight-bold text-success float-right" id="comp1"> Completed</span>
+                                  
+                                  </p>
+                              </div>
+
                               </div>
                               
   
@@ -460,16 +461,6 @@
                             <div class="d-flex card-title">
                                 <p class=" h3 font-weight-bold text-left txtBlu robotoFnt">Plan Food Supply</p>
                                 
-                              
-                                  <div class=" phone-block pl-5">
-                                    <p class="font-weight-bold font-weight-light  h5">
-                                      
-                                        <span class="font-weight-bold text-danger pl-1" id="not2"> (Not Started)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog2"> (In Progess)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp2"> (Completed)</span>
-                                    
-                                    </p>
-                                </div>
                             </div>
             
                             <br>
@@ -495,7 +486,7 @@
                           
                         
                                   <div class="col-lg-6  pr-5">
-                                    <a id="add2" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html">Add To Plan</a>
+                                    <a id="add2" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html">Add To My Plan</a>
                                     <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html"  id="continue2" >Continue Planning</a>
                                     <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./Food table.html"  id="view2" >View My Plan</a>
 
@@ -503,6 +494,18 @@
 
                                     
                               </div>
+                              
+
+                              
+                              <div class=" phone-block pl-5 float-right">
+                                <p class="font-weight-bold font-weight-light  h5">Status:
+                                  
+                                    <span class="font-weight-bold text-danger pl-1 float-right" id="not2"> Not Started</span>
+                                    <span style="display: none"  class="pl-1 font-weight-bold text-warning float-right" id="prog2"> In Progess</span>
+                                    <span style="display: none"  class="pl-1 font-weight-bold text-success float-right" id="comp2"> Completed</span>
+                                
+                                </p>
+                            </div>
                             </div>
                             
 
@@ -545,16 +548,6 @@
                             <div class="d-flex card-title">
                                 <p class=" h3 font-weight-bold text-left txtBlu robotoFnt">Additional Supplies</p>
                                 
-                              
-                                  <div class=" phone-block pl-5">
-                                    <p class="font-weight-bold font-weight-light  h5">
-                                      
-                                        <span class="font-weight-bold text-danger pl-1" id="not3"> (Not Started)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-warning" id="prog3"> (In Progess)</span>
-                                        <span style="display: none"  class="pl-1 font-weight-bold text-success" id="comp3"> (Completed)</span>
-                                    
-                                    </p>
-                                </div>
                             </div>
             
                             <br>
@@ -580,7 +573,7 @@
                           
                         
                                   <div class="col-lg-6  pr-5">
-                                    <a id="add3" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html">Add To Plan</a>
+                                    <a id="add3" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html">Add To My Plan</a>
                                     <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food table.html"  id="continue3" >Continue Planning</a>
                                     <a style="display: none" class=" btn btn-lg btn-success rounded-pill text-center " href="./Food table.html"  id="view3" >View My Plan</a>
 
@@ -588,6 +581,19 @@
 
                                     
                               </div>
+
+
+                              
+                              <div class=" phone-block pl-5 float-right">
+                                <p class="font-weight-bold font-weight-light  h5">Status:
+                                  
+                                    <span class="font-weight-bold text-danger pl-1 float-right" id="not3">Not Started</span>
+                                    <span style="display: none"  class="pl-1 font-weight-bold text-warning float-right" id="prog3">In Progess</span>
+                                    <span style="display: none"  class="pl-1 font-weight-bold text-success float-right" id="comp3">Completed</span>
+                                
+                                </p>
+                            </div>
+                            
                             </div>
                             
 

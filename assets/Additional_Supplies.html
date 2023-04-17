@@ -96,11 +96,19 @@
                             </div>
 
 
-                            <div  class="  pl-2 d-flex text-white rounded orgOppate">
+                            <div  class="  pl-2 d-flex text-white ">
                               <span class="material-icons pr-3 text-white">
                                 kitchen
                                 </span>
                               <a class="pl-2 text-white d-flex btn "   href="./Food table.html" role="tab" >Food Supply</a>
+                              
+                            </div>
+
+                            <div  class="  pl-2 d-flex text-white rounded orgOppate">
+                              <span class="material-icons pr-3 text-white">
+                                backpack
+                                </span>
+                              <a class="pl-2 text-white d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
                               
                             </div>
                             
@@ -213,7 +221,7 @@
 
         <div class="row justify-content-center ">
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
                 <div class="">
                 <label class=" mt-2  " ><span class="infantTxt material-symbols-rounded">
                   breastfeeding
@@ -222,13 +230,13 @@
 
                 <div class="d-flex justify-content-center py-2 text-center">
                   <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
-                    <input style= width:25% class=" infantOL text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveFood()"></input>
+                    <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveFood()"></input>
                     <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
                 </div>
 
             </div>
 
-            <div class=" col-lg-3 mb-3">
+            <div class=" col-lg-4 mb-3">
                     <div class="text-center">
                     <label class=" mt-2"><span class="kidsTxt material-symbols-rounded mr-2">
                       diversity_3
@@ -239,12 +247,12 @@
                   
                     <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseKids()">+</button>
                     
-                      <input style= width:25% class="  kidsOL form-control text-center" id="kids" type="number" value="0"  min="0" oninput="saveFood()"></input>
+                      <input style= width:25% class="  bg-secondary text-white form-control text-center" id="kids" type="number" value="0"  min="0" oninput="saveFood()"></input>
                       <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseKids()">-</button>
                     </div>
               </div>
 
-                <div class=" col-lg-3 ">
+                <div class=" col-lg-4 ">
                       <div class="text-center">
                         <span class="adultsTxt material-symbols-rounded mr-2">
                           diversity_3
@@ -253,7 +261,7 @@
 
                     <div class="d-flex justify-content-center py-2">
                     <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseAdults()">+</button>
-                        <input id="adults" style= width:25% class=" adultsOL  form-control  text-center " type="number" value="1"  min="0" oninput="saveFood()"></input>
+                        <input id="adults" style= width:25% class=" bg-secondary text-white  form-control  text-center " type="number" value="1"  min="0" oninput="saveFood()"></input>
                         <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseAdults()">-</button>
                     </div> 
               </div>
@@ -265,7 +273,7 @@
 
           <div class="row justify-content-center  ">
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
                 <div class="">
                 <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                   pets
@@ -280,7 +288,7 @@
 
             </div>
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
               <div class="">
               <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                 pets
@@ -295,7 +303,7 @@
 
           </div>
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
               <div class="">
               <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                 pets
@@ -326,9 +334,7 @@
       
          <div class="text-center row pt-5" id="next2">
             <div>
-              <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-bold" onclick="displayTable()"><span class="mt-1 material-symbols-rounded">
-                arrow_forward
-                </span></button>
+              <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-normal" onclick="displayTable()">Next</button>
               <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
             </div>
            
@@ -341,25 +347,12 @@
 
 
 <!-- Food Table Begins-->
-<section  id="foodtable" style="display: none;">
-    <div class="rcorners p-3 shadow grnOppate mb-5">
+<section  id="foodtable" style="display: block;">
+    <div class="rcorners p-3 shadow bg-white mb-5">
       <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
       <hr class="my-4 mx-5" >
-      <p class="text-center h5 robotoFnt text-muted">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
-        specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
-        as needed. </p>
+      <p class="text-center h5 robotoFnt text-muted">Start checking off the items you already have. When you create a profile you will be able to come back and make any adjustments to your plan including this page.</p>
       
-        <div class="container my-3">
-        <div class="row">
-          <div class="d-flex">
-        
-            <label class="col-3" style="color:#FF6346"><img src="./images/Adults-Teenagers Circle.png" alt=""> Adults</label>
-            <label class="col-3" style="color:#39D2A1"><img src="./images/Child-Toddler Circle.png" alt=""> Kids</label>
-            <label class="col-3" style="color:#778CFE"><img src="./images/Infants.png" alt=""> Infants</label>
-            <label class="col-3" style="color:#FFC107;"><img src="./images/Pets.png" alt=""> Pets</label>
-        </div>
-      </div>
-    </div>
       
       
       
@@ -379,7 +372,7 @@
       <div class="table-responsive  rcorners shadow">
       <table class="table ">
 
-        <thead class="table-dark">
+        <thead class="table-success">
           <th scope="col"> 
             <div class="">
             <input class=" rounded" type="checkbox" id="addSecond"  >
@@ -405,7 +398,7 @@
             </th>
             <td class="text-center" id="water2"></td>
             <td>Gallon(s) of water for sanitation purposes</td>
-            <td class="phone-block">Per Day Per individual</td>
+            <td class="phone-block"></td>
            
             <td>  
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
@@ -568,11 +561,7 @@
               <td class="text-center" id="cups"></td>
               <td>Paper Cups</td>
               <td class="phone-block"></td>
-              <td class="phone-block">
-                <img src="./images/Adults-Teenagers Circle.png" alt="">
-                <img src="./images/Child-Toddler Circle.png" alt="">
-                
-              </td>
+              
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -590,12 +579,9 @@
           
                 </th>
                 <td class="text-center" id="aVitamins"></td>
-                <td>Adult Vitamins</td>
-                <td class="phone-block">Capsul or pill per day per adult</td>
-                <td class="phone-block">
-                  <img src="./images/Adults-Teenagers Circle.png" alt="">
-                  
-                </td>
+                <td>Plastic Utensils</td>
+                <td class="phone-block"></td>
+                
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                     <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -615,11 +601,7 @@
                 <td class="text-center" id="messKit"></td>
                 <td>Mess Kits </td>
                 <td class="phone-block"></td>
-                <td class="phone-block">
                 
-                  <img src="./images/Child-Toddler Circle.png" alt="">
-                
-                </td>
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                     <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -637,14 +619,9 @@
         
               </th>
               <td class="text-center" id="babyFormula">3</td>
-              <td>Days of baby formula</td>
-              <td class="phone-block">Continue breastfeeding if the infant is breastfed. Mom will need 
-                sufficient water and nutritional foods to sustain milk suply </td>
-              <td class="phone-block">
-                
-                <img src="./images/Infants.png" alt="">
-                
-              </td>
+              <td> Paper towels</td>
+              <td class="phone-block"> </td>
+              
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -662,13 +639,9 @@
         
               </th>
               <td class="text-center" id="babyFood">3</td>
-              <td>3 days' worth of baby food</td>
+              <td>Can opener for food</td>
               <td class="phone-block"></td>
-              <td class="phone-block">
-                
-                <img src="./images/Infants.png" alt="">
-                
-              </td>
+              
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -686,11 +659,9 @@
 
               </th>
               <td class="text-center" id="dogFood"></td>
-              <td>Days' worth of dog food</td>
+              <td>Dust mask, to help filter contaminated air and plastic sheeting and duct tape to shelter-in-place</td>
               <td class="phone-block"></td>
-              <td class="phone-block">
-                <img src="./images/Pets.png" alt="">
-              </td>
+              
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -708,11 +679,9 @@
 
               </th>
               <td class="text-center" id="catFood"></td>
-              <td>Days' worth of dog food</td>
+              <td>Moist towelettes, garbage bags and plastic ties for personal sanitation</td>
               <td class="phone-block"></td>
-              <td class="phone-block">
-                <img src="./images/Pets.png" alt="">
-              </td>
+              
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -730,12 +699,9 @@
           
                 </th>
                 <td class="text-center" id="otherPet"></td>
-                <td>Days' worth of pet food</td>
+                <td>Flashlight and extra batteries</td>
                 <td class="phone-block"></td>
-                <td class="phone-block">
-                  
-                  <img src="./images/Pets.png" alt="">
-                </td>
+                
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                     <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
@@ -744,6 +710,85 @@
               </tr>
               <!--pet food Ends-->  
 
+                <!--pet food starts-->
+                <tr >
+                  <th scope="col"> 
+                    <div class="">
+                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
+                    </div>
+            
+                  </th>
+                  <td class="text-center" id="otherPet"></td>
+                  <td>Books, games, puzzles or other activities for children</td>
+                  <td class="phone-block"></td>
+                  
+                  <td> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--pet food Ends-->  
+
+                 <!--pet food starts-->
+                 <tr >
+                  <th scope="col"> 
+                    <div class="">
+                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
+                    </div>
+            
+                  </th>
+                  <td class="text-center" id="otherPet"></td>
+                  <td>NOAA Weather Radio with tone alert w/Extra Batteries</td>
+                  <td class="phone-block"></td>
+                  
+                  <td> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--pet food Ends-->  
+
+                 <!--pet food starts-->
+                 <tr >
+                  <th scope="col"> 
+                    <div class="">
+                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
+                    </div>
+            
+                  </th>
+                  <td class="text-center" id="otherPet"></td>
+                  <td>Battery-powered or hand crank radio w/Extra Batteries</td>
+                  <td class="phone-block"></td>
+                  
+                  <td> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--pet food Ends-->  
+
+                 <!--pet food starts-->
+                 <tr >
+                  <th scope="col"> 
+                    <div class="">
+                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
+                    </div>
+            
+                  </th>
+                  <td class="text-center" id="otherPet"></td>
+                  <td>Wrench or pliers to turn off utilities</td>
+                  <td class="phone-block"></td>
+                  
+                  <td> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--pet food Ends-->  
           
           
         </tbody>

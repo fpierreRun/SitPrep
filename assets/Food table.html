@@ -103,6 +103,14 @@
                               <a class="pl-2 text-white d-flex btn "   href="./Food table.html" role="tab" >Food Supply</a>
                               
                             </div>
+
+                            <div  class="  pl-2 d-flex text-white ">
+                              <span class="material-icons pr-3 text-white">
+                                backpack
+                                </span>
+                              <a class="pl-2 text-white d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+                              
+                            </div>
                             
                           <p class="h4 text-white pt-4">Extra</p>
               
@@ -207,13 +215,13 @@
   
     </div> 
 
-    <div class="pb-5 shadow rcorners mb-5 bg-white p-4 ">
+    <div class="p-3 shadow rcorners mb-5 bg-white ">
 
       
 
         <div class="row justify-content-center ">
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4">
                 <div class="">
                 <label class=" mt-2  " ><span class="infantTxt material-symbols-rounded">
                   breastfeeding
@@ -222,13 +230,13 @@
 
                 <div class="d-flex justify-content-center py-2 text-center">
                   <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
-                    <input style= width:25% class=" infantOL text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveFood()"></input>
+                    <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveFood()"></input>
                     <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
                 </div>
 
             </div>
 
-            <div class=" col-lg-3 mb-3">
+            <div class=" col-lg-4 mb-3">
                     <div class="text-center">
                     <label class=" mt-2"><span class="kidsTxt material-symbols-rounded mr-2">
                       diversity_3
@@ -239,12 +247,12 @@
                   
                     <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseKids()">+</button>
                     
-                      <input style= width:25% class="  kidsOL form-control text-center" id="kids" type="number" value="0"  min="0" oninput="saveFood()"></input>
+                      <input style= width:25% class="  bg-secondary text-white form-control text-center" id="kids" type="number" value="0"  min="0" oninput="saveFood()"></input>
                       <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseKids()">-</button>
                     </div>
               </div>
 
-                <div class=" col-lg-3 ">
+                <div class=" col-lg-4 ">
                       <div class="text-center">
                         <span class="adultsTxt material-symbols-rounded mr-2">
                           diversity_3
@@ -253,7 +261,7 @@
 
                     <div class="d-flex justify-content-center py-2">
                     <button type="button" class="btn btn-light text-dark  rounded-circle mr-3 shadow-sm" onclick="increaseAdults()">+</button>
-                        <input id="adults" style= width:25% class=" adultsOL  form-control  text-center " type="number" value="1"  min="0" oninput="saveFood()"></input>
+                        <input id="adults" style= width:25% class=" bg-secondary text-white  form-control  text-center " type="number" value="1"  min="0" oninput="saveFood()"></input>
                         <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseAdults()">-</button>
                     </div> 
               </div>
@@ -265,7 +273,7 @@
 
           <div class="row justify-content-center  ">
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
                 <div class="">
                 <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                   pets
@@ -280,7 +288,7 @@
 
             </div>
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
               <div class="">
               <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                 pets
@@ -295,7 +303,7 @@
 
           </div>
 
-            <div class=" text-center col-lg-3 mb-3">
+            <div class=" text-center col-lg-4 mb-3">
               <div class="">
               <label class=" mt-2 " ><span class=" text-warning text-center pt-3 material-symbols-rounded">
                 pets
@@ -326,9 +334,7 @@
       
          <div class="text-center row pt-5" id="next2">
             <div>
-              <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-bold" onclick="displayTable()"><span class="mt-1 material-symbols-rounded">
-                arrow_forward
-                </span></button>
+              <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-normal" onclick="displayTable()">Next</button>
               <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
             </div>
            
@@ -342,10 +348,10 @@
 
 <!-- Food Table Begins-->
 <section  id="foodtable" style="display: none;">
-    <div class="rcorners p-3 shadow grnOppate mb-5">
+    <div class="rcorners p-3 shadow bg-white mb-5">
       <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
       <hr class="my-4 mx-5" >
-      <p class="text-center h5 robotoFnt text-muted">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
+      <p class="text-center h5 robotoFnt text-muted font-weight-normal">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
         specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
         as needed. </p>
       
@@ -379,7 +385,7 @@
       <div class="table-responsive  rcorners shadow">
       <table class="table ">
 
-        <thead class="table-dark">
+        <thead class="table-success">
           <th scope="col"> 
             <div class="">
             <input class=" rounded" type="checkbox" id="addSecond"  >
