@@ -4,14 +4,99 @@ var foodList = [];
 
 
 
+function checkLocal() {
 
+  demoDataNew = JSON.parse(localStorage.getItem("demoData"));
+
+  if(!demoDataNew){
+
+      saveDemo()
+      loadSaveList () 
+      refreshpageFood()
+       
+
+  
+ };
+};
+ checkLocal()
+
+
+function refreshpageFood() {
+
+  updatedFood = JSON.parse(localStorage.getItem("demoData"));
+
+  for (let i = 0; i < updatedFood.length; i++) {
+
+  var element = updatedFood[updatedFood.length-1];
+  
+  // newFood.push(element);
+
+
+  
+ 
+      document.getElementById("infants").value= element.infants;
+      document.getElementById("kids").value= element.kids;
+      document.getElementById("adults").value= element.adults;
+
+      document.getElementById("dogs").value= element.dogs;
+      document.getElementById("cats").value= element.cats;
+      document.getElementById("others").value= element.others;
+      
+      var infants = document.getElementById("infants").value
+      var kids = document.getElementById("kids").value
+      var adults = document.getElementById("adults").value
+
+      var dogs = document.getElementById("dogs").value
+      var cats = document.getElementById("cats").value
+      var others = document.getElementById("others").value
+    
+      // Food Supply
+      var gallon = ((~~kids)+(~~adults))*3
+      var meat = ((~~kids*1)+(~~adults*2))*3
+      var fruit = ((~~kids*1)+(~~adults*2))*3
+      var juice = ((~~kids*8)+(~~adults*24))*3
+      var milk = ((~~kids*8)+(~~adults*24))*3
+      var snacks = ((~~kids*3)+(~~adults*9))*3
+      var aVitamins = (~~adults)*3
+      var kVitamins = (~~kids)*3
+      var babyFood = (~~infants)*3
+      var babyFormula = (~~infants)*3
+      var dogFood = (~~dogs)*3
+      var catFood = (~~cats)*3
+      var otherPet = (~~others)*3
+
+      // Addotional Supplies
+      // var diapers = (~~infants)*3
+      
+      // Update Food Tables
+      function updateTable() {
+          document.getElementById("gow").innerHTML= gallon;
+          document.getElementById("meat").innerHTML= meat;
+          document.getElementById("fruit").innerHTML= fruit;
+          document.getElementById("juice").innerHTML= juice;
+          document.getElementById("milk").innerHTML= milk;
+          document.getElementById("snacks").innerHTML= snacks;
+          document.getElementById("aVitamins").innerHTML= aVitamins;
+          document.getElementById("kVitamins").innerHTML= kVitamins;
+          document.getElementById("babyFood").innerHTML= babyFood;
+          document.getElementById("dogFood").innerHTML= dogFood;
+          document.getElementById("catFood").innerHTML= catFood;
+          document.getElementById("otherPet").innerHTML= otherPet;
+
+      };
+      updateTable()
+      
+    };
+  
+  };
+     
 
 
 
 //Saving food supply info
 
 function saveDemo() {
-  // localStorage.removeItem("demoData");
+  
     infants = document.getElementById("infants").value
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
@@ -33,9 +118,12 @@ function saveDemo() {
         others: others,
   
     };
-    // localStorage.removeItem("demoData");
+    console.log(demoDataObj);
+
     demoData.push(demoDataObj);
-    saveData()
+  
+    localStorage.removeItem("demoData");
+    saveData();
    
   };
  
@@ -60,24 +148,24 @@ function saveDemo() {
     document.getElementById("foodBackBtn").style.display = "none";
   };
   
-function saveData () {
+
+
+  function saveData () {
  
-    localStorage.removeItem("demoData");
-  
     localStorage.setItem("demoData", JSON.stringify(demoData))
-    loadFood()
+    loadDemo()
   };
   
-
-    function loadFood() {
+ 
+    function loadDemo() {
 
         updatedFood = JSON.parse(localStorage.getItem("demoData"));
-    
+       
         for (let i = 0; i < updatedFood.length; i++) {
-     
+          
         var element = updatedFood[updatedFood.length-1];
 
-        console.log(element)
+      
         
         // newFood.push(element);
       
@@ -93,79 +181,17 @@ function saveData () {
             document.getElementById("others").value= element.others;
 
         };
-        // refreshpageFood()
+        refreshpageFood()
   };
-  loadFood()
+  loadDemo()
   // location.reload();
 
-  function refreshpageFood() {
-
-    updatedFood = JSON.parse(localStorage.getItem("demoData"));
-
-    for (let i = 0; i < updatedFood.length; i++) {
- 
-    var element = updatedFood[updatedFood.length-1];
-    
-    // newFood.push(element);
   
+  // Load data on refresh
 
-    
-   
-        document.getElementById("infants").value= element.infants;
-        document.getElementById("kids").value= element.kids;
-        document.getElementById("adults").value= element.adults;
-
-        document.getElementById("dogs").value= element.dogs;
-        document.getElementById("cats").value= element.cats;
-        document.getElementById("others").value= element.others;
-        
-        var infants = document.getElementById("infants").value
-        var kids = document.getElementById("kids").value
-        var adults = document.getElementById("adults").value
-
-        var dogs = document.getElementById("dogs").value
-        var cats = document.getElementById("cats").value
-        var others = document.getElementById("others").value
-      
-        // Food Supply
-        var gallon = ((~~kids)+(~~adults))*3
-        var meat = ((~~kids*1)+(~~adults*2))*3
-        var fruit = ((~~kids*1)+(~~adults*2))*3
-        var juice = ((~~kids*8)+(~~adults*24))*3
-        var milk = ((~~kids*8)+(~~adults*24))*3
-        var snacks = ((~~kids*3)+(~~adults*9))*3
-        var aVitamins = (~~adults)*3
-        var kVitamins = (~~kids)*3
-        var babyFood = (~~infants)*3
-        var babyFormula = (~~infants)*3
-        var dogFood = (~~dogs)*3
-        var catFood = (~~cats)*3
-        var otherPet = (~~others)*3
-
-        // Addotional Supplies
-        // var diapers = (~~infants)*3
-        
-        // Update Food Tables
-        function updateTable() {
-        document.getElementById("gow").innerHTML= gallon;
-        document.getElementById("meat").innerHTML= meat;
-        document.getElementById("fruit").innerHTML= fruit;
-        document.getElementById("juice").innerHTML= juice;
-        document.getElementById("milk").innerHTML= milk;
-        document.getElementById("snacks").innerHTML= snacks;
-        document.getElementById("aVitamins").innerHTML= aVitamins;
-        document.getElementById("kVitamins").innerHTML= kVitamins;
-        document.getElementById("babyFood").innerHTML= babyFood;
-        document.getElementById("dogFood").innerHTML= dogFood;
-        document.getElementById("catFood").innerHTML= catFood;
-        document.getElementById("otherPet").innerHTML= otherPet;
-
-        };
-        updateTable()
-        
-    };
-    
-    };
+refreshpageFood()
+loadSaveList () 
+saveDemo()
   
     
 
@@ -261,7 +287,10 @@ function decreaseOthers() {
   saveDemo()
 };
 
-  
+
+
+
+
   function downloadCheckList() {
    
 // Checkboxes for Checked off list
@@ -361,7 +390,7 @@ function loadSaveList (){
      //credit : https://ekoopmans.github.io/html2pdf.js
      
      var element = document.getElementById('downloadPrint'); 
-        console.log(element)
+        
      
 
      //more custom settings
@@ -391,8 +420,7 @@ function loadSaveList (){
   };
 
 
-// Load data on refresh
-refreshpageFood()
-loadSaveList () 
-saveDemo()
+
+
+
 
