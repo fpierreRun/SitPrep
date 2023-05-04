@@ -1,4 +1,4 @@
-var food = [];
+var demoData = [];
 var newFood = [];
 var foodList = [];
 
@@ -10,8 +10,8 @@ var foodList = [];
 
 //Saving food supply info
 
-function saveFood() {
-  localStorage.removeItem("food");
+function saveDemo() {
+  // localStorage.removeItem("demoData");
     infants = document.getElementById("infants").value
     adults = document.getElementById("adults").value
     kids = document.getElementById("kids").value
@@ -20,7 +20,7 @@ function saveFood() {
     others = document.getElementById("others").value
   
     //Object for form data
-    var foodDataObj = {
+    var demoDataObj = {
   
       //Household Demographic
       infants: infants,
@@ -33,8 +33,8 @@ function saveFood() {
         others: others,
   
     };
-    food.push(foodDataObj);
-    localStorage.removeItem("food");
+    // localStorage.removeItem("demoData");
+    demoData.push(demoDataObj);
     saveData()
    
   };
@@ -62,20 +62,22 @@ function saveFood() {
   
 function saveData () {
  
-    localStorage.removeItem("food");
+    localStorage.removeItem("demoData");
   
-    localStorage.setItem("food", JSON.stringify(food))
+    localStorage.setItem("demoData", JSON.stringify(demoData))
     loadFood()
   };
-   
+  
 
     function loadFood() {
 
-        updatedFood = JSON.parse(localStorage.getItem("food"));
+        updatedFood = JSON.parse(localStorage.getItem("demoData"));
     
         for (let i = 0; i < updatedFood.length; i++) {
      
         var element = updatedFood[updatedFood.length-1];
+
+        console.log(element)
         
         // newFood.push(element);
       
@@ -91,14 +93,14 @@ function saveData () {
             document.getElementById("others").value= element.others;
 
         };
-        refreshpageFood()
+        // refreshpageFood()
   };
   loadFood()
   // location.reload();
 
   function refreshpageFood() {
 
-    updatedFood = JSON.parse(localStorage.getItem("food"));
+    updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
     for (let i = 0; i < updatedFood.length; i++) {
  
@@ -124,7 +126,8 @@ function saveData () {
         var dogs = document.getElementById("dogs").value
         var cats = document.getElementById("cats").value
         var others = document.getElementById("others").value
-
+      
+        // Food Supply
         var gallon = ((~~kids)+(~~adults))*3
         var meat = ((~~kids*1)+(~~adults*2))*3
         var fruit = ((~~kids*1)+(~~adults*2))*3
@@ -139,7 +142,10 @@ function saveData () {
         var catFood = (~~cats)*3
         var otherPet = (~~others)*3
 
+        // Addotional Supplies
+        // var diapers = (~~infants)*3
         
+        // Update Food Tables
         function updateTable() {
         document.getElementById("gow").innerHTML= gallon;
         document.getElementById("meat").innerHTML= meat;
@@ -153,6 +159,7 @@ function saveData () {
         document.getElementById("dogFood").innerHTML= dogFood;
         document.getElementById("catFood").innerHTML= catFood;
         document.getElementById("otherPet").innerHTML= otherPet;
+
         };
         updateTable()
         
@@ -166,7 +173,7 @@ function saveData () {
 function increaseInfants() {
   var input = document.getElementById("infants");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 function decreaseInfants() {
@@ -174,14 +181,14 @@ function decreaseInfants() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
 //Kids Value Change buttons Function 
 function increaseKids() {
   var input = document.getElementById("kids");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 
@@ -190,14 +197,14 @@ function decreaseKids() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
 //adults Value Change buttons Function 
 function increaseAdults() {
   var input = document.getElementById("adults");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 function decreaseAdults() {
@@ -205,14 +212,14 @@ function decreaseAdults() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
 //dogs Value Change buttons Function 
 function increaseDogs() {
   var input = document.getElementById("dogs");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 function decreaseDogs() {
@@ -220,7 +227,7 @@ function decreaseDogs() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
 
@@ -228,7 +235,7 @@ function decreaseDogs() {
 function increaseCats() {
   var input = document.getElementById("cats");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 function decreaseCats() {
@@ -236,14 +243,14 @@ function decreaseCats() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
 //other pets Value Change buttons Function 
 function increaseOthers() {
   var input = document.getElementById("others");
   input.value = parseInt(input.value) + 1;
-  saveFood()
+  saveDemo()
 }
 
 function decreaseOthers() {
@@ -251,7 +258,7 @@ function decreaseOthers() {
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
-  saveFood()
+  saveDemo()
 };
 
   
@@ -278,7 +285,7 @@ otherPetCheck = document.getElementById("otherPetCheck").checked
   //Object for food supply check list
   var foodCheckDataObj = {
   
-    //Lis of Checkboxes
+    //List of Checkboxes
     waterCheck: waterCheck,
     meatCheck: meatCheck, 
     fruitCheck: fruitCheck,
@@ -318,7 +325,7 @@ function loadSaveList (){
         for (let i = 0; i < foodListNew.length; i++) {
      
         var element = foodListNew[foodListNew.length-1];
-        console.log(foodListNew.length)
+        
         // newFood.push(element);
       
      
@@ -387,5 +394,5 @@ function loadSaveList (){
 // Load data on refresh
 refreshpageFood()
 loadSaveList () 
-saveFood()
+saveDemo()
 

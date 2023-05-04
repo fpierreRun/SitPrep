@@ -346,7 +346,7 @@ a.btnOppate{
 
 
 .orgOppate{
-  background-color:hsla(0, 0%, 100%, 0.424);
+  background-color:#137c595b;
   border-color:#F03211;
   
 }
@@ -357,8 +357,14 @@ a.btnOppate{
 }
 
 .bkgBlu{
-  background-color:#4A5071;
+  background-color:#137c5934;
   border-color:#4A5071;
+  
+}
+
+.bkgdash{
+  background-color:#3b68431f;
+  border-color:#797c8d;
   
 }
 
@@ -457,7 +463,7 @@ font-weight:300;
 }
 
 .recBlu{
-  background-color: var(--secondary-color);
+  background-color:var(--secondary-color);
   border-color: var(--secondary-color);
 } 
 
@@ -465,6 +471,10 @@ font-weight:300;
   border-color: var(--WhiteText-color);
   background-color: var(--secondary-color);
 
+}
+
+.txtOppate{
+  color: rgb(188, 255, 218);
 }
 
 .txtOrg{

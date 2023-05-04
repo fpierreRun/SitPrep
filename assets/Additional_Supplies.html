@@ -68,7 +68,7 @@
   
                           <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             
-                            <p class="h4 text-white pb-2">72 Hour Plan for <span class=" myName" id="displayname"></span></p>
+                            <p class="h4 text-white pb-2">72 Hour Plan</span></p>
   
                             <div  class="pl-2 d-flex text-white ">
                               <span class="material-icons pr-3 text-white">
@@ -230,7 +230,7 @@
 
                 <div class="d-flex justify-content-center py-2 text-center">
                   <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseInfants()">+</button>
-                    <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveFood()"></input>
+                    <input style= width:25% class=" bg-secondary text-white text-center form-control  text-center" id="infants" type="number" value="0"  min="0" oninput="saveDemo()"></input>
                     <button type="button" class="btn btn-light text-dark  rounded-circle ml-3 shadow-sm" onclick="decreaseInfants()">-</button>
                 </div>
 
@@ -373,6 +373,8 @@
       <table class="table ">
 
         <thead class="table-success">
+
+         
           <th scope="col"> 
             <div class="">
             <input class=" rounded" type="checkbox" id="addSecond"  >
@@ -391,11 +393,13 @@
           <!--Water Row starts-->
           <tr>
             <th scope="col"> 
-              <div class="">
-              <input class=" rounded" type="checkbox" id="water2Check">
-              </div>
-      
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="water2Check" >
+                <span class="checkmark"></span>
+                </label>
+ 
             </th>
+           
             <td class="text-center" id="water2"></td>
             <td>Gallon(s) of water for sanitation purposes</td>
             <td class="phone-block"></td>
@@ -410,12 +414,15 @@
         
         <!--Prescription medications and glasses starts-->
           <tr >
+
             <th scope="col"> 
-              <div class="">
-              <input class=" rounded" type="checkbox" id="pMedCheck"  >
-              </div>
-      
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="pMedCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
             </th>
+           
             <td class="text-center" id="pMed"></td>
             <td>Prescription medications and glasses</td>
             <td class="phone-block"></td>
@@ -423,26 +430,30 @@
             <td> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-          </div>
+              </div>
             </td>
           </tr>
           <!--Prescription medications and glasses Ends-->  
 
-          <!--canned Infant diapers starts-->
+          <!-- Infant diapers starts-->
           <tr >
+
             <th scope="col"> 
-              <div class="">
-              <input class=" rounded" type="checkbox" id="diapersCheck"  >
-              </div>
-      
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="diapersCheck"  >
+                <span class="checkmark"></span>
+                </label>
+ 
             </th>
-            <td class="text-center" id="diapers"></td>
+
+            <td class="text-center" id="diapers">3</td>
             <td>Infant diapers</td>
             <td class="phone-block"></td>
             
             <td> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=756dae549c45d9b16f926287dc8f631e&camp=1789&creative=9325&index=baby-products&keywords=Infant diapers" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -451,19 +462,22 @@
 
                 <!--Important family documents starts-->
                 <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="famDocCheck" >
-                    </div>
-            
-                  </th>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="famDocCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
                   <td class="text-center"></td>
                   <td>Important family documents</td>
                   <td class="phone-block"></td>
                  
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                      <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
                 </div>
                   </td>
                 </tr>
@@ -471,19 +485,22 @@
 
                 <!--Cash or traveler’s checks and change starts-->
                 <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="cashCheck" >
-                    </div>
-            
-                  </th>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="cashCheck">
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
                   <td  class="text-center"></td>
                   <td>Cash or traveler’s checks and change</td>
                   <td class="phone-block"></td>
                  
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                      <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
                 </div>
                   </td>
                 </tr>
@@ -491,19 +508,23 @@
 
           <!--Fire Extinguisher starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="fireCheck"  >
-                </div>
-        
-              </th>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="fireCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
               <td class="text-center" id="fire"></td>
               <td>Fire Extinguisher</td>
               <td class="phone-block"></td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                 
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=817162a360c2182b420b3988554d2972&camp=1789&creative=9325&index=misc&keywords=Fire Extinguisher" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -511,19 +532,23 @@
 
           <!--Matches in a waterproof container starts-->
           <tr >
+
             <th scope="col"> 
-              <div class="">
-              <input class=" rounded" type="checkbox" id="matchCheck"  >
-              </div>
-      
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="matchCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
             </th>
+
             <td class="text-center" id="match"></td>
             <td>Matches in a waterproof container</td>
             <td class="phone-block"></td>
             
             <td> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+              
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=01954c186cc697163ed8492c6ec21bb8&camp=1789&creative=9325&index=misc&keywords=Matches in a waterproof container" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -532,19 +557,23 @@
 
       <!--Feminine supplies and personal hygiene itemsstarts-->
           <tr >
+
             <th scope="col"> 
-              <div class="">
-              <input class=" rounded" type="checkbox" id="femCheck"   >
-              </div>
-      
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="femCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
             </th>
+
             <td class="text-center" id="fem"></td>
             <td>Feminine supplies and personal hygiene items</td>
             <td class="phone-block"></td>
             
             <td> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+               
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=f387a32f4cc60e7736487e17edd5ec92&camp=1789&creative=9325&index=hpc&keywords=Feminine supplies and personal hygiene items" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -552,243 +581,315 @@
 
             <!--Paper Cups starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="cupsCheck"  >
-                </div>
-        
-              </th>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="cupsCheck"  >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
               <td class="text-center" id="cups"></td>
               <td>Paper Cups</td>
               <td class="phone-block"></td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                 
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=f591f3d2ee0e02a49bbb46c0c95a46bc&camp=1789&creative=9325&index=kitchen&keywords=Paper Cups" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
             <!--Paper Cups Ends--> 
 
-              <!--Adult Vitamins starts-->
+              <!--Plastic Utensils starts-->
               <tr >
-                <th scope="col"> 
-                  <div class="">
-                  <input class=" rounded" type="checkbox" id="aVitaminsCheck"  >
-                  </div>
-          
-                </th>
-                <td class="text-center" id="aVitamins"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="plasticCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                <td class="text-center" id="plastic"></td>
                 <td>Plastic Utensils</td>
                 <td class="phone-block"></td>
                 
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=6cca5f8ec9a4fcb4a4c9c6edd732e597&camp=1789&creative=9325&index=kitchen&keywords=Plastic Utensils" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
               </div>
                 </td>
               </tr>
-              <!--Adult Vitamins Ends-->  
+              <!--Plastic Utensils Ends-->  
       
               <!--Mess Kits starts-->
               <tr >
-                <th scope="col"> 
-                  <div class="">
-                  <input class=" rounded" type="checkbox" id="messKitCheck"  >
-                  </div>
-          
-                </th>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="messKitCheck">
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
                 <td class="text-center" id="messKit"></td>
                 <td>Mess Kits </td>
                 <td class="phone-block"></td>
                 
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                   
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=fb4249c8a86d2e5ee095a09d902a2952&camp=1789&creative=9325&index=kitchen&keywords=Mess Kits" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
               </div>
                 </td>
               </tr>
               <!--Children's Multivitamins Ends-->  
               
-            <!--3 days' of baby formula starts-->
+            <!--Paper towels starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="babyFormulaCheck"  >
-                </div>
-        
-              </th>
-              <td class="text-center" id="babyFormula">3</td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="paperTowelsCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+              <td class="text-center" id="paperTowels">3</td>
               <td> Paper towels</td>
               <td class="phone-block"> </td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                 
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b03ed081a3b095bce7909adcfe91d3e9&camp=1789&creative=9325&index=kitchen&keywords=Paper towels" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
-            <!--3 days' of baby formula  Ends-->  
+            <!--Paper towels  Ends-->  
 
-            <!--3 days' worth of baby foodstarts-->
+            <!--Can opener for food starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="babyFoodCheck" >
-                </div>
-        
-              </th>
-              <td class="text-center" id="babyFood">3</td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="canOpenerCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+              <td class="text-center" id="canOpener">3</td>
               <td>Can opener for food</td>
               <td class="phone-block"></td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+             
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=3f8d6d95114f68a6388d6bf208f12eb7&camp=1789&creative=9325&index=kitchen&keywords=Can opener" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
-            <!--3 days' worth of baby food Ends-->  
+            <!--Can opener for food Ends-->  
 
-            <!--Dog food starts-->
+            <!--Dust mask starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="dogFoodCheck"  >
-                </div>
 
-              </th>
-              <td class="text-center" id="dogFood"></td>
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="dustMaskCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+              <td class="text-center" id="dustMask"></td>
               <td>Dust mask, to help filter contaminated air and plastic sheeting and duct tape to shelter-in-place</td>
               <td class="phone-block"></td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=7d6cf6c4562d952edb35606b3e022e0c&camp=1789&creative=9325&index=misc&keywords=dust mask-plastic sheeting" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
-            <!--Dog food Ends-->
+            <!--Dust mask Ends-->
 
-            <!--Cat food starts-->
+            <!--towelettes starts-->
             <tr >
-              <th scope="col"> 
-                <div class="">
-                <input class=" rounded" type="checkbox" id="catFoodCheck" >
-                </div>
 
-              </th>
-              <td class="text-center" id="catFood"></td>
-              <td>Moist towelettes, garbage bags and plastic ties for personal sanitation</td>
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="towelettesCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+              <td class="text-center" id="towelettes"></td>
+              <td>Moist towelettes</td>
               <td class="phone-block"></td>
               
               <td> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=38233cef1335019fb547503f549e9730&camp=1789&creative=9325&index=misc&keywords=Moist towelettes" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
             </div>
               </td>
             </tr>
-            <!--Cat food Ends-->
+            <!--Moist towelettes Ends-->
 
-              <!--pet food starts-->
+            <!--sanitation starts-->
+            <tr >
+
+              <th scope="col"> 
+                <label class=" ml-3 checkBX shadow">
+                  <input class=" rounded shadow" type="checkbox" id="sanitationCheck" >
+                  <span class="checkmark"></span>
+                  </label>
+   
+              </th>
+  
+                <td class="text-center" id="sanitation"></td>
+                <td>Garbage bags and plastic ties for personal sanitation</td>
+                <td class="phone-block"></td>
+                
+                <td> 
+                  <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                    
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b6fc2e7534792746b6834ded4a4c5ee0&camp=1789&creative=9325&index=misc&keywords=Garbage bags and plastic ties" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+              </div>
+                </td>
+              </tr>
+              <!--sanitation Ends-->
+
+              <!--Flashlight starts-->
               <tr >
-                <th scope="col"> 
-                  <div class="">
-                  <input class=" rounded" type="checkbox" id="otherPetCheck"  >
-                  </div>
-          
-                </th>
-                <td class="text-center" id="otherPet"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="flashlightCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                <td class="text-center" id="flashlight"></td>
                 <td>Flashlight and extra batteries</td>
                 <td class="phone-block"></td>
                 
                 <td> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                    
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=94d778d2ec3d7dd7427c28d26514dd63&camp=1789&creative=9325&index=misc&keywords=Flashlight and extra batteries" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
               </div>
                 </td>
               </tr>
-              <!--pet food Ends-->  
+              <!--Flashlight Ends-->  
 
-                <!--pet food starts-->
+                <!--Kid fun starts-->
                 <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
-                    </div>
-            
-                  </th>
-                  <td class="text-center" id="otherPet"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="kidFunCheck"  >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                  <td class="text-center" id="kidFun"></td>
                   <td>Books, games, puzzles or other activities for children</td>
                   <td class="phone-block"></td>
                   
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                     
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=4a63a67e4eff93d47f05bd9c23f50e1a&camp=1789&creative=9325&index=toys-and-games&keywords=Books-games-puzzles-for children" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
                 </div>
                   </td>
                 </tr>
-                <!--pet food Ends-->  
+                <!--Kid fun Ends-->  
 
-                 <!--pet food starts-->
+                 <!--Weather Radio starts-->
                  <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
-                    </div>
-            
-                  </th>
-                  <td class="text-center" id="otherPet"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="weatherRadioCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                  <td class="text-center" id="weatherRadio"></td>
                   <td>NOAA Weather Radio with tone alert w/Extra Batteries</td>
                   <td class="phone-block"></td>
                   
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                     
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=b13ef060fc51303121c37c9fc92664bc&camp=1789&creative=9325&index=mobile&keywords=NOAA Weather Radio with tone alert-Extra Batteries" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
                 </div>
                   </td>
                 </tr>
-                <!--pet food Ends-->  
+                <!--Weather Radio Ends-->  
 
-                 <!--pet food starts-->
+                 <!--hand crank radio starts-->
                  <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
-                    </div>
-            
-                  </th>
-                  <td class="text-center" id="otherPet"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="radioCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                  <td class="text-center" id="radio"></td>
                   <td>Battery-powered or hand crank radio w/Extra Batteries</td>
                   <td class="phone-block"></td>
                   
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                     
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=f0356f803727be1b61eec18eac0d5ac5&camp=1789&creative=9325&index=mobile&keywords=Battery-powered or hand crank radio-Extra Batteries" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
                 </div>
                   </td>
                 </tr>
-                <!--pet food Ends-->  
+                <!--hand crank radio Ends-->  
 
-                 <!--pet food starts-->
+                 <!--pliers starts-->
                  <tr >
-                  <th scope="col"> 
-                    <div class="">
-                    <input class=" rounded" type="checkbox" id="otherPetCheck"  >
-                    </div>
-            
-                  </th>
-                  <td class="text-center" id="otherPet"></td>
+
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="pliersCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+
+                  <td class="text-center" id="pliers"></td>
                   <td>Wrench or pliers to turn off utilities</td>
                   <td class="phone-block"></td>
                   
                   <td> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                    
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=f0356f803727be1b61eec18eac0d5ac5&camp=1789&creative=9325&index=mobile&keywords=Battery-powered or hand crank radio-Extra Batteries" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
                 </div>
                   </td>
                 </tr>
-                <!--pet food Ends-->  
+                <!--pliers Ends-->  
           
           
         </tbody>
@@ -837,8 +938,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-<script src="./js/food supply.js"></script>
-<script src="./js/landing.js"></script>
+<script src="./js/Additional Supplies.js"></script>
+
 
 </body>
 </html>

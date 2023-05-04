@@ -242,16 +242,7 @@ if(savedFood){
       //   evacPlan[i].classList.add("d-block");}
 
   
-  document.getElementById("continue2").style.display = "none";
-  document.getElementById("view2").style.display = "block";
-  document.getElementById("add2").style.display = "none";
   
-  document.getElementById("not2").style.display = "none";
-    document.getElementById("prog2").style.display = "none";
-    document.getElementById("comp2").style.display = "block";
-
-    // document.getElementById("step2M").style.display = "none";
-    document.getElementById("step2C").style.display = "block";
 
   
     
@@ -273,15 +264,15 @@ if(savedFood){
 
 
 
-function progTotal() {
+// function progTotal() {
 
-  var sumProgress = prog72 
+//   var sumProgress = prog72 
 
-  document.getElementById("planProgress").style.width= sumProgress += "%";
+//   document.getElementById("planProgress").style.width= sumProgress += "%";
 
 
-};
-progTotal();
+// };
+// progTotal();
 
 
 };
