@@ -7,9 +7,8 @@ var prfName =[];
 
 
 function openNameModal(){
-  localStorage.removeItem("prfName");
   $('#getName').modal('show');
-  location.reload()
+
  }; 
 
 
@@ -58,6 +57,7 @@ function saveName(){
   
     localStorage.setItem("prfName", JSON.stringify(prfName))
     loadName();
+    location.reload();
   };
 
   function loadName(){
@@ -75,12 +75,15 @@ function saveName(){
       // Append new text to the span's innerHTML
       for (let i = 0; i < myNameElements.length; i++) {
         myNameElements[i].innerHTML += element.myName;
+       
       }
-
+      
           };
     $('#getName').modal('hide');
+   
 };
 loadName()
+
 
 
 
