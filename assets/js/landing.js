@@ -146,9 +146,11 @@ function cardUpdates() {
     
   };
 
-
+// get keys begin
   updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
   savedFood = JSON.parse(localStorage.getItem("foodList"));
+  additional = JSON.parse(localStorage.getItem("addList"));
+  // get keys ends
 
   if(!updatedPlan){
   updatedPlan = JSON.parse(localStorage.getItem("plan"));
@@ -244,7 +246,16 @@ if(savedFood){
       // for (let i = 0; i < evacForm.length; i++) {
       //   evacPlan[i].classList.add("d-block");}
 
-  
+      document.getElementById("continue2").style.display = "none";
+      document.getElementById("view2").style.display = "block";
+      document.getElementById("add2").style.display = "none";
+      
+      document.getElementById("not2").style.display = "none";
+        document.getElementById("prog2").style.display = "none";
+        document.getElementById("comp2").style.display = "block";
+    
+        // document.getElementById("step1M").style.display = "none";
+        document.getElementById("step2C").style.display = "block";
   
 
   
@@ -264,6 +275,64 @@ if(savedFood){
 };
 
 
+// check to seed that food supply is updated
+if(additional){
+
+  
+  localStorage.removeItem('addTo72');
+
+  const evacForm = document.getElementsByClassName("evacForm");
+    for (let i = 0; i < evacForm.length; i++) {
+      evacForm[i].classList.add("d-none");}
+
+      const remEvacPlan = document.getElementsByClassName("evacPlan");
+    for (let i = 0; i < remEvacPlan.length; i++) {
+      remEvacPlan[i].classList.remove("d-none");}
+
+      const evacPlan = document.getElementsByClassName("evacPlan");
+      for (let i = 0; i < evacPlan.length; i++) {
+        evacPlan[i].classList.add("d-block");}
+
+        // Evac Checklist begin
+        const step1M = document.getElementsByClassName("step3M");
+    for (let i = 0; i < step1M.length; i++) {
+      step1M[i].classList.add("d-none");}
+
+      const step1C = document.getElementsByClassName("step3C");
+    for (let i = 0; i < step1C.length; i++) {
+      step1C[i].classList.remove("d-none");}
+
+      // const evacPlan = document.getElementsByClassName("evacPlan");
+      // for (let i = 0; i < evacForm.length; i++) {
+      //   evacPlan[i].classList.add("d-block");}
+
+      document.getElementById("continue3").style.display = "none";
+      document.getElementById("view3").style.display = "block";
+      document.getElementById("add3").style.display = "none";
+      
+      document.getElementById("not3").style.display = "none";
+        document.getElementById("prog3").style.display = "none";
+        document.getElementById("comp3").style.display = "block";
+    
+        // document.getElementById("step1M").style.display = "none";
+        document.getElementById("step3C").style.display = "block";
+  
+
+  
+    
+
+    // var evacForm = document.getElementById("evacForm");
+    // evacForm.classList.add("d-none");
+
+    // var remEvacPlan = document.getElementById("evacPlan");
+    // remEvacPlan.classList.remove("d-none");
+
+    // var evacPlan = document.getElementById("evacPlan");
+    // evacPlan.classList.add("d-block");
+
+    var prog72 = 33.333;
+
+};
 
 
 

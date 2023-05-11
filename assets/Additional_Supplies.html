@@ -184,24 +184,23 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
   <div class="pt-3 pb-5 d-flex">
 
-    <div class="mr-4 mt-3">
-      <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-white text-secondary p-4 mb-5">
+    <div class="mr-4 mt-4">
+      <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-white text-secondary p-4 ">
           <span class="material-symbols-rounded">
           home
           </span>
       </a>
     </div>
+
+      <div class="mr-4 mt-4" id="foodBackBtn"  style="display: none;">
+        <button  class="shadow rounded-pill btn-lg btn-primary noOutline text-white font-weight-normal ml-4" onclick="foodPrevious()">Previous</button>
+      </div>
+
     
-    <div class="mr-4 mt-3" id="foodBackBtn"  style="display: none;">
-      <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-secondary text-white p-4 mb-5">
-          <span class="material-symbols-rounded">
-            arrow_back
-          </span>
-      </a>
-    </div>
-    
+
     <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
   </div>
+ 
  
   
   <!--Goals begins-->
@@ -390,27 +389,6 @@
 
         <tbody table-white>
 
-          <!--Water Row starts-->
-          <tr>
-            <th scope="col"> 
-              <label class=" ml-3 checkBX shadow">
-                <input class=" rounded shadow" type="checkbox" id="water2Check" >
-                <span class="checkmark"></span>
-                </label>
- 
-            </th>
-           
-            <td class="text-center" id="water2"></td>
-            <td>Gallon(s) of water for sanitation purposes</td>
-            <td class="phone-block"></td>
-           
-            <td>  
-              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-          </div>
-            </td>
-          </tr>
-        <!--Water Row Ends-->  
         
         <!--Prescription medications and glasses starts-->
           <tr >
@@ -429,11 +407,79 @@
             
             <td> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-              </div>
+                <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a></div>
             </td>
           </tr>
           <!--Prescription medications and glasses Ends-->  
+
+ <!--Important family documents starts-->
+ <tr >
+
+  <th scope="col"> 
+    <label class=" ml-3 checkBX shadow">
+      <input class=" rounded shadow" type="checkbox" id="famDocCheck" >
+      <span class="checkmark"></span>
+      </label>
+
+  </th>
+
+        <td class="text-center"></td>
+        <td>Important family documents</td>
+        <td class="phone-block"></td>
+      
+        <td> 
+          <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+            <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"   style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
+      </div>
+        </td>
+  </tr>
+  <!--Important family documents Ends-->  
+
+  <!--Cash or traveler’s checks and change starts-->
+  <tr >
+
+<th scope="col"> 
+<label class=" ml-3 checkBX shadow">
+  <input class=" rounded shadow" type="checkbox" id="cashCheck">
+  <span class="checkmark"></span>
+  </label>
+
+</th>
+
+    <td  class="text-center"></td>
+    <td>Cash or traveler’s checks and change</td>
+    <td class="phone-block"></td>
+   
+    <td> 
+      <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+        <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
+  </div>
+    </td>
+  </tr>
+  <!-- Ends-->  
+
+
+          <!--Water Row starts-->
+          <tr>
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="water2Check" >
+                <span class="checkmark"></span>
+                </label>
+ 
+            </th>
+           
+            <td class="text-center h5 font-weight-bolder txtBlu" id="water2"></td>
+            <td>Gallon(s) of water for sanitation purposes</td>
+            <td class="phone-block"></td>
+           
+            <td>  
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+        <!--Water Row Ends-->  
 
           <!-- Infant diapers starts-->
           <tr >
@@ -446,7 +492,7 @@
  
             </th>
 
-            <td class="text-center" id="diapers">3</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="diapers">3</td>
             <td>Infant diapers</td>
             <td class="phone-block"></td>
             
@@ -460,51 +506,7 @@
           <!--Infant diapers Ends-->  
 
 
-                <!--Important family documents starts-->
-                <tr >
-
-            <th scope="col"> 
-              <label class=" ml-3 checkBX shadow">
-                <input class=" rounded shadow" type="checkbox" id="famDocCheck" >
-                <span class="checkmark"></span>
-                </label>
- 
-            </th>
-
-                  <td class="text-center"></td>
-                  <td>Important family documents</td>
-                  <td class="phone-block"></td>
-                 
-                  <td> 
-                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
-                </div>
-                  </td>
-                </tr>
-                <!--Important family documents Ends-->  
-
-                <!--Cash or traveler’s checks and change starts-->
-                <tr >
-
-            <th scope="col"> 
-              <label class=" ml-3 checkBX shadow">
-                <input class=" rounded shadow" type="checkbox" id="cashCheck">
-                <span class="checkmark"></span>
-                </label>
- 
-            </th>
-
-                  <td  class="text-center"></td>
-                  <td>Cash or traveler’s checks and change</td>
-                  <td class="phone-block"></td>
-                 
-                  <td> 
-                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      <a class=" btn  mt-2  bg-primary btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <p Class="text-center font-weight-bold text-white">Learn More</p></a>
-                </div>
-                  </td>
-                </tr>
-                <!-- Ends-->  
+         
 
           <!--Fire Extinguisher starts-->
             <tr >
@@ -517,7 +519,7 @@
  
             </th>
 
-              <td class="text-center" id="fire"></td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="fire">1</td>
               <td>Fire Extinguisher</td>
               <td class="phone-block"></td>
               
@@ -541,8 +543,8 @@
  
             </th>
 
-            <td class="text-center" id="match"></td>
-            <td>Matches in a waterproof container</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="match">2</td>
+            <td> boxes of matches in a waterproof container</td>
             <td class="phone-block"></td>
             
             <td> 
@@ -566,8 +568,8 @@
  
             </th>
 
-            <td class="text-center" id="fem"></td>
-            <td>Feminine supplies and personal hygiene items</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="fem">3</td>
+            <td>days worth of Feminine supplies and personal hygiene items</td>
             <td class="phone-block"></td>
             
             <td> 
@@ -590,8 +592,8 @@
  
             </th>
 
-              <td class="text-center" id="cups"></td>
-              <td>Paper Cups</td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="cups">3</td>
+              <td>days worth of Paper Cups</td>
               <td class="phone-block"></td>
               
               <td> 
@@ -614,8 +616,8 @@
  
             </th>
 
-                <td class="text-center" id="plastic"></td>
-                <td>Plastic Utensils</td>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="plastic">3</td>
+                <td>days worth of plastic utensils</td>
                 <td class="phone-block"></td>
                 
                 <td> 
@@ -638,8 +640,8 @@
  
             </th>
 
-                <td class="text-center" id="messKit"></td>
-                <td>Mess Kits </td>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="messKit">3</td>
+                <td>days worth of mess kits </td>
                 <td class="phone-block"></td>
                 
                 <td> 
@@ -662,8 +664,8 @@
  
             </th>
 
-              <td class="text-center" id="paperTowels">3</td>
-              <td> Paper towels</td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="paperTowels">3</td>
+              <td> rolls of paper towels</td>
               <td class="phone-block"> </td>
               
               <td> 
@@ -686,7 +688,7 @@
  
             </th>
 
-              <td class="text-center" id="canOpener">3</td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="canOpener">1+</td>
               <td>Can opener for food</td>
               <td class="phone-block"></td>
               
@@ -710,7 +712,7 @@
  
             </th>
 
-              <td class="text-center" id="dustMask"></td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="dustMask">1</td>
               <td>Dust mask, to help filter contaminated air and plastic sheeting and duct tape to shelter-in-place</td>
               <td class="phone-block"></td>
               
@@ -734,8 +736,8 @@
  
             </th>
 
-              <td class="text-center" id="towelettes"></td>
-              <td>Moist towelettes</td>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="towelettes">3</td>
+              <td> days worth of Moist towelettes</td>
               <td class="phone-block"></td>
               
               <td> 
@@ -758,7 +760,7 @@
    
               </th>
   
-                <td class="text-center" id="sanitation"></td>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="sanitation">3+</td>
                 <td>Garbage bags and plastic ties for personal sanitation</td>
                 <td class="phone-block"></td>
                 
@@ -782,7 +784,7 @@
  
             </th>
 
-                <td class="text-center" id="flashlight"></td>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="flashlight">1+</td>
                 <td>Flashlight and extra batteries</td>
                 <td class="phone-block"></td>
                 
@@ -806,7 +808,7 @@
  
             </th>
 
-                  <td class="text-center" id="kidFun"></td>
+                  <td class="text-center h5 font-weight-bolder txtBlu" id="kidFun">1+</td>
                   <td>Books, games, puzzles or other activities for children</td>
                   <td class="phone-block"></td>
                   
@@ -830,7 +832,7 @@
  
             </th>
 
-                  <td class="text-center" id="weatherRadio"></td>
+                  <td class="text-center h5 font-weight-bolder txtBlu" id="weatherRadio">1</td>
                   <td>NOAA Weather Radio with tone alert w/Extra Batteries</td>
                   <td class="phone-block"></td>
                   
@@ -854,7 +856,7 @@
  
             </th>
 
-                  <td class="text-center" id="radio"></td>
+                  <td class="text-center h5 font-weight-bolder txtBlu" id="radio">1</td>
                   <td>Battery-powered or hand crank radio w/Extra Batteries</td>
                   <td class="phone-block"></td>
                   
@@ -878,7 +880,7 @@
  
             </th>
 
-                  <td class="text-center" id="pliers"></td>
+                  <td class="text-center h5 font-weight-bolder txtBlu" id="pliers">1</td>
                   <td>Wrench or pliers to turn off utilities</td>
                   <td class="phone-block"></td>
                   

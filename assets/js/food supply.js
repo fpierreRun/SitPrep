@@ -148,7 +148,25 @@ function saveDemo() {
     document.getElementById("foodBackBtn").style.display = "none";
   };
   
+  
+  function foodPrevious(){
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
 
+    document.getElementById("demograhpic").style.display = "block";
+    document.getElementById("foodtable").style.display = "none";
+    document.getElementById("foodBackBtn").style.display = "none";
+    
+  };
+
+  function displayDemographic(){
+    document.getElementById("demograhpic").style.display = "none";
+    document.getElementById("foodtable").style.display = "block";
+    document.getElementById("foodBackBtn").style.display = "block";
+  };
 
   function saveData () {
  

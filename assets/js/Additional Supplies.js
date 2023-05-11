@@ -34,7 +34,7 @@ function refreshpageFood() {
       var others = document.getElementById("others").value
     
       // Food Supply
-      // var gallon = ((~~kids)+(~~adults))*3
+      var gallon2 = ((~~kids)+(~~adults))*6
       // var meat = ((~~kids*1)+(~~adults*2))*3
       // var fruit = ((~~kids*1)+(~~adults*2))*3
       // var juice = ((~~kids*8)+(~~adults*24))*3
@@ -56,6 +56,7 @@ function refreshpageFood() {
       
       // Update Food Tables
       document.getElementById("diapers").innerHTML= diapers;
+      document.getElementById("water2").innerHTML= gallon2;
       };
       updateTable()
       
@@ -110,6 +111,20 @@ function saveFood() {
     document.getElementById("foodBackBtn").style.display = "block";
     
   };
+
+  function foodPrevious(){
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+    document.getElementById("demograhpic").style.display = "block";
+    document.getElementById("foodtable").style.display = "none";
+    document.getElementById("foodBackBtn").style.display = "none";
+    
+  };
+
 
   function displayDemographic(){
     document.getElementById("demograhpic").style.display = "block";
@@ -254,19 +269,27 @@ function decreaseOthers() {
    
 // Checkboxes for Checked off list
 water2Check = document.getElementById("water2Check").checked
-// meatCheck = document.getElementById("meatCheck").checked
-// fruitCheck = document.getElementById("fruitCheck").checked
-// pbCheck = document.getElementById("pbCheck").checked
-// crackCheck = document.getElementById("crackCheck").checked
-// juiceCheck = document.getElementById("juiceCheck").checked
-// milkCheck = document.getElementById("milkCheck").checked
-// snacksCheck = document.getElementById("snacksCheck").checked
-// cerealCheck = document.getElementById("cerealCheck").checked
-// aVitaminsCheck = document.getElementById("aVitaminsCheck").checked
-// kVitaminsCheck = document.getElementById("kVitaminsCheck").checked
-// babyFormulaCheck = document.getElementById("babyFormulaCheck").checked
-// babyFoodCheck = document.getElementById("babyFoodCheck").checked
-// dogFoodCheck = document.getElementById("dogFoodCheck").checked
+pMedCheck = document.getElementById("pMedCheck").checked
+famDocCheck = document.getElementById("famDocCheck").checked
+cashCheck = document.getElementById("cashCheck").checked
+diapersCheck = document.getElementById("diapersCheck").checked
+fireCheck = document.getElementById("fireCheck").checked
+matchCheck = document.getElementById("matchCheck").checked
+diapersCheck = document.getElementById("diapersCheck").checked
+femCheck = document.getElementById("femCheck").checked
+cupsCheck = document.getElementById("cupsCheck").checked
+plasticCheck = document.getElementById("plasticCheck").checked
+messKitCheck = document.getElementById("messKitCheck").checked
+paperTowelsCheck = document.getElementById("paperTowelsCheck").checked
+canOpenerCheck = document.getElementById("canOpenerCheck").checked
+dustMaskCheck = document.getElementById("dustMaskCheck").checked
+towelettesCheck = document.getElementById("towelettesCheck").checked
+sanitationCheck = document.getElementById("sanitationCheck").checked
+flashlightCheck = document.getElementById("flashlightCheck").checked
+kidFunCheck = document.getElementById("kidFunCheck").checked
+weatherRadioCheck = document.getElementById("weatherRadioCheck").checked
+radioCheck = document.getElementById("radioCheck").checked
+pliersCheck = document.getElementById("pliersCheck").checked
 // catFoodCheck = document.getElementById("catFoodCheck").checked
 // otherPetCheck = document.getElementById("otherPetCheck").checked
 
@@ -275,31 +298,38 @@ water2Check = document.getElementById("water2Check").checked
   
     //Lis of Checkboxes
     water2Check: water2Check,
-    // meatCheck: meatCheck, 
-    // fruitCheck: fruitCheck,
-    // pbCheck: pbCheck,
-    // milkCheck: milkCheck,
-    // snacksCheck: snacksCheck,
-    // cerealCheck: cerealCheck,
-    // aVitaminsCheck: aVitaminsCheck,
-    // kVitaminsCheck: kVitaminsCheck,
-    // babyFormulaCheck: babyFormulaCheck,
-    // babyFoodCheck: babyFoodCheck,
-    // dogFoodCheck: dogFoodCheck,
-    // catFoodCheck: catFoodCheck,
-    // otherPetCheck: otherPetCheck,
-    // crackCheck: crackCheck,
-    // juiceCheck: juiceCheck,
+    pMedCheck: pMedCheck, 
+    famDocCheck: famDocCheck,
+    cashCheck: cashCheck,
+    fireCheck: fireCheck,
+    matchCheck: matchCheck,
+    diapersCheck: diapersCheck,
+    femCheck: femCheck,
+    cupsCheck: cupsCheck,
+    plasticCheck: plasticCheck,
+    messKitCheck: messKitCheck,
+    paperTowelsCheck: paperTowelsCheck,
+    canOpenerCheck: canOpenerCheck,
+    dustMaskCheck: dustMaskCheck,
+    towelettesCheck: towelettesCheck,
+    sanitationCheck: sanitationCheck,
+    flashlightCheck: flashlightCheck,
+    kidFunCheck: kidFunCheck,
+    weatherRadioCheck: weatherRadioCheck,
+    radioCheck: radioCheck,
+    pliersCheck: pliersCheck,
+  
   
   };
   
     
-  foodList.push(addCheckDataObj)
+  addList.push(addCheckDataObj)
   
-  storeFoodList ()
+  addCheckList()
+  console.log(addlist)
 }
 
-function storeFoodList (){
+function addCheckList(){
 
   localStorage.setItem("addList", JSON.stringify(addList))
 }
@@ -318,22 +348,31 @@ function loadSaveList (){
       
      
             document.getElementById("water2Check").checked = element.water2Check;
-            // document.getElementById("meatCheck").checked = element.meatCheck;
-            // document.getElementById("fruitCheck").checked = element.fruitCheck;
-            // document.getElementById("pbCheck").checked = element.pbCheck;
-            // document.getElementById("milkCheck").checked = element.milkCheck;
-            // document.getElementById("snacksCheck").checked = element.snacksCheck;
-            // document.getElementById("cerealCheck").checked = element.cerealCheck;
-            // document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
-            // document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
-            // document.getElementById("babyFormulaCheck").checked = element.babyFormulaCheck;
-            // document.getElementById("babyFoodCheck").checked = element.babyFoodCheck;
-            // document.getElementById("dogFoodCheck").checked = element.dogFoodCheck;
-            // document.getElementById("catFoodCheck").checked = element.catFoodCheck;
-            // document.getElementById("otherPetCheck").checked = element.otherPetCheck;
+            document.getElementById("pMedCheck").checked = element.pMedCheck;
+            document.getElementById("famDocCheck").checked = element.famDocCheck;
+            document.getElementById("cashCheck").checked = element.cashCheck;
+            document.getElementById("diapersCheck").checked = element.diapersCheck;
+            document.getElementById("fireCheck").checked = element.fireCheck;
+            document.getElementById("matchCheck").checked = element.matchCheck;
+            document.getElementById("diapersCheck").checked = element.diapersCheck;
+            document.getElementById("femCheck").checked = element.femCheck;
+            document.getElementById("cupsCheck").checked = element.cupsCheck;
+            document.getElementById("plasticCheck").checked = element.plasticCheck;
+            document.getElementById("messKitCheck").checked = element.messKitCheck;
+            document.getElementById("paperTowelsCheck").checked = element.paperTowelsCheck;
+            document.getElementById("canOpenerCheck").checked = element.canOpenerCheck;
+            document.getElementById("towelettesCheck").checked = element.towelettesCheck;
+            document.getElementById("sanitationCheck").checked = element.sanitationCheck;
+            document.getElementById("flashlightCheck").checked = element.flashlightCheck;
+            document.getElementById("kidFunCheck").checked = element.kidFunCheck;
+            document.getElementById("weatherRadioCheck").checked = element.weatherRadioCheck;
+            document.getElementById("radioCheck").checked = element.radioCheck;
+            document.getElementById("pliersCheck").checked = element.pliersCheck;
+            document.getElementById("dustMaskCheck").checked = element.dustMaskCheck;
             // document.getElementById("crackCheck").checked = element.crackCheck;
             // document.getElementById("juiceCheck").checked = element.juiceCheck;
-    }
+    
+          }
     
 }
 

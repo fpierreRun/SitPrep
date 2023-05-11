@@ -177,14 +177,15 @@
         <!--PDF begins-->
         <div class=" bg-white rounded pt-5" >
 
-          <div class="pl-5  py-4 float-left  ">
-            <input type="button"  id="rep" value="Download & Share PDF" class="shadow btn  btn-primary rounded-pill btn_print" data-toggle="modal" data-target="#exampleModalCenter" >
-          </div>
-    
+          
 
 
 
           <section class="shadow rcorners plan  pb-2 bd-highlight align-bottom pt-5 mt-5" id="downloadPlan"  >
+            <div class="pl-5 mb-5" id="element-to-hide">
+              <input type="button"  id="rep" value="Download & Share PDF" class="shadow btn  btn-primary rounded-pill btn_print" data-toggle="modal" data-target="#exampleModalCenter" >
+            </div>
+      
             
             <div>
 
@@ -203,7 +204,7 @@
             <div class="d-flex bg-white px-5" >
 
               <div class=" ">              
-              <h4 class="font-weight-normal">Powered by SitPrep</h4>
+              <h4 class="font-weight-bold txtBlu">Powered by SitPrep</h4>
               </div>
 
           </div >
@@ -218,7 +219,7 @@
 
                     
                     <div>
-                            <label class="font-weight-bold ">Primary Location</label><br>
+                            <label class="">Primary Location</label><br>
           
                             <div  width="30">
                               <input class="  w-75  pl-3 inputHgtClr rounded" id="primeLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -229,7 +230,7 @@
                     </div>
 
                       <div>
-                          <label class="font-weight-bold">Primary Location Phone Number</label><br>
+                          <label class="">Primary Location Phone Number</label><br>
                           
                           <div width="30">
                             <input class=" pl-3 inputHgtClr rounded w-75" id="primaryNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit  mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -240,7 +241,7 @@
                       </div>
 
                   <div>
-                      <label class="font-weight-bold">Additional Information About Location (Optional)</label><br>
+                      <label class="">Additional Information About Location (Optional)</label><br>
                       
                       <div width="30">
                         <input class="pl-3 inputHgtClr rounded  w-75" id="primaryAddInfo" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -253,7 +254,7 @@
                             <!--Secondary Location-->
                             
                 <div >
-                    <label class="font-weight-bold" >Secondary Location</label><br>
+                    <label class="" >Secondary Location</label><br>
                     
                     <div width="30">
                       <input class="pl-3 inputHgtClr rounded w-75" id="secondaryLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -265,7 +266,7 @@
                 </div>
 
                 <div>
-                    <label class="font-weight-bold" >Secondary Location Phone Number</label><br>
+                    <label class="" >Secondary Location Phone Number</label><br>
                     
                     <div width="30">
                       <input class="pl-3 inputHgtClr rounded w-75" id="secondaryNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -276,7 +277,7 @@
                 </div>
 
                       <div >
-                          <label class="font-weight-bold" >Additional Information About Location (Optional)</label><br>
+                          <label class="" >Additional Information About Location (Optional)</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="secondaryAddInfo" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -300,7 +301,7 @@
 
 
                       <div>
-                          <label class="font-weight-bold">Primary Evacuation Shelter or location</label><br>
+                          <label class="">Primary Evacuation Shelter or location</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="evacuationLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -310,7 +311,7 @@
                       </div>
                       
                       <div class="form-group">
-                          <label class="font-weight-bold">Primary Evacuation Number</label><br>
+                          <label class="">Primary Evacuation Number</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="evacuationNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -320,7 +321,7 @@
                       </div>
                       
                       <div >
-                          <label class="font-weight-bold" >Secondary Evacuation Shelter or location</label><br>
+                          <label class="" >Secondary Evacuation Shelter or location</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="secondaryEvacLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
