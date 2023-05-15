@@ -396,40 +396,44 @@ function loadSaveList (){
     
 }
 
- //download PDF code
+     //download PDF code
 
- $(document).ready(function($) 
- { 
-
-   $(document).on('click', '.btn_print ', function(event) 
-   {
-     event.preventDefault();
-
-     //credit : https://ekoopmans.github.io/html2pdf.js
-     
-     var element = document.getElementById('downloadPrint'); 
-        
-     
-
-     //more custom settings
-     var opt = 
-     {
-       margin:     0.25,
-       filename:     'My_Results_.pdf',
-       image:        { type: 'pdf', quality: 0.98 },
-       html2canvas:  { scale: 2, scrollY: 0 },
-       jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
-     };
-
-     // New Promise-based usage:
-     html2pdf().set(opt).from(element).save();
-
-     // Avoid page-breaks on all elements, and add one before #page2el.
-       html2pdf().set({
-         pagebreak: { mode: 'avoid-all', after: '#page2el' }
-       });
-      });
-   });
+     $(document).ready(function($) 
+     { 
+   
+       $(document).on('click', '.btn_print', function(event) 
+       {
+         event.preventDefault();
+   
+         //credit : https://ekoopmans.github.io/html2pdf.js
+         
+         var element = document.getElementById('downloadPlan'); 
+   
+         console.log(element)
+         
+   
+         //more custom settings
+         var opt = 
+         {
+           margin:     0.25,
+           filename:     'My_Food_Supply.pdf',
+           image:        { type: 'pdf', quality: 0.98 },
+           html2canvas:  { scale: 2, scrollY: 0 },
+           jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+         };
+   
+         // New Promise-based usage:
+         html2pdf().set(opt).from(element).save();
+   
+         // Avoid page-breaks on all elements, and add one before #page2el.
+          html2pdf().set({
+            pagebreak: { mode: 'avoid-all', after: '#page2el' }
+          });
+   
+        });
+   
+     });
+  //download PDF code ends
 
    function giveFeedback (){
 
