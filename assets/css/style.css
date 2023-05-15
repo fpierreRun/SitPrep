@@ -385,9 +385,9 @@ a.btnPln{
 input{
   border: none;
   background-color: #f4f4f5;
-font-weight:500;
+font-weight:400;
   height:40px;
-  font-size:20px;
+  font-size:18px;
 }
 
 input:focus {
