@@ -312,6 +312,11 @@ a.btnHm{
   border-color:var(--secondary-color);
 }
 
+a.btnHmOrg{
+  background-color:var(--primary-color) ;
+  border-color:var(--primary-color);
+}
+
 a.btnOppate{
   background-color: var(--secondary-oppate) ;
   border-color:var(--secondary-oppate);
