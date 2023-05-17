@@ -89,16 +89,6 @@ loadName()
 
 function updateCards (){
 
-    var updatedView = {
-
-      // Primary Gathering Location Info
-          viewPlan72: "start"};
-  
-          addTo72.push(updatedView);  
-
-
-   
-  localStorage.setItem("addTo72", JSON.stringify(addTo72));
 
 
    //go to View Plan
@@ -488,7 +478,6 @@ function cardUpdates() {
   }  if (foodList) {
    
   
-  localStorage.removeItem('addTo72');
 
   const evacForm = document.getElementsByClassName("evacForm");
     for (let i = 0; i < evacForm.length; i++) {
@@ -544,7 +533,6 @@ function cardUpdates() {
 
   } if (addList) {
     
-  localStorage.removeItem('addTo72');
 
   const evacForm = document.getElementsByClassName("evacForm");
     for (let i = 0; i < evacForm.length; i++) {

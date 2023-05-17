@@ -1,5 +1,5 @@
 
-
+var addTo72 = [];
 var plan = [];
 // var newPlan = [];
 var formEl = document.querySelector("#locationForm");
@@ -119,7 +119,24 @@ function saveForm (event){
       
 };
 
+function updateCards(){
 
+  var updatedView = {
+
+    // Primary Gathering Location Info
+        viewPlan72: "start"};
+
+        addTo72.push(updatedView);  
+
+
+ 
+localStorage.setItem("addTo72", JSON.stringify(addTo72));
+
+
+ //go to View Plan
+window.location.href="./dashboard Main.html";
+console.log()
+};
 
 function expandSecondary() {
     
