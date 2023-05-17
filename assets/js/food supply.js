@@ -59,11 +59,11 @@ function refreshpageFood() {
       var snacks = ((~~kids*3)+(~~adults*9))*3
       var aVitamins = (~~adults)*3
       var kVitamins = (~~kids)*3
-      var babyFood = (~~infants)*3
-      var babyFormula = (~~infants)*3
-      var dogFood = (~~dogs)*3
-      var catFood = (~~cats)*3
-      var otherPet = (~~others)*3
+      var babyFood = (~~infants)
+      var babyFormula = (~~infants)
+      var dogFood = (~~dogs)
+      var catFood = (~~cats)
+      var otherPet = (~~others)
 
       // Addotional Supplies
       // var diapers = (~~infants)*3
@@ -78,6 +78,7 @@ function refreshpageFood() {
           document.getElementById("snacks").innerHTML= snacks;
           document.getElementById("aVitamins").innerHTML= aVitamins;
           document.getElementById("kVitamins").innerHTML= kVitamins;
+          document.getElementById("babyFormula").innerHTML= babyFormula;
           document.getElementById("babyFood").innerHTML= babyFood;
           document.getElementById("dogFood").innerHTML= dogFood;
           document.getElementById("catFood").innerHTML= catFood;
