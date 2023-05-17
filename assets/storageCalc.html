@@ -30,143 +30,87 @@
       </head>
 
 <body class=" bg-white">
-    <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none  ">
-    
-        <div class="d-flex  ">
-              <div class="  px-3 mt-3" >
-              <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
-            </div> 
-    
-    
-            <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon "></span>
-            </button> 
-    
-          </div>
-           
-     </header>
-    
-         <div class=" ">
-    
-            <div class="row">
-              
-              <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
-               
-                <div class="phone-block text-center">
-                    <img  src="./images/SitPrep Logo White.png"  width="200" alt="" />
-                  </div>
-                <div class="position-sticky  sidebar-sticky container-fluid">
-                    <div  class="pb-4 pl-2 d-flex text-white justify-content-center">
-                    
-                    
-                        <a href="" class="text-white text-center" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</a>
-                     
-                    </div>
-                            <div class="navbar-collapse ">
-      
-                              <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                
-                                <p class="h4 txtOppate pb-2">72 Hour Plan</span></p>
-      
-                                <div  class="pl-2 d-flex txtOppate ">
-                                  <span class="material-icons pr-3 txtOppate">
-                                    dashboard
-                                    </span>
-                                  <a class="pl-2 txtOppate d-flex btn "  href="./dashboard Main.html">Overview</a>
-                                  
-                                </div>
-                                
-      
-                                <div  class="pl-2 d-flex txtOppate rounded  evacForm"  >
-                                    <span class="material-icons pr-3 txtOppate">
-                                      map
-                                      </span>
-                                    <a class="pl-2 txtOppate d-flex btn "  href="./create_evac_plan.html" >Plan Evacuation</a>
-                                    
-                                  </div>
-        
-                                  <div  class="pl-2 d-flex txtOppate d-none rounded evacPlan" >
-                                    <span class="material-icons pr-3 txtOppate">
-                                      map
-                                      </span>
-                                    <a class="pl-2 txtOppate d-flex btn "  href="./plan.html" >Evacuation Plan</a>
-                                    
-                                  </div>
-      
-                                <div  class="  pl-2 d-flex txtOppate ">
-                                  <span class="material-icons pr-3 txtOppate">
-                                    kitchen
-                                    </span>
-                                  <a class="pl-2 txtOppate d-flex btn"   href="./Food table.html" role="tab" >Food Supply</a>
-                                  
-                                </div>
 
-                                <div  class="  pl-2 d-flex txtOppate ">
-                                    <span class="material-icons pr-3 txtOppate">
-                                      backpack
-                                      </span>
-                                    <a class="pl-2 txtOppate d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
-                                    
-                                  </div>
-                                
-                              <p class="h4 text-white pt-4">Extra</p>
-                  
-                              <!-- <div  class=" pl-2 d-flex txtOppate">
-                                <span class="material-icons pr-3 txtOppate">
-                                  tips_and_updates
-                                </span>
+    <!-- header begins -->
+    <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none">
+        <div class="d-flex">
+          <div class="px-3 mt-3">
+            <img class="" src="./images/SitPrep Logo White.png" width="150" alt="" />
+          </div> 
+      
+          <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+        </div>
+      </header>
+      <!-- header ends -->
 
-                                  <a class="pl-2 txtOppate btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tips & Tricks</a>
-                                
-                                </div> -->
-                    
-                                  <div  class="  pl-2 d-flex text-white rounded orgOppate">
-                                    <span class="material-icons pr-3 text-white">
-                                    
-                                      food_bank
-                                      </span>
-                                <a href="../assets/storageCalc.html" class="btn pl-2 text-white d-flex">
-                                  Food Storage</a>
-                                  </div>
-                                  
-                  
-                                  <div  class="  pl-2 d-flex txtOppate">
-                                    <span class="material-icons pr-3 txtOppate">
-                                  
-                                      emoji_emotions
-                                      </span>
-                                    <a class="pl-2 txtOppate d-flex btn" href="../assets/feedback.html">
-                                      Share An Idea</a>
-                                  </div>
-                                  
-    
-                                  <p class="h4 txtOppate pt-4 " >Info</p>
-                  
-                                  <div  class="  pl-2 d-flex text-white">
-                                    <span class="mb-3 material-icons  text-white">
-                                      <span class="material-icons txtOppate">
-                                        contact_mail
-                                        </span>
-                                      </span>
-                                      <ul class=" text-left dropdown ">
-    
-                                        <a class=" txtOppate dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Contact Us
-                                        </a>
-                                        <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
-                                            <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instragram</a>
-                                            <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
-                                        </div>
-                                      </ul>
-                                  </div>
-                                  
-                                  
-                </div>
-              </nav>
-    
+      <div>
+        <div class="row">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
+            <div class="phone-block text-center">
+              <img src="./images/SitPrep Logo White.png" width="200" alt="" />
             </div>
-         </div>
+            <div class="position-sticky sidebar-sticky container-fluid">
+              <div class="pb-4 pl-2 d-flex text-white justify-content-center">
+                <a href="" class="text-white text-center" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</a>
+              </div>
+              <div class="navbar-collapse">
+                <div class="nav flex-column nav-pills d-flex" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <p class="h4 txtOppate pb-2">72 Hour Plan</p>
+                  <div class="pl-2 d-flex txtOppate">
+                    <span class="material-icons pr-3 txtOppate">dashboard</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="./dashboard Main.html">Overview</a>
+                  </div>
+                  <div class="pl-2 d-flex txtOppate rounded evacForm">
+                    <span class="material-icons pr-3 txtOppate">map</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="./create_evac_plan.html">Plan Evacuation</a>
+                  </div>
+                  <div class="pl-2 d-flex txtOppate d-none rounded evacPlan">
+                    <span class="material-icons pr-3 txtOppate">map</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="./plan.html">Evacuation Plan</a>
+                  </div>
+                  <div class="pl-2 d-flex txtOppate">
+                    <span class="material-icons pr-3 txtOppate">kitchen</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="./Food table.html" role="tab">Food Supply</a>
+                  </div>
+                  <div class="pl-2 d-flex txtOppate">
+                    <span class="material-icons pr-3 txtOppate">backpack</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="./Additional_Supplies.html" role="tab">Additional Supplies</a>
+                  </div>
+                  <p class="h4 text-white pt-4">Extra</p>
+                  <div class="pl-2 d-flex text-white rounded orgOppate">
+                    <span class="material-icons pr-3 text-white">food_bank</span>
+                    <a href="../assets/storageCalc.html" class="btn pl-2 text-white d-flex">Food Storage</a>
+                  </div>
+                  <div class="pl-2 d-flex txtOppate">
+                    <span class="material-icons pr-3 txtOppate">emoji_emotions</span>
+                    <a class="pl-2 txtOppate d-flex btn" href="../assets/feedback.html">Share An Idea</a>
+                  </div>
+                  <p class="h4 txtOppate pt-4">Info</p>
+                  <div class="pl-2 d-flex text-white">
+                    <span class="mb-3 material-icons text-white">
+                      <span class="material-icons txtOppate">contact_mail</span>
+                    </span>
+                    <ul class="text-left dropdown">
+                      <a class="txtOppate dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contact Us
+                      </a>
+                      <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
+                        <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instagram</a>
+                        <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Main begins -->
+      
       
           <!-- Main beigins -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
@@ -177,14 +121,14 @@
             <div class="">
 
                     <!--Intro begins-->
-                    <main class="calc pb-4 pt-3 rcorners p-3 shadow grnOppate mb-5 food">
+                    <main class="calc pb-4 pt-3 rcorners p-3 shadow grnOppate my-5 food">
 
                             <div  >
                                 <div class="">
                                     <div class="row" >
 
                                         <div class="col-8 ">
-                                            <p class="h1 txtBlu">Food Storage Calculator</p>
+                                            <p class="font-weight-bolder display-6  pt-3  txtImpact txtBlu">Food Storage Calculator</p>
 
                                         </div>
                                 
@@ -193,12 +137,12 @@
                                 </div>
 
                                 <hr class="mb-4">
-                                <p class="text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
+                                <p class="robotoFnt text-muted">The SitPrep calculator below will assist you with figuring out what works for you or your family. 
                                     Enter the number of days/weeks/years of storage you want, 
                                     as well as the number of adults and children in your family (Children 12 and over count as adults because they tend to eat 
                                     full portions). </p>
 
-                                <p class="text-muted"> Always rotate your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
+                                <p class="robotoFnt text-muted"> Always rotate your stored food into your normal diet, using up the oldest products first. This will save you a lot of money and prevent waste. 
                                 </p>
                                 
                             </div> 
@@ -213,9 +157,9 @@
                         <div class="">
                             <div class="px-4 rounded">
                         
-                            <p class="h3 pt-4 txtGrn">Input Goals For Amount </p>  
+                            <p class="robotoFnt h4 pt-4 txtGrn font-weight-bolder">Input Goals For Amount</p>  
                     <!--length of time begins-->
-                            <label class=" pr-5">How many days and weeks of supply do want to store?</label><br>
+                            <label class="robotoFnt pr-5">How many days and weeks of supply do you want to store?</label><br>
                             <div class="d-flex row">
 
                                 <div class=" d-flex col-lg-3">
@@ -242,7 +186,7 @@
                             <!--length of time end-->
 
                             <!--people input begins-->
-                            <label class=" pr-5 pt-4" >How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
+                            <label class="robotoFnt pr-5 pt-4" >How many adults (12 and older) and kids (Under 12) are you planning for?</label><br>
 
                             <div class="d-flex row">
 
@@ -268,8 +212,8 @@
 
                 <hr class="my-4">
                 <!--REcommedation begins-->
-                    <p class="h4 py-2 px-4">Recommended Food Storage Amount Based Upon Above Inputs</p>
-                    <p class="pb-2 px-4">Each category below gives you a variety of choices and a total weight. You 
+                    <p class="robotoFnt h4 py-2 px-4">Recommended Food Storage Amount Based Upon Above Inputs</p>
+                    <p class="robotoFnt pb-2 px-4">Each category below gives you a variety of choices and a total weight. You 
                     should store the items you like to eat and know how to use. Weights 
                     (except fats) are for dry or dehydrated foods—freeze-dried foods will weigh less.</p>    
 
@@ -324,19 +268,19 @@
                                 <label class=" px-3 pt-1" >WHAT DO YOU HAVE CURRENTLY?</label>
                                 <div class="d-flex pl-3">
                                     <input class="bg-light h4 w-50  form-control text-center" id="water" type="number" value="0" oninput="calculate()"></input>
-                                    <label class="h4 pl-2 mt-1" >gal</label><br>
+                                    <label class="robotoFnt h4 pl-2 mt-1" >gal</label><br>
                                 </div>
                             </div>
 
 
                             <div class="col-lg-2">
                                 <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                                <h4 class="  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h4>
+                                <h4 class="robotoFnt  pl-3" id="primeLoc"><span  id="waterRecommend">15</span> gal</h4>
                             </div>
 
                             <div class="col-lg-3">
-                                <label class=" px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
-                                <h4 class="  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h4>
+                                <label class="robotoFnt px-3 py-1" >AMOUNT NEEDED TO MEET RECOMMENDATION</label>
+                                <h4 class="robotoFnt  pl-3"  value="1"><span class="text-primary" id="waterNeeded">15</span> gal</h4>
                             </div>
 
                             <div  class=" col-lg-2  text-dark text-center d-flex align-items-center justify-content-center" >
@@ -359,7 +303,7 @@
                             <div class="col-lg-3 ">
                                 
                                 <div class="d-flex">
-                                <p class=" h4 pl-3 ">GRAIN</p>
+                                <p class="robotoFnt h4 pl-3 ">GRAIN</p>
                                 
                                 </div>
                                     
@@ -373,7 +317,7 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalCenterTitle">GRAINS</h5>
+                                            <h5 class="robotoFnt modal-title" id="exampleModalCenterTitle">GRAINS</h5>
                                         
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -381,7 +325,7 @@
                                         </div>
                                         <div class="modal-body text-center">
                                             <img class=" text-center img-fluid rounded" src="./images/Amzon Images/Grains.webp"  width="450" alt="" />
-                                            <p class="py-4 h5 font-weight-light text-center ">Grains can be wheat, white rice, oats, corn, barley, pasta, etc.</p>
+                                            <p class="robotoFnt py-4 h5 font-weight-light text-center ">Grains can be wheat, white rice, oats, corn, barley, pasta, etc.</p>
                                     
                                             </div>
                                         
@@ -402,7 +346,7 @@
 
                             <div class="col-lg-2 " >
 
-                                <label class=" px-3 pt-1" >WHAT DO YOU HAVE CURRENTLY?</label>
+                                <label class="robotoFnt px-3 pt-1" >WHAT DO YOU HAVE CURRENTLY?</label>
                                 <div class="d-flex ">
                                     <input class="bg-light h4 w-50  form-control text-center" id="grain" type="number" value="0" oninput="calculate()"></input>
                                     <label class="h4 pl-2 mt-1" >lb</label><br>
@@ -411,8 +355,8 @@
 
 
                             <div class="col-lg-2">
-                                <label class=" px-3 py-1" >RECOMMENDED AMOUNT</label>
-                                <h4 class="  pl-3" ><span  id="grainRecommend">8</span> lb</h4>
+                                <label class="robotoFnt px-3 py-1" >RECOMMENDED AMOUNT</label>
+                                <h4 class="robotoFnt  pl-3" ><span  id="grainRecommend">8</span> lb</h4>
                             </div>
 
                             <div class="col-lg-3">
