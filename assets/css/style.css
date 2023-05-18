@@ -630,6 +630,31 @@ font-weight:300;
   transform: rotate(45deg);
 }
 
+/* animate logo in home page begin*/
+.navbar {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar .iconslide {
+  visibility: hidden;
+  animation: slideIn 0.75s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+  100% {
+    visibility: visible;
+    transform: translateX(0%);
+  }
+}
+
+/* animate logo in home page end */
+
 .material-icons {
   font-family: "Material Icons";
   align-self: center;
