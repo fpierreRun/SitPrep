@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFZDLN5');</script>
+  <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>3 Day Food Supply</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+    <link rel="icon" href="./images/Sitprep Favicon Green.png" type="image/x-icon">
+
+    
+        
+    
+    
+    
+        
+        
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="./css/dashboard.css" rel="stylesheet">
+        <style>
+          .mb-3 {
+            margin-bottom: 1.5rem;
+          }
+      
+          .p-2 {
+            padding: 0.5rem;
+          }
+        </style>
+      </head>
+
+<body class=" bg-light">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZDLN5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none  ">
+    
+    <div class="d-flex  ">
+          <div class="  px-3 mt-3" >
+          <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+        </div> 
+
+
+        <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button> 
+
+      </div>
+       
+ </header>
+
+     <div class=" ">
+
+        <div class="row">
+          
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
+           
+            <div class="phone-block text-center">
+              <img  src="./images/SitPrep Logo White.png"  width="200" alt="" />
+            </div>
+            
+            <div class="position-sticky  sidebar-sticky container-fluid">
+
+              <div  class="pb-4 pl-2 d-flex text-white justify-content-center">
+                    
+                <a href="" class="text-white text-center" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</a>
+             
+              </div>
+           
+                        <div class="navbar-collapse ">
+  
+                          <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            
+                            <p class="h4 text-white pb-2">72 Hour Plan</p>
+  
+                            <div  class="pl-2 d-flex txtOppate ">
+                              <span class="material-icons pr-3 txtOppate">
+                                dashboard
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./dashboard Main.html">Overview</a>
+                              
+                            </div>
+                            
+  
+                            <div  class="pl-2 d-flex txtOppate rounded  evacForm"  >
+                              <span class="material-icons pr-3 txtOppate">
+                                map
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./create_evac_plan.html" >Plan Evacuation</a>
+                              
+                            </div>
+  
+                            <div  class="pl-2 d-flex txtOppate d-none rounded evacPlan" >
+                              <span class="material-icons pr-3 txtOppate">
+                                map
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./plan.html" >Evacuation Plan</a>
+                              
+                            </div>
+
+
+                            <div  class="  pl-2 d-flex text-white rounded orgOppate">
+                              <span class="material-icons pr-3 text-white">
+                                kitchen
+                                </span>
+                              <a class="pl-2 text-white d-flex btn "   href="./Food table.html" role="tab" >Food Supply</a>
+                              
+                            </div>
+
+                            <div  class="  pl-2 d-flex txtOppate ">
+                              <span class="material-icons pr-3 txtOppate">
+                                backpack
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+                              
+                            </div>
+                            
+                          <p class="h4 txtOppate pt-4">Extra</p>
+              
+                          <!-- <div  class=" pl-2 d-flex txtOppate">
+                            <span class="material-icons pr-3 txtOppate">
+                              
+                              tips_and_updates
+                            </span>
+                              <a class="pl-2 txtOppate btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tips & Tricks</a>
+                            
+                          </div> -->
+                          
+                           
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="material-icons pr-3 txtOppate">
+                                
+                                  food_bank
+                                  </span>
+                            <a href="../assets/storageCalc.html" class="btn pl-2 txtOppate d-flex">
+                              Food Storage</a>
+                              </div>
+                              
+              
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="material-icons pr-3 txtOppate">
+                              
+                                  emoji_emotions
+                                  </span>
+                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEBM/review" target="_blank">Was This Tool Helpful?</a>
+                              </div>
+                              
+
+                              <p class="h4 txtOppate pt-4 " >Info</p>
+              
+                              <div  class=" pl-2 d-flex txtOppate">
+                                <span class="material-icons pr-3 txtOppate">
+                                  
+                                  tips_and_updates
+                                </span>
+                                
+                                 
+                              </div>
+                          
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="mb-3 material-icons  txtOppate">
+                                  <span class="material-icons txtOppate">
+                                    contact_mail
+                                    </span>
+                                  </span>
+                                  <ul class=" text-left dropdown ">
+
+                                    <a class=" txtOppate dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Contact Us
+                                    </a>
+                                    <div class="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instragram</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
+                                      
+                                    </div>
+                                  </ul>
+                              </div>
+                              
+                              
+            </div>
+          </nav>
+
+        </div>
+     </div>
+      
+          <!-- Form Entry -->
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+  <div class="pt-3 pb-5 d-flex">
+
+    <div class="mr-4 mt-4">
+      <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-white text-secondary p-4 ">
+          <span class="material-symbols-rounded">
+          home
+          </span>
+      </a>
+    </div>
+
+      <div class="mr-4 mt-4" id="foodBackBtn"  style="display: none;">
+        <button  class="shadow rounded-pill btn-lg btn-primary noOutline text-white font-weight-normal ml-4" onclick="foodPrevious()">Previous</button>
+      </div>
+
+    
+
+    <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
+  </div>
+ 
+  
+  <!--Goals begins-->
+  <section id="demograhpic" >
+
+    <div class="p-2 shadow rcorners mb-5 grnOppate p-4">
+        
+      <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 1/2:</span> How many individuals and pets are you planning for <span class="myName" id="displayname"></span>?</p>
+      <hr class="my-4 mx-3" >
+      <p class="text-center h5 robotoFnt text-muted">Providing information about those in your household will help create an emergency list that meets the needs of everyone.</p>
+  
+    </div> 
+
+    <div class="p-3 shadow rcorners mb-5 bg-white">
+
+      <div class="row justify-content-center">
+    
+        <div class="text-center col-lg-4">
+          <div class="">
+            <label class="mt-2"><span class="infantTxt material-symbols-rounded">breastfeeding</span>(Age Up to 12 months)</label><br>
+          </div>
+    
+          <div class="d-flex justify-content-center py-2 text-center">
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseInfants()">-</button>
+            <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="infants" type="number" value="0" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseInfants()">+</button>
+          </div>
+    
+        </div>
+    
+        <div class="col-lg-4 mb-3">
+          <div class="text-center">
+            <label class="mt-2"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age Under 12)</label><br>
+          </div>
+    
+          <div class="d-flex justify-content-center py-2">
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseKids()">-</button>
+            <input style="width: 25%" class="bg-secondary text-white form-control text-center mx-3" id="kids" type="number" value="0" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseKids()">+</button>
+          </div>
+        </div>
+    
+        <div class="col-lg-4">
+          <div class="text-center">
+            <span class="adultsTxt material-symbols-rounded mr-2">diversity_3</span><label class="mt-2">(Age 12 and above)</label><br>
+          </div>
+    
+          <div class="d-flex justify-content-center py-2">
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseAdults()">-</button>
+            <input id="adults" style="width: 25%" class="bg-secondary text-white form-control text-center mx-3" type="number" value="1" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseAdults()">+</button>
+          </div>
+        </div>
+    
+      </div>
+    
+      <div class="row py-3 justify-content-center">
+    
+        <div class="row justify-content-center">
+    
+          <div class="text-center col-lg-4 mb-3">
+            <div class="">
+              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Dogs</label><br>
+            </div>
+    
+            <div class="d-flex justify-content-center py-2 text-center">
+              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseDogs()">-</button>
+              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="dogs" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseDogs()">+</button>
+            </div>
+    
+          </div>
+    
+          <div class="text-center col-lg-4 mb-3">
+            <div class="">
+              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Cats</label><br>
+            </div>
+    
+            <div class="d-flex justify-content-center py-2 text-center">
+              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseCats()">-</button>
+              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="cats" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseCats()">+</button>
+            </div>
+    
+          </div>
+    
+          <div class="text-center col-lg-4 mb-3">
+            <div class="">
+              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Other Pets</label><br>
+            </div>
+    
+            <div class="d-flex justify-content-center py-2 text-center">
+              <button type="button" class="btn btn-light text-dark rounded-circle  shadow-sm" onclick="decreaseOthers()">-</button>
+              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="others" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseOthers()">+</button>
+            </div>
+    
+          </div>
+    
+        </div>
+    
+    
+        <div class="text-center row pt-5" id="next2">
+          <div>
+            <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-normal" onclick="displayTable()">Next</button>
+          </div>
+    
+        </div>
+    
+      </div>
+    </div>
+    
+
+</section>
+<!--Goals Ends-->
+
+
+
+
+<!-- Food Table Begins-->
+<div id="downloadPlan">
+<section  id="foodtable" style="display: none;">
+    <div class="rcorners p-3 shadow bg-white mb-5">
+      <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
+      <hr class="my-4 mx-5" >
+      <p class="text-center h5 robotoFnt text-muted font-weight-normal" id="element-to-hide" data-html2canvas-ignore="true">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
+        specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
+        as needed. </p>
+      
+        <div class="container my-3" id="element-to-hide" data-html2canvas-ignore="true">
+        <div class="row">
+          <div class="d-flex">
+        
+            <label class="col-3" style="color:#FF6346"><img src="./images/Adults-Teenagers Circle.png" alt=""> Adults</label>
+            <label class="col-3" style="color:#39D2A1"><img src="./images/Child-Toddler Circle.png" alt=""> Kids</label>
+            <label class="col-3" style="color:#778CFE"><img src="./images/Infants.png" alt=""> Infants</label>
+            <label class="col-3" style="color:#FFC107;"><img src="./images/Pets.png" alt=""> Pets</label>
+        </div>
+      </div>
+    </div>
+
+      <!-- <div class="text-center row my-5" id="next2">
+        <div>
+          
+          <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" >
+          <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success" type="submit" value="Save & Download" onclick="downloadCheckList()" >
+        
+        </div>
+      
+      </div>  -->
+          
+    </div> 
+
+
+    <!-- Meal Options begins -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Day 1</h2>
+          <div class="mb-3">
+            <label for="day1-breakfast-select" class="form-label">Breakfast:</label>
+            <select id="day1-breakfast-select" class="form-select" onchange="showIngredients('day1', 'breakfast')">
+              <option value="" selected disabled>Select a Breakfast Option</option>
+              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+            </select>
+            <p id="day1-breakfast-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day1-lunch-select" class="form-label">Lunch:</label>
+            <select id="day1-lunch-select" class="form-select" onchange="showIngredients('day1', 'lunch')">
+              <option value="" selected disabled>Select a Lunch Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day1-lunch-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day1-dinner-select" class="form-label">Dinner:</label>
+            <select id="day1-dinner-select" class="form-select" onchange="showIngredients('day1', 'dinner')">
+              <option value="" selected disabled>Select a Dinner Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day1-dinner-ingredients" class="p-2"></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2>Day 2</h2>
+          <div class="mb-3">
+            <label for="day2-breakfast-select" class="form-label">Breakfast:</label>
+            <select id="day2-breakfast-select" class="form-select" onchange="showIngredients('day2', 'breakfast')">
+              <option value="" selected disabled>Select a Breakfast Option</option>
+              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+            </select>
+            <p id="day2-breakfast-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day2-lunch-select" class="form-label">Lunch:</label>
+            <select id="day2-lunch-select" class="form-select" onchange="showIngredients('day2', 'lunch')">
+              <option value="" selected disabled>Select a Lunch Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day2-lunch-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day2-dinner-select" class="form-label">Dinner:</label>
+            <select id="day2-dinner-select" class="form-select" onchange="showIngredients('day2', 'dinner')">
+              <option value="" selected disabled>Select a Dinner Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day2-dinner-ingredients" class="p-2"></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2>Day 3</h2>
+          <div class="mb-3">
+            <label for="day3-breakfast-select" class="form-label">Breakfast:</label>
+            <select id="day3-breakfast-select" class="form-select" onchange="showIngredients('day3', 'breakfast')">
+              <option value="" selected disabled>Select a Breakfast Option</option>
+              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+            </select>
+            <p id="day3-breakfast-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day3-lunch-select" class="form-label">Lunch:</label>
+            <select id="day3-lunch-select" class="form-select" onchange="showIngredients('day3', 'lunch')">
+              <option value="" selected disabled>Select a Lunch Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day3-lunch-ingredients" class="p-2"></p>
+          </div>
+          <div class="mb-3">
+            <label for="day3-dinner-select" class="form-label">Dinner:</label>
+            <select id="day3-dinner-select" class="form-select" onchange="showIngredients('day3', 'dinner')">
+              <option value="" selected disabled>Select a Dinner Option</option>
+              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
+              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
+            </select>
+            <p id="day3-dinner-ingredients" class="p-2"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Meal Options ends -->
+
+    
+
+
+    <!-- Table begins -->
+      <div class="table-responsive  rcorners shadow" >
+      <table class="table ">
+
+        <thead class="table-success">
+          <th scope="col"> 
+            <div class="">
+            <input class=" rounded" type="checkbox" id="addSecond"  >
+            </div>
+
+          </th>
+          <th scope="col">QUANTITY</th>
+          <th scope="col">ITEM PER DAY</th>
+          <th scope="col" class="phone-block">DESCRIPTION</th>
+          <th scope="col" class="phone-block">PERSONALE</th>
+          <th scope="col" id="element-to-hide" data-html2canvas-ignore="true">SHOP ON AMAZON</th>
+        </thead>
+
+        <tbody table-white>
+
+          <!--Water Row starts-->
+          <tr>
+            <th scope="col"> 
+              
+
+              <label class=" ml-3 checkBX shadow">
+              <input class=" rounded shadow" type="checkbox" id="waterCheck">
+              <span class="checkmark"></span>
+              </label>
+      
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="gow"></td>
+            <td>Gallon(s) of water</td>
+            <td class="phone-block">Per Day Per individual</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+              <img src="./images/Pets.png" alt="">
+            </td>
+            <td id="element-to-hide" data-html2canvas-ignore="true">  
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+        <!--Water Row Ends-->  
+        
+        <!--Canned meats starts-->
+          <tr >
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="meatCheck" >
+                <span class="checkmark"></span>
+                </label>
+        
+         
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="meat"></td>
+            <td>Cans of canned meat</td>
+            <td class="phone-block">Tuna, Salmon, Chicken, Raviolis, Chili, beef stew, Spam
+              corned beef, or tofu or can of beans.</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td   id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--Canned meatsEnds-->  
+
+          <!--canned fruit and vegetables starts-->
+          <tr >
+            <th scope="col"> 
+              
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="fruitCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+      
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="fruit"></td>
+            <td>Cans of canned fruit and vegetables</td>
+            <td class="phone-block">4 cups per adult, 2 cups to each child</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td  id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+               
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c69e7e7b52166020b8a9da23f48c763f&camp=1789&creative=9325&index=grocery&keywords=Canned-fruit-vegetables" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--canned fruit and vegetables Ends-->  
+
+
+                <!--Family-Size jar of peanut butter starts-->
+                <tr >
+                  <th scope="col">
+                    
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="pbCheck" >
+                <span class="checkmark"></span>
+                </label>
+ 
+                  </th>
+                  <td class="text-center h5 font-weight-bolder txtBlu">1</td>
+                  <td>Family-Size jar of peanut butter</td>
+                  <td class="phone-block"></td>
+                  <td class="phone-block">
+                    <img src="./images/Adults-Teenagers Circle.png" alt="">
+                    <img src="./images/Child-Toddler Circle.png" alt="">
+                    
+                  </td>
+                  <td  id="element-to-hide" data-html2canvas-ignore="true"> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d3389e1871d77ed2aad3f879b4540319&camp=1789&creative=9325&index=grocery&keywords=Family Size- jar-peanut butter-almond butter" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--Family-Size jar of peanut butter Ends-->  
+
+                <!--boxes of crackers starts-->
+                <tr >
+                  <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="crackCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+                   
+            
+                  </th>
+                  <td  class="text-center h5 font-weight-bolder txtBlu">1</td>
+                  <td>15 oz boxes of crackers</td>
+                  <td class="phone-block">salt-free or low- sodium, whole grain crackers</td>
+                  <td class="phone-block">
+                    <img src="./images/Adults-Teenagers Circle.png" alt="">
+                    <img src="./images/Child-Toddler Circle.png" alt="">
+                    
+                  </td>
+                  <td id="element-to-hide"  data-html2canvas-ignore="true"> 
+                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                      
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=5651ecf4477f6cd845cba695c9cf2b8a&camp=1789&creative=9325&index=grocery&keywords=15 ounces- boxes of crackers-whole grain-low sodium-salt free" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                </div>
+                  </td>
+                </tr>
+                <!--boxes of crackers Ends-->  
+
+          <!--bottled or boxed juices starts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="juiceCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="juice"></td>
+              <td>ounces of canned, bottled or boxed juices</td>
+              <td class="phone-block">8 oz per day per kids and 24 oz per day per adults</td>
+              <td class="phone-block">
+                <img src="./images/Adults-Teenagers Circle.png" alt="">
+                <img src="./images/Child-Toddler Circle.png" alt="">
+                
+              </td>
+              <td id="element-to-hide"  data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                  
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=e0d011e6f8ccb93e4d85ac5dfaeabdb8&camp=1789&creative=9325&index=grocery&keywords=canned-bottled-boxed juices" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--bottled or boxed juices Ends-->  
+
+          <!--pasteurized milk starts-->
+          <tr >
+            <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="milkCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+              
+      
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="milk"></td>
+            <td>ounces of non-perishable pasteurized milk</td>
+            <td class="phone-block">8 oz per day per kids and 24 oz per day per adults. Reconstituted milk works aswell</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td id="element-to-hide"  data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+               
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=43c0fbcd811d5a6180017fe21494d417&camp=1789&creative=9325&index=grocery&keywords=non-perishable pasteurized milk" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--pasteurized milk Ends-->  
+
+
+      <!--servings of energy snacks starts-->
+          <tr >
+            <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="snacksCheck"  >
+                <span class="checkmark"></span>
+                </label>
+
+           
+      
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="snacks"></td>
+            <td> Servings of granola bars, protein bars, dried fruits, or nuts</td>
+            <td class="phone-block">3 oz per day per kid and 9 oz per day per adult.</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=2da24c9aba74fd9a92e7bd4421a02a6a&camp=1789&creative=9325&index=grocery&keywords=granola bars-protein bars-dried fruit-nuts" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--servings of energy snacks Ends-->  
+
+            <!--dry cereal or granola starts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="cerealCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+        
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu">1</td>
+              <td>Family-Size boxes of dry cereal or granola</td>
+              <td class="phone-block"></td>
+              <td class="phone-block">
+                <img src="./images/Adults-Teenagers Circle.png" alt="">
+                <img src="./images/Child-Toddler Circle.png" alt="">
+                
+              </td>
+              <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center"  id="element-to-hide"  data-html2canvas-ignore="true">
+                  
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=bcbdc63e412f4d9d0e1d8b0360ebf0c1&camp=1789&creative=9325&index=grocery&keywords=Family Size-dry cereal-granola" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--dry cereal or granola Ends--> 
+
+              <!--Adult Vitamins starts-->
+              <tr >
+                <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="aVitaminsCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+                 
+                </th>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="aVitamins"></td>
+                <td>Adult Vitamins</td>
+                <td class="phone-block">Capsul or pill per day per adult</td>
+                <td class="phone-block">
+                  <img src="./images/Adults-Teenagers Circle.png" alt="">
+                  
+                </td>
+                <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                  <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                   
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=5e852e50ea0a7284290125b133ce4d56&camp=1789&creative=9325&index=grocery&keywords=Adult Vitamins" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+              </div>
+                </td>
+              </tr>
+              <!--Adult Vitamins Ends-->  
+      
+              <!--Children's Multivitamins starts-->
+              <tr >
+                <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="kVitaminsCheck"  >
+                <span class="checkmark"></span>
+                </label>
+
+                </th>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="kVitamins"></td>
+                <td>Children's Multivitamins</td>
+                <td class="phone-block">Capsul or pill per day per kid</td>
+                <td class="phone-block">
+                
+                  <img src="./images/Child-Toddler Circle.png" alt="">
+                
+                </td>
+                <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                  <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                    
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=987f18fc568fbd974130617c183551e7&camp=1789&creative=9325&index=grocery&keywords=Children's Multivitamins" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+              </div>
+                </td>
+              </tr>
+              <!--Children's Multivitamins Ends-->  
+              
+            <!--3 days' of baby formula starts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="babyFormulaCheck"  >
+                <span class="checkmark"></span>
+                </label>
+
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="babyFormula">0</td>
+              <td>3 days' worth of baby formula</td>
+              <td class="phone-block">Continue breastfeeding if the infant is breastfed. Mom will need 
+                sufficient water and nutritional foods to sustain milk suply </td>
+              <td class="phone-block">
+                
+                <img src="./images/Infants.png" alt="">
+                
+              </td>
+              <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                 
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=06776e822a68f0b9fe44a389b95b4fd0&camp=1789&creative=9325&index=grocery&keywords=baby formula" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--3 days' of baby formula  Ends-->  
+
+            <!--3 days' worth of baby foodstarts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="babyFoodCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+                
+        
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="babyFood">3</td>
+              <td>3 days' worth of baby food</td>
+              <td class="phone-block"></td>
+              <td class="phone-block">
+                
+                <img src="./images/Infants.png" alt="">
+                
+              </td>
+              <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+               
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d1c4d9950d891520b04e685f63bb1580&camp=1789&creative=9325&index=grocery&keywords=baby food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--3 days' worth of baby food Ends-->  
+
+            <!--Dog food starts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox"  id="dogFoodCheck"  >
+                <span class="checkmark"></span>
+                </label>
+
+
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="dogFood"></td>
+              <td>3 days' worth of dog food</td>
+              <td class="phone-block"></td>
+              <td class="phone-block">
+                <img src="./images/Pets.png" alt="">
+              </td>
+              <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                  
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=0d21e0787d924ca74e30a42974f8c405&camp=1789&creative=9325&index=grocery&keywords=dog food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--Dog food Ends-->
+
+            <!--Cat food starts-->
+            <tr >
+              <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="catFoodCheck" >
+                <span class="checkmark"></span>
+                </label>
+
+
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="catFood"></td>
+              <td>3 days' worth of cat food</td>
+              <td class="phone-block"></td>
+              <td class="phone-block">
+                <img src="./images/Pets.png" alt="">
+              </td>
+              <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                 
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d93b041ec32f3180de14ba83a7eeaccf&camp=1789&creative=9325&index=grocery&keywords=cat food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--Cat food Ends-->
+
+              <!--pet food starts-->
+              <tr >
+                <th scope="col"> 
+
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="otherPetCheck"  >
+                <span class="checkmark"></span>
+                </label>
+
+                </th>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="otherPet"></td>
+                <td>3 days' worth of pet food</td>
+                <td class="phone-block"></td>
+                <td class="phone-block">
+                  
+                  <img src="./images/Pets.png" alt="">
+                </td>
+                <td id="element-to-hide" data-html2canvas-ignore="true"> 
+                  <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                   
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=298668848dc71a84ed240c4b96791aff&camp=1789&creative=9325&index=grocery&keywords=pet food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+              </div>
+                </td>
+              </tr>
+              <!--pet food Ends-->  
+
+          
+          
+        </tbody>
+      </table>
+      </div>
+
+      <div class="text-center py-5" id="next2">
+        <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
+          <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success btn_print" type="submit" value="Save & Download" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
+        </div> 
+
+</section>
+</div>
+<!-- Food Table Ends-->
+
+  <!-- Modal for Survey begin -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="pr-3 pt-3">
+        
+          <a type="button" class="close" href="./dashboard Main.html">
+            <span aria-hidden="true">&times;</a>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
+        
+        </div>
+
+        <div class="modal-footer">
+          <a type="button" class="btn btn-secondary"  href="./dashboard Main.html">Close</a>
+          <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Survey End-->
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+<script src="./js/food supply copy.js"></script>
+
+
+
+</body>
+</html>
