@@ -2,49 +2,152 @@ var demoData = [];
 var newFood = [];
 var foodList = [];
 
-function showIngredients(day, mealType) {
-  var selectElement = document.getElementById(day + '-' + mealType + '-select');
-  var ingredientElement = document.getElementById(day + '-' + mealType + '-ingredients');
-  var selectedOption = selectElement.options[selectElement.selectedIndex].value;
+function displayTable(){
+  
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
 
-  // Define the ingredients based on the selected option
-  var ingredients = '';
-  switch (selectedOption) {
-    case 'Cereal with Milk and Fruit':
-      ingredients = 'Ingredients: dry cereal or granola, non-perishable pasteurized milk, canned fruit';
-      break;
-    case 'Cereal with Milk, Fruit, and Nuts':
-      ingredients = 'Ingredients: dry cereal or granola, non-perishable pasteurized milk, canned fruit, nuts or dried fruits';
-      break;
-    case 'Cereal with Milk, Fruit, and Granola Bar':
-      ingredients = 'Ingredients: dry cereal or granola, non-perishable pasteurized milk, canned fruit, granola bar';
-      break;
-    case 'Tuna and Crackers Combo':
-      ingredients = 'Ingredients: canned protein (e.g., tuna or chicken), crackers, canned fruit or vegetables';
-      break;
-    case 'Chilli and Crackers Delight':
-      ingredients = 'Ingredients: canned protein (e.g., salmon or chili), crackers, canned fruit or vegetables';
-      break;
-    case 'Beef Stew and Crackers Combo':
-      ingredients = 'Ingredients: canned protein (e.g., chicken or beef stew), crackers, canned fruit or vegetables';
-      break;
-    case 'Tofu with Veggies and Crackers':
-      ingredients = 'Ingredients: canned protein (e.g., beef stew or tofu), canned vegetables, crackers';
-      break;
-    case 'Ravioli with Veggies and Crackers':
-      ingredients = 'Ingredients: canned protein (e.g., ravioli or spam corned beef), canned vegetables, crackers';
-      break;
-    case 'Protein with Veggies and Granola Bar':
-      ingredients = 'Ingredients: canned protein (e.g., tuna or tofu), canned vegetables, granola bar';
-      break;
-    default:
-      ingredients = '';
-      break;
+  document.getElementById("demograhpic").style.display = "none";
+  document.getElementById("foodtable").style.display = "block";
+  document.getElementById("foodBackBtn").style.display = "block";
+  
+};
+
+
+
+
+function showIngredients(day, meal) {
+
+
+  var selectedOptions = document.getElementsByClassName("cmf");
+  updatedFood = JSON.parse(localStorage.getItem("demoData"));
+
+  for (let i = 0; i < updatedFood.length; i++) {
+
+  var element = updatedFood[updatedFood.length-1];
   }
 
-  // Update the ingredient element
-  ingredientElement.textContent = ingredients;
+  var adultsCount = element.adults;
+  
+
+  // Reset the ingredient values
+  var gowValue = 0;
+  var milkValue = 0;
+  var fruitValue = 0;
+
+// Check if any "select" option is selected
+var isSelectSelected = false;
+
+// Iterate through each selected option
+for (var i = 0; i < selectedOptions.length; i++) {
+  var option = selectedOptions[i];
+  if (option.value === "Cereal with Milk and Fruit" && option.selected) {
+    isSelectSelected = true;
+    gowValue += 1;
+    milkValue += 8;
+    fruitValue += 0.5;
+  }
 }
+
+// Update the ingredient values or display nothing
+document.getElementById("gow").textContent = isSelectSelected ? (gowValue * adultsCount) : "";
+document.getElementById("milk").textContent = isSelectSelected ? (milkValue * adultsCount) : "";
+document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue * adultsCount) : "";
+}
+
+
+
+function updateIngredients() {
+  // alert("Hello\nHow are you?")
+
+  var selectedOptions = document.getElementsByClassName("select");
+  updatedFood = JSON.parse(localStorage.getItem("demoData"));
+
+  for (let i = 0; i < updatedFood.length; i++) {
+
+    var element = updatedFood[updatedFood.length-1];
+    
+    // newFood.push(element);
+  
+  
+    
+   
+        document.getElementById("infants").value= element.infants;
+        document.getElementById("kids").value= element.kids;
+        document.getElementById("adults").value= element.adults;
+  }
+  
+  var adultsCount = parseFloat(document.getElementById("adults").value);
+ 
+ 
+
+  var gowValue = parseFloat(document.getElementById("gow").innerHTML);
+  var milkValue = parseFloat(document.getElementById("milk").innerHTML);
+  var fruitValue = parseFloat(document.getElementById("fruit").innerHTML);
+
+   // Reset the ingredient values
+  var gowValue = 0;
+  var milkValue = 0;
+  var fruitValue = 0;
+
+  // Check if any "select" option is selected
+var isSelectSelected = false;
+
+// Iterate through each selected option
+for (var i = 0; i < selectedOptions.length; i++) {
+  var option = selectedOptions[i];
+  if (option.value === "Cereal with Milk and Fruit" && option.selected) {
+    isSelectSelected = true;
+    gowValue += 1;
+    milkValue += 8;
+    fruitValue += 0.5;
+  }
+}
+
+// Update the ingredient values or display nothing
+document.getElementById("gow").textContent = isSelectSelected ? (gowValue * adultsCount) : "";
+document.getElementById("milk").textContent = isSelectSelected ? (milkValue * adultsCount) : "";
+document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue * adultsCount) : "";
+}
+
+
+
+
+function saveDemo() {
+  
+  infants = document.getElementById("infants").value
+  adults = document.getElementById("adults").value
+  kids = document.getElementById("kids").value
+  dogs = document.getElementById("dogs").value
+  cats = document.getElementById("cats").value
+  others = document.getElementById("others").value
+
+  //Object for form data
+  var demoDataObj = {
+
+    //Household Demographic
+    infants: infants,
+    adults: adults, 
+    kids: kids,
+
+      //  Pets
+      dogs: dogs,
+      cats: cats,
+      others: others,
+
+  };
+  console.log(demoDataObj);
+
+  demoData.push(demoDataObj);
+
+  localStorage.removeItem("demoData");
+  saveData();
+  
+};
+
 
 function checkLocal() {
 
@@ -64,126 +167,26 @@ function checkLocal() {
 
 
 function refreshpageFood() {
-
-  updatedFood = JSON.parse(localStorage.getItem("demoData"));
-
-  for (let i = 0; i < updatedFood.length; i++) {
-
-  var element = updatedFood[updatedFood.length-1];
+  // location.reload()
   
-  // newFood.push(element);
-
-
-  
- 
-      document.getElementById("infants").value= element.infants;
-      document.getElementById("kids").value= element.kids;
-      document.getElementById("adults").value= element.adults;
-
-      document.getElementById("dogs").value= element.dogs;
-      document.getElementById("cats").value= element.cats;
-      document.getElementById("others").value= element.others;
-      
-      var infants = document.getElementById("infants").value
-      var kids = document.getElementById("kids").value
-      var adults = document.getElementById("adults").value
-
-      var dogs = document.getElementById("dogs").value
-      var cats = document.getElementById("cats").value
-      var others = document.getElementById("others").value
-    
-      // Food Supply
-      var gallon = ((~~kids)+(~~adults))*3
-      var meat = ((~~kids*1)+(~~adults*2))*3
-      var fruit = ((~~kids*1)+(~~adults*2))*3
-      var juice = ((~~kids*8)+(~~adults*24))*3
-      var milk = ((~~kids*8)+(~~adults*24))*3
-      var snacks = ((~~kids*3)+(~~adults*9))*3
-      var aVitamins = (~~adults)*3
-      var kVitamins = (~~kids)*3
-      var babyFood = (~~infants)
-      var babyFormula = (~~infants)
-      var dogFood = (~~dogs)
-      var catFood = (~~cats)
-      var otherPet = (~~others)
-
-      // Addotional Supplies
-      // var diapers = (~~infants)*3
-      
-      // Update Food Tables
-      function updateTable() {
-          document.getElementById("gow").innerHTML= gallon;
-          document.getElementById("meat").innerHTML= meat;
-          document.getElementById("fruit").innerHTML= fruit;
-          document.getElementById("juice").innerHTML= juice;
-          document.getElementById("milk").innerHTML= milk;
-          document.getElementById("snacks").innerHTML= snacks;
-          document.getElementById("aVitamins").innerHTML= aVitamins;
-          document.getElementById("kVitamins").innerHTML= kVitamins;
-          document.getElementById("babyFormula").innerHTML= babyFormula;
-          document.getElementById("babyFood").innerHTML= babyFood;
-          document.getElementById("dogFood").innerHTML= dogFood;
-          document.getElementById("catFood").innerHTML= catFood;
-          document.getElementById("otherPet").innerHTML= otherPet;
-
-      };
-      updateTable()
       
     };
   
-  };
-     
+ 
 
 
 
 //Saving food supply info
 
-function saveDemo() {
+// function saveDemo() {
   
-    infants = document.getElementById("infants").value
-    adults = document.getElementById("adults").value
-    kids = document.getElementById("kids").value
-    dogs = document.getElementById("dogs").value
-    cats = document.getElementById("cats").value
-    others = document.getElementById("others").value
-  
-    //Object for form data
-    var demoDataObj = {
-  
-      //Household Demographic
-      infants: infants,
-      adults: adults, 
-      kids: kids,
-  
-        //  Pets
-        dogs: dogs,
-        cats: cats,
-        others: others,
-  
-    };
-    console.log(demoDataObj);
-
-    demoData.push(demoDataObj);
-  
-    localStorage.removeItem("demoData");
-    saveData();
-   
-  };
- 
- 
-
-  function displayTable(){
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-
-    document.getElementById("demograhpic").style.display = "none";
-    document.getElementById("foodtable").style.display = "block";
-    document.getElementById("foodBackBtn").style.display = "block";
     
-  };
+//     showIngredients(day, meal)
+//   };
+ 
+ 
+
+ 
 
   function displayDemographic(){
     document.getElementById("demograhpic").style.display = "block";
@@ -242,7 +245,7 @@ function saveDemo() {
             document.getElementById("others").value= element.others;
 
         };
-        refreshpageFood()
+        updateIngredients();
   };
   loadDemo()
   // location.reload();

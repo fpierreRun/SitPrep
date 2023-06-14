@@ -344,7 +344,7 @@
 
 <!-- Food Table Begins-->
 <div id="downloadPlan">
-<section  id="foodtable" style="display: none;">
+<section  id="foodtable" style="display: block;">
     <div class="rcorners p-3 shadow bg-white mb-5">
       <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
       <hr class="my-4 mx-5" >
@@ -378,128 +378,21 @@
 
 
     <!-- Meal Options begins -->
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Day 1</h2>
-          <div class="mb-3">
-            <label for="day1-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day1-breakfast-select" class="form-select" onchange="showIngredients('day1', 'breakfast')">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-            </select>
-            <p id="day1-breakfast-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day1-lunch-select" class="form-label">Lunch:</label>
-            <select id="day1-lunch-select" class="form-select" onchange="showIngredients('day1', 'lunch')">
-              <option value="" selected disabled>Select a Lunch Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day1-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day1-dinner-select" class="form-label">Dinner:</label>
-            <select id="day1-dinner-select" class="form-select" onchange="showIngredients('day1', 'dinner')">
-              <option value="" selected disabled>Select a Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day1-dinner-ingredients" class="p-2"></p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h2>Day 2</h2>
-          <div class="mb-3">
-            <label for="day2-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day2-breakfast-select" class="form-select" onchange="showIngredients('day2', 'breakfast')">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-            </select>
-            <p id="day2-breakfast-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day2-lunch-select" class="form-label">Lunch:</label>
-            <select id="day2-lunch-select" class="form-select" onchange="showIngredients('day2', 'lunch')">
-              <option value="" selected disabled>Select a Lunch Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day2-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day2-dinner-select" class="form-label">Dinner:</label>
-            <select id="day2-dinner-select" class="form-select" onchange="showIngredients('day2', 'dinner')">
-              <option value="" selected disabled>Select a Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day2-dinner-ingredients" class="p-2"></p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h2>Day 3</h2>
-          <div class="mb-3">
-            <label for="day3-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day3-breakfast-select" class="form-select" onchange="showIngredients('day3', 'breakfast')">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-            </select>
-            <p id="day3-breakfast-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day3-lunch-select" class="form-label">Lunch:</label>
-            <select id="day3-lunch-select" class="form-select" onchange="showIngredients('day3', 'lunch')">
-              <option value="" selected disabled>Select a Lunch Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day3-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day3-dinner-select" class="form-label">Dinner:</label>
-            <select id="day3-dinner-select" class="form-select" onchange="showIngredients('day3', 'dinner')">
-              <option value="" selected disabled>Select a Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-            </select>
-            <p id="day3-dinner-ingredients" class="p-2"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
+    <select id="day1-breakfast-select1" class="form-select cmf" onchange="showIngredients('day1', 'breakfast')">
+      <option value="" selected disabled>Select a Breakfast Option</option>
+      <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+    </select>
+    
+    <select id="day1-breakfast-select2" class="form-select cmf" onchange="showIngredients('day1', 'breakfast')">
+      <option value="" selected disabled>Select a Breakfast Option</option>
+      <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+    </select>
+    
+    <select id="day1-breakfast-select3" class="form-select" onchange="showIngredients('day1', 'breakfast')">
+      <option value="" selected disabled>Select a Breakfast Option</option>
+      <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+    </select>
+    
     <!-- Meal Options ends -->
 
     
@@ -536,7 +429,7 @@
               </label>
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="gow"></td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="gow">0</td>
             <td>Gallon(s) of water</td>
             <td class="phone-block">Per Day Per individual</td>
             <td class="phone-block">
@@ -592,7 +485,7 @@
 
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="fruit"></td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="fruit">0</td>
             <td>Cans of canned fruit and vegetables</td>
             <td class="phone-block">4 cups per adult, 2 cups to each child</td>
             <td class="phone-block">
@@ -705,7 +598,7 @@
               
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="milk"></td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="milk">0</td>
             <td>ounces of non-perishable pasteurized milk</td>
             <td class="phone-block">8 oz per day per kids and 24 oz per day per adults. Reconstituted milk works aswell</td>
             <td class="phone-block">
