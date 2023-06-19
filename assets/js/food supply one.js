@@ -2,6 +2,9 @@ var demoData = [];
 var newFood = [];
 var foodList = [];
 
+
+
+
 function displayTable(){
   
   window.scrollTo({
@@ -19,7 +22,7 @@ function displayTable(){
 
 
 
-function showIngredients(day, meal) {
+function inputIngredients(day, meal) {
 
 
   var selectedOptions = document.getElementsByClassName("cmf");
@@ -156,7 +159,7 @@ function checkLocal() {
   if(!demoDataNew){
 
       saveDemo()
-      loadSaveList () 
+     
       refreshpageFood()
        
 
@@ -254,7 +257,7 @@ function refreshpageFood() {
   // Load data on refresh
 
 refreshpageFood()
-loadSaveList () 
+
 saveDemo()
   
     
@@ -355,92 +358,6 @@ function decreaseOthers() {
 
 
 
-  function downloadCheckList() {
-   
-// Checkboxes for Checked off list
-waterCheck = document.getElementById("waterCheck").checked
-meatCheck = document.getElementById("meatCheck").checked
-fruitCheck = document.getElementById("fruitCheck").checked
-pbCheck = document.getElementById("pbCheck").checked
-crackCheck = document.getElementById("crackCheck").checked
-juiceCheck = document.getElementById("juiceCheck").checked
-milkCheck = document.getElementById("milkCheck").checked
-snacksCheck = document.getElementById("snacksCheck").checked
-cerealCheck = document.getElementById("cerealCheck").checked
-aVitaminsCheck = document.getElementById("aVitaminsCheck").checked
-kVitaminsCheck = document.getElementById("kVitaminsCheck").checked
-babyFormulaCheck = document.getElementById("babyFormulaCheck").checked
-babyFoodCheck = document.getElementById("babyFoodCheck").checked
-dogFoodCheck = document.getElementById("dogFoodCheck").checked
-catFoodCheck = document.getElementById("catFoodCheck").checked
-otherPetCheck = document.getElementById("otherPetCheck").checked
-
-  //Object for food supply check list
-  var foodCheckDataObj = {
-  
-    //List of Checkboxes
-    waterCheck: waterCheck,
-    meatCheck: meatCheck, 
-    fruitCheck: fruitCheck,
-    pbCheck: pbCheck,
-    milkCheck: milkCheck,
-    snacksCheck: snacksCheck,
-    cerealCheck: cerealCheck,
-    aVitaminsCheck: aVitaminsCheck,
-    kVitaminsCheck: kVitaminsCheck,
-    babyFormulaCheck: babyFormulaCheck,
-    babyFoodCheck: babyFoodCheck,
-    dogFoodCheck: dogFoodCheck,
-    catFoodCheck: catFoodCheck,
-    otherPetCheck: otherPetCheck,
-    crackCheck: crackCheck,
-    juiceCheck: juiceCheck,
-  
-  };
-  
-    
-  foodList.push(foodCheckDataObj)
-  
-  storeFoodList ()
-}
-
-function storeFoodList (){
-
-  localStorage.setItem("foodList", JSON.stringify(foodList))
-}
-
-// save data to local storage and update table
-function loadSaveList (){
-  
-
-  foodListNew = JSON.parse(localStorage.getItem("foodList"));
-  
-        for (let i = 0; i < foodListNew.length; i++) {
-     
-        var element = foodListNew[foodListNew.length-1];
-        
-        // newFood.push(element);
-      
-     
-            document.getElementById("waterCheck").checked = element.waterCheck;
-            document.getElementById("meatCheck").checked = element.meatCheck;
-            document.getElementById("fruitCheck").checked = element.fruitCheck;
-            document.getElementById("pbCheck").checked = element.pbCheck;
-            document.getElementById("milkCheck").checked = element.milkCheck;
-            document.getElementById("snacksCheck").checked = element.snacksCheck;
-            document.getElementById("cerealCheck").checked = element.cerealCheck;
-            document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
-            document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
-            document.getElementById("babyFormulaCheck").checked = element.babyFormulaCheck;
-            document.getElementById("babyFoodCheck").checked = element.babyFoodCheck;
-            document.getElementById("dogFoodCheck").checked = element.dogFoodCheck;
-            document.getElementById("catFoodCheck").checked = element.catFoodCheck;
-            document.getElementById("otherPetCheck").checked = element.otherPetCheck;
-            document.getElementById("crackCheck").checked = element.crackCheck;
-            document.getElementById("juiceCheck").checked = element.juiceCheck;
-    }
-    
-}
 
      //download PDF code
 
@@ -487,8 +404,7 @@ function loadSaveList (){
 
   };
 
-
-
+  
 
 
 
