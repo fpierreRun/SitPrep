@@ -1,3 +1,4 @@
+
 function showIngredients(day, meal) {
   const selectElement = document.getElementById(`${day}-${meal}-select`);
   const ingredientsElement = document.getElementById(`${day}-${meal}-ingredients`);
@@ -67,7 +68,7 @@ function showIngredients(day, meal) {
 function downloadCheckList() {
   var checkboxes = [
     "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
-    "juiceCheck", "milkCheck", "snacksCheck", "cerealCheck", "aVitaminsCheck", 
+    "juiceCheck", "milkCheck", "granolaCheck", "snacksCheck", "aVitaminsCheck", 
     "kVitaminsCheck", "babyFormulaCheck", "babyFoodCheck", "dogFoodCheck", 
     "catFoodCheck", "otherPetCheck"
   ];
@@ -83,24 +84,24 @@ function downloadCheckList() {
   storeFoodList();
 }
 
-function storeFoodList() {
-  localStorage.setItem("foodList", JSON.stringify(foodList));
-}
+// function storeFoodList() {
+//   localStorage.setItem("foodList", JSON.stringify(foodList));
+// }
 
-function loadSaveList() {
-  const foodListNew = JSON.parse(localStorage.getItem("foodList"));
+// function loadSaveList() {
+//   const foodListNew = JSON.parse(localStorage.getItem("foodList"));
   
-  const element = foodListNew[foodListNew.length - 1];
+//   const element = foodListNew[foodListNew.length - 1];
   
-  var checkboxes = [
-    "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
-    "juiceCheck", "milkCheck", "snacksCheck", "cerealCheck", "aVitaminsCheck", 
-    "kVitaminsCheck", "babyFormulaCheck", "babyFoodCheck", "dogFoodCheck", 
-    "catFoodCheck", "otherPetCheck"
-  ];
+//   var checkboxes = [
+//     "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
+//     "juiceCheck", "milkCheck", "granolaCheck", "snacksCheck", "aVitaminsCheck", 
+//     "kVitaminsCheck", "babyFormulaCheck", "babyFoodCheck", "dogFoodCheck", 
+//     "catFoodCheck", "otherPetCheck"
+//   ];
   
-  checkboxes.forEach(function(checkbox) {
-    document.getElementById(checkbox).checked = element[checkbox];
-  });
-}
-loadSaveList () 
+//   checkboxes.forEach(function(checkbox) {
+//     document.getElementById(checkbox).checked = element[checkbox];
+//   });
+// }
+// loadSaveList () 

@@ -2,6 +2,14 @@ var demoData = [];
 var newFood = [];
 var foodList = [];
 
+var selectElements = document.querySelectorAll("select");
+selectElements.forEach(function(selectElement) {
+  selectElement.addEventListener("change", function() {
+    selectElement.classList.add("bg-primary");
+    selectElement.classList.add("text-white");
+  });
+});
+
 
 
 
@@ -23,50 +31,86 @@ function displayTable(){
 
 
 function inputIngredients(day, meal) {
+  
 
-
-  var selectedOptions = document.getElementsByClassName("cmf");
+  var cmfOptions = document.getElementsByClassName("cmf");
+  var cmnOptions = document.getElementsByClassName("cmn");
+  var cmgOptions = document.getElementsByClassName("cmg");
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
   for (let i = 0; i < updatedFood.length; i++) {
 
-  var element = updatedFood[updatedFood.length-1];
+    var element = updatedFood[updatedFood.length-1];
   }
 
   var adultsCount = element.adults;
+  var kidsCount = element.kids * .5;
   
 
   // Reset the ingredient values
-  var gowValue = 0;
+  var granolaValue = 0;
   var milkValue = 0;
   var fruitValue = 0;
+  var nutsValue = 0;
+  var barsValue = 0;
 
 // Check if any "select" option is selected
 var isSelectSelected = false;
 
 // Iterate through each selected option
-for (var i = 0; i < selectedOptions.length; i++) {
-  var option = selectedOptions[i];
+for (var i = 0; i < cmfOptions.length; i++) {
+  var option = cmfOptions[i];
   if (option.value === "Cereal with Milk and Fruit" && option.selected) {
     isSelectSelected = true;
-    gowValue += 1;
-    milkValue += 8;
+    granolaValue += 1;
+    milkValue += 1;
     fruitValue += 0.5;
   }
 }
 
-// Update the ingredient values or display nothing
-document.getElementById("gow").textContent = isSelectSelected ? (gowValue * adultsCount) : "";
-document.getElementById("milk").textContent = isSelectSelected ? (milkValue * adultsCount) : "";
-document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue * adultsCount) : "";
+for (var i = 0; i < cmnOptions.length; i++) {
+  var option = cmnOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Nuts" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    nutsValue += 0.25;
+  }
+}
+
+for (var i = 0; i < cmgOptions.length; i++) {
+  var option = cmgOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Granola Bar" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    barsValue += 1;
+  }
+ 
 }
 
 
 
-function updateIngredients() {
-  // alert("Hello\nHow are you?")
+// Update the ingredient values or display nothing
+document.getElementById("granola").textContent = isSelectSelected ? (granolaValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("nuts").textContent = isSelectSelected ? (nutsValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("bars").textContent = isSelectSelected ? (barsValue) * ((adultsCount)+(kidsCount)) : "";
+loadDemo()
+}
 
-  var selectedOptions = document.getElementsByClassName("select");
+
+
+function updateIngredients(){
+  
+  
+  var cmfOptions = document.getElementsByClassName("cmf");
+  var cmnOptions = document.getElementsByClassName("cmn");
+  var cmgOptions = document.getElementsByClassName("cmg");
+
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
   for (let i = 0; i < updatedFood.length; i++) {
@@ -82,38 +126,77 @@ function updateIngredients() {
         document.getElementById("kids").value= element.kids;
         document.getElementById("adults").value= element.adults;
   }
-  
+
+
   var adultsCount = parseFloat(document.getElementById("adults").value);
+  var kidsCount = parseFloat(document.getElementById("kids").value) * .5;
  
  
 
   var gowValue = parseFloat(document.getElementById("gow").innerHTML);
   var milkValue = parseFloat(document.getElementById("milk").innerHTML);
   var fruitValue = parseFloat(document.getElementById("fruit").innerHTML);
+  var granolaValue = parseFloat(document.getElementById("granola").innerHTML);
+  var nutsValue = parseFloat(document.getElementById("nuts").innerHTML);
+  var barsValue = parseFloat(document.getElementById("bars").innerHTML);
+
 
    // Reset the ingredient values
-  var gowValue = 0;
+   var gowValue = 0;
+  var granolaValue = 0;
   var milkValue = 0;
   var fruitValue = 0;
+  var nutsValue = 0;
+  var barsValue = 0;
 
   // Check if any "select" option is selected
 var isSelectSelected = false;
 
 // Iterate through each selected option
-for (var i = 0; i < selectedOptions.length; i++) {
-  var option = selectedOptions[i];
+for (var i = 0; i < cmfOptions.length; i++) {
+  var option = cmfOptions[i];
   if (option.value === "Cereal with Milk and Fruit" && option.selected) {
     isSelectSelected = true;
-    gowValue += 1;
-    milkValue += 8;
+    granolaValue += 1;
+    milkValue += 1;
     fruitValue += 0.5;
   }
+ 
+}
+
+for (var i = 0; i < cmnOptions.length; i++) {
+  var option = cmnOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Nuts" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    nutsValue += 0.25;
+  }
+ 
+}
+
+for (var i = 0; i < cmgOptions.length; i++) {
+  var option = cmgOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Granola Bar" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    barsValue += 1;
+  }
+ 
 }
 
 // Update the ingredient values or display nothing
-document.getElementById("gow").textContent = isSelectSelected ? (gowValue * adultsCount) : "";
-document.getElementById("milk").textContent = isSelectSelected ? (milkValue * adultsCount) : "";
-document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue * adultsCount) : "";
+
+
+document.getElementById("granola").textContent = isSelectSelected ? (granolaValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("nuts").textContent = isSelectSelected ? (nutsValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("bars").textContent = isSelectSelected ? (barsValue) * ((adultsCount)+(kidsCount)) : "";
+// loadDemo()
 }
 
 
@@ -142,7 +225,7 @@ function saveDemo() {
       others: others,
 
   };
-  console.log(demoDataObj);
+  
 
   demoData.push(demoDataObj);
 
@@ -217,10 +300,10 @@ function refreshpageFood() {
     document.getElementById("foodBackBtn").style.display = "block";
   };
 
-  function saveData () {
+  function saveData() {
  
     localStorage.setItem("demoData", JSON.stringify(demoData))
-    loadDemo()
+    
   };
   
  
@@ -372,7 +455,7 @@ function decreaseOthers() {
          
          var element = document.getElementById('downloadPlan'); 
    
-         console.log(element)
+         
          
    
          //more custom settings
@@ -405,6 +488,4 @@ function decreaseOthers() {
   };
 
   
-
-
 
