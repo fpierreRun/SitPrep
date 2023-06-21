@@ -327,7 +327,7 @@
     
         <div class="text-center row pt-5" id="next2">
           <div>
-            <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-normal" onclick="displayTable(), inputIngredients('day1', 'lunch') ">Next</button>
+            <button class="shadow rounded-pill btn-lg btn-primary noOutline float-right text-white font-weight-normal" onclick="displayTable(), inputIngredients('day1', 'lunch'), displayrows() ">Next</button>
           </div>
     
         </div>
@@ -380,14 +380,14 @@
     
     <!--Main meal Option begins-->
     <div class="container rcorners p-3 shadow bg-white mb-5">
-      <h1 class="txtBlu font-weight-bold text-center">Meal Planner</h1>
+      <h1 class="txtBlu font-weight-bold text-center">3 Day Meal Planner</h1>
       <hr class="my-4 mx-5" >
       <div class="row">
         <div class="col-md-4">
           <h2 class="font-weight-bold txtGrn">Day 1</h2>
           <div class="mb-3">
             <label for="day1-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day1-breakfast-select" class="form-select " onchange="inputIngredients('day1', 'breakfast'), showIngredients('day1', 'breakfast')">
+            <select id="day1-breakfast-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'breakfast'), showIngredients('day1', 'breakfast'), displayrows()">
               <option value="" selected disabled>Select a Breakfast Option</option>
               <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
               <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
@@ -399,37 +399,39 @@
           </div>
           <div class="mb-3">
             <label for="day1-lunch-select" class="form-label">Lunch:</label>
-            <select id="day1-lunch-select" class="form-select" onchange="inputIngredients('day1', 'lunch'), showIngredients('day1', 'lunch') ">
-              <option value="" selected disabled>Select a Lunch or Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day1-lunch-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'lunch'), showIngredients('day1', 'lunch'), displayrows()  ">
+              <option value="" selected disabled>Select a Lunch</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day1-lunch-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day1-dinner-select" class="form-label">Dinner:</label>
-            <select id="day1-dinner-select" class="form-select" onchange="inputIngredients('day1', 'dinner'), showIngredients('day1', 'dinner') ">
-              <option value="" selected disabled>Select a Dinner or Lunch Option</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day1-dinner-select" class="form-select" onchange="inputIngredients('day1', 'dinner'), showIngredients('day1', 'dinner'), displayrows() ">
+              <option value="" selected disabled>Select a Dinner</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day1-dinner-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day1-snack-select" class="form-label">Snack:</label>
-            <select id="day1-snack-select" class="form-select" onchange="inputIngredients('day1', 'snack'), showIngredients('day1', 'snack')">
+            <select id="day1-snack-select" class="form-select" onchange="inputIngredients('day1', 'snack'), showIngredients('day1', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
               <option value="Granola Bar">Granola Bar</option>
               <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
               <option value="Crackers">Crackers</option>
               <option value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day1-snack-ingredients" class="p-2"></p>
           </div>
@@ -440,7 +442,7 @@
           <h2 class="font-weight-bold txtGrn">Day 2</h2>
           <div class="mb-3">
             <label for="day2-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day2-breakfast-select" class="form-select" onchange="inputIngredients('day2', 'breakfast'), showIngredients('day2', 'breakfast')">
+            <select id="day2-breakfast-select" class="form-select" onchange="inputIngredients('day2', 'breakfast'), showIngredients('day2', 'breakfast'), displayrows()">
               <option value="" selected disabled>Select a Breakfast Option</option>
               <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
               <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
@@ -452,32 +454,33 @@
           </div>
           <div class="mb-3">
             <label for="day2-lunch-select" class="form-label">Lunch:</label>
-            <select id="day2-lunch-select" class="form-select" onchange="inputIngredients('day2', 'lunch'), showIngredients('day2', 'lunch')">
-              <option value="" selected disabled>Select a Lunch or Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day2-lunch-select" class="form-select" onchange="inputIngredients('day2', 'lunch'), showIngredients('day2', 'lunch'), displayrows()">
+              <option value="" selected disabled>Select a Lunch Option</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day2-lunch-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day2-dinner-select" class="form-label">Dinner:</label>
-            <select id="day2-dinner-select" class="form-select" onchange="inputIngredients('day2', 'dinner'), showIngredients('day2', 'dinner')">
-              <option value="" selected disabled>Select a Dinner or Lunch Option</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day2-dinner-select" class="form-select" onchange="inputIngredients('day2', 'dinner'), showIngredients('day2', 'dinner'), displayrows()">
+              <option value="" selected disabled>Select a Dinner Option</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day2-dinner-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day2-snack-select" class="form-label">Snack:</label>
-            <select id="day2-snack-select" class="form-select" onchange="inputIngredients('day2', 'snack'), showIngredients('day2', 'snack')">
+            <select id="day2-snack-select" class="form-select" onchange="inputIngredients('day2', 'snack'), showIngredients('day2', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
               <option value="Granola Bar">Granola Bar</option>
               <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
@@ -493,7 +496,7 @@
           <h2 class="font-weight-bold txtGrn">Day 3</h2>
           <div class="mb-3">
             <label for="day3-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day3-breakfast-select" class="form-select" onchange="inputIngredients('day3', 'breakfast'), showIngredients('day3', 'breakfast')">
+            <select id="day3-breakfast-select" class="form-select" onchange="inputIngredients('day3', 'breakfast'), showIngredients('day3', 'breakfast'), displayrows()">
               <option value="" selected disabled>Select a Breakfast Option</option>
               <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
               <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
@@ -505,32 +508,33 @@
           </div>
           <div class="mb-3">
             <label for="day3-lunch-select" class="form-label">Lunch:</label>
-            <select id="day3-lunch-select" class="form-select" onchange="inputIngredients('day3', 'lunch'), showIngredients('day3', 'lunch')">
-              <option value="" selected disabled>Select a Lunch or Dinner Option</option>
-              <option value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day3-lunch-select" class="form-select" onchange="inputIngredients('day3', 'lunch'), showIngredients('day3', 'lunch'), displayrows()">
+              <option value="" selected disabled>Select a Lunch Option</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day3-lunch-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day3-dinner-select" class="form-label">Dinner:</label>
-            <select id="day3-dinner-select" class="form-select" onchange="inputIngredients('day3', 'dinner'), showIngredients('day3', 'dinner')">
-              <option value="" selected disabled>Select a Dinner or Lunch Option</option>
-              <option value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="Ravioli with Veggies and Crackers">Ravioli with Veggies and Crackers</option>
-              <option value="Protein with Veggies and Granola Bar">Protein with Veggies and Granola Bar</option>
-              <option value="Protein with Veggies and Peanut Butter">Protein with Veggies and Peanut Butter</option>
+            <select id="day3-dinner-select" class="form-select" onchange="inputIngredients('day3', 'dinner'), showIngredients('day3', 'dinner'), displayrows()">
+              <option value="" selected disabled>Select a Dinner Option</option>
+              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day3-dinner-ingredients" class="p-2"></p>
           </div>
           <div class="mb-3">
             <label for="day3-snack-select" class="form-label">Snack:</label>
-            <select id="day3-snack-select" class="form-select" onchange="inputIngredients('day3', 'snack'), showIngredients('day3', 'snack')">
+            <select id="day3-snack-select" class="form-select" onchange="inputIngredients('day3', 'snack'), showIngredients('day3', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
               <option value="Granola Bar">Granola Bar</option>
               <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
@@ -580,9 +584,9 @@
               </label>
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="gow">0</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="gow"></td>
             <td>Gallons</td>
-            <td>Gallon(s) of water</td>
+            <td>of water</td>
             <td class="phone-block">Per Day Per individual</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -598,20 +602,76 @@
           </tr>
         <!--Water Row Ends-->  
         
-        <!--Canned meats starts-->
+        <!--Canned Tuna starts-->
           <tr >
             <th scope="col"> 
               <label class=" ml-3 checkBX shadow">
-                <input class=" rounded shadow" type="checkbox" id="meatCheck" >
+                <input class=" rounded shadow" type="checkbox" id="tunaCheck" >
                 <span class="checkmark"></span>
                 </label>
         
          
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="meat"></td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="tuna"></td>
             <td>Can(s)</td>
-            <td>of canned meat</td>
-            <td class="phone-block">Tuna, Salmon, Chicken, Raviolis, Chili, beef stew, Spam
+            <td>of tuna</td>
+            <td class="phone-block">Tuna, Salmon.</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td   id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--Canned Tuna Ends-->  
+
+           <!--Canned Chilli starts-->
+           <tr >
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="chilliCheck" >
+                <span class="checkmark"></span>
+                </label>
+        
+         
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="chilli"></td>
+            <td>Can(s)</td>
+            <td>of chilli</td>
+            <td class="phone-block">Chilli</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td   id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--Canned Chilli Ends-->  
+
+           <!--Canned Beef Stew starts-->
+           <tr >
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="beefCheck" >
+                <span class="checkmark"></span>
+                </label>
+        
+         
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="beef"></td>
+            <td>Can(s)</td>
+            <td>of beef stew</td>
+            <td class="phone-block">Tuna, Salmon, Chicken, Raviolis, Chilli, beef stew, Spam
               corned beef, or tofu or can of beans.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -625,7 +685,63 @@
           </div>
             </td>
           </tr>
-          <!--Canned meatsEnds-->  
+          <!--Canned beef stew Ends-->  
+
+          <!--Canned ravioli starts-->
+          <tr >
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="ravioliCheck" >
+                <span class="checkmark"></span>
+                </label>
+        
+         
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="ravioli"></td>
+            <td>Can(s)</td>
+            <td>of ravioli</td>
+            <td class="phone-block">Raviolis</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td   id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--Canned ravioli Ends-->  
+
+           <!--Canned tofu Stew starts-->
+           <tr >
+            <th scope="col"> 
+              <label class=" ml-3 checkBX shadow">
+                <input class=" rounded shadow" type="checkbox" id="tofuCheck" >
+                <span class="checkmark"></span>
+                </label>
+        
+         
+            </th>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="tofu"></td>
+            <td>Can(s)</td>
+            <td>of tofu</td>
+            <td class="phone-block">Tofu or can of beans.</td>
+            <td class="phone-block">
+              <img src="./images/Adults-Teenagers Circle.png" alt="">
+              <img src="./images/Child-Toddler Circle.png" alt="">
+              
+            </td>
+            <td   id="element-to-hide" data-html2canvas-ignore="true"> 
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+          </div>
+            </td>
+          </tr>
+          <!--Canned tofu stew Ends-->  
 
           <!--canned fruit starts-->
           <tr >
@@ -667,8 +783,9 @@
 
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="veg">0</td>
-            <td>Cans of canned vegetables</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="veg"></td>
+            <td>Can(s)</td>
+            <td>of canned vegetables</td>
             <td class="phone-block">4 cups per adult, 2 cups to each child</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -686,32 +803,33 @@
 
 
 
-                <!--Family-Size jar of peanut butter starts-->
-                <tr >
-                  <th scope="col">
-                    
-              <label class=" ml-3 checkBX shadow">
-                <input class=" rounded shadow" type="checkbox" id="pbCheck" >
-                <span class="checkmark"></span>
-                </label>
- 
-                  </th>
-                  <td class="text-center h5 font-weight-bolder txtBlu">1</td>
-                  <td>Family-Size jar of peanut butter</td>
-                  <td class="phone-block"></td>
-                  <td class="phone-block">
-                    <img src="./images/Adults-Teenagers Circle.png" alt="">
-                    <img src="./images/Child-Toddler Circle.png" alt="">
-                    
-                  </td>
-                  <td  id="element-to-hide" data-html2canvas-ignore="true"> 
-                    <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                      
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d3389e1871d77ed2aad3f879b4540319&camp=1789&creative=9325&index=grocery&keywords=Family Size- jar-peanut butter-almond butter" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-                </div>
-                  </td>
-                </tr>
-                <!--Family-Size jar of peanut butter Ends-->  
+            <!--Family-Size jar of peanut butter starts-->
+            <tr >
+              <th scope="col">
+                
+          <label class=" ml-3 checkBX shadow">
+            <input class=" rounded shadow" type="checkbox" id="pbCheck" >
+            <span class="checkmark"></span>
+            </label>
+
+              </th>
+              <td class="text-center h5 font-weight-bolder txtBlu" id="pb"></td>
+              <td>tblsp</td>
+              <td>of peanut butter</td>
+              <td class="phone-block"></td>
+              <td class="phone-block">
+                <img src="./images/Adults-Teenagers Circle.png" alt="">
+                <img src="./images/Child-Toddler Circle.png" alt="">
+                
+              </td>
+              <td  id="element-to-hide" data-html2canvas-ignore="true"> 
+                <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
+                  
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d3389e1871d77ed2aad3f879b4540319&camp=1789&creative=9325&index=grocery&keywords=Family Size- jar-peanut butter-almond butter" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+            </div>
+              </td>
+            </tr>
+            <!--Family-Size jar of peanut butter Ends-->  
 
                 <!--boxes of crackers starts-->
                 <tr >
@@ -725,8 +843,9 @@
                    
             
                   </th>
-                  <td  class="text-center h5 font-weight-bolder txtBlu">1</td>
-                  <td>15 oz boxes of crackers</td>
+                  <td  class="text-center h5 font-weight-bolder txtBlu" id="crackers"></td>
+                  <td>Ounces</td>
+                  <td>of crackers</td>
                   <td class="phone-block">salt-free or low- sodium, whole grain crackers</td>
                   <td class="phone-block">
                     <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -753,7 +872,8 @@
 
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="juice"></td>
-              <td>ounces of canned, bottled or boxed juices</td>
+              <td>Cup(s)</td>
+              <td>bottled or boxed juices</td>
               <td class="phone-block">8 oz per day per kids and 24 oz per day per adults</td>
               <td class="phone-block">
                 <img src="./images/Adults-Teenagers Circle.png" alt="">

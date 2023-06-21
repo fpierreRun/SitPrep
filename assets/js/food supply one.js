@@ -5,8 +5,8 @@ var foodList = [];
 var selectElements = document.querySelectorAll("select");
 selectElements.forEach(function(selectElement) {
   selectElement.addEventListener("change", function() {
-    selectElement.classList.add("bg-primary");
-    selectElement.classList.add("text-white");
+    selectElement.classList.add("orgOppate");
+    selectElement.classList.add("text-success");
   });
 });
 
@@ -36,6 +36,12 @@ function inputIngredients(day, meal) {
   var cmfOptions = document.getElementsByClassName("cmf");
   var cmnOptions = document.getElementsByClassName("cmn");
   var cmgOptions = document.getElementsByClassName("cmg");
+  var tunaOptions = document.getElementsByClassName("tuna");
+  var chilliOptions = document.getElementsByClassName("chilli");
+  var beefOptions = document.getElementsByClassName("beef");
+  var ravioliOptions = document.getElementsByClassName("ravioli");
+  var tofuOptions = document.getElementsByClassName("tofu");
+
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
   for (let i = 0; i < updatedFood.length; i++) {
@@ -53,6 +59,15 @@ function inputIngredients(day, meal) {
   var fruitValue = 0;
   var nutsValue = 0;
   var barsValue = 0;
+  var tunaValue = 0;
+  var juiceValue = 0;
+  var crackersValue = 0;
+  var vegValue = 0;
+  var chilliValue = 0;
+  var beefValue = 0;
+  var ravioliValue = 0;
+  var tofuValue = 0;
+
 
 // Check if any "select" option is selected
 var isSelectSelected = false;
@@ -91,6 +106,66 @@ for (var i = 0; i < cmgOptions.length; i++) {
  
 }
 
+for (var i = 0; i < tunaOptions.length; i++) {
+  var option = tunaOptions[i];
+  if (option.value === "Tuna and Crackers Combo" && option.selected) {
+    isSelectSelected = true;
+    tunaValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+ 
+}
+
+for (var i = 0; i < chilliOptions.length; i++) {
+  var option = chilliOptions[i];
+  if (option.value === "Chilli and Crackers Delight" && option.selected) {
+    isSelectSelected = true;
+    chilliValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+for (var i = 0; i < beefOptions.length; i++) {
+  var option = beefOptions[i];
+  if (option.value === "Beef Stew and Crackers Combo" && option.selected) {
+    isSelectSelected = true;
+    beefValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+for (var i = 0; i < ravioliOptions.length; i++) {
+  var option = ravioliOptions[i];
+  if (option.value === "Beef Stew and Crackers Combo" && option.selected) {
+    isSelectSelected = true;
+    ravioliValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+for (var i = 0; i < tofuOptions.length; i++) {
+  var option = tofuOptions[i];
+  if (option.value === "Tofu with Veggies and Crackers" && option.selected) {
+    isSelectSelected = true;
+    tofuValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+
+
+
+
 
 
 // Update the ingredient values or display nothing
@@ -99,6 +174,14 @@ document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * (
 document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("nuts").textContent = isSelectSelected ? (nutsValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("bars").textContent = isSelectSelected ? (barsValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("tuna").textContent = isSelectSelected ? (tunaValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("crackers").textContent = isSelectSelected ? (crackersValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("juice").textContent = isSelectSelected ? (juiceValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("veg").textContent = isSelectSelected ? (vegValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("chilli").textContent = isSelectSelected ? (chilliValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
 loadDemo()
 }
 
@@ -110,6 +193,11 @@ function updateIngredients(){
   var cmfOptions = document.getElementsByClassName("cmf");
   var cmnOptions = document.getElementsByClassName("cmn");
   var cmgOptions = document.getElementsByClassName("cmg");
+  var tunaOptions = document.getElementsByClassName("tuna");
+  var chilliOptions = document.getElementsByClassName("chilli");
+  var beefOptions = document.getElementsByClassName("beef");
+  var ravioliOptions = document.getElementsByClassName("ravioli")
+  var tofuOptions = document.getElementsByClassName("tofu")
 
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
@@ -139,6 +227,18 @@ function updateIngredients(){
   var granolaValue = parseFloat(document.getElementById("granola").innerHTML);
   var nutsValue = parseFloat(document.getElementById("nuts").innerHTML);
   var barsValue = parseFloat(document.getElementById("bars").innerHTML);
+  var tunaValue = parseFloat(document.getElementById("tuna").innerHTML);
+  var crackersValue = parseFloat(document.getElementById("crackers").innerHTML);
+  var juiceValue = parseFloat(document.getElementById("juice").innerHTML);
+  var vegValue = parseFloat(document.getElementById("veg").innerHTML);
+  var chilliValue = parseFloat(document.getElementById("chilli").innerHTML);
+  var beefValue = parseFloat(document.getElementById("beef").innerHTML);
+  var ravioliValue = parseFloat(document.getElementById("ravioli").innerHTML);
+  var beefValue = parseFloat(document.getElementById("beef").innerHTML);
+  var tofuValue = parseFloat(document.getElementById("tofu").innerHTML);
+
+
+
 
 
    // Reset the ingredient values
@@ -148,6 +248,14 @@ function updateIngredients(){
   var fruitValue = 0;
   var nutsValue = 0;
   var barsValue = 0;
+   var tunaValue = 0;
+   var crackersValue = 0;
+   var juiceValue = 0;
+   var vegValue = 0;
+   var chilliValue = 0;
+   var beefValue = 0;
+   var ravioliValue = 0;
+   var tofuValue = 0;
 
   // Check if any "select" option is selected
 var isSelectSelected = false;
@@ -188,6 +296,81 @@ for (var i = 0; i < cmgOptions.length; i++) {
  
 }
 
+for (var i = 0; i < tunaOptions.length; i++) {
+  var option = tunaOptions[i];
+  if (option.value === "Tuna and Crackers Combo" && option.selected) {
+    isSelectSelected = true;
+    tunaValue +=  1;
+    crackersValue += 0.5;
+    vegValue += 0.5;
+    juiceValue += 1;
+  }
+ 
+}
+
+for (var i = 0; i < chilliOptions.length; i++) {
+  var option = chilliOptions[i];
+  if (option.value === "Chilli and Crackers Delight" && option.selected) {
+    isSelectSelected = true;
+    chilliValue +=  1;
+    crackersValue += 0.5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+ 
+}
+
+for (var i = 0; i < beefOptions.length; i++) {
+  var option = beefOptions[i];
+  if (option.value === "Beef Stew and Crackers Combo" && option.selected) {
+    isSelectSelected = true;
+    beefValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+
+for (var i = 0; i < ravioliOptions.length; i++) {
+  var option = ravioliOptions[i];
+  if (option.value === "Ravioli with Fruits and Crackers" && option.selected) {
+    isSelectSelected = true;
+    ravioliValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+for (var i = 0; i < tofuOptions.length; i++) {
+  var option = tofuOptions[i];
+  if (option.value === "Ravioli with Fruits and Crackers" && option.selected) {
+    isSelectSelected = true;
+    tofuValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+for (var i = 0; i < tofuOptions.length; i++) {
+  var option = tofuOptions[i];
+  if (option.value === "Tofu with Veggies and Crackers" && option.selected) {
+    isSelectSelected = true;
+    tofuValue +=  1;
+    crackersValue += .5;
+    fruitValue += 0.5;
+    juiceValue += 1;
+  }
+}
+
+
+
+
+
+
+
 // Update the ingredient values or display nothing
 
 
@@ -196,6 +379,14 @@ document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * (
 document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("nuts").textContent = isSelectSelected ? (nutsValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("bars").textContent = isSelectSelected ? (barsValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("tuna").textContent = isSelectSelected ? (tunaValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("crackers").textContent = isSelectSelected ? (crackersValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("juice").textContent = isSelectSelected ? (juiceValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("veg").textContent = isSelectSelected ? (vegValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("chilli").textContent = isSelectSelected ? (chilliValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
 // loadDemo()
 }
 
@@ -481,11 +672,32 @@ function decreaseOthers() {
      });
   //download PDF code ends
 
-   function giveFeedback (){
+   function giveFeedback(){
 
     window.location.href="./feedback.html";
 
   };
 
+  function displayrows(){
+   // Get all the table rows
+const tableRows = document.querySelectorAll("table tbody tr");
+
+// Loop through each row
+tableRows.forEach((row) => {
+  // Get the quantity cell in the current row
+  const quantityCell = row.querySelector("td.h5");
   
+  // Get the quantity value
+  const quantityValue = parseFloat(quantityCell.textContent);
+  
+  // Check if the quantity value is higher than 0
+  if (quantityValue > 0) {
+    // Display the row
+    row.style.display = "";
+  } else {
+    // Hide the row
+    row.style.display = "none";
+  }
+});
+}
 
