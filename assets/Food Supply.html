@@ -382,7 +382,7 @@
 
     
     <!--Main meal Option begins-->
-    <div class="container rcorners p-3 shadow bg-white mb-5">
+    <div class="container-fluid rcorners p-3 shadow bg-white mb-5">
       <h1 class="txtBlu font-weight-bold text-center">3 Day Meal Planner</h1>
       <hr class="my-4 mx-5" >
       <div class="row">
@@ -430,10 +430,10 @@
             <label for="day1-snack-select" class="form-label">Snack:</label>
             <select id="day1-snack-select" class="form-select" onchange="inputIngredients('day1', 'snack'), showIngredients('day1', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
-              <option value="Granola Bar">Granola Bar</option>
-              <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option value="Crackers">Crackers</option>
-              <option value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+              <option class ="select snackC" value="Crackers">Crackers</option>
+              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
               <option value="None">None</option>
             </select>
             <p id="day1-snack-ingredients" class="p-2"></p>
@@ -485,10 +485,11 @@
             <label for="day2-snack-select" class="form-label">Snack:</label>
             <select id="day2-snack-select" class="form-select" onchange="inputIngredients('day2', 'snack'), showIngredients('day2', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
-              <option value="Granola Bar">Granola Bar</option>
-              <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option value="Crackers">Crackers</option>
-              <option value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+              <option class ="select snackC" value="Crackers">Crackers</option>
+              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day2-snack-ingredients" class="p-2"></p>
           </div>
@@ -539,10 +540,11 @@
             <label for="day3-snack-select" class="form-label">Snack:</label>
             <select id="day3-snack-select" class="form-select" onchange="inputIngredients('day3', 'snack'), showIngredients('day3', 'snack'), displayrows()">
               <option value="" selected disabled>Select a Snack Option</option>
-              <option value="Granola Bar">Granola Bar</option>
-              <option value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option value="Crackers">Crackers</option>
-              <option value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+              <option class ="select snackC" value="Crackers">Crackers</option>
+              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+              <option value="None">None</option>
             </select>
             <p id="day3-snack-ingredients" class="p-2"></p>
           </div>
@@ -806,7 +808,7 @@
 
 
 
-            <!--Family-Size jar of peanut butter starts-->
+            <!-- peanut butter starts-->
             <tr >
               <th scope="col">
                 

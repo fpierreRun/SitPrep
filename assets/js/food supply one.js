@@ -41,6 +41,11 @@ function inputIngredients(day, meal) {
   var beefOptions = document.getElementsByClassName("beef");
   var ravioliOptions = document.getElementsByClassName("ravioli");
   var tofuOptions = document.getElementsByClassName("tofu");
+  var snackGbOptions = document.getElementsByClassName("snackGb");
+  var snackNdfOptions = document.getElementsByClassName("snackNdf");
+  var snackCOptions = document.getElementsByClassName("snackC");
+  var snackPbcOptions = document.getElementsByClassName("snackPbc");
+
 
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
@@ -67,6 +72,7 @@ function inputIngredients(day, meal) {
   var beefValue = 0;
   var ravioliValue = 0;
   var tofuValue = 0;
+  var pbValue = 0;
 
 
 // Check if any "select" option is selected
@@ -163,6 +169,39 @@ for (var i = 0; i < tofuOptions.length; i++) {
 }
 
 
+for (var i = 0; i < snackGbOptions.length; i++) {
+  var option = snackGbOptions[i];
+  if (option.value === "Granola Bar" && option.selected) {
+    isSelectSelected = true;
+    barsValue += 1;
+  }
+}
+
+for (var i = 0; i < snackNdfOptions.length; i++) {
+  var option = snackNdfOptions[i];
+  if (option.value === "Nuts or Dried Fruits" && option.selected) {
+    isSelectSelected = true;
+    nutsValue += 0.25;
+  }
+}
+
+for (var i = 0; i < snackCOptions.length; i++) {
+  var option = snackCOptions[i];
+  if (option.value === "Crackers" && option.selected) {
+    isSelectSelected = true;
+    crackersValue += .5;
+  }
+}
+
+for (var i = 0; i < snackPbcOptions.length; i++) {
+  var option = snackPbcOptions[i];
+  if (option.value === "Peanut Butter and Crackers" && option.selected) {
+    isSelectSelected = true;
+    crackersValue += .5;
+    pbValue += 1;
+  }
+}
+
 
 
 
@@ -182,6 +221,7 @@ document.getElementById("chilli").textContent = isSelectSelected ? (chilliValue)
 document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("pb").textContent = isSelectSelected ? (pbValue) * ((adultsCount)+(kidsCount)) : "";
 loadDemo()
 }
 
@@ -198,6 +238,10 @@ function updateIngredients(){
   var beefOptions = document.getElementsByClassName("beef");
   var ravioliOptions = document.getElementsByClassName("ravioli")
   var tofuOptions = document.getElementsByClassName("tofu")
+  var snackGbOptions = document.getElementsByClassName("snackGb");
+  var snackNdfOptions = document.getElementsByClassName("snackNdf");
+  var snackCOptions = document.getElementsByClassName("snackC");
+  var snackPbcOptions = document.getElementsByClassName("snackPbc");
 
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
@@ -236,6 +280,7 @@ function updateIngredients(){
   var ravioliValue = parseFloat(document.getElementById("ravioli").innerHTML);
   var beefValue = parseFloat(document.getElementById("beef").innerHTML);
   var tofuValue = parseFloat(document.getElementById("tofu").innerHTML);
+  var pbValue = parseFloat(document.getElementById("pb").innerHTML);
 
 
 
@@ -256,6 +301,8 @@ function updateIngredients(){
    var beefValue = 0;
    var ravioliValue = 0;
    var tofuValue = 0;
+   var pbValue = 0;
+   
 
   // Check if any "select" option is selected
 var isSelectSelected = false;
@@ -365,8 +412,39 @@ for (var i = 0; i < tofuOptions.length; i++) {
   }
 }
 
+for (var i = 0; i < snackGbOptions.length; i++) {
+  var option = snackGbOptions[i];
+  if (option.value === "Granola Bar" && option.selected) {
+    isSelectSelected = true;
+    barsValue += 1;
+  }
+}
 
 
+for (var i = 0; i < snackNdfOptions.length; i++) {
+  var option = snackNdfOptions[i];
+  if (option.value === "Nuts or Dried Fruits" && option.selected) {
+    isSelectSelected = true;
+    nutsValue += 0.25;
+  }
+}
+
+for (var i = 0; i < snackCOptions.length; i++) {
+  var option = snackCOptions[i];
+  if (option.value === "Crackers" && option.selected) {
+    isSelectSelected = true;
+    crackersValue += .5;
+  }
+}
+
+for (var i = 0; i < snackPbcOptions.length; i++) {
+  var option = snackPbcOptions[i];
+  if (option.value === "Peanut Butter and Crackers" && option.selected) {
+    isSelectSelected = true;
+    crackersValue += .5;
+    pbValue += 1;
+  }
+}
 
 
 
@@ -387,6 +465,7 @@ document.getElementById("chilli").textContent = isSelectSelected ? (chilliValue)
 document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("pb").textContent = isSelectSelected ? (pbValue) * ((adultsCount)+(kidsCount)) : "";
 // loadDemo()
 }
 
