@@ -1,6 +1,6 @@
 var demoData = [];
 var newFood = [];
-var foodList = [];
+
 
 
 

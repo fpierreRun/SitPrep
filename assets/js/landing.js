@@ -16,16 +16,12 @@ function openNameModal(){
 function applyName(){
 
   updatedName = JSON.parse(localStorage.getItem("prfName"));
-  
-  
-   
+
     if(!updatedName){
 
       $('#getName').modal('show'); 
      };
 
-  
-  
 }
 applyName()
 

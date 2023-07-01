@@ -72,8 +72,29 @@
       background-color: var(--secondary-color);
     }
   </style>
+<script>
+  function openReviewPopup() {
+    var reviewUrl = 'https://g.page/r/CcCOilHmZderEAI/review';
+    var popupWindow = window.open(reviewUrl, '_blank');
+    if (popupWindow) {
+      // Focus back on your website after the review link is clicked
+      popupWindow.focus();
+      // Close the popup window after a delay (adjust the delay as needed)
+      setTimeout(function() {
+        popupWindow.close();
+      }, 3000);
+    } else {
+      // If the popup window fails to open, redirect users to the review link directly
+      window.location.href = reviewUrl;
+    }
+    return false;
+  }
+</script>
+
 </head>
 <body>
+
+  <a href="#" onclick="openReviewPopup()">Leave a Google Review</a>
   <div class="container">
     <h1>Amazon Checkout</h1>
 

@@ -2,11 +2,15 @@ var demoData = [];
 var newFood = [];
 var foodList = [];
 
+//add color to drop down aftewr slected
+
 var selectElements = document.querySelectorAll("select");
 selectElements.forEach(function(selectElement) {
   selectElement.addEventListener("change", function() {
-    selectElement.classList.add("orgOppate");
-    selectElement.classList.add("text-success");
+    selectElement.classList.add("dropSelected");
+    selectElement.classList.add("text-white");
+    selectElement.classList.add("font-weight-bold");
+    selectElement.classList.add("robotoFnt");
   });
 });
 
@@ -56,6 +60,11 @@ function inputIngredients(day, meal) {
 
   var adultsCount = element.adults;
   var kidsCount = element.kids * .5;
+  var petsCount = element.pets;
+  var infantsCount = element.infants;
+  var dogsCount = element.dogs;
+  var catsCount = element.cats;
+
   
 
   // Reset the ingredient values
@@ -119,6 +128,7 @@ for (var i = 0; i < tunaOptions.length; i++) {
     tunaValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
  
@@ -131,6 +141,7 @@ for (var i = 0; i < chilliOptions.length; i++) {
     chilliValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -142,6 +153,7 @@ for (var i = 0; i < beefOptions.length; i++) {
     beefValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -153,6 +165,7 @@ for (var i = 0; i < ravioliOptions.length; i++) {
     ravioliValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -164,6 +177,7 @@ for (var i = 0; i < tofuOptions.length; i++) {
     tofuValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -208,6 +222,7 @@ for (var i = 0; i < snackPbcOptions.length; i++) {
 
 
 // Update the ingredient values or display nothing
+document.getElementById("water").textContent = (3) * ((adultsCount)+(kidsCount)+(petsCount)+(catsCount)+(dogsCount));
 document.getElementById("granola").textContent = isSelectSelected ? (granolaValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
@@ -222,6 +237,12 @@ document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * (
 document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("pb").textContent = isSelectSelected ? (pbValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("petFood").textContent = (3) * ((petsCount));babyFormula
+document.getElementById("babyFormula").textContent = (3) * ((infantsCount));
+document.getElementById("dogFood").textContent = (3) * ((dogsCount));
+document.getElementById("catFood").textContent = (3) * ((catsCount));
+document.getElementById("babyFood").textContent = (3) * ((infantsCount));
+// loadDemo()
 loadDemo()
 }
 
@@ -257,15 +278,24 @@ function updateIngredients(){
         document.getElementById("infants").value= element.infants;
         document.getElementById("kids").value= element.kids;
         document.getElementById("adults").value= element.adults;
+        document.getElementById("pets").value= element.pets;
+        document.getElementById("cats").value= element.cats;
+        document.getElementById("dogs").value= element.dogs;
+      
   }
 
 
   var adultsCount = parseFloat(document.getElementById("adults").value);
   var kidsCount = parseFloat(document.getElementById("kids").value) * .5;
+  var infantsCount = parseFloat(document.getElementById("infants").value);
+  var petsCount = parseFloat(document.getElementById("pets").value);
+  var catsCount = parseFloat(document.getElementById("cats").value);
+  var dogsCount = parseFloat(document.getElementById("dogs").value);
+  
  
  
 
-  var gowValue = parseFloat(document.getElementById("gow").innerHTML);
+  var WaterValue = parseFloat(document.getElementById("water").innerHTML);
   var milkValue = parseFloat(document.getElementById("milk").innerHTML);
   var fruitValue = parseFloat(document.getElementById("fruit").innerHTML);
   var granolaValue = parseFloat(document.getElementById("granola").innerHTML);
@@ -281,13 +311,20 @@ function updateIngredients(){
   var beefValue = parseFloat(document.getElementById("beef").innerHTML);
   var tofuValue = parseFloat(document.getElementById("tofu").innerHTML);
   var pbValue = parseFloat(document.getElementById("pb").innerHTML);
+  // var petsValue = parseFloat(document.getElementById("petFood").innerHTML);
+  // var infantsValue = parseFloat(document.getElementById("babyFormula").innerHTML);
+  // var dogsValue = parseFloat(document.getElementById("dogFood").innerHTML);
+  // var catsValue = parseFloat(document.getElementById("babyFormula").innerHTML);
+  // var dogsValue = parseFloat(document.getElementById("babyFood").innerHTML);
+ 
+  
 
 
 
 
 
    // Reset the ingredient values
-   var gowValue = 0;
+  
   var granolaValue = 0;
   var milkValue = 0;
   var fruitValue = 0;
@@ -349,6 +386,7 @@ for (var i = 0; i < tunaOptions.length; i++) {
     isSelectSelected = true;
     tunaValue +=  1;
     crackersValue += 0.5;
+    fruitValue += 0.5;
     vegValue += 0.5;
     juiceValue += 1;
   }
@@ -361,6 +399,7 @@ for (var i = 0; i < chilliOptions.length; i++) {
     isSelectSelected = true;
     chilliValue +=  1;
     crackersValue += 0.5;
+    vegValue += 0.5;
     fruitValue += 0.5;
     juiceValue += 1;
   }
@@ -373,6 +412,7 @@ for (var i = 0; i < beefOptions.length; i++) {
     isSelectSelected = true;
     beefValue +=  1;
     crackersValue += .5;
+    vegValue += 0.5;
     fruitValue += 0.5;
     juiceValue += 1;
   }
@@ -386,6 +426,7 @@ for (var i = 0; i < ravioliOptions.length; i++) {
     ravioliValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -397,6 +438,7 @@ for (var i = 0; i < tofuOptions.length; i++) {
     tofuValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -408,6 +450,7 @@ for (var i = 0; i < tofuOptions.length; i++) {
     tofuValue +=  1;
     crackersValue += .5;
     fruitValue += 0.5;
+    vegValue += 0.5;
     juiceValue += 1;
   }
 }
@@ -451,7 +494,7 @@ for (var i = 0; i < snackPbcOptions.length; i++) {
 
 // Update the ingredient values or display nothing
 
-
+document.getElementById("water").textContent = (3) * ((adultsCount)+(kidsCount)+(petsCount)+(catsCount)+(dogsCount));
 document.getElementById("granola").textContent = isSelectSelected ? (granolaValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("milk").textContent = isSelectSelected ? (milkValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("fruit").textContent = isSelectSelected ? (fruitValue) * ((adultsCount)+(kidsCount)) : "";
@@ -466,6 +509,11 @@ document.getElementById("beef").textContent = isSelectSelected ? (beefValue) * (
 document.getElementById("ravioli").textContent = isSelectSelected ? (ravioliValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("tofu").textContent = isSelectSelected ? (tofuValue) * ((adultsCount)+(kidsCount)) : "";
 document.getElementById("pb").textContent = isSelectSelected ? (pbValue) * ((adultsCount)+(kidsCount)) : "";
+document.getElementById("petFood").textContent = (3) * ((petsCount));
+document.getElementById("babyFormula").textContent = (3) * ((infantsCount));
+document.getElementById("dogFood").textContent = (3) * ((dogsCount));
+document.getElementById("catFood").textContent = (3) * ((catsCount));
+document.getElementById("babyFood").textContent = (3) * ((infantsCount));
 // loadDemo()
 }
 
@@ -479,7 +527,7 @@ function saveDemo() {
   kids = document.getElementById("kids").value
   dogs = document.getElementById("dogs").value
   cats = document.getElementById("cats").value
-  others = document.getElementById("others").value
+  pets = document.getElementById("pets").value
 
   //Object for form data
   var demoDataObj = {
@@ -492,7 +540,7 @@ function saveDemo() {
       //  Pets
       dogs: dogs,
       cats: cats,
-      others: others,
+      pets: pets,
 
   };
   
@@ -598,7 +646,7 @@ function refreshpageFood() {
     
             document.getElementById("dogs").value= element.dogs;
             document.getElementById("cats").value= element.cats;
-            document.getElementById("others").value= element.others;
+            // document.getElementById("pets").value= element.pets;
 
         };
         updateIngredients();
@@ -693,14 +741,14 @@ function decreaseCats() {
 };
 
 //other pets Value Change buttons Function 
-function increaseOthers() {
-  var input = document.getElementById("others");
+function increasePets() {
+  var input = document.getElementById("pets");
   input.value = parseInt(input.value) + 1;
   saveDemo()
 }
 
-function decreaseOthers() {
-  var input = document.getElementById("others");
+function decreasePets() {
+  var input = document.getElementById("pets");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
@@ -752,8 +800,8 @@ function decreaseOthers() {
   //download PDF code ends
 
    function giveFeedback(){
-
-    window.location.href="./feedback.html";
+    window.open("https://g.page/r/CcCOilHmZderEAI/review", "_blank");
+    // window.location.href="https://g.page/r/CcCOilHmZderEAI/review";
 
   };
 

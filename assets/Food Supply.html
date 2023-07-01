@@ -44,9 +44,20 @@
             padding: 0.5rem;
           }
         </style>
+
+        <script>
+          // Get all the anchor tags with the class "bgAmazon"
+          const amazonLinks = document.querySelectorAll("a.bgAmazon");
+            
+          // Loop through each anchor tag
+          amazonLinks.forEach(link => {
+            // Add the class "phone-block" to its parent element
+            link.parentNode.classList.add("phone-block");
+          });
+        </script>
       </head>
 
-<body class=" bg-light">
+<body >
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZDLN5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -90,7 +101,7 @@
   
                           <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             
-                            <p class="h4 text-white pb-2">3 Day Plan</p>
+                            <p class="h4 font-weight-bold text-white pb-2">3 Day Plan</p>
   
                             <div  class="pl-2 d-flex txtOppate ">
                               <span class="material-icons pr-3 txtOppate">
@@ -122,7 +133,7 @@
                               <span class="material-icons pr-3 text-white">
                                 kitchen
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "   href="./Food Supply.html" role="tab" >Food Supply</a>
+                              <a class="font-weight-bold pl-2 text-white d-flex btn "   href="./Food Supply.html" role="tab" >Food Supply</a>
                               
                             </div>
 
@@ -242,7 +253,7 @@
     
         <div class="text-center col-lg-4">
           <div class="">
-            <label class="mt-2"><span class="infantTxt material-symbols-rounded">breastfeeding</span>(Age Up to 12 months)</label><br>
+            <label class="mt-2 font-weight-bolder txtBlu"><span class="infantTxt material-symbols-rounded">breastfeeding</span>(Age Up to 12 months)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2 text-center">
@@ -255,7 +266,7 @@
     
         <div class="col-lg-4 mb-3">
           <div class="text-center">
-            <label class="mt-2"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age Under 12)</label><br>
+            <label class="mt-2 font-weight-bolder txtBlu"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age Under 12)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2">
@@ -267,7 +278,7 @@
     
         <div class="col-lg-4">
           <div class="text-center">
-            <span class="adultsTxt material-symbols-rounded mr-2">diversity_3</span><label class="mt-2">(Age 12 and above)</label><br>
+            <span class="adultsTxt material-symbols-rounded mr-2">diversity_3</span><label class="mt-2  font-weight-bolder txtBlu">(Age 12 and above)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2">
@@ -285,7 +296,7 @@
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Dogs</label><br>
+              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Dogs</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
@@ -298,7 +309,7 @@
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Cats</label><br>
+              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Cats</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
@@ -311,13 +322,13 @@
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Other Pets</label><br>
+              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Other Pets</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
-              <button type="button" class="btn btn-light text-dark rounded-circle  shadow-sm" onclick="decreaseOthers()">-</button>
-              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="others" type="number" value="0" min="0" oninput="saveDemo()"></input>
-              <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increaseOthers()">+</button>
+              <button type="button" class="btn btn-light text-dark rounded-circle  shadow-sm" onclick="decreasePets()">-</button>
+              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="pets" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increasePets()">+</button>
             </div>
     
           </div>
@@ -343,19 +354,19 @@
 
 
 <!-- Food Table Begins-->
-<div id="downloadPlan">
-<section  id="foodtable" style="display: none;">
-    <div class="rcorners p-3 shadow bg-white mb-5">
+<div >
+<section  id="foodtable" style="display: block;">
+    <div class="rcorners p-3 shadow grnOppate mb-5">
       <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
       <hr class="my-4 mx-5" >
       <p class="text-center h5 robotoFnt text-muted font-weight-normal" id="element-to-hide" data-html2canvas-ignore="true">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
         specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
         as needed. </p>
 
-        <p class=" text-muted my-3">Disclosure: SitPrep is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we may earn a small commission from qualifying purchases. This comes at no additional cost to you and helps us continue to provide informative content. Thank you for your support! 
+        <p class=" text-muted my-3 text-center"><span class="font-weight-bold">Disclosure: </span>SitPrep is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we may earn a small commission from qualifying purchases. This comes at no additional cost to you and helps us continue to provide informative content. Thank you for your support! 
         </p>
       
-        <div class="container my-3" id="element-to-hide" data-html2canvas-ignore="true">
+        <!-- <div class="container my-3" id="element-to-hide" data-html2canvas-ignore="true">
         <div class="row">
           <div class="d-flex">
         
@@ -365,7 +376,7 @@
             <label class="col-3" style="color:#FFC107;"><img src="./images/Pets.png" alt=""> Pets</label>
         </div>
       </div>
-    </div>
+    </div> -->
 
       <!-- <div class="text-center row my-5" id="next2">
         <div>
@@ -379,186 +390,218 @@
           
     </div> 
 
-
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <a class="nav-link active" id="customize-tab" data-toggle="tab" href="#customize">Customize</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="prepackaged-tab" data-toggle="tab" href="#prepackaged">Prepackaged</a>
+      </li>
+    </ul>
+  <!--Meal options begin-->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="customize">
+        <div class="container-fluid rcorners bg-white p-3 shadow mb-5">
+          <h1 class="txtBlu font-weight-bold text-center">3 Day Meal Planner</h1>
+          <hr class="my-4 mx-5">
+          <div class="row">
+            <div class="col-md-4">
+                <div class="d-flex">
+                  <h2 class=" txtBlu mr-3 mt-4">Day 1</h2>
+                  <img src="./images/Food 1.png" alt="image of food" style="width: 100px; height: 100px;">
+              </div>
+              <div class="mb-3">
+                <label for="day1-breakfast-select" class="form-label">Breakfast:</label>
+                <select id="day1-breakfast-select" class="form-select shadow-sm " onchange="inputIngredients('day1', 'breakfast'), showIngredients('day1', 'breakfast'), displayrows()">
+                  <option value="" selected disabled>Select a Breakfast Option</option>
+                  <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+                  <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+                  <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+                  <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day1-breakfast-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day1-lunch-select" class="form-label">Lunch:</label>
+                <select id="day1-lunch-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'lunch'), showIngredients('day1', 'lunch'), displayrows()  ">
+                  <option value="" selected disabled>Select a Lunch</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day1-lunch-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day1-dinner-select" class="form-label">Dinner:</label>
+                <select id="day1-dinner-select" class="form-select" onchange="inputIngredients('day1', 'dinner'), showIngredients('day1', 'dinner'), displayrows() ">
+                  <option value="" selected disabled>Select a Dinner</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day1-dinner-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day1-snack-select" class="form-label">Snack:</label>
+                <select id="day1-snack-select" class="form-select" onchange="inputIngredients('day1', 'snack'), showIngredients('day1', 'snack'), displayrows()">
+                  <option value="" selected disabled>Select a Snack Option</option>
+                  <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+                  <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+                  <option class ="select snackC" value="Crackers">Crackers</option>
+                  <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day1-snack-ingredients" class="p-2"></p>
+              </div>
+            </div>
+           
+           
+            <div class="col-md-4">
+              <div class="d-flex ">
+                <h2 class=" txtBlu mr-3 mt-4">Day 2</h2>
+                <img src="./images/Food 2.png" alt="image of food" style="width: 100px; height: 100px;">
+            </div>
+             
+              <div class="mb-3">
+                <label for="day2-breakfast-select" class="form-label">Breakfast:</label>
+                <select id="day2-breakfast-select" class="form-select" onchange="inputIngredients('day2', 'breakfast'), showIngredients('day2', 'breakfast'), displayrows()">
+                  <option value="" selected disabled>Select a Breakfast Option</option>
+                  <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+                  <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+                  <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+                  <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day2-breakfast-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day2-lunch-select" class="form-label">Lunch:</label>
+                <select id="day2-lunch-select" class="form-select" onchange="inputIngredients('day2', 'lunch'), showIngredients('day2', 'lunch'), displayrows()">
+                  <option value="" selected disabled>Select a Lunch Option</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day2-lunch-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day2-dinner-select" class="form-label">Dinner:</label>
+                <select id="day2-dinner-select" class="form-select" onchange="inputIngredients('day2', 'dinner'), showIngredients('day2', 'dinner'), displayrows()">
+                  <option value="" selected disabled>Select a Dinner Option</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day2-dinner-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day2-snack-select" class="form-label">Snack:</label>
+                <select id="day2-snack-select" class="form-select" onchange="inputIngredients('day2', 'snack'), showIngredients('day2', 'snack'), displayrows()">
+                  <option value="" selected disabled>Select a Snack Option</option>
+                  <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+                  <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+                  <option class ="select snackC" value="Crackers">Crackers</option>
+                  <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day2-snack-ingredients" class="p-2"></p>
+              </div>
+            </div>
     
-    <!--Main meal Option begins-->
-    <div class="container-fluid rcorners p-3 shadow bg-white mb-5">
-      <h1 class="txtBlu font-weight-bold text-center">3 Day Meal Planner</h1>
-      <hr class="my-4 mx-5" >
-      <div class="row">
-        <div class="col-md-4">
-          <h2 class="font-weight-bold txtGrn">Day 1</h2>
-          <div class="mb-3">
-            <label for="day1-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day1-breakfast-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'breakfast'), showIngredients('day1', 'breakfast'), displayrows()">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-              <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day1-breakfast-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day1-lunch-select" class="form-label">Lunch:</label>
-            <select id="day1-lunch-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'lunch'), showIngredients('day1', 'lunch'), displayrows()  ">
-              <option value="" selected disabled>Select a Lunch</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day1-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day1-dinner-select" class="form-label">Dinner:</label>
-            <select id="day1-dinner-select" class="form-select" onchange="inputIngredients('day1', 'dinner'), showIngredients('day1', 'dinner'), displayrows() ">
-              <option value="" selected disabled>Select a Dinner</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day1-dinner-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day1-snack-select" class="form-label">Snack:</label>
-            <select id="day1-snack-select" class="form-select" onchange="inputIngredients('day1', 'snack'), showIngredients('day1', 'snack'), displayrows()">
-              <option value="" selected disabled>Select a Snack Option</option>
-              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
-              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option class ="select snackC" value="Crackers">Crackers</option>
-              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day1-snack-ingredients" class="p-2"></p>
-          </div>
-        </div>
-       
-       
-        <div class="col-md-4">
-          <h2 class="font-weight-bold txtGrn">Day 2</h2>
-          <div class="mb-3">
-            <label for="day2-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day2-breakfast-select" class="form-select" onchange="inputIngredients('day2', 'breakfast'), showIngredients('day2', 'breakfast'), displayrows()">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-              <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day2-breakfast-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day2-lunch-select" class="form-label">Lunch:</label>
-            <select id="day2-lunch-select" class="form-select" onchange="inputIngredients('day2', 'lunch'), showIngredients('day2', 'lunch'), displayrows()">
-              <option value="" selected disabled>Select a Lunch Option</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day2-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day2-dinner-select" class="form-label">Dinner:</label>
-            <select id="day2-dinner-select" class="form-select" onchange="inputIngredients('day2', 'dinner'), showIngredients('day2', 'dinner'), displayrows()">
-              <option value="" selected disabled>Select a Dinner Option</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day2-dinner-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day2-snack-select" class="form-label">Snack:</label>
-            <select id="day2-snack-select" class="form-select" onchange="inputIngredients('day2', 'snack'), showIngredients('day2', 'snack'), displayrows()">
-              <option value="" selected disabled>Select a Snack Option</option>
-              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
-              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option class ="select snackC" value="Crackers">Crackers</option>
-              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day2-snack-ingredients" class="p-2"></p>
-          </div>
-        </div>
+    
+            <div class="col-md-4">
+              <div class="d-flex">
+                <h2 class=" txtBlu mr-3 mt-4">Day 3</h2>
+                <img src="./images/Food 3.png" alt="image of food" style="width: 100px; height: 100px;">
+            </div>
+             
+              
+              <div class="mb-3">
+                <label for="day3-breakfast-select" class="form-label">Breakfast:</label>
+                <select id="day3-breakfast-select" class="form-select" onchange="inputIngredients('day3', 'breakfast'), showIngredients('day3', 'breakfast'), displayrows()">
+                  <option value="" selected disabled>Select a Breakfast Option</option>
+                  <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
+                  <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
+                  <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
+                  <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day3-breakfast-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day3-lunch-select" class="form-label">Lunch:</label>
+                <select id="day3-lunch-select" class="form-select" onchange="inputIngredients('day3', 'lunch'), showIngredients('day3', 'lunch'), displayrows()">
+                  <option value="" selected disabled>Select a Lunch Option</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day3-lunch-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day3-dinner-select" class="form-label">Dinner:</label>
+                <select id="day3-dinner-select" class="form-select" onchange="inputIngredients('day3', 'dinner'), showIngredients('day3', 'dinner'), displayrows()">
+                  <option value="" selected disabled>Select a Dinner Option</option>
+                  <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
+                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
+                  <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
+                  <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day3-dinner-ingredients" class="p-2"></p>
+              </div>
+              <div class="mb-3">
+                <label for="day3-snack-select" class="form-label">Snack:</label>
+                <select id="day3-snack-select" class="form-select" onchange="inputIngredients('day3', 'snack'), showIngredients('day3', 'snack'), displayrows()">
+                  <option value="" selected disabled>Select a Snack Option</option>
+                  <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
+                  <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
+                  <option class ="select snackC" value="Crackers">Crackers</option>
+                  <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
+                  <option value="None">None</option>
+                </select>
+                <p id="day3-snack-ingredients" class="p-2"></p>
+              </div>
+            </div>
 
+            <!--Meal options ends-->
 
-        <div class="col-md-4">
-          <h2 class="font-weight-bold txtGrn">Day 3</h2>
-          <div class="mb-3">
-            <label for="day3-breakfast-select" class="form-label">Breakfast:</label>
-            <select id="day3-breakfast-select" class="form-select" onchange="inputIngredients('day3', 'breakfast'), showIngredients('day3', 'breakfast'), displayrows()">
-              <option value="" selected disabled>Select a Breakfast Option</option>
-              <option class="select cmf" value="Cereal with Milk and Fruit">Cereal with Milk and Fruit</option>
-              <option class="select cmn" value="Cereal with Milk, Fruit, and Nuts">Cereal with Milk, Fruit, and Nuts</option>
-              <option class="select cmg" value="Cereal with Milk, Fruit, and Granola Bar">Cereal with Milk, Fruit, and Granola Bar</option>
-              <option class="select cmp" value="Cereal with Milk, Fruit, and Peanut Butter">Cereal with Milk, Fruit, and Peanut Butter</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day3-breakfast-ingredients" class="p-2"></p>
+            
+            <!--Go to printable page-->
           </div>
-          <div class="mb-3">
-            <label for="day3-lunch-select" class="form-label">Lunch:</label>
-            <select id="day3-lunch-select" class="form-select" onchange="inputIngredients('day3', 'lunch'), showIngredients('day3', 'lunch'), displayrows()">
-              <option value="" selected disabled>Select a Lunch Option</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day3-lunch-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day3-dinner-select" class="form-label">Dinner:</label>
-            <select id="day3-dinner-select" class="form-select" onchange="inputIngredients('day3', 'dinner'), showIngredients('day3', 'dinner'), displayrows()">
-              <option value="" selected disabled>Select a Dinner Option</option>
-              <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-              <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
-              <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
-              <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
-              <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day3-dinner-ingredients" class="p-2"></p>
-          </div>
-          <div class="mb-3">
-            <label for="day3-snack-select" class="form-label">Snack:</label>
-            <select id="day3-snack-select" class="form-select" onchange="inputIngredients('day3', 'snack'), showIngredients('day3', 'snack'), displayrows()">
-              <option value="" selected disabled>Select a Snack Option</option>
-              <option class ="select snackGb" value="Granola Bar">Granola Bar</option>
-              <option class ="select snackNdf" value="Nuts or Dried Fruits">Nuts or Dried Fruits</option>
-              <option class ="select snackC" value="Crackers">Crackers</option>
-              <option class ="select snackPbc"  value="Peanut Butter and Crackers">Peanut Butter and Crackers</option>
-              <option value="None">None</option>
-            </select>
-            <p id="day3-snack-ingredients" class="p-2"></p>
-          </div>
+              
         </div>
-      </div>
+        <!-- Table begins -->
+     <main class="container-fluid rcorners p-3 shadow bg-white mb-5" id="downloadPlan">
+      <h1 class="txtBlu font-weight-bold text-center mb-4">GROCERY LIST</h1>
+      <div class="py-2 mb-5 d-flex justify-content-center  text-center">
+        <div class=" ">
+          <a class="  btn text-white bgOrg  btn rounded-pill shadow" target="_blank" href="./print_food_supply.html">Download Meal Plan</a>
+        </div>
+         <div class="text-center " id="next2">
+        <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
+          <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success btn_print" type="submit" value="Download Grocery List" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
+        </div> 
     </div>
-
-    <!--Main meal option ends-->
-
-    
-
-
-    <!-- Table begins -->
-      <div class="table-responsive  rcorners shadow" >
+      <div class="table-responsive  rcorners" >
+       
       <table class="table ">
 
         <thead class="table-success">
@@ -568,12 +611,14 @@
             </div>
 
           </th>
-          <th scope="col">QUANTITY</th>
+          <th class="phone-block" scope="col">QUANTITY</th>
+          <th class="d-md-none"scope=" col">QTY</th>
           <th scope="col">UNIT</th>
           <th scope="col">ITEM</th>
           <th scope="col" class="phone-block">DESCRIPTION</th>
           <th scope="col" class="phone-block">PERSONALE</th>
           <th scope="col" id="element-to-hide" data-html2canvas-ignore="true">SHOP ON AMAZON</th>
+        
         </thead>
 
         <tbody table-white>
@@ -589,21 +634,22 @@
               </label>
       
             </th>
-            <td class="text-center h5 font-weight-bolder txtBlu" id="gow"></td>
-            <td>Gallons</td>
-            <td>of water</td>
-            <td class="phone-block">Per Day Per individual</td>
+            <td class="text-center h5 font-weight-bolder txtBlu" id="water"></td>
+            <td>gal.</td>
+            <td class="h6 font-weight-bolder txtBlu">Water</td>
+            <td class="phone-block">Buy containers that enables you quickly and safely to store all the water your family needs in the event of an emergency. Have on hand one gallon of water per day, per person, for drinking and cooking. </td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
               
               <img src="./images/Pets.png" alt="">
             </td>
-            <td id="element-to-hide" data-html2canvas-ignore="true">  
-              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  href="" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
-          </div>
+            <td class="" id="element-to-hide" data-html2canvas-ignore="true">  
+              <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center phone-block" >
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank"  href="https://www.amazon.com/WaterStorageCube-Collapsible-Container-Hurricane-Emergency/dp/B07FVJLYZ4/ref=sr_1_3?keywords=Water%252Bfor%252Bstorage&amp;qid=1687917597&amp;sr=8-3&amp;th=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=0b8d08b33de2632263a94904dbf0ac57&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
+             </div>
             </td>
+    
           </tr>
         <!--Water Row Ends-->  
         
@@ -619,8 +665,8 @@
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="tuna"></td>
             <td>Can(s)</td>
-            <td>of tuna</td>
-            <td class="phone-block">Tuna, Salmon.</td>
+            <td class="h6 font-weight-bolder txtBlu">Tuna or Salmon</td>
+            <td class="phone-block">Most cans hold 5oz. 5oz can serve the average adult per meal and half the amount for a kid.  </td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -629,7 +675,7 @@
             <td   id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/BUMBLE-Chunk-Light-Canned-Protein/dp/B001UP2188/ref=sr_1_1_sspa?crid=397SPIQDMLA79&amp;keywords=tuna&amp;qid=1687918483&amp;sprefix=tuna%252Caps%252C183&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=7f7b8390baf448603381e45e3de96d78&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -646,9 +692,9 @@
          
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="chilli"></td>
-            <td>Can(s)</td>
-            <td>of chilli</td>
-            <td class="phone-block">Chilli</td>
+            <td>Cup</td>
+            <td class="h6 font-weight-bolder txtBlu">Chili</td>
+            <td class="phone-block">The serving size for canned chili is typically around 1 cup or 8 ounces for adults and half the amount for a kid per meal.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -657,7 +703,7 @@
             <td   id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Campbells-Chunky-Soup-Chili-16-3/dp/B0B81VVXW2?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=16a13a088500471e24a02e06ef4464c1&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -674,10 +720,9 @@
          
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="beef"></td>
-            <td>Can(s)</td>
-            <td>of beef stew</td>
-            <td class="phone-block">Tuna, Salmon, Chicken, Raviolis, Chilli, beef stew, Spam
-              corned beef, or tofu or can of beans.</td>
+            <td>Cup</td>
+            <td class="h6 font-weight-bolder txtBlu">Beef Stew</td>
+            <td class="phone-block">The serving size for canned beef stew is typically around 1 cup or 8 ounces for adults and half the amount for a kid per meal.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -686,7 +731,7 @@
             <td   id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Dinty-Moore-Hearty-Meals-15-Ounce/dp/B002UC9I3Q/ref=sr_1_5?crid=10MPL3I676Q2R&amp;keywords=Beef+Stew&amp;qid=1687921395&amp;s=grocery&amp;sprefix=beef+stew%252Cgrocery%252C131&amp;sr=1-5&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=9830ad08edc0e67cf78af5091df0a9a8&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -703,9 +748,9 @@
          
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="ravioli"></td>
-            <td>Can(s)</td>
-            <td>of ravioli</td>
-            <td class="phone-block">Raviolis</td>
+            <td>Cup</td>
+            <td class="h6 font-weight-bolder txtBlu">Ravioli</td>
+            <td class="phone-block">The serving size for Ravioli is typically around 1 cup or 8 ounces for adults and half the amount for a kid per meal.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -714,7 +759,7 @@
             <td   id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Chef-Boyardee-Ravioli-7-5-Ounce-Microwavable/dp/B000MICPSA/ref=sr_1_5?crid=10BXFBXM1KMO8&amp;keywords=Raviolis&amp;qid=1687921774&amp;s=grocery&amp;sprefix=raviolis%252Cgrocery%252C125&amp;sr=1-5&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=809900bec25584c1a3feb8d74fcf1889&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -732,8 +777,8 @@
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="tofu"></td>
             <td>Can(s)</td>
-            <td>of tofu</td>
-            <td class="phone-block">Tofu or can of beans.</td>
+            <td class="h6 font-weight-bolder txtBlu">Tofu</td>
+            <td class="phone-block">The serving size for Tofu is typically around 3 to 4 ounces for adults and half the amount for a kid per meal.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -742,7 +787,7 @@
             <td   id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Mori-Nu-Silken-Tofu-Extra-Ounce/dp/B000LKZ86K/ref=sr_1_2?crid=5RUPS8DTP6WQ&amp;keywords=tofu&amp;qid=1687922198&amp;s=grocery&amp;sprefix=tofu%252Cgrocery%252C134&amp;sr=1-2&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=d93453e35b09f8af09131a8ceddc5b3b&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -760,9 +805,9 @@
       
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="fruit"></td>
-            <td>Can(s)</td>
-            <td>of fruit</td>
-            <td class="phone-block">1 cup per adult, 1/2 cup per child</td>
+            <td>Cup</td>
+            <td class="h6 font-weight-bolder txtBlu">Fruit</td>
+            <td class="phone-block">1/2 cup per adult, 1/4 cup per child per meal</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -771,7 +816,7 @@
             <td  id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c69e7e7b52166020b8a9da23f48c763f&camp=1789&creative=9325&index=grocery&keywords=Canned-fruit-vegetables" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank"  href="https://www.amazon.com/Amazon-Brand-Happy-Mandarin-Orange/dp/B07WYXGQ97?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=8e5d8e18b8e943e0979867d94aeb3a24&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -789,9 +834,9 @@
       
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="veg"></td>
-            <td>Can(s)</td>
-            <td>of canned vegetables</td>
-            <td class="phone-block">4 cups per adult, 2 cups to each child</td>
+            <td>Cup</td>
+            <td class="h6 font-weight-bolder txtBlu">Vegetables</td>
+            <td class="phone-block">1/2 cup per adult, 1/4 cup per child per meal</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -800,7 +845,7 @@
             <td  id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c69e7e7b52166020b8a9da23f48c763f&camp=1789&creative=9325&index=grocery&keywords=Canned-fruit-vegetables" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow"  target="_blank" href="https://www.amazon.com/Amazon-Brand-Happy-Belly-Sweet/dp/B07VKG1TFH?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=eba23572c002943e1d38006e5947a65f&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -820,7 +865,7 @@
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="pb"></td>
               <td>tblsp</td>
-              <td>of peanut butter</td>
+              <td class="h6 font-weight-bolder txtBlu">Peanut Butter</td>
               <td class="phone-block"></td>
               <td class="phone-block">
                 <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -830,7 +875,7 @@
               <td  id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d3389e1871d77ed2aad3f879b4540319&camp=1789&creative=9325&index=grocery&keywords=Family Size- jar-peanut butter-almond butter" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Amazon-Brand-Crunchy-Peanut-Butter/dp/B07KWD9K4C?ref_=ast_sto_dp&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=734d3d7c931a2ce08ba6c9187b641476&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -850,8 +895,8 @@
                   </th>
                   <td  class="text-center h5 font-weight-bolder txtBlu" id="crackers"></td>
                   <td>Ounces</td>
-                  <td>of crackers</td>
-                  <td class="phone-block">salt-free or low- sodium, whole grain crackers</td>
+                  <td class="h6 font-weight-bolder txtBlu">Of Crackers</td>
+                  <td class="phone-block">6 crackers or .5 oz per adult, 3 crackers or .25 oz per child per meal. You can choose salt-free or low- sodium, whole grain crackers.</td>
                   <td class="phone-block">
                     <img src="./images/Adults-Teenagers Circle.png" alt="">
                     <img src="./images/Child-Toddler Circle.png" alt="">
@@ -860,7 +905,7 @@
                   <td id="element-to-hide"  data-html2canvas-ignore="true"> 
                     <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                       
-                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=5651ecf4477f6cd845cba695c9cf2b8a&camp=1789&creative=9325&index=grocery&keywords=15 ounces- boxes of crackers-whole grain-low sodium-salt free" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                      <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Amazon-Brand-Original-Saltine-Crackers/dp/B07WSTZ95G?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=056b038cb180d73b9d576b8def0ceee6&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
                 </div>
                   </td>
                 </tr>
@@ -878,8 +923,8 @@
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="juice"></td>
               <td>Cup(s)</td>
-              <td>bottled or boxed juices</td>
-              <td class="phone-block">8 oz per day per kids and 24 oz per day per adults</td>
+              <td class="h6 font-weight-bolder txtBlu">Bottled or Boxed Juices</td>
+              <td class="phone-block">1 cup per adult, 1/2 cup per child per meal</td>
               <td class="phone-block">
                 <img src="./images/Adults-Teenagers Circle.png" alt="">
                 <img src="./images/Child-Toddler Circle.png" alt="">
@@ -888,7 +933,7 @@
               <td id="element-to-hide"  data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=e0d011e6f8ccb93e4d85ac5dfaeabdb8&camp=1789&creative=9325&index=grocery&keywords=canned-bottled-boxed juices" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank"  href="https://www.amazon.com/Amazon-Brand-Happy-Belly-Concentrate/dp/B07WKLC8CV?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=41e150ac3b606fea3795ec6c3f7ec2e7&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -907,9 +952,9 @@
       
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="milk"></td>
-            <td>8 fl oz </td>
-            <td>of Non-perishable pasteurized milk.  </td>
-            <td class="phone-block">4 oz per kid and 8 oz per day per adult.  This item can be found in 8 fl oz boxes. Reconstituted milk works aswell</td>
+            <td>8fl oz </td>
+            <td class="h6 font-weight-bolder txtBlu">Shelf Stable or Powdered Milk</td>
+            <td class="phone-block">1 cup per adult, 1/2 cup per child per meal. This item can be found in 8 fl oz boxes.</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -918,7 +963,7 @@
             <td id="element-to-hide"  data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=43c0fbcd811d5a6180017fe21494d417&camp=1789&creative=9325&index=grocery&keywords=non-perishable pasteurized milk" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Horizon-Organic-Whole-Ounce-Single/dp/B07MQ6DB8Z?ref_=ast_sto_dp&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=ca76b61b7eed5e92bcc052d194abc3de&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -938,8 +983,8 @@
     </th>
     <td class="text-center h5 font-weight-bolder txtBlu" id="bars"></td>
     <td>Bar(s)</td>
-    <td> of granola or protein </td>
-    <td class="phone-block">3 oz per day per kid and 9 oz per day per adult.</td>
+    <td class="h6 font-weight-bolder txtBlu">Granola or Protein</td>
+    <td class="phone-block">1 bar per adult, 1/2 bar per child per meal.</td>
     <td class="phone-block">
       <img src="./images/Adults-Teenagers Circle.png" alt="">
       <img src="./images/Child-Toddler Circle.png" alt="">
@@ -948,7 +993,7 @@
     <td id="element-to-hide" data-html2canvas-ignore="true"> 
       <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
         
-        <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=2da24c9aba74fd9a92e7bd4421a02a6a&camp=1789&creative=9325&index=grocery&keywords=granola bars-protein bars-dried fruit-nuts" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+        <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Amazon-Brand-Happy-Almond-Granola/dp/B0886WWGCB?ref_=ast_sto_dp&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=97f6295b9b65ae3f96359b2f8ad2f26f&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
   </div>
     </td>
   </tr>
@@ -968,8 +1013,8 @@
             </th>
             <td class="text-center h5 font-weight-bolder txtBlu" id="nuts"></td>
             <td>Cup(s)</td>
-            <td>  of dried fruits or nuts</td>
-            <td class="phone-block">3 oz per day per kid and 9 oz per day per adult.</td>
+            <td class="h6 font-weight-bolder txtBlu">Dried Fruits or Nuts</td>
+            <td class="phone-block">1/4 cup per individual</td>
             <td class="phone-block">
               <img src="./images/Adults-Teenagers Circle.png" alt="">
               <img src="./images/Child-Toddler Circle.png" alt="">
@@ -978,7 +1023,7 @@
             <td id="element-to-hide" data-html2canvas-ignore="true"> 
               <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                 
-                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=2da24c9aba74fd9a92e7bd4421a02a6a&camp=1789&creative=9325&index=grocery&keywords=granola bars-protein bars-dried fruit-nuts" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/Amazon-Brand-Happy-Belly-Cranberry/dp/B071XFHZNR?ref_=ast_sto_dp&amp;th=1&amp;psc=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=4d5b09af4f73c990fd1e447ceca6971d&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
           </div>
             </td>
           </tr>
@@ -997,7 +1042,7 @@
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="granola"></td>
               <td>Cup(s)</td>
-              <td>of dry cereal or granola</td>
+              <td class="h6 font-weight-bolder txtBlu">Dry Cereal or Granola</td>
               <td class="phone-block"></td>
               <td class="phone-block">
                 <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -1007,7 +1052,7 @@
               <td id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center"  id="element-to-hide"  data-html2canvas-ignore="true">
                   
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=bcbdc63e412f4d9d0e1d8b0360ebf0c1&camp=1789&creative=9325&index=grocery&keywords=Family Size-dry cereal-granola" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=bcbdc63e412f4d9d0e1d8b0360ebf0c1&camp=1789&creative=9325&index=grocery&keywords=Family Size-dry cereal-granola" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -1025,7 +1070,8 @@
                  
                 </th>
                 <td class="text-center h5 font-weight-bolder txtBlu" id="aVitamins"></td>
-                <td>Adult Vitamins</td>
+                <td>Cup(s)</td>
+                <td class="h6 font-weight-bolder txtBlu">Adult Vitamins</td>
                 <td class="phone-block">Capsul or pill per day per adult</td>
                 <td class="phone-block">
                   <img src="./images/Adults-Teenagers Circle.png" alt="">
@@ -1034,7 +1080,7 @@
                 <td id="element-to-hide" data-html2canvas-ignore="true"> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                    
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=5e852e50ea0a7284290125b133ce4d56&camp=1789&creative=9325&index=grocery&keywords=Adult Vitamins" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=5e852e50ea0a7284290125b133ce4d56&camp=1789&creative=9325&index=grocery&keywords=Adult Vitamins" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
               </div>
                 </td>
               </tr>
@@ -1051,7 +1097,8 @@
 
                 </th>
                 <td class="text-center h5 font-weight-bolder txtBlu" id="kVitamins"></td>
-                <td>Children's Multivitamins</td>
+                <td>Cup(s)</td>
+                <td class="h6 font-weight-bolder txtBlu">Children's Multivitamins</td>
                 <td class="phone-block">Capsul or pill per day per kid</td>
                 <td class="phone-block">
                 
@@ -1061,7 +1108,7 @@
                 <td id="element-to-hide" data-html2canvas-ignore="true"> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                     
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=987f18fc568fbd974130617c183551e7&camp=1789&creative=9325&index=grocery&keywords=Children's Multivitamins" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=987f18fc568fbd974130617c183551e7&camp=1789&creative=9325&index=grocery&keywords=Children's Multivitamins" style="height: 35px; width: 135px"> <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
               </div>
                 </td>
               </tr>
@@ -1078,7 +1125,8 @@
 
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="babyFormula"></td>
-              <td>3 days' worth of baby formula</td>
+              <td>x3 days</td>
+              <td class="h6 font-weight-bolder txtBlu">Worth of baby formula</td>
               <td class="phone-block">Continue breastfeeding if the infant is breastfed. Mom will need 
                 sufficient water and nutritional foods to sustain milk suply </td>
               <td class="phone-block">
@@ -1089,7 +1137,7 @@
               <td id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                  
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=06776e822a68f0b9fe44a389b95b4fd0&camp=1789&creative=9325&index=grocery&keywords=baby formula" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=06776e822a68f0b9fe44a389b95b4fd0&camp=1789&creative=9325&index=grocery&keywords=baby formula" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -1107,8 +1155,10 @@
                 
         
               </th>
+              
               <td class="text-center h5 font-weight-bolder txtBlu" id="babyFood"></td>
-              <td>3 days' worth of baby food</td>
+              <td>x3 days</td>
+              <td class="h6 font-weight-bolder txtBlu">Worth of baby food</td>
               <td class="phone-block"></td>
               <td class="phone-block">
                 
@@ -1118,7 +1168,7 @@
               <td id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d1c4d9950d891520b04e685f63bb1580&camp=1789&creative=9325&index=grocery&keywords=baby food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d1c4d9950d891520b04e685f63bb1580&camp=1789&creative=9325&index=grocery&keywords=baby food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -1136,7 +1186,8 @@
 
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="dogFood"></td>
-              <td>3 days' worth of dog food</td>
+              <td>x3 days</td>
+              <td class="h6 font-weight-bolder txtBlu">Worth of dog food</td>
               <td class="phone-block"></td>
               <td class="phone-block">
                 <img src="./images/Pets.png" alt="">
@@ -1144,7 +1195,7 @@
               <td id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                   
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=0d21e0787d924ca74e30a42974f8c405&camp=1789&creative=9325&index=grocery&keywords=dog food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=0d21e0787d924ca74e30a42974f8c405&camp=1789&creative=9325&index=grocery&keywords=dog food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -1162,7 +1213,8 @@
 
               </th>
               <td class="text-center h5 font-weight-bolder txtBlu" id="catFood"></td>
-              <td>3 days' worth of cat food</td>
+              <td >x3 days</td>
+              <td class="h6 font-weight-bolder txtBlu">Worth of cat food</td>
               <td class="phone-block"></td>
               <td class="phone-block">
                 <img src="./images/Pets.png" alt="">
@@ -1170,7 +1222,7 @@
               <td id="element-to-hide" data-html2canvas-ignore="true"> 
                 <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                  
-                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d93b041ec32f3180de14ba83a7eeaccf&camp=1789&creative=9325&index=grocery&keywords=cat food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                  <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=d93b041ec32f3180de14ba83a7eeaccf&camp=1789&creative=9325&index=grocery&keywords=cat food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
             </div>
               </td>
             </tr>
@@ -1186,8 +1238,9 @@
                 </label>
 
                 </th>
-                <td class="text-center h5 font-weight-bolder txtBlu" id="otherPet"></td>
-                <td>3 days' worth of pet food</td>
+                <td class="text-center h5 font-weight-bolder txtBlu" id="petFood"></td>
+                <td>x3 days</td>
+                <td class="h6 font-weight-bolder txtBlu">Worth of pet food</td>
                 <td class="phone-block"></td>
                 <td class="phone-block">
                   
@@ -1196,7 +1249,7 @@
                 <td id="element-to-hide" data-html2canvas-ignore="true"> 
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center" >
                    
-                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=298668848dc71a84ed240c4b96791aff&camp=1789&creative=9325&index=grocery&keywords=pet food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Get Supplies</p></a>
+                    <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=298668848dc71a84ed240c4b96791aff&camp=1789&creative=9325&index=grocery&keywords=pet food" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
               </div>
                 </td>
               </tr>
@@ -1207,12 +1260,72 @@
         </tbody>
       </table>
       </div>
+      </main>
+      <div class="py-2 mb-5 d-flex justify-content-center  text-center">
+          <div class=" ">
+            <a class="  btn text-white bgOrg  btn rounded-pill shadow" target="_blank" href="./print_food_supply.html">Download Meal Plan</a>
+          </div>
+           <div class="text-center " id="next2">
+          <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
+            <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success btn_print" type="submit" value="Download Grocery List" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
+          </div> 
+      </div>
+      </div>
+      <div class="tab-pane fade" id="prepackaged">
+        <div class="container-fluid rcorners p-3 shadow bg-white mb-5">
+          <h1 class="txtBlu font-weight-bold text-center">Prepackaged Meals</h1>
+          <hr class="my-4 mx-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="container">
+                  <!-- HTML code for the template to insert HTML code -->
+                  <div class="row">
+                  <div class="card mb-3 col-md-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <!-- HTML code for the template to insert HTML code -->
+                  <!-- HTML code for the template to insert HTML code -->
+                  <div class="row">
+                  <div class="card mb-3 col-md-6" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    <!-- HTML code for the template to insert HTML code -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+    
 
-      <div class="text-center py-5" id="next2">
-        <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
-          <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success btn_print" type="submit" value="Save & Download" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
-        </div> 
 
+    
 </section>
 </div>
 <!-- Food Table Ends-->
@@ -1234,7 +1347,7 @@
 
         <div class="modal-footer">
           <a type="button" class="btn btn-secondary"  href="./dashboard Main.html">Close</a>
-          <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
+          <button type="button" class="btn btn-success" onclick="giveFeedback(), downloadCheckList()">Leave Review</button>
         </div>
 
       </div>
@@ -1253,6 +1366,7 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
 <script src="./js//food supply one.js"></script>
 <script src="./js/food supply two.js"></script>
+
 
 
 
