@@ -1,246 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-    :root {
-      --primary-color: #F04729;
-      --secondary-color: #00A35E;
-      --secondary-oppate: #f0fff9;
-      --Buttongreen-color: #11F091;
-      --Highlightyellow-color: #F0DC41;
-      --ButtonGrey-color: #4e4e4e;
-      --normaltext-color: #3e3e3e;
-      --lighttext-color: #93979b;
-      --Tiltecolor-color: #4A5071;
-      --WhiteText-color: #ffffff;
-      --OrangeText-color: #F03211;
-      --breakpoint-xs: 0;
-      --breakpoint-sm: 576px;
-      --breakpoint-md: 768px;
-      --breakpoint-lg: 992px;
-      --breakpoint-xl: 1200px;
-      --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    }
+<html>
+  <head>
+    <title>Directions Service</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-    body {
-      font-size: 100%;
-      color: var(--normaltext-color);
-      height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-    }
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
+    <script type="module" src="./assets/js/test.js"></script>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <b>Start: </b>
+      <select id="start">
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+      <b>End: </b>
+      <select id="end">
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+    </div>
+    <div id="map"></div>
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px;
-    }
-
-    .checkout-table {
-      margin-bottom: 40px;
-    }
-
-    .checkout-table th,
-    .checkout-table td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .checkout-table th {
-      background-color: var(--secondary-oppate);
-      font-weight: bold;
-    }
-
-    .checkout-table tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .checkout-btn {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .checkout-btn:hover {
-      background-color: var(--secondary-color);
-    }
-  </style>
-<script>
-  function openReviewPopup() {
-    var reviewUrl = 'https://g.page/r/CcCOilHmZderEAI/review';
-    var popupWindow = window.open(reviewUrl, '_blank');
-    if (popupWindow) {
-      // Focus back on your website after the review link is clicked
-      popupWindow.focus();
-      // Close the popup window after a delay (adjust the delay as needed)
-      setTimeout(function() {
-        popupWindow.close();
-      }, 3000);
-    } else {
-      // If the popup window fails to open, redirect users to the review link directly
-      window.location.href = reviewUrl;
-    }
-    return false;
-  }
-</script>
-
-</head>
-<body>
-
-  <a href="#" onclick="openReviewPopup()">Leave a Google Review</a>
-  <div class="container">
-    <h1>Amazon Checkout</h1>
-
-    <table class="checkout-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>QUANTITY</th>
-          <th>ITEM PER DAY</th>
-          <th>DESCRIPTION</th>
-          <th>PERSONALE</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <label class="ml-3 checkBX shadow">
-              <input class="rounded shadow" type="checkbox" id="waterCheck">
-              <span class="checkmark"></span>
-            </label>
-          </td>
-          <td class="text-center h5 font-weight-bolder txtBlu" id="gow">4</td>
-          <td>Gallon(s) of water</td>
-          <td>Per Day Per individual</td>
-          <td>
-            <img src="./images/Adults-Teenagers Circle.png" alt="">
-            <img src="./images/Child-Toddler Circle.png" alt="">
-            <img src="./images/Pets.png" alt="">
-          </td>
-          <td>
-            <div class="px-2 text-dark text-center d-flex align-items-center justify-content-center">
-              <a class="d-flex btn mt-2 bgAmazon btn-sm rounded-pill shadow" href="" style="height: 35px; width: 135px">
-                <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png" alt="" width="25" height="25">
-                <p class="font-weight-normal text-dark">Get Supplies</p>
-              </a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label class="ml-3 checkBX shadow">
-              <input class="rounded shadow" type="checkbox" id="meatCheck">
-              <span class="checkmark"></span>
-            </label>
-          </td>
-          <td class="text-center h5 font-weight-bolder txtBlu" id="meat">3</td>
-          <td>Cans of canned meat</td>
-          <td>Tuna, Salmon, Chicken, Raviolis, Chili, beef stew, Spam corned beef, or tofu or can of beans.</td>
-          <td>
-            <img src="./images/Adults-Teenagers Circle.png" alt="">
-            <img src="./images/Child-Toddler Circle.png" alt="">
-          </td>
-          <td>
-            <div class="px-2 text-dark text-center d-flex align-items-center justify-content-center">
-              <a class="d-flex btn mt-2 bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=a6939a8dcb040e60dd2296ed2cac5b20&camp=1789&creative=9325&index=grocery&keywords=Tuna-Salmon-Chicken-beef stew-spam corned beef-tofu-can of beans" style="height: 35px; width: 135px">
-                <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png" alt="" width="25" height="25">
-                <p class="font-weight-normal text-dark">Get Supplies</p>
-              </a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label class="ml-3 checkBX shadow">
-              <input class="rounded shadow" type="checkbox" id="fruitCheck">
-              <span class="checkmark"></span>
-            </label>
-          </td>
-          <td class="text-center h5 font-weight-bolder txtBlu" id="fruit">8</td>
-          <td>Cans of canned fruit and vegetables</td>
-          <td>4 cups per adult, 2 cups to each child</td>
-          <td>
-            <img src="./images/Adults-Teenagers Circle.png" alt="">
-            <img src="./images/Child-Toddler Circle.png" alt="">
-          </td>
-          <td>
-            <div class="px-2 text-dark text-center d-flex align-items-center justify-content-center">
-              <a class="d-flex btn mt-2 bgAmazon btn-sm rounded-pill shadow" target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=sitprep-20&linkCode=ur2&linkId=c69e7e7b52166020b8a9da23f48c763f&camp=1789&creative=9325&index=grocery&keywords=Canned-fruit-vegetables" style="height: 35px; width: 135px">
-                <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png" alt="" width="25" height="25">
-                <p class="font-weight-normal text-dark">Get Supplies</p>
-              </a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <button class="checkout-btn">Proceed to Checkout</button>
-    <section>
-      <div id="item-list"></div>
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
   
-    </section>
-  </div>
 
- 
-
-
-  <script>
-    // JavaScript code for adding the items and quantity that are not checked
-  
-    document.querySelector('.checkout-btn').addEventListener('click', function() {
-      var waterCheck = document.getElementById('waterCheck');
-      var meatCheck = document.getElementById('meatCheck');
-      var fruitCheck = document.getElementById('fruitCheck');
-  
-      var items = [];
-      var quantity = 0;
-  
-      if (!waterCheck.checked) {
-        var waterQuantity = document.getElementById('gow').innerText;
-        items.push({ item: "Gallon(s) of water", quantity: parseInt(waterQuantity) });
-        quantity += parseInt(waterQuantity);
-      }
-  
-      if (!meatCheck.checked) {
-        var meatQuantity = document.getElementById('meat').innerText;
-        items.push({ item: "Cans of canned meat", quantity: parseInt(meatQuantity) });
-        quantity += parseInt(meatQuantity);
-      }
-  
-      if (!fruitCheck.checked) {
-        var fruitQuantity = document.getElementById('fruit').innerText;
-        items.push({ item: "Cans of canned fruit and vegetables", quantity: parseInt(fruitQuantity) });
-        quantity += parseInt(fruitQuantity);
-      }
-  
-      console.log('Total quantity:', quantity);
-  
-      // Display the item list on the page
-      var itemListElement = document.getElementById('item-list');
-      var itemListHTML = '';
-  
-      if (items.length > 0) {
-        itemListHTML += '<ul>';
-        items.forEach(function(item) {
-          itemListHTML += '<li>' + item.item + ' - Quantity: ' + item.quantity + '</li>';
-        });
-        itemListHTML += '</ul>';
-      } else {
-        itemListHTML = '<p>No items selected.</p>';
-      }
-  
-      itemListElement.innerHTML = itemListHTML;
-    });
-  </script>
-  
-</body>
+  </body>
 </html>
