@@ -8,6 +8,8 @@ function initMap() {
     });
   
     directionsRenderer.setMap(map);
+    document.getElementById("mode").addEventListener("change", () => {
+        calculateAndDisplayRoute(directionsService, directionsRenderer)});
     directionsRenderer.setPanel(document.getElementById("sidebar"));
   
     const control = document.getElementById("floating-panel");
@@ -30,7 +32,7 @@ function initMap() {
       .route({
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode.DRIVING,
+        travelMode: google.maps.TravelMode[selectedMode],
       })
       .then((response) => {
         directionsRenderer.setDirections(response);
