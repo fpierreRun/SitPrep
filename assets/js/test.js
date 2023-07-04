@@ -1,3 +1,4 @@
+alert("Hi")
 let map, directionsService, directionsRenderer;
 
 function initMap() {
