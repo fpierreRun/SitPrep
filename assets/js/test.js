@@ -1,12 +1,18 @@
 function initMap() {
-    const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionsService = new google.maps.DirectionsService();
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 7,
       center: { lat: 41.85, lng: -87.65 },
+      disableDefaultUI: true,
     });
   
     directionsRenderer.setMap(map);
+    directionsRenderer.setPanel(document.getElementById("sidebar"));
+  
+    const control = document.getElementById("floating-panel");
+  
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
   
     const onChangeHandler = function () {
       calculateAndDisplayRoute(directionsService, directionsRenderer);
@@ -17,21 +23,19 @@ function initMap() {
   }
   
   function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+    const start = document.getElementById("start").value;
+    const end = document.getElementById("end").value;
+  
     directionsService
       .route({
-        origin: {
-          query: document.getElementById("start").value,
-        },
-        destination: {
-          query: document.getElementById("end").value,
-        },
+        origin: start,
+        destination: end,
         travelMode: google.maps.TravelMode.DRIVING,
       })
       .then((response) => {
         directionsRenderer.setDirections(response);
       })
-      .catch((error) => window.alert("Directions request failed due to: " + error));
-
+      .catch((e) => window.alert("Directions request failed due to " + error));
   }
   
   window.initMap = initMap;
