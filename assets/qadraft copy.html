@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directions Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/test.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <input
+            id="origin-input"
+            class="form-control"
+            type="text"
+            placeholder="Enter an origin location"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <input
+            id="destination-input"
+            class="form-control"
+            type="text"
+            placeholder="Enter a destination location"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="mode-selector" class="btn-group">
+          <input type="radio" name="travelMode" id="changemode-driving" class="btn-check" value="DRIVING" />
+          <label class="btn btn-outline-primary" for="changemode-driving">Driving</label>
+
+          <input type="radio" name="travelMode" id="changemode-walking" class="btn-check" value="WALKING" />
+          <label class="btn btn-outline-primary" for="changemode-walking">Walking</label>
+
+          <input type="radio" name="travelMode" id="changemode-transit" class="btn-check" value="TRANSIT"/>
+          <label class="btn btn-outline-primary" for="changemode-transit">Transit</label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <div id="sidebar">
+        </div>
+      </div>
+    </div>
+    <div id="section-container"></div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <button id="add-section-btn" class="btn btn-primary">Add Section</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/test.js"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCFmN1eEFjrP2QqE368N9M0CbBJkJLr8s&libraries=places&callback=initMap"
+       defer
+    ></script>
+</body>
+</html>  
