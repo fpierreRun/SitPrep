@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Website</title>
+  <script>
+    var sharedContent = "Hey! I found this amazing website called SitPrep that empowers you to be ready for any emergency. Create a comprehensive emergency plan, access tools and resources, and gain peace of mind in the face of unforeseen circumstances. Join me on this journey and let's prepare together! Check it out: ";
+    
+    function shareViaFacebook() {
+      var url = "https://www.sitprep.app";
+      var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(sharedContent);
+      window.open(facebookUrl, "_blank");
+    }
+    
+    function shareViaEmail() {
+      var url = "https://www.sitprep.app";
+      var title = "Check out SitPrep!";
+      var emailSubject = encodeURIComponent(title);
+      var emailBody = encodeURIComponent(sharedContent + url);
+      var emailUrl = "mailto:?subject=" + emailSubject + "&body=" + emailBody;
+      window.location.href = emailUrl;
+    }
+    
+    function shareViaText() {
+      var url = "https://www.sitprep.app";
+      var textMessage = encodeURIComponent(sharedContent + url);
+      var textUrl = "sms:?body=" + textMessage;
+      window.location.href = textUrl;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="shareViaFacebook()">Share on Facebook</button>
+  <button onclick="shareViaEmail()">Share via Email</button>
+  
+  <script>
+    // Check if accessing from a mobile device and show text share button
+    var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobileDevice) {
+      var textShareButton = document.createElement("button");
+      textShareButton.innerHTML = "Share via Text";
+      textShareButton.onclick = shareViaText;
+      document.body.appendChild(textShareButton);
+    }
+  </script>
+</body>
+</html>
