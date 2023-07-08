@@ -7,6 +7,12 @@
   <style>
     .share-button {
       margin-bottom: 10px;
+      font-size: 20px;
+      padding: 16px 32px;
+    }
+    
+    .share-text {
+      font-size: 20px;
     }
   </style>
   <script>
@@ -14,8 +20,14 @@
     
     function shareViaFacebook() {
       var url = "https://www.sitprep.app";
-      var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(sharedContent);
-      window.open(facebookUrl, "_blank");
+      var facebookAppUrl = "fb://share?quote=" + encodeURIComponent(sharedContent) + "&href=" + encodeURIComponent(url);
+      var fallbackUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(sharedContent);
+      
+      // Try opening in Facebook app, fallback to web version
+      window.open(facebookAppUrl, "_blank");
+      setTimeout(function() {
+        window.open(fallbackUrl, "_blank");
+      }, 100);
     }
     
     function shareViaEmail() {
@@ -33,6 +45,10 @@
       var textUrl = "sms:?body=" + encodeURIComponent(textMessage);
       window.location.href = textUrl;
     }
+    
+    function isMobileOrTablet() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
   </script>
 </head>
 <body>
@@ -41,11 +57,20 @@
     <div class="text-center">
       <button class="btn btn-primary share-button" onclick="shareViaFacebook()">Share on Facebook</button>
       <button class="btn btn-primary share-button" onclick="shareViaEmail()">Share via Email</button>
-      <button class="btn btn-primary d-sm-none share-button" onclick="shareViaText()">Share via Text</button>
+      <button class="btn btn-primary d-md-none share-button" onclick="shareViaText()" style="display: none;">Share via Text</button>
+      <p class="share-text">Don't wait for a moment of helplessness. Join us on this journey and let's prepare together. Remember, SitPrep is here for you.</p>
     </div>
   </div>
   
   <!-- Include Bootstrap JS (Optional) -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Show text button on mobile devices and tablets
+    if (isMobileOrTablet()) {
+      var textShareButton = document.querySelector(".d-md-none");
+      textShareButton.style.display = "block";
+    }
+  </script>
 </body>
 </html>
