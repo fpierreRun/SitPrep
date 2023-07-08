@@ -875,7 +875,7 @@ font-weight:300;
  @media only screen and (min-width: 1166px) { 
 
 
-  .dropdown:hover .dropdown-menu {
+  .dropdown:hover .dropdown-menu  {
     display: block;
   
   }
@@ -885,6 +885,10 @@ font-weight:300;
     padding: 100px 150px ;
   }
 
+  .phone-only {
+    display: none;
+  
+  }
  
 }
 
@@ -922,7 +926,10 @@ font-weight:300;
     margin-top: 0;
   }
 
-
+  .phone-only {
+    display: block;
+  
+  }
 
 
 
@@ -931,3 +938,5 @@ font-weight:300;
     font-size: 1.25rem;
   }
 }
+
+

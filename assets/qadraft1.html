@@ -7,69 +7,63 @@
   <style>
     .share-button {
       margin-bottom: 10px;
-      font-size: 20px;
-      padding: 16px 32px;
-    }
-    
-    .share-text {
-      font-size: 20px;
     }
   </style>
-  <script>
-    var sharedContent = "Hey! I found this amazing website called SitPrep that empowers you to be ready for any emergency. Create a comprehensive emergency plan, access tools and resources, and gain peace of mind in the face of unforeseen circumstances. Join me on this journey and let's prepare together! Check it out: ";
-    
-    function shareViaFacebook() {
-      var url = "https://www.sitprep.app";
-      var facebookAppUrl = "fb://share?quote=" + encodeURIComponent(sharedContent) + "&href=" + encodeURIComponent(url);
-      var fallbackUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url) + "&quote=" + encodeURIComponent(sharedContent);
+  <!-- Your Open Graph tags -->
+  <meta property="og:url" content="https://www.sitprep.app" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SitPrep - Be Ready for Any Emergency" />
+  <meta property="og:description" content="At SitPrep, our mission is to empower you to be ready for any emergency. Create a comprehensive emergency plan, access tools and resources, and gain peace of mind. Join us on this journey and let's prepare together." />
+  <meta property="og:image" content="https://www.sitprep.app/images/og-image.jpg" />
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Share Website</h1>
+    <div class="text-center">
+      <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+      <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
       
-      // Try opening in Facebook app, fallback to web version
-      window.open(facebookAppUrl, "_blank");
-      setTimeout(function() {
-        window.open(fallbackUrl, "_blank");
-      }, 100);
-    }
-    
+      <!-- Your share button code -->
+      <div class="fb-share-button" 
+           data-href="https://www.sitprep.app" 
+           data-layout="button_count">
+      </div>
+      
+      <a class="btn btn-primary share-button" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.sitprep.app&title=SitPrep%20-%20Be%20Ready%20for%20Any%20Emergency&summary=At%20SitPrep,%20our%20mission%20is%20to%20empower%20you%20to%20be%20ready%20for%20any%20emergency.%20Create%20a%20comprehensive%20emergency%20plan,%20access%20tools%20and%20resources,%20and%20gain%20peace%20of%20mind.%20Join%20us%20on%20this%20journey%20and%20let's%20prepare%20together.&source=SitPrep" target="_blank">Share on LinkedIn</a>
+      
+      <a class="btn btn-primary share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=At%20SitPrep,%20our%20mission%20is%20to%20empower%20you%20to%20be%20ready%20for%20any%20emergency.%20Create%20a%20comprehensive%20emergency%20plan,%20access%20tools%20and%20resources,%20and%20gain%20peace%20of%20mind.%20Join%20us%20on%20this%20journey%20and%20let's%20prepare%20together.%20%23SitPrep" target="_blank">Share on Twitter</a>
+      
+      <button class="btn btn-primary share-button" onclick="shareViaEmail()">Share via Email</button>
+      <button class="btn btn-primary  share-button" onclick="shareViaText()">Share via Text</button>
+    </div>
+  </div>
+  
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
     function shareViaEmail() {
       var url = "https://www.sitprep.app";
       var title = "Check out SitPrep!";
       var emailSubject = encodeURIComponent(title);
-      var emailBody = encodeURIComponent(sharedContent + url);
+      var emailBody = encodeURIComponent("At SitPrep, our mission is to empower you to be ready for any emergency. Create a comprehensive emergency plan, access tools and resources, and gain peace of mind. Join us on this journey and let's prepare together.%0A%0ACheck it out: " + url);
       var emailUrl = "mailto:?subject=" + emailSubject + "&body=" + emailBody;
       window.location.href = emailUrl;
     }
     
     function shareViaText() {
       var url = "https://www.sitprep.app";
-      var textMessage = sharedContent + url;
+      var textMessage = "At SitPrep, our mission is to empower you to be ready for any emergency. Create a comprehensive emergency plan, access tools and resources, and gain peace of mind. Join us on this journey and let's prepare together. Check it out: " + url;
       var textUrl = "sms:?body=" + encodeURIComponent(textMessage);
       window.location.href = textUrl;
-    }
-    
-    function isMobileOrTablet() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-  </script>
-</head>
-<body>
-  <div class="container mt-5">
-    <h1 class="text-center">Share Website</h1>
-    <div class="text-center">
-      <button class="btn btn-primary share-button" onclick="shareViaFacebook()">Share on Facebook</button>
-      <button class="btn btn-primary share-button" onclick="shareViaEmail()">Share via Email</button>
-      <button class="btn btn-primary d-md-none share-button" onclick="shareViaText()" style="display: none;">Share via Text</button>
-      <p class="share-text">Don't wait for a moment of helplessness. Join us on this journey and let's prepare together. Remember, SitPrep is here for you.</p>
-    </div>
-  </div>
-  
-  <!-- Include Bootstrap JS (Optional) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <script>
-    // Show text button on mobile devices and tablets
-    if (isMobileOrTablet()) {
-      var textShareButton = document.querySelector(".d-md-none");
-      textShareButton.style.display = "block";
     }
   </script>
 </body>
