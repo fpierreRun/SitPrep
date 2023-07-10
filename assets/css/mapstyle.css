@@ -1,0 +1,50 @@
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ #map1 {
+   height: 400px;
+   width: 100%;
+ }
+ 
+ #map2 {
+  height: 400px;
+  width: 100%;
+}
+#map3 {
+  height: 400px;
+  width: 100%;
+}
+
+
+
+  /* Custom CSS styling */
+  .map-container {
+    height: 300px;
+  }
+  .directions-panel {
+    margin-top: 10px;
+  }
+  /* Additional CSS for mobile readability */
+  .form-control {
+    font-size: 16px;
+    padding: 8px;
+  }
+  h1,
+  h2 {
+    font-size: 24px;
+  }
+
+  /* Custom styling for select box */
+  select.form-control {
+    color: #fff;
+    background-color: #00a35d;
+    border-color: #00a35d;
+  }
+

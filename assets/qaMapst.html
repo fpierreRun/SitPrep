@@ -12,13 +12,10 @@
 </head>
 <body>
 
-
   <div class="container">
-    <h1 class="text-center mt-4">Directions Map</h1>
-  
     <div class="row">
       <div class="col-lg-4">
-        <div class="section-wrapper rounded shadow">
+        <div class="p-3 my-3 section-wrapper rounded shadow">
           <h2>Map 1</h2>
           <div class="form-group">
             <label for="changemode-driving-1">Travel Mode:</label>
@@ -40,20 +37,20 @@
               <input id="destination-input-0" class="form-control" type="text" placeholder="Enter destination">
             </div>
           </div>
-         
-          <div class=" map-container">
+          <div class="map-container">
             <div id="map1"></div>
-        
           </div>
-          <div class="my-5 py-5 ">
-            <div id="panel1" class=" directions-panel bg-light"></div>
+          <div class="my-5 py-5">
+            <div id="panel1" class="directions-panel bg-light"></div>
           </div>
         </div>
       </div>
-  
       <div class="col-lg-4">
-        <div class="my-5 section-wrapper rounded shadow">
-          <h2>Map 2</h2>
+        <div class="p-3 my-3 section-wrapper rounded shadow" id="map2Section" hidden>
+          <div class="d-flex justify-content-between">
+            <h2>Map 2</h2>
+            <button class="btn btn-danger mt-3" id="removeMap2Button" hidden>Remove Route</button>
+          </div>
           <div class="form-group">
             <label for="changemode-driving-2">Travel Mode:</label>
             <select id="changemode-driving-2" class="form-control">
@@ -74,20 +71,22 @@
               <input id="destination-input-1" class="form-control" type="text" placeholder="Enter destination">
             </div>
           </div>
-        
           <div class="map-container">
             <div id="map2"></div>
-           
           </div>
           <div class="my-5 py-5">
             <div id="panel2" class="directions-panel bg-light"></div>
           </div>
         </div>
+        <button class="btn btn-primary mt-3" id="addMap2Button">Add another Route</button>
+        
       </div>
-  
-      <div class=" col-lg-4">
-        <div class="my-5 section-wrapper rounded shadow">
+      <div class="col-lg-4">
+        <div class="p-3 my-3 section-wrapper rounded shadow" id="map3Section" hidden>
+          <div class="d-flex justify-content-between">
           <h2>Map 3</h2>
+          <button class="btn btn-danger mt-3" id="removeMap3Button" hidden>Remove Route</button>
+          </div>
           <div class="form-group">
             <label for="origin-input-2">Origin:</label>
             <div class="input-group">
@@ -110,12 +109,12 @@
           </div>
           <div class="my-5 map-container">
             <div id="map3"></div>
-           
           </div>
           <div class="my-5 py-5">
             <div id="panel3" class="directions-panel bg-light"></div>
           </div>
         </div>
+        <button class="btn btn-primary mt-3" id="addMap3Button">Add another Route</button>
       </div>
     </div>
   </div>

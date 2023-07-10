@@ -179,13 +179,7 @@ function initMap() {
 
 document.addEventListener("DOMContentLoaded", initMap);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const map2Section = document.getElementById("map2Section");
-  const map3Section = document.getElementById("map3Section");
-  const addMap2Button = document.getElementById("addMap2Button");
-  const addMap3Button = document.getElementById("addMap3Button");
-  const removeMap2Button = document.getElementById("removeMap2Button");
-  const removeMap3Button = document.getElementById("removeMap3Button");
+
 
   addMap2Button.addEventListener("click", function () {
     map2Section.removeAttribute("hidden");
@@ -193,11 +187,11 @@ document.addEventListener("DOMContentLoaded", function () {
     removeMap2Button.removeAttribute("hidden");
   });
 
-  addMap3Button.addEventListener("click", function () {
+  function addMap3Button () {
     map3Section.removeAttribute("hidden");
     addMap3Button.setAttribute("hidden", "true");
     removeMap3Button.removeAttribute("hidden");
-  });
+  };
 
   removeMap2Button.addEventListener("click", function () {
     map2Section.setAttribute("hidden", "true");
@@ -212,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
     removeMap3Button.setAttribute("hidden", "true");
     localStorage.removeItem("mapData3");
   });
-});
 
 window.addEventListener("unload", function () {
   localStorage.setItem("mapData1", JSON.stringify({
