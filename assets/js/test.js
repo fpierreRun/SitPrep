@@ -1,14 +1,14 @@
 class AutocompleteDirectionsHandler {
-  constructor(map, originInputId, destinationInputId, travelModeInputId, directionsPanelId) {
+  constructor(map, originInput, destinationInput, travelModeInput, directionsPanel) {
     this.map = map;
-    this.originInput = document.getElementById(originInputId);
-    this.destinationInput = document.getElementById(destinationInputId);
-    this.travelModeInput = document.getElementById(travelModeInputId);
+    this.originInput = originInput;
+    this.destinationInput = destinationInput;
+    this.travelModeInput = travelModeInput;
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer({
       draggable: true,
       map: map,
-      panel: document.getElementById(directionsPanelId),
+      panel: directionsPanel,
     });
 
     this.originPlaceId = null;
@@ -38,7 +38,7 @@ class AutocompleteDirectionsHandler {
       if (mode === "ORIG") {
         this.originPlaceId = place.place_id;
       } else {
-        this.destinationPlaceId =place.place_id;
+        this.destinationPlaceId = place.place_id;
       }
 
       this.route();
@@ -77,6 +77,7 @@ class AutocompleteDirectionsHandler {
       origin: { placeId: this.originPlaceId },
       destination: { placeId: this.destinationPlaceId },
       travelMode: travelMode,
+      provideRouteAlternatives: true, // Enable alternative routes
     };
 
     this.directionsService.route(request, (response, status) => {
@@ -90,57 +91,70 @@ class AutocompleteDirectionsHandler {
 }
 
 function initMap() {
-  const map1 = new google.maps.Map(document.getElementById("map1"), {
-    disableDefaultUI: false,
-    zoom: 4,
-    center: { lat: 37.0902, lng: -95.7129 }, // United States coordinates
-  });
-  const map2 = new google.maps.Map(document.getElementById("map2"), {
-    disableDefaultUI: false,
-    zoom: 4,
-    center: { lat: 37.0902, lng: -95.7129 }, // United States coordinates
-  });
-  const map3 = new google.maps.Map(document.getElementById("map3"), {
-    disableDefaultUI: false,
-    zoom: 4,
-    center: { lat: 37.0902, lng: -95.7129 }, // United States coordinates
-  });
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const currentLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
 
-  const panel1 = document.getElementById("panel1");
-  const panel2 = document.getElementById("panel2");
-  const panel3 = document.getElementById("panel3");
+        const map1 = new google.maps.Map(document.getElementById("map1"), {
+          disableDefaultUI: false,
+          zoom: 12,
+          center: currentLocation,
+        });
+        const map2 = new google.maps.Map(document.getElementById("map2"), {
+          disableDefaultUI: false,
+          zoom: 12,
+          center: currentLocation,
+        });
+        const map3 = new google.maps.Map(document.getElementById("map3"), {
+          disableDefaultUI: false,
+          zoom: 12,
+          center: currentLocation,
+        });
 
-  const handler1 = new AutocompleteDirectionsHandler(
-    map1,
-    "origin-input-0",
-    "destination-input-0",
-    "changemode-driving-1",
-    "panel1"
-  );
-  const handler2 = new AutocompleteDirectionsHandler(
-    map2,
-    "origin-input-1",
-    "destination-input-1",
-    "changemode-driving-2",
-    "panel2"
-  );
-  const handler3 = new AutocompleteDirectionsHandler(
-    map3,
-    "origin-input-2",
-    "destination-input-2",
-    "changemode-driving-3",
-    "panel3"
-  );
+        const panel1 = document.getElementById("panel1");
+        const panel2 = document.getElementById("panel2");
+        const panel3 = document.getElementById("panel3");
+        const handler1 = new AutocompleteDirectionsHandler(
+          map1,
+          document.getElementById("origin-input-0"),
+          document.getElementById("destination-input-0"),
+          document.getElementById("changemode-driving-1"),
+          panel1
+        );
+        const handler2 = new AutocompleteDirectionsHandler(
+          map2,
+          document.getElementById("origin-input-1"),
+          document.getElementById("destination-input-1"),
+          document.getElementById("changemode-driving-2"),
+          panel2
+        );
+        const handler3 = new AutocompleteDirectionsHandler(
+          map3,
+          document.getElementById("origin-input-2"),
+          document.getElementById("destination-input-2"),
+          document.getElementById("changemode-driving-3"),
+          panel3
+        );
 
-  handler1.setup();
-  handler2.setup();
-  handler3.setup();
+        handler1.setup();
+        handler2.setup();
+        handler3.setup();
 
-  window.initMap = function () {
-    handler1.route();
-    handler2.route();
-    handler3.route();
-  };
+        handler1.route();
+        handler2.route();
+        handler3.route();
+      },
+      function (error) {
+        console.error("Error getting current location:", error);
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+  }
 }
 
-window.initMap = initMap;
+document.addEventListener("DOMContentLoaded", initMap);
