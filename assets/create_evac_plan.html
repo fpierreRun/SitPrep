@@ -204,17 +204,17 @@
                     <h5>Primary Gathering Location</h5><br>
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">location_on</span>
-                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="primeLoc" placeholder="Enter Gather Location" />
+                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="primeLoc" placeholder="Enter gather location" />
                     </div>
               
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">call</span>
-                      <input id="primeNum" name="primeNum" class="w-75 p-2 rounded" placeholder="(If Applicable) Enter Location Number"><br>
+                      <input id="primeNum" name="primeNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
                     </div>
               
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">info</span>
-                      <textarea class="w-75 p-2 rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter Location Additional Info"></textarea>
+                      <textarea class="w-75 p-2 rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter location additional info"></textarea>
                     </div>
               
                     <div class="pt-3">
@@ -227,17 +227,17 @@
                     <h4>Secondary Gathering Location</h4><br>
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">location_on</span>
-                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="secLoc" placeholder="Enter Gather Location" />
+                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="secLoc" placeholder="Enter gather location" />
                     </div>
               
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">call</span>
-                      <input id="secNum" name="secNum" class="w-75 p-2 rounded" placeholder="(If Applicable) Enter Location Number"><br>
+                      <input id="secNum" name="secNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
                     </div>
               
                     <div class="form-group d-flex">
                       <span class="material-symbols-rounded pr-5">info</span>
-                      <textarea class="w-75 p-2 roundedl" id="addInfo" name="secInfo" placeholder="Enter Location Additional Info"></textarea><br>
+                      <textarea class="w-75 p-2 roundedl" id="addInfo" name="secInfo" placeholder="Enter location additional info"></textarea><br>
                     </div>
                   </main>
               
@@ -258,22 +258,22 @@
             
               <!--evacuation maps-->
               <div class="">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="p-3 my-3 section-wrapper rounded shadow">
+                <div class="">
+                  <div class="">
+                    <div class="p-3 my-3 section-wrapper rcorners shadow">
                       <h1 class="font-weight-bold display-6 mt-3 pb-3">Plan A</h1>
                       <h1 class=" mt-3 pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-3">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-1 rounded" placeholder="Enter Shelter Name">
+                        <input type="text" id="needs" name="evacLoc" class="w-75 p-1 rounded" placeholder="Enter shelter name">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-3">
                           call
                         </span>
-                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter Shelter Number">
+                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter shelter number">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-3">
@@ -292,15 +292,15 @@
                       </div>
                     
                       <div class="form-group">
-                        <label for="destination-input-0">Shelter Address:</label>
+                        <!-- <label for="destination-input-0">Shelter Address:</label> -->
                         <div class="input-group">
-                          <input id="destination-input-0" class="form-control" type="text" placeholder="Enter Shelter Address">
+                          <input id="destination-input-0" class="form-control" type="text" placeholder="Enter shelter name or address">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="origin-input-0">Where will you be coming from?</label>
+                        <!-- <label for="origin-input-0">Where will you be coming from?</label> -->
                         <div class="input-group">
-                          <input id="origin-input-0" class="form-control" type="text" placeholder="Enter origin">
+                          <input id="origin-input-0" class="form-control" type="text" placeholder="Enter starting point">
                         </div>
                       </div>
                       <div class="map-container">
@@ -311,24 +311,24 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4">
-                    <div class="p-3 my-3 section-wrapper rounded shadow" id="map2Section" hidden>
+                  <div class="">
+                    <div class="p-3 my-3 section-wrapper rcorners shadow" id="map2Section" hidden>
                       <div class="mb-1 d-flex justify-content-between">
                          <h1 class="font-weight-bold display-6 mt-3 pb-1">Plan B</h1>
-                        <input value="Remove Route" type="button" class="btn btn-danger mt-3" id="removeMap2Button" hidden></input>
+                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger " id="removeMap2Button" hidden></input>
                       </div>
                       <h1 class=" mt-3 pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rounded" placeholder="Enter Shelter Location">
+                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rcorners" placeholder="Enter shelter location">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           call
                         </span>
-                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter Shelter Number">
+                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter shelter number">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
@@ -346,15 +346,15 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="destination-input-1">What's the shelter address?</label>
+                        <!-- <label for="destination-input-1">What's the shelter address?</label> -->
                         <div class="input-group">
-                          <input id="destination-input-1" class="form-control" type="text" placeholder="Enter Shelter Address">
+                          <input id="destination-input-1" class="form-control" type="text" placeholder="Enter shelter name or address">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="origin-input-1">Where will you be coming from?</label>
+                        <!-- <label for="origin-input-1">Where will you be coming from?</label> -->
                         <div class="input-group">
-                          <input id="origin-input-1" class="form-control" type="text" placeholder="Enter Origin">
+                          <input id="origin-input-1" class="form-control" type="text" placeholder="Enter starting point">
                         </div>
                       </div>
                       
@@ -365,26 +365,33 @@
                         <div id="panel2" class="directions-panel bg-light"></div>
                       </div>
                     </div>
-                    <input type="button" class="btn btn-primary mt-3" id="addMap2Button" value="Add Optional Plan"></input>
+                    <a type="button" class="btn text-primary  mt-3" id="addMap2Button" >
+                      <div class="d-flex align-items-center">
+                        <span class="pr-2  material-icons">
+                      add_circle
+                      </span>
+                      <p class="h4">Add Optional Plan</p>
+                    </div>
+                    </a>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="">
                     <div class="p-3 my-3 section-wrapper rounded shadow" id="map3Section" hidden>
                       <div class="mb-2 d-flex justify-content-between">
                         <h1 class="font-weight-bold display-6 mt-3 pb-2">Plan C</h1>
-                        <input value="Remove Route" type="button" class="btn btn-danger mt-3" id="removeMap3Button" hidden></input>
+                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger " id="removeMap3Button" hidden></input>
                       </div>
                       <h1 class=" pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rounded" placeholder="Enter Shelter Location">
+                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rounded" placeholder="Enter shelter location">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           call
                         </span>
-                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter Shelter Number">
+                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter shelter number">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
@@ -402,15 +409,15 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="destination-input-2">What's the shelter address?</label>
+                        <!-- <label for="destination-input-2">What's the shelter address?</label> -->
                         <div class="input-group">
-                          <input id="destination-input-2" class="form-control" type="text" placeholder="Enter Shelter Address">
+                          <input id="destination-input-2" class="form-control" type="text" placeholder="Enter shelter name or address">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="origin-input-2">Where will you be coming from?</label>
+                        <!-- <label for="origin-input-2">Where will you be coming from?</label> -->
                         <div class="input-group">
-                          <input id="origin-input-2" class="form-control" type="text" placeholder="Enter origin">
+                          <input id="origin-input-2" class="form-control" type="text" placeholder="Enter starting point">
                         </div>
                       </div>
                       
@@ -422,7 +429,14 @@
                         <div id="panel3" class="directions-panel bg-light"></div>
                       </div>
                     </div>
-                    <input type="button" class="btn btn-primary mt-3" id="addMap3Button" value="Add Optional Plan" hidden></input>
+                    <a type="button" class="btn text-primary  mt-3" id="addMap3Button" hidden >
+                      <div class="d-flex align-items-center">
+                        <span class="pr-2  material-icons">
+                      add_circle
+                      </span>
+                      <p class="h4">Add Optional Plan</p>
+                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -523,6 +537,7 @@
 ></script>
 
 <script src="./js/form.js"></script>
+<script src="./js/maplogic.js"></script>
 
 
 

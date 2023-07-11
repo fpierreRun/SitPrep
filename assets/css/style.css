@@ -414,9 +414,13 @@ a.btnPln{
 input{
   border: none;
   background-color: #f4f4f5;
-font-weight:400;
+font-weight:350;
+ 
+}
+input.btn{
+  
   height:40px;
-  font-size:18px;
+  font-size:16px;
 }
 
 input:focus {
@@ -425,7 +429,7 @@ input:focus {
 }
 
 .inputOutline{
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--normaltext-color);
 
 };
 
@@ -594,6 +598,10 @@ font-weight:300;
 .adultsTxt {
   color: #FF6346;
   
+}
+
+textarea {
+  height: 150px; /* Adjust the value to your desired height */
 }
 
 /* The container */
