@@ -21,3 +21,9 @@ function shareViaEmail() {
     js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+function shareOnReddit() {
+  var message = "Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared";
+  var url = "https://www.reddit.com/submit?url=" + encodeURIComponent("https://www.sitprep.app/") + "&title=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}

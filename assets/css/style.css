@@ -883,15 +883,24 @@ textarea {
  width: 100%;
 }
 
+#map4 {
+  height: 400px;
+  width: 100%;
+}
+#map5 {
+  height: 400px;
+  width: 100%;
+}
+
 
 
  /* Custom CSS styling */
- .map-container {
-   height: 300px;
+ /* .map-container {
+   height: ;
  }
  .directions-panel {
-   margin-top: 10px;
- }
+   margin-top: ;
+ } */
  /* Additional CSS for mobile readability */
  .form-control {
    font-size: 16px;
@@ -909,6 +918,9 @@ textarea {
    border-color: #00a35d;
  }
 
+ .container-section {
+  page-break-before: always;
+}
 
 @media print {
   .container {
@@ -972,10 +984,10 @@ textarea {
     margin-top: 0;
   }
 
-  .phone-only {
+  /* .phone-only {
     display: block;
   
-  }
+  } */
 
 
 

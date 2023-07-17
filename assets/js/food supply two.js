@@ -1,5 +1,47 @@
 var foodList = [];
 
+// Retrieve the stored object from local storage
+var storedObject = localStorage.getItem('mealOptions');
+
+// Check if the stored object exists
+if (storedObject) {
+  // Parse the stored object from JSON back to JavaScript object
+  var mealOptions = JSON.parse(storedObject);
+
+  // Access the meal options for each day
+  var day1Breakfast = mealOptions.day1.breakfast;
+  var day1Lunch = mealOptions.day1.lunch;
+  var day1Dinner = mealOptions.day1.dinner;
+  var day1Snack = mealOptions.day1.snack;
+
+  var day2Breakfast = mealOptions.day2.breakfast;
+  var day2Lunch = mealOptions.day2.lunch;
+  var day2Dinner = mealOptions.day2.dinner;
+  var day2Snack = mealOptions.day2.snack;
+
+  var day3Breakfast = mealOptions.day3.breakfast;
+  var day3Lunch = mealOptions.day3.lunch;
+  var day3Dinner = mealOptions.day3.dinner;
+  var day3Snack = mealOptions.day3.snack;
+
+  // Update the content of the HTML elements
+  document.getElementById('day1-breakfast-select').value = day1Breakfast;
+  document.getElementById('day1-lunch-select').value = day1Lunch;
+  document.getElementById('day1-dinner-select').value = day1Dinner;
+  document.getElementById('day1-snack-select').value = day1Snack;
+
+  document.getElementById('day2-breakfast-select').value = day2Breakfast;
+  document.getElementById('day2-lunch-select').value = day2Lunch;
+  document.getElementById('day2-dinner-select').value = day2Dinner;
+  document.getElementById('day2-snack-select').value = day2Snack;
+
+  document.getElementById('day3-breakfast-select').value = day3Breakfast;
+  document.getElementById('day3-lunch-select').value = day3Lunch;
+  document.getElementById('day3-dinner-select').value = day3Dinner;
+  document.getElementById('day3-snack-select').value = day3Snack;
+
+}
+
 
 function showIngredients(day, meal) {
   const selectElement = document.getElementById(`${day}-${meal}-select`);
@@ -77,10 +119,7 @@ function downloadCheckList() {
   
   var foodCheckDataObj = {};
   
-  checkboxes.forEach(function(checkbox) {
-    foodCheckDataObj[checkbox] = document.getElementById(checkbox).checked;
-  });
-  
+ 
   foodList.push(foodCheckDataObj);
   
   storeFoodList();

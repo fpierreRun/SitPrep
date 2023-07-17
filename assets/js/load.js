@@ -87,6 +87,46 @@ function loadPlan(){
 
  };
 
+ //second evac
+
+ if(!element[i].evacuationLoc2) {
+
+  element[i].evacuationLoc2 ="n/a"
+ };
+
+ if(!element[i].evacuationNum2) {
+
+  element[i].evacuationNum2 = "n/a";
+
+ };
+
+ if(!element[i].secondaryEvacLoc2) {
+
+  element[i].secondaryEvacLoc2 = "n/a";
+
+ };
+
+  //third evac
+
+  if(!element[i].evacuationLoc3) {
+
+    element[i].evacuationLoc3 ="n/a"
+   };
+  
+   if(!element[i].evacuationNum3) {
+  
+    element[i].evacuationNum3 = "n/a";
+  
+   };
+  
+   if(!element[i].secondaryEvacLoc3) {
+  
+    element[i].secondaryEvacLoc3 = "n/a";
+  
+   };
+
+
+
 
 
  if(!element[i].contactName) {
@@ -131,10 +171,20 @@ notApplicaple()
       
         
  
-       //Evacuation Location Info
+       //Evacuation Location Info 
       document.getElementById("evacuationLoc").value= element[i].evacuationLoc;
         document.getElementById("evacuationNum").value= element[i].evacuationNum;
         document.getElementById("secondaryEvacLoc").value= element[i].secondaryEvacLoc;
+
+          //Evacuation Location Info 2
+      document.getElementById("evacuationLoc2").value= element[i].evacuationLoc2;
+      document.getElementById("evacuationNum2").value= element[i].evacuationNum2;
+      document.getElementById("secondaryEvacLoc2").value= element[i].secondaryEvacLoc2;
+
+        //Evacuation Location Info 3
+        document.getElementById("evacuationLoc3").value= element[i].evacuationLoc3;
+        document.getElementById("evacuationNum3").value= element[i].evacuationNum3;
+        document.getElementById("secondaryEvacLoc3").value= element[i].secondaryEvacLoc3;
     
  
        //  Emergecny contact Info
@@ -284,44 +334,7 @@ var updateEdited = function () {
 };
 
 
-     //download PDF code
-
-     $(document).ready(function($) 
-     { 
-   
-       $(document).on('click', '.btn_print', function(event) 
-       {
-         event.preventDefault();
-   
-         //credit : https://ekoopmans.github.io/html2pdf.js
-         
-         var element = document.getElementById('downloadPlan'); 
-   
-         console.log(element)
-         
-   
-         //more custom settings
-         var opt = 
-         {
-           margin:     0.25,
-           filename:     'My_Plan_.pdf',
-           image:        { type: 'pdf', quality: 0.98 },
-           html2canvas:  { scale: 2, scrollY: 0 },
-           jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-         };
-   
-         // New Promise-based usage:
-         html2pdf().set(opt).from(element).save();
-   
-         // Avoid page-breaks on all elements, and add one before #page2el.
-          html2pdf().set({
-            pagebreak: { mode: 'avoid-all', after: '#page2el' }
-          });
-   
-        });
-   
-     });
-  //download PDF code ends
+     
 
 
   var saveData = function () {

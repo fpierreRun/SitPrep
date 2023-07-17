@@ -189,6 +189,83 @@
           <!-- Form Entry -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
 
+       <!-- Button trigger modal -->
+       
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="pb-4 modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">Share SitPrep</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-center ">
+                
+                <div class=" text-center">
+                  <!-- Load Facebook SDK for JavaScript -->
+                  <div id="fb-root"></div>
+                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+            
+            
+                  <!-- Your share button code -->
+                  <div class="fb-share-button" 
+                      data-href="https://www.sitprep.app" 
+                      data-layout="button_count">
+                  </div>
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+                  <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+            
+                  <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+            
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+                  <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+                </div>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+          <div class="d-flex justify-content-between  align-items-center my-4">
+            <div class="d-flex align-items-center ">
+              <p class="h2 txtImpact text-center mr-4 font-weight-bold text-success ">3 DAY PLAN </p>
+            </div>
+            <div class=" d-flex align-items-center justify-content-end d-xl-none">
+              <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter">
+                SHARE<img class="ml-2 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
+              </button>
+            </div>
+            <div class="d-flex align-items-center justify-content-end d-none d-xl-block ">
+            
+            <div class=" text-center">
+              <!-- Load Facebook SDK for JavaScript -->
+              <div id="fb-root"></div>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+        
+        
+              <!-- Your share button code -->
+              <div class="fb-share-button" 
+                   data-href="https://www.sitprep.app" 
+                   data-layout="button_count">
+              </div>
+
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+              <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+        
+              <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+        
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+              <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+        <hr class="text-success">
+
       
         <!--PDF begins-->
         <div class=" bg-white rounded pt-5" >
@@ -234,7 +311,7 @@
            
           
         
-            
+            <main>
             <div>
 
                 <div class=" align-bottom planimg1 bg-white px-5">
@@ -257,9 +334,10 @@
 
           </div >
             <hr class=" pb-3 mx-5">
+          </main>
             <main class="pb-5 px-5 bg-white">
 
-                    <div>
+                    <div class="pdfVersion" hidden>
                         <p class="h2">Gathering Place</p>
                         
                         <p class="text-muted">It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
@@ -347,9 +425,9 @@
                             <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
                           </div> 
 
-
+                  <!--Evac 1 begin-->
                       <div>
-                          <label class="font-weight-bold txtBlu">Primary Evacuation Shelter or location</label><br>
+                          <label class="font-weight-bold txtBlu">First evacuation shelter</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="evacuationLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -359,7 +437,7 @@
                       </div>
                       
                       <div class="form-group">
-                          <label class="font-weight-bold txtBlu">Primary Evacuation Number</label><br>
+                          <label class="font-weight-bold txtBlu">First shelter number</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="evacuationNum" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
@@ -369,7 +447,7 @@
                       </div>
                       
                       <div >
-                          <label class="font-weight-bold txtBlu" >Secondary Evacuation Shelter or location</label><br>
+                          <label class="font-weight-bold txtBlu" >Additional info</label><br>
                           
                           <div width="30">
                             <input class="pl-3 inputHgtClr rounded w-75" id="secondaryEvacLoc" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
@@ -377,7 +455,68 @@
                               </span></p>
                           </div>
                       </div>
+                  <!--Evac 2 begin-->
 
+                  <div>
+                    <label class="font-weight-bold txtBlu">Second evacuation shelter</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="evacuationLoc2" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="font-weight-bold txtBlu">Second evacuation number</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="evacuationNum2" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
+                
+                <div >
+                    <label class="font-weight-bold txtBlu" >Additional info</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="secondaryEvacLoc2" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
+
+                   <!--Evac 3 begin-->
+                   <div>
+                    <label class="font-weight-bold txtBlu">Third evacuation shelter</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="evacuationLoc3" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="font-weight-bold txtBlu">Third evacuation number</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="evacuationNum3" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit mt-2" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
+                
+                <div >
+                    <label class="font-weight-bold txtBlu" >Additional info</label><br>
+                    
+                    <div width="30">
+                      <input class="pl-3 inputHgtClr rounded w-75" id="secondaryEvacLoc3" onchange="updateEdited()"><span class="pl-3 material-symbols-outlined material-symbols-edit" id="element-to-hide" data-html2canvas-ignore="true">
+                        edit
+                        </span></p>
+                    </div>
+                </div>
                   </main>
                 </div>
 
@@ -433,6 +572,7 @@
 
             
           </div>
+          
 
           <!--Printable  PDF Ends-->
         <br><br><br>
@@ -474,6 +614,7 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
  <script src="./js/landing.js"></script>
  <script src="./js/load.js"></script>
+ <script src="./js/mapData.js"></script>
 
 </body>
 </html>

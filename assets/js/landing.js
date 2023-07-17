@@ -420,17 +420,17 @@ function cardUpdates() {
   } if (updatedPlan) {
     localStorage.removeItem('addTo72');
 
-  const evacForm = document.getElementsByClassName("evacForm");
-    for (let i = 0; i < evacForm.length; i++) {
-      evacForm[i].classList.add("d-none");}
+  // const evacForm = document.getElementsByClassName("evacForm");
+  //   for (let i = 0; i < evacForm.length; i++) {
+  //     evacForm[i].classList.add("d-none");}
 
-      const remEvacPlan = document.getElementsByClassName("evacPlan");
-    for (let i = 0; i < remEvacPlan.length; i++) {
-      remEvacPlan[i].classList.remove("d-none");}
+  //     const remEvacPlan = document.getElementsByClassName("evacPlan");
+  //   for (let i = 0; i < remEvacPlan.length; i++) {
+  //     remEvacPlan[i].classList.remove("d-none");}
 
-      const evacPlan = document.getElementsByClassName("evacPlan");
-      for (let i = 0; i < evacPlan.length; i++) {
-        evacPlan[i].classList.add("d-block");}
+  //     const evacPlan = document.getElementsByClassName("evacPlan");
+  //     for (let i = 0; i < evacPlan.length; i++) {
+  //       evacPlan[i].classList.add("d-block");}
 
         // Evac Checklist begin
         const step1M = document.getElementsByClassName("step1M");
@@ -475,17 +475,17 @@ function cardUpdates() {
    
   
 
-  const evacForm = document.getElementsByClassName("evacForm");
-    for (let i = 0; i < evacForm.length; i++) {
-      evacForm[i].classList.add("d-none");}
+  // const evacForm = document.getElementsByClassName("evacForm");
+  //   for (let i = 0; i < evacForm.length; i++) {
+  //     evacForm[i].classList.add("d-none");}
 
-      const remEvacPlan = document.getElementsByClassName("evacPlan");
-    for (let i = 0; i < remEvacPlan.length; i++) {
-      remEvacPlan[i].classList.remove("d-none");}
+  //     const remEvacPlan = document.getElementsByClassName("evacPlan");
+  //   for (let i = 0; i < remEvacPlan.length; i++) {
+  //     remEvacPlan[i].classList.remove("d-none");}
 
-      const evacPlan = document.getElementsByClassName("evacPlan");
-      for (let i = 0; i < evacPlan.length; i++) {
-        evacPlan[i].classList.add("d-block");}
+  //     const evacPlan = document.getElementsByClassName("evacPlan");
+  //     for (let i = 0; i < evacPlan.length; i++) {
+  //       evacPlan[i].classList.add("d-block");}
 
         // Evac Checklist begin
         const step1M = document.getElementsByClassName("step2M");
@@ -530,17 +530,17 @@ function cardUpdates() {
   } if (addList) {
     
 
-  const evacForm = document.getElementsByClassName("evacForm");
-    for (let i = 0; i < evacForm.length; i++) {
-      evacForm[i].classList.add("d-none");}
+  // const evacForm = document.getElementsByClassName("evacForm");
+  //   for (let i = 0; i < evacForm.length; i++) {
+  //     evacForm[i].classList.add("d-none");}
 
-      const remEvacPlan = document.getElementsByClassName("evacPlan");
-    for (let i = 0; i < remEvacPlan.length; i++) {
-      remEvacPlan[i].classList.remove("d-none");}
+  //     const remEvacPlan = document.getElementsByClassName("evacPlan");
+  //   for (let i = 0; i < remEvacPlan.length; i++) {
+  //     remEvacPlan[i].classList.remove("d-none");}
 
-      const evacPlan = document.getElementsByClassName("evacPlan");
-      for (let i = 0; i < evacPlan.length; i++) {
-        evacPlan[i].classList.add("d-block");}
+  //     const evacPlan = document.getElementsByClassName("evacPlan");
+  //     for (let i = 0; i < evacPlan.length; i++) {
+  //       evacPlan[i].classList.add("d-block");}
 
         // Evac Checklist begin
         const step1M = document.getElementsByClassName("step3M");

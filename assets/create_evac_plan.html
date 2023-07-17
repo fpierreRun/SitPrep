@@ -37,7 +37,13 @@
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="./css/style.css">
         <link href="./css/dashboard.css" rel="stylesheet">
-      </head>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+      
 
 <body class="bg-white">
 <!-- Google Tag Manager (noscript) -->
@@ -85,10 +91,10 @@
                             <p class="h4 text-white pb-2">3 Day Plan</p>
   
                             <div  class="pl-2 d-flex text-white ">
-                              <span class="material-icons pr-3 text-white">
+                              <span class="material-icons pr-3 txtOppate">
                                 dashboard
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./dashboard Main.html">Overview</a>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./dashboard Main.html">Overview</a>
                               
                             </div>
                             
@@ -96,7 +102,7 @@
                               <span class="material-icons pr-3 text-white">
                                 map
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./create_evac_plan.html" >Plan Evacuation</a>
+                              <a class="pl-2 text-white d-flex btn font-weight-bold "  href="./create_evac_plan.html" >Plan Evacuation</a>
                               
                             </div>
   
@@ -104,26 +110,26 @@
                               <span class="material-icons pr-3 text-white">
                                 map
                                 </span>
-                              <a class="pl-2 text-white d-flex btn "  href="./plan.html" >Evacuation Plan</a>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./plan.html" >Evacuation Plan</a>
                               
                             </div>
                             
                             <div  class="  pl-2 d-flex text-white ">
-                              <span class="material-icons pr-3 text-white">
+                              <span class="material-icons pr-3 txtOppate">
                                 kitchen
                                 </span>
-                              <a class="pl-2 text-white d-flex btn"   href="./Food Supply.html" role="tab" >Food Supply</a>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Food Supply.html" role="tab" >Food Supply</a>
                               
                             </div>
                             
                             <div  class="  pl-2 d-flex text-white ">
-                              <span class="material-icons pr-3 text-white">
+                              <span class="material-icons pr-3 txtOppate">
                                 backpack
                                 </span>
-                              <a class="pl-2 text-white d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
                               
                             </div>
-                          <p class="h4 text-white pt-4">Extra</p>
+                          <p class="h4 txtOppate pt-4">Long Term</p>
               
                           <!-- <div  class=" pl-2 d-flex text-white">
                             <span class="material-icons pr-3 text-white">
@@ -136,36 +142,37 @@
                           
                            
                               <div  class="  pl-2 d-flex text-white">
-                                <span class="material-icons pr-3 text-white">
+                                <span class="material-icons pr-3 txtOppate">
                                 
                                   food_bank
                                   </span>
-                            <a href="../assets/storageCalc.html" class="btn pl-2 text-white d-flex">
+                            <a href="../assets/storageCalc.html" class="btn pl-2 txtOppate d-flex">
                               Food Storage</a>
                               </div>
                               
               
+                           
+                              
+
+                              <p class="h4 txtOppate pt-4 " >Info</p>
                               <div  class="  pl-2 d-flex text-white">
-                                <span class="material-icons pr-3 text-white">
+                                <span class="material-icons pr-3 txtOppate">
                               
                                   emoji_emotions
                                   </span>
-                                <a class="pl-2 text-white d-flex btn" href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">
+                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">
                                   Was SitPrep Helpful?</a>
                               </div>
-                              
-
-                              <p class="h4 text-white pt-4 " >Info</p>
               
                               <div  class="  pl-2 d-flex text-white">
                                 <span class="mb-3 material-icons  text-white">
-                                  <span class="material-icons text-white">
+                                  <span class="material-icons txtOppate">
                                     contact_mail
                                     </span>
                                   </span>
                                   <ul class=" text-left dropdown ">
 
-                                    <a class=" text-white dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class=" txtOppate dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Contact Us
                                     </a>
                                     <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
@@ -186,66 +193,272 @@
           <!-- Form Entry -->
           
           <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
-            <button class="d-xl-none text-secondary bg-white-outline btn float-right mt-2 font-weight-bolder" onclick="updateCards()" ><span class="material-symbols-outlined">
-              close
-              </span></button>
-            <div>
+              <!-- Button trigger modal -->
+              <button class="d-xl-none text-secondary bg-white-outline btn float-right mt-2 font-weight-bolder" onclick="updateCards()" ><span class="material-symbols-outlined">
+                close
+                </span></button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="pb-4 modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">Share SitPrep</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-center ">
+                
+                <div class=" text-center">
+                  <!-- Load Facebook SDK for JavaScript -->
+                  <div id="fb-root"></div>
+                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+            
+            
+                  <!-- Your share button code -->
+                  <div class="fb-share-button" 
+                      data-href="https://www.sitprep.app" 
+                      data-layout="button_count">
+                  </div>
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+                  <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+            
+                  <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+            
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+                  <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+                </div>
+              </div>
+              </div>
               
+            </div>
+          </div>
+        </div>
+
+          <div class="d-flex justify-content-between  align-items-center my-4">
+            <div class="d-flex align-items-center ">
+              <div class="phone-block mr-4 ml-4">
+                <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-white text-secondary p-4 ">
+                    <span class="material-symbols-rounded">
+                    home
+                    </span>
+                </a>
+              </div>
+              <p class="h2 txtImpact text-center mr-4 font-weight-bold text-success ">3 DAY PLAN </p>
+             
+            </div>
+           
+            <div class="d-flex align-items-center justify-content-end d-none d-xl-block ">
+            
+            <div class=" text-center">
+              <!-- Load Facebook SDK for JavaScript -->
+              <div id="fb-root"></div>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
         
-              <section class="py-5 container-fluid">
+        
+              <!-- Your share button code -->
+              <div class="fb-share-button" 
+                   data-href="https://www.sitprep.app" 
+                   data-layout="button_count">
+              </div>
+
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+              <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+        
+              <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+        
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+              <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+            </div>
+          </div>
+          
+        </div>
+        <hr class=" my-5 txtBlu rcorners phone-block " style="border-width: 5px;">
+      
+          
+        <!--version to download and share-->
+              <div class="d-flex justify-content-center " >
+                <input  class="btn btn-primary btn_print font-weight-normal mr-4" type="button" value="Download plan" id="downloadpdf1"  style="display: none;">
+                <input form="locationForm" class="btn btn-secondary font-weight-normal " type="button" value="Edit" onclick="editPlan(this.parentNode.parentNode)"  id="editPdf" style="display: none;"> 
+            </div>
+
+            <div class=" d-flex align-items-center justify-content-end d-xl-none mt-3">
+              <!-- <button class=" shadow btn btn-primary rounded-circle mr-4" ><span class="material-symbols-outlined" onclick="downloadAsPDF()">
+                download
+                </span></button> -->
+              <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter">
+                SHARE<img class="ml-2 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
+              </button>
+            </div>
+
+              <section class="py-5 container-fluid " id="downloadPlan" >
+                <main id="titleSig" hidden>
+                  <div >
+                      <div class=" align-bottom planimg1 bg-white ">
+                          <div class=" align-bottom  row">
+                            
+                            <div class="col-8 align-bottom mt-2">
+                            <h1 class="h2  title align-bottom" >MY EVACUATION PLAN</h1>
+                              </div>
+      
+                        </div>
+                    </div>
+      
+                  </div>
+      
+                  <div class="d-flex bg-white " >
+      
+                    <div class=" ">              
+                    <h4 class="font-weight-bold txtBlu">Powered by SitPrep</h4>
+                    </div>
+      
+                </div >
+                  <hr class=" pb-3 ">
+                </main>
                 <form id="locationForm">
-                  <main id="step1">
-                    <div class="pb-5">
-                      <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 1/3:</span> Where will you gather if your home is not accessible?</p>
-                      <hr class="my-4">
-                      <p class="text-muted h5">Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
+                  <main id="step1" class="">
+                    <div class="" id="editVone">
+                      <p class="h3 font-weight-bold txtBlu font"><span class="font-weight-bold txtGrn" >Step 1/3:</span> Where will you gather if your home is not accessible?</p>
+                      <hr class="">
+                      <p class="h5 font-weight-bold font-italic">
+                        Your privacy and safety is important to us. SitPrep and any other entity do not save, store, or share the information you provide.</p>
+                      <ul class="h6 text-muted ">
+                        <li>Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</li><br>
+                       
+                      </ul>
                     </div>
-              
-                    <h5>Primary Gathering Location</h5><br>
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">location_on</span>
-                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="primeLoc" placeholder="Enter gather location" />
+                    <!--PDf text begin-->
+                    <div id="pdfVone" hidden>
+                      <p class="h2">Gathering Place</p>
+                      
+                      <p class="text-muted">It is a good idea to choose an emergency meeting place for your household in case you are apart during an emergency. Be sure to select a place that is accessible and known to everyone, such as a landmark, intersections, or public park. If you have a pet, make sure the location is animal friendly.</p>
+                    </div> 
+                  <!--PDf text end-->
+                   
+                    <div class="container">
+                      <div class="row">
+                        <div class="">
+                          <div class="p-5 my-3 section-wrapper rcorners shadow">
+                            <h2>Primary Gathering Location</h2><br>
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">location_on</span>
+                              <input type="text" id="location-input2" class="w-75 p-2 rounded" name="primeLoc" placeholder="Enter gather location" />
+                            </div>
+                      
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">call</span>
+                              <input id="primeNum" name="primeNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
+                            </div>
+                      
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">info</span>
+                              <textarea class="w-75 p-2 rounded" id="primeAddInfo" name="primeInfo" placeholder="What additional info will your family need to know about the gathering Location?"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="changemode-driving-4">Travel Mode:</label>
+                              <select id="changemode-driving-4" class="form-control">
+                                <option value="DRIVING">Driving</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="TRANSIT">Transit</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="origin-input-4">Origin:</label>
+                              <div class="input-group">
+                                <input id="origin-input-4" class="form-control" type="text" placeholder="Enter origin">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="destination-input-4">Destination:</label>
+                              <div class="input-group">
+                                <input id="destination-input-4" class="form-control" type="text" placeholder="Enter destination">
+                              </div>
+                            </div>
+                            <div class="map-container">
+                              <div id="map4"></div>
+                            </div>
+                            <div class="">
+                              <div id="panel4" class="directions-panel bg-light"></div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="" >
+                          <div class="p-5 my-3 section-wrapper rcorners shadow" id="map5Section" hidden>
+                            <div class="d-flex justify-content-between mb-3">
+                              <h2>Secondary Gathering Location</h2><br>
+                              
+                              <input value="Remove Plan" type="button" class="btn btn-sm btn-danger element-to-hide" id="removeMap5Button" hidden></input>
+                            </div>
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">location_on</span>
+                              <input type="text" id="location-input2" class="w-75 p-2 rounded" name="secLoc" placeholder="Enter gather location" />
+                            </div>
+                      
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">call</span>
+                              <input id="secNum" name="secNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
+                            </div>
+                      
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-5">info</span>
+                              <textarea class="w-75 p-2 roundedl" id="addInfo" name="secInfo" placeholder="Enter location additional info"></textarea><br>
+                            </div>
+                            <div class="form-group">
+                              <label for="changemode-driving-5">Travel Mode:</label>
+                              <select id="changemode-driving-5" class="form-control">
+                                <option value="DRIVING">Driving</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="TRANSIT">Transit</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="origin-input-5">Origin:</label>
+                              <div class="input-group">
+                                <input id="origin-input-5" class="form-control" type="text" placeholder="Enter origin">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="destination-input-5">Destination:</label>
+                              <div class="input-group">
+                                <input id="destination-input-5" class="form-control" type="text" placeholder="Enter destination">
+                              </div>
+                            </div>
+                            <div class="map-container">
+                              <div id="map5"></div>
+                            </div>
+                            <div class="">
+                              <div id="panel5" class="directions-panel bg-light"></div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="col-lg-4 mb-5" id="addMap5Button">
+                          <a type="button" class="btn text-primary  mt-3 " >
+                            <div class="d-flex align-items-center">
+                              <span class="pr-2  material-icons">
+                            add_circle
+                            </span>
+                            <p class="h4">Add Optional Plan</p>
+                          </div>
+                          </a>
+                        </div>
+
+                      </div>
                     </div>
-              
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">call</span>
-                      <input id="primeNum" name="primeNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
-                    </div>
-              
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">info</span>
-                      <textarea class="w-75 p-2 rounded" id="primeAddInfo" name="primeInfo" placeholder="Enter location additional info"></textarea>
-                    </div>
-              
-                    <div class="pt-3">
-                      <input class="rounded" type="checkbox" id="addSecond" name="add" value="Secondary" onclick="expandSecondary()">
-                      <label for="vehicle1">Add a Secondary Location</label><br>
-                    </div>
+                  
+                    
                   </main>
               
-                  <main style="display: none" id="secondLocation" class="pt-5">
-                    <h4>Secondary Gathering Location</h4><br>
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">location_on</span>
-                      <input type="text" id="location-input2" class="w-75 p-2 rounded" name="secLoc" placeholder="Enter gather location" />
-                    </div>
+               
               
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">call</span>
-                      <input id="secNum" name="secNum" class="w-75 p-2 rounded" placeholder="(Optional) Enter location number"><br>
-                    </div>
-              
-                    <div class="form-group d-flex">
-                      <span class="material-symbols-rounded pr-5">info</span>
-                      <textarea class="w-75 p-2 roundedl" id="addInfo" name="secInfo" placeholder="Enter location additional info"></textarea><br>
-                    </div>
-                  </main>
-              
-                  <main style="display: none" id="evacForm">
-                    <div class="pb-5">
+                  <main class=" " style=" display: none" id="evacForm">
+                    <div class="" id="editVtwo">
                       <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 2/3:</span> What will be your evacuation plan?</p>
                       <hr class="my-4">
-                      <ul class="text-muted ">
+                      <ul class="h6 text-muted ">
                         <li>Plan how you will leave and where you and your household will go if evacuation is in place.</li><br>
                         <li>Find different places you can go in case of an emergency, like a friend's house in another town or a motel. Choose destinations in different directions so you have options during an emergency.</li><br>
                         <li>If you have pets, make sure you know a place where they can stay because most public shelters only allow service animals.</li><br>
@@ -254,20 +467,26 @@
                       </ul>
                     </div>
 
-
+                    <!--pdf text begin-->
+                    <div id="pdfVtwo" hidden>
+                      <p class="h2">Evacuation Route</p>
+                  
+                      <p>Evacuation from your home can happen for many kind of emergencies. It is important that  you have a plan to evacuate safely and quickly. Plan how will you leave and where you and your household will go if evacuation is in place.</p>
+                    </div> 
+                    <!--pdf text end-->
             
               <!--evacuation maps-->
-              <div class="">
-                <div class="">
+              <div class="container-fluid" >
+                <div class="" id="map1Section" >
                   <div class="">
-                    <div class="p-3 my-3 section-wrapper rcorners shadow">
+                    <div class="p-5 my-3 section-wrapper rcorners shadow">
                       <h1 class="font-weight-bold display-6 mt-3 pb-3">Plan A</h1>
                       <h1 class=" mt-3 pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-3">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-1 rounded" placeholder="Enter shelter name">
+                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rounded" placeholder="Enter shelter name">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-3">
@@ -306,35 +525,36 @@
                       <div class="map-container">
                         <div id="map1"></div>
                       </div>
-                      <div class="my-5 py-5">
+                      <div class="">
                         <div id="panel1" class="directions-panel bg-light"></div>
                       </div>
                     </div>
                   </div>
+
                   <div class="">
-                    <div class="p-3 my-3 section-wrapper rcorners shadow" id="map2Section" hidden>
+                    <div class="p-5 my-3 section-wrapper rcorners shadow" id="map2Section" hidden>
                       <div class="mb-1 d-flex justify-content-between">
                          <h1 class="font-weight-bold display-6 mt-3 pb-1">Plan B</h1>
-                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger " id="removeMap2Button" hidden></input>
+                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger element-to-hide" id="removeMap2Button" hidden></input>
                       </div>
                       <h1 class=" mt-3 pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rcorners" placeholder="Enter shelter location">
+                        <input type="text" id="needs" name="evacLoc2" class="w-75 p-2 rounded" placeholder="Enter shelter location">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           call
                         </span>
-                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter shelter number">
+                        <input id="need2" name="evacNum2" class="w-75 p-2 rounded" placeholder="Enter shelter number">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           info
                         </span>
-                        <textarea class="w-75 p-2 rounded" id="sec-Evac-Loc" name="sec-Evac-Loc" placeholder="What additional info will your family need to know when evacuating to the shelter?"></textarea>
+                        <textarea class="w-75 p-2 rounded" id="sec-Evac-Loc2" name="sec-Evac-Loc2" placeholder="What additional info will your family need to know when evacuating to the shelter?"></textarea>
                       </div>
                       <h2 class="mt-5 pb-3">Evacuation Route</h2>
                       <div class="form-group">
@@ -361,11 +581,11 @@
                       <div class="map-container">
                         <div id="map2"></div>
                       </div>
-                      <div class="my-5 py-5">
+                      <div class="">
                         <div id="panel2" class="directions-panel bg-light"></div>
                       </div>
                     </div>
-                    <a type="button" class="btn text-primary  mt-3" id="addMap2Button" >
+                    <a type="button" class="btn text-primary mt-3 element-to-hide mb-5" id="addMap2Button">
                       <div class="d-flex align-items-center">
                         <span class="pr-2  material-icons">
                       add_circle
@@ -374,30 +594,31 @@
                     </div>
                     </a>
                   </div>
+                  
                   <div class="">
-                    <div class="p-3 my-3 section-wrapper rounded shadow" id="map3Section" hidden>
+                    <div class="p-5 my-3 section-wrapper rcorners shadow" id="map3Section" hidden>
                       <div class="mb-2 d-flex justify-content-between">
                         <h1 class="font-weight-bold display-6 mt-3 pb-2">Plan C</h1>
-                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger " id="removeMap3Button" hidden></input>
+                        <input value="Remove Plan" type="button" class="btn btn-sm btn-danger element-to-hide" id="removeMap3Button" hidden></input>
                       </div>
                       <h1 class=" pb-3">Shelter Info</h1>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           location_on
                         </span>
-                        <input type="text" id="needs" name="evacLoc" class="w-75 p-2 rounded" placeholder="Enter shelter location">
+                        <input type="text" id="needs" name="evacLoc3" class="w-75 p-2 rounded" placeholder="Enter shelter location">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           call
                         </span>
-                        <input id="need2" name="evacNum" class="w-75 p-2 rounded" placeholder="Enter shelter number">
+                        <input id="need2" name="evacNum3" class="w-75 p-2 rounded" placeholder="Enter shelter number">
                       </div>
                       <div class="form-group d-flex">
                         <span class="material-symbols-rounded pr-5">
                           info
                         </span>
-                        <textarea class="w-75 p-2 rounded" id="sec-Evac-Loc" name="sec-Evac-Loc" placeholder="What additional info will your family need to know when evacuating to the shelter?"></textarea>
+                        <textarea class="w-75 p-2 rounded" id="sec-Evac-Loc3" name="sec-Evac-Loc3" placeholder="What additional info will your family need to know when evacuating to the shelter?"></textarea>
                       </div>
                       <h2 class="mt-5 pb-3">Evacuation Route</h2>
                       <div class="form-group">
@@ -425,16 +646,16 @@
                       <div class="my-5 map-container">
                         <div id="map3"></div>
                       </div>
-                      <div class="my-5 py-5">
+                      <div class="">
                         <div id="panel3" class="directions-panel bg-light"></div>
                       </div>
                     </div>
-                    <a type="button" class="btn text-primary  mt-3" id="addMap3Button" hidden >
+                    <a type="button" class="btn text-primary mt-3 element-to-hide mb-5" id="addMap3Button" hidden>
                       <div class="d-flex align-items-center">
                         <span class="pr-2  material-icons">
                       add_circle
                       </span>
-                      <p class="h4">Add Optional Plan</p>
+                      <p class="h4 ">Add Optional Plan</p>
                     </div>
                     </a>
                   </div>
@@ -444,12 +665,18 @@
 
                 <!-- Contact Info -->
 
-                <main style="display: none" id="contactForm">
-      <div class="pb-5">
-        <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
-        <hr class="my-4">
-        <p class="text-muted h5">Keep in mind it might be easier to make a long-distance call than to call nearby during a disaster.</p>
-      </div>
+          <main class="mt-5 " style="display: none" id="contactForm">
+              <div class="mt-5 pb-5 " id="editVthree">
+                <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 3/3:</span> Who will those in your household call or email during an emergency situation?</p>
+                <hr class="my-4">
+                <p class="text-muted h5">Keep in mind it might be easier to make a long-distance call than to call nearby during a disaster.</p>
+              </div>
+
+              <div class="mb-5" id="pdfVthree" hidden>
+                <p class="h2">Emergency Contact</p>
+                
+                <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+                </div> 
 
 
                     <div class="form-group d-flex" >
@@ -482,32 +709,34 @@
 
             <!--first next button-->
 
-            <main class="py-5 d-flex float-right">
+            <main class="py-5 d-flex float-right element-to-hide">
               <div>
-                <button onclick="updateCards()" class="btn btn-secondary phone-block">Close</button>
+                <button onclick="updateCards()" class="btn btn-secondary phone-block element-to-hide">Close</button>
               </div>
         
               <div class="ml-4">
-                <button id="next" onclick="evacPage()" class="btn btn-primary">Next</button>
+                <button id="next" onclick="evacPage()" class="btn btn-primary element-to-hide">Next</button>
               </div>
         
               <div class="d-flex">
                 <div class="pr-3">
-                  <button id="previous1" style="display: none" onclick="locPage()" class="btn btn-primary">Previous</button>
+                  <button id="previous1" style="display: none" onclick="locPage()" class="btn btn-primary element-to-hide">Previous</button>
                 </div>
         
                 <div class="ml-4">
-                  <button style="display: none" id="next1" onclick="contactPage()" class="btn btn-primary">Next</button>
+                  <button style="display: none" id="next1" onclick="contactPage()" class="btn btn-primary element-to-hide">Next</button>
                 </div>
               </div>
         
               <div class="d-flex">
                 <div class="pr-3" style="display: none" id="previous2">
-                  <button onclick="evacPage()" class="btn btn-primary">Previous</button>
+                  <button onclick="evacPage()" class="btn btn-primary ">Previous</button>
                 </div>
         
                 <div style="display: none" id="next2">
-                  <input form="locationForm" class="btn btn-success" type="submit" value="Save & Continue">
+                  <input id="save" form="locationForm" class="btn btn-success " type="submit" value="Generate PDF" onclick="saveForm(event)">
+
+                  <input id="downloadPlan2" form="locationForm" class="btn btn-success btn_print element-to-hide" type="submit" value="Download" hidden>
                 </div>
               </div>
             </main>
@@ -523,21 +752,22 @@
 
 
     
-
+      
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      
  <script
  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCFmN1eEFjrP2QqE368N9M0CbBJkJLr8s&libraries=places&callback=initMap"  defer
   
 ></script>
 
-<script src="./js/form.js"></script>
 <script src="./js/maplogic.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/load.js"></script>
+
+
+
 
 
 
