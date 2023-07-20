@@ -646,7 +646,7 @@ function refreshpageFood() {
     
             document.getElementById("dogs").value= element.dogs;
             document.getElementById("cats").value= element.cats;
-            // document.getElementById("pets").value= element.pets;
+            document.getElementById("pets").value= element.pets;
 
         };
         updateIngredients();
@@ -780,7 +780,7 @@ function decreasePets() {
          var opt = 
          {
            margin:     0.25,
-           filename:     'My_Food_Supply.pdf',
+           filename:     'Food_Supply_Grocery_List.pdf',
            image:        { type: 'pdf', quality: 0.98 },
            html2canvas:  { scale: 2, scrollY: 0 },
            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -799,11 +799,16 @@ function decreasePets() {
      });
   //download PDF code ends
 
+  //give feeback begins
+
    function giveFeedback(){
     window.open("https://g.page/r/CcCOilHmZderEAI/review", "_blank");
     // window.location.href="https://g.page/r/CcCOilHmZderEAI/review";
 
   };
+//give feeback ends
+
+
 
   function displayrows(){
    // Get all the table rows

@@ -177,7 +177,7 @@
                               
                                   emoji_emotions
                                   </span>
-                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEBM/review" target="_blank">Was This Tool Helpful?</a>
+                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">Was This Tool Helpful?</a>
                               </div>
                           
                               <div  class="  pl-2 d-flex txtOppate">
@@ -206,7 +206,25 @@
 
         </div>
      </div>
-      
+           <!--Mobile header begibns-->
+           <header class="d-flex mx-2 mt-4  justify-content-between">
+            <div>
+              <p class="h2 txtImpact  font-weight-bold text-success ">3 DAY PLAN </p>
+            </div>
+          <div class="">
+                  <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold d-xl-none" data-toggle="modal" data-target="#shareMobile">
+                    SHARE<img class="ml-3 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
+                  </button>
+  
+                  <button class="ml-2 d-xl-none text-secondary bg-white-outline btn  font-weight-bolder" onclick="updateCards()" ><span class="material-symbols-outlined font-weight-bolder">
+                    close
+                    </span></button>
+            
+                </div>
+          </header>
+          <!--Mobile header ends-->
+
+          
           <!-- Form Entry -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
 
@@ -214,7 +232,7 @@
        
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="shareMobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="pb-4 modal-content">
               <div class="modal-header">
@@ -261,14 +279,9 @@
                     </span>
                 </a>
               </div>
-              <p class="h2 txtImpact text-center mr-4 font-weight-bold text-success ">3 DAY PLAN </p>
              
             </div>
-            <div class=" d-flex align-items-center justify-content-end d-xl-none">
-              <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter">
-                SHARE<img class="ml-2 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
-              </button>
-            </div>
+            
             <div class="d-flex align-items-center justify-content-end d-none d-xl-block ">
             
             <div class=" text-center">
@@ -433,7 +446,7 @@
     <div class="rcorners p-3 shadow grnOppate mb-5">
       <p class="h2 font-weight-bold text-center txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> Get Your Food Supply</p>
       <hr class="my-4 mx-5" >
-      <p class="text-center h5 robotoFnt text-muted font-weight-normal" id="element-to-hide" data-html2canvas-ignore="true">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
+      <p class="text-center h6 robotoFnt text-muted font-weight-normal" id="element-to-hide" data-html2canvas-ignore="true">The food recommendation below is a basic recommendation and does not include unique needs your household might have, such as 
         specific dietary needs  for individuals or pets. The provided recommendation will give you a basic list for you to check off and adjust 
         as needed. </p>
 
@@ -478,7 +491,7 @@
         <div class="container-fluid rcorners bg-white p-3 shadow mb-5">
           <h1 class="txtBlu font-weight-bold text-center">3 Day Meal Planner</h1>
           <hr class="my-4 mx-5">
-          <p class=" text-muted my-3 text-center"><span class="font-weight-bold">Instructions: </span>Choose from the dropdown menus below to create a 3-day meal plan using basic storage items. Select your desired meal options for each day, and a grocery list will be generated. You can then use the list for convenient shopping on Amazon or at a physical store
+          <p class="h6 text-muted my-3 text-center font-weight-normal"><span class="font-weight-bold">Instructions: </span>Choose from the dropdown menus below to create a 3-day meal plan using basic storage items. Select your desired meal options for each day, and a grocery list will be generated. You can then use the list for convenient shopping on Amazon or at a physical store.
           </p>
           <div class="row">
             <div class="col-md-4">
@@ -668,13 +681,10 @@
      <main class="container-fluid rcorners p-3 shadow bg-white mb-5" id="downloadPlan">
       <h1 class="txtBlu font-weight-bold text-center mb-4">GROCERY LIST</h1>
       <hr class="my-4 mx-5">
-      <p class=" text-muted my-3 text-center"><span class="font-weight-bold">Instructions: </span>Mark the items you already have below, and download your grocery list for convenient shopping. You can use our provided links to shop on Amazon or visit a physical grocery store. By clicking 'Save & Continue’' below, your information will be stored locally in your browser, allowing you to return and update your meal plan or download it again anytime
+      <p class="h6 text-muted my-3 text-center font-weight-normal"><span class="font-weight-bold">Instructions: </span>Mark the items you already have below, and download your grocery list for convenient shopping. You can use our provided links to shop on Amazon or visit a physical grocery store. By clicking 'Save & Continue’' below, your information will be stored locally in your browser, allowing you to return and update your meal plan or download it again anytime.
       <div class="py-2 mb-5 d-flex justify-content-center ">
 
-        <div class="  ">
-          <a class="btn btn-primary btn rounded-pill shadow" target="_blank" href="./print_food_supply.html" onclick="storeMealOptions()">Share or Print Meal Plan</a>
-        </div>
-
+       
          <!-- <div class="" id="next2"> -->
         <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
           <!-- <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-primary btn_print" type="submit" value="Share or Print Grocery List" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
@@ -1348,21 +1358,22 @@
           
         </tbody>
       </table>
+ 
+
       </div>
+       
       </main>
-      <div class="py-2 mb-5 d-flex justify-content-center  text-center">
-          <div class=" ">
-            <a class="  btn btn-primary  btn rounded-pill shadow" target="_blank" href="./print_food_supply.html">Download Meal Plan</a>
-          </div>
-           <div class="text-center " id="next2">
-          <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
-            <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-primary btn_print" type="submit" value="Download Grocery List" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true" >
-          </div> 
-          <div class="text-center ml-5 " id="next2">
-            <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
-              <input  class="rounded-pill btn btn-success" type="submit" value="Save & Continue" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModa" id="element-to-hide" data-html2canvas-ignore="true" >
-            </div> 
-      </div>
+         <div class="py-2 mb-5  text-center">
+               
+               
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-success btn-rounded-pill " data-toggle="modal" data-target="#exampleModalCenter" onclick="downloadCheckList()" id="element-to-hide" data-html2canvas-ignore="true">
+                      Save & Continue
+                    </button>
+                   
+                  </div>
+                
+              </div>
 
       <!--prepackaged options-->
       </div>
@@ -1426,18 +1437,35 @@
       <div class="modal-content">
         <div class="pr-3 pt-3">
         
-          <a type="button" class="close" href="./dashboard Main.html">
+         
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</a>
           </button>
         </div>
-        <div class="modal-body">
+
+     
+
+        <div class="modal-body ">
+          <div class="d-flex justify-content-center">
+            <div class="mb-3">
+              <a class="btn btn-primary btn-rounded-pill shadow" target="_blank" href="./print_food_supply.html">Download or Print Meal Plan</a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center  mt-3 ">
+            <div class="mb-3">
+              <input type="button"  class="btn btn-outline-primary btn-rounded-pill btn_print"   value="Download Grocery List"  id="element-to-hide" data-html2canvas-ignore="true">
+            </div>
+          </div>
+
+
           <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
         
         </div>
 
         <div class="modal-footer">
-          <a type="button" class="btn btn-secondary"  href="./dashboard Main.html">Close</a>
-          <button type="button" class="btn btn-success" onclick="giveFeedback(), downloadCheckList()">Leave Review</button>
+          
+          <button type="button" class="btn btn-success" onclick="giveFeedback()">Write a review</button>
+          <a type="button" class="btn btn-outline-success"  href="./dashboard Main.html">Complete</a>
         </div>
 
       </div>
@@ -1456,6 +1484,7 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
 <script src="./js/food supply one.js"></script>
 <script src="./js/food supply two.js"></script>
+<script src="./js/share_sitprep.js"></script>
 
 
 

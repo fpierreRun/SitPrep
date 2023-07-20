@@ -23,7 +23,7 @@ function refreshpageFood() {
 
       document.getElementById("dogs").value= element.dogs;
       document.getElementById("cats").value= element.cats;
-      document.getElementById("others").value= element.others;
+      document.getElementById("pets").value= element.pets;
       
       var infants = document.getElementById("infants").value
       var kids = document.getElementById("kids").value
@@ -31,7 +31,7 @@ function refreshpageFood() {
 
       var dogs = document.getElementById("dogs").value
       var cats = document.getElementById("cats").value
-      var others = document.getElementById("others").value
+      var pets = document.getElementById("pets").value
     
       // Food Supply
       var gallon2 = ((~~kids)+(~~adults))*6
@@ -75,7 +75,7 @@ function saveFood() {
     kids = document.getElementById("kids").value
     dogs = document.getElementById("dogs").value
     cats = document.getElementById("cats").value
-    others = document.getElementById("others").value
+    pets = document.getElementById("pets").value
   
     //Object for form data
     var demoDataObj = {
@@ -88,7 +88,7 @@ function saveFood() {
         //  Pets
         dogs: dogs,
         cats: cats,
-        others: others,
+        pets: pets,
   
     };
     demoData.push(demoDataObj);
@@ -160,7 +160,7 @@ function saveData () {
     
             document.getElementById("dogs").value= element.dogs;
             document.getElementById("cats").value= element.cats;
-            document.getElementById("others").value= element.others;
+            document.getElementById("pets").value= element.pets;
 
         };
         refreshpageFood()
@@ -251,13 +251,13 @@ function decreaseCats() {
 
 //other pets Value Change buttons Function 
 function increaseOthers() {
-  var input = document.getElementById("others");
+  var input = document.getElementById("pets");
   input.value = parseInt(input.value) + 1;
   saveFood()
 }
 
 function decreaseOthers() {
-  var input = document.getElementById("others");
+  var input = document.getElementById("pets");
   if (parseInt(input.value) > 0) {
     input.value = parseInt(input.value) - 1;
   }
@@ -427,3 +427,10 @@ refreshpageFood()
 loadSaveList () 
 saveFood()
 
+
+function updateCards(){
+
+  //go to View Plan
+ window.location.href="./dashboard Main.html";
+ 
+ };

@@ -110,6 +110,8 @@ function showIngredients(day, meal) {
 
 
 function downloadCheckList() {
+  // window.location.href="./dashboard Main.html";
+
   var checkboxes = [
     "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
     "juiceCheck", "milkCheck", "granolaCheck", "snacksCheck", "aVitaminsCheck", 
@@ -195,3 +197,10 @@ for (let i = 0; i < selectMeals.length; i++) {
   
 }
 
+
+function updateCards(){
+
+ //go to View Plan
+window.location.href="./dashboard Main.html";
+
+};
