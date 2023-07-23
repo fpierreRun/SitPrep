@@ -514,6 +514,11 @@ font-weight:300;
   color: var(--primary-color);
 }
 
+.txtLiteOrg{
+  color: rgb(255, 102, 102);
+}
+
+
 .txtBlue{
   color: #091e42;
 }
@@ -967,6 +972,19 @@ textarea {
 
 .stp1-pic{
   background-image: url(../images/Gathering.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+
+.stp2-pic{
+  background-image: url(../images/Food\ Supply\ Main\ –\ 1.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+.stp3-pic{
+  background-image: url(../images/Additional\ Supplies\ Main.png);
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;

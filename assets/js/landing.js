@@ -7,7 +7,7 @@ var prfName =[];
 
 
 function openNameModal(){
-  $('#getName').modal('show');
+  $('#updateName').modal('show');
 
  }; 
 
@@ -28,6 +28,22 @@ applyName()
 
 
 
+function newName(){
+  localStorage.removeItem("prfName");
+  var myName = document.getElementById("newName").value;
+   
+    //Object for form data
+    var nameDataObj = {
+  
+      //preferred name
+      myName: myName,
+    
+    };
+    prfName.push(nameDataObj);
+    localStorage.removeItem("prfName");
+    updateName()
+  
+  };
 
 
 function saveName(){
