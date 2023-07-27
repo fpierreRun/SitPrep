@@ -408,6 +408,7 @@ function cardUpdates() {
   updatedPlan = JSON.parse(localStorage.getItem("editedPlan"));
   foodList = JSON.parse(localStorage.getItem("foodList"));
   addList = JSON.parse(localStorage.getItem("addList"));
+  emerCont = JSON.parse(localStorage.getItem("emerCont"));
 
   if (!updatedPlan) {
     updatedPlan = JSON.parse(localStorage.getItem("plan"));
@@ -433,7 +434,9 @@ function cardUpdates() {
       
 
 
-  } if (updatedPlan) {
+  }
+  
+  if (updatedPlan) {
     localStorage.removeItem('addTo72');
 
   // const evacForm = document.getElementsByClassName("evacForm");
@@ -487,7 +490,65 @@ function cardUpdates() {
 
     var prog72 = 33.333;
 
-  }  if (foodList) {
+  } 
+
+  if (emerCont) {
+   
+
+  // const evacForm = document.getElementsByClassName("evacForm");
+  //   for (let i = 0; i < evacForm.length; i++) {
+  //     evacForm[i].classList.add("d-none");}
+
+  //     const remEvacPlan = document.getElementsByClassName("evacPlan");
+  //   for (let i = 0; i < remEvacPlan.length; i++) {
+  //     remEvacPlan[i].classList.remove("d-none");}
+
+  //     const evacPlan = document.getElementsByClassName("evacPlan");
+  //     for (let i = 0; i < evacPlan.length; i++) {
+  //       evacPlan[i].classList.add("d-block");}
+
+        // Evac Checklist begin
+        const step1_5M = document.getElementsByClassName("step1_5M");
+    for (let i = 0; i < step1_5M.length; i++) {
+      step1_5M[i].classList.add("d-none");}
+
+      const step1_5C = document.getElementsByClassName("step1_5C");
+    for (let i = 0; i < step1_5C.length; i++) {
+      step1_5C[i].classList.remove("d-none");}
+
+      // const evacPlan = document.getElementsByClassName("evacPlan");
+      // for (let i = 0; i < evacForm.length; i++) {
+      //   evacPlan[i].classList.add("d-block");}
+
+  
+  document.getElementById("continue1_5").style.display = "none";
+  document.getElementById("view1_5").style.display = "block";
+  document.getElementById("add1_5").style.display = "none";
+  
+  document.getElementById("not1_5").style.display = "none";
+    document.getElementById("prog1_5").style.display = "none";
+    document.getElementById("comp1_5").style.display = "block";
+
+  //   document.getElementById("step1_5M").style.display = "none";
+  //   document.getElementById("step1_5C").style.display = "block";
+
+  
+    
+
+    // var evacForm = document.getElementById("evacForm");
+    // evacForm.classList.add("d-none");
+
+    // var remEvacPlan = document.getElementById("evacPlan");
+    // remEvacPlan.classList.remove("d-none");
+
+    // var evacPlan = document.getElementById("evacPlan");
+    // evacPlan.classList.add("d-block");
+
+    var prog72 = 33.333;
+
+  } 
+  
+  if (foodList) {
    
   
 
@@ -543,7 +604,9 @@ function cardUpdates() {
     var prog72 = 33.333;
 
 
-  } if (addList) {
+  }
+  
+  if (addList) {
     
 
   // const evacForm = document.getElementsByClassName("evacForm");
@@ -598,7 +661,9 @@ function cardUpdates() {
     var prog72 = 33.333;
 
   } 
-  if (addList || foodList || updatedPlan) {
+
+
+  if (addList || foodList || updatedPlan || emerCont) {
     const dontShow = document.getElementsByClassName("dashBlock");
     for (let i = 0; i < dontShow.length; i++) {
       dontShow[i].classList.add("d-none");

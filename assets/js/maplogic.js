@@ -104,125 +104,86 @@ class AutocompleteDirectionsHandler {
 }
 
 function initMap() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        const currentLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
+  const centerOfUnitedStates = { lat: 39.8283, lng: -98.5795 };
 
-        const map1 = new google.maps.Map(document.getElementById("map1"), {
-          disableDefaultUI: true,
-          zoom: 12,
-          center: currentLocation,
-          zoomControl: true,
-          fullscreenControl: true
-        });
-        const map2 = new google.maps.Map(document.getElementById("map2"), {
-          disableDefaultUI: true,
-          zoom: 12,
-          center: currentLocation,
-          zoomControl: true,
-          fullscreenControl: true
-        });
-        const map3 = new google.maps.Map(document.getElementById("map3"), {
-          disableDefaultUI: true,
-          zoom: 12,
-          center: currentLocation,
-          zoomControl: true,
-          fullscreenControl: true
-        });
+  const mapOptions = {
+    disableDefaultUI: true,
+    zoom: 5,
+    center: centerOfUnitedStates,
+    zoomControl: true,
+    fullscreenControl: true,
+  };
 
-        const map4 = new google.maps.Map(document.getElementById("map4"), {
-          disableDefaultUI: true,
-          zoom: 12,
-          center: currentLocation,
-          zoomControl: true,
-          fullscreenControl: true
-        });
-        const map5 = new google.maps.Map(document.getElementById("map5"), {
-          disableDefaultUI: true,
-          zoom: 12,
-          center: currentLocation,
-          zoomControl: true,
-          fullscreenControl: true
-        });
+  const map1 = new google.maps.Map(document.getElementById("map1"), mapOptions);
+  const map2 = new google.maps.Map(document.getElementById("map2"), mapOptions);
+  const map3 = new google.maps.Map(document.getElementById("map3"), mapOptions);
+  // const map4 = new google.maps.Map(document.getElementById("map4"), mapOptions);
+  // const map5 = new google.maps.Map(document.getElementById("map5"), mapOptions);
 
-        const panel1 = document.getElementById("panel1");
-        const panel2 = document.getElementById("panel2");
-        const panel3 = document.getElementById("panel3");
-        const panel4 = document.getElementById("panel4");
-        const panel5 = document.getElementById("panel5");
+  const panel1 = document.getElementById("panel1");
+  const panel2 = document.getElementById("panel2");
+  const panel3 = document.getElementById("panel3");
+  // const panel4 = document.getElementById("panel4");
+  // const panel5 = document.getElementById("panel5");
 
-        const handler1 = new AutocompleteDirectionsHandler(
-          map1,
-          document.getElementById("origin-input-0"),
-          document.getElementById("destination-input-0"),
-          document.getElementById("changemode-driving-1"),
-          panel1,
-          1
-        );
-        const handler2 = new AutocompleteDirectionsHandler(
-          map2,
-          document.getElementById("origin-input-1"),
-          document.getElementById("destination-input-1"),
-          document.getElementById("changemode-driving-2"),
-          panel2,
-          2
-        );
-        const handler3 = new AutocompleteDirectionsHandler(
-          map3,
-          document.getElementById("origin-input-2"),
-          document.getElementById("destination-input-2"),
-          document.getElementById("changemode-driving-3"),
-          panel3,
-          3
-        );
+  const handler1 = new AutocompleteDirectionsHandler(
+    map1,
+    document.getElementById("origin-input-0"),
+    document.getElementById("destination-input-0"),
+    document.getElementById("changemode-driving-1"),
+    panel1,
+    1
+  );
+  const handler2 = new AutocompleteDirectionsHandler(
+    map2,
+    document.getElementById("origin-input-1"),
+    document.getElementById("destination-input-1"),
+    document.getElementById("changemode-driving-2"),
+    panel2,
+    2
+  );
+  const handler3 = new AutocompleteDirectionsHandler(
+    map3,
+    document.getElementById("origin-input-2"),
+    document.getElementById("destination-input-2"),
+    document.getElementById("changemode-driving-3"),
+    panel3,
+    3
+  );
+  // const handler4 = new AutocompleteDirectionsHandler(
+  //   map4,
+  //   document.getElementById("origin-input-4"),
+  //   document.getElementById("destination-input-4"),
+  //   document.getElementById("changemode-driving-4"),
+  //   panel4,
+  //   4
+  // );
+  // const handler5 = new AutocompleteDirectionsHandler(
+  //   map5,
+  //   document.getElementById("origin-input-5"),
+  //   document.getElementById("destination-input-5"),
+  //   document.getElementById("changemode-driving-5"),
+  //   panel5,
+  //   5
+  // );
 
-            
-        const handler4 = new AutocompleteDirectionsHandler(
-          map4,
-          document.getElementById("origin-input-4"),
-          document.getElementById("destination-input-4"),
-          document.getElementById("changemode-driving-4"),
-          panel4,
-          4
-        );
-        const handler5 = new AutocompleteDirectionsHandler(
-          map5,
-          document.getElementById("origin-input-5"),
-          document.getElementById("destination-input-5"),
-          document.getElementById("changemode-driving-5"),
-          panel5,
-          5
-        );
+  handler1.setup();
+  handler2.setup();
+  handler3.setup();
+  // handler4.setup();
+  // handler5.setup();
 
-        handler1.setup();
-        handler2.setup();
-        handler3.setup();
-        handler4.setup();
-        handler5.setup();
+  handler1.route();
+  handler2.route();
+  handler3.route();
+  // handler4.route();
+  // handler5.route();
 
-        handler1.route();
-        handler2.route();
-        handler3.route();
-        handler4.route();
-        handler5.route();
-
-        handler1.storeData();
-        handler2.storeData();
-        handler3.storeData();
-        handler4.storeData();
-        handler5.storeData();
-      },
-      function (error) {
-        console.error("Error getting current location:", error);
-      }
-    );
-  } else {
-    console.error("Geolocation is not supported by this browser.");
-  }
+  handler1.storeData();
+  handler2.storeData();
+  handler3.storeData();
+  // handler4.storeData();
+  // handler5.storeData();
 }
 
 document.addEventListener("DOMContentLoaded", initMap);
@@ -234,9 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const addMap3Button = document.getElementById("addMap3Button");
   const removeMap2Button = document.getElementById("removeMap2Button");
   const removeMap3Button = document.getElementById("removeMap3Button");
-  const map5Section = document.getElementById("map5Section");
-  const addMap5Button = document.getElementById("addMap5Button");
-  const removeMap5Button = document.getElementById("removeMap5Button");
+  // const map5Section = document.getElementById("map5Section");
+  // const addMap5Button = document.getElementById("addMap5Button");
+  // const removeMap5Button = document.getElementById("removeMap5Button");
   
 
   addMap2Button.addEventListener("click", function () {
@@ -278,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
     map5Section.setAttribute("hidden", "true");
     addMap5Button.removeAttribute("hidden");
     removeMap5Button.setAttribute("hidden", "true");
-    localStorage.removeItem("mapData5");
+    // localStorage.removeItem("mapData5");
   });
 });
 
@@ -306,17 +267,17 @@ window.addEventListener("unload", function () {
       }
       });
 
-      window.addEventListener("unload", function () {
-        localStorage.setItem("mapData4", JSON.stringify({
-          origin: document.getElementById("origin-input-4").value,
-          destination: document.getElementById("destination-input-4").value,
-          travelMode: document.getElementById("changemode-driving-4").value,
-        }));
+      // window.addEventListener("unload", function () {
+      //   localStorage.setItem("mapData4", JSON.stringify({
+      //     origin: document.getElementById("origin-input-4").value,
+      //     destination: document.getElementById("destination-input-4").value,
+      //     travelMode: document.getElementById("changemode-driving-4").value,
+      //   }));
       
-        localStorage.setItem("mapData5", JSON.stringify({
-          origin: document.getElementById("origin-input-5").value,
-          destination: document.getElementById("destination-input-5").value,
-          travelMode: document.getElementById("changemode-driving-5").value,
-        }));
-      });
+      //   localStorage.setItem("mapData5", JSON.stringify({
+      //     origin: document.getElementById("origin-input-5").value,
+      //     destination: document.getElementById("destination-input-5").value,
+      //     travelMode: document.getElementById("changemode-driving-5").value,
+      //   }));
+      // });
       

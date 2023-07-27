@@ -32,20 +32,65 @@
   </style>
 </head>
 <body>
-  <div class="container mt-5">
-    <h1>Calling Tree</h1>
-    <div class="row mt-3" id="callingTree">
-      <!-- Dynamic content will be added here -->
-      <div class="col-md-4">
-        <!-- Initial contact group will be added here -->
-      </div>
+  
+  <main class="mt-5 container"  id="contactForm">
+    <div class="mt-5 pb-5 mx-3" id="editVthree">
+      <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 1/1:</span> Who will those in your household call or email during an emergency situation?</p>
+      <hr class="my-4">
+      <p class="text-muted h5">Keep in mind it might be easier to make a long-distance call than to call nearby during a disaster.</p>
     </div>
-    <div class="row mt-3">
-      <div class="col-md-4">
-        <button class="btn btn-primary" id="addContactBtn">Add Contact</button>
+
+    <div class="mb-5" id="pdfVthree" hidden>
+      <p class="h2">Emergency Contact</p>
+      
+      <p>During and emergency it is important to have a contact that all of your household can call or email if they can not contact the head(s) of household during an emergency. Keep in mind it might be easier to make a long distance call  than to call nearby during a disaster.</p>
+      </div> 
+
+      <div class="d-flex ">
+        <div class="container mt-5">
+          <h1>Reporting Tree</h1>
+          <div class="row mt-3" id="callingTree">
+            <!-- Dynamic content will be added here -->
+            <div class="col-md-4">
+              <!-- Initial contact group will be added here -->
+            </div>
+          </div>
+          <div class=" mt-3">
+            <div class="col-lg-4 mb-5" id="addContactBtn" >
+              <a type="button" class="btn  text-primary   mt-3 " >
+                <div class="d-flex align-items-center ">
+                  
+                  <div class="pr-2 ">
+                      <span class=" material-icons">
+                    add_circle
+                    </span>
+                   </div>
+                
+                <p class="h4 ml-3 ">Add Another Contact</p>
+             
+              </div>
+            </a>
+          </div>
+        </div>
+        </div>
+
+      
       </div>
-    </div>
-  </div>
+
+     
+      </main>
+
+  <hr class="my-4">
+
+    <main class="py-5   element-to-hide">
+      <div  id="next2" class="pr-5 d-flex justify-content-center">
+          
+          <div class=" p-2">
+          <input id="completeDld"form="locationForm" class="btn btn-success pr-5 btn_print element-to-hide" type="submit" value="Complete & download" onclick="saveForm(event)">
+        </div>
+
+      </div>
+    </main>
 
   <!-- Bootstrap JS and jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -59,33 +104,39 @@
       const contactElement = `
         <div class="contact-column" id="${contactId}">
           ${deleteButton}
-          <h5 class="mb-3">Who will be contacted during an emergency?</h5>
+          <h5 class="mb-3">Contact's Info</h5>
      
-          <div class="form-group d-flex mt-3">
-            <span class="material-symbols-rounded pr-5">
+          <div class="form-group d-flex align-content-center  mt-3 py-2">
+            <span class="material-symbols-rounded mt-2">
               person
             </span>
-            <input type="text" name="contactName${contactId}" class="my-2 w-100 p-2 rounded" placeholder="Enter Contact Name">
+            <input type="text" name="contactName${contactId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter contact name">
           </div>
-          <div class="form-group d-flex">
-            <span class="material-symbols-rounded pr-5">
+          <div class="form-group d-flex py-2">
+            <span class="material-symbols-rounded mt-2">
               call
             </span>
-            <input type="text" name="contactNum${contactId}" class="my-2 w-100 p-2 rounded " placeholder="Enter Contact Number">
+            <input type="text" name="contactNum${contactId}" class=" w-100 p-2 rounded " placeholder="Enter phone #">
           </div>
-          <div class="form-group d-flex">
-            <span class="material-symbols-rounded pr-5">
+          <div class="form-group d-flex py-2">
+            <span class="material-symbols-rounded mt-2">
+              call
+            </span>
+            <input type="text" name="contactChal${contactId}" class=" w-100 p-2 rounded " placeholder="(optional) Enter radio channel">
+          </div>
+          <div class="form-group d-flex py-2">
+            <span class="material-symbols-rounded mt-2">
               mail
             </span>
-            <input type="email" name="contactEml${contactId}" class="my-2 w-100 p-2 rounded" placeholder="Enter Contact Email">
+            <input type="email" name="contactEml${contactId}" class=" w-100 p-2 rounded" placeholder="Enter email">
           </div>
           <hr> <!-- Breaker added here -->
-          <p class="text-muted">Assign specific individuals to reach out to contact</p>
+          <p class="text-muted">Assign individuals to reach out to contact during emergency </p>
           <div class="person-group" id="personGroup_${contactId}">
             
           </div>
           <div class="d-grid gap-2 mb-5">
-            <button class="btn btn-success" onclick="addPerson('${contactId}')">Add Person</button>
+            <button class="btn btn-primary" onclick="addPerson('${contactId}')">Add Person</button>
           </div>
         </div>
       `;
@@ -102,11 +153,13 @@
     function createPersonElement(contactId, personId) {
       const personElement = `
         <div class="form-group d-flex mt-3" id="person_${contactId}_${personId}">
-          <span class="material-symbols-rounded pr-5">
+          <span class="material-symbols-rounded mt-2">
             person
           </span>
           <input type="text" name="personName${contactId}_${personId}" class="w-75 p-2 rounded" placeholder="Enter Person Name">
-          <button class="btn btn-sm btn-danger mx-2" onclick="deletePerson('${contactId}', ${personId})">Delete</button>
+          <button class="btn btn-sm  mx-2" onclick="deletePerson('${contactId}', ${personId})"><span class="text-secondary material-icons">
+                    delete
+                    </span></button>
         </div>
       `;
       return personElement;

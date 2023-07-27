@@ -690,6 +690,16 @@ textarea {
   animation: slideIn 0.75s forwards;
 }
 
+/* .contact-column {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+} */
+.person-group {
+  margin-bottom: 10px;
+}
+
 @keyframes slideIn {
   0% {
     visibility: visible;
@@ -900,12 +910,10 @@ textarea {
 
 
  /* Custom CSS styling */
- /* .map-container {
-   height: ;
+ .map-container {
+  border-radius: 20px;
  }
- .directions-panel {
-   margin-top: ;
- } */
+
  /* Additional CSS for mobile readability */
  .form-control {
    font-size: 16px;

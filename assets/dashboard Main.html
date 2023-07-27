@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <title>3 Day Emergency Pan</title>
+    <title>Emergency Plan</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
     <link rel="icon" href="./images/Sitprep Favicon Green.png" type="image/x-icon">
@@ -78,7 +78,7 @@
   
                           <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             
-                            <p class="h4 font-weight-bold text-white pb-2">3 Day Plan</p>
+                            <p class="h4 font-weight-bold text-white pb-2">Emergency Plan</p>
   
                             <div  class="pl-2 d-flex text-white rounded orgOppate ">
                               <span class="material-icons pr-3 text-white">
@@ -97,13 +97,15 @@
                               
                             </div>
   
-                            <!-- <div  class="pl-2 d-flex txtOppate d-none rounded evacPlan" >
+                            <div  class="pl-2 d-flex txtOppate rounded " >
                               <span class="material-icons pr-3 txtOppate">
-                                map
+                                <span class="material-icons">
+                                  contact_phone
+                                  </span>
                                 </span>
-                              <a class="pl-2 txtOppate d-flex btn "  href="./plan.html" >Evacuation Plan</a>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./emergency_contacts.html" >Emergency Contacts</a>
                               
-                            </div> -->
+                            </div>
 
 
                             <div  class="  pl-2 d-flex txtOppate">
@@ -238,7 +240,7 @@
         
           <div class="d-flex justify-content-between  align-items-center my-4">
             <div class="d-flex align-items-center ">
-              <p class="h2 txtImpact text-center mr-4 font-weight-bold text-success ">3 DAY PLAN </p>
+              <p class="h2 txtImpact text-center mr-4 font-weight-bold text-success ">EMERGENCY PLAN </p>
             </div>
             <div class=" d-flex align-items-center justify-content-end d-xl-none">
               <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter">
@@ -303,7 +305,7 @@
         
               <section class="row text-center">
                 <!--step 1 begin-->
-                <main class="col-lg-4">
+                <main class="col-lg-3">
                   <!--Step 1 muted begin-->
                   <a class="btn d-flex justify-content-left align-items-center text-left step1M" href="./create_evac_plan.html">
                     <div class="d-flex py-3">
@@ -344,9 +346,54 @@
                   <!--Step 1 complete ends-->
                 </main>
                 <!--step 1 end-->
+
+                 <!--step 1.5 begin-->
+                 <main class="col-lg-3">
+                  <!--Step 1.5 muted begin-->
+                  <a class="btn d-flex justify-content-left align-items-center text-left step1_5M" href="./emergency_contacts.html">
+                    <div class="d-flex py-3">
+        
+                      <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
+                        <span class="material-symbols-outlined text-success">
+                          <span class="material-icons">
+                            call
+                            </span>
+                        </span>
+                      </div>
+        
+                      <div class="d-flex justify-content-center align-items-center">
+                        <p class="pt-1 pl-3 font-weight-bold h5 txtBlu">Emergency Contacts</p>
+                      </div>
+        
+                    </div>
+                  </a>
+        
+                  <!--Step 1.5 muted ends-->
+        
+                  <!--Step 1.5 complete begin-->
+        
+                  <a class="d-none btn d-flex justify-content-left align-items-center step1_5C" href="./emergency_contacts.html" id="step1_5C">
+                    <div class="d-flex py-3">
+        
+                      <div class="shadow-sm recBlu circle circleBdr justify-content-center align-items-center d-flex">
+                        <span class="material-symbols-rounded text-light">
+                          done
+                        </span>
+                      </div>
+        
+                      <div class="d-flex justify-content-center align-items-center">
+                        <p class="pt-1 pl-3 font-weight-bold h5 text-success">Emergency Contacts</p>
+                      </div>
+        
+                    </div>
+                  </a>
+        
+                  <!--Step 1.5 complete ends-->
+                </main>
+                <!--step 1.5 end-->
         
                 <!--step 2 muted begin-->
-<main class="col-lg-4">
+<main class="col-lg-3">
   <a class="btn d-flex justify-content-left align-items-center step2M" href="./Food Supply.html">
   <div class="d-flex py-3" id="step2M">
     <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
@@ -386,7 +433,7 @@
 <!--step 2 end-->
 
 <!--step 3 begin-->
-<main class="col-lg-4">
+<main class="col-lg-3">
 <!--Step 3 muted begin-->
 <a class="btn d-flex justify-content-left align-items-center step3M" href="./Additional_Supplies.html" id="step3M">
   <div class="d-flex py-3">
@@ -516,6 +563,74 @@
 </div>
 <!-- End of Evacuation Plan Card-->
 
+<!-- Beggining of Emergency Contacts Card-->
+<div class="py-5">
+
+ 
+  
+  <div class="">
+  <div class="shadow rcorners bg-white stp1_5-pic p-4">
+    <div class="card-body ">
+  
+  
+      <main class="d-flex">
+        <div class="col-lg-5 phone-block pt-5">
+          <img src="./images/Food Supply Main – 1.png" class="" id="exampleModalCenterTitle" width="65%" />
+        </div>
+        <div class="col-lg-7 robotoFnt">
+  
+  
+          <div class="d-flex card-title">
+            <p class="h3 font-weight-bold text-left txtBlu robotoFnt">Emergency Contacts</p>
+  
+          </div>
+  
+          <br>
+  
+          <div class="d-flex py-1 ">
+            <p class="font-weight-normal h5 phone-block robotoFnt txtBlu">Be guided in getting an emergency food supply</p>
+          </div>
+  
+          <div class="d-flex py-1">
+            <p class="font-weight-normal h5 robotoFnt txtBlu">Keep track of food supply needs</p>
+          </div>
+  
+          <div class="d-flex py-1 ">
+            <p class="font-weight-normal h5 robotoFnt txtBlu phone-block">Share list with families and friends</p>
+          </div>
+  
+          <div class="row py-4 ">
+            <div class="col-lg-6 pr-5">
+              <a id="add1_5" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./emergency_contacts.html">Add To My Plan</a>
+              <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./emergency_contacts.html" id="continue1_5">Continue Planning</a>
+              <a style="display: none" class="btn btn-lg btn-success rounded-pill text-center" href="./emergency_contacts.html" id="view1_5">View My Plan</a>
+  
+            </div>
+  
+  
+          </div>
+  
+  
+          <div class="phone-block pl-5 float-right">
+            <p class="font-weight-bold font-weight-light h5">Status:
+  
+              <span class="font-weight-bold txtLiteOrg pl-1 float-right" id="not1_5"> (Not Started)</span>
+              <span style="display: none" class="pl-1 font-weight-bold text-warning float-right" id="prog1_5"> In Progess</span>
+              <span style="display: none" class="pl-1 font-weight-bold text-success float-right" id="comp1_5"> Completed</span>
+  
+            </p>
+          </div>
+        </div>
+      </main>
+  
+  
+    </div>
+  
+  </div>
+  </div>
+  
+  </div>
+  <!-- End of Emergency Contacts Card-->
 
 <!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
 <div class="py-5">
@@ -589,7 +704,6 @@
 
 </div>
 <!-- End of 72 HOUR FOOD SUPPLIES Card-->
-
 
 <!-- Beggining of Additional Supplies Card-->
 <div class="py-5">
