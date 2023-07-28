@@ -426,30 +426,94 @@
 
   <!-- Modal for Survey End-->
 
-  <!-- Modal for adding contact group beging-->
-<div class="modal fade" id="addGroupModal" tabindex="-1" role="dialog" aria-labelledby="addGroupModalLabel" aria-hidden="true">
+      <!-- Modal for adding contact group beging-->
+    <div class="modal fade" id="addGroupModal" tabindex="-1" role="dialog" aria-labelledby="addGroupModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addGroupModalLabel">Add Contact Group</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="contactGroupName">Contact Group Name:</label>
+              <input type="text" class="form-control" id="contactGroupName" placeholder="Enter a name for your contact group">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveContactGroup()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for adding contact group end -->
+
+    <!-- Modal for Roles begin -->
+    <div class="modal fade" id="rolesModal" tabindex="-1" role="dialog" aria-labelledby="rolesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rolesModalLabel">Designated Contact Role Examples</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li><strong>Emergency Coordinator:</strong> Coordinates communication and actions during an emergency.</li>
+          <li><strong>Evacuation Coordinator:</strong> Oversees and assists with the evacuation process.</li>
+          <li><strong>Safety Checker:</strong> Ensures the safety and well-being of all members.</li>
+          <li><strong>Information Disseminator:</strong> Shares critical updates and instructions.</li>
+          <li><strong>Emergency Services Liaison:</strong> Acts as the liaison with emergency services.</li>
+          <li><strong>Medical Coordinator:</strong> Manages medical needs of household members.</li>
+          <li><strong>Communication Relay:</strong> Assists in relaying messages between members.</li>
+          <li><strong>Pet Care Coordinator:</strong> Ensures the safety and well-being of pets.</li>
+          <li><strong>Resource Manager:</strong> Coordinates essential resources distribution.</li>
+          <li><strong>Reunification Coordinator:</strong> Helps arrange safe reunion points if separated.</li>
+          <li><strong>Neighborhood Contact:</strong> Connects with neighbors for community support.</li>
+          <li><strong>Technology Expert:</strong> Familiar with communication tools and platforms.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Roles begin end -->
+
+    <!-- Modal for 2-Way Radio Explanation beging-->
+<div class="modal fade" id="radioModal" tabindex="-1" role="dialog" aria-labelledby="radioModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addGroupModalLabel">Add Contact Group</h5>
+        <h5 class="modal-title" id="radioModalLabel">What is a 2-Way Radio?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="contactGroupName">Contact Group Name:</label>
-          <input type="text" class="form-control" id="contactGroupName" placeholder="Enter a name for your contact group">
+        <p>
+          A 2-way radio, also known as a walkie-talkie, is a portable communication device that allows two or more people to communicate wirelessly over short distances. It operates on specific radio frequencies, enabling real-time voice transmission between users.
+        </p>
+        <p>
+          2-way radios are widely used for various purposes, including outdoor activities, emergency preparedness, events coordination, and professional use in industries such as construction, security, and hospitality.
+        </p>
+        <p>
+          These radios are valuable in emergency situations, especially when cellular networks may be unreliable. They offer a quick and direct means of communication within a limited range, facilitating efficient team communication and coordination.
+        </p>
+        <p>
+          <strong>Interested in getting a 2-way radio?</strong> Check out this popular model on <a href="https://www.amazon.com/GXT1000VP4-Channel-GMRS-Two-Way-Radio/dp/B001WMFYH4/ref=sr_1_1?crid=2VBMWI2KSSB61&amp;keywords=walkie%252Btalkies%252Bfor%252Badults%252Blong%252Brange%252B50%252Bmiles&amp;qid=1690585352&amp;sprefix=walkie%252Btalkies%252Bfor%252Badults%252Blong%252Brange%252Caps%252C136&amp;sr=8-1&amp;ufe=app_do%253Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc&amp;th=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=0ca8762ceccc1de607a8ec51d1ad7f82&camp=1789&creative=9325" target="_blank">Amazon</a>.
+         
+        </p>
+        <div class="text-center">
+          <img src="https://example.com/2-way-radio-image.jpg" alt="2-Way Radio" style="max-width: 300px;">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveContactGroup()">Save</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
- <!-- Modal for adding contact group end -->
-
-    
+       <!-- Modal for 2-Way Radio Explanation end-->
      
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -493,7 +557,20 @@
               ${deleteButton}
               <h1 id=groupName class="font-weight-bold display-6 mt-3 pb-3 txtBlu">Main Contact Group</h1>
               <h5 class="mb-3">Designated Contact's Info</h5>
-        
+             
+             
+              <div class="form-group d-flex align-content-center  mt-3 py-2">
+                <span class="material-symbols-rounded mt-2">
+                  account_circle
+                </span>
+                <input type="text" name="contactRole${contactId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter contacts role">
+                
+                <a type="button" class="text-primary btn-white " data-bs-toggle="modal" data-bs-target="#rolesModal">
+                  <span class="pl-2 material-icons">help</span>
+                </a>
+                
+              </div>
+             
               <div class="form-group d-flex align-content-center  mt-3 py-2">
                 <span class="material-symbols-rounded mt-2">
                   person
@@ -506,12 +583,19 @@
                 </span>
                 <input type="text" name="contactNum${contactId}" class="ml-3 w-100 p-2 rounded " placeholder="Enter phone #">
               </div>
+
               <div class="form-group d-flex py-2">
                 <span class="material-symbols-rounded mt-2">
                   radio
                 </span>
-                <input type="text" name="contactChal${contactId}" class="ml-3 w-100 p-2 rounded " placeholder="(optional) Enter radio channel">
+                <input type="text" name="contactChal${contactId}" class="ml-3 w-100 p-2 rounded " placeholder="(optional) Enter 2-way radio channel">
+                
+                <a type="button" class="text-primary pl-2 btn-small btn-white" data-bs-toggle="modal" data-bs-target="#radioModal">
+                  <span class=" material-icons">help</span>
+                </a>
+              
               </div>
+              
               <div class="form-group d-flex py-2">
                 <span class="material-symbols-rounded mt-2">
                   mail
