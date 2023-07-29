@@ -352,7 +352,7 @@
                   <P>Ensure accurate and up-to-date contact details for all designated contacts.</p>
                 </div>
 
-                <div class="d-flex ">
+               
                   <div class="container mt-5">
                    
                     <div class="row mt-3 " id="callingTree">
@@ -431,13 +431,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addGroupModalLabel">Add Contact Group</h5>
+            <h5 class="modal-title h3 txtBlu" id="addGroupModalLabel">Add Contact Group</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="contactGroupName">Contact Group Name:</label>
-              <input type="text" class="form-control" id="contactGroupName" placeholder="Enter a name for your contact group">
+              <label class="text-muted" for="contactGroupName ">Contact Group Name:</label>
+              <input type="text" class="  w-100 p-2 rounded" id="contactGroupName" placeholder="Enter a name for your contact group">
             </div>
           </div>
           <div class="modal-footer">
@@ -462,15 +462,15 @@
               <li><strong>Emergency Coordinator:</strong> Coordinates communication and actions during an emergency.</li>
           <li><strong>Evacuation Coordinator:</strong> Oversees and assists with the evacuation process.</li>
           <li><strong>Safety Checker:</strong> Ensures the safety and well-being of all members.</li>
-          <li><strong>Information Disseminator:</strong> Shares critical updates and instructions.</li>
-          <li><strong>Emergency Services Liaison:</strong> Acts as the liaison with emergency services.</li>
-          <li><strong>Medical Coordinator:</strong> Manages medical needs of household members.</li>
+          <!-- <li><strong>Information Disseminator:</strong> Shares critical updates and instructions.</li> -->
+          <!-- <li><strong>Emergency Services Liaison:</strong> Acts as the liaison with emergency services.</li>
+          <li><strong>Medical Coordinator:</strong> Manages medical needs of household members.</li> -->
           <li><strong>Communication Relay:</strong> Assists in relaying messages between members.</li>
           <li><strong>Pet Care Coordinator:</strong> Ensures the safety and well-being of pets.</li>
           <li><strong>Resource Manager:</strong> Coordinates essential resources distribution.</li>
           <li><strong>Reunification Coordinator:</strong> Helps arrange safe reunion points if separated.</li>
           <li><strong>Neighborhood Contact:</strong> Connects with neighbors for community support.</li>
-          <li><strong>Technology Expert:</strong> Familiar with communication tools and platforms.</li>
+          <!-- <li><strong>Technology Expert:</strong> Familiar with communication tools and platforms.</li> -->
             </ul>
           </div>
           <div class="modal-footer">
@@ -563,8 +563,24 @@
                 <span class="material-symbols-rounded mt-2">
                   account_circle
                 </span>
-                <input type="text" name="contactRole${contactId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter contacts role">
                 
+                <div class="d-flex ">
+                <select name="contactRole${contactId}" id="" class=" shadow-sm ml-3 w-100 p-2 rounded">
+                  <option value="" selected disabled>Select contact role</option>
+                  <option class="select " value="Communication Relay">Communication Relay</option>
+                  <option class="select " value="Emergency Coordinator">Emergency Coordinator</option>
+                  <option class="select " value="Evacuation Coordinator">Evacuation Coordinator</option>
+                  <option class="select " value="Neighborhood Contact">Neighborhood Contact</option>
+                
+                  <option class="select " value="Pet Care Coordinator">Pet Care Coordinator</option>
+                  <option class="select " value="Resource Manager">Resource Manager</option>
+                  <option class="select " value="Reunification Coordinator">Reunification Coordinator</option>
+                  <option class="select " value="Safety Checker">Safety Checker</option>
+                  
+                  <option value="Other">Other</option>
+                </select>
+                
+              </div>
                 <a type="button" class="text-primary btn-white " data-bs-toggle="modal" data-bs-target="#rolesModal">
                   <span class="pl-2 material-icons">help</span>
                 </a>

@@ -337,25 +337,28 @@
     </div> 
 
     <div class="p-3 shadow rcorners mb-5 bg-white">
-
+      <h1 id=groupName class="font-weight-bold my-3 txtBlu text-center">Household Demograhpic</h1>
       <div class="row justify-content-center">
     
         <div class="text-center col-lg-4">
           <div class="">
-            <label class="mt-2 font-weight-bolder txtBlu"><span class="infantTxt material-symbols-rounded">breastfeeding</span>(Age Up to 12 months)</label><br>
+            <label class="mt-2 font-weight-bolder txtBlu ">(Age 12 months & Under)</label><br>
           </div>
     
-          <div class="d-flex justify-content-center py-2 text-center">
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseInfants()">-</button>
-            <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="infants" type="number" value="0" min="0" oninput="saveDemo()"></input>
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseInfants()">+</button>
+          <div class="bg-light d-flex justify-content-center py-2 text-center rcorners">
+            <div class="pr-3 ">
+            <span class="infantTxt material-symbols-rounded">breastfeeding</span>
+          </div>
+            <button type="button" class="btn btn-light text-dark  " onclick="decreaseInfants()">-</button>
+            <input style="width: 25%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu" id="infants" type="number" value="0" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn   font-weight-bold" onclick="increaseInfants()"><span class=" text-dark material-symbols-rounded">add</span></button>
           </div>
     
         </div>
     
         <div class="col-lg-4 mb-3">
           <div class="text-center">
-            <label class="mt-2 font-weight-bolder txtBlu"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age Under 12)</label><br>
+            <label class="mt-2 font-weight-bolder txtBlu"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age 12 & Under)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2">

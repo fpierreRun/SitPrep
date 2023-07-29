@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFZDLN5');</script>
+  <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      
+    <title>Emergency Contacts</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+    <link rel="icon" href="./images/Sitprep Favicon Green.png" type="image/x-icon">
+
+
+    
+        
+    
+    
+    
+        
+        
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="./css/dashboard.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+          /* Custom styles */
+          body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+          }
+      
+          .container {
+            margin-top: 50px;
+          }
+      
+          .display-4 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+          }
+      
+          .rcorners {
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+          }
+      
+          h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+          }
+      
+          h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+          }
+      
+          p.h5 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+          }
+      
+          ul {
+            list-style-type: none;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #777;
+          }
+      
+          .modal-body img {
+            max-width: 100%;
+          }
+      
+          .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+          }
+      
+          .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+          }
+      
+          /* Responsive styles */
+          @media (max-width: 767px) {
+            .container {
+              margin-top: 20px;
+            }
+      
+            .display-4 {
+              font-size: 24px;
+            }
+      
+            h2 {
+              font-size: 20px;
+            }
+      
+            h3 {
+              font-size: 18px;
+            }
+      
+            p.h5 {
+              font-size: 16px;
+            }
+      
+            ul {
+              font-size: 14px;
+            }
+          }
+        </style>
+      </head>
+      
+
+<body class="grnOppate">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZDLN5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none  ">
+    
+    <div class="d-flex  ">
+          <div class="  px-3 mt-3" >
+          <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+        </div> 
+
+
+        <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button> 
+
+      </div>
+       
+ </header>
+
+     <div class=" ">
+
+        <div class="row">
+          
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
+           
+            <div class="phone-block text-center">
+              <img  src="./images/SitPrep Logo White.png"  width="200" alt="" />
+            </div>
+            
+            <div class="position-sticky  sidebar-sticky container-fluid">
+              <div  class="pb-4 pl-2 d-flex text-white justify-content-center">
+                    
+                    
+                <a href="" class="text-white text-center" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</a>
+             
+            </div>
+                        <div class="navbar-collapse ">
+  
+                          <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            
+                            <p class="h4 text-white pb-2">3 Day Plan</p>
+  
+                            <div  class="pl-2 d-flex text-white ">
+                              <span class="material-icons pr-3 txtOppate">
+                                dashboard
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./dashboard Main.html">Overview</a>
+                              
+                            </div>
+                            
+                            <div  class="pl-2 d-flex text-white rounded evacForm"  >
+                              <span class="material-icons pr-3 txtOppate">
+                                map
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn font-weight-bold "  href="./create_evac_plan.html" >Plan Evacuation</a>
+                              
+                            </div>
+  
+                            <div  class="pl-2 d-flex orgOppate rounded text-white" >
+                              <span class="material-icons pr-3 text-white">
+                                
+                                  contact_phone
+                                  
+                                </span>
+                              <a class="pl-2 text-white d-flex btn font-weight-bold"  href="./emergency_contacts.html" >Emergency Contacts</a>
+                              
+                            </div>
+                            
+                            <div  class="  pl-2 d-flex text-white ">
+                              <span class="material-icons pr-3 txtOppate">
+                                kitchen
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Food Supply.html" role="tab" >Food Supply</a>
+                              
+                            </div>
+                            
+                            <div  class="  pl-2 d-flex text-white ">
+                              <span class="material-icons pr-3 txtOppate">
+                                backpack
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+                              
+                            </div>
+                          <p class="h4 txtOppate pt-4">Long Term</p>
+              
+                          <!-- <div  class=" pl-2 d-flex text-white">
+                            <span class="material-icons pr-3 text-white">
+                              
+                              tips_and_updates
+                            </span>
+                              <a class="pl-2 text-white btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tips & Tricks</a>
+                            
+                          </div> -->
+                          
+                           
+                              <div  class="  pl-2 d-flex text-white">
+                                <span class="material-icons pr-3 txtOppate">
+                                
+                                  food_bank
+                                  </span>
+                            <a href="../assets/storageCalc.html" class="btn pl-2 txtOppate d-flex">
+                              Food Storage</a>
+                              </div>
+                              
+              
+                           
+                              
+
+                              <p class="h4 txtOppate pt-4 " >Info</p>
+                              <div  class="  pl-2 d-flex text-white">
+                                <span class="material-icons pr-3 txtOppate">
+                              
+                                  emoji_emotions
+                                  </span>
+                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">
+                                  Was SitPrep Helpful?</a>
+                              </div>
+              
+                              <div  class="  pl-2 d-flex text-white">
+                                <span class="mb-3 material-icons  text-white">
+                                  <span class="material-icons txtOppate">
+                                    contact_mail
+                                    </span>
+                                  </span>
+                                  <ul class=" text-left dropdown ">
+
+                                    <a class=" txtOppate dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Contact Us
+                                    </a>
+                                    <div class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instragram</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
+                                    </div>
+                                  </ul>
+                              </div>
+                              
+                              
+            </div>
+          </nav>
+
+        </div>
+     </div>
+      
+              <!-- Mobile header begins -->
+            <header class="d-flex mx-2 mt-4 justify-content-between">
+              <div>
+                <p class="h2 txtImpact font-weight-bold text-success">3 DAY PLAN</p>
+              </div>
+              <div class="">
+                <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold d-xl-none" data-toggle="modal" data-target="#exampleModalCenter">
+                  SHARE<img class="ml-3 mb-1" height="25px" src="./images/icons8-share-50.png" alt="">
+                </button>
+
+                <button class="ml-2 d-xl-none text-secondary bg-white-outline btn font-weight-bolder" onclick="updateCards()">
+                  <span class="material-symbols-outlined font-weight-bolder">close</span>
+                </button>
+              </div>
+            </header>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+            <!-- Mobile header ends -->
+
+            <!-- Mobile Modal begin -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="pb-4 modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">Share SitPrep</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center ">
+                      <div class="text-center">
+                        <!-- Load Facebook SDK for JavaScript -->
+                        <div id="fb-root"></div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+
+                        <!-- Your share button code -->
+                        <div class="fb-share-button" data-href="https://www.sitprep.app" data-layout="button_count">
+                        </div>
+                        <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()">
+                          <img src="./images/icons8-messages.svg" alt="">
+                        </button>
+                        <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank">
+                          <img src="./images/icons8-linkedin.svg" alt="">
+                        </a>
+                        <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank">
+                          <img src="./images/icons8-twitter.svg" alt="">
+                        </a>
+                        <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()">
+                          <img src="./images/icons8-gmail-logo.svg" alt="">
+                        </button>
+                        <button class="rounded-circle btn btn-white " onclick="shareOnReddit()">
+                          <img src="./images/icons8-reddit.svg" alt="">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile Modal End -->
+
+            <!-- Form Print begins -->
+            <div class="container-fluid" >
+
+              <div class=" mx-auto mx-sm-0  py-5 row text-center ">
+                <p class="col-md-6">
+                  <a href="./dashboard Main.html" class=" btn btn-dark mx-5">Back to main</a>
+                </p>
+                <div class="col-md-6" >
+                  <input type="button" id="rep" value="Download my plan" class="btn btn-success mx-5 btn_print" />
+                </div>
+                
+              </div>
+            
+             
+          
+              <div class="row" id="downloadPlan">
+                <p class="text-center mt-5 display-4">3 Day Meal Plan for <span class="myName" id="displayname"></span></p>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                  <div class="bg p-3 rcorners">
+                    <h2>Day 1</h2>
+                    <h3>Breakfast:</h3>
+                    <p class="h5" id="day1Breakfast"></p>
+                    <ul id="day1BreakfastIngredients"></ul>
+                    <h3>Lunch:</h3>
+                    <p class="h5" id="day1Lunch"></p>
+                    <ul id="day1LunchIngredients"></ul>
+                    <h3>Dinner:</h3>
+                    <p class="h5" id="day1Dinner"></p>
+                    <ul id="day1DinnerIngredients"></ul>
+                    <h3>Snack:</h3>
+                    <p class="h5" id="day1Snack"></p>
+                    <ul id="day1SnackIngredients"></ul>
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                  <div class="bg p-3 rcorners">
+                    <h2>Day 2</h2>
+                    <h3>Breakfast:</h3>
+                    <p class="h5" id="day2Breakfast"></p>
+                    <ul id="day2BreakfastIngredients"></ul>
+                    <h3>Lunch:</h3>
+                    <p class="h5" id="day2Lunch"></p>
+                    <ul id="day2LunchIngredients"></ul>
+                    <h3>Dinner:</h3>
+                    <p class="h5" id="day2Dinner"></p>
+                    <ul id="day2DinnerIngredients"></ul>
+                    <h3>Snack:</h3>
+                    <p class="h5" id="day2Snack"></p>
+                    <ul id="day2SnackIngredients"></ul>
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                  <div class="bg p-3 rcorners">
+                    <h2>Day 3</h2>
+                    <h3>Breakfast:</h3>
+                    <p class="h5" id="day3Breakfast"></p>
+                    <ul id="day3BreakfastIngredients"></ul>
+                    <h3>Lunch:</h3>
+                    <p class="h5" id="day3Lunch"></p>
+                    <ul id="day3LunchIngredients"></ul>
+                    <h3>Dinner:</h3>
+                    <p class="h5" id="day3Dinner"></p>
+                    <ul id="day3DinnerIngredients"></ul>
+                    <h3>Snack:</h3>
+                    <p class="h5" id="day3Snack"></p>
+                    <ul id="day3SnackIngredients"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Modal for Survey begin -->
+            <div class="modal fade" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="pr-3 pt-3">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class=" mx-auto mx-sm-0  py-5 row text-center ">
+              <p class="col-md-6">
+                <a href="./dashboard Main.html" class=" btn btn-dark mx-5">Back to main</a>
+              </p>
+              <div class="col-md-6" >
+                <input type="button" id="rep" value="Download my plan" class="btn btn-success mx-5 btn_print" />
+              </div>
+              
+            </div>
+
+            <!--Print ends-->
+          </main>
+     
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+      
+      
+      <script src="./js/share_sitprep.js"></script>
+      <script src="./js/print_food_supply.js"></script>
+      
+     
+
+</body>
+</html>
