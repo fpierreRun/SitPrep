@@ -1,3 +1,27 @@
+// Get the "Select All" checkbox and all the individual item checkboxes
+const selectAllCheckbox = document.getElementById("checkAll");
+const itemCheckboxes = document.querySelectorAll(".rounded.shadow[type='checkbox']");
+
+// Add an event listener to the "Select All" checkbox
+selectAllCheckbox.addEventListener("change", function () {
+    // When the "Select All" checkbox is checked, check all the item checkboxes
+    itemCheckboxes.forEach((checkbox) => {
+        checkbox.checked = selectAllCheckbox.checked;
+    });
+});
+
+// Add event listeners to the item checkboxes
+itemCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+        // If any item checkbox is unchecked, uncheck the "Select All" checkbox
+        if (!this.checked) {
+            selectAllCheckbox.checked = false;
+        }
+    });
+});
+
+
+
 var foodList = [];
 
 // Retrieve the stored object from local storage
@@ -110,7 +134,7 @@ function showIngredients(day, meal) {
 
 
 function downloadCheckList() {
-  // window.location.href="./dashboard Main.html";
+  window.location.href="./download_foodsupply.html";
 
   var checkboxes = [
     "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
@@ -165,6 +189,8 @@ loadSaveList ()
 
 // Function to store the selected meal options in local storage
 function storeMealOptions() {
+
+
   const selectedOptions = {
     day1: {
       breakfast: document.getElementById('day1-breakfast-select').value,
@@ -204,3 +230,4 @@ function updateCards(){
 window.location.href="./dashboard Main.html";
 
 };
+
