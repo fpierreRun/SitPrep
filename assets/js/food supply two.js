@@ -89,7 +89,7 @@ function showIngredients(day, meal) {
     case 'Tuna and Crackers Combo':
       ingredients = 'Tuna, Crackers, Fruit or Vegetables';
       break;
-    case 'Chilli and Crackers Delight':
+    case 'Chilli and Crackers':
       ingredients = 'Chilli, Crackers, Fruit or Vegetables';
       break;
     case 'Beef Stew and Crackers Combo':

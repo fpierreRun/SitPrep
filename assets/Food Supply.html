@@ -341,42 +341,42 @@
       <div class="row justify-content-center">
     
         <div class="text-center col-lg-4">
-          <div class="">
-            <label class="mt-2 font-weight-bolder txtBlu ">(Age 12 months & Under)</label><br>
+          <div class="text-center">
+            <span class="infantTxt material-symbols-rounded">breastfeeding</span><label class="mt-4 font-weight-normal txtBlu ">(Age 11 months & below)</label><br>
           </div>
     
-          <div class="bg-light d-flex justify-content-center py-2 text-center rcorners">
-            <div class="pr-3 ">
-            <span class="infantTxt material-symbols-rounded">breastfeeding</span>
-          </div>
-            <button type="button" class="btn btn-light text-dark  " onclick="decreaseInfants()">-</button>
-            <input style="width: 25%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu" id="infants" type="number" value="0" min="0" oninput="saveDemo()"></input>
-            <button type="button" class="btn   font-weight-bold" onclick="increaseInfants()"><span class=" text-dark material-symbols-rounded">add</span></button>
+          <div class=" d-flex justify-content-center py-2 text-center rcorners">
+                <div class="pr-3 ">
+              
+              </div>
+              <button type="button" class="btn btn-sm font-weight-bold " onclick="decreaseInfants()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+              <input style="width: 30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" id="infants" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn btn-sm    font-weight-bold rounded-circle " onclick="increaseInfants()"><span class=" text-dark material-symbols-rounded">add</span></button>
           </div>
     
         </div>
     
         <div class="col-lg-4 mb-3">
           <div class="text-center">
-            <label class="mt-2 font-weight-bolder txtBlu"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age 12 & Under)</label><br>
+            <label class="mt-4 font-weight-normal txtBlu"><span class="kidsTxt material-symbols-rounded mr-2">diversity_3</span>(Age 1-12 yrs)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2">
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseKids()">-</button>
-            <input style="width: 25%" class="bg-secondary text-white form-control text-center mx-3" id="kids" type="number" value="0" min="0" oninput="saveDemo()"></input>
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseKids()">+</button>
+            <button type="button" class="btn text-dark " onclick="decreaseKids()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+            <input style="width: 30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" id="kids" type="number" value="0" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn  text-dark" onclick="increaseKids()"><span class=" text-dark material-symbols-rounded">add</span></button>
           </div>
         </div>
     
         <div class="col-lg-4">
           <div class="text-center">
-            <span class="adultsTxt material-symbols-rounded mr-2">diversity_3</span><label class="mt-2  font-weight-bolder txtBlu">(Age 12 and above)</label><br>
+            <span class="adultsTxt material-symbols-rounded mr-2">diversity_3</span><label class="mt-4  font-weight-normal txtBlu">(Age 12 yrs & older)</label><br>
           </div>
     
           <div class="d-flex justify-content-center py-2">
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseAdults()">-</button>
-            <input id="adults" style="width: 25%" class="bg-secondary text-white form-control text-center mx-3" type="number" value="1" min="0" oninput="saveDemo()"></input>
-            <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseAdults()">+</button>
+            <button type="button" class="btn text-dark " onclick="decreaseAdults()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+            <input id="adults" style="width: 30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" type="number" value="1" min="0" oninput="saveDemo()"></input>
+            <button type="button" class="btn text-dark " onclick="increaseAdults()"><span class=" text-dark material-symbols-rounded">add</span></button>
           </div>
         </div>
     
@@ -388,39 +388,39 @@
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Dogs</label><br>
+              <label class="mt-2  font-weight-normal txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Dogs</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
-              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseDogs()">-</button>
-              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="dogs" type="number" value="0" min="0" oninput="saveDemo()"></input>
-              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseDogs()">+</button>
+              <button type="button" class="btn text-dark " onclick="decreaseDogs()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+              <input style="width:30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" id="dogs" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn text-dark " onclick="increaseDogs()"><span class=" text-dark material-symbols-rounded">add</span></button>
             </div>
     
           </div>
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Cats</label><br>
+              <label class="mt-3  font-weight-normal txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Cats</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
-              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="decreaseCats()">-</button>
-              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="cats" type="number" value="0" min="0" oninput="saveDemo()"></input>
-              <button type="button" class="btn btn-light text-dark rounded-circle shadow-sm" onclick="increaseCats()">+</button>
+              <button type="button" class="btn text-dark" onclick="decreaseCats()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+              <input style="width: 30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" id="cats" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn text-dark" onclick="increaseCats()"><span class=" text-dark material-symbols-rounded">add</span></button>
             </div>
     
           </div>
     
           <div class="text-center col-lg-4 mb-3">
             <div class="">
-              <label class="mt-2  font-weight-bolder txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Other Pets</label><br>
+              <label class="mt-2  font-weight-normal txtBlu"><span class="text-warning text-center pt-3 material-symbols-rounded">pets</span><br>Other Pets</label><br>
             </div>
     
             <div class="d-flex justify-content-center py-2 text-center">
-              <button type="button" class="btn btn-light text-dark rounded-circle  shadow-sm" onclick="decreasePets()">-</button>
-              <input style="width: 25%" class="bg-secondary text-white text-center form-control text-center mx-3" id="pets" type="number" value="0" min="0" oninput="saveDemo()"></input>
-              <button type="button" class="btn btn-light text-dark rounded-circle mr-3 shadow-sm" onclick="increasePets()">+</button>
+              <button type="button" class="btn text-dark" onclick="decreasePets()"><span class=" text-dark material-symbols-rounded">remove</span></button>
+              <input style="width: 30%" class="bg-light text-secondary text-center mx-3 text-center h3 font-weight-bolder txtBlu p-2 rounded" id="pets" type="number" value="0" min="0" oninput="saveDemo()"></input>
+              <button type="button" class="btn text-dark" onclick="increasePets()"><span class=" text-dark material-symbols-rounded">add</span></button>
             </div>
     
           </div>
@@ -494,7 +494,7 @@
     <div class="tab-content">
       <div class="tab-pane fade show active" id="customize">
         <div class="container-fluid rcorners bg-white p-3 shadow mb-5">
-          <h1 class="txtBlu font-weight-bold text-center">3-Day Emergency Food Menu Selection</h1>
+          <h1 class="txtBlu font-weight-bold text-center">Emergency Food Menu Selection</h1>
           <hr class="my-4 mx-5">
           <p class="h6 text-muted my-3 text-center font-weight-normal"><span class="font-weight-bold">Instructions: </span>Choose from the dropdown menus below to create a 3-day meal plan using basic storage items. Select your desired meal options for each day, and a grocery list will be generated. You can then use the list for convenient shopping on Amazon or at a physical store.
           </p>
@@ -521,7 +521,7 @@
                 <select id="day1-lunch-select" class="form-select shadow-sm" onchange="inputIngredients('day1', 'lunch'), showIngredients('day1', 'lunch'), displayrows()  ">
                   <option value="" selected disabled>Select a Lunch</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -534,7 +534,7 @@
                 <select id="day1-dinner-select" class="form-select" onchange="inputIngredients('day1', 'dinner'), showIngredients('day1', 'dinner'), displayrows() ">
                   <option value="" selected disabled>Select a Dinner</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -580,7 +580,7 @@
                 <select id="day2-lunch-select" class="form-select" onchange="inputIngredients('day2', 'lunch'), showIngredients('day2', 'lunch'), displayrows()">
                   <option value="" selected disabled>Select a Lunch Option</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -593,7 +593,7 @@
                 <select id="day2-dinner-select" class="form-select" onchange="inputIngredients('day2', 'dinner'), showIngredients('day2', 'dinner'), displayrows()">
                   <option value="" selected disabled>Select a Dinner Option</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -640,7 +640,7 @@
                 <select id="day3-lunch-select" class="form-select" onchange="inputIngredients('day3', 'lunch'), showIngredients('day3', 'lunch'), displayrows()">
                   <option value="" selected disabled>Select a Lunch Option</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -653,7 +653,7 @@
                 <select id="day3-dinner-select" class="form-select" onchange="inputIngredients('day3', 'dinner'), showIngredients('day3', 'dinner'), displayrows()">
                   <option value="" selected disabled>Select a Dinner Option</option>
                   <option class ="select tuna" value="Tuna and Crackers Combo">Tuna and Crackers Combo</option>
-                  <option class ="select chilli" value="Chilli and Crackers Delight">Chilli and Crackers Delight</option>
+                  <option class ="select chilli" value="Chilli and Crackers">Chilli and Crackers</option>
                   <option class ="select beef" value="Beef Stew and Crackers Combo">Beef Stew and Crackers Combo</option>
                   <option class ="select ravioli" value="Ravioli with Fruits and Crackers">Ravioli with Fruits and Crackers</option>
                   <option class ="select tofu" value="Tofu with Veggies and Crackers">Tofu with Veggies and Crackers</option>
@@ -701,7 +701,7 @@
        
       </main>
 
-      <main class="container-fluid rcorners p-3 shadow bg-white mb-5" >
+      <!-- <main class="container-fluid rcorners p-3 shadow bg-white mb-5" > -->
 
         <div class="table-responsive  rcorners " >
        
@@ -741,12 +741,12 @@
                   </label>
           
                 </th>
-                <td class="text-center h5 font-weight-bolder txtBlu" id="water"></td>
+                <td class="text-left h5 font-weight-bolder txtBlu" id="water"></td>
                 <td>gal.</td>
-                <td class="h6 font-weight-bolder txtBlu">Water</td>
-                <td class="phone-block">Buy containers that enables you quickly and safely to store all the water your family needs in the event of an emergency. Have on hand one gallon of water per day, per person, for drinking and cooking. </td>
+                <td class="h6 font-weight-bolder txtBlu text-left">Water</td>
+                <td class="phone-block text-left">Buy containers that enables you quickly and safely to store all the water your family needs in the event of an emergency. Have on hand one gallon of water per day, per person, for drinking and cooking. </td>
                 
-                <td class="" id="element-to-hide" data-html2canvas-ignore="true">  
+                <td class="text-left" id="element-to-hide" data-html2canvas-ignore="true">  
                   <div  class=" px-2  text-dark text-center d-flex align-items-center justify-content-center phone-block" >
                     <a class="  d-flex btn  mt-2  bgAmazon btn-sm rounded-pill shadow" target="_blank"  href="https://www.amazon.com/WaterStorageCube-Collapsible-Container-Hurricane-Emergency/dp/B07FVJLYZ4/ref=sr_1_3?keywords=Water%252Bfor%252Bstorage&amp;qid=1687917597&amp;sr=8-3&amp;th=1&_encoding=UTF8&tag=sitprep0b-20&linkCode=ur2&linkId=0b8d08b33de2632263a94904dbf0ac57&camp=1789&creative=9325" style="height: 35px; width: 135px" > <img class="pr-1" src="./images/Amazon-Logo-Transparent-PNG.png"    alt="" width="25" height="25"> <p Class=" font-weight-normal text-dark">Buy Supplies</p></a>
                  </div>
@@ -1294,7 +1294,7 @@
     
           </div>
 
-      </main>
+      <!-- </main> -->
          <div class="py-2 mb-5  text-center">
                
                

@@ -136,7 +136,7 @@ for (var i = 0; i < tunaOptions.length; i++) {
 
 for (var i = 0; i < chilliOptions.length; i++) {
   var option = chilliOptions[i];
-  if (option.value === "Chilli and Crackers Delight" && option.selected) {
+  if (option.value === "Chilli and Crackers" && option.selected) {
     isSelectSelected = true;
     chilliValue +=  1;
     crackersValue += .5;
@@ -395,7 +395,7 @@ for (var i = 0; i < tunaOptions.length; i++) {
 
 for (var i = 0; i < chilliOptions.length; i++) {
   var option = chilliOptions[i];
-  if (option.value === "Chilli and Crackers Delight" && option.selected) {
+  if (option.value === "Chilli and Crackers" && option.selected) {
     isSelectSelected = true;
     chilliValue +=  1;
     crackersValue += 0.5;
