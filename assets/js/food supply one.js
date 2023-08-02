@@ -810,26 +810,31 @@ function decreasePets() {
 
 
 
-  function displayrows(){
-   // Get all the table rows
-const tableRows = document.querySelectorAll("table tbody tr");
+// function displayrows() {
+//   // Get all the table rows
+//   const tableRows = document.querySelectorAll("table tbody tr.showMobile");
 
-// Loop through each row
-tableRows.forEach((row) => {
-  // Get the quantity cell in the current row
-  const quantityCell = row.querySelector("td.h5");
+//   // Loop through each row
+//   showMobileRows.forEach((row) => {
+//     // Get the quantity cell in the current row
+//     const quantityCell = row.querySelector("td.h5");
+
+//     // Get the quantity value
+//     const quantityValue = parseFloat(quantityCell.textContent);
+
+//     // Get the mobileAmazon row in the current row
+//     const mobileAmazonRow = row.querySelector("tr.mobileAmazon");
   
-  // Get the quantity value
-  const quantityValue = parseFloat(quantityCell.textContent);
-  
-  // Check if the quantity value is higher than 0
-  if (quantityValue > 0) {
-    // Display the row
-    row.style.display = "";
-  } else {
-    // Hide the row
-    row.style.display = "none";
-  }
-});
-}
+//   // Check if the quantity value is higher than 0
+//   if (quantityValue > 0) {
+//     // Display the row
+//     row.style.display = "";
+//     mobileAmazonRow.style.display = "table-row";
+//   } else {
+//     // Hide the row
+//     row.style.display = "none";
+//     mobileAmazonRow.style.display = "none";
+//   }
+// });
+// }
 

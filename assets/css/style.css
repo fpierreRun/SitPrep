@@ -935,6 +935,11 @@ textarea {
   page-break-before: always;
 }
 
+tr.mobileAmazon div {
+  margin-bottom: 25px; /* Adjust the margin value as needed */
+  
+}
+
 @media print {
   .container {
     width: auto;

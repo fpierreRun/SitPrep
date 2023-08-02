@@ -134,22 +134,34 @@ function showIngredients(day, meal) {
 
 
 function downloadCheckList() {
-  window.location.href="./download_foodsupply.html";
-
   var checkboxes = [
-    "waterCheck", "meatCheck", "fruitCheck", "pbCheck", "crackCheck", 
-    "juiceCheck", "milkCheck", "granolaCheck", "snacksCheck", "aVitaminsCheck", 
+    "waterCheck", "tunaCheck", "chilliCheck", "beefCheck", "ravioliCheck", 
+    "tofuCheck", "vegCheck", "fruitCheck", "nutsCheck", "barsCheck", "pbCheck", "milkCheck", "granolaCheck", "crackCheck", "juiceCheck", "snacksCheck", "aVitaminsCheck", 
     "kVitaminsCheck", "babyFormulaCheck", "babyFoodCheck", "dogFoodCheck", 
     "catFoodCheck", "otherPetCheck"
   ];
-  
+
   var foodCheckDataObj = {};
-  
- 
+
+  // Loop through the checkboxes and check if they are checked
+  checkboxes.forEach((checkboxId) => {
+    var checkbox = document.getElementById(checkboxId);
+    if (checkbox) {
+      foodCheckDataObj[checkboxId] = checkbox.checked;
+    } else {
+      console.warn(`Checkbox with ID "${checkboxId}" not found.`);
+    }
+  });
+
+  console.log(foodCheckDataObj);
+
+  // Assuming you have defined foodList as an array elsewhere in your code
   foodList.push(foodCheckDataObj);
-  
+
+  // Assuming you have defined storeFoodList() function elsewhere in your code
   storeFoodList();
 }
+  
 
 function storeFoodList() {
   localStorage.setItem("foodList", JSON.stringify(foodList));
@@ -166,12 +178,21 @@ function loadSaveList() {
   
  
         document.getElementById("waterCheck").checked = element.waterCheck;
-        document.getElementById("meatCheck").checked = element.meatCheck;
+        document.getElementById("tunaCheck").checked = element.tunaCheck;
         document.getElementById("fruitCheck").checked = element.fruitCheck;
         document.getElementById("pbCheck").checked = element.pbCheck;
         document.getElementById("milkCheck").checked = element.milkCheck;
-        document.getElementById("snacksCheck").checked = element.snacksCheck;
-        document.getElementById("cerealCheck").checked = element.cerealCheck;
+        document.getElementById("chilliCheck").checked = element.chilliCheck;
+        document.getElementById("beefCheck").checked = element.beefCheck;
+
+        document.getElementById("ravioliCheck").checked = element.ravioliCheck;
+        document.getElementById("tofuCheck").checked = element.tofuCheck;
+        document.getElementById("beefCheck").checked = element.beefCheck;
+        document.getElementById("vegCheck").checked = element.vegCheck;
+
+        document.getElementById("nutsCheck").checked = element.nutsCheck;
+        document.getElementById("barsCheck").checked = element.barsCheck;
+
         document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
         document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
         document.getElementById("babyFormulaCheck").checked = element.babyFormulaCheck;
