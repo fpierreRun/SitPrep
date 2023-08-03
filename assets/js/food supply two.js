@@ -161,7 +161,7 @@ function downloadCheckList() {
   // Assuming you have defined storeFoodList() function elsewhere in your code
   storeFoodList();
 }
-  
+
 
 function storeFoodList() {
   localStorage.setItem("foodList", JSON.stringify(foodList));
@@ -192,6 +192,7 @@ function loadSaveList() {
 
         document.getElementById("nutsCheck").checked = element.nutsCheck;
         document.getElementById("barsCheck").checked = element.barsCheck;
+        document.getElementById("granolaCheck").checked = element.granolaCheck;
 
         document.getElementById("aVitaminsCheck").checked = element.aVitaminsCheck;
         document.getElementById("kVitaminsCheck").checked = element.kVitaminsCheck;
@@ -232,9 +233,10 @@ function storeMealOptions() {
       snack: document.getElementById('day3-snack-select').value
     }
   };
-console.log(selectedOptions)
+
   // Store the selected options in local storage
   localStorage.setItem('mealOptions', JSON.stringify(selectedOptions));
+  window.location.href="./download_foodsupply.html";
 }
 
 // Call the storeMealOptions function whenever a meal option is selected
@@ -251,4 +253,6 @@ function updateCards(){
 window.location.href="./dashboard Main.html";
 
 };
+
+
 

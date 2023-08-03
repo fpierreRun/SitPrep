@@ -36,10 +36,11 @@ function displayTable(){
 
 function inputIngredients(day, meal) {
   
-
+  var cmpbOptions = document.getElementsByClassName("cmpb");
   var cmfOptions = document.getElementsByClassName("cmf");
   var cmnOptions = document.getElementsByClassName("cmn");
   var cmgOptions = document.getElementsByClassName("cmg");
+  
   var tunaOptions = document.getElementsByClassName("tuna");
   var chilliOptions = document.getElementsByClassName("chilli");
   var beefOptions = document.getElementsByClassName("beef");
@@ -50,7 +51,7 @@ function inputIngredients(day, meal) {
   var snackCOptions = document.getElementsByClassName("snackC");
   var snackPbcOptions = document.getElementsByClassName("snackPbc");
 
-
+console.log(cmpbOptions)
   updatedFood = JSON.parse(localStorage.getItem("demoData"));
 
   for (let i = 0; i < updatedFood.length; i++) {
@@ -117,6 +118,18 @@ for (var i = 0; i < cmgOptions.length; i++) {
     milkValue += 1;
     fruitValue += 0.5;
     barsValue += 1;
+  }
+ 
+}
+
+for (var i = 0; i < cmpbOptions.length; i++) {
+  var option = cmpbOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Peanut Butter" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    pbValue += 1;
   }
  
 }
@@ -254,6 +267,7 @@ function updateIngredients(){
   var cmfOptions = document.getElementsByClassName("cmf");
   var cmnOptions = document.getElementsByClassName("cmn");
   var cmgOptions = document.getElementsByClassName("cmg");
+  var cmpbOptions = document.getElementsByClassName("cmpb");
   var tunaOptions = document.getElementsByClassName("tuna");
   var chilliOptions = document.getElementsByClassName("chilli");
   var beefOptions = document.getElementsByClassName("beef");
@@ -376,6 +390,18 @@ for (var i = 0; i < cmgOptions.length; i++) {
     milkValue += 1;
     fruitValue += 0.5;
     barsValue += 1;
+  }
+ 
+}
+
+for (var i = 0; i < cmpbOptions.length; i++) {
+  var option = cmpbOptions[i];
+  if (option.value === "Cereal with Milk, Fruit, and Peanut Butter" && option.selected) {
+    isSelectSelected = true;
+    granolaValue += 1;
+    milkValue += 1;
+    fruitValue += 0.5;
+    pbValue += 1;
   }
  
 }
