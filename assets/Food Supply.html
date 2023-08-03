@@ -211,16 +211,16 @@
            <!--Mobile header begibns-->
            <header class="d-flex mx-2 mt-4  justify-content-between">
             <div>
-              <p class="h2 txtImpact  font-weight-bold">Emeregency Meal Plan</p>
+              <p class="h3 txtImpact  font-weight-bold text-success">Emeregency Meal Plan</p>
             </div>
           <div class="">
                   <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold d-xl-none" data-toggle="modal" data-target="#shareMobile">
                     Share<img class="ml-3 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
                   </button>
-  
+<!--   
                   <button class="ml-2 d-xl-none text-secondary bg-white-outline btn  font-weight-bolder" onclick="updateCards()" ><span class="material-symbols-outlined font-weight-bolder">
                     close
-                    </span></button>
+                    </span></button> -->
             
                 </div>
           </header>
@@ -315,9 +315,6 @@
 
    
 
-      <div class="mr-4 mt-4" id="foodBackBtn"  style="display: none;">
-        <button  class="shadow rounded-pill btn-lg btn-primary noOutline text-white font-weight-normal ml-4" onclick="foodPrevious()">Previous</button>
-      </div>
 
     
 
@@ -1563,14 +1560,18 @@
          <div class="py-2 mb-5  text-center">
                
                
-                  <div class="mb-3">
-                    <button type="button" class="btn btn-success btn-rounded-pill " onclick="downloadCheckList(), storeMealOptions()" id="element-to-hide" data-html2canvas-ignore="true">
-                      Save & Continue
-                    </button>
+        <div class="mb-3 d-flex justify-content-center">
+
+            <div class="mr-3" id="foodBackBtn"  style="display: none;">
+              <button  class="shadow rounded-pill btn btn-secondary noOutline font-weight-normal " onclick="foodPrevious()">Previous</button>
+            </div>
+            <button type="button" class=" ml-3 btn btn-success rounded-pill " onclick="downloadCheckList(), storeMealOptions()" id="element-to-hide" data-html2canvas-ignore="true">
+              Save & Continue
+            </button>
                    
-                  </div>
+        </div>
                 
-              </div>
+      </div>
 
       <!--prepackaged options-->
       </div>

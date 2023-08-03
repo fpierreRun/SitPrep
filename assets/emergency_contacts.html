@@ -204,9 +204,6 @@
                   Share<img class="ml-3 mb-1" height="25px" src="./images/icons8-share-50.png" alt="">
                 </button>
 
-                <button class="ml-2 d-xl-none text-secondary bg-white-outline btn font-weight-bolder" onclick="updateCards()">
-                  <span class="material-symbols-outlined font-weight-bolder">close</span>
-                </button>
               </div>
             </header>
             <!-- Mobile header ends -->
@@ -372,7 +369,7 @@
                               </span>
                             </div>
 
-                            <p class="h4 ml-3">Add Another Group</p>
+                            <p class="h4 ml-3">Add Contact Group</p>
 
                           </div>
                         </a>
@@ -436,8 +433,8 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label class="text-muted" for="contactGroupName ">Contact Group Name:</label>
-              <input type="text" class="  w-100 p-2 rounded" id="contactGroupName" placeholder="Enter a name for your contact group">
+              <label class="text-muted" for="contactGroupName ">What would you like this contact group to be named?</label>
+              <input type="text" class="  w-100 p-2 rounded" id="contactGroupName" placeholder="Enter a name i.e Call Granpa or Primary Doctor">
             </div>
           </div>
           <div class="modal-footer">
@@ -555,8 +552,8 @@
           const contactElement = `
             <div class="contact-column p-3 mb-5 bg-white rcorners shadow" id="${contactId}">
               ${deleteButton}
-              <h1 id=groupName class="font-weight-bold display-6 mt-3 pb-3 txtBlu">Main Contact Group</h1>
-              <h5 class="mb-3">Designated Contact's Info</h5>
+              <h1 id=groupName class="font-weight-bold display-6 mt-3 pb-3 txtBlu">Calling Tree</h1>
+              <h5 class="mb-3">Main Contact's Information</h5>
              
              
               <div class="form-group d-flex align-content-center  mt-3 py-2">
@@ -619,12 +616,12 @@
                 <input type="email" name="contactEml${contactId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter email">
               </div>
               <hr> <!-- Breaker added here -->
-              <p class="text-muted">Assign individuals to reach out to contact during emergency </p>
+              <p class="text-muted h6">(If applicable) Assign who will reach out to the main contact during an emergency</p>
               <div class="person-group" id="personGroup_${contactId}">
                 
               </div>
               <div class="mt-5 d-grid gap-2 mb-5">
-                <button class="btn btn-primary element-to-hide" onclick="addPerson('${contactId}')">Add Person</button>
+                <button class="btn btn-primary element-to-hide" onclick="addPerson('${contactId}')">Add Individual</button>
               </div>
             </div>
           `;
@@ -644,7 +641,7 @@
               <span class="material-symbols-rounded mt-2">
                 person
               </span>
-              <input type="text" name="personName${contactId}_${personId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter Person Name">
+              <input type="text" name="personName${contactId}_${personId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter Name">
               <button class="btn btn-sm  mx-2 element-to-hide" onclick="deletePerson('${contactId}', ${personId})"><span class="text-secondary material-icons">
                         delete
                         </span></button>

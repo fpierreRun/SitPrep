@@ -990,6 +990,13 @@ tr.mobileAmazon div {
   background-size:contain;
 }
 
+.stp1_5-pic{
+  background-image: url(../images/Contact.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+
 .stp2-pic{
   background-image: url(../images/Food\ Supply\ Main\ –\ 1.png);
   background-repeat:no-repeat;
