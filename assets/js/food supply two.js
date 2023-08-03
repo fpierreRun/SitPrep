@@ -153,13 +153,14 @@ function downloadCheckList() {
     }
   });
 
-  console.log(foodCheckDataObj);
+  
 
   // Assuming you have defined foodList as an array elsewhere in your code
   foodList.push(foodCheckDataObj);
 
   // Assuming you have defined storeFoodList() function elsewhere in your code
   storeFoodList();
+  window.location.href="./download_foodsupply.html";
 }
 
 
@@ -236,7 +237,7 @@ function storeMealOptions() {
 
   // Store the selected options in local storage
   localStorage.setItem('mealOptions', JSON.stringify(selectedOptions));
-  window.location.href="./download_foodsupply.html";
+
 }
 
 // Call the storeMealOptions function whenever a meal option is selected
