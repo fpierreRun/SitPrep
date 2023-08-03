@@ -353,7 +353,7 @@
                   <a href="./dashboard Main.html" class=" btn btn-dark mx-5">Back to main</a>
                 </p>
                 <div class="col-md-6" >
-                  <input type="button" id="rep" value="Download my plan" class="btn btn-success mx-5 btn_print" />
+                  <input type="button" id="rep" value="Download my menu" class="btn btn-success mx-5 btn_print" data-toggle="modal" data-target="#dowmloadMenu" />
                 </div>
                 
               </div>
@@ -418,33 +418,46 @@
               </div>
             </div>
           
-            <!-- Modal for Survey begin -->
-            <div class="modal fade" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="pr-3 pt-3">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle" />
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="giveFeedback()">Give Feedback</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+           <!-- Modal for Survey begin -->
+  <div class="modal fade" id="dowmloadMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="pr-3 pt-3">
+        
+         
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</a>
+          </button>
+        </div>
+
+     
+
+        <div class="modal-body ">
+          
+
+
+          <img src="./images/Download complete.png" class="modal-title img-fluid" id="exampleModalCenterTitle"></img>
+        
+        </div>
+
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-success" onclick="giveFeedback()">Write a review</button>
+         
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Survey End-->
           
             <div class=" mx-auto mx-sm-0  py-5 row text-center ">
               <p class="col-md-6">
                 <a href="./dashboard Main.html" class=" btn btn-dark mx-5">Back to main</a>
               </p>
               <div class="col-md-6" >
-                <input type="button" id="rep" value="Download my plan" class="btn btn-success mx-5 btn_print" />
+                <input type="button" id="rep" value="Download my menu" class="btn btn-success mx-5 btn_print" data-toggle="modal" data-target="#dowmloadMenu" />
               </div>
               
             </div>

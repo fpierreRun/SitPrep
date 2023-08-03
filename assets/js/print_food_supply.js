@@ -268,7 +268,7 @@ loadName()
      var opt = 
      {
        margin:     0.25,
-       filename:     'My_Plan_.pdf',
+       filename:     'My_3_day_meal_menu.pdf',
        image:        { type: 'pdf', quality: 0.98 },
        html2canvas:  { scale: 2, scrollY: 0 },
        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -286,3 +286,9 @@ loadName()
 
  });
 //download PDF code ends
+
+function giveFeedback(){
+  window.open("https://g.page/r/CcCOilHmZderEAI/review", "_blank");
+  // window.location.href="https://g.page/r/CcCOilHmZderEAI/review";
+
+};
