@@ -299,7 +299,7 @@
           
         <!--version to download and share-->
               <div class="d-flex justify-content-center " >
-                <input  class="btn btn-primary btn_print font-weight-normal mr-4" type="button" value="Download plan" id="downloadpdf1"   hidden>
+                <input  class="btn btn-primary btn_print font-weight-normal mr-4" type="button" value="Download & share plan" id="downloadpdf1"   hidden>
                 <input form="locationForm" class="btn btn-secondary font-weight-normal " type="button" value="Edit" onclick="editPlan(this.parentNode.parentNode)"  id="editPdf" hidden > 
             </div>
 
@@ -332,16 +332,28 @@
                     <div class="mx-3" id="editVone">
                       <p class="h3 font-weight-bold txtBlu font"><span class="font-weight-bold txtGrn" >Step 1/2:</span> In case your home becomes inaccessible, where is your designated emergency meeting place?</p>
                       <hr class="">
-                      <p class="h5 font-weight-bold">Consider the folowing factors when choosing a meeting place:</p>
-                        <ul class="h6 text-muted">
-                          <li>Choose an accessible and familiar location, like a landmark, intersection, or public park, known to everyone in the family.</li><br>
-                          <li>If you have a pet, ensure the location is animal-friendly.</li><br>
-                          <li>Consider a location with a nearby water source for emergency hydration and sanitation needs.</li><br>
-                          <li>Consider having multiple meeting locations as backup options.</li><br>
-                        </ul>
-                        <p class="font-weight-bold font-italic">
-                          Your privacy and safety is important to us. SitPrep and any other entity do not save, store, or share the information you provide.</p>
-                    </div>
+
+                      <p>
+                        <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#meetingCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Factors to consider
+                        </a>
+                       
+                      </p>
+                      <div class="collapse" id="meetingCollapse">
+                        <div class="card card-body">
+                          <ul class="h6 text-muted">
+                            <li>Choose an accessible and familiar location, like a landmark, intersection, or public park, known to everyone in the family.</li><br>
+                            <li>If you have a pet, ensure the location is animal-friendly.</li><br>
+                            <li>Consider a location with a nearby water source for emergency hydration and sanitation needs.</li><br>
+                            <li>Consider having multiple meeting locations as backup options.</li><br>
+                          </ul>
+                          
+                      
+                        </div>
+                      </div>
+                      <p class="font-weight-bold font-italic mt-3">
+                        Your privacy and safety is important to us. SitPrep and any other entity do not save, store, or share the information you provide.</p>
+                      </div>
                     <!--PDf text begin-->
                     <div id="pdfVone" hidden>
                       <p class="h2">Meeting Place</p>
@@ -479,14 +491,25 @@
                     <div class="mx-3" id="editVtwo">
                       <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> What is your evacuation route to the nearest shelter in case of an emergency?</p>
                       <hr class="my-4">
-                      <p class="h5 font-weight-bold">Consider the folowing factors when creating evacuation routes:</p>
-                      <ul class="h6 text-muted">
-                        <li>Plan how and where to evacuate with your household.</li><br>
-                        <li>Identify multiple emergency destinations (friend's house,community center, motel, etc) in different directions.</li><br>
-                        <li>Arrange for pet accommodation as most shelters allow only service animals.</li><br>
-                        <li>Explore alternative evacuation routes and transportation options.</li><br>
-                        <li>Follow local officials' guidance and be prepared to walk if needed.</li><br>
-                      </ul>
+                      <p>
+                        <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#evacCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Factors to consider
+                        </a>
+                       
+                      </p>
+                      <div class="collapse mb-5" id="evacCollapse">
+                        <div class="card card-body">
+                          <ul class="h6 text-muted">
+                            <li>Plan how and where to evacuate with your household.</li><br>
+                            <li>Identify multiple emergency destinations (friend's house,community center, motel, etc) in different directions.</li><br>
+                            <li>Arrange for pet accommodation as most shelters allow only service animals.</li><br>
+                            <li>Explore alternative evacuation routes and transportation options.</li><br>
+                            <li>Follow local officials' guidance and be prepared to walk if needed.</li><br>
+                          </ul>
+                         </div>
+                      </div>
+                      
+                     
                     </div>
 
                     <!--pdf text begin-->
