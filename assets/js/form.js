@@ -16,7 +16,9 @@ document.getElementById('removeSecLoc').addEventListener('click', function() {
   document.getElementById('secondaryLoc').setAttribute('hidden', true);
   document.getElementById('addSecLocButton').removeAttribute('hidden');
 });
-
+document.getElementById('completeDld').addEventListener('click', function() {
+  document.getElementById('addSecLocButton').setAttribute('hidden', true);
+});
 
 
 
@@ -26,17 +28,15 @@ function evacPage(){
     top: 0,
     behavior: 'smooth'
   });
-  document.getElementById("next").style.display = "none";
-  document.getElementById("step1").style.display = "none";
-
-  document.getElementById("evacForm").style.display = "block";
+ 
+  document.getElementById('next').setAttribute('hidden', true);
+  document.getElementById('step1').setAttribute('hidden', true);
+ 
   
   // document.getElementById("contactForm").style.display = "none";
-  
-  document.getElementById("previous1").style.display = "block";
-  document.getElementById("completeDld").style.display = "block";
-  // document.getElementById("previous2").style.display = "none";
-  // document.getElementById("next2").style.display = "none"; 
+  document.getElementById('previous1').removeAttribute('hidden');
+  document.getElementById('completeDld').removeAttribute('hidden');
+  document.getElementById('evacForm').removeAttribute('hidden');
  
 
 };
@@ -49,12 +49,12 @@ function locPage(){
     behavior: 'smooth'
   });
 
+  // document.getElementById('next1').setAttribute('hidden', true);
+  document.getElementById('previous1').setAttribute('hidden', true);
+  document.getElementById('evacForm').setAttribute('hidden', true);
+  document.getElementById('step1').removeAttribute('hidden');
+  document.getElementById('next').removeAttribute('hidden');
 
-  document.getElementById("step1").style.display = "block";
-  document.getElementById("evacForm").style.display = "none";
-  document.getElementById("next").style.display = "block";
-  document.getElementById("previous1").style.display = "none";
-  document.getElementById("next1").style.display = "none";
 
 };
 
@@ -62,22 +62,7 @@ function locPage(){
 //End
 
 //begin
-function contactPage(){
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
 
-  
-  // document.getElementById("contactForm").style.display = "block";
-  document.getElementById("step1").style.display = "none";
-  document.getElementById("evacForm").style.display = "none";
-  document.getElementById("previous1").style.display = "none";
-  document.getElementById("next1").style.display = "none";
-  // document.getElementById("previous2").style.display = "block";
-  // document.getElementById("next2").style.display = "block"; 
-
-};
 //end
 
 
@@ -94,8 +79,8 @@ function saveForm (event){
   });
 
 
-  // document.getElementById("step1").style.display = "block";
-  // document.getElementById("evacForm").style.display = "block";
+  document.getElementById("step1").style.display = "block";
+  document.getElementById("evacForm").style.display = "block";
   // document.getElementById("contactForm").style.display = "block";
 
 
@@ -342,27 +327,24 @@ function showPlan(element) {
   document.getElementById("pdfVone").removeAttribute("hidden");
   document.getElementById("pdfVtwo").removeAttribute("hidden");
  
-  // document.getElementById("downloadPlan2").removeAttribute("hidden");
+
   document.getElementById("titleSig").removeAttribute("hidden");
 
-  // document.getElementById("removeMap5Button").hidden = true;
   document.getElementById("removeMap2Button").hidden = true;
   document.getElementById("removeMap3Button").hidden = true;
-  // document.getElementById("addMap5Button").hidden = true;
+  document.getElementById("addSecLocButton").hidden = true;
   document.getElementById("addMap2Button").hidden = true;
   document.getElementById("addMap3Button").hidden = true;
-  // document.getElementById("save").hidden = true;
-  // document.getElementById("previous2").hidden = true; 
+ 
 
+  document.getElementById('step1').removeAttribute('hidden');
+  
 
-
-  document.getElementById("step1").style.display = "block";
-  document.getElementById("evacForm").style.display = "block";
-  // document.getElementById("contactForm").style.display = "block";
-  document.getElementById("downloadpdf1").style.display = "block";
-
-  document.getElementById("editPdf").style.display = "block";
-
+  document.getElementById('downloadpdf1').removeAttribute('hidden');
+  document.getElementById('editPdf').removeAttribute('hidden');
+  document.getElementById('evacForm').removeAttribute('hidden');
+ 
+  
 
 
   
@@ -400,14 +382,14 @@ document.getElementById("editVtwo").removeAttribute("hidden");
 
 document.getElementById("pdfVone").hidden = true;
 document.getElementById("pdfVtwo").hidden = true;
-// document.getElementById("pdfVthree").hidden = true;
+document.getElementById("previous1").hidden = true;
 // document.getElementById("downloadPlan2").hidden = true;
 document.getElementById("titleSig").hidden = true;
 
 // document.getElementById("removeMap5Button").removeAttribute("hidden");
 document.getElementById("removeMap2Button").removeAttribute("hidden");
 document.getElementById("removeMap3Button").removeAttribute("hidden");
-// document.getElementById("addMap5Button").removeAttribute("hidden");
+document.getElementById("addSecLocButton").removeAttribute("hidden");
 document.getElementById("addMap2Button").removeAttribute("hidden");
 document.getElementById("addMap3Button").removeAttribute("hidden");
 // document.getElementById("save").removeAttribute("hidden");

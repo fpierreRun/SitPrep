@@ -299,8 +299,8 @@
           
         <!--version to download and share-->
               <div class="d-flex justify-content-center " >
-                <input  class="btn btn-primary btn_print font-weight-normal mr-4" type="button" value="Download plan" id="downloadpdf1"  style="display: none;" onclick="">
-                <input form="locationForm" class="btn btn-secondary font-weight-normal " type="button" value="Edit" onclick="editPlan(this.parentNode.parentNode)"  id="editPdf" style="display: none;"> 
+                <input  class="btn btn-primary btn_print font-weight-normal mr-4" type="button" value="Download plan" id="downloadpdf1"   hidden>
+                <input form="locationForm" class="btn btn-secondary font-weight-normal " type="button" value="Edit" onclick="editPlan(this.parentNode.parentNode)"  id="editPdf" hidden > 
             </div>
 
 
@@ -475,7 +475,7 @@
               
                
               
-                  <main class=" " style=" display: none" id="evacForm">
+                  <main class=" "  id="evacForm" hidden>
                     <div class="mx-3" id="editVtwo">
                       <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> What is your evacuation route to the nearest shelter in case of an emergency?</p>
                       <hr class="my-4">
@@ -698,7 +698,7 @@
                         <span class="pr-2  material-icons">
                       add_circle
                       </span>
-                      <p class="h4 ">Add Optional Plan</p>
+                      <p class="h4 ">Add additional plan</p>
                     </div>
                     </a>
                   </div>
@@ -727,7 +727,7 @@
         
               <div class="d-flex">
                 <div class="pr-3">
-                  <button id="previous1" style="display: none" onclick="locPage()" class="btn btn-primary element-to-hide">Previous</button>
+                  <button id="previous1" onclick="locPage()" class="btn btn-primary element-to-hide" hidden>Previous</button>
                 </div>
         
                
@@ -738,7 +738,7 @@
                 </div> -->
 
                 <div class="">
-                  <input style="display: none" id="completeDld" form="" class="btn btn-success pr-5 element-to-hide" type="button" value="Complete & download" onclick=" saveForm()">
+                  <input  id="completeDld" form="" class="btn btn-success pr-5 element-to-hide" type="button" value="Complete & download" onclick=" saveForm()" hidden>
                 </div>
               
               </div>
