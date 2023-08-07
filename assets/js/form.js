@@ -5,7 +5,17 @@ var plan = [];
 var formEl = document.querySelector("#locationForm");
 var formIdCounter = 0;
 
+document.getElementById('addSecLocButton').addEventListener('click', function() {
+  document.getElementById('secondaryLoc').removeAttribute('hidden');
+  document.getElementById('removeSecLoc').removeAttribute('hidden');
+  document.getElementById('addSecLocButton').setAttribute('hidden', true);
 
+});
+
+document.getElementById('removeSecLoc').addEventListener('click', function() {
+  document.getElementById('secondaryLoc').setAttribute('hidden', true);
+  document.getElementById('addSecLocButton').removeAttribute('hidden');
+});
 
 
 
@@ -89,30 +99,30 @@ function saveForm (event){
   // document.getElementById("contactForm").style.display = "block";
 
 
-          //Primary Gathering Location Info
-          var primeLoc = document.querySelector("input[name='primeLoc']").value;
-          var primaryNum = document.querySelector("input[name='primeNum']").value;
-          var primaryAddInfo = document.querySelector("textarea[name='primeInfo']").value;
+          // //Primary Gathering Location Info
+          // var primeLoc = document.querySelector("input[name='primeLoc']").value;
+          // var primaryNum = document.querySelector("input[name='primeNum']").value;
+          // var primaryAddInfo = document.querySelector("textarea[name='primeInfo']").value;
           
-          //Secondary Gathering Location Info
-          var secondaryLoc = document.querySelector("input[name='secLoc']").value;
-          var secondaryNum = document.querySelector("input[name='secNum']").value;
-          var secondaryAddInfo = document.querySelector("textarea[name='secInfo']").value;
+          // //Secondary Gathering Location Info
+          // var secondaryLoc = document.querySelector("input[name='secLoc']").value;
+          // var secondaryNum = document.querySelector("input[name='secNum']").value;
+          // var secondaryAddInfo = document.querySelector("textarea[name='secInfo']").value;
 
-          //Evacuation Location Info
-          var evacuationLoc = document.querySelector("input[name='evacLoc']").value;
-          var evacuationNum = document.querySelector("input[name='evacNum']").value;
-          var secondaryEvacLoc = document.querySelector("textarea[name='sec-Evac-Loc']").value;
+          // //Evacuation Location Info
+          // var evacuationLoc = document.querySelector("input[name='evacLoc1']").value;
+          // var evacuationNum = document.querySelector("input[name='evacNum']").value;
+          // var secondaryEvacLoc = document.querySelector("textarea[name='sec-Evac-Loc']").value;
 
-            //Evacuation Location Info 2
-            var evacuationLoc2 = document.querySelector("input[name='evacLoc2']").value;
-            var evacuationNum2 = document.querySelector("input[name='evacNum2']").value;
-            var secondaryEvacLoc2 = document.querySelector("textarea[name='sec-Evac-Loc2']").value;
+          //   //Evacuation Location Info 2
+          //   var evacuationLoc2 = document.querySelector("input[name='evacLoc2']").value;
+          //   var evacuationNum2 = document.querySelector("input[name='evacNum2']").value;
+          //   var secondaryEvacLoc2 = document.querySelector("textarea[name='sec-Evac-Loc2']").value;
 
-              //Evacuation Location Info 3
-          var evacuationLoc3 = document.querySelector("input[name='evacLoc3']").value;
-          var evacuationNum3 = document.querySelector("input[name='evacNum3']").value;
-          var secondaryEvacLoc3 = document.querySelector("textarea[name='sec-Evac-Loc3']").value;
+          //     //Evacuation Location Info 3
+          // var evacuationLoc3 = document.querySelector("input[name='evacLoc3']").value;
+          // var evacuationNum3 = document.querySelector("input[name='evacNum3']").value;
+          // var secondaryEvacLoc3 = document.querySelector("textarea[name='sec-Evac-Loc3']").value;
           
 
           // //  //Emergecny contact Info
@@ -121,43 +131,43 @@ function saveForm (event){
           // var contactEml = document.querySelector("input[name='contactEml']").value;
         
 
-          //Object for form data
-          var formDataObj = {
+      //     //Object for form data
+      //     var formDataObj = {
 
-            //Primary Gathering Location Info
-            primeLoc: primeLoc,
-            primaryNum: primaryNum, 
-            primaryAddInfo: primaryAddInfo,
+      //       //Primary Gathering Location Info
+      //       primeLoc: primeLoc,
+      //       primaryNum: primaryNum, 
+      //       primaryAddInfo: primaryAddInfo,
 
-          //  Secondary Gathering Location Info
-            secondaryLoc: secondaryLoc,
-            secondaryNum: secondaryNum,
-            secondaryAddInfo: secondaryAddInfo,
+      //     //  Secondary Gathering Location Info
+      //       secondaryLoc: secondaryLoc,
+      //       secondaryNum: secondaryNum,
+      //       secondaryAddInfo: secondaryAddInfo,
 
-          //Evacuation Location Info
-          evacuationLoc: evacuationLoc,
-          evacuationNum: evacuationNum,
-          secondaryEvacLoc: secondaryEvacLoc,
+      //     //Evacuation Location Info
+      //     evacuationLoc: evacuationLoc,
+      //     evacuationNum: evacuationNum,
+      //     secondaryEvacLoc: secondaryEvacLoc,
 
-           //Evacuation Location Info 2
-           evacuationLoc2: evacuationLoc2,
-           evacuationNum2: evacuationNum2,
-           secondaryEvacLoc2: secondaryEvacLoc2,
+      //      //Evacuation Location Info 2
+      //      evacuationLoc2: evacuationLoc2,
+      //      evacuationNum2: evacuationNum2,
+      //      secondaryEvacLoc2: secondaryEvacLoc2,
 
-            //Evacuation Location Info 3
-          evacuationLoc3: evacuationLoc3,
-          evacuationNum3: evacuationNum3,
-          secondaryEvacLoc3: secondaryEvacLoc3,
+      //       //Evacuation Location Info 3
+      //     evacuationLoc3: evacuationLoc3,
+      //     evacuationNum3: evacuationNum3,
+      //     secondaryEvacLoc3: secondaryEvacLoc3,
 
-          // //  Emergecny contact Info
-          // contactName: contactName,
-          // contactNum: contactNum,  
-          // contactEml: contactEml,
+      //     // //  Emergecny contact Info
+      //     // contactName: contactName,
+      //     // contactNum: contactNum,  
+      //     // contactEml: contactEml,
       
-      };
+      // };
      
 
-      plan.push(formDataObj);
+      // plan.push(formDataObj);
       
 
       saveData()
@@ -193,73 +203,73 @@ window.location.href="./dashboard Main.html";
 
 // //function for address field
 
-"use strict";
+// "use strict";
 
-function initMap() {
-  const CONFIGURATION = {
-    "ctaTitle": "Checkout",
-    "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":11,"zoomControl":false,"maxZoom":22,"mapId":""},
-    "mapsApiKey": "AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA",
-    "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":false,"ctaControl":false}
-  };
-  const componentForm = [
-    'location',
-    'locality',
-    'administrative_area_level_1',
-    'country',
-    'postal_code',
-  ];
+// function initMap() {
+//   const CONFIGURATION = {
+//     "ctaTitle": "Checkout",
+//     "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":true,"zoom":11,"zoomControl":false,"maxZoom":22,"mapId":""},
+//     "mapsApiKey": "AIzaSyDZ94vMQMhdMLFDd3LbpcSrjPK6rPT-3WA",
+//     "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":false,"ctaControl":false}
+//   };
+//   const componentForm = [
+//     'location',
+//     'locality',
+//     'administrative_area_level_1',
+//     'country',
+//     'postal_code',
+//   ];
 
 
-  const getFormInputElement = (component) => document.getElementById(component + '-input2');
-  const autocompleteInput = getFormInputElement('location');
-  const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
-    fields: ["address_components", "geometry", "name"],
-    types: ["address"],
-  });
+//   const getFormInputElement = (component) => document.getElementById(component + '-input2');
+//   const autocompleteInput = getFormInputElement('location');
+//   const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
+//     fields: ["address_components", "geometry", "name"],
+//     types: ["address"],
+//   });
 
-  autocomplete.addListener('place_changed', function () {
-    const place = autocomplete.getPlace();
-    if (!place.geometry) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
-      window.alert('No details available for input: \'' + place.name + '\'');
-      return;
-    }
-    fillInAddress(place);
+//   autocomplete.addListener('place_changed', function () {
+//     const place = autocomplete.getPlace();
+//     if (!place.geometry) {
+//       // User entered the name of a Place that was not suggested and
+//       // pressed the Enter key, or the Place Details request failed.
+//       window.alert('No details available for input: \'' + place.name + '\'');
+//       return;
+//     }
+//     fillInAddress(place);
     
-  });
+//   });
 
-  function fillInAddress(place) {  // optional parameter
-    const addressNameFormat = {
-      'street_number': 'short_name',
-      'route': 'long_name',
-      'locality': 'long_name',
-      'administrative_area_level_1': 'short_name',
-      'country': 'long_name',
-      'postal_code': 'short_name',
-    };
+//   function fillInAddress(place) {  // optional parameter
+//     const addressNameFormat = {
+//       'street_number': 'long_name',
+//       'route': 'long_name',
+//       'locality': 'long_name',
+//       'administrative_area_level_1': 'long_name',
+//       'country': 'long_name',
+//       'postal_code': 'long_name',
+//     };
 
 
-    const getAddressComp = function (type) {
-      for (const component of place.address_components) {
-        if (component.types[0] === type) {
-          return component[addressNameFormat[type]];
-        }
-      }
-      return '';
-    };
+//     const getAddressComp = function (type) {
+//       for (const component of place.address_components) {
+//         if (component.types[0] === type) {
+//           return component[addressNameFormat[type]];
+//         }
+//       }
+//       return '';
+//     };
 
-    getFormInputElement('location').value = getAddressComp('street_number') + ' '
-              + getAddressComp('route');
-        for (const component of componentForm) {
-          // Location field is handled separately above as it has different logic.
-          if (component !== 'location') {
-            getFormInputElement(component).value = getAddressComp(component);
-      }
-    }
-  }
-};
+//     getFormInputElement('location').value = getAddressComp('street_number') + ' '
+//               + getAddressComp('route');
+//         for (const component of componentForm) {
+//           // Location field is handled separately above as it has different logic.
+//           if (component !== 'location') {
+//             getFormInputElement(component).value = getAddressComp(component);
+//       }
+//     }
+//   }
+// };
 //end of cuntion for address field
 
 
@@ -294,7 +304,7 @@ function downloadAsPDF() {
   // Provide options for PDF generation
   const options = {
     margin: [5, 5, 5, 5], // Adjust the margins as per your requirement
-    filename: 'downloaded_page.pdf',
+    filename: 'My_Evacuation_plan.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true, scrollY: 0   },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
@@ -400,7 +410,7 @@ document.getElementById("removeMap3Button").removeAttribute("hidden");
 // document.getElementById("addMap5Button").removeAttribute("hidden");
 document.getElementById("addMap2Button").removeAttribute("hidden");
 document.getElementById("addMap3Button").removeAttribute("hidden");
-document.getElementById("save").removeAttribute("hidden");
+// document.getElementById("save").removeAttribute("hidden");
 // document.getElementById("previous2").hidden = true;
 
 
