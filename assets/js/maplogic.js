@@ -19,12 +19,12 @@ class AutocompleteDirectionsHandler {
   }
 
   setup() {
-    this.setupPlaceChangedListener(this.originInput, "ORIG");
-    this.setupPlaceChangedListener(this.destinationInput, "DEST");
+    this.setupPlaceChangedListener(this.originInput, "ORIG", this.mapNumber);
+    this.setupPlaceChangedListener(this.destinationInput, "DEST", this.mapNumber);
     this.setupTravelModeListener();
   }
 
-  setupPlaceChangedListener(input, mode) {
+  setupPlaceChangedListener(input, mode, suffix) {
     const autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo("bounds", this.map);
 
@@ -40,6 +40,14 @@ class AutocompleteDirectionsHandler {
         this.originPlaceId = place.place_id;
       } else {
         this.destinationPlaceId = place.place_id;
+        
+        // If this is a destination input, fill in the name and phone number fields
+        if (place.name) {
+          document.getElementById('shelter' + suffix).value = place.name;
+        }
+        if (place.formatted_phone_number) {
+          document.getElementById('contact_number' + suffix).value = place.formatted_phone_number;
+        }
       }
 
       this.route();
@@ -138,26 +146,26 @@ function initMap() {
   const handler1 = new AutocompleteDirectionsHandler(
     map1,
     document.getElementById("originInput1"),
-    document.getElementById("destinationInput1"),
+    document.getElementById("address3"),
     document.getElementById("travelMode1"),
     panel1,
-    1
+    3  // For suffix '3'
   );
   const handler2 = new AutocompleteDirectionsHandler(
     map2,
     document.getElementById("originInput2"),
-    document.getElementById("destinationInput2"),
+    document.getElementById("address4"),
     document.getElementById("travelMode2"),
     panel2,
-    2
+    4  // For suffix '4'
   );
   const handler3 = new AutocompleteDirectionsHandler(
     map3,
     document.getElementById("originInput3"),
-    document.getElementById("destinationInput3"),
+    document.getElementById("address5"),
     document.getElementById("travelMode3"),
     panel3,
-    3
+    5  // For suffix '5'
   );
 
   handler1.setup();
@@ -172,6 +180,8 @@ function initMap() {
   handler2.storeData();
   handler3.storeData();
 }
+
+document.addEventListener("DOMContentLoaded", initMap);
 
 document.addEventListener("DOMContentLoaded", initMap);
 
@@ -215,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("unload", function () {
   localStorage.setItem("mapData1", JSON.stringify({
     origin: document.getElementById("originInput1").value,
-    destination: document.getElementById("destinationInput1").value,
+    destination: document.getElementById("address3").value,
     travelMode: document.getElementById("travelMode1").value,
   }));
 
@@ -234,4 +244,25 @@ window.addEventListener("unload", function () {
       travelMode: document.getElementById("travelMode3").value,
     }));
   }
+});
+
+function initAutocomplete() {
+  const autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete3'), {});
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+  const place = autocomplete.getPlace();
+
+  // Assuming you have an input field with id 'name3' for the place name,
+  // and 'address3' for the place address.
+  document.getElementById('name3').value = place.name;
+  document.getElementById('address3').value = place.formatted_address;
+
+  // More fields can be autofilled here using information from the place object.
+  // See https://developers.google.com/maps/documentation/javascript/reference/places-service#PlaceResult for more details.
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+initAutocomplete();
 });
