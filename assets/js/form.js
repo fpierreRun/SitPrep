@@ -330,6 +330,8 @@ function showPlan(element) {
 
   document.getElementById("titleSig").removeAttribute("hidden");
 
+  document.getElementById("autocomplete1").hidden = true;
+  document.getElementById("autocomplete2").hidden = true;
   document.getElementById("removeMap2Button").hidden = true;
   document.getElementById("removeMap3Button").hidden = true;
   document.getElementById("addSecLocButton").hidden = true;
