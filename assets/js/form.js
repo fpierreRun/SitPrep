@@ -218,7 +218,7 @@ function downloadAsPDF() {
 
   // Provide options for PDF generation
   const options = {
-    margin: [8, 8, 8, 8], // Adjust the margins as per your requirement
+    margin: [1, 1, 1, 1], // Adjust the margins as per your requirement
     filename: 'My_Evacuation_plan.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 3, useCORS: true, scrollY: 0,  },
