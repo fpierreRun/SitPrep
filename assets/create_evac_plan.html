@@ -367,18 +367,23 @@
                         <div class="">
                           <div class="p-3 my-3 section-wrapper rcorners shadow bg-white">
                             <h2>Primary Meeting Location</h2><br>
+                            <div class="form-group">
+                              <input id="autocomplete1" class="form-control" type="text" placeholder="Enter a location">
+                              <div id="meetmap1" style="height: 400px; width: 100%; margin-top: 20px;" class="rcorners" ></div>
+                            </div>
+                          
                             <div class="form-group d-flex">
                               <span class="material-symbols-rounded pr-3">location_on</span>
-                              <input type="text" id="name-input1" class="w-100 p-2 rounded" name="primName" placeholder="Enter name of meeting place" />
+                              <input type="text" id="name1" class="w-100 p-2 rounded" name="primName" placeholder="Enter name of meeting place" />
                             </div>
                             <div class="form-group d-flex">
                               <span class="material-symbols-rounded pr-3">location_on</span>
-                              <input type="text" id="location-input2" class="w-100 p-2 rounded" name="primeLoc" placeholder="Meeting place address" />
+                              <input type="text" id="address1" class="w-100 p-2 rounded" name="primeLoc" placeholder="Meeting place address" />
                             </div>
                       
                             <div class="form-group d-flex">
                               <span class="material-symbols-rounded pr-3">call</span>
-                              <input id="primeNum" name="primeNum" class="w-100 p-2 rounded" placeholder="(Optional) Meeting place #"><br>
+                              <input id="phone_number1" name="phone_number1" class="w-100 p-2 rounded" placeholder="(Optional) Meeting place #"><br>
                             </div>
                       
                             <div class="form-group d-flex">
@@ -421,18 +426,23 @@
                               
                               <input value="Remove" type="button" class="pl-3 btn btn-sm btn-danger element-to-hide" id="removeSecLoc" hidden></input>
                             </div>
-                            <div class="form-group d-flex">
-                              <span class="material-symbols-rounded pr-3">location_on</span>
-                              <input type="text" id="name-input2" class="w-100 p-2 rounded" name="secLoc" placeholder="Enter name of meeting place" />
+
+                            <div class="form-group">
+                              <input id="autocomplete2" class="form-control" type="text" placeholder="Enter a location">
+                              <div id="meetmap2" style="height: 400px; width: 100%; margin-top: 20px;" class="rcorners"></div>
                             </div>
                             <div class="form-group d-flex">
                               <span class="material-symbols-rounded pr-3">location_on</span>
-                              <input type="text" id="location-input2" class="w-100 p-2 rounded" name="secLoc" placeholder="Meeting place address" />
+                              <input type="text" id="name2" class="w-100 p-2 rounded" name="secLoc" placeholder="Enter name of meeting place" />
+                            </div>
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-3">location_on</span>
+                              <input type="text" id="address2" class="w-100 p-2 rounded" name="secLoc" placeholder="Meeting place address" />
                             </div>
                       
                             <div class="form-group d-flex">
                               <span class="material-symbols-rounded pr-3">call</span>
-                              <input id="secNum" name="secNum" class="w-100 p-2 rounded" placeholder="(Optional) Meeting place #"><br>
+                              <input id="phone_number2" name="secNum" class="w-100 p-2 rounded" placeholder="(Optional) Meeting place #"><br>
                             </div>
                       
                             <div class="form-group d-flex">
@@ -790,6 +800,7 @@
 
 <script src="./js/maplogic.js"></script>
 <script src="./js/form.js"></script>
+<script src="./js/autofill_Location.js"></script>
 <!-- <script src="./js/load.js"></script> -->
 
 

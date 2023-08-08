@@ -1,34 +1,36 @@
 let autocomplete1, autocomplete2;
-let map1, map2;
+let meetmap1, meetmap2;
 let marker1, marker2;
 
 function initAutocomplete() {
   // Initialize the first set
-  map1 = new google.maps.Map(document.getElementById('map1'), {
-    center: {lat: -33.8688, lng: 151.2093},
-    zoom: 13
+  meetmap1 = new google.maps.Map(document.getElementById('meetmap1'), {
+    center: { lat: 39.8283,
+      lng: -98.5795},
+    zoom: 5
   });
   marker1 = new google.maps.Marker({
-    map: map1,
+    map: meetmap1,
     anchorPoint: new google.maps.Point(0, -29)
   });
   autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('autocomplete1'), {});
   autocomplete1.addListener('place_changed', function() {
-    fillInAddress(autocomplete1, map1, marker1, '1');
+    fillInAddress(autocomplete1, meetmap1, marker1, '1');
   });
 
   // Initialize the second set
-  map2 = new google.maps.Map(document.getElementById('map2'), {
-    center: {lat: -33.8688, lng: 151.2093},
-    zoom: 13
+  meetmap2 = new google.maps.Map(document.getElementById('meetmap2'), {
+    center: {lat: 39.8283,
+      lng: -98.5795},
+    zoom: 5
   });
   marker2 = new google.maps.Marker({
-    map: map2,
+    map: meetmap2,
     anchorPoint: new google.maps.Point(0, -29)
   });
   autocomplete2 = new google.maps.places.Autocomplete(document.getElementById('autocomplete2'), {});
   autocomplete2.addListener('place_changed', function() {
-    fillInAddress(autocomplete2, map2, marker2, '2');
+    fillInAddress(autocomplete2, meetmap2, marker2, '2');
   });
 }
 
