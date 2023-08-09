@@ -69,7 +69,7 @@ function locPage(){
 //Saving the form
 
 function saveForm (event){
-  // const element = event.target;
+ 
 
   // event.preventDefault();
 
@@ -79,8 +79,7 @@ function saveForm (event){
   });
 
 
-  document.getElementById("step1").style.display = "block";
-  document.getElementById("evacForm").style.display = "block";
+
   // document.getElementById("contactForm").style.display = "block";
 
 
@@ -158,10 +157,6 @@ function saveForm (event){
       saveData()
       // };
 
-          
-          // event.preventDefault();
-          // var location = document.querySelector("input[name='AddInfo']");
-      // console.log(event);
       
 };
 
@@ -261,6 +256,9 @@ function showPlan(element) {
   // Modify the querySelectorAll call to select the element by its id
   document.getElementById("editVone").hidden = true;
   document.getElementById("editVtwo").hidden = true;
+  document.getElementById("close1").hidden = true;
+  document.getElementById("previous1").hidden = true;
+  document.getElementById("completeDld").hidden = true;
  
 
 
@@ -300,6 +298,9 @@ function editPlan(element) {
  // Modify the querySelectorAll call to select the element by its id
 document.getElementById("editVone").removeAttribute("hidden");
 document.getElementById("editVtwo").removeAttribute("hidden");
+document.getElementById("completeDld").removeAttribute("hidden");
+
+
 
 
 document.getElementById("pdfVone").hidden = true;
