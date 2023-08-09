@@ -186,7 +186,10 @@ document.addEventListener("DOMContentLoaded", initMap);
 document.addEventListener("DOMContentLoaded", initMap);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const map2Section = document.getElementById("map2Section");
+  const split6 = document.getElementById("split6");
+  const split7 = document.getElementById("split7");
+  const split8 = document.getElementById("split8");
+  const split9 = document.getElementById("split9");
   const map3Section = document.getElementById("map3Section");
   const addMap2Button = document.getElementById("addMap2Button");
   const addMap3Button = document.getElementById("addMap3Button");
@@ -194,20 +197,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const removeMap3Button = document.getElementById("removeMap3Button");
 
   addMap2Button.addEventListener("click", function () {
-    map2Section.removeAttribute("hidden");
+    split6.removeAttribute("hidden");
+    split7.removeAttribute("hidden");
     addMap2Button.setAttribute("hidden", "true");
     removeMap2Button.removeAttribute("hidden");
     addMap3Button.removeAttribute("hidden");
   });
 
   addMap3Button.addEventListener("click", function () {
-    map3Section.removeAttribute("hidden");
+    split8.removeAttribute("hidden");
+    split9.removeAttribute("hidden");
     addMap3Button.setAttribute("hidden", "true");
     removeMap3Button.removeAttribute("hidden");
   });
 
   removeMap2Button.addEventListener("click", function () {
-    map2Section.setAttribute("hidden", "true");
+    split6.setAttribute("hidden", "true");
+    split7.setAttribute("hidden", "true");
     addMap3Button.setAttribute("hidden", "true");
     addMap2Button.removeAttribute("hidden");
     removeMap2Button.setAttribute("hidden", "true");
@@ -215,7 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   removeMap3Button.addEventListener("click", function () {
-    map3Section.setAttribute("hidden", "true");
+    split8.setAttribute("hidden", "true");
+    split9.setAttribute("hidden", "true");
     addMap3Button.removeAttribute("hidden");
     removeMap3Button.setAttribute("hidden", "true");
     localStorage.removeItem("mapData3");
@@ -229,7 +236,7 @@ window.addEventListener("unload", function () {
     travelMode: document.getElementById("travelMode1").value,
   }));
 
-  if (!document.getElementById("map2Section").hasAttribute("hidden")) {
+  if (!document.getElementById("map2Section")) {
     localStorage.setItem("mapData2", JSON.stringify({
       origin: document.getElementById("originInput2").value,
       destination: document.getElementById("destinationInput2").value,
@@ -237,7 +244,7 @@ window.addEventListener("unload", function () {
     }));
   }
 
-  if (!document.getElementById("map3Section").hasAttribute("hidden")) {
+  if (!document.getElementById("map3Section")) {
     localStorage.setItem("mapData3", JSON.stringify({
       origin: document.getElementById("originInput3").value,
       destination: document.getElementById("destinationInput3").value,

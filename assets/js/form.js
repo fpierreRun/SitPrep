@@ -6,14 +6,14 @@ var formEl = document.querySelector("#locationForm");
 var formIdCounter = 0;
 
 document.getElementById('addSecLocButton').addEventListener('click', function() {
-  document.getElementById('secondaryLoc').removeAttribute('hidden');
+  document.getElementById('split3').removeAttribute('hidden');
   document.getElementById('removeSecLoc').removeAttribute('hidden');
   document.getElementById('addSecLocButton').setAttribute('hidden', true);
 
 });
 
 document.getElementById('removeSecLoc').addEventListener('click', function() {
-  document.getElementById('secondaryLoc').setAttribute('hidden', true);
+  document.getElementById('split3').setAttribute('hidden', true);
   document.getElementById('addSecLocButton').removeAttribute('hidden');
 });
 document.getElementById('completeDld').addEventListener('click', function() {
@@ -206,50 +206,48 @@ formEl.addEventListener("submit", saveForm);
 
 async function downloadAsPDF() {
  
-    const element = document.querySelector('#downloadPlan');
+  const element = document.querySelector('#downloadPlan');
 
-    // Hide elements you don't want in the PDF
-    const elementsToHide = element.querySelectorAll('.element-to-hide');
-    elementsToHide.forEach((el) => {
-        el.setAttribute('hidden', true);
-    });
+  // Hide elements you don't want in the PDF
+  const elementsToHide = element.querySelectorAll('.element-to-hide');
+  elementsToHide.forEach((el) => {
+      el.setAttribute('hidden', true);
+  });
 
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const options = {
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-    };
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  const options = {
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+  };
 
-    // Let's assume these are your split sections
-    const sections = [
-        // document.querySelector('#split1'),
-        document.querySelector('#split2'),
-        document.querySelector('#split3'),
+  // Let's assume these are your split sections
+  const sectionSelectors = [
+      '#split2', '#split3', '#split4', '#split5',
+      '#split6', '#split7', '#split8', '#split9'    
+     
+  ];
 
-         document.querySelector('#split4'),
-        document.querySelector('#split5'),
-        document.querySelector('#split6'),
+  // Filter sections that exist and are not hidden
+  const validSections = sectionSelectors
+      .map(selector => document.querySelector(selector))
+      .filter(section => section && !section.hasAttribute('hidden'));
 
-        document.querySelector('#split7'),
-        document.querySelector('#split8'),
-        document.querySelector('#split9')
-    ];
+  for (let section of validSections) {
+      const canvasImage = await html2pdf().set(options).from(section).outputImg();
+      pdf.addImage(canvasImage, 'JPEG', 10, 10, 190, 277);  // Adjust the x, y, width, and height values as needed.
+      if (section !== validSections[validSections.length - 1]) {
+          pdf.addPage();
+      }
+  }
 
-    for (let section of sections) {
-        const canvasImage = await html2pdf().set(options).from(section).outputImg();
-        pdf.addImage(canvasImage, 'JPEG', 10, 10, 190, 277);  // Adjust the x, y, width, and height values as needed.
-        if (section !== sections[sections.length - 1]) {
-            pdf.addPage();
-        }
-    }
+  pdf.save('My_Evacuation_plan.pdf');
 
-    pdf.save('My_Evacuation_plan.pdf');
-
-    // Restore hidden elements
-    elementsToHide.forEach((el) => {
-        el.removeAttribute('hidden');
-    });
+  // Restore hidden elements
+  elementsToHide.forEach((el) => {
+      el.removeAttribute('hidden');
+  });
 }
+
 
 
 // Call the downloadAsPDF function when the button is clicked
@@ -267,7 +265,8 @@ function showPlan(element) {
 
 
   document.getElementById("pdfVone").removeAttribute("hidden");
-  document.getElementById("pdfVtwo").removeAttribute("hidden");
+  document.getElementById("split4").removeAttribute("hidden");
+  document.getElementById("split5").removeAttribute("hidden");
  
 
   document.getElementById("titleSig").removeAttribute("hidden");
@@ -304,7 +303,8 @@ document.getElementById("editVtwo").removeAttribute("hidden");
 
 
 document.getElementById("pdfVone").hidden = true;
-document.getElementById("pdfVtwo").hidden = true;
+document.getElementById("split4").hidden = true;
+document.getElementById("split5").hidden = true;
 document.getElementById("previous1").hidden = true;
 
 document.getElementById("titleSig").hidden = true;
