@@ -5,8 +5,9 @@ let marker1, marker2;
 function initAutocomplete() {
   // Initialize the first set
   map1 = new google.maps.Map(document.getElementById('meetmap1'), {
-    center: {lat: -33.8688, lng: 151.2093},
-    zoom: 13
+    center: {lat: 39.8283,
+      lng: -98.5795,},
+    zoom: 4
   });
   marker1 = new google.maps.Marker({
     map: map1,
@@ -19,8 +20,9 @@ function initAutocomplete() {
 
   // Initialize the second set
   map2 = new google.maps.Map(document.getElementById('meetmap2'), {
-    center: {lat: -33.8688, lng: 151.2093},
-    zoom: 13
+    center: {lat: 39.8283,
+      lng: -98.5795,},
+    zoom: 4
   });
   marker2 = new google.maps.Marker({
     map: map2,
