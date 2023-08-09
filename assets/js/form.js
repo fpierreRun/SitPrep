@@ -263,6 +263,7 @@ function showPlan(element) {
 
 
   document.getElementById("pdfVone").removeAttribute("hidden");
+  document.getElementById("pdfVtwo").removeAttribute("hidden");
   document.getElementById("split4").removeAttribute("hidden");
   document.getElementById("split5").removeAttribute("hidden");
  
