@@ -204,36 +204,53 @@ var saveData = function () {
 
 formEl.addEventListener("submit", saveForm);
 
-// Function to download the page as PDF
-function downloadAsPDF() {
+async function downloadAsPDF() {
+ 
+    const element = document.querySelector('#downloadPlan');
 
+    // Hide elements you don't want in the PDF
+    const elementsToHide = element.querySelectorAll('.element-to-hide');
+    elementsToHide.forEach((el) => {
+        el.setAttribute('hidden', true);
+    });
 
-  // Select the target element to convert to PDF
-  const element = document.querySelector('#downloadPlan');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const options = {
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+    };
 
-  const elementsToHide = element.querySelectorAll('.element-to-hide');
-  elementsToHide.forEach((el) => {
-    el.setAttribute('hidden', true);
-  });
+    // Let's assume these are your split sections
+    const sections = [
+        // document.querySelector('#split1'),
+        document.querySelector('#split2'),
+        document.querySelector('#split3'),
 
-  // Provide options for PDF generation
-  const options = {
-    // margin: [20, 20, 20, 20], // Adjust the margins as per your requirement
-    filename: 'my_evacuation_plan.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 3, useCORS: true, scrollY: 0,  },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-  };
+         document.querySelector('#split4'),
+        document.querySelector('#split5'),
+        document.querySelector('#split6'),
 
-  // Use html2pdf library to generate and download the PDF
-  html2pdf().set(options).from(element).save();
+        document.querySelector('#split7'),
+        document.querySelector('#split8'),
+        document.querySelector('#split9')
+    ];
 
-   // Avoid page-breaks on all elements, and add one before #page2el.
-   html2pdf().set({
-    pagebreak: { mode: 'avoid-all', after: '#page2el' }
-  });
+    for (let section of sections) {
+        const canvasImage = await html2pdf().set(options).from(section).outputImg();
+        pdf.addImage(canvasImage, 'JPEG', 10, 10, 190, 277);  // Adjust the x, y, width, and height values as needed.
+        if (section !== sections[sections.length - 1]) {
+            pdf.addPage();
+        }
+    }
 
+    pdf.save('My_Evacuation_plan.pdf');
+
+    // Restore hidden elements
+    elementsToHide.forEach((el) => {
+        el.removeAttribute('hidden');
+    });
 }
+
 
 // Call the downloadAsPDF function when the button is clicked
 document.querySelector('.btn_print').addEventListener('click', downloadAsPDF);
