@@ -46,18 +46,18 @@ function newName(){
   };
 
 
-function saveName(){
+function getStarted(){
   localStorage.removeItem("prfName");
-  var myName = document.getElementById("inputName").value;
+  var gotStarted = "Started"
    
     //Object for form data
-    var nameDataObj = {
+    var startedObj = {
   
       //preferred name
-      myName: myName,
+      gotStarted: gotStarted,
     
     };
-    prfName.push(nameDataObj);
+    prfName.push(startedObj);
     localStorage.removeItem("prfName");
     updateName()
   
