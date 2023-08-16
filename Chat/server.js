@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.post('../ask', async (req, res) => {
+app.post('./ask', async (req, res) => {
   const question = req.body.question;
 
   try {
