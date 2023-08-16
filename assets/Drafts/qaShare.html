@@ -1,74 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Share Website</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>ChatGPT Embed</title>
   <style>
-    .share-button {
-      margin-bottom: 10px;
+    #chat-container {
+      width: 400px;
+      height: 500px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+
+    #input-container {
+      margin-top: 10px;
     }
   </style>
-  <!-- Your Open Graph tags -->
-  <meta property="og:url" content="https://www.sitprep.app" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="SitPrep - Be Ready for Any Emergency" />
-  <meta property="og:description" content="Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for any emergency. It provides resources, tools, and guidance to create a comprehensive emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app" />
-  <meta property="og:image" content="https://www.sitprep.app/images/og-image.jpg" />
 </head>
 <body>
- 
-
-  <script>
-   
-  </script>
-  <div class="container mt-5">
-    <h1 class="text-center">Share Website</h1>
-    <div class="text-center">
-      <!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
-      <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-          fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-      
-      <!-- Your share button code -->
-      <div class="fb-share-button" 
-           data-href="https://www.sitprep.app" 
-           data-layout="button_count">
-      </div>
-      <button class="rounded-circle btn btn-white " onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
-      <a class="rounded-circle btn btn-white" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
-      
-      <a class="rounded-circle btn btn-white " href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
-      
-      <button class="rounded-circle btn btn-white " onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
-   
-    </div>
-  </div>
- 
-  <!-- Include Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <h1>ChatGPT Embed</h1>
   
+  <div id="chat-container"></div>
+
+  <div id="input-container">
+    <input type="text" id="user-input" placeholder="Type your message">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@openai/chatgpt/dist/web-chat.min.js"></script>
   <script>
-    function shareViaEmail() {
-      var url = "https://www.sitprep.app";
-      var title = "Check out SitPrep!";
-      var emailSubject = encodeURIComponent(title);
-      var emailBody = encodeURIComponent("Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: " + url);
-      var emailUrl = "mailto:?subject=" + emailSubject + "&body=" + emailBody;
-      window.location.href = emailUrl;
-    }
-    
-    function shareViaText() {
-      var url = "https://www.sitprep.app";
-      var textMessage = "Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for any emergency. It provides resources, tools, and guidance to create a comprehensive emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: " + url;
-      var textUrl = "sms:&body=" + encodeURIComponent(textMessage);
-      window.location.href = textUrl;
+    const chatContainer = document.getElementById("chat-container");
+    const userInput = document.getElementById("user-input");
+
+    const chat = new OpenAI.ChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [],
+      placeholder: "Type your message...",
+      showUserOptions: true,
+      apiKey: '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',
+    });
+
+    function sendMessage() {
+      const message = { role: 'system', content: 'User: ' + userInput.value };
+      chatContainer.innerHTML += '<div><strong>User:</strong> ' + userInput.value + '</div>';
+
+      chat.addMessage(message);
+
+      chat.generate().then((response) => {
+        const reply = response.choices[0].message;
+        chatContainer.innerHTML += '<div><strong>ChatGPT:</strong> ' + reply.content + '</div>';
+        chat.updateChatHistory(reply);
+      });
+
+      userInput.value = '';
     }
   </script>
 </body>

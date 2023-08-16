@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI Question Answering</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex">
+        <h1 class="mt-5">Ask Sai</h1>
+        <img class="mt-3" src="../assets/images/Sai-2.png"  width="150" alt="" />
+    </div>
+    <div id="prompts" class="my-3">
+        <button class="btn btn-outline-secondary prompt">Tell me a joke</button>
+        <button class="btn btn-outline-secondary prompt">Explain the concept of AI</button>
+        <!-- Add more prompts here -->
+    </div>
+    <div class=" mt-5 d-flex bgBlu p-3 rcorners shadow-sm">
+      
+      <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter your question or prompt" rows="1"></textarea>
+      <button type="button" class="btn  btn-success rcorners" id="submitBtn" ><span class="material-icons text-white">
+        send
+        </span></button>
+    </div>
+    
+    <div id="response" class="mt-4"></div>
+  </div>
+
+
+
+
+
+  <!-- Include jQuery for AJAX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+  <!-- Include the client-side script for user interaction -->
+  <script src="./script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputField = document.getElementById("question");
+        const promptBtn = document.getElementById("promptBtn");
+        const prompts = document.getElementById("prompts");
+
+      
+
+        // Attach click event to prompt buttons
+        const promptButtons = document.querySelectorAll(".prompt");
+        promptButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                inputField.value = button.textContent;
+               
+            });
+        });
+
+       
+    });
+
+    // Dynamically adjust textarea height as the user types
+    const textArea = document.querySelector(".input-field");
+        const submitButton = document.getElementById("submitBtn");
+        const initialPaddingTop = 10;
+        let rows = 1;
+
+        textArea.addEventListener("input", () => {
+            textArea.style.height = "auto";
+            textArea.style.height = textArea.scrollHeight + "px";
+            
+            // Calculate number of rows based on scroll height
+            const currentRows = Math.floor(textArea.scrollHeight / parseFloat(getComputedStyle(textArea).lineHeight));
+            
+            // Adjust padding when rows increase or decrease
+            if (currentRows > rows) {
+                rows = currentRows;
+                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
+            } else if (currentRows < rows) {
+                rows = currentRows;
+                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
+            }
+        });
+</script>
+  
+</body>
+
+</html>

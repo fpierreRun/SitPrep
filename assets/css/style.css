@@ -452,6 +452,24 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
 
+/* Adjusted styles for the input field */
+.input-field {
+
+  resize: none; /* Disable resizing */
+
+}
+
+
+.input-field::placeholder {
+  color: white; /* Placeholder text color */
+}
+
+.input-field:focus {
+  background-color: var(--Tiltecolor-color); /* Background color when focused */
+  border-color: var(--Tiltecolor-color);
+  color: white; /* Text color when focused */
+}
+
 input[type=number] {
   border: none;
   
@@ -494,6 +512,11 @@ font-weight:300;
 
   background-color: #ffa41c;
 }
+
+.bgBlu{
+  background-color:var(--Tiltecolor-color);
+  border-color: var(--Tiltecolor-color);
+} 
 
 .recBlu{
   background-color:var(--secondary-color);
