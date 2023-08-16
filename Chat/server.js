@@ -19,7 +19,8 @@ app.post('/ask', async (req, res) => {
 
   try {
     // Add your actual OpenAI API key here or use environment variables
-    const apiKey = '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';
+    
+    const apiKey = process.env.OPENAI_API_KEY;
 
     const configuration = new Configuration({
       apiKey: apiKey,
