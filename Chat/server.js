@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use environment-defined port or default to 3000
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/index.html'); // Serve the index.html file from the public directory
 });
 
 app.post('/ask', async (req, res) => {
