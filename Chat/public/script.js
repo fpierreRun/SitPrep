@@ -10,7 +10,7 @@ function askQuestion() {
   document.getElementById('response').innerHTML = 'Generating response...';
 
   $.ajax({
-      url: '/ask',
+      url: '../ask',
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({ question }),
