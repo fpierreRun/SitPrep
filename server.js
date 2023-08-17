@@ -8,6 +8,9 @@ const port = process.env.PORT || 3001;
 // Serve the specific JavaScript file
 app.use('/public', express.static(__dirname + '/public'));
 
+// Serve the assets folder
+app.use('/assets', express.static(__dirname + '/assets'));
+
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
