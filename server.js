@@ -11,7 +11,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/sai.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/ask', async (req, res) => {
