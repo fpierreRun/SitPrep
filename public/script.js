@@ -28,19 +28,28 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
-    // Process each line to identify and format links as bolded hyperlinks
+    // Process each line to identify and format response titles and headers
     const formattedLines = responseLines.map(line => {
-        const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
+        // Check if the line is a title or header
+        if (line.startsWith("[") && line.endsWith("]") && line.includes("(") && line.includes(")")) {
+            const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
 
-        const formattedLine = line.replace(linkRegex, (match, title, url) => {
-            return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
-        });
+            const formattedLine = line.replace(linkRegex, (match, title, url) => {
+                return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
+            });
 
-        return `<p>${formattedLine}</p>`;
+            return `<p>${formattedLine}</p>`;
+        } else if (line.startsWith("#")) {
+            // Format as bold header (assuming # is used for headers)
+            return `<strong>${line}</strong>`;
+        } else {
+            return `<p>${line}</p>`;
+        }
     });
 
     return formattedLines.join('');
 }
+
 
 
 
