@@ -28,19 +28,21 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
-    // Process each line to identify and format links as bolded hyperlinks
+    // Process each line to identify and format Amazon links
     const formattedLines = responseLines.map(line => {
-        const linkRegex = /(?:http|https):\/\/[^\s]+/g; // Regex to match URLs
+        const amazonLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g; // Regex to match [title](link)
 
-        const formattedLine = line.replace(linkRegex, (url) => {
-            return `<a href="${url}" target="_blank"><strong>${url}</strong></a>`;
+        const formattedLine = line.replace(amazonLinkRegex, (_, title, link) => {
+            return `<p><strong>${title}:</strong> <a href="${link}" target="_blank">${link}</a></p>`;
         });
 
-        return `<p>${formattedLine}</p>`;
+        return formattedLine;
     });
 
     return formattedLines.join('');
 }
+
+
 
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
