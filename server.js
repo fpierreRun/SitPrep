@@ -24,7 +24,7 @@ app.post('/ask', async (req, res) => {
     // Add your actual OpenAI API key here or use environment variables
     
     const apiKey = process.env.OPENAI_API_KEY;
-    console.log("API Key:", apiKey);
+   
     const configuration = new Configuration({
       apiKey: apiKey,
 
@@ -41,15 +41,25 @@ app.post('/ask', async (req, res) => {
       
     ];
 
-    const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: messages,
-      temperature: 0,
-      max_tokens: 1000,
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: messages,
+      temperature: 1,
+      max_tokens: 3796,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
     });
+
+    // const response = await openai.createChatCompletion({
+    //   model: "gpt-3.5-turbo",
+    //   messages: messages,
+    //   temperature: 0,
+    //   max_tokens: 1000,
+    //   top_p: 1,
+    //   frequency_penalty: 0,
+    //   presence_penalty: 0,
+    // });
 
     let answer = response.data.choices[0].message.content;
 
