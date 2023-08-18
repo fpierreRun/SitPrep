@@ -7,7 +7,7 @@ function askQuestion() {
         return;
     }
 
-    document.getElementById('response').innerHTML = 'Generating response...';
+    document.getElementById('response').innerHTML = 'I appreciate your wait as I compile the necessary details...';
 
     $.ajax({
         url: '/ask',
