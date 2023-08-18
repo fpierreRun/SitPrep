@@ -28,21 +28,20 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
-    // Process each line to identify and format Amazon product recommendations
+    // Process each line to identify and format links as bolded hyperlinks
     const formattedLines = responseLines.map(line => {
-        if (line.includes("https://www.amazon.com/gp/search?")) {
-            const productKeyword = line.match(/keywords=([^&]+)/)[1];
-            const productName = productKeyword.replace(/%20/g, ' ');
-            const productLink = line;
+        const linkRegex = /(?:http|https):\/\/[^\s]+/g; // Regex to match URLs
 
-            return `<p>${productName}: <a href="${productLink}" target="_blank">${productLink}</a></p>`;
-        } else {
-            return `<p>${line}</p>`;
-        }
+        const formattedLine = line.replace(linkRegex, (url) => {
+            return `<a href="${url}" target="_blank"><strong>${url}</strong></a>`;
+        });
+
+        return `<p>${formattedLine}</p>`;
     });
 
     return formattedLines.join('');
 }
+
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
