@@ -37,6 +37,8 @@ app.post('/ask', async (req, res) => {
     const messages = [
       { role: 'system', content: systemMessage },
       { role: 'user', content: question },
+      { role: 'user', content: "" },
+      
     ];
 
     const response = await openai.createChatCompletion({
