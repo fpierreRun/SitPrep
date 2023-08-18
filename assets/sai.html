@@ -1,43 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFZDLN5');</script>
+  <!-- End Google Tag Manager -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenAI Question Answering</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Include Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./images/Sitprep Favicon Green.png" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Ask Sai</title>
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/"> -->
+    <link rel="icon" href="./images/Sitprep Favicon Green.png" type="image/x-icon">
+
+    
+        
+    
+    
+    
+        
+        
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="./css/dashboard.css" rel="stylesheet">
+        <style>
+          .mb-3 {
+            margin-bottom: 1.5rem;
+          }
+      
+          .p-2 {
+            padding: 0.5rem;
+          }
+        </style>
+
+        <script>
+          // Get all the anchor tags with the class "bgAmazon"
+          const amazonLinks = document.querySelectorAll("a.bgAmazon");
+            
+          // Loop through each anchor tag
+          amazonLinks.forEach(link => {
+            // Add the class "phone-block" to its parent element
+            link.parentNode.classList.add("phone-block");
+          });
+        </script>
+      </head>
+
+<body >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZDLN5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="recBlu navbar sticky-top pb-5 flex-md-nowrap p-0 d-sm-none  ">
+    
+    <div class="d-flex  ">
+          <div class="  px-3 mt-3" >
+          <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+        </div> 
+
+
+        <button class="bg-white navbar-toggler position-absolute d-md-none collapsed mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button> 
+
+      </div>
+       
+ </header>
+
+     <div class=" ">
+
+        <div class="row">
+          
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block recBlu sidebar collapse">
+           
+            <div class="phone-block text-center">
+              <img  src="./images/SitPrep Logo White.png"  width="200" alt="" />
+            </div>
+            
+            <div class="position-sticky  sidebar-sticky container-fluid">
+
+              <div  class="pb-4 pl-2 d-flex text-white justify-content-center">
+                    
+                <a href="" class="text-white text-center" data-toggle="modal" data-target="#getName" onclick="openNameModal()">Update Name</a>
+             
+              </div>
+           
+                        <div class="navbar-collapse ">
   
+                          <div class="nav flex-column nav-pills d-flex " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            
+                            <p class="h4 font-weight-bold text-white pb-2">3 Day Plan</p>
+  
+                            <div  class="pl-2 d-flex txtOppate ">
+                              <span class="material-icons pr-3 txtOppate">
+                                dashboard
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./dashboard Main.html">Overview</a>
+                              
+                            </div>
+                            
+  
+                            <div  class="pl-2 d-flex txtOppate rounded  evacForm"  >
+                              <span class="material-icons pr-3 txtOppate">
+                                map
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./create_evac_plan.html" >Plan Evacuation</a>
+                              
+                            </div>
+  
+                            <div  class="pl-2 d-flex txtOppate rounded " >
+                              <span class="material-icons pr-3 txtOppate">
+                                <span class="material-icons">
+                                  contact_phone
+                                  </span>
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn "  href="./emergency_contacts.html" >Emergency Contacts</a>
+                              
+                            </div>
 
-</head>
 
-<body>
+                            <div  class="  pl-2 d-flex text-white rounded orgOppate">
+                              <span class="material-icons pr-3 text-white">
+                                kitchen
+                                </span>
+                              <a class="font-weight-bold pl-2 text-white d-flex btn "   href="./Food Supply.html" role="tab" >Food Supply</a>
+                              
+                            </div>
+
+                            <div  class="  pl-2 d-flex txtOppate ">
+                              <span class="material-icons pr-3 txtOppate">
+                                backpack
+                                </span>
+                              <a class="pl-2 txtOppate d-flex btn"   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+                              
+                            </div>
+                            
+                          <p class="h4 txtOppate pt-4">Long Term</p>
+              
+                          <!-- <div  class=" pl-2 d-flex txtOppate">
+                            <span class="material-icons pr-3 txtOppate">
+                              
+                              tips_and_updates
+                            </span>
+                              <a class="pl-2 txtOppate btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tips & Tricks</a>
+                            
+                          </div> -->
+                          
+                           
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="material-icons pr-3 txtOppate">
+                                
+                                  food_bank
+                                  </span>
+                            <a href="../assets/storageCalc.html" class="btn pl-2 txtOppate d-flex">
+                              Food Storage</a>
+                              </div>
+                              
+              
+                            
+                              
+
+                              <p class="h4 txtOppate pt-4 " >Info</p>
+              
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="material-icons pr-3 txtOppate">
+                              
+                                  emoji_emotions
+                                  </span>
+                                <a class="pl-2 txtOppate d-flex btn" href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">Was This Tool Helpful?</a>
+                              </div>
+                          
+                              <div  class="  pl-2 d-flex txtOppate">
+                                <span class="mb-3 material-icons  txtOppate">
+                                  <span class="material-icons txtOppate">
+                                    contact_mail
+                                    </span>
+                                  </span>
+                                  <ul class=" text-left dropdown ">
+
+                                    <a class=" txtOppate dropdown-toggle btn " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Contact Us
+                                    </a>
+                                    <div class="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instragram</a>
+                                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
+                                      
+                                    </div>
+                                  </ul>
+                              </div>
+                              
+                              
+            </div>
+          </nav>
+
+        </div>
+     </div>
+           <!--Mobile header begibns-->
+           <header class="d-flex mx-2 mt-4  justify-content-between">
+            <div>
+             
+            </div>
+            
+          <div class="">
+                  <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold d-xl-none" data-toggle="modal" data-target="#shareMobile">
+                    Share<img class="ml-3 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
+                  </button>
+<!--   
+                  <button class="ml-2 d-xl-none text-secondary bg-white-outline btn  font-weight-bolder" onclick="updateCards()" ><span class="material-symbols-outlined font-weight-bolder">
+                    close
+                    </span></button> -->
+            
+                </div>
+          </header>
+          <!--Mobile header ends-->
+
+          
+          <!-- Form Entry -->
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+
+       <!-- Button trigger modal -->
+       
+
+        <!-- Modal -->
+        <div class="modal fade" id="shareMobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="pb-4 modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">Share SitPrep</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex align-items-center justify-content-center ">
+                
+                <div class=" text-center">
+                  <!-- Load Facebook SDK for JavaScript -->
+                  <div id="fb-root"></div>
+                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+            
+            
+                  <!-- Your share button code -->
+                  <div class="fb-share-button" 
+                      data-href="https://www.sitprep.app" 
+                      data-layout="button_count">
+                  </div>
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+                  <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+            
+                  <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+            
+                  <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+                  <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+                </div>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+          <div class="d-flex justify-content-between  align-items-center my-4">
+            <div class="d-flex align-items-center ">
+              <div class="phone-block mr-4 ml-4">
+                <a href="./dashboard Main.html" class="shadow rounded-circle btn-lg btn-white text-secondary p-4 ">
+                    <span class="material-symbols-rounded">
+                    home
+                    </span>
+                </a>
+              </div>
+             
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-end d-none d-xl-block ">
+            
+            <div class=" text-center">
+              <!-- Load Facebook SDK for JavaScript -->
+              <div id="fb-root"></div>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+        
+        
+              <!-- Your share button code -->
+              <div class="fb-share-button" 
+                   data-href="https://www.sitprep.app" 
+                   data-layout="button_count">
+              </div>
+
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+              <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+        
+              <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+        
+              <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+              <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+            </div>
+          </div>
+          
+        </div>
+        <hr class="mt-5 txtBlu rcorners phone-block " style="border-width: 5px;">
+       
+  <div class="pt-3 pb-5 d-flex">
+
+   
+
+
+    
+
+    <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
+  </div>
+ 
   <div class="container">
     <div class="d-flex">
-        <h1 class="mt-5">Ask Sai</h1>
+        <h1 class="mt-5 display-6 txtBlu txtImpact">Ask Sai</h1>
         <img class="mt-3" src="./images/SAI-1.png"  width="150" alt="" />
     </div>
-    <div id="prompts" class="my-3">
-        <button class="btn btn-outline-secondary prompt">What are some evacuation shelters in provo, utah?</button>
-        <button class="btn btn-outline-secondary prompt">what are some important things to carry incase of an evacuation? </button>
-        <!-- Add more prompts here -->
-    </div>
-    <div class=" mt-5 d-flex bgBlu p-3 rcorners shadow-sm">
+    <label class="my-4"><span class="font-weight-bold txtGrn">Don't know what to ask?</span><span> Select a sample question or prompt below:</span></label>
+ 
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-6 my-2">
+              <button class="btn btn-outline-secondary prompt text-left w-100">
+                  <div class="txtBlu font-weight-bold">What are some evacuation</div><div> shelters in the city of...</div>
+                  
+              </button>
+          </div>
+          <div class="col-lg-6 my-2">
+              <button class="btn btn-outline-secondary prompt text-left w-100">
+                  <div class="txtBlu font-weight-bold">How will I know if </div><div> I'm prepared for an emergency?</div>
+                 
+              </button>
+          </div>
+          <!-- Add more prompts here -->
+      </div>
+      <div class="row ">
+          <div class="col-lg-6 my-2">
+              <button class="btn btn-outline-secondary prompt text-left w-100">
+                  <div class="txtBlu font-weight-bold">What are some essential things to carry</div><div> during an evacuation?</div>
+                 
+              </button>
+          </div>
+          <div class="col-lg-6 my-2">
+              <button class="btn btn-outline-secondary prompt text-left w-100">
+                  <div class="txtBlu font-weight-bold">Generate a list of essential items</div><div> I need for an emergency.</div>
+                  
+              </button>
+          </div>
+          <!-- Add more prompts here -->
+      </div>
+  </div>
+  
+
+
+    <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm">
       
-      <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter your question or prompt" rows="1"></textarea>
-      <button type="button" class="btn  btn-success rcorners" id="submitBtn" ><span class="material-icons text-white">
-        send
-        </span></button>
+      <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter your question or prompt" rows="3"></textarea>
+      <div class=" ">
+        <button type="button" class="btn  btn-success rounded"  id="submitBtn" ><span class="material-icons text-white">
+          send
+          </span></button>
+        </div>
     </div>
     
-    <div id="response" class="mt-4"></div>
+    <p id="response" class="my-5"></p>
   </div>
+ 
 
+
+
+</main>
+
+ 
 
 
 
@@ -50,30 +395,32 @@
     
   <!-- Include the client-side script for user interaction -->
   <script src="../public/script.js"></script>
+  <script src="./js/share_sitprep.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const inputField = document.getElementById("question");
-        const promptBtn = document.getElementById("promptBtn");
-        const prompts = document.getElementById("prompts");
+  document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("question");
+    const promptButtons = document.querySelectorAll(".prompt");
 
-      
+    promptButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const buttonText = button.textContent.trim();
+            const lines = buttonText.split('\n');
 
-        // Attach click event to prompt buttons
-        const promptButtons = document.querySelectorAll(".prompt");
-        promptButtons.forEach(function(button) {
-            button.addEventListener("click", function() {
-                inputField.value = button.textContent;
-               
-            });
+            // If there are multiple lines, add each line with a line break
+            if (lines.length > 1) {
+                inputField.value = lines.join('\n');
+            } else {
+                inputField.value = buttonText;
+            }
         });
-
-       
     });
+});
+
 
     // Dynamically adjust textarea height as the user types
     const textArea = document.querySelector(".input-field");
         const submitButton = document.getElementById("submitBtn");
-        const initialPaddingTop = 10;
+        const initialPaddingTop = 20;
         let rows = 1;
 
         textArea.addEventListener("input", () => {
