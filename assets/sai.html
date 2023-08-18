@@ -374,17 +374,26 @@
         </div>
     </div>
     
-    <div class="container mb-5">
-      <div class="row justify-content-center mb-5">
-          <div class="mb-5">
+    <div class="container pb-5">
+
+      <div class=" pb-5">
+       
+          <div class="pb-5">
+           
               <div class="card mt-5 shadow">
-                  <div class="card-body">
-                      <p id="response" class="my-3" ><span class="text-muted">Waiting for your question or prompt...</span></p>
+               
+                  <div class="card-body ">
+                    <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1">
+                      content_copy
+                      </span></button>
+                      <p id="response" class="my-3">Waiting for response...</p>
+                     
                   </div>
               </div>
           </div>
       </div>
   </div>
+  
   
   
   </div>
@@ -451,6 +460,26 @@
                 submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
             }
         });
+
+        document.getElementById('copyButton').addEventListener('click', function () {
+    const responseText = document.getElementById('response').textContent;
+    
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = responseText;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    // Change the button text temporarily to show copied status
+    const copyButton = document.getElementById('copyButton');
+    const originalText = copyButton.innerHTML;
+    copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
+    setTimeout(() => {
+        copyButton.innerHTML = originalText;
+    }, 1500); // Change back to original text after 1.5 seconds
+});
+
 </script>
   
 </body>
