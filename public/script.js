@@ -30,9 +30,9 @@ function formatResponse(response) {
 
     // Process each line to identify and format links as bolded hyperlinks
     const formattedLines = responseLines.map(line => {
-        const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g; // Regex to match [title](link)
+        const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
 
-        const formattedLine = line.replace(linkRegex, (_, title, url) => {
+        const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
         });
 
@@ -41,6 +41,7 @@ function formatResponse(response) {
 
     return formattedLines.join('');
 }
+
 
 
 
