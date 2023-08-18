@@ -28,28 +28,20 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
-    // Process each line to identify and format response titles and headers
+    // Process each line to identify and format links as bolded hyperlinks
     const formattedLines = responseLines.map(line => {
-        // Check if the line is a title or header
-        if (line.startsWith("[") && line.endsWith("]") && line.includes("(") && line.includes(")")) {
-            const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
+        const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
+        const colonRegex = /([^:]+):/g; // Regex to match text before a colon
 
-            const formattedLine = line.replace(linkRegex, (match, title, url) => {
-                return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
-            });
+        const formattedLine = line.replace(linkRegex, (match, title, url) => {
+            return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
+        }).replace(colonRegex, '<strong>$1</strong>:'); // Bold text before a colon
 
-            return `<p>${formattedLine}</p>`;
-        } else if (line.startsWith("#")) {
-            // Format as bold header (assuming # is used for headers)
-            return `<strong>${line}</strong>`;
-        } else {
-            return `<p>${line}</p>`;
-        }
+        return `<p>${formattedLine}</p>`;
     });
 
     return formattedLines.join('');
 }
-
 
 
 
