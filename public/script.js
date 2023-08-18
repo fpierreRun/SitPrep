@@ -28,20 +28,27 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
-    // Process each line to identify and format links as bolded hyperlinks
+    // Process each line to identify and format links and specified text as bolded
     const formattedLines = responseLines.map(line => {
         const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
-        const colonRegex = /([^:]+):/g; // Regex to match text before a colon
+        const boldTextRegex = /(\d+\.)\s+([^\n]+)/g; // Regex to match specified format: 1. Text
 
+        // Format links as bolded hyperlinks
         const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
-        }).replace(colonRegex, '<strong>$1</strong>:'); // Bold text before a colon
+        });
 
-        return `<p>${formattedLine}</p>`;
+        // Bold specified format: 1. Text
+        const finalFormattedLine = formattedLine.replace(boldTextRegex, (match, number, text) => {
+            return `<strong>${number} ${text}</strong>`;
+        });
+
+        return `<p>${finalFormattedLine}</p>`;
     });
 
     return formattedLines.join('');
 }
+
 
 
 
