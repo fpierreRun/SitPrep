@@ -324,12 +324,12 @@
                       <hr class="">
 
                       <p>
-                        <a class="btn btn-outline-danger element-to-hide" data-bs-toggle="collapse" href="#meetingCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <a class="btn btn-outline-danger element-to-hide" data-bs-toggle="collapse" href="#meetingCollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
                           Factors to consider
                         </a>
                        
                       </p>
-                      <div class="collapse element-to-hide" id="meetingCollapse">
+                      <div class="collapse element-to-hide show" id="meetingCollapse">
                         <div class="card card-body">
                           <ul class="h6 text-muted">
                             <li>Choose an accessible and familiar location, like a landmark, intersection, or public park, known to everyone in the family.</li><br>
@@ -345,80 +345,8 @@
                         Your privacy and safety is important to us. SitPrep and any other entity do not save, store, or share the information you provide.
                       </p>
 
-                      <p>
-                        <a class="btn btn-dark element-to-hide mt-3" data-bs-toggle="collapse" href="#saiCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-                          Don't know where to start?
-                        </a>
-                       
-                      </p>
-                      <div class="collapse element-to-hide" id="saiCollapse">
-                        <div class="card card-body">
-                          <div class="container pt-3 bg-white">
-                            <div class="d-flex mb-5">
-                                <div>
-                                <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
-                                <h4 class=" txtBlu  font-weight-light">your emergency preparedness expert</h1>
-                                </div>
-                                <img class="mt-3" src="./images/SAI-1.png"  width="150" alt="" />
-                            </div>
-                            
-                        
-                            <div class="container">
-                              <div class="row">
-                                  <div class="col-lg-6 my-2">
-                                      <button class="btn btn-outline-secondary prompt text-left w-100">
-                                          <div class="txtBlu font-weight-bold">What are some evacuation</div><div> shelters in the city of...</div>
-                                          
-                                      </button>
-                                  </div>
-                                  <div class="col-lg-6 my-2">
-                                    <button class="btn btn-outline-secondary prompt text-left w-100">
-                                        <div class="txtBlu font-weight-bold">What are some essential things to carry</div><div> during an evacuation?</div>
-                                      
-                                    </button>
-                                </div>
-                                  <!-- Add more prompts here -->
-                              </div>
-                            
-                          </div>
-                          
-        
-        
-                            <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm   justify-content-center">
-                              
-                              <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter your question or request" rows="3"></textarea>
-                              <div class=" ">
-                                <button type="button" class="btn  btn-success rounded"  id="submitBtn" ><span class="material-icons text-white">
-                                  send
-                                  </span></button>
-                                </div>
-                            </div>
-                            
-                            <div class="container mt-3">
-        
-                              <div class=" ">
-                              
-                                  <div class="pb-3">
-                                  
-                                      <div class="card  shadow-sm">
-                                      
-                                          <div class="card-body ">
-                                            <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1">
-                                              content_copy
-                                              </span></button>
-                                              <p id="response" class="my-1">Waiting for your question or request...</p>
-                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          
-                          
-                          
-                          </div>
-                        </div>
-                      </div>
+                     
+                      
                       </div>
                     <!--PDf text begin-->
 
@@ -610,12 +538,12 @@
                       <p class="h3 font-weight-bold txtBlu"><span class="font-weight-bold txtGrn">Step 2/2:</span> What is your evacuation route to the nearest shelter in case of an emergency?</p>
                       <hr class="my-4">
                       <p>
-                        <a class="btn btn-outline-danger element-to-hide" data-bs-toggle="collapse" href="#evacCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <a class="btn btn-outline-danger element-to-hide" data-bs-toggle="collapse" href="#evacCollapse" role="button" aria-expanded="true" aria-controls="collapseExample">
                           Factors to consider
                         </a>
                        
                       </p>
-                      <div class="collapse mb-5 element-to-hide" id="evacCollapse">
+                      <div class="collapse mb-5 element-to-hide show" id="evacCollapse">
                         <div class="card card-body">
                           <ul class="h6 text-muted">
                             <li>Plan how and where to evacuate with your household.</li><br>
@@ -627,7 +555,78 @@
                          </div>
                       </div>
                       
-                     
+                      <p>
+                        <a class="btn btn-warning element-to-hide mt-3" data-bs-toggle="collapse" href="#saiCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Need some shelter recomenadations? Ask Sai.
+                        </a>
+                       
+                      </p>
+                      <div class="collapse element-to-hide" id="saiCollapse">
+                        <div class="card card-body">
+                          <div class="container pt-3 bg-white">
+                            <div class="d-flex mb-5">
+                                <div>
+                                <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
+                                <h4 class=" txtBlu  font-weight-light">your emergency preparedness expert</h1>
+                                </div>
+                                <img class="mt-3" src="./images/SAI-1.png"  width="150" alt="" />
+                            </div>
+                            
+                        
+                            <div class="container">
+                              <div class="row">
+                                  <div class="col-lg-12 my-2">
+                                      <input type="button" class="btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold" value="What are some shelters in...">
+                                          
+                                  </div>
+                                  <div class="col-lg-12 my-2">
+                                    <input type="button" class="btn btn-outline-secondary prompt text-left  txtBlu font-weight-bold w-100"  value="What are some essential things to carry during an evacuation?">
+                                        
+                                   </div>
+                                  
+                                  <!-- Add more prompts here -->
+                              </div>
+                            
+                          </div>
+                          
+        
+        
+                            <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm   justify-content-center">
+                              
+                              <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter question or request here" rows="3"></textarea>
+                              <div class=" ">
+                                <button type="button" class="btn  btn-success rounded h-50 w-80"  id="submitBtn" ><span class="material-icons text-white">
+                                  send
+                                  </span></button>
+                                </div>
+                            </div>
+                            
+                            <div class="container mt-3">
+        
+                              <div class=" ">
+                              
+                                  <div class="pb-3">
+                                  
+                                      <div class="card  shadow-sm">
+                                      
+                                          <div class="card-body ">
+                                            <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1">
+                                              content_copy
+                                              </span></button>
+                                              <p id="response" class="my-1">Waiting for your question or request...</p>
+                                            
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          
+                          
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
 
                     <!--pdf text begin-->
@@ -1028,9 +1027,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const inputField = document.getElementById("question");
     const promptButtons = document.querySelectorAll(".prompt");
 
-    promptButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const buttonText = button.textContent.trim();
+    promptButtons.forEach(function(input) {
+        input.addEventListener("click", function() {
+            const buttonText = input.value.trim();
             const lines = buttonText.split('\n');
 
             // If there are multiple lines, add each line with a line break
