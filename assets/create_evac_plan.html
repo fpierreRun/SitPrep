@@ -593,9 +593,9 @@
         
                             <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm   justify-content-center">
                               
-                              <textarea type="text " class="form-control input-field bgBlu text-white" id="question2" placeholder="Enter question or request here" rows="3"></textarea>
+                              <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter question or request here" rows="3"></textarea>
                               <div class=" ">
-                                <button type="button" class="btn  btn-success rounded h-50 w-80"  id="submitBtn2" ><span class="material-icons text-white">
+                                <button type="button" class="btn  btn-success rounded h-50 w-80"  id="submitBtn" ><span class="material-icons text-white">
                                   send
                                   </span></button>
                                 </div>
@@ -611,7 +611,7 @@
                                       
                                           <div class="card-body ">
                                             <input type="button" class="btn btn-white w-1 h-1 float-right" id="copyButton" value="Copy">
-                                              <p id="response2" class="my-1">Waiting for your question or request...</p>
+                                              <p id="response" class="my-1">Waiting for your question or request...</p>
                                             
                                           </div>
                                       </div>
@@ -1022,7 +1022,7 @@
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    const inputField = document.getElementById("question2");
+    const inputField = document.getElementById("question");
     const promptButtons = document.querySelectorAll(".prompt");
 
     promptButtons.forEach(function(input) {
@@ -1043,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Dynamically adjust textarea height as the user types
     const textArea = document.querySelector(".input-field");
-        const submitButton = document.getElementById("submitBtn2");
+        const submitButton = document.getElementById("submitBtn");
         const initialPaddingTop = 20;
         let rows = 1;
 
