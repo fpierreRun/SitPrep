@@ -322,7 +322,7 @@
     <!-- <input form="locationForm" class="shadow rounded-pill btn-lg btn-primary round float-right" type="submit" value="Save & Continue" onclick="saveFood()" > -->
   </div>
  
-  <div class="container">
+  <div class="container ">
     <div class="d-flex">
         <h1 class="mt-5 display-6 txtBlu txtImpact">Ask Sai</h1>
         <img class="mt-3" src="./images/SAI-1.png"  width="150" alt="" />
@@ -364,7 +364,7 @@
   
 
 
-    <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm">
+    <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm   justify-content-center">
       
       <textarea type="text " class="form-control input-field bgBlu text-white" id="question" placeholder="Enter your question or prompt" rows="3"></textarea>
       <div class=" ">
@@ -374,7 +374,19 @@
         </div>
     </div>
     
-    <p id="response" class="my-5"></p>
+    <div class="container mb-5">
+      <div class="row justify-content-center mb-5">
+          <div class="mb-5">
+              <div class="card mt-5 shadow">
+                  <div class="card-body">
+                      <p id="response" class="my-3" ><span class="text-muted">Waiting for your question or prompt...</span></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
   </div>
  
 
