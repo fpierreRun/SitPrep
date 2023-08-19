@@ -94,7 +94,7 @@ header nav ul li a {
 }
 
 .rcorners {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 
@@ -446,6 +446,12 @@ input:focus {
   font-size:20px;
 }
 
+.phdark::placeholder {
+  color:var(--normaltext-color) ;
+  font-weight:500;
+  font-size:20px;
+}
+
 .txtImpact {
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
@@ -461,13 +467,13 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 
 .input-field::placeholder {
-  color: white; /* Placeholder text color */
+  color:#50b38d; /* Placeholder text color */
 }
 
 .input-field:focus {
   background-color: var(--Tiltecolor-color); /* Background color when focused */
   border-color: var(--Tiltecolor-color);
-  color: white; /* Text color when focused */
+  color: var(--Tiltecolor-color); /* Text color when focused */
 }
 
 input[type=number] {

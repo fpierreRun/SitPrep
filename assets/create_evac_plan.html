@@ -565,24 +565,26 @@
                       <div class="collapse element-to-hide" id="saiCollapse">
                         <div class="card card-body">
                           <div class="container pt-3 bg-white">
-                            <div class="d-flex mb-5">
-                                <div>
+                            <div class=" mb-2 d-flex">
+                                
                                 <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
-                                <h4 class=" txtBlu  font-weight-light">your emergency preparedness expert</h1>
-                                </div>
-                                <img class="mt-3" src="./images/SAI-1.png"  width="150" alt="" />
+                                
+                                  <img class="mt-3 " src="./images/SAI-1.png" height="100"  width="100" alt="" />
+                               
                             </div>
                             
                         
                             <div class="container">
+                              <label class="my-4"><span class="font-weight-bold txtGrn">Don't know what to ask?</span><span> Select a sample question or prompt below.</span></label>
+ 
                               <div class="row">
                                   <div class="col-lg-12 my-2">
-                                      <input type="button" class="btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold" value="What are some shelters in...">
+                                     
+                                      <a class="rcorners btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold">Generate a list of shelters in...</a>
                                           
                                   </div>
                                   <div class="col-lg-12 my-2">
-                                    <input type="button" class="btn btn-outline-secondary prompt text-left  txtBlu font-weight-bold w-100"  value="What are some essential things to carry during an evacuation?">
-                                        
+                                    <a class="rcorners btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold">What are some essential things to take during an evacuation?</a>
                                    </div>
                                   
                                   <!-- Add more prompts here -->
@@ -590,35 +592,31 @@
                             
                           </div>
                           
-        
-        
-                            <div class=" mt-5 d-flex bgBlu p-3 rounded shadow-sm   justify-content-center">
-                              
-                              <textarea type="text " class="form-control input-field " id="question" placeholder="Enter question or request here" rows="3"></textarea>
-                              <div class=" ">
-                                <button type="button" class="btn  btn-success rounded h-50 w-80 btn-white"  id="submitBtn" ><span class="material-icons text-white">
-                                  send
-                                  </span></button>
-                                </div>
-                            </div>
-                            
-                            <div class="container mt-3">
-        
-                              <div class=" ">
-                              
-                                  <div class="pb-3">
-                                  
-                                      <div class="card  shadow-sm bgBlu text-white">
-                                      
-                                          <div class="card-body ">
-                                            <input type="button" class="btn  w-1 h-1 float-right text-white" id="copyButton" value="Copy">
-                                              <p id="response" class="my-1">Waiting for your question or request...</p>
-                                            
-                                          </div>
-                                      </div>
-                                  </div>
+                          <div class=" my-5 d-flex  p-3 rcorners  shadow-sm bg-white  justify-content-center">
+      
+                            <textarea class="form-control input-field bg-white txtBlu border-0 font-weight-bold" id="question" placeholder="Enter your question or prompt here" rows="3"></textarea>
+                            <div class=" ">
+                              <button type="button" class="btn  rounded"  id="submitBtn" ><span class="material-icons txtGrn">
+                                send
+                                </span></button>
                               </div>
                           </div>
+                          
+                          <div id="showResponse" class="container-fluid pb-5 " hidden>
+                      
+                                    <div class="card shadow bgBlu text-white rcorners ">
+                                     
+                                        <div class="card-body ">
+                                          <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1 text-white">
+                                            content_copy
+                                            </span></button>
+                                            <p id="response" class="my-3">Waiting for your question or request...</p>
+                                           
+                                        </div>
+                                    </div>
+                               
+                           
+                        </div>
                           
                           
                           
@@ -1037,14 +1035,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     promptButtons.forEach(function(input) {
         input.addEventListener("click", function() {
-            const buttonText = input.value.trim();
+            const buttonText = input.textContent.trim();
             const lines = buttonText.split('\n');
 
             // If there are multiple lines, add each line with a line break
             if (lines.length > 1) {
-                inputField.value = lines.join('\n');
+                inputField.textContent = lines.join('\n');
             } else {
-                inputField.value = buttonText;
+                inputField.textContent = buttonText;
             }
         });
     });
@@ -1093,6 +1091,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1500); // Change back to original text after 1.5 seconds
 });
 
+function showResponseBox() {
+  document.getElementById('showResponse').removeAttribute('hidden');
+  
+}
+
+function submitQuestion() {
+  showResponseBox();
+  askQuestion();
+}
+
+document.getElementById('submitBtn').addEventListener('click', submitQuestion);
+
+document.getElementById('question').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Prevent default behavior (new line)
+    submitQuestion(); // Call the submitQuestion function
+  }
+});
 </script>
 
 
