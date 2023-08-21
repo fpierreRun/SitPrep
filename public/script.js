@@ -2,9 +2,9 @@ let loadingInterval;
 
 function startLoadingIndicator() {
     let loadingMessage = "Hang tight! I'm gathering the info just for you";
-    const maxDots = 5;
+    const maxDots = 4;
     let dotCount = 0;
-    document.getElementById('response').innerHTML = loadingMessage + '...';
+    document.getElementById('response').innerHTML = loadingMessage + '.';
 
     loadingInterval = setInterval(() => {
         if (dotCount < maxDots) {
@@ -58,17 +58,18 @@ function askQuestion() {
         contentType: 'application/json',
         data: JSON.stringify({ question }),
         success: function(response) {
-            stopLoadingIndicator();
             const formattedResponse = formatResponse(response);
             document.getElementById('response').innerHTML = formattedResponse;
             questionInput.value = ''; // Clear the input field
+            stopLoadingIndicator(); // Stop the loading indicator here
         },
         error: function() {
-            stopLoadingIndicator();
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
+            stopLoadingIndicator(); // Also stop the loading indicator if there's an error
         }
     });
 }
+
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
