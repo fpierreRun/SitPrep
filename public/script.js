@@ -35,7 +35,7 @@ function formatResponse(response) {
     const formattedLines = responseLines.map(line => {
         // Convert markdown-style links to HTML hyperlinks
         const formattedLine = line.replace(linkRegex, (match, title, url) => {
-            return `<a href="${url}" target="_blank">${title}</a>`;
+            return `<a href="${url}" target="_blank" style="color: #11F091;"><strong>${title}</strong></a>`;
         });
 
         return `<p>${formattedLine}</p>`;
