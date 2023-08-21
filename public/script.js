@@ -28,11 +28,12 @@ function askQuestion() {
 function formatResponse(response) {
     const responseLines = response.split('\n');
 
+    const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
+    const boldTextRegex = /(\d+\.)\s+([^\n]+:)/g; // Regex to match specified format: 1. Text:
+
     // Process each line to identify and format links and specified text as bolded
     const formattedLines = responseLines.map(line => {
-        const linkRegex = /\[(.*?)\]\((https?:\/\/[^\s]+)\)/g; // Regex to match [Title](URL) format
-        const boldTextRegex = /(\d+\.)\s+([^\n]+:)/g; // Regex to match specified format: 1. Text:
-
+        
         // Format links as bolded hyperlinks
         const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank"><strong>${title}</strong></a>`;
@@ -48,6 +49,7 @@ function formatResponse(response) {
 
     return formattedLines.join('');
 }
+
 
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
