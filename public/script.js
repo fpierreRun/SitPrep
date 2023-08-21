@@ -43,7 +43,7 @@ function formatResponse(response) {
         //     return `<strong>${number} ${text}</strong>`;
         // });
 
-        return `<p>${finalFormattedLine}</p>`;
+        // return `<p>${finalFormattedLine}</p>`;
     });
 
     return formattedLines.join('');
