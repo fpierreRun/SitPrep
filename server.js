@@ -62,25 +62,27 @@ const messages = [
 ];
 
 
+const response = await openai.createChatCompletion({
+  model: "gpt-3.5-turbo",
+  messages: messages,
+  temperature: 0,
+  max_tokens: 2000,
+  top_p: 1,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+});
 
-    const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: messages,
-      temperature: 0,
-      max_tokens: 2000,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
-    });
+let answer = response.data.choices[0].message.content;
 
-    let answer = response.data.choices[0].message.content;
+// Clean up the response to remove multiple newlines and trim white spaces
+answer = answer.trim().replace(/\n+/g, '\n');
 
-    // Check if the response indicates that the AI is answering out of scope
-    const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
+// Check if the response indicates that the AI is answering out of scope
+const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
 
-    if (answer.includes(outOfScopeResponse)) {
-      answer += "\nPlease note that I only answer questions related to emergency preparedness.";
-    }
+if (answer.includes(outOfScopeResponse)) {
+  answer += "\nPlease note that I only answer questions related to emergency preparedness.";
+}
 
     res.send(answer);
   } catch (error) {
