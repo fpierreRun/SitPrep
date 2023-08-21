@@ -42,7 +42,7 @@ app.post('/ask', async (req, res) => {
       presence_penalty: 0,
     });
    
-    let answer = response.data.choices[0].message.content;
+    let answer = response.data.choices[0].text.trim();
 
     // Check if the response indicates that the AI is answering out of scope
     const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
