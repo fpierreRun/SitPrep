@@ -43,7 +43,7 @@ app.post('/ask', async (req, res) => {
     });
    
 
-    res.send(answer);
+    res.send(response.data.choices[0].text.trim());
   } catch (error) {
     console.error('OpenAI API request failed:', error.response.data);
     res.status(500).send('Failed to generate a response.');
