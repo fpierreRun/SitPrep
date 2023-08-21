@@ -1,6 +1,11 @@
 let loadingInterval;
 
 function startLoadingIndicator() {
+    // Clear any existing interval
+    if (loadingInterval) {
+        clearInterval(loadingInterval);
+    }
+
     let loadingMessage = "Hang tight! I'm gathering the info just for you";
     const maxDots = 4;
     let dotCount = 0;
