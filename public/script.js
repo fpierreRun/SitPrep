@@ -32,7 +32,7 @@ function formatResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
 
     // Regex to match the headers like "2. Emergency Supplies:"
-    const headerRegex = /(\d+\.)\s+([^\n]+:)/g;
+    const headerRegex = /(\d+\.)\s+([^:\n]+):/g;
 
     // Process each line to identify and format links and headers
     const formattedLines = responseLines.map(line => {
@@ -41,9 +41,9 @@ function formatResponse(response) {
             return `<a href="${url}" target="_blank" style="color: #11F091;"><strong>${title}</strong></a>`;
         });
 
-        // Bold the headers
+        // Bold the headers but not the text after the colon
         formattedLine = formattedLine.replace(headerRegex, (match, number, text) => {
-            return `<strong>${number} ${text}</strong>`;
+            return `<strong>${number} ${text}:</strong>${match.slice((number + text + ':').length)}`;
         });
 
         return `<p>${formattedLine}</p>`;
@@ -51,6 +51,7 @@ function formatResponse(response) {
 
     return formattedLines.join('');
 }
+
 
 
 
