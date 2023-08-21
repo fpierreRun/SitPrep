@@ -31,11 +31,19 @@ function formatResponse(response) {
     // Regex to match [Title](URL) format
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
 
-    // Process each line to identify and format links
+    // Regex to match the headers like "2. Emergency Supplies:"
+    const headerRegex = /(\d+\.)\s+([^\n]+:)/g;
+
+    // Process each line to identify and format links and headers
     const formattedLines = responseLines.map(line => {
-        // Convert markdown-style links to HTML hyperlinks
-        const formattedLine = line.replace(linkRegex, (match, title, url) => {
+        // Convert markdown-style links to HTML hyperlinks with the specified color
+        let formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank" style="color: #11F091;"><strong>${title}</strong></a>`;
+        });
+
+        // Bold the headers
+        formattedLine = formattedLine.replace(headerRegex, (match, number, text) => {
+            return `<strong>${number} ${text}</strong>`;
         });
 
         return `<p>${formattedLine}</p>`;
