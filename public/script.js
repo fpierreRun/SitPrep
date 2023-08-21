@@ -1,3 +1,46 @@
+let loadingInterval;
+
+function startLoadingIndicator() {
+    let loadingMessage = "Hang tight! I'm gathering the info just for you";
+    const maxDots = 5;
+    let dotCount = 0;
+    document.getElementById('response').innerHTML = loadingMessage + '...';
+
+    loadingInterval = setInterval(() => {
+        if (dotCount < maxDots) {
+            document.getElementById('response').innerHTML += '.';
+            dotCount++;
+        } else {
+            document.getElementById('response').innerHTML = loadingMessage + '...';
+            dotCount = 0;
+        }
+    }, 500); // Update every 0.5 seconds
+}
+
+function stopLoadingIndicator() {
+    clearInterval(loadingInterval);
+}
+
+function formatResponse(response) {
+    const responseLines = response.split('\n');
+    const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
+    const headerRegex = /(\d+\.)\s+([^:]+):/g;
+
+    const formattedLines = responseLines.map(line => {
+        const formattedLink = line.replace(linkRegex, (match, title, url) => {
+            return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
+        });
+
+        const formattedHeader = formattedLink.replace(headerRegex, (match, number, text) => {
+            return `<strong>${number} ${text}:</strong>`;
+        });
+
+        return `<p>${formattedHeader}</p>`;
+    });
+
+    return formattedLines.join('');
+}
+
 function askQuestion() {
     const questionInput = document.getElementById('question');
     const question = questionInput.value;
@@ -7,63 +50,31 @@ function askQuestion() {
         return;
     }
 
-    document.getElementById('response').innerHTML = 'I appreciate your wait as I compile the necessary details...';
+    startLoadingIndicator();
 
     $.ajax({
         url: '/ask',
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ question }),
-        success: function (response) {
+        success: function(response) {
+            stopLoadingIndicator();
             const formattedResponse = formatResponse(response);
             document.getElementById('response').innerHTML = formattedResponse;
             questionInput.value = ''; // Clear the input field
         },
-        error: function () {
+        error: function() {
+            stopLoadingIndicator();
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
         }
     });
 }
 
-function formatResponse(response) {
-    const responseLines = response.split('\n');
-
-    // Regex to match [Title](URL) format
-    const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
-
-    // Regex to match the headers like "2. Emergency Supplies:"
-    const headerRegex = /(\d+\.)\s+([^:\n]+):/g;
-
-    // Process each line to identify and format links and headers
-    const formattedLines = responseLines.map(line => {
-        // Convert markdown-style links to HTML hyperlinks with the specified color
-        let formattedLine = line.replace(linkRegex, (match, title, url) => {
-            return `<a href="${url}" target="_blank" style="color: #11F091;"><strong>${title}</strong></a>`;
-        });
-
-        // Bold the headers but not the text after the colon
-        formattedLine = formattedLine.replace(headerRegex, (match, number, text) => {
-            return `<strong>${number} ${text}:</strong>${match.slice((number + text + ':').length)}`;
-        });
-
-        return `<p>${formattedLine}</p>`;
-    });
-
-    return formattedLines.join('');
-}
-
-
-
-
-
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
-// Add event listener for Enter key
 document.getElementById('question').addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent default behavior (new line)
-        askQuestion(); // Call your askQuestion function
+        event.preventDefault();
+        askQuestion();
     }
 });
-
-
