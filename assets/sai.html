@@ -476,30 +476,24 @@
             }
         });
 
-        document.getElementById('copyButton').addEventListener('click', function() {
-    const responseHTML = document.getElementById('response').innerHTML;
+        document.getElementById('copyButton').addEventListener('click', function () {
+    const responseText = document.getElementById('response').textContent;
+    
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = responseText;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
 
-    // Check if the response is not empty or a loading message
-    if (responseHTML && !responseHTML.startsWith("Hang tight!")) {
-        const tempTextarea = document.createElement('textarea');
-        document.body.appendChild(tempTextarea);
-        tempTextarea.style.position = 'absolute';
-        tempTextarea.style.left = '-9999px'; // this ensures the textarea is not visible
-        tempTextarea.value = responseHTML;
-        tempTextarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextarea);
-
-        // Change the button text temporarily to show copied status
-        const copyButton = document.getElementById('copyButton');
-        const originalText = copyButton.innerHTML;
-        copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
-        setTimeout(() => {
-            copyButton.innerHTML = originalText;
-        }, 1500); // Change back to original text after 1.5 seconds
-    }
+    // Change the button text temporarily to show copied status
+    const copyButton = document.getElementById('copyButton');
+    const originalText = copyButton.innerHTML;
+    copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
+    setTimeout(() => {
+        copyButton.innerHTML = originalText;
+    }, 1500); // Change back to original text after 1.5 seconds
 });
-
 
 function showResponseBox() {
   document.getElementById('showResponse').removeAttribute('hidden');
