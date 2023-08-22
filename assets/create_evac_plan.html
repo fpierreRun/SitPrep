@@ -391,11 +391,18 @@
 
                         <div class="">
                           <div class="p-3 my-3 section-wrapper rcorners shadow bg-white">
-                            <h2>Primary Meeting Location</h2><br>
-                            <div class="form-group ">
-                              <input id="autocomplete1" class="form-control element-to-hide" type="text" placeholder="Enter meeting place name or location">
-                             
+                            <h2 >Primary Meeting Location</h2><br>
+                        <label class="ml-3 text-dark font element-to-hide">What's the name or location of your gathering place?</label>
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-3">
+                                
+                                  maps_home_work
+                                  
+                              </span>
+                              <input id="autocomplete1" class="w-100 p-2 rounded " type="text" placeholder="Enter meeting place name or location">
                             </div>
+
+                        
 
                             <div class=" mb-5">
                             <div id="meetmap1" style="height: 300px; width: 100%; margin-top: 20px;" class="rcorners " ></div>
@@ -454,14 +461,19 @@
                           <div class="p-3 my-3 section-wrapper rcorners shadow bg-white" id="secondaryLoc" >
                             <div class="d-flex justify-content-between mb-3">
                               <h2>Secondary Meeting Location</h2><br>
-                              
+    
                               <input value="Remove" type="button" class="pl-3 btn btn-sm btn-danger element-to-hide" id="removeSecLoc" hidden></input>
                             </div>
-
-                            <div class="form-group ">
-                              <input id="autocomplete2" class="form-control element-to-hide" type="text" placeholder="Enter meeting place name or location">
-                              
+                            <label class="ml-3 text-dark font">What's the name or location of your gathering place?</label>
+                            <div class="form-group d-flex">
+                              <span class="material-symbols-rounded pr-3">
+                                
+                                  maps_home_work
+                                  
+                              </span>
+                              <input id="autocomplete2" class="w-100 p-2 rounded" type="text" placeholder="Enter meeting place name or location" >
                             </div>
+                           
 
                             <div class=" mb-5">
                             <div id="meetmap2" style="height: 300px; width: 100%; margin-top: 20px;" class="rcorners "></div>
@@ -556,68 +568,46 @@
                          </div>
                       </div>
                       
-                      <p class="h4 .robotoFnt txtGrn">Need some shelter recommendations? 
-                        <a class=" element-to-hide mt-3 txtBlu" data-bs-toggle="collapse" href="#saiCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-                          click here
-                        </a>
-                       
-                      </p>
+                     
                       <div class="collapse element-to-hide" id="saiCollapse">
                         <div class="card card-body">
                           <div class="container pt-3 bg-white">
                             <div class=" mb-2 d-flex">
                                 
-                                <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
+                              <label class="my-4"><span class="font-weight-bold txtGrn">Don't know what to ask?</span><span> Select a sample question or request below.</span></label> <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
                                 
                                   <img class="mt-3 " src="./images/SAI-1.png" height="100"  width="100" alt="" />
                                
                             </div>
+                           
+                          <div class=" my-5  p-2 rcorners shadow-sm bg-white  justify-content-center border border-dark">
+                            <label class="txtBlu ml-2 mt-2 font-weight-bold">How can I assist you?</label>
+                            <div class=" d-flex">
                             
-                        
-                            <div class="container">
-                              <label class="my-4"><span class="font-weight-bold txtGrn">Don't know what to ask?</span><span> Select a sample question or prompt below.</span></label>
- 
-                              <div class="row">
-                                  <div class="col-lg-12 my-2">
-                                     
-                                      <a class="rcorners btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold">Generate a list of shelters in...</a>
-                                          
-                                  </div>
-                                  <div class="col-lg-12 my-2">
-                                    <a class="rcorners btn btn-outline-secondary prompt text-left w-100  txtBlu font-weight-bold">What are some essential things to take during an evacuation?</a>
-                                   </div>
-                                  
-                                  <!-- Add more prompts here -->
-                              </div>
-                            
-                          </div>
-                          
-                          <div class=" my-5 d-flex  p-3 rcorners  shadow-sm bg-white  justify-content-center">
-      
-                            <textarea class="form-control input-field bg-white txtBlu border-0 font-weight-bold" id="question" placeholder="Enter your question or prompt here" rows="3"></textarea>
-                            <div class=" ">
-                              <button type="button" class="btn  rounded"  id="submitBtn" ><span class="material-icons txtGrn">
+                              <p id="question">What are some shelters in<input type="text" class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Enter city, County, or Zip Code..." rows="3"></input></p>
+                              <button type="button" class="btn  rcorners"  id="submitBtn" ><span class="material-icons txtGrn">
                                 send
                                 </span></button>
                               </div>
+                              
                           </div>
                           
-                          <div id="showResponse" class="container-fluid pb-5 " hidden>
+                          <div id="showResponse" class="container-fluid pb-5" >
                       
-                                    <div class="card shadow bgBlu text-white rcorners ">
-                                     
-                                        <div class="card-body ">
+                                    <div class="card shadow bgBlu text-white">
+                                     <label class="text-white ml-3 mt-3 font-weight-bold">Guidance from Sai</label>
+                                        <div class="ml-3 ">
                                           <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1 text-white">
                                             content_copy
                                             </span></button>
-                                            <p id="response" class="my-3">Waiting for your question or request...</p>
+                                            <p id="response" class="mb-3"></p>
                                            
                                         </div>
                                     </div>
                                
                            
                         </div>
-                          
+                        
                           
                           
                           </div>
@@ -648,7 +638,12 @@
                         </div> 
                       <h3 class="font-weight-bold  mt-3 pb-3 txtBlu">Emergency Evacuation Plan A</h3>
                       
-                     
+                      <p class="h4 .robotoFnt txtGrn">Need some shelter recommendations? 
+                        <a class=" element-to-hide mt-3 txtBlu" data-bs-toggle="collapse" href="#saiCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          click here
+                        </a>
+                       
+                      </p>
 
                       <h4 class="mt-4 pb-3 ">Shelter Information</h4>
                       <div class="form-group">
@@ -929,7 +924,7 @@
 
             <!--first next button-->
 
-            <main class="py-5 d-flex justify-content-center element-to-hide">
+            <main class="pb-5 d-flex justify-content-center element-to-hide">
               <div>
                 <button onclick="updateCards()" class="btn btn-secondary phone-block " id="close1">Close</button>
               </div>

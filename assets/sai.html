@@ -331,12 +331,12 @@
     <div class="d-flex mb-5">
         <div>
         <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
-        <h4 class=" txtBlu  font-weight-light">your emergency preparedness Guide</h1>
+        <!-- <h4 class=" txtBlu  font-weight-light">your emergency preparedness Guide</h1> -->
         </div>
         <img class="mt-3" src="./images/SAI-1.png"  width="200" alt="" />
     </div>
-    <label class="my-4"><span class="font-weight-bold txtGrn">Don't know what to ask?</span><span> Select a sample question or prompt below.</span></label>
- 
+    <label class="my-4 txtBlu">Hey there! I'm Sai, your emergency preparedness guide. <span class="font-weight-bold txtGrn">Need guidance? Not sure where to start?</span> No worries! Choose a sample question or request below.</label>
+
     <div class="container-fluid">
       <div class="row">
           <div class="col-lg-6 my-2 rcorners">
@@ -372,25 +372,27 @@
   
 
 
-    <div class=" my-5 d-flex  p-3 rcorners shadow-sm bg-white  justify-content-center">
+    <div class=" my-5  p-2 rcorners shadow-sm bg-white  justify-content-center border border-dark">
+      <label class="txtBlu ml-2 mt-2 font-weight-bold">How can I assist you?</label>
+      <div class=" d-flex">
       
-      <textarea class="form-control input-field bg-white txtBlu border-0 font-weight-bold" id="question" placeholder="Enter your question or prompt here" rows="3"></textarea>
-      <div class=" ">
+        <textarea class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Enter your question or request here..." rows="3"></textarea>
         <button type="button" class="btn  rcorners"  id="submitBtn" ><span class="material-icons txtGrn">
           send
           </span></button>
         </div>
+        
     </div>
     
-    <div id="showResponse" class="container-fluid pb-5" hidden>
+    <div id="showResponse" class="container-fluid pb-5" >
 
               <div class="card shadow bgBlu text-white">
-               
-                  <div class="card-body ">
+               <label class="text-white ml-3 mt-3 font-weight-bold">Guidance from Sai</label>
+                  <div class="ml-3 ">
                     <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1 text-white">
                       content_copy
                       </span></button>
-                      <p id="response" class="my-3">Waiting for your question or request...</p>
+                      <p id="response" class="mb-3"></p>
                      
                   </div>
               </div>

@@ -179,7 +179,7 @@ header {
     margin: 8px 0;
     box-sizing: border-box;
   }
-  
+
 
 
 #btn-success{
@@ -434,6 +434,7 @@ input:focus {
 };
 
 
+
 .grnFocus:focus
 {
     
@@ -467,7 +468,7 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 
 .input-field::placeholder {
-  color:#50b38d; /* Placeholder text color */
+  color:#a8a8a8; /* Placeholder text color */
 }
 
 .input-field:focus {
@@ -707,6 +708,10 @@ textarea {
   transform: rotate(45deg);
 }
 
+.placewhite::placeholder {
+  color: white;
+  }
+  
 /* animate logo in home page begin*/
 .navbar {
   display: flex;
