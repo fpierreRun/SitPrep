@@ -84,3 +84,40 @@ document.getElementById('question').addEventListener('keydown', (event) => {
         askQuestion();
     }
 });
+
+
+function askQuestion2() {
+    const questionElement = document.getElementById('question2');
+    const questionInput = questionElement.querySelector('input');
+    
+    // Get the text inside the <p> tag without the input value
+    const questionText = questionElement.textContent.trim();
+    
+    // Combine the question text and the input value
+    const question = questionText + questionInput.value;
+
+    if (!question.trim()) {
+        document.getElementById('response2').innerHTML = 'Please enter a valid question.';
+        return;
+    }
+
+    startLoadingIndicator2();
+
+    $.ajax({
+        url: '/ask',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ question }),
+        success: function(response) {
+            const formattedResponse = formatResponse2(response);
+            document.getElementById('response2').innerHTML = formattedResponse;
+            questionInput.value = ''; // Clear the input field
+            stopLoadingIndicator2(); // Stop the loading indicator here
+        },
+        error: function() {
+            document.getElementById('response2').innerHTML = 'An error occurred. Please try again.';
+            stopLoadingIndicator2(); // Also stop the loading indicator if there's an error
+        }
+    });
+}
+
