@@ -571,7 +571,7 @@
           const contactElement = `
             <div class="contact-column p-3 mb-5 bg-white rcorners shadow" id="${contactId}">
               ${deleteButton}
-              <h1 id=groupName class="font-weight-bold display-6 mt-3 pb-3 txtBlu">Calling Tree</h1>
+              <h1 id=groupName class="font-weight-bold display-6 mt-3 pb-3 txtBlu">Emergency Contact</h1>
               <h5 class="mb-3">Main Contact's Information</h5>
              
              
@@ -589,6 +589,7 @@
                   <option class="select " value="Neighborhood Contact">Neighborhood Contact</option>
                 
                   <option class="select " value="Pet Care Coordinator">Pet Care Coordinator</option>
+                  <option class="select " value="Primary Care Physician">Primary Care Physician</option>
                   <option class="select " value="Resource Manager">Resource Manager</option>
                   <option class="select " value="Reunification Coordinator">Reunification Coordinator</option>
                   <option class="select " value="Safety Checker">Safety Checker</option>
@@ -640,7 +641,7 @@
                 
               </div>
               <div class="mt-5 d-grid gap-2 mb-5">
-                <button class="btn btn-primary element-to-hide" onclick="addPerson('${contactId}')">Add Individual</button>
+                <button class="btn btn-primary element-to-hide" onclick="addPerson('${contactId}')">Assign to Call Main Contact</button>
               </div>
             </div>
           `;
