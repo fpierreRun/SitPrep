@@ -258,7 +258,10 @@ function showPlan(element) {
   document.getElementById("editVtwo").hidden = true;
   document.getElementById("close1").hidden = true;
   document.getElementById("previous1").hidden = true;
-  document.getElementById("completeDld").hidden = true;
+  document.getElementById("completeDld").hidden = true; 
+  document.getElementById("saiCollapse").hidden = true; 
+  document.getElementById("gathName").hidden = true; 
+document.getElementById("gathName2").hidden = true; 
  
 
 
@@ -300,6 +303,9 @@ function editPlan(element) {
 document.getElementById("editVone").removeAttribute("hidden");
 document.getElementById("editVtwo").removeAttribute("hidden");
 document.getElementById("completeDld").removeAttribute("hidden");
+document.getElementById("saiCollapse").removeAttribute("hidden");
+document.getElementById("gathName").removeAttribute("hidden");
+document.getElementById("gathName2").removeAttribute("hidden");
 
 
 
