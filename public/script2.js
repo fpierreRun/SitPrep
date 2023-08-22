@@ -50,7 +50,7 @@ function formatResponse2(response) {
 
 function askQuestion2() {
     const questionElement = document.getElementById('question2');
-    const questionInput = questionElement.querySelector('input');
+    const questionInput = document.getElementById('shelters');
     
     // Get the text inside the <p> tag without the input value
     const questionText = questionElement.textContent.trim();

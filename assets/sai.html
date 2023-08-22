@@ -431,8 +431,8 @@
   <script src="../public/script.js"></script>
   <script src="./js/share_sitprep.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const inputField = document.getElementById("question");
+    document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("question2");
     const promptButtons = document.querySelectorAll(".prompt");
 
     promptButtons.forEach(function(button) {
@@ -475,7 +475,7 @@
         });
 
         document.getElementById('copyButton').addEventListener('click', function () {
-    const responseText = document.getElementById('response').textContent;
+    const responseText = document.getElementById('response2').textContent;
     
     const tempInput = document.createElement('input');
     document.body.appendChild(tempInput);
@@ -505,13 +505,12 @@ function submitQuestion() {
 
 document.getElementById('submitBtn').addEventListener('click', submitQuestion);
 
-document.getElementById('question').addEventListener('keydown', function (event) {
+document.getElementById('question2').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // Prevent default behavior (new line)
     submitQuestion(); // Call the submitQuestion function
   }
 });
-
 
 </script>
   
