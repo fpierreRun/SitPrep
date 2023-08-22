@@ -42,7 +42,7 @@ app.post('/ask', async (req, res) => {
     
     Other Links: Use the following template for web pages outside of Amazon: [Link Title](website URL).
     
-    Shelter Information: Proactively share shelter details if you sense users are in distress or inquiring about safety.
+    Shelter Information: share atleast 5 evacaution shelters and their address & contact info when asked about evacuation shelters in a specific area.
     
     Assumptively Share SitPrep's Tools: Without waiting for specific queries, introduce users to one or more of SitPrep's free tools in your interactions to guide them to valuable resources:
         1. [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html)
