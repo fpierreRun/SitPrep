@@ -1046,48 +1046,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-    // Dynamically adjust textarea height as the user types
-    const textArea = document.querySelector(".input-field");
-        const submitButton = document.getElementById("submitBtn");
-        const initialPaddingTop = 20;
-        let rows = 1;
-
-        textArea.addEventListener("input", () => {
-            textArea.style.height = "auto";
-            textArea.style.height = textArea.scrollHeight + "px";
-            
-            // Calculate number of rows based on scroll height
-            const currentRows = Math.floor(textArea.scrollHeight / parseFloat(getComputedStyle(textArea).lineHeight));
-            
-            // Adjust padding when rows increase or decrease
-            if (currentRows > rows) {
-                rows = currentRows;
-                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
-            } else if (currentRows < rows) {
-                rows = currentRows;
-                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
-            }
-        });
-
-        document.getElementById('copyButton').addEventListener('click', function () {
-    const responseText = document.getElementById('response').textContent;
-    
-    const tempInput = document.createElement('input');
-    document.body.appendChild(tempInput);
-    tempInput.value = responseText;
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-
-    // Change the button text temporarily to show copied status
-    const copyButton = document.getElementById('copyButton');
-    const originalText = copyButton.value;
-    copyButton.value = 'Copied!';
-    setTimeout(() => {
-        copyButton.value = originalText;
-    }, 1500); // Change back to original text after 1.5 seconds
-});
-
 function showResponseBox() {
   document.getElementById('showResponse').removeAttribute('hidden');
   
@@ -1100,7 +1058,7 @@ function submitQuestion() {
 
 document.getElementById('submitBtn').addEventListener('click', submitQuestion);
 
-document.getElementById('question').addEventListener('keydown', function (event) {
+document.getElementById('question2').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // Prevent default behavior (new line)
     submitQuestion(); // Call the submitQuestion function
