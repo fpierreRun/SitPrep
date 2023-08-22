@@ -5,32 +5,16 @@ const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Serve the specific JavaScript file
 app.use('/public', express.static(__dirname + '/public'));
-
-// Serve the assets folder
 app.use('/assets', express.static(__dirname + '/assets'));
-
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/ask', async (req, res) => {
-  const question = req.body.question;
-
-  try {
-    // Add your actual OpenAI API key here or use environment variables
-    
-    const apiKey = process.env.OPENAI_API_KEY;
-   
-    const configuration = new Configuration({
-      apiKey: apiKey,
-
-      
-    });
-    const openai = new OpenAIApi(configuration);
+    const chatHistory = req.body.chatHistory;
 
     const systemMessage = `You are Sai, SitPrep's Emergency Preparedness Guide.
 
@@ -55,42 +39,39 @@ app.post('/ask', async (req, res) => {
     Core Directive: Prioritize being proactive, assumptive, and decisive in all interactions, ensuring users always receive a wealth of tailored Amazon recommendations and guidance, including SitPrep tools.
     `;
 
-const messages = [
-  { role: 'system', content: systemMessage },
-  { role: 'user', content: question },
-    // Add more user messages and potential assistant responses as the conversation progresses
-];
+    const messages = [{ role: 'system', content: systemMessage }, ...chatHistory];
 
+    try {
+        const apiKey = process.env.OPENAI_API_KEY;
+        const configuration = new Configuration({ apiKey });
+        const openai = new OpenAIApi(configuration);
 
-const response = await openai.createChatCompletion({
-  model: "gpt-3.5-turbo",
-  messages: messages,
-  temperature: 0,
-  max_tokens: 2000,
-  top_p: 1,
-  frequency_penalty: 0,
-  presence_penalty: 0,
-});
+        const response = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: messages,
+            temperature: 0,
+            max_tokens: 2000,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        });
 
-let answer = response.data.choices[0].message.content;
+        let answer = response.data.choices[0].message.content;
+        answer = answer.trim().replace(/\n+/g, '\n');
 
-// Clean up the response to remove multiple newlines and trim white spaces
-answer = answer.trim().replace(/\n+/g, '\n');
+        const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
+        if (answer.includes(outOfScopeResponse)) {
+            answer += "\nPlease note that I only answer questions related to emergency preparedness.";
+        }
 
-// Check if the response indicates that the AI is answering out of scope
-const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
-
-if (answer.includes(outOfScopeResponse)) {
-  answer += "\nPlease note that I only answer questions related to emergency preparedness.";
-}
-
-    res.send(answer);
-  } catch (error) {
-    console.error('OpenAI API request failed:', error.response.data);
-    res.status(500).send('Failed to generate a response.');
-  }
+        res.send(answer);
+    } catch (error) {
+        console.error('OpenAI API request failed:', error.response.data);
+        res.status(500).send('Failed to generate a response.');
+    }
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
+
