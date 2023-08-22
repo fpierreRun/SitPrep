@@ -592,7 +592,7 @@
                                 <div class=" d-flex">
                                 
                                   <textarea class="form-control input-field bg-white txtBlu border-0" id="shelters" placeholder="Enter City, County, or Zip Code..." rows="1"></textarea>
-                                  <button type="button" class="btn  rcorners"  id="submitBtn" ><span class="material-icons txtGrn">
+                                  <button type="button" class="btn  rcorners"  id="submitBtn2" ><span class="material-icons txtGrn">
                                     send
                                     </span></button>
                                   </div>
@@ -606,7 +606,7 @@
                                     <div class="card  bgBlu text-white">
                                      <label class="text-white ml-3 mt-3 font-weight-bold">Sai's find</label>
                                         <div class="ml-3 ">
-                                          <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1 text-white">
+                                          <button type="button" class="btn btn-white w-1 h-1 float-right" id="copyButton2"><span class="material-symbols-outlined  pr-1 text-white">
                                             content_copy
                                             </span></button>
                                             <p id="response2" class="mb-3"></p>
@@ -1027,7 +1027,7 @@
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    const inputField = document.getElementById("question");
+    const inputField = document.getElementById("question2");
     const promptButtons = document.querySelectorAll(".prompt");
 
     promptButtons.forEach(function(input) {
@@ -1045,6 +1045,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.getElementById('copyButton2').addEventListener('click', function () {
+    const responseText = document.getElementById('response2').textContent;
+    
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = responseText;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    // Change the button text temporarily to show copied status
+    const copyButton = document.getElementById('copyButton2');
+    const originalText = copyButton.innerHTML;
+    copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
+    setTimeout(() => {
+        copyButton.innerHTML = originalText;
+    }, 1500); // Change back to original text after 1.5 seconds
+});
 
 function showResponseBox() {
   document.getElementById('showResponse').removeAttribute('hidden');
@@ -1056,7 +1074,7 @@ function submitQuestion() {
   askQuestion();
 }
 
-document.getElementById('submitBtn').addEventListener('click', submitQuestion);
+document.getElementById('submitBtn2').addEventListener('click', submitQuestion);
 
 document.getElementById('question2').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
