@@ -641,6 +641,16 @@ textarea {
   height: 150px; /* Adjust the value to your desired height */
 }
 
+.floating-question.scrolling {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+
+
 /* The container */
 .checkbox {
   display: block;
