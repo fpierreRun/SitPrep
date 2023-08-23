@@ -474,6 +474,9 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .input-field:focus {
+  outline: none;
+  box-shadow: none; /* For Bootstrap, which applies box-shadow on focus to form controls */
+
   background-color: var(--Tiltecolor-color); /* Background color when focused */
   border-color: var(--Tiltecolor-color);
   color: var(--Tiltecolor-color); /* Text color when focused */
