@@ -41,7 +41,7 @@ function formatResponse(response) {
             return `<strong>${number} ${text}:</strong>`;
         });
 
-        return `<p>${formattedHeader}</p>`;
+        return `<p class="h5">${formattedHeader}</p>`;
     });
 
     return formattedLines.join('');

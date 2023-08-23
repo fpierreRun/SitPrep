@@ -328,16 +328,29 @@
   
  
   <div class="container-fluid pt-3">
-    <div class="d-flex mb-5">
+    <div class="d-flex mb-5 justify-content-between" id="saiHeader1" >
         <div>
         <h1 class="mt-5 display-4 txtBlu txtImpact">Ask Sai</h1>
-        <!-- <h4 class=" txtBlu  font-weight-light">your emergency preparedness Guide</h1> -->
+        <h4 class=" txtBlu  font-weight-light">your emergency preparedness Guide</h1>
         </div>
-        <img class="mt-3" src="./images/SAI-1.png"  width="200" alt="" />
+        <div class="d-flex ">
+         <img class="mt-3 " src="./images/SAI-1.png"  width="200" alt="" />
+        </div>
     </div>
-    <label class="my-4 txtBlu">Hey there! I'm Sai, your emergency preparedness guide. <span class="font-weight-bold txtGrn">Need guidance? Not sure where to start?</span> No worries! Choose a sample question or request below.</label>
 
-    <div class="container-fluid">
+    <div class="d-flex mb-5 justify-content-between d-none" id="saiHeader2" >
+      <div>
+      <h1 class="mt-5 display-4 txtBlu txtImpact">Sai at Your Service</h1>
+      <h4 class=" txtBlu  font-weight-light">Guiding you every step of the way</h1>
+      </div>
+      <div class="d-flex ">
+       <img class="mt-3 " src="./images/Sai-2.png"  width="200" alt="" />
+      </div>
+  </div>
+
+    <label class="my-4 txtBlu" id="saiIntro">Hey there! I'm Sai. <span class="font-weight-bold txtGrn">Need guidance? Not sure where to start?</span> No worries! Choose a sample question or request below.</label>
+
+    <div class="container-fluid" id="samples">
       <div class="row">
           <div class="col-lg-6 my-2 rcorners">
               <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
@@ -345,23 +358,24 @@
                   
               </button>
           </div>
-          <div class="col-lg-6 my-2 rcorners">
-              <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
-                <div class="txtBlu font-weight-bold">Generate a list of essential items</div><div> I need to be prepared for an emeregency.</div>
-                  
-                 
-              </button>
-          </div>
+          <div class="col-lg-6 my-2">
+            <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
+                <div class="txtBlu font-weight-bold">What meals can I make with the following items:</div><div> chicken, broccoli, and rice?</div>
+
+               
+            </button>
+        </div>
+         
           <!-- Add more prompts here -->
       </div>
       <div class="row phone-block rcorners">
-          <div class="col-lg-6 my-2">
-              <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
-                  <div class="txtBlu font-weight-bold">What are some essential things to bring</div><div> during an evacuation?</div>
-
-                 
-              </button>
-          </div>
+        <div class="col-lg-6 my-2 rcorners">
+          <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
+            <div class="txtBlu font-weight-bold">Generate a list of essential items </div><div>need to prepare for an emergency.</div>
+              
+             
+          </button>
+      </div>
           <div class="col-lg-6 my-2 rcorners">
               <button class="btn btn-outline-secondary prompt text-left w-100 rcorners">
                  <div class="txtBlu font-weight-bold">What should I know</div><div> in order to create a preparedness plan?</div>
@@ -372,10 +386,10 @@
       </div>
   </div>
   
+  
+    <div id="showResponse" class=" pb-3" hidden>
 
-    <div id="showResponse" class="container-fluid pt-5" hidden>
-
-              <div class="card shadow bgBlu text-white">
+              <div class="rcorners card  bgBlu text-white">
                <label class="text-white ml-3 mt-3 font-weight-bold">Guidance from Sai</label>
                   <div class="ml-3 ">
                     <button class="btn btn-white w-1 h-1 float-right" id="copyButton"><span class="material-symbols-outlined  pr-1 text-white">
@@ -389,12 +403,12 @@
      
   </div>
 
-
-  <div class=" my-5  p-2 rcorners shadow-sm bg-white  justify-content-center border border-dark">
-    <label class="txtBlu ml-2 mt-2 font-weight-bold">How can I assist you?</label>
+  
+  <div class="mt-3 mb-5  p-2 rcorners shadow bg-white  justify-content-center border border-dark">
+    <label class="txtBlu ml-2  font-weight-bold" id="assist">How can I assist you?</label>
     <div class=" d-flex">
-    
-      <textarea class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Send your question or request here..." rows="3"></textarea>
+      
+      <textarea class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Send your question or request here..." rows="1"></textarea>
       <button type="button" class="btn  rcorners"  id="submitBtn" ><span class="material-icons txtGrn">
         send
         </span></button>
@@ -447,6 +461,9 @@
             } else {
                 inputField.value = buttonText;
             }
+
+                  // Resize the textarea after setting its value
+                  resizeTextarea();
         });
     });
 });
@@ -512,6 +529,43 @@ document.getElementById('question').addEventListener('keydown', function (event)
     submitQuestion(); // Call the submitQuestion function
   }
 });
+
+function resizeTextarea() {
+    const textarea = document.getElementById('question');
+    
+    // Resetting the height to its default
+    textarea.style.height = "auto";
+
+    // Setting it to its scroll height
+    textarea.style.height = textarea.scrollHeight + "px";
+}
+document.getElementById('question').addEventListener('input', resizeTextarea);
+
+
+function hideElements() {
+    // List of IDs to be hidden
+    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1" ];
+
+    // Iterate through each ID and add the 'd-none' class
+    idsToHide.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.add('d-none');
+        }
+    });
+
+    const saiHeader2 = document.getElementById('saiHeader2');
+    if (saiHeader2) {
+        saiHeader2.classList.remove('d-none');
+    }
+}
+
+
+document.getElementById('submitBtn').addEventListener('click', function() {
+    hideElements();
+    
+});
+
 
 </script>
   
