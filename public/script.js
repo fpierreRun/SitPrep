@@ -30,13 +30,19 @@ function formatResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
 
     const formattedLines = response.split('\n').map(line => {
-        return line.replace(linkRegex, (match, title, url) => {
+        // Format links
+        const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
         });
+
+        // Wrap each line in a div for better spacing and styling
+        return `<div class="chat-message">${formattedLine}</div>`;
     });
 
-    return formattedLines.join('<br>');
+    // Join the formatted lines with line breaks
+    return formattedLines.join('');
 }
+
 
        
 function askQuestion() {
