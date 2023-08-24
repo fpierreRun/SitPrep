@@ -1,8 +1,7 @@
 let loadingInterval;
-let chatHistory = [];  // Initialize chatHistory
+let chatHistory = [];
 
 function startLoadingIndicator() {
-    // Clear any existing interval
     if (loadingInterval) {
         clearInterval(loadingInterval);
     }
@@ -20,7 +19,7 @@ function startLoadingIndicator() {
             document.getElementById('response').innerHTML = loadingMessage + '...';
             dotCount = 0;
         }
-    }, 500); // Update every 0.5 seconds
+    }, 500);
 }
 
 function stopLoadingIndicator() {
@@ -28,25 +27,18 @@ function stopLoadingIndicator() {
 }
 
 function formatResponse(response) {
-    const responseLines = response.split('\n');
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
-    const headerRegex = /(\d+\.)\s+([^:]+):/g;
 
-    const formattedLines = responseLines.map(line => {
-        const formattedLink = line.replace(linkRegex, (match, title, url) => {
+    const formattedLines = response.split('\n').map(line => {
+        return line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
         });
-
-        const formattedHeader = formattedLink.replace(headerRegex, (match, number, text) => {
-            return `<strong>${number} ${text}:</strong>`;
-        });
-
-        return `<p class="h5">${formattedHeader}</p>`;
     });
 
-    return formattedLines.join('');
+    return formattedLines.join('<br>');
 }
 
+       
 function askQuestion() {
     const questionInput = document.getElementById('question');
     const question = questionInput.value;
