@@ -1,95 +1,115 @@
+let loadingInterval;
+let chatHistory = [];
 
-
-let loadingInterval2;
-
-function startLoadingIndicator2() {
-    // Clear any existing interval
-    if (loadingInterval2) {
-        clearInterval(loadingInterval2);
+function startLoadingIndicator() {
+    if (loadingInterval) {
+        clearInterval(loadingInterval);
     }
 
     let loadingMessage = "Hang tight! I'm gathering the info just for you";
     const maxDots = 4;
     let dotCount = 0;
-    document.getElementById('response2').innerHTML = loadingMessage + '.';
+    document.getElementById('response').innerHTML = loadingMessage + '.';
 
-    loadingInterval2 = setInterval(() => {
+    loadingInterval = setInterval(() => {
         if (dotCount < maxDots) {
-            document.getElementById('response2').innerHTML += '.';
+            document.getElementById('response').innerHTML += '.';
             dotCount++;
         } else {
-            document.getElementById('response2').innerHTML = loadingMessage + '...';
+            document.getElementById('response').innerHTML = loadingMessage + '...';
             dotCount = 0;
         }
-    }, 500); // Update every 0.5 seconds
+    }, 500);
 }
 
-function stopLoadingIndicator2() {
-    clearInterval(loadingInterval2);
+function stopLoadingIndicator() {
+    clearInterval(loadingInterval);
 }
 
-function formatResponse2(response) {
-    const responseLines = response.split('\n');
+function formatResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
-    const headerRegex = /(\d+\.)\s+([^:]+):/g;
 
-    const formattedLines = responseLines.map(line => {
-        const formattedLink = line.replace(linkRegex, (match, title, url) => {
+    const formattedLines = response.split('\n').map(line => {
+        // Format links
+        const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
         });
 
-        const formattedHeader = formattedLink.replace(headerRegex, (match, number, text) => {
-            return `<strong>${number} ${text}:</strong>`;
-        });
-
-        return `<p>${formattedHeader}</p>`;
+        // Add line breaks between paragraphs, points, or sections
+        return `<div class="chat-message">${formattedLine}</div><br>`;
     });
 
+    // Join the formatted lines with line breaks
     return formattedLines.join('');
 }
 
-function askQuestion2() {
-    const questionElement = document.getElementById('question2');
-    const questionInput = document.getElementById('shelters');
-    
-    // Get the text inside the <p> tag without the input value
-    const questionText = questionElement.textContent.trim();
-    
-    // Combine the question text and the input value
-    const question = questionText + questionInput.value;
+
+
+       
+function askQuestion() {
+    const questionInput = document.getElementById('question');
+    const question = questionInput.value;
 
     if (!question.trim()) {
-        document.getElementById('response2').innerHTML = 'Please enter a valid question.';
+        document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
         return;
     }
 
-    startLoadingIndicator2();
+    startLoadingIndicator();
+
+    // Append the user's message to chat history
+    chatHistory.push({ role: 'user', content: question });
 
     $.ajax({
         url: '/ask',
         method: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({ question }),
+        data: JSON.stringify({ chatHistory }),
         success: function(response) {
-            const formattedResponse = formatResponse2(response);
-            document.getElementById('response2').innerHTML = formattedResponse;
+            const formattedResponse = formatResponse(response);
+            document.getElementById('response').innerHTML = formattedResponse;
             questionInput.value = ''; // Clear the input field
-            stopLoadingIndicator2(); // Stop the loading indicator here
+            stopLoadingIndicator(); 
+
+            // Append the AI's message to chat history
+            chatHistory.push({ role: 'assistant', content: response });
         },
         error: function() {
-            document.getElementById('response2').innerHTML = 'An error occurred. Please try again.';
-            stopLoadingIndicator2(); // Also stop the loading indicator if there's an error
+            document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
+            stopLoadingIndicator(); 
         }
     });
 }
 
+document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
-document.getElementById('submitBtn').addEventListener('click', askQuestion2);
-
-document.querySelector('#question2 input').addEventListener('keydown', (event) => {
+document.getElementById('question').addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault();
-        askQuestion2();
+        askQuestion();
+        hideElements();
     }
 });
 
+function hideElements() {
+    // List of IDs to be hidden
+    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1" ];
+
+    // Iterate through each ID and add the 'd-none' class
+    idsToHide.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.add('d-none');
+        }
+    });
+
+    const saiHeader2 = document.getElementById('saiHeader2');
+    if (saiHeader2) {
+        saiHeader2.classList.remove('d-none');
+    }
+
+    const textarea = document.getElementById("question");
+    if (textarea) {
+        textarea.focus();
+    }
+}

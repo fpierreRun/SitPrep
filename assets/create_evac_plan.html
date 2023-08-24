@@ -590,7 +590,7 @@
                                           <button type="button" class="btn btn-white w-1 h-1 float-right" id="copyButton2"><span class="material-symbols-outlined  pr-1 text-white">
                                             content_copy
                                             </span></button>
-                                            <p id="response2" class="mb-3"></p>
+                                            <p id="response" class="mb-3"></p>
                                            
                                         </div>
                                     </div>
@@ -599,7 +599,7 @@
                         </div>
                               
                               <div class=" my-2  p-2 rcorners shadow-sm bg-white  justify-content-center ">
-                                <label id="question2" class="txtBlu font-weight-normal">Generate a list of evacuation shelters in...</label>
+                                <label id="question" class="txtBlu font-weight-normal">Generate a list of evacuation shelters in...</label>
                                 <div class=" d-flex mb-1">
                                 
                                   <textarea class="form-control input-field bg-white txtBlu border-0" id="shelters" placeholder="Enter City, County, or Zip Code..." rows="1"></textarea>
@@ -1024,7 +1024,7 @@
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    const inputField = document.getElementById("question2");
+    const inputField = document.getElementById("question");
     const promptButtons = document.querySelectorAll(".prompt");
 
     promptButtons.forEach(function(input) {
@@ -1042,8 +1042,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('copyButton2').addEventListener('click', function () {
-    const responseText = document.getElementById('response2').textContent;
+document.getElementById('copyButton').addEventListener('click', function () {
+    const responseText = document.getElementById('response').textContent;
     
     const tempInput = document.createElement('input');
     document.body.appendChild(tempInput);
@@ -1053,7 +1053,7 @@ document.getElementById('copyButton2').addEventListener('click', function () {
     document.body.removeChild(tempInput);
 
     // Change the button text temporarily to show copied status
-    const copyButton = document.getElementById('copyButton2');
+    const copyButton = document.getElementById('copyButton');
     const originalText = copyButton.innerHTML;
     copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
     setTimeout(() => {
@@ -1068,12 +1068,12 @@ function showResponseBox() {
 
 function submitQuestion() {
   showResponseBox();
-  askQuestion2();
+  askQuestion();
 }
 
-document.getElementById('submitBtn2').addEventListener('click', submitQuestion);
+document.getElementById('submitBtn').addEventListener('click', submitQuestion);
 
-document.getElementById('question2').addEventListener('keydown', function (event) {
+document.getElementById('question').addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // Prevent default behavior (new line)
     submitQuestion(); // Call the submitQuestion function
