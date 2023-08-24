@@ -393,6 +393,13 @@ a.btnOppate{
   
 }
 
+.bkgYlw{
+  background-color:var(--Highlightyellow-color);
+  border-color:var(--Highlightyellow-color);
+  
+}
+
+
 .bkgdash{
   background-color:#3b68431f;
   border-color:#797c8d;
