@@ -52,7 +52,7 @@ function askQuestion() {
     const question = questionInput.value;
 
     if (!question.trim()) {
-        document.getElementById('response').innerHTML = 'Please enter a valid question.';
+        document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
         return;
     }
 
