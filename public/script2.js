@@ -29,15 +29,23 @@ function stopLoadingIndicator2() {
 }
 
 function formatResponse2(response) {
+    const responseLines = response.split('\n');
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
+    const headerRegex = /(\d+\.)\s+([^:]+):/g;
 
-    const formattedLines = response.split('\n').map(line => {
-        return line.replace(linkRegex, (match, title, url) => {
+    const formattedLines = responseLines.map(line => {
+        const formattedLink = line.replace(linkRegex, (match, title, url) => {
             return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
         });
+
+        const formattedHeader = formattedLink.replace(headerRegex, (match, number, text) => {
+            return `<strong>${number} ${text}:</strong>`;
+        });
+
+        return `<p>${formattedHeader}</p>`;
     });
 
-    return formattedLines.join('<br>');
+    return formattedLines.join('');
 }
 
 function askQuestion2() {

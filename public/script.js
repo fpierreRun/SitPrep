@@ -87,5 +87,29 @@ document.getElementById('question').addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault();
         askQuestion();
+        hideElements();
     }
 });
+
+function hideElements() {
+    // List of IDs to be hidden
+    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1" ];
+
+    // Iterate through each ID and add the 'd-none' class
+    idsToHide.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.add('d-none');
+        }
+    });
+
+    const saiHeader2 = document.getElementById('saiHeader2');
+    if (saiHeader2) {
+        saiHeader2.classList.remove('d-none');
+    }
+
+    const textarea = document.getElementById("question");
+    if (textarea) {
+        textarea.focus();
+    }
+}
