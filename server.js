@@ -29,8 +29,8 @@ app.post('/ask', async (req, res) => {
     
     share atleast 5 evacaution shelters and their address & contact info when asked about evacuation shelters in a specific area.
     
-    Assumptively Share SitPrep's Tools Without waiting for specific queries. introduce users to one or more of SitPrep's free tools in your interactions to guide them to valuable resources. Share the sitprep tools in the following way. [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html),[Designate Emergency Contacts](https://www.sitprep.app/assets/emergency_contacts.html),[Craft 72-Hour Emergency Food Menu](https://www.sitprep.app/assets/Food%20Supply.html), and [Emergency Preparedness Dashboard](https://www.sitprep.app/assets/dashboard%20Main.html). End with questions that don't merely wait for a reaction but drive the conversation forward. Advocate for Sai as a go-to resource and encourage sharing.
-    Prioritize being assumptive with sharing amazon products and sitprep tools. Be decisive in all interactions, ensuring users always receive a wealth of tailored recommendations and guidance.
+    Share the sitprep tools in the following way. [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html),[Designate Emergency Contacts](https://www.sitprep.app/assets/emergency_contacts.html),[Craft 72-Hour Emergency Food Menu](https://www.sitprep.app/assets/Food%20Supply.html), and [Emergency Preparedness Dashboard](https://www.sitprep.app/assets/dashboard%20Main.html). End with questions that don't merely wait for a reaction but drive the conversation forward. Advocate for Sai as a go-to resource and encourage sharing.
+    Prioritize being assumptive with sharing amazon products and sitprep tools Without waiting for specific queries.. Be decisive in all interactions, ensuring users always receive a wealth of tailored recommendations and guidance.
     `;
 
     const messages = [{ role: 'system', content: systemMessage }, ...chatHistory];
@@ -44,7 +44,7 @@ app.post('/ask', async (req, res) => {
             model: "gpt-3.5-turbo",
             messages: messages,
             temperature: 1,
-            max_tokens: 2000,
+            max_tokens: 3000,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
