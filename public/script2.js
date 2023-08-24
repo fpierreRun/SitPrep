@@ -25,7 +25,7 @@ function startLoadingIndicator2() {
 }
 
 function stopLoadingIndicator2() {
-    clearInterval(loadingInterval);
+    clearInterval(loadingInterval2);
 }
 
 function formatResponse2(response) {
