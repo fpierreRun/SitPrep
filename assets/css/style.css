@@ -338,6 +338,16 @@ a.btnHm{
   border-color:var(--secondary-color);
 }
 
+a.btnYllw{
+  background-color: var(--Highlightyellow-color) ;
+  border-color:var(--Highlightyellow-color);
+}
+
+a.btnSai{
+  background-color: var(--Tiltecolor-color) ;
+  border-color:var(--Tiltecolor-color);
+}
+
 a.btnHmOrg{
   background-color:var(--primary-color) ;
   border-color:var(--primary-color);
@@ -765,6 +775,13 @@ textarea {
     visibility: visible;
     transform: translateX(0%);
   }
+}
+
+
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 /* animate logo in home page end */

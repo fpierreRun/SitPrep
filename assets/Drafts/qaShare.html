@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ChatGPT Embed</title>
-  <style>
-    #chat-container {
-      width: 400px;
-      height: 500px;
-      border: 1px solid #ccc;
-      overflow-y: scroll;
-    }
-
-    #input-container {
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+    <title>Meet Sai</title>
 </head>
 <body>
-  <h1>ChatGPT Embed</h1>
-  
-  <div id="chat-container"></div>
+    <div class="container mt-4">
+        <p>Hey there! I'm Sai, your SitPrep Emergency Preparedness Guide. I'm here to make your life easier in many ways.</p>
+        <!-- Your content goes here -->
 
-  <div id="input-container">
-    <input type="text" id="user-input" placeholder="Type your message">
-    <button onclick="sendMessage()">Send</button>
-  </div>
+        <!-- Floatable Action Button (FAB) -->
+        <div class="fab-container">
+            <a class="btn btn-lg btn-dark" href="./assets/sai.html">Ask Sai</a>
+        </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@openai/chatgpt/dist/web-chat.min.js"></script>
-  <script>
-    const chatContainer = document.getElementById("chat-container");
-    const userInput = document.getElementById("user-input");
-
-    const chat = new OpenAI.ChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [],
-      placeholder: "Type your message...",
-      showUserOptions: true,
-      apiKey: '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',
-    });
-
-    function sendMessage() {
-      const message = { role: 'system', content: 'User: ' + userInput.value };
-      chatContainer.innerHTML += '<div><strong>User:</strong> ' + userInput.value + '</div>';
-
-      chat.addMessage(message);
-
-      chat.generate().then((response) => {
-        const reply = response.choices[0].message;
-        chatContainer.innerHTML += '<div><strong>ChatGPT:</strong> ' + reply.content + '</div>';
-        chat.updateChatHistory(reply);
-      });
-
-      userInput.value = '';
-    }
-  </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

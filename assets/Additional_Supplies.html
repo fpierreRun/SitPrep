@@ -298,9 +298,7 @@
 
     
 
-      <div class="mr-4 mt-4" id="foodBackBtn"  style="display: none;">
-        <button  class="shadow rounded-pill btn-lg btn-primary noOutline text-white font-weight-normal ml-4" onclick="foodPrevious()">Previous</button>
-      </div>
+      
 
     
 
@@ -980,7 +978,9 @@
       </table>
       </div>
 
-      <div class="text-center py-5" id="next2">
+     
+      <div class="text-center pt-3 pb-5 my-5" id="next2">
+        <button  class="shadow rounded-pill btn-lg btn-primary noOutline text-white font-weight-normal ml-4" onclick="foodPrevious()">Previous</button>
         <!-- <input form="locationForm" class="rounded-pill btn btn-primary" type="submit" value="Save" onclick="saveCheckList()" > -->
           <input form="locationForm" class="ml-3 rounded-pill btn btn-outline-success btn_print" type="submit" value="Save & Download" onclick="downloadCheckList()" data-toggle="modal" data-target="#exampleModalCenter" id="element-to-hide" data-html2canvas-ignore="true">
         </div> 
@@ -1014,10 +1014,13 @@
 
       </div>
     </div>
+   
   </div>
-
+  <div class="fab-container">
+    <a class="rounded-pill btn btn-lg btn-warning shadow text-dark pb-3" href="./sai.html" target="_blank"><img class="img-fluid" src="./images/SAI-FAB.png" width="75px"   alt=""  /></a>
+  </div>
   <!-- Modal for Survey End-->
-
+  
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
