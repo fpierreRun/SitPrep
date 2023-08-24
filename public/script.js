@@ -35,13 +35,14 @@ function formatResponse(response) {
             return `<a href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
         });
 
-        // Wrap each line in a div for better spacing and styling
-        return `<div class="chat-message">${formattedLine}</div>`;
+        // Add line breaks between paragraphs, points, or sections
+        return `<div class="chat-message">${formattedLine}</div><br>`;
     });
 
     // Join the formatted lines with line breaks
     return formattedLines.join('');
 }
+
 
 
        
