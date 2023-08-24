@@ -47,14 +47,19 @@ function formatResponse(response) {
 
        
 function askQuestion() {
-    const questionInput = document.getElementById('question');
-    const question = questionInput.value;
+    const questionElement = document.getElementById('question');
+    const questionInput = document.getElementById('shelters');
+    
+    // Get the text inside the <p> tag without the input value
+    const questionText = questionElement.textContent.trim();
+    
+    // Combine the question text and the input value
+    const question = questionText + questionInput.value;
 
     if (!question.trim()) {
-        document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
+        document.getElementById('response2').innerHTML = 'Please enter a valid question.';
         return;
     }
-
     startLoadingIndicator();
 
     // Append the user's message to chat history
