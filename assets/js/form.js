@@ -23,38 +23,42 @@ document.getElementById('completeDld').addEventListener('click', function() {
 
 
 
-function evacPage(){
+function evacPage() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'auto' // or simply remove this line
   });
- 
+
   document.getElementById('next').setAttribute('hidden', true);
   document.getElementById('step1').setAttribute('hidden', true);
- 
-  
-  // document.getElementById("contactForm").style.display = "none";
-  document.getElementById('previous1').removeAttribute('hidden');
-  document.getElementById('completeDld').removeAttribute('hidden');
-  document.getElementById('evacForm').removeAttribute('hidden');
- 
+  setTimeout(function() {
+   
 
-};
+    // document.getElementById("contactForm").style.display = "none";
+    document.getElementById('previous1').removeAttribute('hidden');
+    document.getElementById('completeDld').removeAttribute('hidden');
+    document.getElementById('evacForm').removeAttribute('hidden');
+  }, 300); // Adjust the delay time (in milliseconds) as needed
+}
+
 
 
 //begin
 function locPage(){
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'auto' // or simply remove this line
   });
 
-  // document.getElementById('next1').setAttribute('hidden', true);
   document.getElementById('previous1').setAttribute('hidden', true);
   document.getElementById('evacForm').setAttribute('hidden', true);
+
+  setTimeout(function() {
+  // document.getElementById('next1').setAttribute('hidden', true);
+  
   document.getElementById('step1').removeAttribute('hidden');
   document.getElementById('next').removeAttribute('hidden');
-
+}, 300); // Adjust the delay time (in milliseconds) as needed
 
 };
 
