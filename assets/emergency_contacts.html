@@ -388,7 +388,7 @@
                               </span>
                             </div>
 
-                            <p class="h4 ml-3">Add Contact Group</p>
+                            <p class="h4 ml-3">Add Another Contact </p>
 
                           </div>
                         </a>
@@ -637,14 +637,7 @@
                 </span>
                 <input type="email" name="contactEml${contactId}" class="ml-3 w-100 p-2 rounded" placeholder="Enter email">
               </div>
-              <hr> <!-- Breaker added here -->
-              <p class="text-muted h6">(If applicable) Assign who will reach out to the main contact during an emergency</p>
-              <div class="person-group" id="personGroup_${contactId}">
-                
-              </div>
-              <div class="mt-5 d-grid gap-2 mb-5">
-                <button class="btn btn-primary element-to-hide" onclick="addPerson('${contactId}')">Assign to Call Main Contact</button>
-              </div>
+            
             </div>
           `;
           return contactElement;
