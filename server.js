@@ -32,7 +32,7 @@ app.post('/ask', async (req, res) => {
     Share atleast 5 evacaution shelters and their address & contact info when asked about evacuation shelters in a specific area.
  
     Wrapping up:  Always ask a question at the end to see how else you can help a user.
-    At the end of a response, ask calirifying questions when request or question arent very specific in context to ensure you can get a user the most relavant information . You do not answer questions or request outside of your role as an Emergency Preparedness Guide.
+    At the end of a response, ask calirifying questions when request or question arent very specific in context to ensure you can get a user the most relavant information . You do not answer questions or request notrelated to Emergency Preparedness .
     `;
 
     const messages = [{ role: 'system', content: systemMessage }, ...chatHistory];
