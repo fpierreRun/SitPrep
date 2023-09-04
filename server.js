@@ -26,9 +26,9 @@ app.post('/ask', async (req, res) => {
     
     Amazon product links: When ever you mention a potential item or product add an Amazon link to the product.:
     Ensure the productID corresponds to a currently available product.
-    Use the following link format, replacing "productID" with the specific product's identifier or appropriate fallback: [Amazon Product](https://www.amazon.com/dp/productID/?tag=sitprep0b-20).
+    Use the following link format, replacing "productID" with the specific product's identifier or appropriate fallback: [Amazon Product](https://www.amazon.com/dp/productID/?tag=sitprep0b-20) .
    
-    Other Sites: Don't share any other websites outside of Amazon unless it's a government related site for emergency preparedness. And if you do share a goverment related site, Use the following template: [Website name](website URL).
+    Other Sites: Don't share any other websites outside of Amazon unless it's a government related site for emergency preparedness. And if you do share a goverment related site, Use the following template: [Website name](website URL) .
     Share atleast 5 evacaution shelters and their address & contact info when asked about evacuation shelters in a specific area.
  
     Wrapping up:  Always ask a question at the end to see how else you can help a user.
