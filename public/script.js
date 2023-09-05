@@ -26,17 +26,23 @@ function stopLoadingIndicator() {
     clearInterval(loadingInterval);
 }
 
-function formatResponse(response) {
+function formatResponse(chatHistory) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
 
-    const formattedLines = response.split('\n').map(line => {
-        // Format links
-        const formattedLine = line.replace(linkRegex, (match, title, url) => {
-            return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
-        });
+    const formattedLines = chatHistory.map(message => {
+        const role = message.role;
+        const content = message.content;
 
-        // Add line breaks between paragraphs, points, or sections
-        return `<div class="chat-message">${formattedLine}</div><br>`;
+        if (role === 'user') {
+            return `<div class="chat-message user-message">${content}</div>`;
+        } else if (role === 'assistant') {
+            // Format links
+            const formattedContent = content.replace(linkRegex, (match, title, url) => {
+                return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
+            });
+
+            return `<div class="chat-message assistant-message">${formattedContent}</div>`;
+        }
     });
 
     // Join the formatted lines with line breaks
@@ -53,6 +59,8 @@ function askQuestion() {
 
     if (!question.trim()) {
         document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
+         // Remove the 'hidden' attribute from the promptBox
+         document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
 
