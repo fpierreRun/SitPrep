@@ -12,7 +12,7 @@ function startLoadingIndicator() {
     let dotCount = 0;
     const responseElement = document.getElementById('response');
     responseElement.innerHTML = loadingMessage + '.';
-    responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
+    responseElement.classList.add('px-3'); // Adding the 'ml-2' class
 
     loadingInterval = setInterval(() => {
         if (dotCount < maxDots) {
@@ -35,9 +35,9 @@ function formatResponse(response) {
         const formattedContent = message.role === 'assistant' ? formatAssistantResponse(message.content) : message.content;
 
         if (message.role === 'assistant') {
-            return `<div class="sai-response txtBlue px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
+            return `<div class="sai-response txtBlue "><strong>${role}: </strong>${formattedContent}</div><br>`;
         } else {
-            return `<div class="chat-message px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
+            return `<div class="chat-message "><strong>${role}: </strong>${formattedContent}</div><br>`;
         }
     });
 
@@ -75,7 +75,7 @@ function askQuestion() {
    if (!question.trim()) {
     const responseElement = document.getElementById('response');
     responseElement.innerHTML = 'Please enter a valid question or request.';
-    responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
+    responseElement.classList.add('px-3'); // Adding the 'ml-2' class
     // Remove the 'hidden' attribute from the promptBox
     document.getElementById('promptBox').removeAttribute('hidden');
     return;
@@ -113,7 +113,7 @@ function askQuestion() {
         error: function() {
             const responseElement = document.getElementById('response');
             responseElement.innerHTML = 'An error occurred. Please try again.';
-            responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
+            responseElement.classList.add('px-3'); // Adding the 'ml-2' class
             stopLoadingIndicator();
         }
         
