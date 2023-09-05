@@ -27,28 +27,31 @@ function stopLoadingIndicator() {
     clearInterval(loadingInterval);
 }
 
-function formatResponse(chatHistory) {
-    const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
-
+function formatResponse(response) {
     const formattedLines = chatHistory.map(message => {
         const role = message.role === 'user' ? 'You' : 'Sai';
-        const content = message.content;
-
-        if (role === 'Sai') {
-            // Format links
-            const formattedContent = content.replace(linkRegex, (match, title, url) => {
-                return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
-            });
-
-            return `<div class="chat-message assistant-message">${formattedContent}</div>`;
-        } else {
-            return `<div class="chat-message user-message">${content}</div>`;
-        }
+        const formattedContent = message.role === 'assistant' ? formatAssistantResponse(message.content) : message.content;
+        return `<div class="chat-message"><strong>${role}: </strong>${formattedContent}</div><br>`;
     });
 
-    // Join the formatted lines with line breaks
-    return formattedLines.join('<br>');
+    return formattedLines.join('');
 }
+
+function formatAssistantResponse(response) {
+    const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
+
+    const formattedLines = response.split('\n').map(line => {
+        // Format links
+        const formattedLine = line.replace(linkRegex, (match, title, url) => {
+            return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
+        });
+
+        return formattedLine;
+    });
+
+    return formattedLines.join('<br>'); // Add line breaks between paragraphs, points, or sections
+}
+
 
 
 
