@@ -1,3 +1,4 @@
+// script.js
 let loadingInterval;
 let chatHistory = [];
 
@@ -50,7 +51,8 @@ function formatResponse(chatHistory) {
 }
 
 function scrollToBottom() {
-    window.scrollTo(0, document.body.scrollHeight);
+    const responseBox = document.getElementById('showResponse');
+    responseBox.scrollTop = responseBox.scrollHeight;
 }
 
 function askQuestion() {
@@ -59,8 +61,7 @@ function askQuestion() {
 
     if (!question.trim()) {
         document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
-         // Remove the 'hidden' attribute from the promptBox
-         document.getElementById('promptBox').removeAttribute('hidden');
+        document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
 
@@ -75,8 +76,8 @@ function askQuestion() {
         contentType: 'application/json',
         data: JSON.stringify({ chatHistory }),
         success: function(response) {
-            const formattedResponse = formatResponse(response);
-            document.getElementById('response').innerHTML = formattedResponse;
+            const formattedResponse = formatResponse(chatHistory);
+            document.getElementById('showResponse').innerHTML = formattedResponse;
             questionInput.value = ''; // Clear the input field
             stopLoadingIndicator();
 
@@ -85,10 +86,10 @@ function askQuestion() {
 
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
-            
+
             // Show the response box
             document.getElementById('showResponse').removeAttribute('hidden');
-            
+
             // Scroll to the bottom of the page
             scrollToBottom();
         },
@@ -111,7 +112,7 @@ document.getElementById('question').addEventListener('keydown', (event) => {
 
 function hideElements() {
     // List of IDs to be hidden
-    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1" ];
+    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1"];
 
     // Iterate through each ID and add the 'd-none' class
     idsToHide.forEach(id => {
