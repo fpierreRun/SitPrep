@@ -66,14 +66,14 @@ function askQuestion() {
 
     if (!question.trim()) {
         document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
-         // Remove the 'hidden' attribute from the promptBox
-         document.getElementById('promptBox').removeAttribute('hidden');
+        // Remove the 'hidden' attribute from the promptBox
+        document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
 
     startLoadingIndicator();
 
-    // Append the user's message to chat history
+    // Append the user's message to chat history (remove the duplicated push)
     chatHistory.push({ role: 'user', content: question });
 
     $.ajax({
@@ -91,8 +91,7 @@ function askQuestion() {
             document.getElementById('response').innerHTML = formattedChatHistory;
 
             // Scroll to the bottom of the response box
-            const responseBox = document.getElementById('response');
-            responseBox.scrollTop = responseBox.scrollHeight;
+            scrollToBottom();
 
             questionInput.value = ''; // Clear the input field
             stopLoadingIndicator();
@@ -102,15 +101,11 @@ function askQuestion() {
         },
         error: function() {
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
-            stopLoadingIndicator(); 
+            stopLoadingIndicator();
         }
     });
 }
-
-
-
-       
-   
+  
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
