@@ -513,11 +513,9 @@
     }, 1500); // Change back to original text after 1.5 seconds
 });
 
-function showResponseBox() {
-  document.getElementById('showResponse').removeAttribute('hidden');
-  document.getElementById("promptBox").hidden = true;
-  window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
-}
+
+
+document.getElementById('submitBtn').addEventListener('click', submitQuestion);
 
 
 function resizeTextarea() {

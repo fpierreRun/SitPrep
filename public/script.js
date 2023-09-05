@@ -110,11 +110,21 @@ function askQuestion() {
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
 document.getElementById('question').addEventListener('keydown', (event) => {
+   
+    function showResponseBox() {
+        document.getElementById('showResponse').removeAttribute('hidden');
+        document.getElementById("promptBox").hidden = true;
+        window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
+      }
+      
+   
     if (event.key === 'Enter') {
         event.preventDefault();
         askQuestion();
         hideElements();
+        showResponseBox(); // Call the show responsebox function
     }
+
 });
 
 function hideElements() {
