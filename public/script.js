@@ -31,11 +31,17 @@ function formatResponse(response) {
     const formattedLines = chatHistory.map(message => {
         const role = message.role === 'user' ? 'You' : 'Sai';
         const formattedContent = message.role === 'assistant' ? formatAssistantResponse(message.content) : message.content;
-        return `<div class="chat-message"><strong>${role}: </strong>${formattedContent}</div><br>`;
+
+        if (message.role === 'assistant') {
+            return `<div class="sai-response"><strong>${role}: </strong>${formattedContent}</div><br>`;
+        } else {
+            return `<div class="chat-message"><strong>${role}: </strong>${formattedContent}</div><br>`;
+        }
     });
 
     return formattedLines.join('');
 }
+
 
 function formatAssistantResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;

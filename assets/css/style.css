@@ -1032,6 +1032,12 @@ tr.mobileAmazon div {
 .hide-element {
   opacity: 0;
 }
+.sai-response {
+  background-color: #757990;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
 
 @media print {
