@@ -49,7 +49,7 @@ function formatAssistantResponse(response) {
         return formattedLine;
     });
 
-    return formattedLines.join('<br>'); // Add line breaks between paragraphs, points, or sections
+    return formattedLines.join('<br><br>'); // Add line breaks between paragraphs, points, or sections
 }
 
 
