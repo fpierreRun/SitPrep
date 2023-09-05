@@ -40,15 +40,16 @@ function formatResponse(chatHistory) {
                 return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
             });
 
-            return `<div class="chat-message assistant-message"><strong>${role}: </strong>${formattedContent}</div>`;
+            return `<div class="chat-message assistant-message">${formattedContent}</div>`;
         } else {
-            return `<div class="chat-message user-message"><strong>${role}: </strong>${content}</div>`;
+            return `<div class="chat-message user-message">${content}</div>`;
         }
     });
 
     // Join the formatted lines with line breaks
-    return formattedLines.join('');
+    return formattedLines.join('<br>');
 }
+
 
 
 function scrollToBottom() {
