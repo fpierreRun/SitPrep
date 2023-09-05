@@ -73,6 +73,8 @@ function askQuestion() {
 
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
+            // Remove the 'hidden' attribute from the promptBox
+            document.getElementById('promptBox').removeAttribute('hidden');
         },
         error: function() {
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
