@@ -6,7 +6,7 @@ function startLoadingIndicator() {
         clearInterval(loadingInterval);
     }
 
-    let loadingMessage = "Hang tight! I'm gathering the info just for you";
+    let loadingMessage = "Hang tight! I'm gathering the information you need.";
     const maxDots = 4;
     let dotCount = 0;
     document.getElementById('response').innerHTML = loadingMessage + '.';
@@ -43,9 +43,10 @@ function formatResponse(response) {
     return formattedLines.join('');
 }
 
+function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+}
 
-
-       
 function askQuestion() {
     const questionInput = document.getElementById('question');
     const question = questionInput.value;
@@ -69,16 +70,23 @@ function askQuestion() {
             const formattedResponse = formatResponse(response);
             document.getElementById('response').innerHTML = formattedResponse;
             questionInput.value = ''; // Clear the input field
-            stopLoadingIndicator(); 
+            stopLoadingIndicator();
 
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
+
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
+            
+            // Show the response box
+            document.getElementById('showResponse').removeAttribute('hidden');
+            
+            // Scroll to the bottom of the page
+            scrollToBottom();
         },
         error: function() {
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
-            stopLoadingIndicator(); 
+            stopLoadingIndicator();
         }
     });
 }
