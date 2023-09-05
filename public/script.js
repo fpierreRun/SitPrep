@@ -106,17 +106,22 @@ function askQuestion() {
     });
 }
   
-
-document.getElementById('submitBtn').addEventListener('click', askQuestion);
+function showResponseBox() {
+    document.getElementById('showResponse').removeAttribute('hidden');
+    document.getElementById("promptBox").hidden = true;
+    window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
+  }
+  
+document.getElementById('submitBtn').addEventListener('click', (event) => {
+   
+        event.preventDefault();
+        askQuestion();
+        hideElements();
+        showResponseBox(); // Call the show responsebox function
+   
+});
 
 document.getElementById('question').addEventListener('keydown', (event) => {
-   
-    function showResponseBox() {
-        document.getElementById('showResponse').removeAttribute('hidden');
-        document.getElementById("promptBox").hidden = true;
-        window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
-      }
-      
    
     if (event.key === 'Enter') {
         event.preventDefault();
