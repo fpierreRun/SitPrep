@@ -8,7 +8,7 @@ function startLoadingIndicator() {
     }
 
     let loadingMessage = "Hang tight! I'm gathering the information you need.";
-    const maxDots = 4;
+    const maxDots = 3;
     let dotCount = 0;
     document.getElementById('response').innerHTML = loadingMessage + '.';
 
