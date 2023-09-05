@@ -49,7 +49,7 @@ function formatAssistantResponse(response) {
     const formattedLines = response.split('\n').map(line => {
         // Format links
         const formattedLine = line.replace(linkRegex, (match, title, url) => {
-            return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
+            return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #0C94F0; font-weight: bold">${title}</a>`;
         });
 
         return formattedLine;
