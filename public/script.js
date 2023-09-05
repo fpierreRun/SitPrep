@@ -11,19 +11,21 @@ function startLoadingIndicator() {
     const maxDots = 3;
     let dotCount = 0;
     const responseElement = document.getElementById('response');
-    responseElement.innerHTML = loadingMessage + '.';
-    responseElement.classList.add('px-3'); // Adding the 'ml-2' class
+    
+    // Wrap the loading message in a div with the 'ml-2' class
+    responseElement.innerHTML = `<div class="px-3">${loadingMessage}.</div>`;
 
     loadingInterval = setInterval(() => {
         if (dotCount < maxDots) {
-            responseElement.innerHTML += '.';
+            responseElement.querySelector('div').innerHTML += '.';
             dotCount++;
         } else {
-            responseElement.innerHTML = loadingMessage + '...';
+            responseElement.querySelector('div').innerHTML = `${loadingMessage}...`;
             dotCount = 0;
         }
     }, 500);
 }
+
 
 function stopLoadingIndicator() {
     clearInterval(loadingInterval);
@@ -35,9 +37,9 @@ function formatResponse(response) {
         const formattedContent = message.role === 'assistant' ? formatAssistantResponse(message.content) : message.content;
 
         if (message.role === 'assistant') {
-            return `<div class="sai-response txtBlue "><strong>${role}: </strong>${formattedContent}</div><br>`;
+            return `<div class="sai-response txtBlue px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
         } else {
-            return `<div class="chat-message "><strong>${role}: </strong>${formattedContent}</div><br>`;
+            return `<div class="chat-message px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
         }
     });
 
@@ -72,15 +74,17 @@ function askQuestion() {
     const questionInput = document.getElementById('question');
     const question = questionInput.value;
 
-   if (!question.trim()) {
-    const responseElement = document.getElementById('response');
-    responseElement.innerHTML = 'Please enter a valid question or request.';
-    responseElement.classList.add('px-3'); // Adding the 'ml-2' class
-    // Remove the 'hidden' attribute from the promptBox
-    document.getElementById('promptBox').removeAttribute('hidden');
-    return;
-}
-
+    if (!question.trim()) {
+        const responseElement = document.getElementById('response');
+        
+        // Wrap the error message in a div with the 'ml-2' class
+        responseElement.innerHTML = `<div class="px-3">Please enter a valid question or request.</div>`;
+        
+        // Remove the 'hidden' attribute from the promptBox
+        document.getElementById('promptBox').removeAttribute('hidden');
+        return;
+    }
+    
 
     startLoadingIndicator();
 
@@ -110,12 +114,16 @@ function askQuestion() {
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
         },
+       
         error: function() {
             const responseElement = document.getElementById('response');
-            responseElement.innerHTML = 'An error occurred. Please try again.';
-            responseElement.classList.add('px-3'); // Adding the 'ml-2' class
+            
+            // Wrap the error message in a div with the 'ml-2' class
+            responseElement.innerHTML = `<div class="px-3">An error occurred. Please try again.</div>`;
+            
             stopLoadingIndicator();
         }
+        
         
     });
 }
