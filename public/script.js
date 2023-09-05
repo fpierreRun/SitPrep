@@ -66,6 +66,8 @@ function askQuestion() {
 
     if (!question.trim()) {
         document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
+         // Remove the 'hidden' attribute from the promptBox
+         document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
 
