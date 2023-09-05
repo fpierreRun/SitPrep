@@ -31,24 +31,25 @@ function formatResponse(chatHistory) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
 
     const formattedLines = chatHistory.map(message => {
-        const role = message.role;
+        const role = message.role === 'user' ? 'You' : 'Sai';
         const content = message.content;
 
-        if (role === 'user') {
-            return `<div class="chat-message user-message">${content}</div>`;
-        } else if (role === 'assistant') {
+        if (role === 'Sai') {
             // Format links
             const formattedContent = content.replace(linkRegex, (match, title, url) => {
                 return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #11F091; font-weight: bold">${title}</a>`;
             });
 
-            return `<div class="chat-message assistant-message">${formattedContent}</div>`;
+            return `<div class="chat-message assistant-message"><strong>${role}: </strong>${formattedContent}</div>`;
+        } else {
+            return `<div class="chat-message user-message"><strong>${role}: </strong>${content}</div>`;
         }
     });
 
     // Join the formatted lines with line breaks
     return formattedLines.join('');
 }
+
 
 function scrollToBottom() {
     const responseBox = document.getElementById('showResponse');
@@ -87,8 +88,6 @@ function askQuestion() {
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
 
-            // Show the response box
-            document.getElementById('showResponse').removeAttribute('hidden');
 
             // Scroll to the bottom of the page
             scrollToBottom();
