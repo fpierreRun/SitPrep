@@ -63,7 +63,6 @@ function askQuestion() {
 
     if (!question.trim()) {
         document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
-        document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
 
@@ -78,29 +77,35 @@ function askQuestion() {
         contentType: 'application/json',
         data: JSON.stringify({ chatHistory }),
         success: function(response) {
-            const formattedResponse = formatResponse(chatHistory);
-            document.getElementById('showResponse').innerHTML = formattedResponse;
-            questionInput.value = ''; // Clear the input field
-            stopLoadingIndicator();
-
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
 
+            const formattedChatHistory = formatResponse(chatHistory);
+
+            // Display the chat history in the response box
+            document.getElementById('response').innerHTML = formattedChatHistory;
+
+            // Scroll to the bottom of the response box
+            const responseBox = document.getElementById('response');
+            responseBox.scrollTop = responseBox.scrollHeight;
+
+            questionInput.value = ''; // Clear the input field
+            stopLoadingIndicator();
+
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
-
-            // Show the response box
-            document.getElementById('showResponse').removeAttribute('hidden');
-
-            // Scroll to the bottom of the page
-            scrollToBottom();
         },
         error: function() {
             document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
-            stopLoadingIndicator();
+            stopLoadingIndicator(); 
         }
     });
 }
+
+
+
+       
+   
 
 document.getElementById('submitBtn').addEventListener('click', askQuestion);
 
