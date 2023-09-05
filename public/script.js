@@ -33,9 +33,9 @@ function formatResponse(response) {
         const formattedContent = message.role === 'assistant' ? formatAssistantResponse(message.content) : message.content;
 
         if (message.role === 'assistant') {
-            return `<div class="chat-message px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
-        } else {
             return `<div class="sai-response txtBlue px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
+        } else {
+            return `<div class="chat-message px-3"><strong>${role}: </strong>${formattedContent}</div><br>`;
         }
     });
 
