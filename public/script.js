@@ -88,6 +88,8 @@ function askQuestion() {
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
 
+            // Show the response box
+            document.getElementById('showResponse').removeAttribute('hidden');
 
             // Scroll to the bottom of the page
             scrollToBottom();
