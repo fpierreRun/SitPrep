@@ -10,14 +10,16 @@ function startLoadingIndicator() {
     let loadingMessage = "Hang tight! I'm gathering the information you need.";
     const maxDots = 3;
     let dotCount = 0;
-    document.getElementById('response').innerHTML = loadingMessage + '.';
+    const responseElement = document.getElementById('response');
+    responseElement.innerHTML = loadingMessage + '.';
+    responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
 
     loadingInterval = setInterval(() => {
         if (dotCount < maxDots) {
-            document.getElementById('response').innerHTML += '.';
+            responseElement.innerHTML += '.';
             dotCount++;
         } else {
-            document.getElementById('response').innerHTML = loadingMessage + '...';
+            responseElement.innerHTML = loadingMessage + '...';
             dotCount = 0;
         }
     }, 500);
@@ -70,12 +72,15 @@ function askQuestion() {
     const questionInput = document.getElementById('question');
     const question = questionInput.value;
 
-    if (!question.trim()) {
-        document.getElementById('response').innerHTML = 'Please enter a valid question or request.';
-        // Remove the 'hidden' attribute from the promptBox
-        document.getElementById('promptBox').removeAttribute('hidden');
-        return;
-    }
+   if (!question.trim()) {
+    const responseElement = document.getElementById('response');
+    responseElement.innerHTML = 'Please enter a valid question or request.';
+    responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
+    // Remove the 'hidden' attribute from the promptBox
+    document.getElementById('promptBox').removeAttribute('hidden');
+    return;
+}
+
 
     startLoadingIndicator();
 
@@ -106,9 +111,12 @@ function askQuestion() {
             document.getElementById('promptBox').removeAttribute('hidden');
         },
         error: function() {
-            document.getElementById('response').innerHTML = 'An error occurred. Please try again.';
+            const responseElement = document.getElementById('response');
+            responseElement.innerHTML = 'An error occurred. Please try again.';
+            responseElement.classList.add('ml-2'); // Adding the 'ml-2' class
             stopLoadingIndicator();
         }
+        
     });
 }
   
