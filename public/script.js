@@ -49,6 +49,7 @@ function formatResponse(response) {
 
 function formatAssistantResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
+    const boldTextRegex = /\*\*(.*?)\*\*/g;
 
     const formattedLines = response.split('\n').map(line => {
         // Format links
@@ -56,7 +57,8 @@ function formatAssistantResponse(response) {
             return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #0C94F0; font-weight: bold">${title}</a>`;
         });
 
-        return formattedLine;
+        // Format text enclosed in double asterisks as bold
+        return formattedLine.replace(boldTextRegex, '<strong>$1</strong>');
     });
 
     return formattedLines.join('<br><br>'); // Add line breaks between paragraphs, points, or sections
