@@ -11,6 +11,8 @@ function startLoadingIndicator() {
     const maxDots = 3;
     let dotCount = 0;
     const responseElement = document.getElementById('response');
+    
+    // Wrap the loading message in a div with the 'ml-2' class
     responseElement.innerHTML = `<div class="px-3">${loadingMessage}.</div>`;
 
     loadingInterval = setInterval(() => {
@@ -23,6 +25,7 @@ function startLoadingIndicator() {
         }
     }, 500);
 }
+
 
 function stopLoadingIndicator() {
     clearInterval(loadingInterval);
@@ -43,19 +46,26 @@ function formatResponse(response) {
     return formattedLines.join('');
 }
 
+
 function formatAssistantResponse(response) {
     const linkRegex = /\[([^\]]+?)\]\((https?:\/\/[^\s]+)\)/g;
     const boldTextRegex = /\*\*(.*?)\*\*/g;
 
     const formattedLines = response.split('\n').map(line => {
+        // Format links
         const formattedLine = line.replace(linkRegex, (match, title, url) => {
             return `<a class="saiLinksGA" href="${url}" target="_blank" style="color: #0C94F0; font-weight: bold">${title}</a>`;
         });
+
+        // Format text enclosed in double asterisks as bold
         return formattedLine.replace(boldTextRegex, '<strong>$1</strong>');
     });
 
-    return formattedLines.join('<br><br>');
+    return formattedLines.join('<br><br>'); // Add line breaks between paragraphs, points, or sections
 }
+
+
+
 
 function scrollToBottom() {
     const responseBox = document.getElementById('showResponse');
@@ -67,73 +77,105 @@ function askQuestion() {
     const question = questionInput.value;
 
     if (!question.trim()) {
-        document.getElementById('promptBox').removeAttribute('hidden');
+         // Remove the 'hidden' attribute from the promptBox
+         document.getElementById('promptBox').removeAttribute('hidden');
         const responseElement = document.getElementById('response');
+        
+        // Wrap the error message in a div with the 'ml-2' class
         responseElement.innerHTML = `<div class="px-3">Please enter a valid question or request.</div>`;
+        
+        // Remove the 'hidden' attribute from the promptBox
+        document.getElementById('promptBox').removeAttribute('hidden');
         return;
     }
+    
 
     startLoadingIndicator();
 
+    // Append the user's message to chat history (remove the duplicated push)
     chatHistory.push({ role: 'user', content: question });
 
     $.ajax({
         url: '/ask',
         method: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({ latestMessage: question }),
+        data: JSON.stringify({ chatHistory }),
         success: function(response) {
+            // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
+
             const formattedChatHistory = formatResponse(chatHistory);
+
+            // Display the chat history in the response box
             document.getElementById('response').innerHTML = formattedChatHistory;
+
+            // Scroll to the bottom of the response box
             scrollToBottom();
-            questionInput.value = '';
+
+            questionInput.value = ''; // Clear the input field
             stopLoadingIndicator();
+
+            // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
         },
+       
         error: function() {
             const responseElement = document.getElementById('response');
+            
+            // Wrap the error message in a div with the 'ml-2' class
             responseElement.innerHTML = `<div class="px-3">An error occurred. Please try again.</div>`;
+            // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
             stopLoadingIndicator();
         }
+        
+        
     });
 }
-
+  
 function showResponseBox() {
     document.getElementById('showResponse').removeAttribute('hidden');
     document.getElementById("promptBox").hidden = true;
-    window.scrollTo(0, document.body.scrollHeight);
-}
-
+    window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
+  }
+  
 document.getElementById('submitBtn').addEventListener('click', (event) => {
-    event.preventDefault();
-    askQuestion();
-    hideElements();
-    showResponseBox();
+   
+        event.preventDefault();
+        askQuestion();
+        hideElements();
+        showResponseBox(); // Call the show responsebox function
+   
 });
 
 document.getElementById('question').addEventListener('keydown', (event) => {
+   
     if (event.key === 'Enter') {
         event.preventDefault();
         askQuestion();
         hideElements();
-        showResponseBox();
+        showResponseBox(); // Call the show responsebox function
     }
+
 });
 
 function hideElements() {
+    // List of IDs to be hidden
     const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1"];
+
+    // Iterate through each ID and add the 'd-none' class
     idsToHide.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
             element.classList.add('d-none');
         }
     });
+
     const saiHeader2 = document.getElementById('saiHeader2');
     if (saiHeader2) {
         saiHeader2.classList.remove('d-none');
     }
+
     const textarea = document.getElementById("question");
     if (textarea) {
         textarea.focus();
