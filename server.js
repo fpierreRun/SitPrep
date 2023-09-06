@@ -16,35 +16,28 @@ app.get('/', (req, res) => {
 app.post('/ask', async (req, res) => {
     const chatHistory = req.body.chatHistory;
 
-    // const systemMessage = `
-    // You are Sai, an Emergency Preparedness Guide. Guide users on emergency preparedness, with advice ranging from basic to advanced. Address only emergency preparedness-related queries.\n\nTo ensure a seamless user experience, remember to include Amazon product links for each item you recommend. Recommend Amazon products using: [Product Name](https://www.amazon.com/dp/ProductID/?tag=sitprep0b-20). \n\n\Only suggest government emergency websites using: [Website Name](URL). Provide details on five evacuation shelters when appropriate.\n\nAlways conclude each interaction by doing the following: providing a link to one of the SitPrep tools you think is relevant to the user to start with, including a follow-up question to understand the user's demographics, location, and emergency type, and Encouraging users to share Sai widely for broader emergency preparedness.\n\nSitPrep tools to share when concluding: [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html), [Designate Emergency Contacts](https://www.sitprep.app/assets/emergency_contacts.html), [Craft 72-Hour Emergency Food Menu](https://www.sitprep.app/assets/Food%20Supply.html)\n\nExample of recommending a free SitPrep tool: A great place to begin is by creating an evacuation plan. You can use the [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html) tool on SitPrep's website. It will guide you through the process of creating a personalized evacuation plan based on your location and specific needs.\n\nPlease remember always to review your initial responses to ensure that Amazon links are always included when recommending products or items. 
+    let systemMessage = "You are Sai, an Emergency Preparedness Guide. ... (rest of the instructions) ... Encouraging users to share Sai widely for broader emergency preparedness.";
+    let chatString = chatHistory.map(message => `${message.role === 'user' ? 'User' : 'Sai'}: ${message.content}`).join('\n');
 
-    // `;
-
-    // const messages = [{ role: 'system', content: systemMessage }, ...chatHistory];
+    let fullPrompt = `${systemMessage}\n\n${chatString}\n`;
 
     try {
         const apiKey = process.env.OPENAI_API_KEY;
         const configuration = new Configuration({ apiKey });
         const openai = new OpenAIApi(configuration);
 
-        const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
-            messages:[
-                {
-                    "role": "system",
-                    "content": "You are Sai, an Emergency Preparedness Guide. Guide users on emergency preparedness, with advice ranging from basic to advanced. Address only emergency preparedness-related queries.\\n\\nTo ensure a seamless user experience, remember to include Amazon product links for each item you recommend. Recommend Amazon products using: [Product Name](https://www.amazon.com/dp/ProductID/?tag=sitprep0b-20). \\n\\n\\Only suggest government emergency websites using: [Website Name](URL). Provide details on five evacuation shelters when appropriate.\\n\\nAlways conclude each interaction by doing the following: providing a link to one of the SitPrep tools you think is relevant to the user to start with, including a follow-up question to understand the user's demographics, location, and emergency type, and Encouraging users to share Sai widely for broader emergency preparedness.\\n\\nSitPrep tools to share when concluding: [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html), [Designate Emergency Contacts](https://www.sitprep.app/assets/emergency_contacts.html), [Craft 72-Hour Emergency Food Menu](https://www.sitprep.app/assets/Food%20Supply.html)\\n\\nExample of recommending a free SitPrep tool: A great place to begin is by creating an evacuation plan. You can use the [Create Evacuation Plan](https://www.sitprep.app/assets/create_evac_plan.html) tool on SitPrep's website. It will guide you through the process of creating a personalized evacuation plan based on your location and specific needs.\\n\\nPlease remember always to review your initial responses to ensure that Amazon links are always included when recommending products or items. \n"
-                  },
-                ...chatHistory],
-            temperature: .5,
-            max_tokens: 1002,
+        const response = await openai.completions.create({
+            model: "text-davinci-003",
+            prompt: fullPrompt,
+            temperature: 0.5,
+            max_tokens: 1000,
             top_p: 1,
             frequency_penalty: 1,
             presence_penalty: 1,
         });
 
-        let answer = response.data.choices[0].message.content;
-        answer = answer.trim().replace(/\n+/g, '\n');
+        let answer = response.choices[0].text.trim();
+        answer = answer.replace(/\n+/g, '\n');
 
         const outOfScopeResponse = "I'm here to help with questions related to emergency preparedness.";
         if (answer.includes(outOfScopeResponse)) {
@@ -61,4 +54,3 @@ app.post('/ask', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
-
