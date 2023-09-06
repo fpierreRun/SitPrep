@@ -352,44 +352,67 @@
 <hr>
     <label class="h5 my-4 txtBlu" id="saiIntro">Hello! I'm Sai. <span class="font-weight-bold txtGrn">Need guidance? Not sure where to start?</span> No worries! Choose a sample question or request below.</label>
 
-  <div id="samples" class="">
-    <select id="prompt-dropdown" class="p-3 mb-3 text-white rcorners bgBlu shadow-sm">
-        <option  value="0" selected>Choose a question or request to start...</option>
-
-        <!-- Combined prompts for beginners and basics -->
-        <optgroup label="Getting Started">
-            <option value="1">Hi Sai, I'm new to this. Where do I start?</option>
-            <option value="2">Can you help me draft a 3-day menu using shelf-stored items?</option>
-            <option value="3">What are the essentials for an emergency kit?</option>
-            <option value="4">How can I create a solid preparedness plan?</option>
-            <option value="5">Why is an emergency plan important?</option>
-            <option value="6">How do I involve my family in preparedness planning?</option>
-            <option value="7">Basic items for an emergency food kit?</option>
-            <option value="8">How much water should I store for emergencies?</option>
-            <option value="9">Best practices for safeguarding important documents?</option>
-        </optgroup>
-
-        <!-- Intermediate prompts -->
-        <optgroup label="Intermediate Insights">
-            <option value="10">How do I account for children and elderly during an emergency?</option>
-            <option value="11">Safety measures for pets during a disaster?</option>
-            <option value="12">Suggestions for reinforcing my home against natural disasters?</option>
-            <option value="13">Are there any useful apps for emergency preparedness?</option>
-            <option value="14">Can you explain short-term vs. long-term supplies?</option>
-        </optgroup>
-
-        <!-- Advanced prompts for the seasoned -->
-        <optgroup label="Advanced Strategies">
-            <option value="15">Tips on maintaining and rotating emergency food supplies?</option>
-            <option value="16">I want to support my community. How do I begin?</option>
-            <option value="17">Communication methods when cell service is down?</option>
-            <option value="18">Planning for a quick evacuation: any advice?</option>
-            <option value="19">Are there courses to improve my emergency preparedness skills?</option>
-            <option value="20">How can I educate others about emergency preparedness?</option>
-        </optgroup>
-    </select>
-</div>
-
+    <div id="samples" class="">
+      <select id="prompt-dropdown" class="p-3 mb-3 text-white rcorners bgBlu shadow-sm">
+          <option value="0" selected>Choose a question or request to start...</option>
+  
+          <!-- Combined prompts for beginners and basics -->
+          <optgroup label="Getting Started">
+              <option value="1">Hi Sai, I'm new to this. Where do I start?</option>
+              <option value="2">Can you help me draft a 3-day menu using shelf-stored items?</option>
+              <option value="3">What are the essentials for an emergency kit?</option>
+              <option value="4">How can I create a solid preparedness plan?</option>
+              <option value="5">Why is an emergency plan important?</option>
+              <option value="6">How do I involve my family in preparedness planning?</option>
+              <option value="7">Basic items for an emergency food kit?</option>
+              <option value="8">How much water should I store for emergencies?</option>
+              <option value="9">Best practices for safeguarding important documents?</option>
+          </optgroup>
+  
+          <!-- Intermediate prompts -->
+          <optgroup label="Intermediate Insights">
+              <option value="10">How do I account for children and elderly during an emergency?</option>
+              <option value="11">Safety measures for pets during a disaster?</option>
+              <option value="12">Suggestions for reinforcing my home against natural disasters?</option>
+              <option value="13">Are there any useful apps for emergency preparedness?</option>
+              <option value="14">Can you explain short-term vs. long-term supplies?</option>
+          </optgroup>
+  
+          <!-- Advanced prompts for the seasoned -->
+          <optgroup label="Advanced Strategies">
+              <option value="15">Tips on maintaining and rotating emergency food supplies?</option>
+              <option value="16">I want to support my community. How do I begin?</option>
+              <option value="17">Communication methods when cell service is down?</option>
+              <option value="18">Planning for a quick evacuation: any advice?</option>
+              <option value="19">Are there courses to improve my emergency preparedness skills?</option>
+              <option value="20">How can I educate others about emergency preparedness?</option>
+          </optgroup>
+  
+          <!-- Emergency Type Specific -->
+          <optgroup label="Emergency Type Specific">
+              <option value="21">How to prepare for flooding in my area?</option>
+              <option value="22">Best practices for earthquake safety and preparedness?</option>
+              <option value="23">What to do during prolonged power outages?</option>
+              <option value="24">Safety measures for pandemic situations?</option>
+          </optgroup>
+  
+          <!-- Frequent Concerns -->
+          <optgroup label="Frequent Concerns">
+              <option value="25">How much will preparing for an emergency cost me?</option>
+              <option value="26">Can I rely on the government or charities during an emergency?</option>
+              <option value="27">I live in an apartment. How do I prepare?</option>
+          </optgroup>
+  
+          <!-- Mental & Psychological Preparedness -->
+          <optgroup label="Mental & Psychological Preparedness">
+              <option value="28">How do I cope with anxiety about emergencies?</option>
+              <option value="29">Talking to children about emergency situations without scaring them?</option>
+              <option value="30">Building mental resilience for tough times?</option>
+          </optgroup>
+  
+      </select>
+  </div>
+  
 
   
     <div id="showResponse" class=" pb-3" hidden>
