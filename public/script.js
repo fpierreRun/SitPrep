@@ -77,6 +77,8 @@ function askQuestion() {
     const question = questionInput.value;
 
     if (!question.trim()) {
+         // Remove the 'hidden' attribute from the promptBox
+         document.getElementById('promptBox').removeAttribute('hidden');
         const responseElement = document.getElementById('response');
         
         // Wrap the error message in a div with the 'ml-2' class
