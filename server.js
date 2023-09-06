@@ -61,7 +61,7 @@ To wrap up each response, include a follow-up question to gain a deeper understa
             model: "gpt-3.5-turbo",
             messages: messages,
             temperature: 1,
-            max_tokens: 2000,
+            max_tokens: 1000,
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
