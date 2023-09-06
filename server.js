@@ -14,12 +14,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/ask', async (req, res) => {
-    const chatHistory = req.body.chatHistory;
+    const latestUserMessage = req.body.latestMessage;
 
     let systemMessage = "You are Sai, an Emergency Preparedness Guide. ... (rest of the instructions) ... Encouraging users to share Sai widely for broader emergency preparedness.";
-    let chatString = chatHistory.map(message => `${message.role === 'user' ? 'User' : 'Sai'}: ${message.content}`).join('\n');
 
-    let fullPrompt = `${systemMessage}\n\n${chatString}\n`;
+    let fullPrompt = `${systemMessage}\n\nUser: ${latestUserMessage}\n`;
 
     try {
         const apiKey = process.env.OPENAI_API_KEY;
