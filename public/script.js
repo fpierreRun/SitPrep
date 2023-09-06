@@ -122,7 +122,8 @@ function askQuestion() {
             
             // Wrap the error message in a div with the 'ml-2' class
             responseElement.innerHTML = `<div class="px-3">An error occurred. Please try again.</div>`;
-            
+            // Remove the 'hidden' attribute from the promptBox
+            document.getElementById('promptBox').removeAttribute('hidden');
             stopLoadingIndicator();
         }
         
