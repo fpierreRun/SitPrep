@@ -1,6 +1,7 @@
 // script.js
 let loadingInterval;
 let chatHistory = [];
+const inputField = document.getElementById("question");
 
 function startLoadingIndicator() {
     if (loadingInterval) {
@@ -138,7 +139,37 @@ function showResponseBox() {
     document.getElementById("promptBox").hidden = true;
     window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
   }
-  
+ 
+  document.getElementById('prompt-dropdown').addEventListener('change', (event) => {
+    if (event.target.value !== "0") {
+        const selectedText = event.target.options[event.target.selectedIndex].text;
+        updateInputField(selectedText);
+        event.preventDefault();
+        askQuestion();
+        hideElements();
+        showResponseBox(); // Call the show responsebox function
+    }
+});
+
+// ...
+
+function updateInputField(text) {
+    const lines = text.split('\n');
+    // If there are multiple lines, add each line with a line break
+    if (lines.length > 1) {
+        inputField.value = lines.join('\n');
+    } else {
+        inputField.value = text;
+    }
+
+    // Add the resizeTextarea function or ensure it exists elsewhere in your code
+    function resizeTextarea() {
+        inputField.style.height = "auto";
+        inputField.style.height = inputField.scrollHeight + "px";
+    }
+    resizeTextarea();
+}
+
 document.getElementById('submitBtn').addEventListener('click', (event) => {
    
         event.preventDefault();
@@ -181,3 +212,74 @@ function hideElements() {
         textarea.focus();
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.getElementById("question");
+   
+    // Existing code to dynamically adjust textarea height
+    const textArea = document.querySelector(".input-field");
+    const submitButton = document.getElementById("submitBtn");
+    const initialPaddingTop = 20;
+    let rows = 1;
+
+    textArea.addEventListener("input", () => {
+        resizeTextarea();
+    });
+
+    function resizeTextarea() {
+        textArea.style.height = "auto";
+        textArea.style.height = textArea.scrollHeight + "px";
+        
+        // Calculate number of rows based on scroll height
+        const currentRows = Math.floor(textArea.scrollHeight / parseFloat(getComputedStyle(textArea).lineHeight));
+        
+        // Adjust padding when rows increase or decrease
+        if (currentRows > rows) {
+            rows = currentRows;
+            submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
+        } else if (currentRows < rows) {
+            rows = currentRows;
+            submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
+        }
+    }
+});
+
+        document.getElementById('copyButton').addEventListener('click', function () {
+    const responseText = document.getElementById('response').textContent;
+    
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = responseText;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    // Change the button text temporarily to show copied status
+    const copyButton = document.getElementById('copyButton');
+    const originalText = copyButton.innerHTML;
+    copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
+    setTimeout(() => {
+        copyButton.innerHTML = originalText;
+    }, 1500); // Change back to original text after 1.5 seconds
+});
+
+
+
+function resizeTextarea() {
+    const textarea = document.getElementById('question');
+    
+    // Resetting the height to its default
+    textarea.style.height = "auto";
+
+    // Setting it to its scroll height
+    textarea.style.height = textarea.scrollHeight + "px";
+}
+document.getElementById('question').addEventListener('input', resizeTextarea);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const textarea = document.getElementById("question");
+    if (textarea) {
+        textarea.focus();
+    }
+});

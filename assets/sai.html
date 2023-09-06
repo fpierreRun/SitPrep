@@ -344,7 +344,7 @@
         <div class="d-flex ">
           <img class="mt-3 img-fluid" src="./images/Sai-2.png" width="400px"   alt="" />
          </div>
-      <!-- <h1 class="mt-5 display-5 txtBlu txtImpact">Sai at Your Service</h1> -->
+      
       <h4 class=" txtBlu  font-weight-light">Guiding you every step of the way</h1>
       </div>
     
@@ -352,42 +352,45 @@
 <hr>
     <label class="h5 my-4 txtBlu" id="saiIntro">Hello! I'm Sai. <span class="font-weight-bold txtGrn">Need guidance? Not sure where to start?</span> No worries! Choose a sample question or request below.</label>
 
-    <div class="container-fluid" id="samples">
-      <div class="row">
-          <div class="col-lg-6 my-2 rcorners">
-              <button class="btn btn-outline-secondary prompt text-left w-100 rcorners emPlanGA">
-                <div class="txtBlu font-weight-bold">Hello Sai! I'm new to this.</div><div> Where do I start?.</div>
-                  
-              </button>
-          </div>
-          <div class="col-lg-6 my-2">
-            <button class="btn btn-outline-secondary prompt text-left w-100 rcorners recipeGA">
-                <div class="txtBlu font-weight-bold">What meals can I make with the following items:</div><div> chicken, broccoli, and rice?</div>
+  <div id="samples" class="">
+    <select id="prompt-dropdown" class="p-3 mb-3 text-white rcorners bgBlu shadow-sm">
+        <option  value="0" selected>Choose a question or request to start...</option>
 
-               
-            </button>
-        </div>
-         
-          <!-- Add more prompts here -->
-      </div>
-      <div class="row phone-block rcorners">
-        <div class="col-lg-6 my-2 rcorners">
-          <button class="btn btn-outline-secondary prompt text-left w-100 rcorners itemsGA">
-            <div class="txtBlu font-weight-bold">Generate a list of essential items </div><div>I need to be prepared for an emergency.</div>
-              
-             
-          </button>
-      </div>
-          <div class="col-lg-6 my-2 rcorners">
-              <button class="btn btn-outline-secondary prompt text-left w-100 rcorners knowGA">
-                 <div class="txtBlu font-weight-bold">What should I know</div><div> in order to create a preparedness plan?</div>
-                  
-              </button>
-          </div>
-          <!-- Add more prompts here -->
-      </div>
-  </div>
-  
+        <!-- Combined prompts for beginners and basics -->
+        <optgroup label="Getting Started">
+            <option value="1">Hi Sai, I'm new to this. Where do I start?</option>
+            <option value="2">Can you help me draft a 3-day menu using shelf-stored items?</option>
+            <option value="3">What are the essentials for an emergency kit?</option>
+            <option value="4">How can I create a solid preparedness plan?</option>
+            <option value="5">Why is an emergency plan important?</option>
+            <option value="6">How do I involve my family in preparedness planning?</option>
+            <option value="7">Basic items for an emergency food kit?</option>
+            <option value="8">How much water should I store for emergencies?</option>
+            <option value="9">Best practices for safeguarding important documents?</option>
+        </optgroup>
+
+        <!-- Intermediate prompts -->
+        <optgroup label="Intermediate Insights">
+            <option value="10">How do I account for children and elderly during an emergency?</option>
+            <option value="11">Safety measures for pets during a disaster?</option>
+            <option value="12">Suggestions for reinforcing my home against natural disasters?</option>
+            <option value="13">Are there any useful apps for emergency preparedness?</option>
+            <option value="14">Can you explain short-term vs. long-term supplies?</option>
+        </optgroup>
+
+        <!-- Advanced prompts for the seasoned -->
+        <optgroup label="Advanced Strategies">
+            <option value="15">Tips on maintaining and rotating emergency food supplies?</option>
+            <option value="16">I want to support my community. How do I begin?</option>
+            <option value="17">Communication methods when cell service is down?</option>
+            <option value="18">Planning for a quick evacuation: any advice?</option>
+            <option value="19">Are there courses to improve my emergency preparedness skills?</option>
+            <option value="20">How can I educate others about emergency preparedness?</option>
+        </optgroup>
+    </select>
+</div>
+
+
   
     <div id="showResponse" class=" pb-3" hidden>
 
@@ -412,7 +415,7 @@
     <label class="txtBlu ml-2  font-weight-bold" id="assist">How can I assist you?</label>
     <div class=" d-flex mb-3">
       
-      <textarea class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Send your question or request here..." rows="1"></textarea>
+      <textarea class="form-control input-field bg-white txtBlu border-0" id="question" placeholder="Insert your question or request here..." rows="1"></textarea>
       <button type="button" class="btn  rcorners askSaiGA"  id="submitBtn" ><span class="material-icons txtGrn">
         send
         </span></button>
@@ -449,96 +452,7 @@
   <!-- Include the client-side script for user interaction -->
   <script src="../public/script.js"></script>
   <script src="./js/share_sitprep.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const inputField = document.getElementById("question");
-    const promptButtons = document.querySelectorAll(".prompt");
 
-    promptButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const buttonText = button.textContent.trim();
-            const lines = buttonText.split('\n');
-
-            // If there are multiple lines, add each line with a line break
-            if (lines.length > 1) {
-                inputField.value = lines.join('\n');
-            } else {
-                inputField.value = buttonText;
-            }
-
-                  // Resize the textarea after setting its value
-                  resizeTextarea();
-        });
-    });
-});
-
-
-    // Dynamically adjust textarea height as the user types
-    const textArea = document.querySelector(".input-field");
-        const submitButton = document.getElementById("submitBtn");
-        const initialPaddingTop = 20;
-        let rows = 1;
-
-        textArea.addEventListener("input", () => {
-            textArea.style.height = "auto";
-            textArea.style.height = textArea.scrollHeight + "px";
-            
-            // Calculate number of rows based on scroll height
-            const currentRows = Math.floor(textArea.scrollHeight / parseFloat(getComputedStyle(textArea).lineHeight));
-            
-            // Adjust padding when rows increase or decrease
-            if (currentRows > rows) {
-                rows = currentRows;
-                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
-            } else if (currentRows < rows) {
-                rows = currentRows;
-                submitButton.style.marginTop = `${initialPaddingTop + (rows - 1) * 10}px`;
-            }
-        });
-
-        document.getElementById('copyButton').addEventListener('click', function () {
-    const responseText = document.getElementById('response').textContent;
-    
-    const tempInput = document.createElement('input');
-    document.body.appendChild(tempInput);
-    tempInput.value = responseText;
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-
-    // Change the button text temporarily to show copied status
-    const copyButton = document.getElementById('copyButton');
-    const originalText = copyButton.innerHTML;
-    copyButton.innerHTML = '<span class="material-symbols-outlined pr-1">check</span> Copied!';
-    setTimeout(() => {
-        copyButton.innerHTML = originalText;
-    }, 1500); // Change back to original text after 1.5 seconds
-});
-
-
-
-
-
-
-function resizeTextarea() {
-    const textarea = document.getElementById('question');
-    
-    // Resetting the height to its default
-    textarea.style.height = "auto";
-
-    // Setting it to its scroll height
-    textarea.style.height = textarea.scrollHeight + "px";
-}
-document.getElementById('question').addEventListener('input', resizeTextarea);
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const textarea = document.getElementById("question");
-    if (textarea) {
-        textarea.focus();
-    }
-});
-</script>
   
 </body>
 
