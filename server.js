@@ -30,7 +30,7 @@ app.post('/ask', async (req, res) => {
             model: "text-davinci-003",
             prompt: fullPrompt,
             temperature: 0.5,
-            max_tokens: 1000,
+            max_tokens: 3000,
             top_p: 1,
             frequency_penalty: 1,
             presence_penalty: 1,
