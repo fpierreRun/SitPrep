@@ -113,14 +113,14 @@ function askQuestion() {
             // Display the chat history in the response box
             document.getElementById('response').innerHTML = formattedChatHistory;
 
-            // Scroll to the bottom of the response box
-            scrollToBottom();
-
             questionInput.value = ''; // Clear the input field
             stopLoadingIndicator();
 
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
+
+            // Scroll to the bottom of the response box
+            scrollToBottom();
         },
        
         error: function() {
