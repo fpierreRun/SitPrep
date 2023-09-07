@@ -69,12 +69,12 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    window.scroll({
-        top: document.body.scrollHeight,
-        left: 0,
-        behavior: 'smooth'
-    });
+    $('html, body').animate({
+        scrollTop: $(document).height() - $(window).height()
+    }, 2000);
 }
+
+
 
 
 function askQuestion() {
