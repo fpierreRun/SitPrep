@@ -72,7 +72,7 @@ function scrollToBottom() {
     // Wait for a short duration (e.g., 100 milliseconds) before scrolling
     setTimeout(() => {
         window.scrollTo(0, document.body.scrollHeight);
-    }, 100);
+    }, 1000);
 }
 
 
