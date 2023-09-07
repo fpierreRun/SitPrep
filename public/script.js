@@ -128,9 +128,10 @@ function askQuestion() {
     
             // Remove the 'hidden' attribute from the promptBox
             $('#promptBox').removeClass('d-none');
-    
-            // Scroll to the bottom
-            scrollToBottom();
+            
+            if (chatHistory.length > 2) {
+                scrollToBottom();
+            }
         },
        
         error: function() {
