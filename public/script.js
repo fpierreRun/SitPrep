@@ -69,11 +69,13 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    // Wait for a short duration (e.g., 100 milliseconds) before scrolling
-    setTimeout(() => {
-        window.scrollTo(0, document.body.scrollHeight);
-    }, 1000);
+    window.scroll({
+        top: document.body.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+    });
 }
+
 
 
 function askQuestion() {
