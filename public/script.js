@@ -2,6 +2,7 @@
 let loadingInterval;
 let chatHistory = [];
 const inputField = document.getElementById("question");
+const question = inputField.value;
 
 function startLoadingIndicator() {
     if (loadingInterval) {
@@ -77,22 +78,21 @@ function scrollToBottom() {
 
 
 function askQuestion() {
-    const questionInput = document.getElementById('question');
-    const question = questionInput.value;
+  if (!question.trim()) {
 
-    if (!question.trim()) {
-         // Remove the 'hidden' attribute from the promptBox
-         document.getElementById('promptBox').removeAttribute('hidden');
         const responseElement = document.getElementById('response');
         
-        // Wrap the error message in a div with the 'ml-2' class
+        // Wrap the error message in a div with the 'px-3' class
         responseElement.innerHTML = `<div class="px-3">Please enter a valid question or request.</div>`;
+         // Make sure the promptBox is visible
         
-        // Remove the 'hidden' attribute from the promptBox
-        document.getElementById('promptBox').removeAttribute('hidden');
+
+
+
         return;
     }
     
+   
 
     startLoadingIndicator();
 
@@ -117,7 +117,7 @@ function askQuestion() {
             stopLoadingIndicator();
     
             // Remove the 'hidden' attribute from the promptBox
-            document.getElementById('promptBox').removeAttribute('hidden');
+            $('#promptBox').removeClass('d-none');
     
             // Scroll to the bottom
             scrollToBottom();
@@ -129,7 +129,7 @@ function askQuestion() {
             // Wrap the error message in a div with the 'ml-2' class
             responseElement.innerHTML = `<div class="px-3">An error occurred. Please try again.</div>`;
             // Remove the 'hidden' attribute from the promptBox
-            document.getElementById('promptBox').removeAttribute('hidden');
+            $('#promptBox').removeClass('d-none');
             stopLoadingIndicator();
         }
         
@@ -139,7 +139,9 @@ function askQuestion() {
   
 function showResponseBox() {
     document.getElementById('showResponse').removeAttribute('hidden');
-    document.getElementById("promptBox").hidden = true;
+    // document.getElementById("promptBox").style.display = "none";
+
+
     window.scrollTo(0, document.body.scrollHeight); // Scroll to the bottom
   }
  
@@ -195,7 +197,7 @@ document.getElementById('question').addEventListener('keydown', (event) => {
 
 function hideElements() {
     // List of IDs to be hidden
-    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1"];
+    const idsToHide = ["samples", "assist", "saiIntro", "saiHeader1", ];
 
     // Iterate through each ID and add the 'd-none' class
     idsToHide.forEach(id => {
@@ -205,6 +207,8 @@ function hideElements() {
         }
     });
 
+    
+    
     const saiHeader2 = document.getElementById('saiHeader2');
     if (saiHeader2) {
         saiHeader2.classList.remove('d-none');
@@ -286,3 +290,4 @@ document.addEventListener("DOMContentLoaded", function() {
         textarea.focus();
     }
 });
+
