@@ -65,9 +65,17 @@ function formatAssistantResponse(response) {
     return formattedLines.join('<br><br>'); // Add line breaks between paragraphs, points, or sections
 }
 
-$('html, body').animate({
-    scrollTop: $(document).height() - $(window).height()
-}, 1000, 'linear'); // Adjust the duration as needed
+
+
+
+function scrollToBottom() {
+    $('html, body').animate({
+        scrollTop: $(document).height() - $(window).height()
+    }, 1000, 'linear'); // Adjust the duration as needed
+    
+}
+
+
 
 
 function askQuestion() {
