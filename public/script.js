@@ -69,7 +69,7 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    const responseBox = document.getElementById('showResponse');
+    const responseBox = document.getElementById('engageSai');
     
     // Smoothly scroll to the bottom over a 1 second period
     responseBox.scroll({ top: responseBox.scrollHeight, behavior: 'smooth' });
