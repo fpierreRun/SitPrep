@@ -69,7 +69,7 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    $('body').scrollTo('#someElement', 500, {
+    $('body').scrollTo('#showResponse', 500, {
         duration: 3000,
         axis: 'y',
         offset: -20,
