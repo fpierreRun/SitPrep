@@ -69,10 +69,10 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    const responseBox = document.getElementById('engageSai');
-    
-    // Smoothly scroll to the bottom over a 1 second period
-    responseBox.scroll({ top: responseBox.scrollHeight, behavior: 'smooth' });
+    // Wait for a short duration (e.g., 100 milliseconds) before scrolling
+    setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+    }, 100);
 }
 
 
@@ -107,19 +107,19 @@ function askQuestion() {
         success: function(response) {
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
-
+    
             const formattedChatHistory = formatResponse(chatHistory);
-
+    
             // Display the chat history in the response box
             document.getElementById('response').innerHTML = formattedChatHistory;
-
+    
             questionInput.value = ''; // Clear the input field
             stopLoadingIndicator();
-
+    
             // Remove the 'hidden' attribute from the promptBox
             document.getElementById('promptBox').removeAttribute('hidden');
-
-            // Scroll to the bottom of the response box
+    
+            // Scroll to the bottom
             scrollToBottom();
         },
        
