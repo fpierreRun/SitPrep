@@ -98,8 +98,10 @@ function askQuestion() {
     }
     
    
-
+    $('#promptBox').addClass('d-none');
     startLoadingIndicator();
+
+    
 
     // Append the user's message to chat history (remove the duplicated push)
     chatHistory.push({ role: 'user', content: question });
@@ -110,7 +112,7 @@ function askQuestion() {
         contentType: 'application/json',
         data: JSON.stringify({ chatHistory }),
         success: function(response) {
-            $('#promptBox').addClass('d-none');
+            
 
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
