@@ -70,7 +70,7 @@ function formatAssistantResponse(response) {
 
 function scrollToBottom() {
     $(document).ready(function() {
-        $('body, html').scrollTo(document.body.scrollHeight, 3000);
+        $('body, html').scrollTo(document.body.scrollHeight, 1500);
     });
     
     
