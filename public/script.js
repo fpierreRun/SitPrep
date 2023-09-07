@@ -71,7 +71,7 @@ function formatAssistantResponse(response) {
 function scrollToBottom() {
     $('html, body').animate({
         scrollTop: $(document).height() - $(window).height()
-    }, 3500);
+    }, 1000);
 }
 
 
