@@ -71,7 +71,7 @@ function formatAssistantResponse(response) {
 function scrollToBottom() {
     $('html, body').animate({
         scrollTop: $(document).height() - $(window).height()
-    }, 1000);
+    }, 7000);
 }
 
 
@@ -128,7 +128,7 @@ function askQuestion() {
     
             // Remove the 'hidden' attribute from the promptBox
             $('#promptBox').removeClass('d-none');
-            
+
             if (chatHistory.length > 2) {
                 scrollToBottom();
             }
