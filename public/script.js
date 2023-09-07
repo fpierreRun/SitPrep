@@ -69,15 +69,10 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    $('body').scrollTo('#showResponse', 500, {
-        duration: 3000,
-        axis: 'y',
-        offset: -20,
-        easing: 'swing',
-        onAfter: function() {
-            console.log("Finished scrolling!");
-        }
+    $(document).ready(function() {
+        $('body, html').scrollTo(document.body.scrollHeight, 3000);
     });
+    
     
 }
 
