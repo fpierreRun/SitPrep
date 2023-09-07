@@ -124,7 +124,7 @@ function askQuestion() {
             stopLoadingIndicator();
     
             // Remove the 'hidden' attribute from the promptBox
-            $('#promptBox').removeClass('d-none');
+            // $('#promptBox').removeClass('d-none');
     
             // Scroll to the bottom
             scrollToBottom();
