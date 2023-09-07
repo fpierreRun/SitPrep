@@ -2,7 +2,6 @@
 let loadingInterval;
 let chatHistory = [];
 const inputField = document.getElementById("question");
-const question = inputField.value;
 
 function startLoadingIndicator() {
     if (loadingInterval) {
@@ -78,7 +77,13 @@ function scrollToBottom() {
 
 
 function askQuestion() {
-  if (!question.trim()) {
+    const questionInput = document.getElementById('question');
+    const question = questionInput.value;
+
+   
+    if (!question.trim()) {
+
+        
 
         const responseElement = document.getElementById('response');
         
@@ -105,6 +110,8 @@ function askQuestion() {
         contentType: 'application/json',
         data: JSON.stringify({ chatHistory }),
         success: function(response) {
+            $('#promptBox').addClass('d-none');
+
             // Append the AI's message to chat history
             chatHistory.push({ role: 'assistant', content: response });
     
@@ -207,8 +214,6 @@ function hideElements() {
         }
     });
 
-    
-    
     const saiHeader2 = document.getElementById('saiHeader2');
     if (saiHeader2) {
         saiHeader2.classList.remove('d-none');
