@@ -69,11 +69,16 @@ function formatAssistantResponse(response) {
 
 
 function scrollToBottom() {
-    window.scroll({
-        top: document.body.scrollHeight,
-        left: 0,
-        behavior: 'smooth'
+    $('body').scrollTo('#someElement', 500, {
+        duration: 3000,
+        axis: 'y',
+        offset: -20,
+        easing: 'swing',
+        onAfter: function() {
+            console.log("Finished scrolling!");
+        }
     });
+    
 }
 
 
