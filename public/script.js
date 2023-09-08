@@ -65,18 +65,12 @@ function formatAssistantResponse(response) {
     return formattedLines.join('<br><br>'); // Add line breaks between paragraphs, points, or sections
 }
 
-
-
-
 function scrollToBottom() {
     $('html, body').animate({
         scrollTop: $(document).height() - $(window).height()
-    }, 3000, 'linear'); // Adjust the duration as needed
+    }, 6000, 'linear'); // Adjust the duration as needed
     
 }
-
-
-
 
 function askQuestion() {
     const questionInput = document.getElementById('question');
@@ -84,8 +78,6 @@ function askQuestion() {
 
    
     if (!question.trim()) {
-
-        
 
         const responseElement = document.getElementById('response');
         
@@ -102,8 +94,6 @@ function askQuestion() {
    
     $('#promptBox').addClass('d-none');
     startLoadingIndicator();
-
-    
 
     // Append the user's message to chat history (remove the duplicated push)
     chatHistory.push({ role: 'user', content: question });

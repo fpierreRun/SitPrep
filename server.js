@@ -30,7 +30,7 @@ app.post('/ask', async (req, res) => {
             model: "gpt-3.5-turbo",
             messages: messages,
             temperature: 1,
-            max_tokens: 3000,
+            max_tokens: 1500,
             top_p: 1,
             frequency_penalty: 1,
             presence_penalty: 1,
