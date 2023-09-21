@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFZDLN5');</script>
+  <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,1,200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/"> -->
+    <link rel="icon" href="./images/Sitprep Favicon Green.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Emergency Meal Plan</title>
+</head>
+
+
+
+
+<body class="grnOppate">
+  <header>
+    <nav class="navbar  recBlu fixed-top">
+      <div class="container-fluid">
+       
+          
+            <div class="  px-3 my-2" >
+              <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+            </div> 
+       
+         
+          <div class="d-flex align-items-center justify-content-end  ">
+          
+          <!-- <div class=" text-center"> -->
+            <!-- Load Facebook SDK for JavaScript -->
+            <!-- <div id="fb-root"></div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> Include jQuery -->
+      
+      
+            <!-- Your share button code -->
+            <!-- <div class="fb-share-button" 
+                 data-href="https://www.sitprep.app" 
+                 data-layout="button_count">
+            </div>
+ 
+            <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+            <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+      
+            <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+      
+            <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+            <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+          </div> -->
+
+         <!-- </div> -->
+
+        <button class="navbar-toggler bg-white  txtLiteOrg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon text-white bg-white "></span>
+        </button>
+        <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header recBlu">
+            <div class="  mt-3" >
+              <img class="  " src="./images/SitPrep Logo White.png"  width="150" alt="" />
+            </div> 
+            <button type="button" class="btn-close text-white bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <!-- <div  class="  d-flex text-white justify-content-center recBlu">
+                    
+            <a href="" class="text-white text-center" data-toggle="modal" data-target="#updateName" >Update Name</a>
+         
+          </div> -->
+
+          <div class="offcanvas-body recBlu">
+            <p class="fs-4 text-white font-weight-bold pt-4">Emergency Plan</p>
+            <div  class="pl-2 my-2 d-flex text-white rounded orgOppate ">
+              <span class="material-icons pr-3 text-white ">
+                dashboard
+                </span>
+              <a class="pl-2 text-white d-flex btn font-weight-bold "  href="./dashboard Main.html">Overview</a>
+               
+            </div>
+            
+
+            <div  class="my-2  pl-2 d-flex txtOppate">
+              <span class="material-icons pr-3 txtOppate">
+                kitchen
+                </span>
+              <a class="pl-2 txtOppate nav-link "   href="./Food Supply.html" role="tab" >Create Food Supply</a>
+              
+            </div>
+
+
+            <div  class="my-2 pl-2 d-flex txtOppate rounded  evacForm"  >
+              <span class="material-icons pr-3 txtOppate">
+                map
+                </span>
+              <a class="pl-2 txtOppate nav-link "  href="./create_evac_plan.html" >Plan Evacuation</a>
+              
+            </div>
+
+            <div  class="my-2 pl-2 d-flex txtOppate rounded " >
+              <span class="material-icons pr-3 txtOppate">
+                <span class="material-icons">
+                  contact_phone
+                  </span>
+                </span>
+              <a class="pl-2 txtOppate d-flex nav-link  "  href="./emergency_contacts.html" >Emergency Contacts</a>
+              
+            </div>
+
+
+            <div  class="my-2   pl-2 d-flex txtOppate ">
+              <span class="material-icons pr-3 txtOppate">
+                backpack
+                </span>
+              <a class="pl-2 txtOppate d-flex nav-link "   href="./Additional_Supplies.html" role="tab" >Additional Supplies</a>
+              
+            </div>
+            
+          <p class="fs-4 txtOppate pt-4">Long Term</p>
+
+          <!-- <div  class=" pl-2 d-flex txtOppate">
+            <span class="material-icons pr-3 txtOppate">
+              
+              tips_and_updates
+            </span>
+              <a class="pl-2 txtOppate btn" id="v-pills-settings-tab" data-toggle="pill" href="./being_prepared.html" >Tips & Tricks</a>
+            
+          </div> -->
+          
+           
+              <div  class="my-2   pl-2 d-flex txtOppate">
+                <span class="material-icons pr-3 txtOppate">
+                
+                  food_bank
+                  </span>
+            <a href="../assets/storageCalc.html" class="nav-link  pl-2 txtOppate d-flex">
+              Food Storage</a>
+              </div>
+
+              <p class="fs-4 txtOppate pt-4 " >Info</p>
+
+              <!-- <div  class=" pl-2 d-flex txtOppate">
+                <span class="material-icons pr-3 txtOppate">
+                  
+                  tips_and_updates
+                </span>
+                
+                 
+              </div> -->
+              <div  class="my-2   pl-2 d-flex txtOppate">
+                <span class="material-icons pr-3 txtOppate">
+              
+                  <span class="material-symbols">
+                    support_agent
+                    </span>
+                  </span>
+                <a class="pl-2 txtOppate d-flex nav-link " href="../assets/sai.html" >Ask Sai</a>
+              </div>
+              <div  class="my-2   pl-2 d-flex txtOppate">
+                <span class="material-icons pr-3 txtOppate">
+              
+                  emoji_emotions
+                  </span>
+                <a class="pl-2 txtOppate d-flex nav-link " href="https://g.page/r/CcCOilHmZderEB0/review" target="_blank">Was This Tool Helpful?</a>
+              </div>
+          
+              <div  class="my-2   pl-2 d-flex txtOppate">
+                <span class="mb-3 material-icons  txtOppate">
+                  <span class="material-icons txtOppate">
+                    contact_mail
+                    </span>
+                  </span>
+                  <ul class=" text-left dropdown ">
+
+                    <a class=" txtOppate dropdown-toggle nav-link  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Contact Us
+                    </a>
+                    <div class="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/groups/2648649645427351/" target="_blank">SitPrep Community</a>
+                      <a class="dropdown-item homenav text-secondary" href="https://www.instagram.com/sit.prep/" target="_blank">SitPrep On Instragram</a>
+                      <a class="dropdown-item homenav text-secondary" href="https://www.facebook.com/SitPrep" target="_blank">SitPrep On Facebook</a>
+                      
+                    </div>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-fluid mt-5 txtBlu">
+        
+
+    <!-- Button trigger modal -->
+    
+
+     <!-- Mobile Modal begin -->
+     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="pb-4 modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title font-weight-bold" id="exampleModalCenterTitle">Share SitPrep</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="d-flex align-items-center justify-content-center ">
+             
+             <div class=" text-center">
+               <!-- Load Facebook SDK for JavaScript -->
+               <div id="fb-root"></div>
+               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+         
+         
+               <!-- Your share button code -->
+               <div class="fb-share-button" 
+                   data-href="https://www.sitprep.app" 
+                   data-layout="button_count">
+               </div>
+               <button class="rounded-circle btn btn-white share-button" onclick="shareViaText()"><img src="./images/icons8-messages.svg" alt=""></button>
+               <a class="rounded-circle btn btn-white share-button" href="https://www.linkedin.com/feed/?shareActive&mini=true&text=Hey friends! I just discovered this amazing website called SitPrep that can help us be ready for emergencies. It provides resources, tools, and guidance to create a comprehensive 3 day emergency plan. Let's be proactive in safeguarding our well-being and that of our loved ones. Join me on this journey! Check it out: https://www.sitprep.app #sitprep #getprepared" target="_blank"><img src="./images/icons8-linkedin.svg" alt=""></a>
+         
+               <a class="rounded-circle btn btn-white share-button" href="https://twitter.com/intent/tweet?url=https://www.sitprep.app&text=Hey%20friends!%20I%20just%20discovered%20this%20amazing%20website%20called%20SitPrep%20that%20can%20help%20us%20be%20ready%20for%20any%20emergency.%20It%20provides%20resources,%20tools,%20and%20guidance%20to%20create%20a%20comprehensive%20emergency%20plan.%20Let's%20be%20proactive%20in%20safeguarding%20our%20well-being%20and%20that%20of%20our%20loved%20ones.%20Join%20me%20on%20this%20journey!%20Check%20it%20out:%20https://www.sitprep.app%20%23SitPrep" target="_blank"><img src="./images/icons8-twitter.svg" alt=""></a>
+         
+               <button class="rounded-circle btn btn-white share-button" onclick="shareViaEmail()"><img src="./images/icons8-gmail-logo.svg" alt=""></button>
+               <button class="rounded-circle btn btn-white " onclick="shareOnReddit()"><img src="./images/icons8-reddit.svg" alt=""></button>
+             </div>
+           </div>
+           </div>
+           
+         </div>
+       </div>
+     </div>
+     <!-- Mobile Modal End-->
+
+     
+  
+     <hr class="text-white">
+
+     <div class="d-flex justify-content-between  align-items-center my-4 mt-5">
+      <div class="d-flex align-items-center ">
+        <h2 class=" txtImpact  mr-4 font-weight-bold txtGrn ">EMERGENCY MEAL PLAN </h2>
+      </div>
+      <div class=" d-flex  justify-content-end ">
+        <button type="button" class="rounded-pill btn-sm btn btn-primary font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter">
+          Share<img class="ml-2 mb-1" height="25px" src="./images/icons8-share-50.png" alt=""> 
+        </button>
+      </div>
+  </div>
+     
+       <div class=" container">
+     
+         <div class="shadow rcorners bg-white mt-5">
+     
+           <p class="text-center font-weight-bolder display-6 pt-3 txtImpact txtBlu dashBlock">Welcome<span class="" id="displayname"></span>!</p>
+           <p class="text-center font-weight-bolder display-6 pt-3 txtImpact txtBlu continueDash d-none">Good job<span class="" id="displayname"></span>!</p>
+           <p class="text-center font-weight-bolder display-6 pt-3 txtImpact txtBlu d-none completeDash">Congratulations<span class="" id="displayname"></span>!</p>
+     
+     
+           <p class="text-center font-weight-bolder h2 robotoFnt text-warning dashBlock px-2">Let's begin by creating your emergency plan.</p>
+           <p class="text-center font-weight-bolder h2 robotoFnt txtBlu continueDash d-none">Keep up the good work.</p>
+           <p class="text-center font-weight-bolder h2 robotoFnt txtBlu completeDash d-none pb-2 px-2">Well done on completing your plan!</p>
+     
+           <p class="text-center font-weight-light fs-4 robotoFnt dashBlock px-2">Choose any step below that you're ready to complete.</p>
+           <p class="text-center font-weight-light fs-4 robotoFnt continueDash d-none px-2">Now, select any step below that you're ready to tackle next.</p>
+           <p class="text-center font-weight-light fs-4 robotoFnt completeDash d-none px-4">Remember to refine your 72hr plan as circumstances and family dynamics evolve. Stay safe and prepared with SitPrep.</p>
+     
+           <section class="row text-center">
+
+     <!--step 2 muted begin-->
+     <main class="col-lg-3">
+       <a class="btn d-flex justify-content-left align-items-center step2M" href="./Food Supply.html">
+       <div class="d-flex py-3" id="step2M">
+         <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
+           <span class="material-symbols-outlined text-success">
+             kitchen
+           </span>
+         </div>
+     
+         <div class="d-flex justify-content-center align-items-center">
+           <p class="pt-1 pl-3 font-weight-bold h5 txtBlu">72Hr Food Menu</p>
+         </div>
+     
+       </div>
+     </a>
+     
+     <!--Step 2 muted ends-->
+     
+     <!--Step 2 complete begin-->
+     
+     <a class="d-none btn d-flex justify-content-left align-items-center step2C" href="./Food Supply.html">
+       <div class="d-flex py-3" id="step2C">
+     
+         <div class="shadow-sm recBlu circle circleBdr justify-content-center align-items-center d-flex">
+           <span class="material-symbols-rounded text-light">
+             done
+           </span>
+         </div>
+     
+         <div class="d-flex justify-content-center align-items-center bg">
+           <p class="pt-1 pl-3 font-weight-bold h5 text-success">72Hr Food Menu</p>
+         </div>
+     
+       </div>
+     </a>
+     <!--Step 2 complete ends-->
+     </main>
+     <!--step 2 end-->
+     
+
+             <!--step 1 begin-->
+             <main class="col-lg-3">
+               <!--Step 1 muted begin-->
+               <a class="btn d-flex justify-content-left align-items-center text-left step1M" href="./create_evac_plan.html">
+                 <div class="d-flex py-3">
+     
+                   <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
+                     <span class="material-symbols-outlined text-success">
+                       assignment
+                     </span>
+                   </div>
+     
+                   <div class="d-flex justify-content-center align-items-center">
+                     <p class="pt-1 pl-3 font-weight-bold h5 txtBlu">Evacuation Plan</p>
+                   </div>
+     
+                 </div>
+               </a>
+     
+               <!--Step 1 muted ends-->
+     
+               <!--Step 1 complete begin-->
+     
+               <a class="d-none btn d-flex justify-content-left align-items-center step1C" href="./create_evac_plan.html" id="step1C">
+                 <div class="d-flex py-3">
+     
+                   <div class="shadow-sm recBlu circle circleBdr justify-content-center align-items-center d-flex">
+                     <span class="material-symbols-rounded text-light">
+                       done
+                     </span>
+                   </div>
+     
+                   <div class="d-flex justify-content-center align-items-center">
+                     <p class="pt-1 pl-3 font-weight-bold h5 text-success">Evacuation Plan</p>
+                   </div>
+     
+                 </div>
+               </a>
+     
+               <!--Step 1 complete ends-->
+             </main>
+             <!--step 1 end-->
+
+              <!--step 1.5 begin-->
+              <main class="col-lg-3">
+               <!--Step 1.5 muted begin-->
+               <a class="btn d-flex justify-content-left align-items-center text-left step1_5M" href="./emergency_contacts.html">
+                 <div class="d-flex py-3">
+     
+                   <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
+                     <span class="material-symbols-outlined text-success">
+                       <span class="material-icons">
+                         call
+                         </span>
+                     </span>
+                   </div>
+     
+                   <div class="d-flex justify-content-center align-items-center">
+                     <p class="pt-1 pl-3 font-weight-bold h5 txtBlu">Emergency Contacts</p>
+                   </div>
+     
+                 </div>
+               </a>
+     
+               <!--Step 1.5 muted ends-->
+     
+               <!--Step 1.5 complete begin-->
+     
+               <a class="d-none btn d-flex justify-content-left align-items-center step1_5C" href="./emergency_contacts.html" id="step1_5C">
+                 <div class="d-flex py-3">
+     
+                   <div class="shadow-sm recBlu circle circleBdr justify-content-center align-items-center d-flex">
+                     <span class="material-symbols-rounded text-light">
+                       done
+                     </span>
+                   </div>
+     
+                   <div class="d-flex justify-content-center align-items-center">
+                     <p class="pt-1 pl-3 font-weight-bold h5 text-success">Emergency Contacts</p>
+                   </div>
+     
+                 </div>
+               </a>
+     
+               <!--Step 1.5 complete ends-->
+             </main>
+             <!--step 1.5 end-->
+     
+     
+<!--step 3 begin-->
+<main class="col-lg-3">
+<!--Step 3 muted begin-->
+<a class="btn d-flex justify-content-left align-items-center step3M" href="./Additional_Supplies.html" id="step3M">
+<div class="d-flex py-3">
+
+ <div class="shadow-sm bg-white circle circleBdr justify-content-center align-items-center d-flex">
+   <span class="material-symbols-rounded text-success">
+     backpack
+   </span>
+ </div>
+
+ <div class="d-flex justify-content-center align-items-center">
+   <p class="pt-1 pl-3 font-weight-bold h5 txtBlu">Additional Supplies</p>
+ </div>
+
+</div>
+</a>
+<!--Step 3 muted ends-->
+
+<!--Step 3 complete begin-->
+<a class="d-none btn d-flex justify-content-left align-items-center step3C" href="./Additional_Supplies.html">
+<div class="d-flex py-3" id="step3C">
+
+ <div class="shadow-sm recBlu circle circleBdr justify-content-center align-items-center d-flex">
+   <span class="material-symbols-rounded text-light">
+     done
+   </span>
+ </div>
+
+ <div class="d-flex justify-content-center align-items-center bg">
+   <p class="pt-1 pl-3 font-weight-bold h5 text-success">Additional Supplies</p>
+ </div>
+
+</div>
+</a>
+<!--Step 2 complete ends-->
+</main>
+<!--step 2 end-->
+</section>
+<!--Progress Bar begins-->
+<!-- <main class="rcorners">
+<div class="progress bg-white shadow-sm" style="height: 5px;">
+<div width="50" height="10px" id="planProgress" class="progress-bar-striped progress-bar-animated recBlu" role="progressbar" style="width: 0%"></div>
+</div>
+</main> -->
+<!--Progress Bar ends-->
+
+</div>
+<p class="text-muted my-3 text-center"><small><span class="font-weight-bold">Disclosure: </span>SitPrep is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we may earn a small commission from qualifying purchases. This comes at no additional cost to you and helps us continue to provide informative content. Thank you for your support! 
+</small></p> 
+
+<section class="py-5">
+
+<!-- Emergency Plan-->
+
+<!-- Beggining of 72 HOUR FOOD SUPPLIES Card-->
+<div class="py-5">
+
+<!-- <div class="d-flex">
+<h4>Step</p>
+<p class=" btn  rounded-circle bg-success" >
+1</p>
+</div> -->
+
+<div class="">
+<div class="shadow rcorners bg-white stp2-pic p-4">
+ <div class="card-body ">
+
+
+   <main class="d-flex">
+     <div class="col-lg-5 phone-block pt-5">
+       <img src="./images/Food Supply Main – 1.png" class="" id="exampleModalCenterTitle" width="65%" />
+     </div>
+     <div class="col-lg-7 robotoFnt">
+
+
+       <div class="d-flex card-title">
+         <p class="h3 font-weight-bold text-left txtBlu robotoFnt">Craft Your 72-Hour Emergency Food Menu</p>
+
+       </div>
+
+       <br>
+
+       <div class="d-flex py-1 ">
+         <p class="font-weight-normal h5 phone-block robotoFnt txtBlu">Be guided in crafting a 72hr food storage</p>
+       </div>
+
+       <div class="d-flex py-1">
+         <p class="font-weight-normal h5 robotoFnt txtBlu">Keep track of food supply needs</p>
+       </div>
+
+       <div class="d-flex py-1 ">
+         <p class="font-weight-normal h5 robotoFnt txtBlu phone-block">Share list with families and friends</p>
+       </div>
+
+       <div class="row py-4 ">
+         <div class="col-lg-6 pr-5">
+           <a id="add2" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food Supply.html">Craft My Menu</a>
+           <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./Food Supply.html" id="continue2">Continue Planning</a>
+           <a style="display: none" class="btn btn-lg btn-success rounded-pill text-center" href="./download_foodsupply.html" id="view2">View My Menu</a>
+
+         </div>
+
+
+       </div>
+
+
+       <div class="phone-block pl-5 float-right">
+         <p class="font-weight-bold font-weight-light h5">Status:
+
+           <span class="font-weight-bold txtLiteOrg pl-1 float-right" id="not2"> (Not Started)</span>
+           <span style="display: none" class="pl-1 font-weight-bold text-warning float-right" id="prog2"> In Progess</span>
+           <span style="display: none" class="pl-1 font-weight-bold text-success float-right" id="comp2"> Completed</span>
+
+         </p>
+       </div>
+     </div>
+   </main>
+
+
+ </div>
+
+</div>
+</div>
+
+</div>
+<!-- End of 72 HOUR FOOD SUPPLIES Card-->
+
+
+<!-- Beggining of Evacuation Plan Card-->
+<div class="py-5">
+
+<!-- <div class="d-flex">
+<h4>Step</p>
+<p class=" btn  rounded-circle bg-success" >
+1</p>
+</div> -->
+
+<div class="">
+<div class="shadow rcorners bg-white stp1-pic p-4">
+<div class="card-body ">
+
+
+ <main class="d-flex ">
+
+
+   <div class="col-lg-5 phone-block pt-5">
+     <img src="./images/Gathering Main.png" class="" id="exampleModalCenterTitle" width="65%"></img>
+   </div>
+
+   <div class="col-lg-7 robotoFnt">
+
+
+     <div class="d-flex card-title">
+       <p class="h3 font-weight-bold text-left txtBlu robotoFnt">Create Evacuation Plan</p>
+
+     </div>
+
+     <br>
+
+     <div class="d-flex py-1 ">
+       <p class="font-weight-normal h5 phone-block robotoFnt txtBlu">Be guided in creating an evacuation plan</p>
+     </div>
+
+     <div class="d-flex py-1">
+       <p class="font-weight-normal h5 robotoFnt txtBlu">Decide on a safe place for your household to reunite</p>
+     </div>
+
+     <div class="d-flex py-1 ">
+       <p class="font-weight-normal h5 robotoFnt txtBlu phone-block">Share with families and friends</p>
+     </div>
+
+     <div class="row py-4 ">
+       <div class="col-lg-6 pr-5">
+         <button id="add1" type="button" class="btn btn-lg btn-primary rounded-pill text-center" onclick="updateCards()">Create Plan</button>
+         <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./create_evac_plan.html" id="continue1">Continue Planning</a>
+         <a style="display: none" class="btn btn-lg btn-success rounded-pill text-center" href="./create_evac_plan.html" id="view1">Create Another Plan</a>
+
+       </div>
+
+
+     </div>
+
+     <div class="phone-block pl-5 float-right">
+       <p class="font-weight-bold font-weight-light h5">Status:
+
+         <span class="font-weight-bold txtLiteOrg pl-1 float-right" id="not1">(Not Started)</span>
+         <span style="display: none" class="pl-1 font-weight-bold text-warning float-right" id="prog1">(In Progess)</span>
+         <span style="display: none" class="pl-1 font-weight-bold text-success float-right" id="comp1">Completed</span>
+
+       </p>
+     </div>
+
+   </div>
+
+
+ </main>
+
+
+</div>
+
+</div>
+</div>
+
+</div>
+<!-- End of Evacuation Plan Card-->
+
+<!-- Beggining of Emergency Contacts Card-->
+<div class="py-5">
+
+
+
+<div class="">
+<div class="shadow rcorners bg-white stp1_5-pic p-4">
+ <div class="card-body ">
+
+
+   <main class="d-flex">
+     <div class="col-lg-5 phone-block pt-5">
+       <img src="./images/Contact.png" class="" id="exampleModalCenterTitle" width="65%" />
+     </div>
+     <div class="col-lg-7 robotoFnt">
+
+
+       <div class="d-flex card-title">
+         <p class="h3 font-weight-bold text-left txtBlu robotoFnt">Designate Emergency Contacts</p>
+
+       </div>
+
+       <br>
+
+       <div class="d-flex py-1 ">
+         <p class="font-weight-normal h5 phone-block robotoFnt txtBlu">Be guided in choosing designated contacts</p>
+       </div>
+
+       <div class="d-flex py-1">
+         <p class="font-weight-normal h5 robotoFnt txtBlu">Assign who individuals will contact during an emergency</p>
+       </div>
+
+       <div class="d-flex py-1 ">
+         <p class="font-weight-normal h5 robotoFnt txtBlu phone-block">Downlaod and share list with family and friends</p>
+       </div>
+
+       <div class="row py-4 ">
+         <div class="col-lg-6 pr-5">
+           <a id="add1_5" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./emergency_contacts.html">Designate Contacts</a>
+           <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./emergency_contacts.html" id="continue1_5">Continue Planning</a>
+           <a style="display: none" class="btn btn-lg btn-success rounded-pill text-center" href="./emergency_contacts.html" id="view1_5">View My Plan</a>
+
+         </div>
+
+
+       </div>
+
+
+       <div class="phone-block pl-5 float-right">
+         <p class="font-weight-bold font-weight-light h5">Status:
+
+           <span class="font-weight-bold txtLiteOrg pl-1 float-right" id="not1_5"> (Not Started)</span>
+           <span style="display: none" class="pl-1 font-weight-bold text-warning float-right" id="prog1_5"> In Progess</span>
+           <span style="display: none" class="pl-1 font-weight-bold text-success float-right" id="comp1_5"> Completed</span>
+
+         </p>
+       </div>
+     </div>
+   </main>
+
+
+ </div>
+
+</div>
+</div>
+
+</div>
+<!-- End of Emergency Contacts Card-->
+
+
+<!-- Beggining of Additional Supplies Card-->
+<div class="py-5">
+
+<!-- <div class="d-flex">
+<h4>Step</p>
+<p class=" btn  rounded-circle bg-success" >
+1</p>
+</div> -->
+
+<div class="">
+<div class="shadow rcorners bg-white stp3-pic p-4">
+<div class="card-body ">
+
+
+ <main class="d-flex ">
+
+
+   <div class="col-lg-5 phone-block pt-5">
+     <img src="./images/Additional Supplies Main.png" class="" id="exampleModalCenterTitle" width="65%" />
+   </div>
+
+   <div class="col-lg-7 robotoFnt">
+
+
+     <div class="d-flex card-title">
+       <p class="h3 font-weight-bold text-left txtBlu robotoFnt">Add Additional Supplies</p>
+
+     </div>
+
+     <br>
+
+
+
+     <div class="d-flex py-1">
+       <p class="font-weight-normal h5 robotoFnt txtBlu">Keep track of additional supply needs</p>
+     </div>
+
+     <div class="d-flex py-1 ">
+       <p class="font-weight-normal h5 robotoFnt txtBlu phone-block">Share list with families and friends</p>
+     </div>
+
+     <div class="row py-4 ">
+       <div class="col-lg-6 pr-5">
+         <a id="add3" type="button" class="btn btn-lg btn-primary rounded-pill text-center" href="./Additional_Supplies.html">Start Adding Supplies</a>
+         <a style="display: none" class="btn btn-lg btn-primary rounded-pill text-center" href="./Additional_Supplies.html" id="continue3">Continue Planning</a>
+         <a style="display: none" class="btn btn-lg btn-success rounded-pill text-center" href="./Additional_Supplies.html" id="view3">View Supply List</a>
+
+       </div>
+
+
+     </div>
+
+
+
+     <div class="phone-block pl-5 float-right">
+       <p class="font-weight-bold font-weight-light h5">Status:
+
+         <span class="font-weight-bold txtLiteOrg pl-1 float-right" id="not3">(Not Started)</span>
+         <span style="display: none" class="pl-1 font-weight-bold text-warning float-right" id="prog3">In Progess</span>
+         <span style="display: none" class="pl-1 font-weight-bold text-success float-right" id="comp3">Completed</span>
+
+       </p>
+     </div>
+   </div>
+
+
+ </main>
+
+
+</div>
+
+</div>
+</div>
+
+</div>
+<!-- End of Additional Supplies Card-->
+
+</section>
+</div>
+</div>
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+</div>
+
+<div class="fab-container">
+<a class="rounded-pill btn btn-lg btn-warning shadow text-dark pb-3 saiFabGA" href="./sai.html"><img class="img-fluid" src="./images/SAI-FAB.png" width="75px"   alt="" /></a>
+</div>
+</main>
+
+
+
+     
+  
+     <!-- Intro Name begin -->
+<!-- Intro  begin -->
+<div class="modal fade getName" id="getName" tabindex="-1" role="dialog" aria-labelledby="getName" aria-hidden="true">
+<div class="modal-dialog modal-xl" role="document">
+ <div class="modal-content">
+   <div class="text-center mt-5">
+     <img src="./images/Share 1.png" width="75px">
+   </div>
+   <p class="text-center title">Welcome to SitPrep!</p>
+   <p class="h3 font-weight-bold txtGrn robotoFnt text-center mx-5">Start Your SitPrep Journey</p>
+   <div class="container text-break text-wrap">
+     <div class="mt-2 h5 font-weight-normal txtBlu robotoFnt text-center mx-5">Get ready to explore! Check out the different sections you'd like to complete today and know that our website is designed to be easy and straightforward to use.</div>
+   </div>
+   <div class="mb-5 text-center">
+     <button type="button" class="btn btn-success saveName" onclick="getStarted()" data-dismiss="modal" data-toggle="modal" data-target="#getName">Get Started</button>
+   </div>
+ </div>
+</div>
+</div>
+<!-- Intro End -->
+
+
+
+
+
+     <!-- update Name begin -->
+     <div class=" modal fade getName " id="updateName" tabindex="-1" role="dialog" aria-labelledby="updateName" aria-hidden="true" >
+       <div class="modal-dialog  modal-xl" role="document">
+         <div class="modal-content">
+           
+           <div class="d-flex my-3 modal-body justify-content-center text-center">
+             
+             <input  class="w-50  form-control text-center" id="newName" name="inputName" type="text" placeholder="Enter Preferred Name"></input>
+                              
+           </div>
+           <div class="mb-5 float-right text-center">
+             
+             <button type="button" class="noOutline btn-lg btn-dark " onclick="newName()" data-dismiss="modal" data-toggle="modal" data-target="#updateName">Save Name</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- update Name End -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</body>
+</html>

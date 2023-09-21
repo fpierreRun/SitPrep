@@ -747,7 +747,6 @@ textarea {
 /* animate logo in home page begin*/
 .navbar {
   display: flex;
-  overflow: hidden;
   white-space: nowrap;
 }
 
